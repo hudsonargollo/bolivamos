@@ -1,0 +1,28 @@
+{
+  "name": "bolivamos",
+  "private": true,
+  "packageManager": "pnpm@10.13.1",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "turbo run dev",
+    "dev:web": "turbo run dev --filter=@bolivamos/web",
+    "dev:mobile": "turbo run dev --filter=@bolivamos/mobile",
+    "dev:cron": "turbo run dev --filter=@bolivamos/cron-worker",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "db:generate": "turbo run db:generate --filter=@bolivamos/db",
+    "db:migrate:local": "pnpm --filter @bolivamos/web exec wrangler d1 migrations apply bolivamos-db --local",
+    "db:migrate:remote": "pnpm --filter @bolivamos/web exec wrangler d1 migrations apply bolivamos-db --remote",
+    "clean": "turbo run clean && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.3",
+    "typescript": "catalog:",
+    "eslint": "^9.18.0",
+    "@eslint/js": "^9.18.0",
+    "typescript-eslint": "^8.20.0"
+  }
+}

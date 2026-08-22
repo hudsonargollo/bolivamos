@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "moduleDetection": "force",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": false,
+    "declaration": false,
+    "baseUrl": ".",
+    "paths": {
+      "@bolivamos/design-tokens": ["packages/design-tokens/src/index.ts"],
+      "@bolivamos/design-tokens/*": ["packages/design-tokens/src/*"],
+      "@bolivamos/db": ["packages/db/src/index.ts"],
+      "@bolivamos/db/*": ["packages/db/src/*"],
+      "@bolivamos/api-schema": ["packages/api-schema/src/index.ts"],
+      "@bolivamos/api-schema/*": ["packages/api-schema/src/*"],
+      "@bolivamos/api-client": ["packages/api-client/src/index.ts"],
+      "@bolivamos/api-client/*": ["packages/api-client/src/*"],
+      "@bolivamos/ai": ["packages/ai/src/index.ts"],
+      "@bolivamos/ai/*": ["packages/ai/src/*"],
+      "@bolivamos/notifications": ["packages/notifications/src/index.ts"],
+      "@bolivamos/notifications/*": ["packages/notifications/src/*"]
+    }
+  }
+}

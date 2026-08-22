@@ -1,0 +1,35 @@
+{
+  "$schema": "../web/node_modules/wrangler/config-schema.json",
+  "name": "bolivamos-cron-worker",
+  "account_id": "193882a3226d5fb9c3611ea50c95992e",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-08-21",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true
+  },
+  // Same D1/KV resources as apps/web — created in the TEKTONE Cloudflare account
+  // (193882a3226d5fb9c3611ea50c95992e).
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "bolivamos-db",
+      "database_id": "b817f872-99dc-4382-b881-e6599523381b"
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "BOLIVAMOS_KV",
+      "id": "da883a8e173c4211b5dcf12d62e34ca5",
+      "preview_id": "a9222f60f3ba453b976648a3484a12e8"
+    }
+  ],
+  // UTC expressions — Santa Cruz de la Sierra is UTC-4 (no DST). Convert the
+  // intended *local* send time to UTC before relying on these in production.
+  "triggers": {
+    "crons": [
+      "0 13 * * 2", // "The Tuesday Email" weekly digest — Tue 09:00 local
+      "0 13 * * 5" // BoliPass Weekend Roundup — Fri 09:00 local
+    ]
+  }
+}

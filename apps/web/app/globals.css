@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-bg-off-white text-charcoal-dark font-body;
+}
+
+h1,
+h2,
+h3 {
+  @apply font-display uppercase tracking-wide;
+}
