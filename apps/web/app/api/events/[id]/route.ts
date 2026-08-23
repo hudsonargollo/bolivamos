@@ -19,6 +19,12 @@ export async function GET(_request: Request, { params }: { params: Promise<{ id:
     startTime: event.startTime,
     endTime: event.endTime,
     imageUrl: event.imageUrl,
+    category: event.category,
+    priceText: event.priceText,
+    isFree: event.isFree,
+    venueName: event.venueName,
+    district: event.district,
+    mapsUrl: event.mapsUrl,
   };
   return NextResponse.json(dto);
 }

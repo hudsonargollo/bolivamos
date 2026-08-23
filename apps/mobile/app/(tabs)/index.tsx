@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { View, Text, FlatList, Pressable, ScrollView } from "react-native";
+import { View, Text, FlatList, Pressable, ScrollView, Image } from "react-native";
 import type { EventDto, EventFilter } from "@bolivamos/api-schema";
-import { apiClient } from "@/lib/api";
+import { apiClient, baseUrl } from "@/lib/api";
 
 const FILTERS: { key: EventFilter; label: string }[] = [
   { key: "today", label: "TODAY" },
@@ -13,6 +13,45 @@ const FILTERS: { key: EventFilter; label: string }[] = [
 // Static placeholder — a real "Places To Know" carousel needs a curated
 // venues endpoint/field the current schema doesn't distinguish yet.
 const PLACES_TO_KNOW = ["Casco Viejo", "Parque Urbano Lomas de Arena", "La Recoleta"];
+
+function eventImageSource(imageUrl: string | null) {
+  if (!imageUrl) return null;
+  return { uri: imageUrl.startsWith("http") ? imageUrl : `${baseUrl}${imageUrl}` };
+}
+
+function eventTimeLabel(startTime: string) {
+  const m = /T(\d{2}):(\d{2})/.exec(startTime);
+  return m ? `${m[1]}:${m[2]}` : "TBA";
+}
+
+function EventCard({ item }: { item: EventDto }) {
+  const image = eventImageSource(item.imageUrl);
+  const venueLine = [item.venueName, item.isFree ? "Gratis" : item.priceText].filter(Boolean).join(" · ");
+
+  return (
+    <View className="mb-3 overflow-hidden rounded-lg bg-white shadow-sm">
+      {image ? (
+        <Image source={image} className="h-36 w-full" resizeMode="cover" />
+      ) : (
+        <View className="h-16 w-full items-center justify-center bg-boli-green/10">
+          <Text className="font-display text-2xl text-boli-green">{item.title.charAt(0)}</Text>
+        </View>
+      )}
+      <View className="p-4">
+        <View className="flex-row items-center gap-2">
+          <Text className="text-sm font-bold text-boli-orange">{eventTimeLabel(item.startTime)}</Text>
+          {item.category ? (
+            <View className="rounded-pill bg-boli-green/10 px-2 py-0.5">
+              <Text className="text-xs font-bold text-boli-green">{item.category}</Text>
+            </View>
+          ) : null}
+        </View>
+        <Text className="mt-1 text-lg font-bold text-charcoal-dark">{item.title}</Text>
+        {venueLine ? <Text className="mt-0.5 text-muted-clay-gray">{venueLine}</Text> : null}
+      </View>
+    </View>
+  );
+}
 
 export default function FeedScreen() {
   const [filter, setFilter] = useState<EventFilter>("today");
@@ -30,8 +69,13 @@ export default function FeedScreen() {
 
   return (
     <View className="flex-1 bg-bg-off-white">
-      <View className="bg-boli-green px-4 pb-4 pt-16">
-        <Text className="font-display text-2xl uppercase text-white">What to do in Santa Cruz</Text>
+      <View className="bg-charcoal-dark px-4 pb-5 pt-16">
+        <Text className="font-display text-3xl uppercase">
+          <Text className="text-bg-off-white">BOLI</Text>
+          <Text className="text-boli-orange">VAMOS</Text>
+          <Text className="text-boli-red">!</Text>
+        </Text>
+        <Text className="mt-1 text-muted-clay-gray">What to do in Santa Cruz de la Sierra</Text>
       </View>
 
       <ScrollView horizontal showsHorizontalScrollIndicator={false} className="px-4 py-3" contentContainerClassName="gap-2">
@@ -56,19 +100,13 @@ export default function FeedScreen() {
       </ScrollView>
 
       <FlatList
-        className="flex-1 px-4"
+        className="flex-1 px-4 pt-2"
         data={events}
         keyExtractor={(item) => item.id}
         ListEmptyComponent={
           !loading ? <Text className="p-4 text-muted-clay-gray">No events for this filter yet.</Text> : null
         }
-        renderItem={({ item }) => (
-          <View className="mb-3 rounded-lg bg-white p-4 shadow-sm">
-            <Text className="text-lg text-charcoal-dark">{item.title}</Text>
-            {item.description ? <Text className="text-muted-clay-gray">{item.description}</Text> : null}
-            <Text className="mt-1 text-sm text-boli-green">{new Date(item.startTime).toLocaleString()}</Text>
-          </View>
-        )}
+        renderItem={({ item }) => <EventCard item={item} />}
       />
     </View>
   );

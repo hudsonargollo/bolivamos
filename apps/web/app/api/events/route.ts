@@ -16,6 +16,12 @@ function toEventDto(event: typeof events.$inferSelect): EventDto {
     startTime: event.startTime,
     endTime: event.endTime,
     imageUrl: event.imageUrl,
+    category: event.category,
+    priceText: event.priceText,
+    isFree: event.isFree,
+    venueName: event.venueName,
+    district: event.district,
+    mapsUrl: event.mapsUrl,
   };
 }
 
@@ -31,11 +37,15 @@ export async function GET(request: Request) {
     const { start, end } = windowForFilter(query.filter);
     conditions.push(gte(events.startTime, start.toISOString()), lt(events.startTime, end.toISOString()));
   }
+  if (query.category) {
+    conditions.push(eq(events.category, query.category));
+  }
 
   const rows = await db
     .select()
     .from(events)
-    .where(conditions.length ? and(...conditions) : undefined);
+    .where(conditions.length ? and(...conditions) : undefined)
+    .orderBy(events.startTime);
 
   return NextResponse.json(rows.map(toEventDto));
 }

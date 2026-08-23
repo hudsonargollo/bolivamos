@@ -38,6 +38,14 @@ export const events = sqliteTable("events", {
   startTime: text("start_time").notNull(),
   endTime: text("end_time"),
   imageUrl: text("image_url"),
+  // Public-listing fields for imported/aggregated events (no host venue row).
+  category: text("category"),
+  priceText: text("price_text"),
+  isFree: integer("is_free", { mode: "boolean" }).default(false),
+  venueName: text("venue_name"),
+  district: text("district"),
+  mapsUrl: text("maps_url"),
+  sourceSlug: text("source_slug").unique(),
 });
 
 export const vouchers = sqliteTable("vouchers", {

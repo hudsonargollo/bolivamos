@@ -25,5 +25,11 @@ export const eventSchema = z.object({
   startTime: z.string(),
   endTime: z.string().nullable(),
   imageUrl: z.string().nullable(),
+  category: z.string().nullable(),
+  priceText: z.string().nullable(),
+  isFree: z.boolean().nullable(),
+  venueName: z.string().nullable(),
+  district: z.string().nullable(),
+  mapsUrl: z.string().nullable(),
 });
 export type EventDto = z.infer<typeof eventSchema>;

@@ -25,7 +25,22 @@ const config: ExpoConfig = {
       backgroundColor: "#F7F5EE",
     },
   },
-  plugins: ["expo-router", "expo-secure-store", "expo-camera"],
+  plugins: [
+    "expo-router",
+    "expo-secure-store",
+    "expo-camera",
+    [
+      "expo-build-properties",
+      {
+        // expo-modules-core's Compose Compiler (1.5.15) requires Kotlin 1.9.25
+        // exactly; a fresh SDK 52 prebuild otherwise resolves 1.9.24 and fails
+        // `:expo-modules-core:compileDebugKotlin`. Pinning it here (rather than
+        // hand-editing the gitignored, regenerable android/ project) survives
+        // `expo prebuild`.
+        android: { kotlinVersion: "1.9.25" },
+      },
+    ],
+  ],
   extra: {
     router: {
       origin: false,
