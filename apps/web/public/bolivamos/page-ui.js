@@ -110,6 +110,10 @@ dbList.addEventListener('click', e => {
   if (e.target.closest('a')) return;
   const hd = e.target.closest('.ev-head'); if (!hd) return;
   const d = document.getElementById(hd.dataset.target);
+  if (window.__sheets && window.__sheets.isMobile()) {
+    window.__sheets.openDetail(d.innerHTML);
+    return;
+  }
   d.style.display = d.style.display === 'none' ? 'block' : 'none';
 });
 window.__DB = DB;

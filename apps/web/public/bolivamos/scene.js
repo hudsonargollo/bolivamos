@@ -955,8 +955,13 @@ const cur = { y: SUN_Y0, top: '#232840', mid: '#2e2f45', low: '#45364a', stars: 
 document.querySelectorAll('.scene-tab').forEach(b => b.addEventListener('click', () => {
   scene = b.dataset.scene;
   if (window.__setSection) window.__setSection(scene);
-  const target = document.getElementById(scene === 'live' ? 'estaNoche' : 'eventos');
-  if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 8, behavior: 'smooth' });
+  const sectionId = scene === 'live' ? 'estaNoche' : 'eventos';
+  if (window.__sheets && window.__sheets.isMobile()) {
+    window.__sheets.openContentSection(sectionId, scene === 'live' ? 1 : 2);
+  } else {
+    const target = document.getElementById(sectionId);
+    if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 8, behavior: 'smooth' });
+  }
   document.querySelectorAll('.scene-tab').forEach(x => x.classList.toggle('active', x === b));
 }));
 const INTRO = 5;

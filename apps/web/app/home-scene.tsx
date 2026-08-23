@@ -21,6 +21,7 @@ const BODY_HTML = `
 </header>
 <button class="info-btn" id="infoBtn" aria-label="Zonas" aria-expanded="false">i</button>
 <div class="info-pop" id="infoPop" aria-label="Mapa">
+  <div class="sheet-handle" id="infoPopHandle"><span></span></div>
   <div class="map-title">Santa Cruz de la Sierra</div>
   <div class="map-sub" data-i18n="mapSub">Tap a zone to travel</div>
   <div id="mapSpots" class="metro"></div>
@@ -38,6 +39,9 @@ const BODY_HTML = `
 </nav>
 <div class="click-hint" id="clickHint" data-i18n="hint">The banners are <b>clickable</b></div>
 </div>
+<div id="contentSheet">
+  <div class="sheet-handle" id="contentSheetHandle"><span></span></div>
+  <div class="sheet-scroll" id="contentSheetScroll">
 <section id="estaNoche" style="position:relative;z-index:5;background:#201e1d;">
   <div style="max-width:1160px;margin:0 auto;padding:64px 24px 70px;">
     <h2 style="font-family:Caprasimo,Georgia,serif;font-size:40px;color:#f5ead8;margin:0 0 4px;" data-i18n="tonightTitle">Live tonight</h2>
@@ -66,13 +70,21 @@ const BODY_HTML = `
     </div>
     <div id="dbList"></div>
   </div>
-</section>`;
+</section>
+  </div>
+</div>
+<div class="sheet-backdrop" id="sheetBackdrop"></div>
+<div id="detailSheet" aria-hidden="true">
+  <div class="sheet-handle" id="detailSheetHandle"><span></span></div>
+  <div class="sheet-scroll" id="detailSheetContent"></div>
+</div>`;
 
 export default function HomeScene() {
   return (
     <>
       <div dangerouslySetInnerHTML={{ __html: BODY_HTML }} />
       <Script src="/bolivamos/three-d-stage.js" strategy="afterInteractive" />
+      <Script src="/bolivamos/bottom-sheet.js" strategy="afterInteractive" />
       <Script src="/bolivamos/page-ui.js" strategy="afterInteractive" />
       <Script src="/bolivamos/scene.js" type="module" strategy="afterInteractive" />
     </>
