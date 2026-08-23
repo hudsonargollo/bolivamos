@@ -65,6 +65,23 @@ export const redemptions = sqliteTable("redemptions", {
   redeemedAt: text("redeemed_at").default(sql`CURRENT_TIMESTAMP`),
 });
 
+export const places = sqliteTable("places", {
+  id: text("id").primaryKey(),
+  name: text("name").notNull(),
+  layer: text("layer", { enum: ["attraction", "eat_drink", "tour", "transfer", "street_zone"] }).notNull(),
+  category: text("category"),
+  district: text("district"),
+  lat: real("lat"),
+  lng: real("lng"),
+  rating: real("rating"),
+  reviews: integer("reviews"),
+  price: text("price"),
+  regional: integer("regional", { mode: "boolean" }).default(false),
+  venueId: text("venue_id").references(() => venues.id),
+  source: text("source", { enum: ["tripadvisor", "openalfa", "manual"] }).notNull(),
+  verified: integer("verified", { mode: "boolean" }).default(false),
+});
+
 export type User = typeof users.$inferSelect;
 export type NewUser = typeof users.$inferInsert;
 export type Venue = typeof venues.$inferSelect;
@@ -75,3 +92,5 @@ export type Voucher = typeof vouchers.$inferSelect;
 export type NewVoucher = typeof vouchers.$inferInsert;
 export type Redemption = typeof redemptions.$inferSelect;
 export type NewRedemption = typeof redemptions.$inferInsert;
+export type Place = typeof places.$inferSelect;
+export type NewPlace = typeof places.$inferInsert;

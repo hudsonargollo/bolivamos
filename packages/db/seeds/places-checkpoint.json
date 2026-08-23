@@ -1,0 +1,4521 @@
+{
+  "results": {
+    "biocentro-guembe": {
+      "lat": -17.7681981,
+      "lng": -63.2486369,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Biocentro Güembé, Camino Los Batos-Las Cruces, Los Batos, Municipio Porongo (Ayacucho), Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000376646066986651
+    },
+    "kaa-iya-national-park": {
+      "lat": -19.3741074,
+      "lng": -61.3572043,
+      "district": null,
+      "regional": true,
+      "verified": true,
+      "displayName": "Parque Nacional Kaa-Iya del Gran Chaco, Santa Cruz, Bolivia",
+      "importance": 0.3245597611328047
+    },
+    "la-rinconada-ecoparque-resort": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "jardin-de-las-delicias": {
+      "lat": -17.8658856,
+      "lng": -63.5139145,
+      "district": null,
+      "regional": true,
+      "verified": true,
+      "displayName": "El Jardín de las Delicias, Municipio El Torno, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.08003902571145187
+    },
+    "cascadas-espejillos": {
+      "lat": -17.9008652,
+      "lng": -63.4404571,
+      "district": null,
+      "regional": true,
+      "verified": true,
+      "displayName": "Espejillos, Porongo, Municipio Porongo (Ayacucho), Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.13337099794003202
+    },
+    "parque-lomas-de-arena": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "cataratas-espejillos": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "jardin-botanico-santa-cruz": {
+      "lat": -17.778145,
+      "lng": -63.0652313,
+      "district": "Parque Urbano",
+      "regional": false,
+      "verified": true,
+      "displayName": "Jardín Botánico Municipal de Santa Cruz, Cotoca, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.17283327415591612
+    },
+    "parque-ecologico-yvaga-guazu": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "parque-nacional-noel-kempff-mercado": {
+      "lat": -14.2878234,
+      "lng": -60.9238612,
+      "district": null,
+      "regional": true,
+      "verified": true,
+      "displayName": "Parque Nacional Noel Kempff Mercado, Santa Cruz, Bolivia",
+      "importance": 0.3933592766861344
+    },
+    "parque-urbano-central": {
+      "lat": -18.3330513,
+      "lng": -59.7505813,
+      "district": null,
+      "regional": true,
+      "verified": true,
+      "displayName": "Parque Urbano Central, Roboré, Chiquitos, Santa Cruz, Bolivia",
+      "importance": 0.08003891432059201
+    },
+    "zoologico-municipal-de-fauna-sudamericana-noel-kempff-mercado": {
+      "lat": -17.759631,
+      "lng": -63.1853464,
+      "district": "Zoo",
+      "regional": false,
+      "verified": true,
+      "displayName": "Zoológico Municipal de Fauna Sudamericana Noel Kempff Mercado, Calle Muralto, Avaroa, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.14389741120638372
+    },
+    "parque-el-arenal": {
+      "lat": -17.7779471,
+      "lng": -63.1805907,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Parque El Arenal, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.08006424429694053
+    },
+    "plaza-24-de-septiembre": {
+      "lat": -17.7832547,
+      "lng": -63.1821187,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Plaza 24 de Septiembre, Centro, Porongo, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.08006424429694053
+    },
+    "samaipata": {
+      "lat": -17.7860553,
+      "lng": -63.1975534,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Samaipata, Santa Rosita, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "la-higuera": {
+      "lat": -17.8167561,
+      "lng": -63.2006677,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle La Higuera, Villa Fátima, El Pari, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "pinturas-rupestres-en-las-cavernas-de-mataral": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "casa-cultural-melchor-pinto": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "museo-artecampo": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "manzana-1-espacio-de-arte": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "museo-de-arte-sacro-monsenor-carlos-geriche-suarez": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "estadio-ramon-tahuichi-aguilera": {
+      "lat": -17.7960273,
+      "lng": -63.183838,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Estadio Ramón “Tahuichi” Aguilera Costas, Avenida Ejército Nacional, Barrio Militar, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.416605097114494
+    },
+    "iglesias-de-la-chiquitania": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "parroquia-de-la-inmaculada-concepcion": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "catedral-de-santa-cruz": {
+      "lat": -17.7840852,
+      "lng": -63.1817189,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Catedral Metropolitana Basílica Menor de San Lorenzo, Calle René Moreno, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.23992860907835414
+    },
+    "cotoca-sanctuary": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "patio-design-lifestyle-center": {
+      "lat": -17.7714019,
+      "lng": -63.2018005,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Patio Design LifeStyle Center, Avenida Noel Kempff, Villa San Luis, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "beauty-plaza-mall": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "ventura-mall": {
+      "lat": -17.7544449,
+      "lng": -63.1995436,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Ventura Mall, Avenida Antonio Vaca Diez, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "las-brisas-centro-comercial": {
+      "lat": -17.7491852,
+      "lng": -63.1762605,
+      "district": "Las Brisas",
+      "regional": false,
+      "verified": true,
+      "displayName": "Las Brisas, Avenida Cristo Redentor, Norte, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "walking-tour-a-journey-through-the-history-of-santa-cruz": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "private-tasting-of-award-winning-bolivian-wines": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "private-city-tour-nature-porongo-markets-and-culture": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "samaipata-fort-tour-ancient-ruins-in-1-full-day": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "wildlife-rescue-center-in-nature-reserve-near-santa-cruz": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "discover-the-crucenos-valleys-at-your-own-pace-in-a-private-vehicle": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "entrance-to-our-world": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "amboro-national-park-overnight-tour-from-santa-cruz": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "2d-1n-getaway-che-route-historical-trekking-and-nature": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "3d-2n-getaway-on-the-che-guevara-route-live-the-adventure": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "4d-3n-expedition-che-guevara-route-disconnect-from-the-world": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "after-the-footsteps-of-the-jaguar-3-day-kaa-iya-expedition": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "private-8-day-bolivia-tour-from-santa-cruz": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "plants-and-habitats-in-the-elbow-of-the-andes": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "airport-shuttle-santa-cruz": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "transfer-in-airport-viru-viru-to-santa-cruz": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "are-you-looking-for-a-safe-private-shuttle-in-santa-cruz": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "midnight-transfer-in-airport-viru-viru-to-santa-cruz": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "private-transfer-santa-cruz-city-airport-vvi-by-suv-in-out-options": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "private-executive-chauffeur-service-premium-suv": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "tourist-and-urban-transportation": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "el-aljibe-comida-tipica": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "pinata-wey": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "el-arriero": {
+      "lat": -17.7677613,
+      "lng": -63.1934717,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "El Arriero, Avenida San Martín, Faremafu, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "jardin-de-asia": {
+      "lat": -17.7652169,
+      "lng": -63.1988928,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Jardín de Asia, Avenida Marcelo Terceros Bánzer, El Carmen, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "kao-by-sach-a": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "chalet-la-suisse": {
+      "lat": -16.5403495,
+      "lng": -68.0739269,
+      "district": null,
+      "regional": true,
+      "verified": true,
+      "displayName": "Restaurant Chalet La Suisse, 1710, Avenida Muñoz Reyes, Los Pinos, Calacoto, Sur, Municipio Nuestra Señora de La Paz, Provincia Pedro Domingo Murillo, La Paz, Bolivia",
+      "importance": 0.00006890897993434069
+    },
+    "as-de-copas": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "la-casa-del-camba": {
+      "lat": -17.7700188,
+      "lng": -63.1736094,
+      "district": "Zoo",
+      "regional": false,
+      "verified": true,
+      "displayName": "La Casa del Camba, Avenida Cristóbal de Mendoza, Máquina Vieja, Norte Interno, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "los-hierros-steakhouse-bar": {
+      "lat": -17.7592362,
+      "lng": -63.1976674,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Los Hierros Steakhouse & Bar, 111, Calle G, Villa Brígida, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "bravissimo": {
+      "lat": -17.7726805,
+      "lng": -63.1828937,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Bravissimo pizzeria e trattoria, Calle Cañada Strongest, Bartos, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "la-rinconada": {
+      "lat": -17.7830863,
+      "lng": -63.2458354,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Parque La Rinconada, Buen Retiro, Municipio Porongo (Ayacucho), Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.08003766460669869
+    },
+    "michelangelo-ristorante": {
+      "lat": -17.7886641,
+      "lng": -63.1798375,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Michelangelo, Calle Chuquisaca, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "republica": {
+      "lat": -17.7539401,
+      "lng": -63.1990509,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "República, Avenida Antonio Vaca Diez, Villa Brígida, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "botanica": {
+      "lat": -17.7623907,
+      "lng": -63.197151,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "BOTANICA, Avenida Leigue Castedo, Sirari, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "typica-cafe-tostaduria": {
+      "lat": -16.491199,
+      "lng": -68.1443545,
+      "district": null,
+      "regional": true,
+      "verified": true,
+      "displayName": "Typica Cafe Tostaduria, Avenida Manco Kapac, 14 de Septiembre, Max Paredes, Municipio Nuestra Señora de La Paz, Provincia Pedro Domingo Murillo, La Paz, Bolivia",
+      "importance": 0.00006890897993434069
+    },
+    "la-cabrera": {
+      "lat": -16.5094475,
+      "lng": -68.1191764,
+      "district": null,
+      "regional": true,
+      "verified": true,
+      "displayName": "Plaza Ladislao Cabrera, Centro, Municipio Nuestra Señora de La Paz, Provincia Pedro Domingo Murillo, La Paz, Bolivia",
+      "importance": 0.08006890897993435
+    },
+    "irish-pub": {
+      "lat": -17.7830672,
+      "lng": -63.1815031,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Irish Pub, Calle 24 de Septiembre, Bartos, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "hard-rock-cafe": {
+      "lat": -17.7532668,
+      "lng": -63.1988937,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Hard Rock Cafe, Calle 3, 2 de Abril, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "vaca-morena": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "santo-peccato": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "caudilla": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "fabric-sushi-nikkei-santa-cruz": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "ines-espana-restaurante": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "la-casa-del-camba-urubo": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "1987-rodizio": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "aviator": {
+      "lat": -17.7628071,
+      "lng": -63.1963144,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Aviator wings & beer, Avenida Marcelo Terceros Bánzer, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "mangarosa-brasserie": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "matoni": {
+      "lat": -17.7816241,
+      "lng": -63.1796211,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Matoni, 185, Calle Murillo, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "cielo-bar-santa-cruz": {
+      "lat": -17.7598576,
+      "lng": -63.1984547,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Cielo, Calle Carlos Roca Aguilera, Villa Brígida, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "cafe-buena-vista": {
+      "lat": -17.7000915,
+      "lng": -63.6160123,
+      "district": null,
+      "regional": true,
+      "verified": true,
+      "displayName": "Café, Isama I, Municipio Buena Vista, Provincia Ichilo, Santa Cruz, Bolivia",
+      "importance": 0.08003862439917599
+    },
+    "restaurant-ken": {
+      "lat": -17.777203,
+      "lng": -63.1735405,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Ken, Avenida Uruguay, Obrero, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "muelle-18": {
+      "lat": -15.5730045,
+      "lng": -69.276154,
+      "district": null,
+      "regional": true,
+      "verified": true,
+      "displayName": "Muelle, Municipio Puerto Acosta, Provincia de Eliodoro Camacho, La Paz, Bolivia",
+      "importance": 0.13337833447775996
+    },
+    "ambika-indian-restaurant": {
+      "lat": -17.7845678,
+      "lng": -63.1826038,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "ambika indian, Calle Independencia, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "club-social-24-de-septiembre": {
+      "lat": -17.7836435,
+      "lng": -63.1828139,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Club Social 24 de Septiembre, 21, Calle Ayacucho, Bancario, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "chifa-mandarin": {
+      "lat": -17.7913662,
+      "lng": -63.1760545,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Restaurante Chifa Mandarín, Avenida Irala, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "factory-grill-bar-santa-cruz": {
+      "lat": -17.7962338,
+      "lng": -63.1805021,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Factory grill & bar, Calle Elvira de Mendoza, Barrio Militar, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "la-gaira": {
+      "lat": -17.7623254,
+      "lng": -63.1971077,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "La Gaira, Avenida Leigue Castedo, Sirari, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "restaurant-palacio-del-dragon": {
+      "lat": -17.7932525,
+      "lng": -63.1852618,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Restaurant Palacio del Dragón, 679, Avenida Irala, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "la-terraza": {
+      "lat": -17.7644971,
+      "lng": -63.1968136,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "La Terraza, 455, Avenida San Martín, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "la-caballeriza": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "rodizio-brazzeiro": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "zanella-restaurante": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "noi-pizzeria": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "dossier-restaurante": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "el-cuartito": {
+      "lat": -17.7958888,
+      "lng": -63.1806142,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "El Cuartito, Calle Elvira de Mendoza, Barrio Militar, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "san-yuan-chinese-food": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "sir-pieper-restro-bar": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "basilico-pizzeria": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "el-buen-gusto": {
+      "lat": -17.7674803,
+      "lng": -63.1942387,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "El Buen Gusto, Avenida San Martín, Faremafu, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "mar-y-fuego-restaurant": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "los-lomitos": {
+      "lat": -17.7773364,
+      "lng": -63.1735928,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Los Lomitos, Avenida Uruguay, Obrero, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "senor-lomo": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "don-miguel": {
+      "lat": -17.7624782,
+      "lng": -63.1755014,
+      "district": "Zoo",
+      "regional": false,
+      "verified": true,
+      "displayName": "Don Miguel, Avenida Beni, La Santa Cruz, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "le-mayen": {
+      "lat": -17.9942966,
+      "lng": -63.3690404,
+      "district": null,
+      "regional": true,
+      "verified": true,
+      "displayName": "Tapekuá Le Mayen, Calle Japón, El Torno, Municipio El Torno, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.00003902571145185042
+    },
+    "yorimichi": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "los-castores-salteneria": {
+      "lat": -17.7920598,
+      "lng": -63.1801988,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Los Castores salteñería, Avenida Irala, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "lorca-cafe": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "toborochi-restaurant": {
+      "lat": -17.7901364,
+      "lng": -63.1875955,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Pollo Toborochi, Avenida Cañoto, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "sbc-rooftop": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "kovi": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "botanica-equipetrol": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "la-tranquera": {
+      "lat": -11.7344898,
+      "lng": -66.1906262,
+      "district": null,
+      "regional": true,
+      "verified": true,
+      "displayName": "La Tranquera, Canton Ivon, Riberalta, Antonio Vaca Díez, Beni, Bolivia",
+      "importance": 0.10671434729533834
+    },
+    "naoki-sushi-delivery": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "pizza-bizarra": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "serafina-cucina-italiana": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "shimaya-ramen-scz-equipetrol": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "shinko-sushi": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "pomodoro-rosso-scz": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "goss": {
+      "lat": -17.7486936,
+      "lng": -63.1762975,
+      "district": "Las Brisas",
+      "regional": false,
+      "verified": true,
+      "displayName": "Goss, Calle Marañón, Norte, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "trattoria-dueville-pasta-fresca": {
+      "lat": -17.7786625,
+      "lng": -63.1819975,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Trattoria Dueville - Pasta Fresca, 495, Calle 24 de Septiembre, Bartos, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "cinnabon": {
+      "lat": -17.7536792,
+      "lng": -63.199206,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Cinnabon, Avenida Antonio Vaca Diez, Villa Brígida, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "restaurant-shanghai": {
+      "lat": -17.788478,
+      "lng": -63.1479019,
+      "district": "Parque Urbano",
+      "regional": false,
+      "verified": true,
+      "displayName": "Pollos Shanghai, Avenida Cuarto Anillo, Convipet, Estación Argentina, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "regiones-bolivia": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "casa-vegana": {
+      "lat": -17.7687075,
+      "lng": -63.1922753,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Casa Vegana, Calle Sarmiento, Avaroa, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "nazca-cocina-peruana": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "el-mordisco": {
+      "lat": -16.5690134,
+      "lng": -68.0880146,
+      "district": null,
+      "regional": true,
+      "verified": true,
+      "displayName": "El Mordisco, Calle 4, Mallasa, Municipio Nuestra Señora de La Paz, Provincia Pedro Domingo Murillo, La Paz, Bolivia",
+      "importance": 0.00006890897993434069
+    },
+    "con-tenedores-norte": {
+      "lat": -17.7501056,
+      "lng": -63.1710192,
+      "district": "Las Brisas",
+      "regional": false,
+      "verified": true,
+      "displayName": "Con Tenedores, Avenida Principal, La Merced, Norte, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "patio-madera-las-brisas": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "ottimo": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "patio-madera-urbari": {
+      "lat": -17.7928596,
+      "lng": -63.1963377,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Patio Madera, Calle Barachavi, Cooper, El Pari, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "el-prado-restobar": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "la-gaira-2nd-location": {
+      "lat": -17.7623254,
+      "lng": -63.1971077,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "La Gaira, Avenida Leigue Castedo, Sirari, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "montreal-steakhouse": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "il-borgo": {
+      "lat": 39.7422676,
+      "lng": -89.3470299,
+      "district": null,
+      "regional": true,
+      "verified": true,
+      "displayName": "Bolivia, Christian County, Illinois, 62545, Estados Unidos de América",
+      "importance": 0.13336833524071104
+    },
+    "nikkei-sushi-bar": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "kiwi-s-cafe-restaurant": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "pollos-chuy": {
+      "lat": -17.7753944,
+      "lng": -63.1847632,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Pollos Chuy, Avenida Cañoto, Bartos, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "cafe-24": {
+      "lat": 4.726617,
+      "lng": -74.1227984,
+      "district": null,
+      "regional": true,
+      "verified": false,
+      "displayName": "El Cortijo SMD Café, UPZs de Bogotá, Localidad Engativá, Bogotá, Bogotá, Distrito Capital, RAP (Especial) Central, Colombia",
+      "importance": 0.08007831921873805
+    },
+    "horno-caliente": {
+      "lat": -17.7897812,
+      "lng": -63.1797149,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Saltenería Cocheros - Horno Caliente, Calle Chuquisaca, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "mi-cafe": {
+      "lat": -17.7914145,
+      "lng": -63.1742086,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Mi Cafe, Avenida Irala, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "el-tabano": {
+      "lat": -17.8004374,
+      "lng": -63.1737809,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "El Tábano, 109, Calle Miguel de Aguirre, Choferes, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "pizzeria-marguerita": {
+      "lat": -17.7825606,
+      "lng": -63.1826645,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Pizzeria Marguerita, 116, Calle Libertad, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "steel-container-grill-bar": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "santa-cruz-beer-company": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "papa-johns-pizza": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "le-petit-cafetier": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "green-lovers": {
+      "lat": -17.7606742,
+      "lng": -63.1956212,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Green Lovers, Calle Doctor Alejandro Ramírez, Sirari, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "santa-brasa": {
+      "lat": -17.7727268,
+      "lng": -63.1821375,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Santa Brasa, Avenida Monseñor Rivero, Bartos, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "cua-cua": {
+      "lat": -17.7533391,
+      "lng": -63.1993959,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Cua Cua, Avenida Costanera, 2 de Abril, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "cubo-scz": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "angelino": {
+      "lat": -17.7529605,
+      "lng": -63.1994543,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Angelino, Avenida Costanera, 2 de Abril, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "brasargent-express": {
+      "lat": -17.8205123,
+      "lng": -63.1842444,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Brasargent Express, Avenida Santos Dumont, La Morita, El Pari, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "kaos-resto-bar": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "mediterraneo-cafe-y-tapas": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "confetti": {
+      "lat": -17.7922217,
+      "lng": -63.1775186,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Confetti, 136, Avenida Las Américas, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "la-bodega-espanola-de-manolito": {
+      "lat": -17.7879538,
+      "lng": -63.1723967,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "La Bodega Española de Manolito, Calle Moldes, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "oncetintos": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "delicias-de-oro": {
+      "lat": -17.7429468,
+      "lng": -63.1594678,
+      "district": "Las Brisas",
+      "regional": false,
+      "verified": true,
+      "displayName": "Delicias de Oro, Avenida Alemania, San Jorge, Norte, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "casa-alfonsina": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "ame-cafe-bar": {
+      "lat": -17.7603825,
+      "lng": -63.1984692,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Amé Cafe & Bar, Calle Carlos Roca Aguilera, Villa Brígida, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "restaurante-casa-blanca": {
+      "lat": -18.3389449,
+      "lng": -59.7568146,
+      "district": null,
+      "regional": true,
+      "verified": true,
+      "displayName": "Casa Blanca, Calle Brasil, Roboré, Chiquitos, Santa Cruz, Bolivia",
+      "importance": 0.000038914320592004536
+    },
+    "pez-mar": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "campesino": {
+      "lat": -18.3740482,
+      "lng": -63.3438708,
+      "district": null,
+      "regional": true,
+      "verified": true,
+      "displayName": "Campesino de Vaca Grande, Municipio Cabezas, Provincia Cordillera, Santa Cruz, Bolivia",
+      "importance": 0.13337152895399404
+    },
+    "mi-fortuna-ecoparque-granja": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "parrillada-oriente-petrolero": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "oak-gastrobar": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "bocarte-bolivia": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "d15": {
+      "lat": -17.7620303,
+      "lng": -63.1990526,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "D15, Calle Las Dalias, Sirari, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "boulevard-plaza": {
+      "lat": -17.7835278,
+      "lng": -63.1805319,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Boulevard Plaza, Calle Beni, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "alleggro-resto-brunch": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "martin-fuego": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "in-fusion": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "don-celso": {
+      "lat": -17.7855221,
+      "lng": -63.1676414,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Restaurant Don Celso, 1035, Calle Manuel Ignacio Salvatierra, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "pizza-rio": {
+      "lat": -17.7999897,
+      "lng": -63.1680491,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Pizza Rio, Avenida San Aurelio, El Trompillo, Estación Argentina, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "sushi-tren": {
+      "lat": -17.7536764,
+      "lng": -63.1995189,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Sushi Tren, Avenida Antonio Vaca Diez, Villa Brígida, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "restaurant-la-sierra": {
+      "lat": -17.7732751,
+      "lng": -63.1617694,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "La Rosa, Avenida Paraguá, Villarroel, Norte Interno, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "wistupiku": {
+      "lat": -17.7849651,
+      "lng": -63.1819608,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Wistupiku, Calle Ingavi, Fé y Alegría, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "la-hacienda-del-gaucho": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "soho-bar-food": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "restaurant-la-creperie": {
+      "lat": -17.7815376,
+      "lng": -63.1803775,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "La Crêperie, Calle Arenales, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "sahara-pizza-bolivia": {
+      "lat": -17.7582803,
+      "lng": -63.1668165,
+      "district": "Las Brisas",
+      "regional": false,
+      "verified": true,
+      "displayName": "Sahara Pizza, Avenida Alemania, Bancruz, Norte Interno, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "y-se-llama-peru": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "urbano-chop-grill": {
+      "lat": -17.7644555,
+      "lng": -63.1998825,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Urbano Chop and Grill, 17, Calle Los Flamboyanes, Sirari, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "route66-bolivia": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "ettmuller-landhaus-restaurant": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "pilaik-restaurant": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "restaurante-japones-sarai": {
+      "lat": -17.7694993,
+      "lng": -63.1783156,
+      "district": "Zoo",
+      "regional": false,
+      "verified": true,
+      "displayName": "Restaurante Japonés Sarai, 2010, Avenida Beni, La Santa Cruz, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "bistro-luz": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "oga": {
+      "lat": -17.7574646,
+      "lng": -63.1836428,
+      "district": "Zoo",
+      "regional": false,
+      "verified": true,
+      "displayName": "OGA Network, 190, Calle Los Tucanes, 24 de Septiembre, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "tucunare-restaurant": {
+      "lat": -17.786313,
+      "lng": -63.1752536,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Tucunaré Restaurant, Calle Republiquetas, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "mi-cholita": {
+      "lat": -17.7850008,
+      "lng": -63.2039064,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Mi Cholita, Avenida Roca y Coronado, Santa Rosita, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "sapore-italiano": {
+      "lat": -17.7697731,
+      "lng": -63.1966934,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Sapore Italiano, Calle Hugo Wast, Faremafu, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "chifa-china": {
+      "lat": -16.5386843,
+      "lng": -68.0809598,
+      "district": null,
+      "regional": true,
+      "verified": true,
+      "displayName": "Chifa China, Avenida José Ballivián, San Miguel, Calacoto, Sur, Municipio Nuestra Señora de La Paz, Provincia Pedro Domingo Murillo, La Paz, Bolivia",
+      "importance": 0.00006890897993434069
+    },
+    "barn-grill-rancho-montana": {
+      "lat": -17.5768627,
+      "lng": -63.3026689,
+      "district": null,
+      "regional": true,
+      "verified": true,
+      "displayName": "Barn & Grill Rancho Montana, 2, Camino Camalotal-La Belgica 2, Colpa Bélgica, Sara, Santa Cruz, Bolivia",
+      "importance": 0.00003750133516437045
+    },
+    "goss-bar": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "zucchini": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "la-plazita": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "san-ho": {
+      "lat": -17.7699928,
+      "lng": -63.1749126,
+      "district": "Zoo",
+      "regional": false,
+      "verified": true,
+      "displayName": "San Ho, Avenida Cristóbal de Mendoza, Máquina Vieja, Norte Interno, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "avidano": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "swissco-discotheque-restobar": {
+      "lat": -17.7644538,
+      "lng": -63.2004708,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Swissco Discotheque  Restobar, 111, Calle Los Gomeros, Sirari, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "lomo-s-grill": {
+      "lat": -17.7575877,
+      "lng": -63.1733726,
+      "district": "Las Brisas",
+      "regional": false,
+      "verified": true,
+      "displayName": "Lomo's Grill, Avenida Beni, Hamacas, Norte Interno, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "hooters": {
+      "lat": -17.7486263,
+      "lng": -63.1759199,
+      "district": "Las Brisas",
+      "regional": false,
+      "verified": true,
+      "displayName": "Hooters, Calle Marañón, Norte, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "el-vocho": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "restaurant-g77-china": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "oishi-comida-asiatica-creativa": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "kinoa-restaurant": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "sir-pieper-2nd-location": {
+      "lat": -17.7584767,
+      "lng": -63.1992681,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Sir Pieper, Calle I, Villa Brígida, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "protein-house-bolivia": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "demos-cafe": {
+      "lat": -17.7671261,
+      "lng": -63.1940295,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Demos, Calle Hugo Wast, Avaroa, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "city-bistro": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "paletas-yucatan-centro": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "la-pavlova": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "restaurante-corea": {
+      "lat": -19.0442755,
+      "lng": -65.2590806,
+      "district": null,
+      "regional": true,
+      "verified": true,
+      "displayName": "Corea, Avenida Hernando Siles Zuaso, Central, Sucre, Municipio Sucre, Provincia Oropeza, Chuquisaca, Bolivia",
+      "importance": 0.00006921263447008495
+    },
+    "el-fogon": {
+      "lat": -17.8069347,
+      "lng": -63.1976663,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "El Fogon del Cerdo, Calle Destacamento 132, El Carmen, El Pari, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "fratelli-s": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "el-huarike-mar-tierra": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "pollos-a-la-brasa-peruchin": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "pollo-campeon": {
+      "lat": -17.803992,
+      "lng": -63.1999386,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Pollo Campeón, Avenida Grigotá, Mac Petrol, El Pari, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "restaurate-vegetariano-su-salud": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "fratelli-s-2nd-location": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "jamuy-wings-burgers": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "siipi": {
+      "lat": -17.7743316,
+      "lng": -63.1805125,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Siipi, Avenida Uruguay, Máquina Vieja, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "tagliatella": {
+      "lat": -17.3903807,
+      "lng": -66.1769215,
+      "district": null,
+      "regional": true,
+      "verified": true,
+      "displayName": "Tagliatella Restaurante, Calle San Felipe de Austria, Villa Carlos Berdecio, Molle, Cochabamba, Cercado, Cochabamba, Bolivia",
+      "importance": 0.00006398641947046643
+    },
+    "johnny-rockets": {
+      "lat": -17.7541127,
+      "lng": -63.1990109,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Johnny Rockets, Avenida Antonio Vaca Diez, Villa Brígida, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "pamper-s-resto-bar": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "gigi-s-kitchen": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "hamburguesas-toby": {
+      "lat": -17.7977888,
+      "lng": -63.1343382,
+      "district": "Parque Urbano",
+      "regional": false,
+      "verified": true,
+      "displayName": "Hamburguesas Toby, Calle 9 Este, Pampa de la Cruz, Villa 1 de Mayo, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "san-sha": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "restaurante-toborochi": {
+      "lat": -17.7901364,
+      "lng": -63.1875955,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Pollo Toborochi, Avenida Cañoto, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "boston-grill": {
+      "lat": -17.7529504,
+      "lng": -63.1562925,
+      "district": "Las Brisas",
+      "regional": false,
+      "verified": true,
+      "displayName": "Boston Grill, Calle 3 Norte, Magisterio, Norte Interno, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "salteneria-jet-set": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "brasargent-rodizio": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "santa-brasa-2nd-location": {
+      "lat": -17.7727268,
+      "lng": -63.1821375,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Santa Brasa, Avenida Monseñor Rivero, Bartos, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "el-gran-calamar-restaurant-marisqueria": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "miso-restoramen": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "santa-maria": {
+      "lat": -17.8219334,
+      "lng": -63.2553345,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Santa María, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.08006424429694053
+    },
+    "naoki-sushi-equipetrol": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "ambika-cafe-y-restaurante": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "cada-dia-restaurante-vegetariano": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "cornelia": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "nacho-libre-tex-mex": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "meow-sushi-bar": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "el-cumpito": {
+      "lat": -17.8074503,
+      "lng": -63.1967223,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "El cumpito 7, Calle Miguel Castro Pinto, El Carmen, El Pari, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "burger-king": {
+      "lat": -17.7550677,
+      "lng": -63.176846,
+      "district": "Las Brisas",
+      "regional": false,
+      "verified": true,
+      "displayName": "Burger King, Calle Manuel Marcó, Hamacas, Norte Interno, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "sonnengarten": {
+      "lat": -17.8894405,
+      "lng": -63.3102039,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Sonnengarten, Doble Vía Santa Cruz-La Guardia, La Guardia, Municipio La Guardia, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.00003780193789573537
+    },
+    "maringa-coffee": {
+      "lat": -17.8911019,
+      "lng": -63.3319952,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Maringa Coffee, Calle José Vicente Solís y Ramos, La Guardia, Municipio La Guardia, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.00003780193789573537
+    },
+    "santena": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "milan-express": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "donatello": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "restaurant-chicharrones-dona-mechita": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "restaurant-el-movima": {
+      "lat": -17.782236,
+      "lng": -63.1625549,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Restaurant El Movima, 2250, Avenida Virgen de Cotoca, San José Obrero, Norte Interno, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "monalisa-bier-haus": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "pinche-taco": {
+      "lat": -17.7573521,
+      "lng": -63.1786208,
+      "district": "Zoo",
+      "regional": false,
+      "verified": true,
+      "displayName": "Pinche Taco, Avenida Cristo Redentor, Mc Donald, Norte Interno, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "88-burguer-salads": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "tgi-fridays": {
+      "lat": -17.7530643,
+      "lng": -63.1992045,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "TGI Fridays, Avenida Costanera, 2 de Abril, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "restaurant-landhaus-el-fuerte": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "borde-rio": {
+      "lat": -17.7637835,
+      "lng": -63.1684288,
+      "district": "Las Brisas",
+      "regional": false,
+      "verified": true,
+      "displayName": "Borde Río, Avenida Alemania, Los Tusequis, Norte Interno, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "glorimar-saltenas-centro": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "la-catedral-taberna": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "la-fonda-de-ariel": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "argentino-restaurant-premium": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "bohemia-resto-bar": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "la-peta-gourmet": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "el-vegano-arrepentido": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "memphis": {
+      "lat": -17.7589883,
+      "lng": -63.1992265,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Memphis, 2220, Avenida San Martín, Sirari, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "bits-cream": {
+      "lat": -17.76452,
+      "lng": -63.1476452,
+      "district": "Las Brisas",
+      "regional": false,
+      "verified": true,
+      "displayName": "Bits & Cream, Calle Diagonal 3, CONAVI, Norte Interno, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "the-taj-mahal-indian-restaurant": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "restaurante-el-hornero": {
+      "lat": -17.7528276,
+      "lng": -63.164183,
+      "district": "Las Brisas",
+      "regional": false,
+      "verified": true,
+      "displayName": "El Hornero, Avenida Alemania, Bancruz, Norte Interno, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "burger-hero": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "sandy-snack-cafe": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "restaurant-vegana-la-vega": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "la-condesa": {
+      "lat": -17.7287927,
+      "lng": -63.1672959,
+      "district": "Las Brisas",
+      "regional": false,
+      "verified": true,
+      "displayName": "La Condesa, Avenida Cristo Redentor, San Jorge, Norte, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "natsumi-sushi": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "aji-amarillo": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "310-smashburger": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "el-chiocchio": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "make-sushi-restaurant": {
+      "lat": -16.5344158,
+      "lng": -68.0725396,
+      "district": null,
+      "regional": true,
+      "verified": true,
+      "displayName": "Make Sushi, Avenida Alexander, El Porvenir, Calacoto, Sur, Municipio Nuestra Señora de La Paz, Provincia Pedro Domingo Murillo, La Paz, Bolivia",
+      "importance": 0.00006890897993434069
+    },
+    "tajy-bar": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "chancho-al-palo": {
+      "lat": -17.784026,
+      "lng": -63.2046988,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Chancho Al Palo, Avenida Noel Kempff, Villa San Luis, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "pollo-el-solar": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "vida-y-salud": {
+      "lat": -17.8191789,
+      "lng": -63.2111618,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Vida y Salud, Avenida Quinto Anillo, 26 de Enero, El Bajío, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "q-gibanga": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "la-oveja-negra": {
+      "lat": -17.7547801,
+      "lng": -63.1715553,
+      "district": "Las Brisas",
+      "regional": false,
+      "verified": true,
+      "displayName": "La Oveja Negra, Calle Las Barreras, Bancruz, Norte Interno, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "matambre-grill": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "chocolate-baure": {
+      "lat": -17.7692586,
+      "lng": -63.1951976,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Chocolate BAURE, 206, Calle Enrique Finot, Faremafu, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "juices-bar": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "papote-smoky-food-shop": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "restaurante-la-condesa": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "pascualini-restaurante": {
+      "lat": -17.7893556,
+      "lng": -63.1763166,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Pascualini, Calle Potosí, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "brooklyn-resto-bar": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "restaurant-guapuru": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "sabor-a-mar": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "bacon-steak-and-chicken": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "sushicake": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "bricks": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "tuvino": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "brasil-sul-resto-bar": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "antojitos-maria-belen": {
+      "lat": -17.7732064,
+      "lng": -63.1866875,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Antojitos María Belén, Calle F. Platanillos, Bartos, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "res-la-porcina": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "grillados": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "xin-guang": {
+      "lat": -17.7849312,
+      "lng": -63.193189,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "restaurant Xin Guang, Avenida Landivar, Bancario, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "picnic-complices-del-sabor": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "malinche": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "il-chilindrino": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "locoto-s": {
+      "lat": -17.7449433,
+      "lng": -63.1665047,
+      "district": "Las Brisas",
+      "regional": false,
+      "verified": true,
+      "displayName": "Locoto's Restaurante Cochabambino, Avenida Beni, Canada Dry, Norte, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "panaderia-artesanal-bon-pain": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "jr-hotel-restaurant": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "ave-pizza": {
+      "lat": -17.7715533,
+      "lng": -63.2026631,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Ave Pizza, Avenida Noel Kempff, Villa San Luis, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "acai-corner-healthy-food": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "green-lovers-2nd-location": {
+      "lat": -17.7606742,
+      "lng": -63.1956212,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Green Lovers, Calle Doctor Alejandro Ramírez, Sirari, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "patio-madera-san-martin": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "la-galeria": {
+      "lat": -17.781265,
+      "lng": -63.2043444,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "La Galeria, Avenida Noel Kempff, Villa San Luis, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "el-palacio-del-charque": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "monkey-wings": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "snobiz-bolivia": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "la-croissanteria-paris": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "smashburger": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "pacumutus-dona-trini": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "caffe-italia": {
+      "lat": -17.76464,
+      "lng": -63.1990861,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Coffe Italia, Avenida Marcelo Terceros Bánzer, El Carmen, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "qgibanga-2nd-listing": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "buenisimo": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "zap-heladeria": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "don-bodo": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "tang-express": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "mar-de-limon": {
+      "lat": -17.7520483,
+      "lng": -63.1687726,
+      "district": "Las Brisas",
+      "regional": false,
+      "verified": true,
+      "displayName": "Restaurant Mar de Limón, Calle Rurrenabaque, Bancruz, Norte Interno, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "la-bistecca": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "khabala": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "cittadino": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "restaurante-milan": {
+      "lat": -16.5266896,
+      "lng": -68.0944891,
+      "district": null,
+      "regional": true,
+      "verified": true,
+      "displayName": "Milan, Avenida Jorge Carrasco, Bolognia, Irpavi, Obrajes, Sur, Municipio Nuestra Señora de La Paz, Provincia Pedro Domingo Murillo, La Paz, Bolivia",
+      "importance": 0.00006890897993434069
+    },
+    "quinta-restaurante-musurita": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "pinche-taco-2nd-location": {
+      "lat": -17.7573521,
+      "lng": -63.1786208,
+      "district": "Zoo",
+      "regional": false,
+      "verified": true,
+      "displayName": "Pinche Taco, Avenida Cristo Redentor, Mc Donald, Norte Interno, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "buteco-resto-bar": {
+      "lat": -17.7756952,
+      "lng": -63.1819504,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Buteco Resto Bar, Calle 24 de Septiembre, Bartos, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "hong-fa": {
+      "lat": -17.7984782,
+      "lng": -63.1801679,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Restaurant Hong Fa, Calle Independencia, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "san-miguel": {
+      "lat": -17.7467528,
+      "lng": -63.1784912,
+      "district": "Las Brisas",
+      "regional": false,
+      "verified": true,
+      "displayName": "San Miguel, ENDE, Norte Interno, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "ebisu-sushi-santa-cruz-de-la-sierra": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "asadero": {
+      "lat": -1.6712359,
+      "lng": -78.658932,
+      "district": null,
+      "regional": true,
+      "verified": true,
+      "displayName": "Asadero la posada, Bolivia, Riobamba, Chimborazo, 060101, Ecuador",
+      "importance": 0.00005457312886239441
+    },
+    "bok-bok-wings-more": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "el-rodeo-churrasqueria": {
+      "lat": -16.5389753,
+      "lng": -68.0888796,
+      "district": null,
+      "regional": true,
+      "verified": true,
+      "displayName": "Churrasqueria El Rodeo, 7806, Calle 11. Carlos Salinas Aramayo, Calacoto, Sur, Municipio Nuestra Señora de La Paz, Provincia Pedro Domingo Murillo, La Paz, Bolivia",
+      "importance": 0.00006890897993434069
+    },
+    "taverna-lusitana": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "rustica-pizzeria-paseo-central": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "bahrem-grill-bar": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "cocina-bohemia": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "santena-2nd-location": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "cafe-velo": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "aji-amarillo-2nd-listing": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "simply-eat-american-bbq": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "doumo-las-brisas": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "concordia": {
+      "lat": -17.7928187,
+      "lng": -63.1763467,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Cristo de la Concordia, Calle Diego de Mendoza, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "food-truck-parking": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "min-pao": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "sushi-san": {
+      "lat": -17.7568657,
+      "lng": -63.1657345,
+      "district": "Las Brisas",
+      "regional": false,
+      "verified": true,
+      "displayName": "Sushi, Avenida Alemania, Bancruz, Norte Interno, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "bruse-pizzeria": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "el-rincon-que-debes-conocer": {
+      "lat": -17.7675397,
+      "lng": -63.1683629,
+      "district": "Zoo",
+      "regional": false,
+      "verified": true,
+      "displayName": "El Rincón que debes conocer, Calle Los Guayabos, Los Tusequis, Norte Interno, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "360-bistro-garden": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "mr-jiba": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "pollo-batman": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "pollo-batman-2nd-location": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "yampi": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "charques-y-chelas": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "tequecheese-bolivia": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "aty-restaurante": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "la-griferia-bolivia": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "queen-burger": {
+      "lat": -17.7685441,
+      "lng": -63.1530641,
+      "district": "Las Brisas",
+      "regional": false,
+      "verified": true,
+      "displayName": "Queen Burger, Avenida Paraguá, CONAVI, Norte Interno, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "la-ollita-de-plata": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "establo": {
+      "lat": -17.4114412,
+      "lng": -66.199742,
+      "district": null,
+      "regional": true,
+      "verified": true,
+      "displayName": "establo, Molle, Cochabamba, Cercado, Cochabamba, Bolivia",
+      "importance": 0.08006398641947048
+    },
+    "tang": {
+      "lat": -17.7870697,
+      "lng": -63.1784256,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Tang Restaurant, Calle Republiquetas, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "gallo-negro-taco-birria": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "dorata": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "900-pizzas-artesanales": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "palo-santo": {
+      "lat": -21.2643337,
+      "lng": -63.4458867,
+      "district": null,
+      "regional": true,
+      "verified": true,
+      "displayName": "Avenida Palo Santo, Villa Montes, Puesto Uno, Villa Montes, Gran Chaco, Tarija, Bolivia",
+      "importance": 0.05337741283283738
+    },
+    "asador-pizzeria-gaucho-camba": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "carnico-grill-bistro": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "jack-s-roman": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "avenida-uruguay-456": {
+      "lat": -17.7746246,
+      "lng": -63.1772057,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Avenida Uruguay, Barrio Máquina Vieja, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "wook-food": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "aca-o-alla": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "restaurante-usanza-cocina-casera": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "natu-life": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "la-pascana-del-norte": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "la-posada-de-miguel": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "la-casita-del-sabor": {
+      "lat": -16.5253291,
+      "lng": -68.1478383,
+      "district": null,
+      "regional": true,
+      "verified": true,
+      "displayName": "La Casita del Sabor, Avenida Alfredo Sanjines, PLAN 175, Distrito 1, El Alto, Provincia Pedro Domingo Murillo, La Paz, Bolivia",
+      "importance": 0.00005351567864495334
+    },
+    "pollo-maton": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "providencia-resto-bar": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "alquimia-experiencia-elemental": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "fratelli-s-3rd-location": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "burger-match-equip": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "panera": {
+      "lat": -17.7845652,
+      "lng": -63.1847674,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "La Panera, Calle Colón, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "cada-dia-2nd-location": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "frankie-s-pizza": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "awapanela": {
+      "lat": -17.7483872,
+      "lng": -63.1483088,
+      "district": "Las Brisas",
+      "regional": false,
+      "verified": true,
+      "displayName": "AWAPANELA, 1410, Avenida Mutualista, Dr. Melchor Pinto Parada, Norte, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "sandwiches-dona-lucha": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "toromochos": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "parrilla-90": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "senor-kilo": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "american-hot-dogs": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "cua-cua-2nd-location": {
+      "lat": -17.7533391,
+      "lng": -63.1993959,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Cua Cua, Avenida Costanera, 2 de Abril, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "pizza-mia": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "pilaik-restaurant-2nd-location": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "xpress-by-factory": {
+      "lat": -16.511051,
+      "lng": -68.1221214,
+      "district": null,
+      "regional": true,
+      "verified": true,
+      "displayName": "Xpress by Factory, 2631, Avenida Aniceto Arce, Centro, Municipio Nuestra Señora de La Paz, Provincia Pedro Domingo Murillo, La Paz, Bolivia",
+      "importance": 0.00006890897993434069
+    },
+    "paletas-yucatan-2nd-location": {
+      "lat": -17.7642058,
+      "lng": -63.1477055,
+      "district": "Las Brisas",
+      "regional": false,
+      "verified": true,
+      "displayName": "Paletas Yucatán, Calle Diagonal 3, CONAVI, Norte Interno, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "om-meriendas-con-zsentido": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "adobe-casa-pueblo": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "yiyo-pollo-broasted": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "taqueria-monterrey-santa-cruz": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "samu-pizza": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "sensorium": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "toromocho": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "yellow-submarine-hot-dog": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "bits-and-cream-2nd-listing": {
+      "lat": -17.7936988,
+      "lng": -63.1342928,
+      "district": "Parque Urbano",
+      "regional": false,
+      "verified": true,
+      "displayName": "Bits And Cream, Plaza Primero de Mayo, El Porvenir, Villa 1 de Mayo, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "avenida-26-de-febrero": {
+      "lat": -17.7849072,
+      "lng": -63.1949106,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Avenida 26 de Febrero, Bancario, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "avenida-argentina": {
+      "lat": -17.7945574,
+      "lng": -63.1746201,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Avenida Argentina, Choferes, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "avenida-argomosa": {
+      "lat": -17.7802658,
+      "lng": -63.1724856,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Avenida Argomosa, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "avenida-brasil": {
+      "lat": -17.785772,
+      "lng": -63.1481175,
+      "district": "Parque Urbano",
+      "regional": false,
+      "verified": true,
+      "displayName": "Avenida Brasil, Totaí, Estación Argentina, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "avenida-canoto": {
+      "lat": -17.7790656,
+      "lng": -63.1884773,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Avenida Cañoto, Palermo, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "avenida-charcas": {
+      "lat": -17.7795084,
+      "lng": -63.1727134,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Avenida Charcas, Obrero, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "avenida-ejercito-nacional": {
+      "lat": -17.7973855,
+      "lng": -63.181982,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Avenida Ejército Nacional, Barrio Militar, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "avenida-francisco-velarde": {
+      "lat": -17.7924596,
+      "lng": -63.1814272,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Avenida Francisco Velarde, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "avenida-guenda": {
+      "lat": -17.7836728,
+      "lng": -63.1957222,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Avenida Güenda, Bancario, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "avenida-irala": {
+      "lat": -17.7914815,
+      "lng": -63.1751324,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Avenida Irala, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "avenida-landivar": {
+      "lat": -17.7847174,
+      "lng": -63.191812,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Avenida Landivar, Bancario, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "avenida-las-americas": {
+      "lat": -17.79634,
+      "lng": -63.1769443,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Avenida Las Américas, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "avenida-melchor-pinto": {
+      "lat": -17.78298,
+      "lng": -63.1718678,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Avenida Melchor Pinto, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "avenida-monsenor-rivero": {
+      "lat": -17.7706921,
+      "lng": -63.1823898,
+      "district": "Zoo",
+      "regional": false,
+      "verified": true,
+      "displayName": "Avenida Monseñor Rivero, Bartos, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "avenida-roca-y-coronado": {
+      "lat": -17.7854642,
+      "lng": -63.2055315,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Avenida Roca y Coronado, Santa Rosita, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "avenida-teniente-walter-vega": {
+      "lat": -17.7908176,
+      "lng": -63.1721161,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Avenida Teniente Walter Vega, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "avenida-uruguay": {
+      "lat": -17.7748342,
+      "lng": -63.1815954,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Avenida Uruguay, Máquina Vieja, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "avenida-viedma": {
+      "lat": -17.7887332,
+      "lng": -63.1712458,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Avenida Viedma, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-21-de-mayo": {
+      "lat": -17.7734538,
+      "lng": -63.1848294,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle 21 de Mayo, Bartos, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-24-de-septiembre": {
+      "lat": -17.7286207,
+      "lng": -63.1406235,
+      "district": "Las Brisas",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle 24 de Septiembre, San Martín, Norte, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-adan-gutierrez": {
+      "lat": -17.777439,
+      "lng": -63.1816103,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Adán Gutiérrez, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-alameda-potosi": {
+      "lat": -17.7924945,
+      "lng": -63.1753729,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Alameda Potosí, Choferes, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-alfredo-jordan": {
+      "lat": -17.7863474,
+      "lng": -63.1923901,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Alfredo Jordán, Fé y Alegría, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-andres-ibanez": {
+      "lat": -17.7764954,
+      "lng": -63.1838235,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Andrés Ibáñez, Bartos, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-andres-manso": {
+      "lat": -17.7945631,
+      "lng": -63.1791654,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Andrés Manso, Barrio Militar, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-arenales": {
+      "lat": -17.7811262,
+      "lng": -63.1750464,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Arenales, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-aroma": {
+      "lat": -17.7825148,
+      "lng": -63.1783694,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Aroma, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-avaroa": {
+      "lat": -17.7329265,
+      "lng": -63.1364368,
+      "district": "Las Brisas",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Avaroa, Los Pinos, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-ayacucho": {
+      "lat": -17.7840249,
+      "lng": -63.1857175,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Ayacucho, Bancario, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-ballivian": {
+      "lat": -17.7842207,
+      "lng": -63.1740413,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Ballivián, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-barron": {
+      "lat": -17.7793292,
+      "lng": -63.1740414,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Barrón, Barrio Máquina Vieja, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-beni": {
+      "lat": -17.7708331,
+      "lng": -63.1791011,
+      "district": "Zoo",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Beni, Máquina Vieja, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-bolivar": {
+      "lat": -17.7822514,
+      "lng": -63.1759633,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Bolívar, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-buenos-aires": {
+      "lat": -17.7812887,
+      "lng": -63.1899935,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Buenos Aires, Palermo, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-caballero": {
+      "lat": -17.7789334,
+      "lng": -63.1785693,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Caballero, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-camiri": {
+      "lat": -17.7869358,
+      "lng": -63.1854983,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Camiri, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-campero": {
+      "lat": -17.7789886,
+      "lng": -63.176969,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Campero, Máquina Vieja, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-capitan-mariano-arrien": {
+      "lat": -17.7933944,
+      "lng": -63.1678952,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Capitán Mariano Arrién, COTECAR, Estación Argentina, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-castulo-chavez": {
+      "lat": -17.7664379,
+      "lng": -63.1847581,
+      "district": "Zoo",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Cástulo Chávez, Avaroa, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-celso-castedo": {
+      "lat": -17.7758624,
+      "lng": -63.1805814,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Celso Castedo, Máquina Vieja, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-charcas": {
+      "lat": -17.7799827,
+      "lng": -63.1758031,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Charcas, Obrero, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-chiquitos": {
+      "lat": -17.776514,
+      "lng": -63.1722807,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Chiquitos, Obrero, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-chuquisaca": {
+      "lat": -17.7884047,
+      "lng": -63.1799534,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Chuquisaca, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-cobija": {
+      "lat": -17.7342492,
+      "lng": -63.1383143,
+      "district": "Las Brisas",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Cobija, Los Pinos, Norte, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-cochabamba": {
+      "lat": -17.7889393,
+      "lng": -63.1772021,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Cochabamba, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-colon": {
+      "lat": -17.7889639,
+      "lng": -63.1841244,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Colón, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-cordillera": {
+      "lat": -17.786055,
+      "lng": -63.1870577,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Cordillera, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-cuatro-ojos": {
+      "lat": -17.7826018,
+      "lng": -63.1987836,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Cuatro Ojos, Villa San Luis, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-cuellar": {
+      "lat": -17.7795466,
+      "lng": -63.1869384,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Cuéllar, Palermo, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-diego-de-mendoza": {
+      "lat": -17.7928815,
+      "lng": -63.1762837,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Diego de Mendoza, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-don-bosco": {
+      "lat": -17.7932523,
+      "lng": -63.1756544,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Don Bosco, Choferes, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-espana": {
+      "lat": -17.7769495,
+      "lng": -63.1855063,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle España, Bartos, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-flora-salas": {
+      "lat": -17.7900477,
+      "lng": -63.1730183,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Flora Salas, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-florida": {
+      "lat": -17.7819577,
+      "lng": -63.1852576,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Florida, Bancario, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-fray-del-pilar": {
+      "lat": -17.7868244,
+      "lng": -63.1704639,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Fray del Pilar, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-froilan-cecilio-jordan": {
+      "lat": -17.7870099,
+      "lng": -63.190714,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Froilán Cecilio Jordán, Fé y Alegría, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-general-saavedra": {
+      "lat": -17.789748,
+      "lng": -63.1747015,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle General Saavedra, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-guenda": {
+      "lat": -17.7899949,
+      "lng": -63.1921691,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Güendá, Barrio La Ramada, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-h-salazar": {
+      "lat": -17.7929915,
+      "lng": -63.1769375,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Diego de Mendoza, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-independencia": {
+      "lat": -17.7906659,
+      "lng": -63.1817157,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Independencia, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-ingavi": {
+      "lat": -17.7856797,
+      "lng": -63.1909858,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Ingavi, Fé y Alegría, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-isabel-la-catolica": {
+      "lat": -17.7866659,
+      "lng": -63.1862122,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Isabel La Católica, Fé y Alegría, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-isoso": {
+      "lat": -17.7924823,
+      "lng": -63.185923,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Isoso, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-jose-callau": {
+      "lat": -17.7853981,
+      "lng": -63.1882976,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle José Callau, Fé y Alegría, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-junin": {
+      "lat": -17.7829987,
+      "lng": -63.1857441,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Junín, Bancario, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-la-gaiba": {
+      "lat": -17.7799051,
+      "lng": -63.1706179,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle La Gaiba, Obrero, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-la-paz": {
+      "lat": -17.7382623,
+      "lng": -63.0967616,
+      "district": "Las Brisas",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle La Paz, El Dorado, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-la-riva": {
+      "lat": -17.7915581,
+      "lng": -63.1833354,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle La Riva, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-lemoine": {
+      "lat": -17.7903367,
+      "lng": -63.1828348,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Lemoine, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-libertad": {
+      "lat": -17.7725448,
+      "lng": -63.18402,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Libertad, Bartos, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-m-l-oliden": {
+      "lat": -17.7832606,
+      "lng": -63.1693989,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle M. L. Oliden, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-manuel-ignacio-salvatierra": {
+      "lat": -17.7862314,
+      "lng": -63.1699822,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Manuel Ignacio Salvatierra, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-mercado": {
+      "lat": -17.7883362,
+      "lng": -63.1831135,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Mercado, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-moldes": {
+      "lat": -17.7887986,
+      "lng": -63.1761943,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Moldes, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-monsenor-obispo-aguirre": {
+      "lat": -17.7778106,
+      "lng": -63.1757569,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Monseñor Obispo Aguirre, Obrero, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-monsenor-salvatierra": {
+      "lat": -17.7891587,
+      "lng": -63.1819993,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Monseñor Salvatierra, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-murillo": {
+      "lat": -17.7779093,
+      "lng": -63.1800879,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Murillo, Máquina Vieja, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-nordenskiold": {
+      "lat": -17.7840352,
+      "lng": -63.1940579,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Nordenskiöld, Bancario, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-nuflo-de-chavez": {
+      "lat": -17.7849024,
+      "lng": -63.1704815,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Ñuflo de Chávez, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-oruro": {
+      "lat": -17.8275514,
+      "lng": -63.102714,
+      "district": "Parque Urbano",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Oruro, Roberto Fernández, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-padre-jose-arce": {
+      "lat": -17.7833446,
+      "lng": -63.1702692,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Padre José Arce, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-paititi": {
+      "lat": -17.7822807,
+      "lng": -63.1704456,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Paitití, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-parapeti": {
+      "lat": -17.7909005,
+      "lng": -63.1849455,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Parapetí, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-pari": {
+      "lat": -17.7876704,
+      "lng": -63.1858437,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Pari, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-peru": {
+      "lat": -17.7753139,
+      "lng": -63.1871435,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Perú, Panamericano, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-picada": {
+      "lat": -17.7936694,
+      "lng": -63.1849621,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Picada, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-potosi": {
+      "lat": -17.7891284,
+      "lng": -63.1763308,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Potosí, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-quijarro": {
+      "lat": -17.7457232,
+      "lng": -63.0996685,
+      "district": "Parque Urbano",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Quijarro, Urbanizacion Dorado Centro, El Dorado, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-rafael-pena": {
+      "lat": -17.7780374,
+      "lng": -63.1862777,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Rafael Peña, Palermo, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-rene-moreno": {
+      "lat": -17.7880063,
+      "lng": -63.1810673,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle René Moreno, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-republiquetas": {
+      "lat": -17.7874147,
+      "lng": -63.1793632,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Republiquetas, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-rio-nuevo": {
+      "lat": -17.78627,
+      "lng": -63.1904935,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Río Nuevo, Fé y Alegría, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-santa-barbara": {
+      "lat": -17.7821395,
+      "lng": -63.1858407,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Santa Bárbara, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-sara": {
+      "lat": -17.7819013,
+      "lng": -63.1872505,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Sara, Palermo, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-senda": {
+      "lat": -17.7947739,
+      "lng": -63.1848009,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Senda, Barrio Militar, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-seoane": {
+      "lat": -17.7804413,
+      "lng": -63.1873861,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Seoane, Palermo, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-soliz-de-olguin": {
+      "lat": -17.795518,
+      "lng": -63.1859603,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Soliz de Olguín, El Pari, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-suarez-arana": {
+      "lat": -17.7787748,
+      "lng": -63.1755157,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Suárez Arana, Obrero, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-suarez-de-figueroa": {
+      "lat": -17.7860192,
+      "lng": -63.1842037,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Suárez de Figueroa, Fé y Alegría, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-sucre": {
+      "lat": -17.7832719,
+      "lng": -63.1753179,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Sucre, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-tarija": {
+      "lat": -17.8271021,
+      "lng": -63.1013946,
+      "district": "Parque Urbano",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Tarija, Roberto Fernández, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-teniente-juan-humberto-rivero": {
+      "lat": -17.78847,
+      "lng": -63.1705893,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Teniente Juan Humberto Rivero, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-toledo-pimentel": {
+      "lat": -17.787138,
+      "lng": -63.1737006,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Toledo Pimentel, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-tumusla": {
+      "lat": -17.8051339,
+      "lng": -63.1030923,
+      "district": "Parque Urbano",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Tumusla, 3 de Mayo, Villa 1 de Mayo, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-valle-grande": {
+      "lat": -17.7944068,
+      "lng": -63.18414,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Valle Grande, Barrio Militar, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-velasco": {
+      "lat": -17.7920215,
+      "lng": -63.1827163,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Velasco, La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-warnes": {
+      "lat": -17.7859701,
+      "lng": -63.1767268,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Warnes, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "calle-yapacani": {
+      "lat": -17.7868714,
+      "lng": -63.189904,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Yapacani, Fé y Alegría, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "pasaje-24-de-septiembre": {
+      "lat": -17.7754168,
+      "lng": -63.1816454,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Pasaje 24 de Septiembre, Máquina Vieja, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "pasaje-26-de-febrero": {
+      "lat": -17.7850356,
+      "lng": -63.189503,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Pasaje 26 de Febrero, Fé y Alegría, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "pasaje-ingavi": {
+      "lat": -17.785324,
+      "lng": -63.1927438,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Calle Pasaje Ingavi, Fé y Alegría, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "pasaje-virgilio-oyola": {
+      "lat": -17.7771762,
+      "lng": -63.1779137,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Pasaje Virgilio Oyola, Barrio Máquina Vieja, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "manzana-uno-pedestrian": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "paseo-peatonal-footway": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "sendero-peatonal-footway": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "rotonda-canoto": {
+      "lat": -17.7844148,
+      "lng": -63.1889073,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Rotonda Cañoto y Landivar, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.08006424429694053
+    },
+    "centro": {
+      "lat": -17.7829223,
+      "lng": -63.1819695,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.1467309109636072
+    },
+    "bancario": {
+      "lat": -17.7828183,
+      "lng": -63.1917534,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Bancario, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.08006424429694053
+    },
+    "la-adoberia": {
+      "lat": -17.7914818,
+      "lng": -63.1843714,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "La Adobería, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.08006424429694053
+    },
+    "edificio-cruz-del-sur-residential-complex": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    }
+  }
+}

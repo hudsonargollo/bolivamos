@@ -1,0 +1,1533 @@
+{
+  "total": 530,
+  "verified": 276,
+  "verifiedPct": 52.1,
+  "needsReviewCount": 254,
+  "needsReview": [
+    {
+      "id": "la-rinconada-ecoparque-resort",
+      "name": "La Rinconada Ecoparque & Resort",
+      "layer": "attraction",
+      "reason": "no-match"
+    },
+    {
+      "id": "parque-lomas-de-arena",
+      "name": "Parque Lomas de Arena",
+      "layer": "attraction",
+      "reason": "no-match"
+    },
+    {
+      "id": "cataratas-espejillos",
+      "name": "Cataratas Espejillos",
+      "layer": "attraction",
+      "reason": "no-match"
+    },
+    {
+      "id": "parque-ecologico-yvaga-guazu",
+      "name": "Parque Ecologico Yvaga Guazu",
+      "layer": "attraction",
+      "reason": "no-match"
+    },
+    {
+      "id": "pinturas-rupestres-en-las-cavernas-de-mataral",
+      "name": "Pinturas Rupestres en Las Cavernas de Mataral",
+      "layer": "attraction",
+      "reason": "no-match"
+    },
+    {
+      "id": "casa-cultural-melchor-pinto",
+      "name": "Casa Cultural Melchor Pinto",
+      "layer": "attraction",
+      "reason": "no-match"
+    },
+    {
+      "id": "museo-artecampo",
+      "name": "Museo Artecampo",
+      "layer": "attraction",
+      "reason": "no-match"
+    },
+    {
+      "id": "manzana-1-espacio-de-arte",
+      "name": "Manzana 1 Espacio de Arte",
+      "layer": "attraction",
+      "reason": "no-match"
+    },
+    {
+      "id": "museo-de-arte-sacro-monsenor-carlos-geriche-suarez",
+      "name": "Museo de Arte Sacro \"Monseñor Cárlos Geriche Suárez\"",
+      "layer": "attraction",
+      "reason": "no-match"
+    },
+    {
+      "id": "iglesias-de-la-chiquitania",
+      "name": "Iglesias de la Chiquitania",
+      "layer": "attraction",
+      "reason": "no-match"
+    },
+    {
+      "id": "parroquia-de-la-inmaculada-concepcion",
+      "name": "Parroquia de la Inmaculada Concepcion",
+      "layer": "attraction",
+      "reason": "no-match"
+    },
+    {
+      "id": "cotoca-sanctuary",
+      "name": "Cotoca Sanctuary",
+      "layer": "attraction",
+      "reason": "no-match"
+    },
+    {
+      "id": "beauty-plaza-mall",
+      "name": "Beauty Plaza Mall",
+      "layer": "attraction",
+      "reason": "no-match"
+    },
+    {
+      "id": "walking-tour-a-journey-through-the-history-of-santa-cruz",
+      "name": "WALKING TOUR – A journey through the history of Santa Cruz",
+      "layer": "tour",
+      "reason": "no-match"
+    },
+    {
+      "id": "private-tasting-of-award-winning-bolivian-wines",
+      "name": "Private Tasting of Award Winning Bolivian Wines",
+      "layer": "tour",
+      "reason": "no-match"
+    },
+    {
+      "id": "private-city-tour-nature-porongo-markets-and-culture",
+      "name": "Private City tour: Nature, Porongo, Markets and Culture",
+      "layer": "tour",
+      "reason": "no-match"
+    },
+    {
+      "id": "samaipata-fort-tour-ancient-ruins-in-1-full-day",
+      "name": "Samaipata Fort Tour: Ancient Ruins in 1 Full Day",
+      "layer": "tour",
+      "reason": "no-match"
+    },
+    {
+      "id": "wildlife-rescue-center-in-nature-reserve-near-santa-cruz",
+      "name": "Wildlife rescue center in nature reserve near Santa Cruz",
+      "layer": "tour",
+      "reason": "no-match"
+    },
+    {
+      "id": "discover-the-crucenos-valleys-at-your-own-pace-in-a-private-vehicle",
+      "name": "Discover the Cruceños Valleys, at your own pace in a private vehicle",
+      "layer": "tour",
+      "reason": "no-match"
+    },
+    {
+      "id": "entrance-to-our-world",
+      "name": "Entrance To Our World",
+      "layer": "tour",
+      "reason": "no-match"
+    },
+    {
+      "id": "amboro-national-park-overnight-tour-from-santa-cruz",
+      "name": "Amboro National Park Overnight Tour from Santa Cruz",
+      "layer": "tour",
+      "reason": "no-match"
+    },
+    {
+      "id": "2d-1n-getaway-che-route-historical-trekking-and-nature",
+      "name": "2D/1N Getaway: Che Route – Historical Trekking and Nature",
+      "layer": "tour",
+      "reason": "no-match"
+    },
+    {
+      "id": "3d-2n-getaway-on-the-che-guevara-route-live-the-adventure",
+      "name": "3D/2N Getaway on the Che Guevara Route Live the Adventure!",
+      "layer": "tour",
+      "reason": "no-match"
+    },
+    {
+      "id": "4d-3n-expedition-che-guevara-route-disconnect-from-the-world",
+      "name": "4D/3N Expedition: Che Guevara Route – Disconnect from the World",
+      "layer": "tour",
+      "reason": "no-match"
+    },
+    {
+      "id": "after-the-footsteps-of-the-jaguar-3-day-kaa-iya-expedition",
+      "name": "After the Footsteps of the Jaguar 3-Day Kaa Iya Expedition",
+      "layer": "tour",
+      "reason": "no-match"
+    },
+    {
+      "id": "private-8-day-bolivia-tour-from-santa-cruz",
+      "name": "Private 8-Day Bolivia Tour from Santa Cruz",
+      "layer": "tour",
+      "reason": "no-match"
+    },
+    {
+      "id": "plants-and-habitats-in-the-elbow-of-the-andes",
+      "name": "Plants and Habitats in the Elbow of the Andes",
+      "layer": "tour",
+      "reason": "no-match"
+    },
+    {
+      "id": "airport-shuttle-santa-cruz",
+      "name": "Airport Shuttle Santa Cruz",
+      "layer": "transfer",
+      "reason": "no-match"
+    },
+    {
+      "id": "transfer-in-airport-viru-viru-to-santa-cruz",
+      "name": "Transfer IN – Airport Viru Viru to Santa Cruz",
+      "layer": "transfer",
+      "reason": "no-match"
+    },
+    {
+      "id": "are-you-looking-for-a-safe-private-shuttle-in-santa-cruz",
+      "name": "Are you looking for a Safe Private Shuttle in Santa Cruz?",
+      "layer": "transfer",
+      "reason": "no-match"
+    },
+    {
+      "id": "midnight-transfer-in-airport-viru-viru-to-santa-cruz",
+      "name": "Midnight Transfer In – Airport Viru Viru to Santa Cruz",
+      "layer": "transfer",
+      "reason": "no-match"
+    },
+    {
+      "id": "private-transfer-santa-cruz-city-airport-vvi-by-suv-in-out-options",
+      "name": "Private Transfer Santa Cruz City ⇄ Airport VVI by SUV (in & out options)",
+      "layer": "transfer",
+      "reason": "no-match"
+    },
+    {
+      "id": "private-executive-chauffeur-service-premium-suv",
+      "name": "Private Executive Chauffeur Service (Premium SUV)",
+      "layer": "transfer",
+      "reason": "no-match"
+    },
+    {
+      "id": "tourist-and-urban-transportation",
+      "name": "Tourist and Urban Transportation",
+      "layer": "transfer",
+      "reason": "no-match"
+    },
+    {
+      "id": "el-aljibe-comida-tipica",
+      "name": "El Aljibe Comida Tipica",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "pinata-wey",
+      "name": "Piñata Wey",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "kao-by-sach-a",
+      "name": "KAO by Sach'a",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "as-de-copas",
+      "name": "As de Copas",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "vaca-morena",
+      "name": "Vaca Morena",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "santo-peccato",
+      "name": "Santo Peccato",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "caudilla",
+      "name": "Caudilla",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "fabric-sushi-nikkei-santa-cruz",
+      "name": "Fabric Sushi Nikkei Santa Cruz",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "ines-espana-restaurante",
+      "name": "Ines Espana Restaurante",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "la-casa-del-camba-urubo",
+      "name": "La Casa Del Camba Urubó",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "1987-rodizio",
+      "name": "1987 Rodizio",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "mangarosa-brasserie",
+      "name": "Mangarosa Brasserie",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "la-caballeriza",
+      "name": "La Caballeriza",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "rodizio-brazzeiro",
+      "name": "Rodizio Brazzeiro",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "zanella-restaurante",
+      "name": "Zanella Restaurante",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "noi-pizzeria",
+      "name": "Noi Pizzeria",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "dossier-restaurante",
+      "name": "Dossier Restaurante",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "san-yuan-chinese-food",
+      "name": "San Yuan Chinese Food",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "sir-pieper-restro-bar",
+      "name": "Sir Pieper Restro-Bar",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "basilico-pizzeria",
+      "name": "Basilico Pizzeria",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "mar-y-fuego-restaurant",
+      "name": "Mar y Fuego Restaurant",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "senor-lomo",
+      "name": "Señor Lomo",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "yorimichi",
+      "name": "Yorimichi",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "lorca-cafe",
+      "name": "Lorca Cafe",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "sbc-rooftop",
+      "name": "Sbc – Rooftop",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "kovi",
+      "name": "Kovi",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "botanica-equipetrol",
+      "name": "Botánica (Equipetrol)",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "naoki-sushi-delivery",
+      "name": "Naoki Sushi Delivery",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "pizza-bizarra",
+      "name": "Pizza Bizarra",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "serafina-cucina-italiana",
+      "name": "Serafina Cucina Italiana",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "shimaya-ramen-scz-equipetrol",
+      "name": "Shimaya Ramen Scz Equipetrol",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "shinko-sushi",
+      "name": "Shinko sushi",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "pomodoro-rosso-scz",
+      "name": "Pomodoro Rosso, Scz",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "regiones-bolivia",
+      "name": "Regiones Bolivia",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "nazca-cocina-peruana",
+      "name": "Nazca Cocina Peruana",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "patio-madera-las-brisas",
+      "name": "Patio Madera Las Brisas",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "ottimo",
+      "name": "Ottimo",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "el-prado-restobar",
+      "name": "El prado restobar",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "montreal-steakhouse",
+      "name": "Montreal Steakhouse",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "nikkei-sushi-bar",
+      "name": "Nikkei Sushi Bar",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "kiwi-s-cafe-restaurant",
+      "name": "Kiwi's Cafe Restaurant",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "cafe-24",
+      "name": "Cafe 24",
+      "layer": "eat_drink",
+      "reason": "low-confidence",
+      "displayName": "El Cortijo SMD Café, UPZs de Bogotá, Localidad Engativá, Bogotá, Bogotá, Distrito Capital, RAP (Especial) Central, Colombia"
+    },
+    {
+      "id": "steel-container-grill-bar",
+      "name": "Steel Container Grill & Bar",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "santa-cruz-beer-company",
+      "name": "Santa Cruz Beer Company",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "papa-johns-pizza",
+      "name": "Papa Johns Pizza",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "le-petit-cafetier",
+      "name": "Le Petit Cafetier",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "cubo-scz",
+      "name": "Cubo Scz",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "kaos-resto-bar",
+      "name": "Kaos Resto-Bar",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "mediterraneo-cafe-y-tapas",
+      "name": "Mediterráneo Café Y Tapas",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "oncetintos",
+      "name": "OnceTintos",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "casa-alfonsina",
+      "name": "Casa Alfonsina",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "pez-mar",
+      "name": "Pez & Mar",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "mi-fortuna-ecoparque-granja",
+      "name": "Mi Fortuna Ecoparque & Granja",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "parrillada-oriente-petrolero",
+      "name": "Parrillada Oriente Petrolero",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "oak-gastrobar",
+      "name": "Oak Gastrobar",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "bocarte-bolivia",
+      "name": "Bocarte Bolivia",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "alleggro-resto-brunch",
+      "name": "Alleggro Resto-Brunch",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "martin-fuego",
+      "name": "Martin Fuego",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "in-fusion",
+      "name": "In.fusión",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "la-hacienda-del-gaucho",
+      "name": "La Hacienda del Gaucho",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "soho-bar-food",
+      "name": "Soho Bar & Food",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "y-se-llama-peru",
+      "name": "Y Se Llama Peru",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "route66-bolivia",
+      "name": "Route66 Bolivia",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "ettmuller-landhaus-restaurant",
+      "name": "Ettmuller Landhaus Restaurant",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "pilaik-restaurant",
+      "name": "Pilaik Restaurant",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "bistro-luz",
+      "name": "Bistro Luz",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "goss-bar",
+      "name": "Goss Bar",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "zucchini",
+      "name": "Zucchini",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "la-plazita",
+      "name": "La Plazita",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "avidano",
+      "name": "Avidano",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "el-vocho",
+      "name": "El Vocho",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "restaurant-g77-china",
+      "name": "Restaurant G77 + China",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "oishi-comida-asiatica-creativa",
+      "name": "Oishi Comida Asiatica Creativa",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "kinoa-restaurant",
+      "name": "Kinöa Restaurant",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "protein-house-bolivia",
+      "name": "Protein House Bolivia",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "city-bistro",
+      "name": "City Bistro",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "paletas-yucatan-centro",
+      "name": "Paletas Yucatan – Centro",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "la-pavlova",
+      "name": "La Pavlova",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "fratelli-s",
+      "name": "Fratelli's",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "el-huarike-mar-tierra",
+      "name": "El-Huarike Mar & Tierra",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "pollos-a-la-brasa-peruchin",
+      "name": "Pollos A La Brasa Peruchin",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "restaurate-vegetariano-su-salud",
+      "name": "Restaurate Vegetariano Su Salud",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "fratelli-s-2nd-location",
+      "name": "Fratelli's",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "jamuy-wings-burgers",
+      "name": "Jamuy Wings & Burgers",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "pamper-s-resto-bar",
+      "name": "Pamper's Resto Bar",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "gigi-s-kitchen",
+      "name": "Gigi's Kitchen",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "san-sha",
+      "name": "San Sha",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "salteneria-jet-set",
+      "name": "Salteneria Jet Set",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "brasargent-rodizio",
+      "name": "Brasargent Rodizio",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "el-gran-calamar-restaurant-marisqueria",
+      "name": "El Gran Calamar restaurant marisqueria",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "miso-restoramen",
+      "name": "MISO Restoramen",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "naoki-sushi-equipetrol",
+      "name": "Naoki Sushi Equipetrol",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "ambika-cafe-y-restaurante",
+      "name": "Ambika Cafe Y Restaurante",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "cada-dia-restaurante-vegetariano",
+      "name": "Cada Dia Restaurante Vegetariano",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "cornelia",
+      "name": "Cornelia",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "nacho-libre-tex-mex",
+      "name": "Nacho Libre Tex Mex",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "meow-sushi-bar",
+      "name": "Meow Sushi Bar",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "santena",
+      "name": "Santena",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "milan-express",
+      "name": "Milan Express",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "donatello",
+      "name": "Donatello",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "restaurant-chicharrones-dona-mechita",
+      "name": "Restaurant Chicharrones Dona Mechita",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "monalisa-bier-haus",
+      "name": "Monalisa Bier Haus",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "88-burguer-salads",
+      "name": "88 Burguer & Salads",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "restaurant-landhaus-el-fuerte",
+      "name": "Restaurant Landhaus El Fuerte",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "glorimar-saltenas-centro",
+      "name": "GLORIMAR Salteñas Centro",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "la-catedral-taberna",
+      "name": "La Catedral Taberna",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "la-fonda-de-ariel",
+      "name": "La Fonda de Ariel",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "argentino-restaurant-premium",
+      "name": "Argentino Restaurant Premium",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "bohemia-resto-bar",
+      "name": "Bohemia Resto Bar",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "la-peta-gourmet",
+      "name": "La Peta Gourmet",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "el-vegano-arrepentido",
+      "name": "El Vegano Arrepentido",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "the-taj-mahal-indian-restaurant",
+      "name": "The Taj Mahal Indian Restaurant",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "burger-hero",
+      "name": "Burger Hero",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "sandy-snack-cafe",
+      "name": "Sandy Snack Café",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "restaurant-vegana-la-vega",
+      "name": "Restaurant Vegana La Vega",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "natsumi-sushi",
+      "name": "Natsumi Sushi",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "aji-amarillo",
+      "name": "Aji Amarillo",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "310-smashburger",
+      "name": "310 Smashburger",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "el-chiocchio",
+      "name": "El Chiocchió",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "tajy-bar",
+      "name": "Tajý Bar",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "pollo-el-solar",
+      "name": "Pollo \"El Solar\"",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "q-gibanga",
+      "name": "Q Gibanga",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "matambre-grill",
+      "name": "Matambre Grill",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "juices-bar",
+      "name": "Juices & Bar",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "papote-smoky-food-shop",
+      "name": "Papote Smoky Food Shop",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "restaurante-la-condesa",
+      "name": "Restaurante La Condesa",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "brooklyn-resto-bar",
+      "name": "Brooklyn Resto Bar",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "restaurant-guapuru",
+      "name": "Restaurant Guapuru",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "sabor-a-mar",
+      "name": "Sabor a Mar",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "bacon-steak-and-chicken",
+      "name": "Bacon Steak and Chicken",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "sushicake",
+      "name": "Sushicake",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "bricks",
+      "name": "Bricks",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "tuvino",
+      "name": "Tuvino",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "brasil-sul-resto-bar",
+      "name": "Brasil Sul Resto Bar",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "res-la-porcina",
+      "name": "Res. La porcina",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "grillados",
+      "name": "Grillados",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "picnic-complices-del-sabor",
+      "name": "PicNic Complices del sabor",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "malinche",
+      "name": "Malinche",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "il-chilindrino",
+      "name": "Il Chilindrino",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "panaderia-artesanal-bon-pain",
+      "name": "Panadería Artesanal Bon Pain",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "jr-hotel-restaurant",
+      "name": "JR Hotel Restaurant",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "acai-corner-healthy-food",
+      "name": "Acai Corner Healthy Food",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "patio-madera-san-martin",
+      "name": "Patio Madera San Martin",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "el-palacio-del-charque",
+      "name": "El Palacio del Charque",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "monkey-wings",
+      "name": "Monkey Wings",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "snobiz-bolivia",
+      "name": "Snobiz Bolivia",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "la-croissanteria-paris",
+      "name": "La Croissanteria Paris",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "smashburger",
+      "name": "Smashburger",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "pacumutus-dona-trini",
+      "name": "Pacumutus Dona Trini",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "qgibanga-2nd-listing",
+      "name": "QGibanga",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "buenisimo",
+      "name": "Buenisimo",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "zap-heladeria",
+      "name": "Zap heladeria",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "don-bodo",
+      "name": "Don Bodo",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "tang-express",
+      "name": "Tang Express",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "la-bistecca",
+      "name": "La Bistecca",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "khabala",
+      "name": "Khabala",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "cittadino",
+      "name": "Cittadino",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "quinta-restaurante-musurita",
+      "name": "Quinta restaurante Musurita",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "ebisu-sushi-santa-cruz-de-la-sierra",
+      "name": "Ebisu Sushi Santa Crúz de la Sierra",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "bok-bok-wings-more",
+      "name": "Bok Bok Wings & More",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "taverna-lusitana",
+      "name": "Taverna Lusitana",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "rustica-pizzeria-paseo-central",
+      "name": "Rústica Pizzería – Paseo Central",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "bahrem-grill-bar",
+      "name": "Bahrem Grill & Bar",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "cocina-bohemia",
+      "name": "Cocina Bohemia",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "santena-2nd-location",
+      "name": "Santena",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "cafe-velo",
+      "name": "Café Vélo",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "aji-amarillo-2nd-listing",
+      "name": "Ají amarillo",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "simply-eat-american-bbq",
+      "name": "Simply Eat American Bbq",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "doumo-las-brisas",
+      "name": "Doumo Las Brisas",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "food-truck-parking",
+      "name": "Food Truck Parking",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "min-pao",
+      "name": "Min Pao",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "bruse-pizzeria",
+      "name": "Brusé Pizzeria",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "360-bistro-garden",
+      "name": "360 Bistro Garden",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "mr-jiba",
+      "name": "Mr. Jiba",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "pollo-batman",
+      "name": "Pollo Batman",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "pollo-batman-2nd-location",
+      "name": "Pollo Batman",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "yampi",
+      "name": "Yampi",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "charques-y-chelas",
+      "name": "Charques Y Chelas",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "tequecheese-bolivia",
+      "name": "Tequecheese Bolivia",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "aty-restaurante",
+      "name": "Aty Restaurante",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "la-griferia-bolivia",
+      "name": "La Griferia Bolivia",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "la-ollita-de-plata",
+      "name": "La Ollita de Plata",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "gallo-negro-taco-birria",
+      "name": "Gallo Negro • taco birria •",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "dorata",
+      "name": "Dorata",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "900-pizzas-artesanales",
+      "name": "900 Pizzas Artesanales",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "asador-pizzeria-gaucho-camba",
+      "name": "Asador Pizzeria Gaucho-Camba",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "carnico-grill-bistro",
+      "name": "Cárnico Grill & Bistro",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "jack-s-roman",
+      "name": "Jack's Roman",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "wook-food",
+      "name": "Wook Food",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "aca-o-alla",
+      "name": "Acá O Allá",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "restaurante-usanza-cocina-casera",
+      "name": "Restaurante Usanza Cocina Casera",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "natu-life",
+      "name": "Natu Life",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "la-pascana-del-norte",
+      "name": "La Pascana Del Norte",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "la-posada-de-miguel",
+      "name": "La posada de Miguel",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "pollo-maton",
+      "name": "Pollo Maton",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "providencia-resto-bar",
+      "name": "Providencia resto-bar",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "alquimia-experiencia-elemental",
+      "name": "Alquimia Experiencia Elemental",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "fratelli-s-3rd-location",
+      "name": "Fratelli's",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "burger-match-equip",
+      "name": "Burger Match Equip.",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "cada-dia-2nd-location",
+      "name": "Cada Dia",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "frankie-s-pizza",
+      "name": "Frankie´s Pizza",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "sandwiches-dona-lucha",
+      "name": "Sándwiches Doña Lucha",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "toromochos",
+      "name": "Toromochos",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "parrilla-90",
+      "name": "Parrilla 90",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "senor-kilo",
+      "name": "Senor Kilo",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "american-hot-dogs",
+      "name": "American Hot Dogs",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "pizza-mia",
+      "name": "Pizza Mia",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "pilaik-restaurant-2nd-location",
+      "name": "Pilaik Restaurant",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "om-meriendas-con-zsentido",
+      "name": "Om Meriendas Con Zsentido",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "adobe-casa-pueblo",
+      "name": "ADOBE Casa Pueblo",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "yiyo-pollo-broasted",
+      "name": "Yiyo Pollo Broasted",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "taqueria-monterrey-santa-cruz",
+      "name": "Taquería Monterrey Santa Cruz",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "samu-pizza",
+      "name": "Samu Pizza",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "sensorium",
+      "name": "Sensorium",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "toromocho",
+      "name": "Toromocho",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "yellow-submarine-hot-dog",
+      "name": "Yellow Submarine Hot Dog",
+      "layer": "eat_drink",
+      "reason": "no-match"
+    },
+    {
+      "id": "manzana-uno-pedestrian",
+      "name": "Manzana Uno (pedestrian)",
+      "layer": "street_zone",
+      "reason": "no-match"
+    },
+    {
+      "id": "paseo-peatonal-footway",
+      "name": "Paseo Peatonal (footway)",
+      "layer": "street_zone",
+      "reason": "no-match"
+    },
+    {
+      "id": "sendero-peatonal-footway",
+      "name": "Sendero Peatonal (footway)",
+      "layer": "street_zone",
+      "reason": "no-match"
+    },
+    {
+      "id": "edificio-cruz-del-sur-residential-complex",
+      "name": "Edificio Cruz del Sur (residential complex) ---",
+      "layer": "street_zone",
+      "reason": "no-match"
+    }
+  ]
+}

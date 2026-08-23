@@ -3,6 +3,7 @@ export * from "./schemas/auth";
 export * from "./schemas/users";
 export * from "./schemas/venues";
 export * from "./schemas/events";
+export * from "./schemas/places";
 export * from "./schemas/vouchers";
 export * from "./schemas/redemptions";
 export * from "./schemas/subscriptions";

@@ -1,0 +1,207 @@
+{
+  "type": "FeatureCollection",
+  "name": "bolivamos-seed-pois",
+  "note": "SEED DATA ONLY — coordinates are approximate (from general knowledge, not geocoded). Every feature is verified:false and MUST be corrected in the Phase 0 geocoding + QA pass before production use.",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.1821,
+          -17.7834
+        ]
+      },
+      "properties": {
+        "id": "plaza-24-de-septiembre",
+        "name": "Plaza 24 de Septiembre",
+        "layer": "attraction",
+        "district": "Centro",
+        "rating": 4.3,
+        "reviews": 1002,
+        "verified": false,
+        "source": "seed-approximate"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.1825,
+          -17.784
+        ]
+      },
+      "properties": {
+        "id": "catedral-de-santa-cruz",
+        "name": "Catedral de Santa Cruz (Basílica de San Lorenzo)",
+        "layer": "attraction",
+        "district": "Centro",
+        "rating": 4.3,
+        "reviews": 982,
+        "verified": false,
+        "source": "seed-approximate"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.1815,
+          -17.7829
+        ]
+      },
+      "properties": {
+        "id": "manzana-1-espacio-de-arte",
+        "name": "Manzana 1 Espacio de Arte",
+        "layer": "attraction",
+        "district": "Centro",
+        "rating": 4.7,
+        "reviews": 3,
+        "verified": false,
+        "source": "seed-approximate"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.1779,
+          -17.7806
+        ]
+      },
+      "properties": {
+        "id": "casa-cultural-melchor-pinto",
+        "name": "Casa Cultural Melchor Pinto",
+        "layer": "attraction",
+        "district": "Centro",
+        "rating": 4.8,
+        "reviews": 23,
+        "verified": false,
+        "source": "seed-approximate"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.1746,
+          -17.7789
+        ]
+      },
+      "properties": {
+        "id": "parque-el-arenal",
+        "name": "Parque El Arenal",
+        "layer": "attraction",
+        "district": "Centro",
+        "rating": 3.0,
+        "reviews": 114,
+        "verified": false,
+        "source": "seed-approximate"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.1818,
+          -17.7838
+        ]
+      },
+      "properties": {
+        "id": "museo-de-arte-sacro",
+        "name": "Museo de Arte Sacro",
+        "layer": "attraction",
+        "district": "Centro",
+        "rating": 3.9,
+        "reviews": 17,
+        "verified": false,
+        "source": "seed-approximate"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.1893,
+          -17.7896
+        ]
+      },
+      "properties": {
+        "id": "parque-urbano-central",
+        "name": "Parque Urbano Central",
+        "layer": "attraction",
+        "district": "Parque Urbano",
+        "rating": 3.6,
+        "reviews": 77,
+        "verified": false,
+        "source": "seed-approximate"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.1955,
+          -17.7593
+        ]
+      },
+      "properties": {
+        "id": "zoologico-municipal",
+        "name": "Zoológico Municipal de Fauna Sudamericana",
+        "layer": "attraction",
+        "district": "Zoo",
+        "rating": 3.4,
+        "reviews": 267,
+        "verified": false,
+        "source": "seed-approximate"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.2011,
+          -17.7568
+        ]
+      },
+      "properties": {
+        "id": "ventura-mall",
+        "name": "Ventura Mall",
+        "layer": "shopping",
+        "district": "Equipetrol",
+        "rating": 4.1,
+        "reviews": 431,
+        "verified": false,
+        "source": "seed-approximate"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.155,
+          -17.7534
+        ]
+      },
+      "properties": {
+        "id": "las-brisas-centro-comercial",
+        "name": "Las Brisas Centro Comercial",
+        "layer": "shopping",
+        "district": "Las Brisas",
+        "rating": 4.1,
+        "reviews": 38,
+        "verified": false,
+        "source": "seed-approximate"
+      }
+    }
+  ]
+}

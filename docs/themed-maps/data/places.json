@@ -1,0 +1,6242 @@
+{
+  "meta": {
+    "app": "bolivamos",
+    "city": "Santa Cruz de la Sierra, Bolivia",
+    "compiled": "2026-08-23",
+    "sources": [
+      "tripadvisor.com (g297317)",
+      "bolivia-streets.openalfa.com (OSM-derived)"
+    ],
+    "note": "lat/lng are null pending the geocoding pass described in the PRD (docs/PRD-themed-maps.md).",
+    "counts": {
+      "attractions": 30,
+      "tours": 14,
+      "transfers": 7,
+      "restaurants": 359,
+      "streets": 120
+    }
+  },
+  "attractions": [
+    {
+      "id": "biocentro-guembe",
+      "name": "Biocentro Güembé",
+      "type": "Gardens / Eco-park",
+      "group": "Nature, Parks & Wildlife",
+      "rating": 4.5,
+      "reviews": 1084,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "kaa-iya-national-park",
+      "name": "Kaa-Iya National Park",
+      "type": "National Park",
+      "group": "Nature, Parks & Wildlife",
+      "rating": 4.8,
+      "reviews": 49,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "la-rinconada-ecoparque-resort",
+      "name": "La Rinconada Ecoparque & Resort",
+      "type": "Nature & Wildlife Area, Gardens",
+      "group": "Nature, Parks & Wildlife",
+      "rating": 4.8,
+      "reviews": 15,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "jardin-de-las-delicias",
+      "name": "Jardin de las Delicias",
+      "type": "Gardens / Waterfalls",
+      "group": "Nature, Parks & Wildlife",
+      "rating": 4.6,
+      "reviews": 70,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "cascadas-espejillos",
+      "name": "Cascadas Espejillos",
+      "type": "Waterfalls",
+      "group": "Nature, Parks & Wildlife",
+      "rating": 4.2,
+      "reviews": 43,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "parque-lomas-de-arena",
+      "name": "Parque Lomas de Arena",
+      "type": "Park (sand dunes)",
+      "group": "Nature, Parks & Wildlife",
+      "rating": 4.2,
+      "reviews": 147,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "cataratas-espejillos",
+      "name": "Cataratas Espejillos",
+      "type": "Waterfalls",
+      "group": "Nature, Parks & Wildlife",
+      "rating": 4.1,
+      "reviews": 17,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "jardin-botanico-santa-cruz",
+      "name": "Jardin Botanico Santa Cruz",
+      "type": "Botanical Garden",
+      "group": "Nature, Parks & Wildlife",
+      "rating": 4.0,
+      "reviews": 178,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "parque-ecologico-yvaga-guazu",
+      "name": "Parque Ecologico Yvaga Guazu",
+      "type": "Nature & Wildlife Area, Park",
+      "group": "Nature, Parks & Wildlife",
+      "rating": 4.0,
+      "reviews": 27,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "parque-nacional-noel-kempff-mercado",
+      "name": "Parque Nacional Noel Kempff Mercado",
+      "type": "National Park",
+      "group": "Nature, Parks & Wildlife",
+      "rating": 3.8,
+      "reviews": 77,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "parque-urbano-central",
+      "name": "Parque Urbano Central",
+      "type": "City Park",
+      "group": "Nature, Parks & Wildlife",
+      "rating": 3.6,
+      "reviews": 77,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "zoologico-municipal-de-fauna-sudamericana-noel-kempff-mercado",
+      "name": "Zoológico Municipal de Fauna Sudamericana Noel Kempff Mercado",
+      "type": "Zoo",
+      "group": "Nature, Parks & Wildlife",
+      "rating": 3.4,
+      "reviews": 267,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "parque-el-arenal",
+      "name": "Parque El Arenal",
+      "type": "City Park",
+      "group": "Nature, Parks & Wildlife",
+      "rating": 3.0,
+      "reviews": 114,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "plaza-24-de-septiembre",
+      "name": "Plaza 24 de Septiembre",
+      "type": "Main square / Landmark",
+      "group": "Landmarks, History & Culture",
+      "rating": 4.3,
+      "reviews": 1002,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "samaipata",
+      "name": "Samaipata",
+      "type": "Historic town / Neighborhood",
+      "group": "Landmarks, History & Culture",
+      "rating": 4.2,
+      "reviews": 372,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "la-higuera",
+      "name": "La Higuera",
+      "type": "Historic Site (Che Guevara)",
+      "group": "Landmarks, History & Culture",
+      "rating": 4.2,
+      "reviews": 53,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "pinturas-rupestres-en-las-cavernas-de-mataral",
+      "name": "Pinturas Rupestres en Las Cavernas de Mataral",
+      "type": "Rock art / Landmark",
+      "group": "Landmarks, History & Culture",
+      "rating": 4.2,
+      "reviews": 11,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "casa-cultural-melchor-pinto",
+      "name": "Casa Cultural Melchor Pinto",
+      "type": "Cultural Center",
+      "group": "Landmarks, History & Culture",
+      "rating": 4.8,
+      "reviews": 23,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "museo-artecampo",
+      "name": "Museo Artecampo",
+      "type": "Art Museum (craft art)",
+      "group": "Landmarks, History & Culture",
+      "rating": 4.8,
+      "reviews": 5,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "manzana-1-espacio-de-arte",
+      "name": "Manzana 1 Espacio de Arte",
+      "type": "Art Gallery",
+      "group": "Landmarks, History & Culture",
+      "rating": 4.7,
+      "reviews": 3,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "museo-de-arte-sacro-monsenor-carlos-geriche-suarez",
+      "name": "Museo de Arte Sacro \"Monseñor Cárlos Geriche Suárez\"",
+      "type": "Specialty / Art Museum",
+      "group": "Landmarks, History & Culture",
+      "rating": 3.9,
+      "reviews": 17,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "estadio-ramon-tahuichi-aguilera",
+      "name": "Estadio Ramon Tahuichi Aguilera",
+      "type": "Stadium",
+      "group": "Landmarks, History & Culture",
+      "rating": 3.2,
+      "reviews": 27,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "iglesias-de-la-chiquitania",
+      "name": "Iglesias de la Chiquitania",
+      "type": "Jesuit Mission churches (UNESCO)",
+      "group": "Churches & Religious Sites",
+      "rating": 4.6,
+      "reviews": 165,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "parroquia-de-la-inmaculada-concepcion",
+      "name": "Parroquia de la Inmaculada Concepcion",
+      "type": "Church",
+      "group": "Churches & Religious Sites",
+      "rating": 4.5,
+      "reviews": 54,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "catedral-de-santa-cruz",
+      "name": "Catedral de Santa Cruz",
+      "type": "Cathedral",
+      "group": "Churches & Religious Sites",
+      "rating": 4.3,
+      "reviews": 982,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "cotoca-sanctuary",
+      "name": "Cotoca Sanctuary",
+      "type": "Sanctuary / Church",
+      "group": "Churches & Religious Sites",
+      "rating": 4.0,
+      "reviews": 30,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "patio-design-lifestyle-center",
+      "name": "Patio Design LifeStyle Center",
+      "type": "Shopping Mall",
+      "group": "Shopping",
+      "rating": 4.9,
+      "reviews": 8,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "beauty-plaza-mall",
+      "name": "Beauty Plaza Mall",
+      "type": "Shopping Mall",
+      "group": "Shopping",
+      "rating": 4.5,
+      "reviews": 8,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "ventura-mall",
+      "name": "Ventura Mall",
+      "type": "Shopping Mall",
+      "group": "Shopping",
+      "rating": 4.1,
+      "reviews": 431,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "las-brisas-centro-comercial",
+      "name": "Las Brisas Centro Comercial",
+      "type": "Shopping Mall",
+      "group": "Shopping",
+      "rating": 4.1,
+      "reviews": 38,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    }
+  ],
+  "tours": [
+    {
+      "id": "walking-tour-a-journey-through-the-history-of-santa-cruz",
+      "name": "WALKING TOUR – A journey through the history of Santa Cruz",
+      "group": "City & Day Tours",
+      "source": "tripadvisor",
+      "type": "Walking Tour",
+      "rating": 4.8,
+      "reviews": 45,
+      "duration": null,
+      "price_from": null
+    },
+    {
+      "id": "private-tasting-of-award-winning-bolivian-wines",
+      "name": "Private Tasting of Award Winning Bolivian Wines",
+      "group": "City & Day Tours",
+      "source": "tripadvisor",
+      "type": "Wine Tasting",
+      "rating": 5.0,
+      "reviews": 23,
+      "duration": null,
+      "price_from": null
+    },
+    {
+      "id": "private-city-tour-nature-porongo-markets-and-culture",
+      "name": "Private City tour: Nature, Porongo, Markets and Culture",
+      "group": "City & Day Tours",
+      "source": "tripadvisor",
+      "type": "Private City Tour",
+      "rating": 5.0,
+      "reviews": 2,
+      "duration": "4 h",
+      "price_from": "$40 / adult"
+    },
+    {
+      "id": "samaipata-fort-tour-ancient-ruins-in-1-full-day",
+      "name": "Samaipata Fort Tour: Ancient Ruins in 1 Full Day",
+      "group": "City & Day Tours",
+      "source": "tripadvisor",
+      "type": "Archaeology Day Tour",
+      "rating": 3.3,
+      "reviews": 3,
+      "duration": "6+ h",
+      "price_from": "$200 / adult"
+    },
+    {
+      "id": "wildlife-rescue-center-in-nature-reserve-near-santa-cruz",
+      "name": "Wildlife rescue center in nature reserve near Santa Cruz",
+      "group": "City & Day Tours",
+      "source": "tripadvisor",
+      "type": "Nature & Wildlife",
+      "rating": 3.7,
+      "reviews": 6,
+      "duration": null,
+      "price_from": null
+    },
+    {
+      "id": "discover-the-crucenos-valleys-at-your-own-pace-in-a-private-vehicle",
+      "name": "Discover the Cruceños Valleys, at your own pace in a private vehicle",
+      "group": "City & Day Tours",
+      "source": "tripadvisor",
+      "type": "Private Sightseeing",
+      "rating": null,
+      "reviews": 0,
+      "duration": null,
+      "price_from": null
+    },
+    {
+      "id": "entrance-to-our-world",
+      "name": "Entrance To Our World",
+      "group": "City & Day Tours",
+      "source": "tripadvisor",
+      "type": "Entertainment / Nightlife",
+      "rating": null,
+      "reviews": 0,
+      "duration": null,
+      "price_from": null
+    },
+    {
+      "id": "amboro-national-park-overnight-tour-from-santa-cruz",
+      "name": "Amboro National Park Overnight Tour from Santa Cruz",
+      "group": "Multi-day Tours & Expeditions",
+      "source": "tripadvisor",
+      "type": "Eco / Nature",
+      "rating": 4.9,
+      "reviews": 29,
+      "duration": "2 days",
+      "price_from": null
+    },
+    {
+      "id": "2d-1n-getaway-che-route-historical-trekking-and-nature",
+      "name": "2D/1N Getaway: Che Route – Historical Trekking and Nature",
+      "group": "Multi-day Tours & Expeditions",
+      "source": "tripadvisor",
+      "type": "Historical Trek",
+      "rating": 5.0,
+      "reviews": 2,
+      "duration": "2 days",
+      "price_from": "$500 / adult"
+    },
+    {
+      "id": "3d-2n-getaway-on-the-che-guevara-route-live-the-adventure",
+      "name": "3D/2N Getaway on the Che Guevara Route Live the Adventure!",
+      "group": "Multi-day Tours & Expeditions",
+      "source": "tripadvisor",
+      "type": "Historical Adventure",
+      "rating": null,
+      "reviews": 0,
+      "duration": "3 days",
+      "price_from": "$499 / adult"
+    },
+    {
+      "id": "4d-3n-expedition-che-guevara-route-disconnect-from-the-world",
+      "name": "4D/3N Expedition: Che Guevara Route – Disconnect from the World",
+      "group": "Multi-day Tours & Expeditions",
+      "source": "tripadvisor",
+      "type": "Historical Expedition",
+      "rating": null,
+      "reviews": 0,
+      "duration": "4 days",
+      "price_from": null
+    },
+    {
+      "id": "after-the-footsteps-of-the-jaguar-3-day-kaa-iya-expedition",
+      "name": "After the Footsteps of the Jaguar 3-Day Kaa Iya Expedition",
+      "group": "Multi-day Tours & Expeditions",
+      "source": "tripadvisor",
+      "type": "Wildlife Expedition",
+      "rating": null,
+      "reviews": 0,
+      "duration": "3 days",
+      "price_from": "$1,450 / adult"
+    },
+    {
+      "id": "private-8-day-bolivia-tour-from-santa-cruz",
+      "name": "Private 8-Day Bolivia Tour from Santa Cruz",
+      "group": "Multi-day Tours & Expeditions",
+      "source": "tripadvisor",
+      "type": "Private Multi-day",
+      "rating": 5.0,
+      "reviews": 1,
+      "duration": "8 days",
+      "price_from": "$4,339 / adult"
+    },
+    {
+      "id": "plants-and-habitats-in-the-elbow-of-the-andes",
+      "name": "Plants and Habitats in the Elbow of the Andes",
+      "group": "Multi-day Tours & Expeditions",
+      "source": "tripadvisor",
+      "type": "Botanical / Eco",
+      "rating": null,
+      "reviews": 0,
+      "duration": "3+ days",
+      "price_from": "$3,300 / adult"
+    }
+  ],
+  "transfers": [
+    {
+      "id": "airport-shuttle-santa-cruz",
+      "name": "Airport Shuttle Santa Cruz",
+      "group": "Airport Transfers & Transport",
+      "source": "tripadvisor",
+      "rating": 5.0,
+      "reviews": 3
+    },
+    {
+      "id": "transfer-in-airport-viru-viru-to-santa-cruz",
+      "name": "Transfer IN – Airport Viru Viru to Santa Cruz",
+      "group": "Airport Transfers & Transport",
+      "source": "tripadvisor",
+      "rating": 5.0,
+      "reviews": 1
+    },
+    {
+      "id": "are-you-looking-for-a-safe-private-shuttle-in-santa-cruz",
+      "name": "Are you looking for a Safe Private Shuttle in Santa Cruz?",
+      "group": "Airport Transfers & Transport",
+      "source": "tripadvisor",
+      "rating": 5.0,
+      "reviews": 2
+    },
+    {
+      "id": "midnight-transfer-in-airport-viru-viru-to-santa-cruz",
+      "name": "Midnight Transfer In – Airport Viru Viru to Santa Cruz",
+      "group": "Airport Transfers & Transport",
+      "source": "tripadvisor",
+      "rating": null,
+      "reviews": 0
+    },
+    {
+      "id": "private-transfer-santa-cruz-city-airport-vvi-by-suv-in-out-options",
+      "name": "Private Transfer Santa Cruz City ⇄ Airport VVI by SUV (in & out options)",
+      "group": "Airport Transfers & Transport",
+      "source": "tripadvisor",
+      "rating": null,
+      "reviews": 0
+    },
+    {
+      "id": "private-executive-chauffeur-service-premium-suv",
+      "name": "Private Executive Chauffeur Service (Premium SUV)",
+      "group": "Airport Transfers & Transport",
+      "source": "tripadvisor",
+      "rating": null,
+      "reviews": 0
+    },
+    {
+      "id": "tourist-and-urban-transportation",
+      "name": "Tourist and Urban Transportation",
+      "group": "Airport Transfers & Transport",
+      "source": "tripadvisor",
+      "rating": null,
+      "reviews": 0
+    }
+  ],
+  "restaurants": [
+    {
+      "id": "el-aljibe-comida-tipica",
+      "rank": 1,
+      "name": "El Aljibe Comida Tipica",
+      "listing_note": null,
+      "cuisine": [
+        "Brew Pub",
+        "Latin (típica cruceña)"
+      ],
+      "rating": 4.5,
+      "reviews": 489,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "pinata-wey",
+      "rank": 2,
+      "name": "Piñata Wey",
+      "listing_note": null,
+      "cuisine": [
+        "Bars & Pubs",
+        "Mexican"
+      ],
+      "rating": 4.9,
+      "reviews": 350,
+      "price": "$$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "el-arriero",
+      "rank": 3,
+      "name": "El Arriero",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse",
+        "Barbecue"
+      ],
+      "rating": 4.5,
+      "reviews": 709,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "jardin-de-asia",
+      "rank": 4,
+      "name": "Jardín de Asia",
+      "listing_note": null,
+      "cuisine": [
+        "Japanese",
+        "Seafood"
+      ],
+      "rating": 4.5,
+      "reviews": 1201,
+      "price": "$$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "kao-by-sach-a",
+      "rank": 5,
+      "name": "KAO by Sach'a",
+      "listing_note": null,
+      "cuisine": [
+        "Japanese",
+        "Sushi"
+      ],
+      "rating": 4.9,
+      "reviews": 449,
+      "price": "$$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "chalet-la-suisse",
+      "rank": 6,
+      "name": "Chalet La Suisse",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "Swiss"
+      ],
+      "rating": 4.5,
+      "reviews": 640,
+      "price": "$$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "as-de-copas",
+      "rank": 7,
+      "name": "As de Copas",
+      "listing_note": null,
+      "cuisine": [
+        "Peruvian",
+        "Bar"
+      ],
+      "rating": 5.0,
+      "reviews": 212,
+      "price": "$$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "la-casa-del-camba",
+      "rank": 8,
+      "name": "La casa del Camba",
+      "listing_note": null,
+      "cuisine": [
+        "Latin (típica cruceña)"
+      ],
+      "rating": 4.0,
+      "reviews": 1029,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "los-hierros-steakhouse-bar",
+      "rank": 9,
+      "name": "Los Hierros Steakhouse & Bar",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "Steakhouse"
+      ],
+      "rating": 4.0,
+      "reviews": 365,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "bravissimo",
+      "rank": 10,
+      "name": "Bravissimo",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "Pizza"
+      ],
+      "rating": 4.4,
+      "reviews": 157,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "la-rinconada",
+      "rank": 11,
+      "name": "La Rinconada",
+      "listing_note": null,
+      "cuisine": [
+        "Latin",
+        "International"
+      ],
+      "rating": 4.4,
+      "reviews": 179,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "michelangelo-ristorante",
+      "rank": 12,
+      "name": "Michelangelo Ristorante",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "Mediterranean"
+      ],
+      "rating": 4.0,
+      "reviews": 297,
+      "price": "$$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "republica",
+      "rank": 13,
+      "name": "Republica",
+      "listing_note": null,
+      "cuisine": [
+        "Latin",
+        "Bar"
+      ],
+      "rating": 4.1,
+      "reviews": 319,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "botanica",
+      "rank": 14,
+      "name": "Botánica",
+      "listing_note": null,
+      "cuisine": [
+        "Latin"
+      ],
+      "rating": 4.7,
+      "reviews": 38,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "typica-cafe-tostaduria",
+      "rank": 15,
+      "name": "Typica Café – Tostaduría",
+      "listing_note": null,
+      "cuisine": [
+        "Latin",
+        "Cafe"
+      ],
+      "rating": 4.8,
+      "reviews": 22,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "la-cabrera",
+      "rank": 16,
+      "name": "La Cabrera",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse",
+        "Barbecue"
+      ],
+      "rating": 4.0,
+      "reviews": 156,
+      "price": "$$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "irish-pub",
+      "rank": 17,
+      "name": "Irish Pub",
+      "listing_note": null,
+      "cuisine": [
+        "Bars & Pubs"
+      ],
+      "rating": 3.6,
+      "reviews": 173,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "hard-rock-cafe",
+      "rank": 18,
+      "name": "Hard Rock Cafe",
+      "listing_note": null,
+      "cuisine": [
+        "American",
+        "Bar"
+      ],
+      "rating": 4.2,
+      "reviews": 632,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "vaca-morena",
+      "rank": 19,
+      "name": "Vaca Morena",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse"
+      ],
+      "rating": 4.2,
+      "reviews": 36,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "santo-peccato",
+      "rank": 20,
+      "name": "Santo Peccato",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "Pizza"
+      ],
+      "rating": 4.2,
+      "reviews": 114,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "caudilla",
+      "rank": 21,
+      "name": "Caudilla",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse"
+      ],
+      "rating": 4.8,
+      "reviews": 12,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "fabric-sushi-nikkei-santa-cruz",
+      "rank": 22,
+      "name": "Fabric Sushi Nikkei Santa Cruz",
+      "listing_note": null,
+      "cuisine": [
+        "Japanese",
+        "Peruvian"
+      ],
+      "rating": 5.0,
+      "reviews": 33,
+      "price": "$$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "ines-espana-restaurante",
+      "rank": 23,
+      "name": "Ines Espana Restaurante",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "International"
+      ],
+      "rating": 4.3,
+      "reviews": 100,
+      "price": "$$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "la-casa-del-camba-urubo",
+      "rank": 24,
+      "name": "La Casa Del Camba Urubó",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse",
+        "Latin"
+      ],
+      "rating": 4.1,
+      "reviews": 170,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "1987-rodizio",
+      "rank": 25,
+      "name": "1987 Rodizio",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse",
+        "International"
+      ],
+      "rating": 5.0,
+      "reviews": 24,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "aviator",
+      "rank": 26,
+      "name": "Aviator",
+      "listing_note": null,
+      "cuisine": [
+        "Bar",
+        "Fast Food"
+      ],
+      "rating": 4.5,
+      "reviews": 125,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "mangarosa-brasserie",
+      "rank": 27,
+      "name": "Mangarosa Brasserie",
+      "listing_note": null,
+      "cuisine": [
+        "Peruvian",
+        "Latin"
+      ],
+      "rating": 4.8,
+      "reviews": 5,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "matoni",
+      "rank": 28,
+      "name": "Matoni",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "Pizza"
+      ],
+      "rating": 5.0,
+      "reviews": 21,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "cielo-bar-santa-cruz",
+      "rank": 29,
+      "name": "Cielo Bar – Santa Cruz",
+      "listing_note": null,
+      "cuisine": [
+        "Bars & Pubs"
+      ],
+      "rating": 5.0,
+      "reviews": 2,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "cafe-buena-vista",
+      "rank": 30,
+      "name": "Cafe Buena Vista",
+      "listing_note": null,
+      "cuisine": [
+        "Cafe"
+      ],
+      "rating": 4.9,
+      "reviews": 13,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "restaurant-ken",
+      "rank": 31,
+      "name": "Restaurant KEN",
+      "listing_note": null,
+      "cuisine": [
+        "Japanese",
+        "Sushi"
+      ],
+      "rating": 4.2,
+      "reviews": 68,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "muelle-18",
+      "rank": 32,
+      "name": "Muelle 18",
+      "listing_note": null,
+      "cuisine": [
+        "Peruvian",
+        "Latin"
+      ],
+      "rating": 4.3,
+      "reviews": 34,
+      "price": "$$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "ambika-indian-restaurant",
+      "rank": 33,
+      "name": "Ambika Indian Restaurant",
+      "listing_note": null,
+      "cuisine": [
+        "Indian",
+        "International"
+      ],
+      "rating": 4.6,
+      "reviews": 29,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "club-social-24-de-septiembre",
+      "rank": 34,
+      "name": "Club Social 24 De Septiembre",
+      "listing_note": null,
+      "cuisine": [
+        "International"
+      ],
+      "rating": 4.6,
+      "reviews": 5,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "chifa-mandarin",
+      "rank": 35,
+      "name": "Chifa Mandarin",
+      "listing_note": null,
+      "cuisine": [
+        "Chinese",
+        "Asian"
+      ],
+      "rating": 3.8,
+      "reviews": 61,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "factory-grill-bar-santa-cruz",
+      "rank": 36,
+      "name": "Factory Grill & Bar Santa Cruz",
+      "listing_note": null,
+      "cuisine": [
+        "Bar",
+        "Barbecue"
+      ],
+      "rating": 3.9,
+      "reviews": 128,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "la-gaira",
+      "rank": 37,
+      "name": "La Gaira",
+      "listing_note": null,
+      "cuisine": [
+        "Caribbean",
+        "Fast Food"
+      ],
+      "rating": 3.8,
+      "reviews": 52,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "restaurant-palacio-del-dragon",
+      "rank": 38,
+      "name": "Restaurant Palacio del Dragon",
+      "listing_note": null,
+      "cuisine": [
+        "Chinese"
+      ],
+      "rating": 4.5,
+      "reviews": 29,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "la-terraza",
+      "rank": 39,
+      "name": "La Terraza",
+      "listing_note": null,
+      "cuisine": [],
+      "rating": 4.1,
+      "reviews": 17,
+      "price": "$$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "la-caballeriza",
+      "rank": 40,
+      "name": "La Caballeriza",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse",
+        "Argentinean"
+      ],
+      "rating": 3.9,
+      "reviews": 122,
+      "price": "$$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "rodizio-brazzeiro",
+      "rank": 41,
+      "name": "Rodizio Brazzeiro",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse"
+      ],
+      "rating": 4.6,
+      "reviews": 7,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "zanella-restaurante",
+      "rank": 42,
+      "name": "Zanella Restaurante",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "Mediterranean"
+      ],
+      "rating": 4.5,
+      "reviews": 70,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "noi-pizzeria",
+      "rank": 43,
+      "name": "Noi Pizzeria",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "Pizza"
+      ],
+      "rating": 4.8,
+      "reviews": 17,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "dossier-restaurante",
+      "rank": 44,
+      "name": "Dossier Restaurante",
+      "listing_note": null,
+      "cuisine": [
+        "French"
+      ],
+      "rating": 4.4,
+      "reviews": 57,
+      "price": "$$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "el-cuartito",
+      "rank": 45,
+      "name": "El Cuartito",
+      "listing_note": null,
+      "cuisine": [
+        "Pizza",
+        "Pub"
+      ],
+      "rating": 4.3,
+      "reviews": 86,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "san-yuan-chinese-food",
+      "rank": 46,
+      "name": "San Yuan Chinese Food",
+      "listing_note": null,
+      "cuisine": [
+        "Chinese",
+        "Seafood"
+      ],
+      "rating": 4.8,
+      "reviews": 4,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "sir-pieper-restro-bar",
+      "rank": 47,
+      "name": "Sir Pieper Restro-Bar",
+      "listing_note": null,
+      "cuisine": [
+        "Bars & Pubs",
+        "Brew Pub"
+      ],
+      "rating": 4.8,
+      "reviews": 17,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "basilico-pizzeria",
+      "rank": 48,
+      "name": "Basilico Pizzeria",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "Pizza"
+      ],
+      "rating": 4.4,
+      "reviews": 31,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "el-buen-gusto",
+      "rank": 49,
+      "name": "El Buen Gusto",
+      "listing_note": null,
+      "cuisine": [
+        "Peruvian",
+        "Spanish"
+      ],
+      "rating": 4.2,
+      "reviews": 23,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "mar-y-fuego-restaurant",
+      "rank": 50,
+      "name": "Mar y Fuego Restaurant",
+      "listing_note": null,
+      "cuisine": [
+        "Peruvian",
+        "Seafood"
+      ],
+      "rating": 4.9,
+      "reviews": 10,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "los-lomitos",
+      "rank": 51,
+      "name": "Los Lomitos",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse",
+        "Barbecue"
+      ],
+      "rating": 3.8,
+      "reviews": 50,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "senor-lomo",
+      "rank": 52,
+      "name": "Señor Lomo",
+      "listing_note": null,
+      "cuisine": [
+        "Latin",
+        "Pizza"
+      ],
+      "rating": 4.7,
+      "reviews": 69,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "don-miguel",
+      "rank": 53,
+      "name": "Don Miguel",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse",
+        "Barbecue"
+      ],
+      "rating": 4.2,
+      "reviews": 34,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "le-mayen",
+      "rank": 54,
+      "name": "Le Mayen",
+      "listing_note": null,
+      "cuisine": [],
+      "rating": 4.2,
+      "reviews": 71,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "yorimichi",
+      "rank": 55,
+      "name": "Yorimichi",
+      "listing_note": null,
+      "cuisine": [
+        "Japanese",
+        "Seafood"
+      ],
+      "rating": 4.0,
+      "reviews": 82,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "los-castores-salteneria",
+      "rank": 56,
+      "name": "Los Castores Salteneria",
+      "listing_note": null,
+      "cuisine": [
+        "South American (salteñas)"
+      ],
+      "rating": 4.3,
+      "reviews": 14,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "lorca-cafe",
+      "rank": 57,
+      "name": "Lorca Cafe",
+      "listing_note": null,
+      "cuisine": [
+        "Fusion"
+      ],
+      "rating": 3.9,
+      "reviews": 178,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "toborochi-restaurant",
+      "rank": 58,
+      "name": "Toborochi Restaurant",
+      "listing_note": null,
+      "cuisine": [
+        "International",
+        "Sushi"
+      ],
+      "rating": 4.0,
+      "reviews": 9,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "sbc-rooftop",
+      "rank": 59,
+      "name": "Sbc – Rooftop",
+      "listing_note": null,
+      "cuisine": [
+        "Latin",
+        "Bar"
+      ],
+      "rating": 3.8,
+      "reviews": 6,
+      "price": "$$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "kovi",
+      "rank": 60,
+      "name": "Kovi",
+      "listing_note": null,
+      "cuisine": [
+        "Mediterranean",
+        "Fusion"
+      ],
+      "rating": 4.7,
+      "reviews": 13,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "botanica-equipetrol",
+      "rank": 61,
+      "name": "Botánica (Equipetrol)",
+      "listing_note": null,
+      "cuisine": [
+        "Mexican",
+        "Peruvian"
+      ],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "la-tranquera",
+      "rank": 62,
+      "name": "La Tranquera",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "Steakhouse"
+      ],
+      "rating": 4.2,
+      "reviews": 12,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "naoki-sushi-delivery",
+      "rank": 63,
+      "name": "Naoki Sushi Delivery",
+      "listing_note": null,
+      "cuisine": [
+        "Japanese",
+        "Sushi"
+      ],
+      "rating": 4.7,
+      "reviews": 29,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "pizza-bizarra",
+      "rank": 64,
+      "name": "Pizza Bizarra",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "Pizza"
+      ],
+      "rating": 5.0,
+      "reviews": 6,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "serafina-cucina-italiana",
+      "rank": 65,
+      "name": "Serafina Cucina Italiana",
+      "listing_note": null,
+      "cuisine": [
+        "Italian"
+      ],
+      "rating": 3.2,
+      "reviews": 12,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "shimaya-ramen-scz-equipetrol",
+      "rank": 66,
+      "name": "Shimaya Ramen Scz Equipetrol",
+      "listing_note": null,
+      "cuisine": [
+        "Japanese",
+        "Peruvian"
+      ],
+      "rating": 4.1,
+      "reviews": 13,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "shinko-sushi",
+      "rank": 67,
+      "name": "Shinko sushi",
+      "listing_note": null,
+      "cuisine": [
+        "Japanese",
+        "Asian"
+      ],
+      "rating": 4.8,
+      "reviews": 14,
+      "price": "$$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "pomodoro-rosso-scz",
+      "rank": 68,
+      "name": "Pomodoro Rosso, Scz",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "Pizza"
+      ],
+      "rating": 5.0,
+      "reviews": 9,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "goss",
+      "rank": 69,
+      "name": "Goss",
+      "listing_note": null,
+      "cuisine": [
+        "Sushi",
+        "Spanish"
+      ],
+      "rating": 3.9,
+      "reviews": 167,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "trattoria-dueville-pasta-fresca",
+      "rank": 70,
+      "name": "Trattoria Dueville – Pasta fresca",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "Pizza"
+      ],
+      "rating": 5.0,
+      "reviews": 15,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "cinnabon",
+      "rank": 71,
+      "name": "Cinnabon",
+      "listing_note": null,
+      "cuisine": [
+        "Cafe"
+      ],
+      "rating": 4.0,
+      "reviews": 29,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "restaurant-shanghai",
+      "rank": 72,
+      "name": "Restaurant Shanghai",
+      "listing_note": null,
+      "cuisine": [
+        "Chinese",
+        "Cantonese"
+      ],
+      "rating": 4.7,
+      "reviews": 9,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "regiones-bolivia",
+      "rank": 73,
+      "name": "Regiones Bolivia",
+      "listing_note": null,
+      "cuisine": [],
+      "rating": 5.0,
+      "reviews": 5,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "casa-vegana",
+      "rank": 74,
+      "name": "Casa Vegana",
+      "listing_note": null,
+      "cuisine": [
+        "Healthy / Vegan"
+      ],
+      "rating": 4.3,
+      "reviews": 13,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "nazca-cocina-peruana",
+      "rank": 75,
+      "name": "Nazca Cocina Peruana",
+      "listing_note": null,
+      "cuisine": [
+        "Brew Pub",
+        "Peruvian"
+      ],
+      "rating": 4.0,
+      "reviews": 5,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "el-mordisco",
+      "rank": 76,
+      "name": "El Mordisco",
+      "listing_note": null,
+      "cuisine": [
+        "Peruvian",
+        "Seafood"
+      ],
+      "rating": 4.0,
+      "reviews": 14,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "con-tenedores-norte",
+      "rank": 77,
+      "name": "Con Tenedores Norte",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "Mexican"
+      ],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "patio-madera-las-brisas",
+      "rank": 78,
+      "name": "Patio Madera Las Brisas",
+      "listing_note": null,
+      "cuisine": [
+        "Bars & Pubs",
+        "Brew Pub"
+      ],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "ottimo",
+      "rank": 79,
+      "name": "Ottimo",
+      "listing_note": null,
+      "cuisine": [
+        "Italian"
+      ],
+      "rating": 5.0,
+      "reviews": 7,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "patio-madera-urbari",
+      "rank": 80,
+      "name": "Patio Madera Urbari",
+      "listing_note": null,
+      "cuisine": [
+        "Brew Pub",
+        "Bar"
+      ],
+      "rating": 4.3,
+      "reviews": 47,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "el-prado-restobar",
+      "rank": 81,
+      "name": "El prado restobar",
+      "listing_note": null,
+      "cuisine": [
+        "Bars & Pubs",
+        "Gastropub"
+      ],
+      "rating": 4.1,
+      "reviews": 17,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "la-gaira-2nd-location",
+      "rank": 82,
+      "name": "La Gaira",
+      "listing_note": "branch/duplicate listing",
+      "cuisine": [
+        "Fast Food",
+        "South American"
+      ],
+      "rating": 4.5,
+      "reviews": 6,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "montreal-steakhouse",
+      "rank": 83,
+      "name": "Montreal Steakhouse",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse",
+        "Bar"
+      ],
+      "rating": 4.4,
+      "reviews": 32,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "il-borgo",
+      "rank": 84,
+      "name": "Il Borgo",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "Pizza"
+      ],
+      "rating": 4.3,
+      "reviews": 11,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "nikkei-sushi-bar",
+      "rank": 85,
+      "name": "Nikkei Sushi Bar",
+      "listing_note": null,
+      "cuisine": [
+        "Japanese",
+        "Sushi"
+      ],
+      "rating": 4.0,
+      "reviews": 59,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "kiwi-s-cafe-restaurant",
+      "rank": 86,
+      "name": "Kiwi's Cafe Restaurant",
+      "listing_note": null,
+      "cuisine": [
+        "International"
+      ],
+      "rating": 4.2,
+      "reviews": 116,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "pollos-chuy",
+      "rank": 87,
+      "name": "Pollos Chuy",
+      "listing_note": null,
+      "cuisine": [
+        "Fast Food"
+      ],
+      "rating": 3.5,
+      "reviews": 40,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "cafe-24",
+      "rank": 88,
+      "name": "Cafe 24",
+      "listing_note": null,
+      "cuisine": [
+        "Latin",
+        "Cafe"
+      ],
+      "rating": 3.6,
+      "reviews": 53,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "horno-caliente",
+      "rank": 89,
+      "name": "Horno Caliente",
+      "listing_note": null,
+      "cuisine": [
+        "Spanish"
+      ],
+      "rating": 4.3,
+      "reviews": 18,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "mi-cafe",
+      "rank": 90,
+      "name": "Mi Cafe",
+      "listing_note": null,
+      "cuisine": [
+        "Cafe"
+      ],
+      "rating": 3.8,
+      "reviews": 9,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "el-tabano",
+      "rank": 91,
+      "name": "El Tabano",
+      "listing_note": null,
+      "cuisine": [],
+      "rating": 4.5,
+      "reviews": 26,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "pizzeria-marguerita",
+      "rank": 92,
+      "name": "Pizzeria Marguerita",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "Pizza"
+      ],
+      "rating": 3.7,
+      "reviews": 52,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "steel-container-grill-bar",
+      "rank": 93,
+      "name": "Steel Container Grill & Bar",
+      "listing_note": null,
+      "cuisine": [
+        "Mexican",
+        "American"
+      ],
+      "rating": 4.9,
+      "reviews": 8,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "santa-cruz-beer-company",
+      "rank": 94,
+      "name": "Santa Cruz Beer Company",
+      "listing_note": null,
+      "cuisine": [
+        "Brew Pub",
+        "Bar"
+      ],
+      "rating": 3.9,
+      "reviews": 34,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "papa-johns-pizza",
+      "rank": 95,
+      "name": "Papa Johns Pizza",
+      "listing_note": null,
+      "cuisine": [
+        "Pizza"
+      ],
+      "rating": 4.2,
+      "reviews": 9,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "le-petit-cafetier",
+      "rank": 96,
+      "name": "Le Petit Cafetier",
+      "listing_note": null,
+      "cuisine": [
+        "Cafe"
+      ],
+      "rating": 4.3,
+      "reviews": 4,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "green-lovers",
+      "rank": 97,
+      "name": "Green Lovers",
+      "listing_note": null,
+      "cuisine": [
+        "Healthy"
+      ],
+      "rating": 4.1,
+      "reviews": 9,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "santa-brasa",
+      "rank": 98,
+      "name": "Santa Brasa",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse",
+        "Barbecue"
+      ],
+      "rating": 3.7,
+      "reviews": 75,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "cua-cua",
+      "rank": 99,
+      "name": "Cua Cua",
+      "listing_note": null,
+      "cuisine": [],
+      "rating": 3.8,
+      "reviews": 38,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "cubo-scz",
+      "rank": 100,
+      "name": "Cubo Scz",
+      "listing_note": null,
+      "cuisine": [
+        "Mexican",
+        "Brew Pub"
+      ],
+      "rating": 4.5,
+      "reviews": 15,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "angelino",
+      "rank": 101,
+      "name": "Angelino",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "European"
+      ],
+      "rating": 3.8,
+      "reviews": 86,
+      "price": "$$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "brasargent-express",
+      "rank": 102,
+      "name": "Brasargent Express",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse",
+        "Barbecue"
+      ],
+      "rating": 3.5,
+      "reviews": 19,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "kaos-resto-bar",
+      "rank": 103,
+      "name": "Kaos Resto-Bar",
+      "listing_note": null,
+      "cuisine": [
+        "Seafood",
+        "Barbecue"
+      ],
+      "rating": 4.3,
+      "reviews": 3,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "mediterraneo-cafe-y-tapas",
+      "rank": 104,
+      "name": "Mediterráneo Café Y Tapas",
+      "listing_note": null,
+      "cuisine": [
+        "International",
+        "Mediterranean"
+      ],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "confetti",
+      "rank": 105,
+      "name": "Confetti",
+      "listing_note": null,
+      "cuisine": [
+        "French",
+        "Cafe"
+      ],
+      "rating": 4.5,
+      "reviews": 2,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "la-bodega-espanola-de-manolito",
+      "rank": 106,
+      "name": "La Bodega Espanola de Manolito",
+      "listing_note": null,
+      "cuisine": [
+        "Spanish"
+      ],
+      "rating": 4.3,
+      "reviews": 15,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "oncetintos",
+      "rank": 107,
+      "name": "OnceTintos",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "French"
+      ],
+      "rating": 4.8,
+      "reviews": 8,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "delicias-de-oro",
+      "rank": 108,
+      "name": "Delicias de Oro",
+      "listing_note": null,
+      "cuisine": [
+        "Cafe",
+        "Deli"
+      ],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "casa-alfonsina",
+      "rank": 109,
+      "name": "Casa Alfonsina",
+      "listing_note": null,
+      "cuisine": [
+        "Pizza",
+        "Cafe"
+      ],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "ame-cafe-bar",
+      "rank": 110,
+      "name": "Ame Cafe & Bar",
+      "listing_note": null,
+      "cuisine": [
+        "Cafe"
+      ],
+      "rating": 3.4,
+      "reviews": 14,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "restaurante-casa-blanca",
+      "rank": 111,
+      "name": "Restaurante Casa Blanca",
+      "listing_note": null,
+      "cuisine": [
+        "Cafe",
+        "International"
+      ],
+      "rating": 4.7,
+      "reviews": 3,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "pez-mar",
+      "rank": 112,
+      "name": "Pez & Mar",
+      "listing_note": null,
+      "cuisine": [
+        "Seafood"
+      ],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": "$$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "campesino",
+      "rank": 113,
+      "name": "Campesino",
+      "listing_note": null,
+      "cuisine": [
+        "Cafe"
+      ],
+      "rating": 4.8,
+      "reviews": 6,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "mi-fortuna-ecoparque-granja",
+      "rank": 114,
+      "name": "Mi Fortuna Ecoparque & Granja",
+      "listing_note": null,
+      "cuisine": [
+        "Brazilian",
+        "Argentinean"
+      ],
+      "rating": 5.0,
+      "reviews": 3,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "parrillada-oriente-petrolero",
+      "rank": 115,
+      "name": "Parrillada Oriente Petrolero",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse"
+      ],
+      "rating": 3.7,
+      "reviews": 13,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "oak-gastrobar",
+      "rank": 116,
+      "name": "Oak Gastrobar",
+      "listing_note": null,
+      "cuisine": [
+        "American",
+        "Steakhouse"
+      ],
+      "rating": 4.7,
+      "reviews": 7,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "bocarte-bolivia",
+      "rank": 117,
+      "name": "Bocarte Bolivia",
+      "listing_note": null,
+      "cuisine": [
+        "Bars & Pubs",
+        "Deli"
+      ],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": "$$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "d15",
+      "rank": 118,
+      "name": "D15",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "Pizza"
+      ],
+      "rating": 4.1,
+      "reviews": 30,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "boulevard-plaza",
+      "rank": 119,
+      "name": "Boulevard Plaza",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse",
+        "Fast Food"
+      ],
+      "rating": 4.1,
+      "reviews": 9,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "alleggro-resto-brunch",
+      "rank": 120,
+      "name": "Alleggro Resto-Brunch",
+      "listing_note": null,
+      "cuisine": [
+        "International"
+      ],
+      "rating": 3.5,
+      "reviews": 10,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "martin-fuego",
+      "rank": 121,
+      "name": "Martin Fuego",
+      "listing_note": null,
+      "cuisine": [
+        "Bar",
+        "Cafe"
+      ],
+      "rating": 3.7,
+      "reviews": 3,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "in-fusion",
+      "rank": 122,
+      "name": "In.fusión",
+      "listing_note": null,
+      "cuisine": [
+        "Bar",
+        "Cafe"
+      ],
+      "rating": 4.8,
+      "reviews": 5,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "don-celso",
+      "rank": 123,
+      "name": "Don Celso",
+      "listing_note": null,
+      "cuisine": [
+        "South American"
+      ],
+      "rating": 5.0,
+      "reviews": 2,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "pizza-rio",
+      "rank": 124,
+      "name": "Pizza Rio",
+      "listing_note": null,
+      "cuisine": [
+        "Pizza"
+      ],
+      "rating": 3.6,
+      "reviews": 9,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "sushi-tren",
+      "rank": 125,
+      "name": "Sushi Tren",
+      "listing_note": null,
+      "cuisine": [
+        "Japanese",
+        "Sushi"
+      ],
+      "rating": 4.0,
+      "reviews": 61,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "restaurant-la-sierra",
+      "rank": 126,
+      "name": "Restaurant La Sierra",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse"
+      ],
+      "rating": 3.3,
+      "reviews": 4,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "wistupiku",
+      "rank": 127,
+      "name": "Wistupiku",
+      "listing_note": null,
+      "cuisine": [
+        "Cafe (salteñas)"
+      ],
+      "rating": 4.2,
+      "reviews": 5,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "la-hacienda-del-gaucho",
+      "rank": 128,
+      "name": "La Hacienda del Gaucho",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse",
+        "Argentinean"
+      ],
+      "rating": 4.0,
+      "reviews": 2,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "soho-bar-food",
+      "rank": 129,
+      "name": "Soho Bar & Food",
+      "listing_note": null,
+      "cuisine": [
+        "International"
+      ],
+      "rating": 5.0,
+      "reviews": 4,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "restaurant-la-creperie",
+      "rank": 130,
+      "name": "Restaurant La Creperie",
+      "listing_note": null,
+      "cuisine": [
+        "French",
+        "International"
+      ],
+      "rating": 4.0,
+      "reviews": 27,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "sahara-pizza-bolivia",
+      "rank": 131,
+      "name": "Sahara Pizza Bolivia",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "Pizza"
+      ],
+      "rating": 4.5,
+      "reviews": 6,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "y-se-llama-peru",
+      "rank": 132,
+      "name": "Y Se Llama Peru",
+      "listing_note": null,
+      "cuisine": [
+        "Peruvian",
+        "Seafood"
+      ],
+      "rating": 3.7,
+      "reviews": 29,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "urbano-chop-grill",
+      "rank": 133,
+      "name": "Urbano Chop & Grill",
+      "listing_note": null,
+      "cuisine": [
+        "Brew Pub",
+        "Bar"
+      ],
+      "rating": 4.7,
+      "reviews": 10,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "route66-bolivia",
+      "rank": 134,
+      "name": "Route66 Bolivia",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse",
+        "Pizza"
+      ],
+      "rating": 4.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "ettmuller-landhaus-restaurant",
+      "rank": 135,
+      "name": "Ettmuller Landhaus Restaurant",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse",
+        "Fast Food"
+      ],
+      "rating": 4.2,
+      "reviews": 6,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "pilaik-restaurant",
+      "rank": 136,
+      "name": "Pilaik Restaurant",
+      "listing_note": null,
+      "cuisine": [
+        "Chinese"
+      ],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "restaurante-japones-sarai",
+      "rank": 137,
+      "name": "Restaurante Japones Sarai",
+      "listing_note": null,
+      "cuisine": [
+        "Japanese",
+        "Sushi"
+      ],
+      "rating": 4.5,
+      "reviews": 8,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "bistro-luz",
+      "rank": 138,
+      "name": "Bistro Luz",
+      "listing_note": null,
+      "cuisine": [
+        "Bar",
+        "Cafe"
+      ],
+      "rating": 5.0,
+      "reviews": 7,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "oga",
+      "rank": 139,
+      "name": "OGA",
+      "listing_note": null,
+      "cuisine": [
+        "Bars & Pubs"
+      ],
+      "rating": 3.9,
+      "reviews": 19,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "tucunare-restaurant",
+      "rank": 140,
+      "name": "Tucunare Restaurant",
+      "listing_note": null,
+      "cuisine": [],
+      "rating": 4.0,
+      "reviews": 22,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "mi-cholita",
+      "rank": 141,
+      "name": "Mi Cholita",
+      "listing_note": null,
+      "cuisine": [
+        "South American"
+      ],
+      "rating": 4.0,
+      "reviews": 1,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "sapore-italiano",
+      "rank": 142,
+      "name": "Sapore Italiano",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "Deli"
+      ],
+      "rating": 4.4,
+      "reviews": 15,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "chifa-china",
+      "rank": 143,
+      "name": "Chifa China",
+      "listing_note": null,
+      "cuisine": [
+        "Chinese"
+      ],
+      "rating": 4.3,
+      "reviews": 3,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "barn-grill-rancho-montana",
+      "rank": 144,
+      "name": "Barn & Grill Rancho Montana",
+      "listing_note": null,
+      "cuisine": [
+        "Grill"
+      ],
+      "rating": 4.8,
+      "reviews": 5,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "goss-bar",
+      "rank": 145,
+      "name": "Goss Bar",
+      "listing_note": null,
+      "cuisine": [
+        "Brazilian",
+        "Fusion"
+      ],
+      "rating": 4.3,
+      "reviews": 4,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "zucchini",
+      "rank": 146,
+      "name": "Zucchini",
+      "listing_note": null,
+      "cuisine": [
+        "American",
+        "Deli"
+      ],
+      "rating": 4.7,
+      "reviews": 6,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "la-plazita",
+      "rank": 147,
+      "name": "La Plazita",
+      "listing_note": null,
+      "cuisine": [
+        "Peruvian",
+        "Seafood"
+      ],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "san-ho",
+      "rank": 148,
+      "name": "San Ho",
+      "listing_note": null,
+      "cuisine": [
+        "Chinese"
+      ],
+      "rating": 3.5,
+      "reviews": 2,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "avidano",
+      "rank": 149,
+      "name": "Avidano",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "Pizza"
+      ],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "swissco-discotheque-restobar",
+      "rank": 150,
+      "name": "Swissco Discotheque & Restobar",
+      "listing_note": null,
+      "cuisine": [
+        "Nightlife / Restobar"
+      ],
+      "rating": 4.9,
+      "reviews": 7,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "lomo-s-grill",
+      "rank": 151,
+      "name": "Lomo's Grill",
+      "listing_note": null,
+      "cuisine": [
+        "American",
+        "Fast Food"
+      ],
+      "rating": 4.5,
+      "reviews": 8,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "hooters",
+      "rank": 152,
+      "name": "Hooters",
+      "listing_note": null,
+      "cuisine": [
+        "American",
+        "Fast Food"
+      ],
+      "rating": 2.6,
+      "reviews": 22,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "el-vocho",
+      "rank": 153,
+      "name": "El Vocho",
+      "listing_note": null,
+      "cuisine": [
+        "Pizza",
+        "Street Food"
+      ],
+      "rating": 4.7,
+      "reviews": 7,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "restaurant-g77-china",
+      "rank": 154,
+      "name": "Restaurant G77 + China",
+      "listing_note": null,
+      "cuisine": [
+        "Chinese"
+      ],
+      "rating": 3.4,
+      "reviews": 18,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "oishi-comida-asiatica-creativa",
+      "rank": 155,
+      "name": "Oishi Comida Asiatica Creativa",
+      "listing_note": null,
+      "cuisine": [
+        "Chinese",
+        "Japanese"
+      ],
+      "rating": 4.2,
+      "reviews": 13,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "kinoa-restaurant",
+      "rank": 156,
+      "name": "Kinöa Restaurant",
+      "listing_note": null,
+      "cuisine": [
+        "Fusion",
+        "Healthy"
+      ],
+      "rating": 4.8,
+      "reviews": 6,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "sir-pieper-2nd-location",
+      "rank": 157,
+      "name": "Sir Pieper",
+      "listing_note": "branch/duplicate listing",
+      "cuisine": [
+        "Bars & Pubs",
+        "American"
+      ],
+      "rating": 5.0,
+      "reviews": 3,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "protein-house-bolivia",
+      "rank": 158,
+      "name": "Protein House Bolivia",
+      "listing_note": null,
+      "cuisine": [
+        "Peruvian",
+        "Latin"
+      ],
+      "rating": 5.0,
+      "reviews": 2,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "demos-cafe",
+      "rank": 159,
+      "name": "Demos Cafe",
+      "listing_note": null,
+      "cuisine": [
+        "Cafe",
+        "Fast Food"
+      ],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "city-bistro",
+      "rank": 160,
+      "name": "City Bistro",
+      "listing_note": null,
+      "cuisine": [
+        "French",
+        "Bar"
+      ],
+      "rating": 4.9,
+      "reviews": 9,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "paletas-yucatan-centro",
+      "rank": 161,
+      "name": "Paletas Yucatan – Centro",
+      "listing_note": null,
+      "cuisine": [
+        "Contemporary (paletas)"
+      ],
+      "rating": 5.0,
+      "reviews": 5,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "la-pavlova",
+      "rank": 162,
+      "name": "La Pavlova",
+      "listing_note": null,
+      "cuisine": [
+        "Cafe",
+        "Australian"
+      ],
+      "rating": 5.0,
+      "reviews": 3,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "restaurante-corea",
+      "rank": 163,
+      "name": "Restaurante Corea",
+      "listing_note": null,
+      "cuisine": [
+        "Seafood",
+        "Sushi"
+      ],
+      "rating": 4.7,
+      "reviews": 3,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "el-fogon",
+      "rank": 164,
+      "name": "El Fogon",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse"
+      ],
+      "rating": 2.5,
+      "reviews": 2,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "fratelli-s",
+      "rank": 165,
+      "name": "Fratelli's",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "Pizza"
+      ],
+      "rating": 5.0,
+      "reviews": 2,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "el-huarike-mar-tierra",
+      "rank": 166,
+      "name": "El-Huarike Mar & Tierra",
+      "listing_note": null,
+      "cuisine": [
+        "Peruvian",
+        "Seafood"
+      ],
+      "rating": 5.0,
+      "reviews": 2,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "pollos-a-la-brasa-peruchin",
+      "rank": 167,
+      "name": "Pollos A La Brasa Peruchin",
+      "listing_note": null,
+      "cuisine": [
+        "Peruvian"
+      ],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "pollo-campeon",
+      "rank": 168,
+      "name": "Pollo Campeon",
+      "listing_note": null,
+      "cuisine": [
+        "South American"
+      ],
+      "rating": 4.3,
+      "reviews": 3,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "restaurate-vegetariano-su-salud",
+      "rank": 169,
+      "name": "Restaurate Vegetariano Su Salud",
+      "listing_note": null,
+      "cuisine": [
+        "Healthy / Vegetarian"
+      ],
+      "rating": 5.0,
+      "reviews": 2,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "fratelli-s-2nd-location",
+      "rank": 170,
+      "name": "Fratelli's",
+      "listing_note": "branch/duplicate listing",
+      "cuisine": [
+        "Italian",
+        "Pizza"
+      ],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "jamuy-wings-burgers",
+      "rank": 171,
+      "name": "Jamuy Wings & Burgers",
+      "listing_note": null,
+      "cuisine": [
+        "Wings & Burgers"
+      ],
+      "rating": 4.5,
+      "reviews": 8,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "siipi",
+      "rank": 172,
+      "name": "Siipi",
+      "listing_note": null,
+      "cuisine": [
+        "Healthy"
+      ],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "tagliatella",
+      "rank": 173,
+      "name": "Tagliatella",
+      "listing_note": null,
+      "cuisine": [
+        "Italian"
+      ],
+      "rating": 4.0,
+      "reviews": 2,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "johnny-rockets",
+      "rank": 174,
+      "name": "Johnny Rockets",
+      "listing_note": null,
+      "cuisine": [
+        "American"
+      ],
+      "rating": 3.7,
+      "reviews": 10,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "pamper-s-resto-bar",
+      "rank": 175,
+      "name": "Pamper's Resto Bar",
+      "listing_note": null,
+      "cuisine": [
+        "Bars & Pubs",
+        "International"
+      ],
+      "rating": 4.3,
+      "reviews": 3,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "gigi-s-kitchen",
+      "rank": 176,
+      "name": "Gigi's Kitchen",
+      "listing_note": null,
+      "cuisine": [
+        "Pizza"
+      ],
+      "rating": 5.0,
+      "reviews": 7,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "hamburguesas-toby",
+      "rank": 177,
+      "name": "Hamburguesas Toby",
+      "listing_note": null,
+      "cuisine": [
+        "American",
+        "Cafe"
+      ],
+      "rating": 4.3,
+      "reviews": 4,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "san-sha",
+      "rank": 178,
+      "name": "San Sha",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse",
+        "Barbecue"
+      ],
+      "rating": 2.9,
+      "reviews": 9,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "restaurante-toborochi",
+      "rank": 179,
+      "name": "Restaurante Toborochi",
+      "listing_note": null,
+      "cuisine": [],
+      "rating": 2.5,
+      "reviews": 4,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "boston-grill",
+      "rank": 180,
+      "name": "Boston Grill",
+      "listing_note": null,
+      "cuisine": [
+        "American"
+      ],
+      "rating": 5.0,
+      "reviews": 6,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "salteneria-jet-set",
+      "rank": 181,
+      "name": "Salteneria Jet Set",
+      "listing_note": null,
+      "cuisine": [
+        "Fast Food (salteñas)"
+      ],
+      "rating": 4.6,
+      "reviews": 5,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "brasargent-rodizio",
+      "rank": 182,
+      "name": "Brasargent Rodizio",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "Brazilian"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "santa-brasa-2nd-location",
+      "rank": 183,
+      "name": "Santa Brasa",
+      "listing_note": "branch/duplicate listing",
+      "cuisine": [
+        "Steakhouse",
+        "Argentinean"
+      ],
+      "rating": 3.8,
+      "reviews": 4,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "el-gran-calamar-restaurant-marisqueria",
+      "rank": 184,
+      "name": "El Gran Calamar restaurant marisqueria",
+      "listing_note": null,
+      "cuisine": [
+        "Seafood"
+      ],
+      "rating": 4.5,
+      "reviews": 2,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "miso-restoramen",
+      "rank": 185,
+      "name": "MISO Restoramen",
+      "listing_note": null,
+      "cuisine": [
+        "Ramen"
+      ],
+      "rating": 5.0,
+      "reviews": 7,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "santa-maria",
+      "rank": 186,
+      "name": "Santa Maria",
+      "listing_note": null,
+      "cuisine": [],
+      "rating": 3.8,
+      "reviews": 6,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "naoki-sushi-equipetrol",
+      "rank": 187,
+      "name": "Naoki Sushi Equipetrol",
+      "listing_note": null,
+      "cuisine": [
+        "Japanese",
+        "Peruvian"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "ambika-cafe-y-restaurante",
+      "rank": 188,
+      "name": "Ambika Cafe Y Restaurante",
+      "listing_note": null,
+      "cuisine": [
+        "Indian"
+      ],
+      "rating": 4.4,
+      "reviews": 9,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "cada-dia-restaurante-vegetariano",
+      "rank": 189,
+      "name": "Cada Dia Restaurante Vegetariano",
+      "listing_note": null,
+      "cuisine": [
+        "Vegetarian (Italian",
+        "French)"
+      ],
+      "rating": 4.8,
+      "reviews": 4,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "cornelia",
+      "rank": 190,
+      "name": "Cornelia",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "Bar"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "nacho-libre-tex-mex",
+      "rank": 191,
+      "name": "Nacho Libre Tex Mex",
+      "listing_note": null,
+      "cuisine": [
+        "Mexican"
+      ],
+      "rating": 4.5,
+      "reviews": 4,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "meow-sushi-bar",
+      "rank": 192,
+      "name": "Meow Sushi Bar",
+      "listing_note": null,
+      "cuisine": [
+        "Sushi"
+      ],
+      "rating": 4.4,
+      "reviews": 7,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "el-cumpito",
+      "rank": 193,
+      "name": "El Cumpito",
+      "listing_note": null,
+      "cuisine": [
+        "South American"
+      ],
+      "rating": 4.0,
+      "reviews": 2,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "burger-king",
+      "rank": 194,
+      "name": "Burger King",
+      "listing_note": null,
+      "cuisine": [
+        "American",
+        "Fast Food"
+      ],
+      "rating": 3.3,
+      "reviews": 3,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "sonnengarten",
+      "rank": 195,
+      "name": "Sonnengarten",
+      "listing_note": null,
+      "cuisine": [
+        "South American"
+      ],
+      "rating": 3.0,
+      "reviews": 2,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "maringa-coffee",
+      "rank": 196,
+      "name": "Maringa Coffee",
+      "listing_note": null,
+      "cuisine": [
+        "Cafe"
+      ],
+      "rating": 5.0,
+      "reviews": 2,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "santena",
+      "rank": 197,
+      "name": "Santena",
+      "listing_note": null,
+      "cuisine": [
+        "Latin",
+        "South American"
+      ],
+      "rating": 4.5,
+      "reviews": 2,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "milan-express",
+      "rank": 198,
+      "name": "Milan Express",
+      "listing_note": null,
+      "cuisine": [
+        "Fast Food",
+        "Fusion"
+      ],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "donatello",
+      "rank": 199,
+      "name": "Donatello",
+      "listing_note": null,
+      "cuisine": [
+        "Italian"
+      ],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "restaurant-chicharrones-dona-mechita",
+      "rank": 200,
+      "name": "Restaurant Chicharrones Dona Mechita",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse",
+        "Latin"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "restaurant-el-movima",
+      "rank": 201,
+      "name": "Restaurant El Movima",
+      "listing_note": null,
+      "cuisine": [
+        "South American"
+      ],
+      "rating": 4.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "monalisa-bier-haus",
+      "rank": 202,
+      "name": "Monalisa Bier Haus",
+      "listing_note": null,
+      "cuisine": [
+        "German"
+      ],
+      "rating": 2.3,
+      "reviews": 3,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "pinche-taco",
+      "rank": 203,
+      "name": "Pinche Taco",
+      "listing_note": null,
+      "cuisine": [
+        "Mexican"
+      ],
+      "rating": 4.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "88-burguer-salads",
+      "rank": 204,
+      "name": "88 Burguer & Salads",
+      "listing_note": null,
+      "cuisine": [
+        "American",
+        "Fast Food"
+      ],
+      "rating": 4.0,
+      "reviews": 23,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "tgi-fridays",
+      "rank": 205,
+      "name": "TGI Fridays",
+      "listing_note": null,
+      "cuisine": [
+        "American",
+        "Bar"
+      ],
+      "rating": 2.9,
+      "reviews": 22,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "restaurant-landhaus-el-fuerte",
+      "rank": 206,
+      "name": "Restaurant Landhaus El Fuerte",
+      "listing_note": null,
+      "cuisine": [
+        "German",
+        "Austrian"
+      ],
+      "rating": 4.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "borde-rio",
+      "rank": 207,
+      "name": "Borde Rio",
+      "listing_note": null,
+      "cuisine": [],
+      "rating": 4.3,
+      "reviews": 6,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "glorimar-saltenas-centro",
+      "rank": 208,
+      "name": "GLORIMAR Salteñas Centro",
+      "listing_note": null,
+      "cuisine": [
+        "Cafe",
+        "Fast Food (salteñas)"
+      ],
+      "rating": 3.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "la-catedral-taberna",
+      "rank": 209,
+      "name": "La Catedral Taberna",
+      "listing_note": null,
+      "cuisine": [
+        "Spanish"
+      ],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "la-fonda-de-ariel",
+      "rank": 210,
+      "name": "La Fonda de Ariel",
+      "listing_note": null,
+      "cuisine": [
+        "South American"
+      ],
+      "rating": 4.4,
+      "reviews": 8,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "argentino-restaurant-premium",
+      "rank": 211,
+      "name": "Argentino Restaurant Premium",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse",
+        "Brazilian"
+      ],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "bohemia-resto-bar",
+      "rank": 212,
+      "name": "Bohemia Resto Bar",
+      "listing_note": null,
+      "cuisine": [
+        "Bars & Pubs",
+        "Steakhouse"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "la-peta-gourmet",
+      "rank": 213,
+      "name": "La Peta Gourmet",
+      "listing_note": null,
+      "cuisine": [
+        "Healthy"
+      ],
+      "rating": 4.5,
+      "reviews": 2,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "el-vegano-arrepentido",
+      "rank": 214,
+      "name": "El Vegano Arrepentido",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse",
+        "Barbecue"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "memphis",
+      "rank": 215,
+      "name": "Memphis",
+      "listing_note": null,
+      "cuisine": [
+        "Fast Food"
+      ],
+      "rating": 4.0,
+      "reviews": 2,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "bits-cream",
+      "rank": 216,
+      "name": "Bits & Cream",
+      "listing_note": null,
+      "cuisine": [
+        "American"
+      ],
+      "rating": 4.0,
+      "reviews": 2,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "the-taj-mahal-indian-restaurant",
+      "rank": 217,
+      "name": "The Taj Mahal Indian Restaurant",
+      "listing_note": null,
+      "cuisine": [
+        "Indian"
+      ],
+      "rating": 3.9,
+      "reviews": 8,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "restaurante-el-hornero",
+      "rank": 218,
+      "name": "Restaurante El Hornero",
+      "listing_note": null,
+      "cuisine": [],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "burger-hero",
+      "rank": 219,
+      "name": "Burger Hero",
+      "listing_note": null,
+      "cuisine": [
+        "Fast Food"
+      ],
+      "rating": 4.0,
+      "reviews": 3,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "sandy-snack-cafe",
+      "rank": 220,
+      "name": "Sandy Snack Café",
+      "listing_note": null,
+      "cuisine": [
+        "Taiwanese"
+      ],
+      "rating": 3.5,
+      "reviews": 2,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "restaurant-vegana-la-vega",
+      "rank": 221,
+      "name": "Restaurant Vegana La Vega",
+      "listing_note": null,
+      "cuisine": [
+        "Vegan"
+      ],
+      "rating": 3.8,
+      "reviews": 12,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "la-condesa",
+      "rank": 222,
+      "name": "La Condesa",
+      "listing_note": null,
+      "cuisine": [
+        "Bar",
+        "Cafe"
+      ],
+      "rating": 1.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "natsumi-sushi",
+      "rank": 223,
+      "name": "Natsumi Sushi",
+      "listing_note": null,
+      "cuisine": [
+        "Japanese",
+        "Peruvian"
+      ],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "aji-amarillo",
+      "rank": 224,
+      "name": "Aji Amarillo",
+      "listing_note": null,
+      "cuisine": [
+        "Peruvian",
+        "South American"
+      ],
+      "rating": 4.5,
+      "reviews": 2,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "310-smashburger",
+      "rank": 225,
+      "name": "310 Smashburger",
+      "listing_note": null,
+      "cuisine": [
+        "American"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "el-chiocchio",
+      "rank": 226,
+      "name": "El Chiocchió",
+      "listing_note": null,
+      "cuisine": [],
+      "rating": 5.0,
+      "reviews": 2,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "make-sushi-restaurant",
+      "rank": 227,
+      "name": "Make Sushi Restaurant",
+      "listing_note": null,
+      "cuisine": [
+        "Sushi"
+      ],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "tajy-bar",
+      "rank": 228,
+      "name": "Tajý Bar",
+      "listing_note": null,
+      "cuisine": [
+        "Bar"
+      ],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "chancho-al-palo",
+      "rank": 229,
+      "name": "Chancho Al Palo",
+      "listing_note": null,
+      "cuisine": [],
+      "rating": 4.7,
+      "reviews": 3,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "pollo-el-solar",
+      "rank": 230,
+      "name": "Pollo \"El Solar\"",
+      "listing_note": null,
+      "cuisine": [
+        "Fast Food"
+      ],
+      "rating": 4.5,
+      "reviews": 2,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "vida-y-salud",
+      "rank": 231,
+      "name": "Vida y Salud",
+      "listing_note": null,
+      "cuisine": [],
+      "rating": 4.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "q-gibanga",
+      "rank": 232,
+      "name": "Q Gibanga",
+      "listing_note": null,
+      "cuisine": [
+        "Latin",
+        "Barbecue"
+      ],
+      "rating": 5.0,
+      "reviews": 2,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "la-oveja-negra",
+      "rank": 233,
+      "name": "La Oveja Negra",
+      "listing_note": null,
+      "cuisine": [
+        "American",
+        "Austrian"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "matambre-grill",
+      "rank": 234,
+      "name": "Matambre Grill",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse",
+        "Brew Pub"
+      ],
+      "rating": 4.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "chocolate-baure",
+      "rank": 235,
+      "name": "Chocolate Baure",
+      "listing_note": null,
+      "cuisine": [
+        "European (chocolate)"
+      ],
+      "rating": 4.0,
+      "reviews": 1,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "juices-bar",
+      "rank": 236,
+      "name": "Juices & Bar",
+      "listing_note": null,
+      "cuisine": [
+        "Healthy"
+      ],
+      "rating": 5.0,
+      "reviews": 2,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "papote-smoky-food-shop",
+      "rank": 237,
+      "name": "Papote Smoky Food Shop",
+      "listing_note": null,
+      "cuisine": [
+        "Fast Food",
+        "Barbecue"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "restaurante-la-condesa",
+      "rank": 238,
+      "name": "Restaurante La Condesa",
+      "listing_note": null,
+      "cuisine": [
+        "Bar",
+        "Cafe"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "pascualini-restaurante",
+      "rank": 239,
+      "name": "Pascualini Restaurante",
+      "listing_note": null,
+      "cuisine": [],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "brooklyn-resto-bar",
+      "rank": 240,
+      "name": "Brooklyn Resto Bar",
+      "listing_note": null,
+      "cuisine": [
+        "Mexican",
+        "American"
+      ],
+      "rating": 3.0,
+      "reviews": 1,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "restaurant-guapuru",
+      "rank": 241,
+      "name": "Restaurant Guapuru",
+      "listing_note": null,
+      "cuisine": [],
+      "rating": 3.4,
+      "reviews": 7,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "sabor-a-mar",
+      "rank": 242,
+      "name": "Sabor a Mar",
+      "listing_note": null,
+      "cuisine": [
+        "Seafood"
+      ],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "bacon-steak-and-chicken",
+      "rank": 243,
+      "name": "Bacon Steak and Chicken",
+      "listing_note": null,
+      "cuisine": [
+        "International"
+      ],
+      "rating": 3.5,
+      "reviews": 2,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "sushicake",
+      "rank": 244,
+      "name": "Sushicake",
+      "listing_note": null,
+      "cuisine": [
+        "Sushi"
+      ],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "bricks",
+      "rank": 245,
+      "name": "Bricks",
+      "listing_note": null,
+      "cuisine": [
+        "Italian"
+      ],
+      "rating": 3.5,
+      "reviews": 2,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "tuvino",
+      "rank": 246,
+      "name": "Tuvino",
+      "listing_note": null,
+      "cuisine": [
+        "Bar",
+        "Pub (wine)"
+      ],
+      "rating": 4.3,
+      "reviews": 3,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "brasil-sul-resto-bar",
+      "rank": 247,
+      "name": "Brasil Sul Resto Bar",
+      "listing_note": null,
+      "cuisine": [
+        "Brazilian"
+      ],
+      "rating": 4.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "antojitos-maria-belen",
+      "rank": 248,
+      "name": "Antojitos Maria Belen",
+      "listing_note": null,
+      "cuisine": [],
+      "rating": 4.3,
+      "reviews": 3,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "res-la-porcina",
+      "rank": 249,
+      "name": "Res. La porcina",
+      "listing_note": null,
+      "cuisine": [
+        "Grill"
+      ],
+      "rating": 4.5,
+      "reviews": 2,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "grillados",
+      "rank": 250,
+      "name": "Grillados",
+      "listing_note": null,
+      "cuisine": [
+        "American",
+        "Brazilian"
+      ],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "xin-guang",
+      "rank": 251,
+      "name": "Xin Guang",
+      "listing_note": null,
+      "cuisine": [
+        "Chinese"
+      ],
+      "rating": 4.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "picnic-complices-del-sabor",
+      "rank": 252,
+      "name": "PicNic Complices del sabor",
+      "listing_note": null,
+      "cuisine": [
+        "Asian"
+      ],
+      "rating": 2.8,
+      "reviews": 6,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "malinche",
+      "rank": 253,
+      "name": "Malinche",
+      "listing_note": null,
+      "cuisine": [
+        "Latin",
+        "Spanish"
+      ],
+      "rating": 3.3,
+      "reviews": 3,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "il-chilindrino",
+      "rank": 254,
+      "name": "Il Chilindrino",
+      "listing_note": null,
+      "cuisine": [],
+      "rating": 5.0,
+      "reviews": 2,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "locoto-s",
+      "rank": 255,
+      "name": "Locoto's",
+      "listing_note": null,
+      "cuisine": [
+        "Latin",
+        "Spanish"
+      ],
+      "rating": 1.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "panaderia-artesanal-bon-pain",
+      "rank": 256,
+      "name": "Panadería Artesanal Bon Pain",
+      "listing_note": null,
+      "cuisine": [
+        "French bakery"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "jr-hotel-restaurant",
+      "rank": 257,
+      "name": "JR Hotel Restaurant",
+      "listing_note": null,
+      "cuisine": [],
+      "rating": 4.0,
+      "reviews": 3,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "ave-pizza",
+      "rank": 258,
+      "name": "Ave Pizza",
+      "listing_note": null,
+      "cuisine": [
+        "Pizza"
+      ],
+      "rating": 3.3,
+      "reviews": 3,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "acai-corner-healthy-food",
+      "rank": 259,
+      "name": "Acai Corner Healthy Food",
+      "listing_note": null,
+      "cuisine": [
+        "Healthy"
+      ],
+      "rating": 4.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "green-lovers-2nd-location",
+      "rank": 260,
+      "name": "Green Lovers",
+      "listing_note": "branch/duplicate listing",
+      "cuisine": [
+        "Healthy"
+      ],
+      "rating": 3.0,
+      "reviews": 3,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "patio-madera-san-martin",
+      "rank": 261,
+      "name": "Patio Madera San Martin",
+      "listing_note": null,
+      "cuisine": [
+        "Bars & Pubs",
+        "Brew Pub"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "la-galeria",
+      "rank": 262,
+      "name": "La Galeria",
+      "listing_note": null,
+      "cuisine": [
+        "Bar",
+        "Pub"
+      ],
+      "rating": 4.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "el-palacio-del-charque",
+      "rank": 263,
+      "name": "El Palacio del Charque",
+      "listing_note": null,
+      "cuisine": [
+        "Fast Food",
+        "South American"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "monkey-wings",
+      "rank": 264,
+      "name": "Monkey Wings",
+      "listing_note": null,
+      "cuisine": [
+        "Wings"
+      ],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "snobiz-bolivia",
+      "rank": 265,
+      "name": "Snobiz Bolivia",
+      "listing_note": null,
+      "cuisine": [
+        "Fast Food"
+      ],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "la-croissanteria-paris",
+      "rank": 266,
+      "name": "La Croissanteria Paris",
+      "listing_note": null,
+      "cuisine": [
+        "European bakery"
+      ],
+      "rating": 3.0,
+      "reviews": 1,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "smashburger",
+      "rank": 267,
+      "name": "Smashburger",
+      "listing_note": null,
+      "cuisine": [
+        "American",
+        "Fast Food"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "pacumutus-dona-trini",
+      "rank": 268,
+      "name": "Pacumutus Dona Trini",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse"
+      ],
+      "rating": 3.5,
+      "reviews": 2,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "caffe-italia",
+      "rank": 269,
+      "name": "Caffè Italia",
+      "listing_note": null,
+      "cuisine": [
+        "Cafe"
+      ],
+      "rating": 4.0,
+      "reviews": 2,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "qgibanga-2nd-listing",
+      "rank": 270,
+      "name": "QGibanga",
+      "listing_note": "branch/duplicate listing",
+      "cuisine": [],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "buenisimo",
+      "rank": 271,
+      "name": "Buenisimo",
+      "listing_note": null,
+      "cuisine": [],
+      "rating": 3.2,
+      "reviews": 5,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "zap-heladeria",
+      "rank": 272,
+      "name": "Zap heladeria",
+      "listing_note": null,
+      "cuisine": [
+        "Ice cream"
+      ],
+      "rating": 2.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "don-bodo",
+      "rank": 273,
+      "name": "Don Bodo",
+      "listing_note": null,
+      "cuisine": [
+        "International"
+      ],
+      "rating": 2.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "tang-express",
+      "rank": 274,
+      "name": "Tang Express",
+      "listing_note": null,
+      "cuisine": [
+        "Chinese",
+        "Asian"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "mar-de-limon",
+      "rank": 275,
+      "name": "Mar de Limón",
+      "listing_note": null,
+      "cuisine": [
+        "Seafood"
+      ],
+      "rating": 4.7,
+      "reviews": 3,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "la-bistecca",
+      "rank": 276,
+      "name": "La Bistecca",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "Steakhouse"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "khabala",
+      "rank": 277,
+      "name": "Khabala",
+      "listing_note": null,
+      "cuisine": [
+        "Mexican",
+        "American"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$$–$$$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "cittadino",
+      "rank": 278,
+      "name": "Cittadino",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "Grill"
+      ],
+      "rating": 1.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "restaurante-milan",
+      "rank": 279,
+      "name": "Restaurante Milan",
+      "listing_note": null,
+      "cuisine": [
+        "Fast Food",
+        "Pub"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "quinta-restaurante-musurita",
+      "rank": 280,
+      "name": "Quinta restaurante Musurita",
+      "listing_note": null,
+      "cuisine": [
+        "Grill"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "pinche-taco-2nd-location",
+      "rank": 281,
+      "name": "Pinche Taco",
+      "listing_note": "branch/duplicate listing",
+      "cuisine": [
+        "Mexican",
+        "Fast Food"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "buteco-resto-bar",
+      "rank": 282,
+      "name": "BUTECO resto bar",
+      "listing_note": null,
+      "cuisine": [
+        "Bar",
+        "Pub"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "hong-fa",
+      "rank": 283,
+      "name": "Hong Fa",
+      "listing_note": null,
+      "cuisine": [
+        "Chinese"
+      ],
+      "rating": 2.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "san-miguel",
+      "rank": 284,
+      "name": "San Miguel",
+      "listing_note": null,
+      "cuisine": [
+        "Fusion",
+        "Spanish"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "ebisu-sushi-santa-cruz-de-la-sierra",
+      "rank": 285,
+      "name": "Ebisu Sushi Santa Crúz de la Sierra",
+      "listing_note": null,
+      "cuisine": [
+        "Sushi"
+      ],
+      "rating": 5.0,
+      "reviews": 1,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "asadero",
+      "rank": 286,
+      "name": "Asadero",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse",
+        "Grill"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "bok-bok-wings-more",
+      "rank": 287,
+      "name": "Bok Bok Wings & More",
+      "listing_note": null,
+      "cuisine": [
+        "International",
+        "Fusion"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "el-rodeo-churrasqueria",
+      "rank": 288,
+      "name": "El Rodeo Churrasqueria",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse",
+        "Barbecue"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "taverna-lusitana",
+      "rank": 289,
+      "name": "Taverna Lusitana",
+      "listing_note": null,
+      "cuisine": [
+        "European",
+        "Portuguese"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "rustica-pizzeria-paseo-central",
+      "rank": 290,
+      "name": "Rústica Pizzería – Paseo Central",
+      "listing_note": null,
+      "cuisine": [
+        "Pizza",
+        "Pub"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "bahrem-grill-bar",
+      "rank": 291,
+      "name": "Bahrem Grill & Bar",
+      "listing_note": null,
+      "cuisine": [
+        "Brazilian",
+        "Bar"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "cocina-bohemia",
+      "rank": 292,
+      "name": "Cocina Bohemia",
+      "listing_note": null,
+      "cuisine": [
+        "Latin",
+        "Fast Food"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "santena-2nd-location",
+      "rank": 293,
+      "name": "Santena",
+      "listing_note": "branch/duplicate listing",
+      "cuisine": [
+        "Cafe"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "cafe-velo",
+      "rank": 294,
+      "name": "Café Vélo",
+      "listing_note": null,
+      "cuisine": [
+        "Cafe",
+        "Fast Food"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "aji-amarillo-2nd-listing",
+      "rank": 295,
+      "name": "Ají amarillo",
+      "listing_note": "branch/duplicate listing",
+      "cuisine": [
+        "Peruvian",
+        "South American"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "simply-eat-american-bbq",
+      "rank": 296,
+      "name": "Simply Eat American Bbq",
+      "listing_note": null,
+      "cuisine": [
+        "American BBQ"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "doumo-las-brisas",
+      "rank": 297,
+      "name": "Doumo Las Brisas",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse",
+        "Bar"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "concordia",
+      "rank": 298,
+      "name": "Concordia",
+      "listing_note": null,
+      "cuisine": [
+        "European"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "food-truck-parking",
+      "rank": 299,
+      "name": "Food Truck Parking",
+      "listing_note": null,
+      "cuisine": [
+        "Mexican",
+        "Bar (food trucks)"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "min-pao",
+      "rank": 300,
+      "name": "Min Pao",
+      "listing_note": null,
+      "cuisine": [
+        "Chinese",
+        "Asian"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "sushi-san",
+      "rank": 301,
+      "name": "Sushi San",
+      "listing_note": null,
+      "cuisine": [
+        "Japanese"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "bruse-pizzeria",
+      "rank": 302,
+      "name": "Brusé Pizzeria",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "Pizza"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "el-rincon-que-debes-conocer",
+      "rank": 303,
+      "name": "El Rincon Que Debes Conocer",
+      "listing_note": null,
+      "cuisine": [
+        "Seafood"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "360-bistro-garden",
+      "rank": 304,
+      "name": "360 Bistro Garden",
+      "listing_note": null,
+      "cuisine": [
+        "Fast Food",
+        "International"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "mr-jiba",
+      "rank": 305,
+      "name": "Mr. Jiba",
+      "listing_note": null,
+      "cuisine": [
+        "Barbecue"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "pollo-batman",
+      "rank": 306,
+      "name": "Pollo Batman",
+      "listing_note": null,
+      "cuisine": [
+        "Fast Food"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "pollo-batman-2nd-location",
+      "rank": 307,
+      "name": "Pollo Batman",
+      "listing_note": "branch/duplicate listing",
+      "cuisine": [
+        "Fast Food",
+        "Street Food"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "yampi",
+      "rank": 308,
+      "name": "Yampi",
+      "listing_note": null,
+      "cuisine": [
+        "Cafe",
+        "Fast Food"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "charques-y-chelas",
+      "rank": 309,
+      "name": "Charques Y Chelas",
+      "listing_note": null,
+      "cuisine": [
+        "South American"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "tequecheese-bolivia",
+      "rank": 310,
+      "name": "Tequecheese Bolivia",
+      "listing_note": null,
+      "cuisine": [
+        "Venezuelan",
+        "South American"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "aty-restaurante",
+      "rank": 311,
+      "name": "Aty Restaurante",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse",
+        "Cafe"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "la-griferia-bolivia",
+      "rank": 312,
+      "name": "La Griferia Bolivia",
+      "listing_note": null,
+      "cuisine": [
+        "Brew Pub",
+        "Grill"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "queen-burger",
+      "rank": 313,
+      "name": "Queen Burger",
+      "listing_note": null,
+      "cuisine": [
+        "German",
+        "Argentinean"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "la-ollita-de-plata",
+      "rank": 314,
+      "name": "La Ollita de Plata",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse",
+        "Fast Food"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "establo",
+      "rank": 315,
+      "name": "Establo",
+      "listing_note": null,
+      "cuisine": [
+        "Argentinean",
+        "South American"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "tang",
+      "rank": 316,
+      "name": "Tang",
+      "listing_note": null,
+      "cuisine": [
+        "Chinese",
+        "Asian"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "gallo-negro-taco-birria",
+      "rank": 317,
+      "name": "Gallo Negro • taco birria •",
+      "listing_note": null,
+      "cuisine": [
+        "Mexican"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "dorata",
+      "rank": 318,
+      "name": "Dorata",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "American"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "900-pizzas-artesanales",
+      "rank": 319,
+      "name": "900 Pizzas Artesanales",
+      "listing_note": null,
+      "cuisine": [
+        "Pizza"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "palo-santo",
+      "rank": 320,
+      "name": "Palo santo",
+      "listing_note": null,
+      "cuisine": [
+        "Peruvian",
+        "South American"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "asador-pizzeria-gaucho-camba",
+      "rank": 321,
+      "name": "Asador Pizzeria Gaucho-Camba",
+      "listing_note": null,
+      "cuisine": [
+        "Latin",
+        "Spanish"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "carnico-grill-bistro",
+      "rank": 322,
+      "name": "Cárnico Grill & Bistro",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse",
+        "Barbecue"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "jack-s-roman",
+      "rank": 323,
+      "name": "Jack's Roman",
+      "listing_note": null,
+      "cuisine": [
+        "Mexican",
+        "American"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "avenida-uruguay-456",
+      "rank": 324,
+      "name": "Avenida Uruguay 456",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse",
+        "Barbecue"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "wook-food",
+      "rank": 325,
+      "name": "Wook Food",
+      "listing_note": null,
+      "cuisine": [
+        "Thai",
+        "Central Asian"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "aca-o-alla",
+      "rank": 326,
+      "name": "Acá O Allá",
+      "listing_note": null,
+      "cuisine": [
+        "Mexican"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "restaurante-usanza-cocina-casera",
+      "rank": 327,
+      "name": "Restaurante Usanza Cocina Casera",
+      "listing_note": null,
+      "cuisine": [
+        "Brazilian",
+        "Latin"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "natu-life",
+      "rank": 328,
+      "name": "Natu Life",
+      "listing_note": null,
+      "cuisine": [
+        "Cafe",
+        "Healthy"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "la-pascana-del-norte",
+      "rank": 329,
+      "name": "La Pascana Del Norte",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "la-posada-de-miguel",
+      "rank": 330,
+      "name": "La posada de Miguel",
+      "listing_note": null,
+      "cuisine": [
+        "Latin",
+        "Barbecue"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "la-casita-del-sabor",
+      "rank": 331,
+      "name": "La Casita Del Sabor",
+      "listing_note": null,
+      "cuisine": [
+        "Fast Food",
+        "Venezuelan"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "pollo-maton",
+      "rank": 332,
+      "name": "Pollo Maton",
+      "listing_note": null,
+      "cuisine": [
+        "Italian",
+        "Fast Food"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "providencia-resto-bar",
+      "rank": 333,
+      "name": "Providencia resto-bar",
+      "listing_note": null,
+      "cuisine": [
+        "International"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "alquimia-experiencia-elemental",
+      "rank": 334,
+      "name": "Alquimia Experiencia Elemental",
+      "listing_note": null,
+      "cuisine": [
+        "Brew Pub",
+        "Bar"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "fratelli-s-3rd-location",
+      "rank": 335,
+      "name": "Fratelli's",
+      "listing_note": "branch/duplicate listing",
+      "cuisine": [
+        "Italian",
+        "Pizza"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "burger-match-equip",
+      "rank": 336,
+      "name": "Burger Match Equip.",
+      "listing_note": null,
+      "cuisine": [
+        "American"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "panera",
+      "rank": 337,
+      "name": "Panera",
+      "listing_note": null,
+      "cuisine": [
+        "Latin",
+        "Cafe"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "cada-dia-2nd-location",
+      "rank": 338,
+      "name": "Cada Dia",
+      "listing_note": "branch/duplicate listing",
+      "cuisine": [
+        "French",
+        "Chinese"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "frankie-s-pizza",
+      "rank": 339,
+      "name": "Frankie´s Pizza",
+      "listing_note": null,
+      "cuisine": [
+        "Pizza"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "awapanela",
+      "rank": 340,
+      "name": "AwaPanela",
+      "listing_note": null,
+      "cuisine": [
+        "Fast Food",
+        "Street Food"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "sandwiches-dona-lucha",
+      "rank": 341,
+      "name": "Sándwiches Doña Lucha",
+      "listing_note": null,
+      "cuisine": [
+        "South American"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "toromochos",
+      "rank": 342,
+      "name": "Toromochos",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse",
+        "Grill"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "parrilla-90",
+      "rank": 343,
+      "name": "Parrilla 90",
+      "listing_note": null,
+      "cuisine": [
+        "Steakhouse"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "senor-kilo",
+      "rank": 344,
+      "name": "Senor Kilo",
+      "listing_note": null,
+      "cuisine": [
+        "Chinese",
+        "American"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "american-hot-dogs",
+      "rank": 345,
+      "name": "American Hot Dogs",
+      "listing_note": null,
+      "cuisine": [
+        "Fast Food"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": "$",
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "cua-cua-2nd-location",
+      "rank": 346,
+      "name": "Cua Cua",
+      "listing_note": "branch/duplicate listing",
+      "cuisine": [
+        "International",
+        "South American"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "pizza-mia",
+      "rank": 347,
+      "name": "Pizza Mia",
+      "listing_note": null,
+      "cuisine": [
+        "Pizza"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "pilaik-restaurant-2nd-location",
+      "rank": 348,
+      "name": "Pilaik Restaurant",
+      "listing_note": "branch/duplicate listing",
+      "cuisine": [
+        "Asian"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "xpress-by-factory",
+      "rank": 349,
+      "name": "Xpress by Factory",
+      "listing_note": null,
+      "cuisine": [
+        "American"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "paletas-yucatan-2nd-location",
+      "rank": 350,
+      "name": "Paletas Yucatan",
+      "listing_note": "branch/duplicate listing",
+      "cuisine": [
+        "Paletas"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "om-meriendas-con-zsentido",
+      "rank": 351,
+      "name": "Om Meriendas Con Zsentido",
+      "listing_note": null,
+      "cuisine": [],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "adobe-casa-pueblo",
+      "rank": 352,
+      "name": "ADOBE Casa Pueblo",
+      "listing_note": null,
+      "cuisine": [],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "yiyo-pollo-broasted",
+      "rank": 353,
+      "name": "Yiyo Pollo Broasted",
+      "listing_note": null,
+      "cuisine": [
+        "Fast Food"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "taqueria-monterrey-santa-cruz",
+      "rank": 354,
+      "name": "Taquería Monterrey Santa Cruz",
+      "listing_note": null,
+      "cuisine": [
+        "Mexican"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "samu-pizza",
+      "rank": 355,
+      "name": "Samu Pizza",
+      "listing_note": null,
+      "cuisine": [
+        "Pizza"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "sensorium",
+      "rank": 356,
+      "name": "Sensorium",
+      "listing_note": null,
+      "cuisine": [],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "toromocho",
+      "rank": 357,
+      "name": "Toromocho",
+      "listing_note": null,
+      "cuisine": [
+        "Grill",
+        "Beer"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "yellow-submarine-hot-dog",
+      "rank": 358,
+      "name": "Yellow Submarine Hot Dog",
+      "listing_note": null,
+      "cuisine": [
+        "South American"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    },
+    {
+      "id": "bits-and-cream-2nd-listing",
+      "rank": 359,
+      "name": "Bits And Cream",
+      "listing_note": "branch/duplicate listing",
+      "cuisine": [
+        "Ice cream / American"
+      ],
+      "rating": null,
+      "reviews": 0,
+      "price": null,
+      "lat": null,
+      "lng": null,
+      "source": "tripadvisor"
+    }
+  ],
+  "streets": {
+    "avenidas": [
+      "Avenida 26 de Febrero",
+      "Avenida Argentina",
+      "Avenida Argomosa",
+      "Avenida Brasil",
+      "Avenida Cañoto",
+      "Avenida Charcas",
+      "Avenida Ejército Nacional",
+      "Avenida Francisco Velarde",
+      "Avenida Güenda",
+      "Avenida Irala",
+      "Avenida Landivar",
+      "Avenida Las Américas",
+      "Avenida Melchor Pinto",
+      "Avenida Monseñor Rivero",
+      "Avenida Roca y Coronado",
+      "Avenida Teniente Walter Vega",
+      "Avenida Uruguay",
+      "Avenida Viedma"
+    ],
+    "calles": [
+      "Calle 21 de Mayo",
+      "Calle 24 de Septiembre",
+      "Calle Adán Gutiérrez",
+      "Calle Alameda Potosí",
+      "Calle Alfredo Jordán",
+      "Calle Andrés Ibáñez",
+      "Calle Andrés Manso",
+      "Calle Arenales",
+      "Calle Aroma",
+      "Calle Avaroa",
+      "Calle Ayacucho",
+      "Calle Ballivián",
+      "Calle Barrón",
+      "Calle Beni",
+      "Calle Bolívar",
+      "Calle Buenos Aires",
+      "Calle Caballero",
+      "Calle Camiri",
+      "Calle Campero",
+      "Calle Capitán Mariano Arrién",
+      "Calle Cástulo Chávez",
+      "Calle Celso Castedo",
+      "Calle Charcas",
+      "Calle Chiquitos",
+      "Calle Chuquisaca",
+      "Calle Cobija",
+      "Calle Cochabamba",
+      "Calle Colón",
+      "Calle Cordillera",
+      "Calle Cuatro Ojos",
+      "Calle Cuéllar",
+      "Calle Diego de Mendoza",
+      "Calle Don Bosco",
+      "Calle España",
+      "Calle Flora Salas",
+      "Calle Florida",
+      "Calle Fray del Pilar",
+      "Calle Froilán Cecilio Jordán",
+      "Calle General Saavedra",
+      "Calle Güendá",
+      "Calle H. Salazar",
+      "Calle Independencia",
+      "Calle Ingavi",
+      "Calle Isabel La Católica",
+      "Calle Isoso",
+      "Calle José Callau",
+      "Calle Junín",
+      "Calle La Gaiba",
+      "Calle La Paz",
+      "Calle La Riva",
+      "Calle Lemoine",
+      "Calle Libertad",
+      "Calle M. L. Oliden",
+      "Calle Manuel Ignacio Salvatierra",
+      "Calle Mercado",
+      "Calle Moldes",
+      "Calle Monseñor Obispo Aguirre",
+      "Calle Monseñor Salvatierra",
+      "Calle Murillo",
+      "Calle Nordenskiöld",
+      "Calle Ñuflo de Chávez",
+      "Calle Oruro",
+      "Calle Padre José Arce",
+      "Calle Paitití",
+      "Calle Parapetí",
+      "Calle Pari",
+      "Calle Perú",
+      "Calle Picada",
+      "Calle Potosí",
+      "Calle Quijarro",
+      "Calle Rafael Peña",
+      "Calle René Moreno",
+      "Calle Republiquetas",
+      "Calle Río Nuevo",
+      "Calle Santa Bárbara",
+      "Calle Sara",
+      "Calle Senda",
+      "Calle Seoane",
+      "Calle Soliz de Olguín",
+      "Calle Suárez Arana",
+      "Calle Suárez de Figueroa",
+      "Calle Sucre",
+      "Calle Tarija",
+      "Calle Teniente Juan Humberto Rivero",
+      "Calle Toledo Pimentel",
+      "Calle Tumusla",
+      "Calle Valle Grande",
+      "Calle Velasco",
+      "Calle Warnes",
+      "Calle Yapacani"
+    ],
+    "pasajes_pedestrian": [
+      "Pasaje 24 de Septiembre",
+      "Pasaje 26 de Febrero",
+      "Pasaje Ingavi",
+      "Pasaje Virgilio Oyola",
+      "Manzana Uno (pedestrian)",
+      "Paseo Peatonal (footway)",
+      "Sendero Peatonal (footway)"
+    ],
+    "roundabouts": [
+      "Rotonda Cañoto"
+    ],
+    "areas": [
+      "Centro",
+      "Bancario",
+      "La Adobería",
+      "Edificio Cruz del Sur (residential complex) ---"
+    ]
+  }
+}
