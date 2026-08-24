@@ -79,6 +79,23 @@ export default function CityHost() {
                 {label}
               </button>
             ))}
+            <button
+              id="locate-me-btn"
+              style={{
+                background: "#33302c",
+                color: "#f5ead8",
+                border: 0,
+                borderRadius: 20,
+                padding: "7px 13px",
+                fontFamily: "Figtree, sans-serif",
+                fontWeight: 700,
+                fontSize: 12,
+                cursor: "pointer",
+                boxShadow: "0 2px 0 rgba(32,30,29,0.35)",
+              }}
+            >
+              📍 Ubicarme
+            </button>
           </div>
         </div>
 

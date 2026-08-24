@@ -25,6 +25,8 @@ export async function GET(_request: Request, { params }: { params: Promise<{ id:
     venueName: event.venueName,
     district: event.district,
     mapsUrl: event.mapsUrl,
+    lat: event.lat,
+    lng: event.lng,
   };
   return NextResponse.json(dto);
 }

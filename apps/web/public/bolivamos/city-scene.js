@@ -516,6 +516,58 @@ document.querySelectorAll('.category-filter-btn').forEach((btn) => {
   });
 });
 
+// ---- geolocate (PRD §8.1/§9 P2 exit criteria) — user-triggered (not
+// automatic on load) so the permission prompt is expected, not a surprise.
+// A visitor genuinely standing in Santa Cruz gets a real "you are here"
+// marker + teleport; anyone testing from elsewhere gets an honest distance
+// message instead of being silently flown across the world into the void. ----
+const HERE_MAT = new THREE.MeshStandardMaterial({ color: 0x7fa3a0, roughness: 0.4, emissive: 0x7fa3a0, emissiveIntensity: 0.6 });
+let hereMarker = null;
+document.getElementById('locate-me-btn').addEventListener('click', () => {
+  if (!navigator.geolocation) {
+    hud.textContent = 'Geolocalización no disponible en este navegador';
+    return;
+  }
+  hud.textContent = 'Buscando tu ubicación…';
+  navigator.geolocation.getCurrentPosition(
+    (pos) => {
+      const { latitude, longitude } = pos.coords;
+      const distKm = haversineKm(latitude, longitude, ORIGIN.lat, ORIGIN.lng);
+      if (distKm > 30) {
+        hud.textContent = `Estás a ${distKm.toFixed(0)} km del centro — fuera del área navegable`;
+        return;
+      }
+      const { x, z } = toLocal(longitude, latitude);
+      if (!hereMarker) {
+        hereMarker = new THREE.Mesh(new THREE.SphereGeometry(1.2, 20, 16), HERE_MAT);
+        hereMarker.name = 'you_are_here';
+        scene.add(hereMarker);
+      }
+      hereMarker.position.set(x, 1.2, z);
+      camera.position.set(x, 1.7, z + 6);
+      yaw = Math.PI;
+      pitch = 0;
+      camera.rotation.set(pitch, yaw, 0, 'YXZ');
+      velocity.set(0, 0, 0);
+      hud.textContent = 'Listo — esa es tu posición real';
+    },
+    (err) => {
+      hud.textContent = 'No se pudo obtener tu ubicación (' + err.message + ')';
+    },
+    { enableHighAccuracy: true, timeout: 10000 },
+  );
+});
+
+function haversineKm(lat1, lng1, lat2, lng2) {
+  const R = 6371;
+  const dLat = ((lat2 - lat1) * Math.PI) / 180;
+  const dLng = ((lng2 - lng1) * Math.PI) / 180;
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos((lat1 * Math.PI) / 180) * Math.cos((lat2 * Math.PI) / 180) * Math.sin(dLng / 2) ** 2;
+  return R * 2 * Math.asin(Math.sqrt(a));
+}
+
 function fit() {
   renderer.setSize(window.innerWidth, window.innerHeight);
   camera.aspect = window.innerWidth / window.innerHeight;
