@@ -181,11 +181,11 @@ document.getElementById('liveNext').addEventListener('click', () => document.get
     en: { week: 'This week', weekend: 'This weekend', nightlife: 'Nightlife', places: 'Places', todo: 'Things to do', list: 'List an event', live: 'Live', map: 'Map', tonightTitle: 'Live tonight', tonightSub: 'Happening in Santa Cruz after dark', viewList: 'List', viewMini: 'Miniatures',
       hint: 'Every public event in Santa Cruz de la Sierra, Bolivia, day by day, in English.',
       allEvents: 'All events', allSub: 'Slide to pick the day \u00b7 tap any event for details',
-      mapSub: 'Tap a zone to travel \u00b7 drag the scene' },
+      mapSub: 'Tap a zone to travel \u00b7 drag the scene', openRealMap: 'Open the real map \u2192' },
     es: { week: 'Esta semana', weekend: 'Este finde', nightlife: 'Vida nocturna', places: 'Lugares', todo: 'Qu\u00e9 hacer', list: 'Publica tu evento', live: 'En vivo', map: 'Mapa', tonightTitle: 'En vivo esta noche', tonightSub: 'Lo que pasa en Santa Cruz al caer la noche', viewList: 'Lista', viewMini: 'Miniaturas',
       hint: 'Todos los eventos p\u00fablicos de Santa Cruz de la Sierra, Bolivia, d\u00eda a d\u00eda.',
       allEvents: 'Todos los eventos', allSub: 'Desliza para elegir el d\u00eda \u00b7 toca un evento para ver detalles',
-      mapSub: 'Toca una zona para viajar \u00b7 arrastra la escena' },
+      mapSub: 'Toca una zona para viajar \u00b7 arrastra la escena', openRealMap: 'Abrir mapa real \u2192' },
   };
   const langEn = document.getElementById('langEn'), langEs = document.getElementById('langEs');
   function setLang(l) {

@@ -1,0 +1,274 @@
+{
+  "results": {
+    "Teatro Villa 1ro de Mayo": {
+      "lat": null,
+      "lng": null,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "Oficinas de FIDIJ": {
+      "lat": null,
+      "lng": null,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "Expocruz fairgrounds": {
+      "lat": null,
+      "lng": null,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "Espacio Patiño Santa Cruz": {
+      "lat": null,
+      "lng": null,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "ALFA": {
+      "lat": -17.802558,
+      "lng": -63.1895494,
+      "verified": true,
+      "displayName": "U.E. Colegio Alfa y Omega, Calle Tiguipa, El Pari, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
+    },
+    "Sonilum Plaza": {
+      "lat": null,
+      "lng": null,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "Casa Melchor Pinto": {
+      "lat": -17.78293,
+      "lng": -63.1704423,
+      "verified": true,
+      "displayName": "Mi Casa, 174, Avenida Melchor Pinto, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
+    },
+    "Estadio Real Santa Cruz": {
+      "lat": -17.8057929,
+      "lng": -63.1661068,
+      "verified": true,
+      "displayName": "Estadio Real Santa Cruz, Avenida José Gil Soruco, CONAVI Sur, Estación Argentina, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
+    },
+    "Sonilum Nuevo Lugar": {
+      "lat": null,
+      "lng": null,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "Estadio \"Tahuichi\" Ramón Aguilera Costas": {
+      "lat": -17.7960273,
+      "lng": -63.183838,
+      "verified": true,
+      "displayName": "Estadio Ramón “Tahuichi” Aguilera Costas, Avenida Ejército Nacional, Barrio Militar, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
+    },
+    "Maroon": {
+      "lat": -17.7809227,
+      "lng": -63.1818246,
+      "verified": true,
+      "displayName": "Maroon, Calle 24 de Septiembre, Bartos, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
+    },
+    "Coliseo Municipal de Santa Fe": {
+      "lat": null,
+      "lng": null,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "La Tuja Club de Comedia": {
+      "lat": null,
+      "lng": null,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "Tapekua Bistrot": {
+      "lat": -17.7847436,
+      "lng": -63.1792626,
+      "verified": true,
+      "displayName": "Tapekua Bistrot, Calle La Paz, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
+    },
+    "Alliance Française Santa Cruz de la Sierra": {
+      "lat": null,
+      "lng": null,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "Body Language Music": {
+      "lat": null,
+      "lng": null,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "Fexpocruz": {
+      "lat": -17.7840993,
+      "lng": -63.2088433,
+      "verified": true,
+      "displayName": "Feria Exposición Santa Cruz, Avenida Roca y Coronado, Santa Rosita, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
+    },
+    "Expocruz": {
+      "lat": null,
+      "lng": null,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "Cambódromo": {
+      "lat": -17.7394929,
+      "lng": -63.143832,
+      "verified": true,
+      "displayName": "Cambódromo, 15 de Diciembre, Norte, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
+    },
+    "Modulo El Paraiso": {
+      "lat": -17.7748663,
+      "lng": -63.1722835,
+      "verified": true,
+      "displayName": "Módulo Educativo Municipal República del Uruguay D-11 No. 75, Calle Tao, Obrero, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
+    },
+    "Club Moon Night": {
+      "lat": null,
+      "lng": null,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "Centro Deportivo Ecuestre": {
+      "lat": null,
+      "lng": null,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "Salón de Eventos FAMA CLUB": {
+      "lat": null,
+      "lng": null,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "Teatro Casa Municipal de Cultura Raúl Otero Reiche": {
+      "lat": -17.7832969,
+      "lng": -63.1827935,
+      "verified": true,
+      "displayName": "Casa Municipal de Cultura Raul Otero Reiche, Calle Libertad, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
+    },
+    "IEUC Santa Cruz": {
+      "lat": null,
+      "lng": null,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "La casa del Bailarin": {
+      "lat": null,
+      "lng": null,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "Casa Grande": {
+      "lat": -17.782459,
+      "lng": -63.181568,
+      "verified": true,
+      "displayName": "Casa Grande, Calle 24 de Septiembre, Bartos, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
+    },
+    "Cancha Tenis Real": {
+      "lat": null,
+      "lng": null,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "Santa Cruz De la Sierra": {
+      "lat": -17.7890552,
+      "lng": -63.1607329,
+      "verified": true,
+      "displayName": "Santa Cruz de la Sierra, Avenida Intermodal, COTECAR, Estación Argentina, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
+    },
+    "Plazas rotativas": {
+      "lat": null,
+      "lng": null,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "Santa Cruz de la Sierra": {
+      "lat": -17.7891303,
+      "lng": -63.1608471,
+      "verified": true,
+      "displayName": "Santa Cruz de la Sierra, Avenida Intermodal, COTECAR, Estación Argentina, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
+    },
+    "Plaza Principal 24 De Septiembre": {
+      "lat": null,
+      "lng": null,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "Urbanizacion Guapillar": {
+      "lat": null,
+      "lng": null,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "Sede rotativa (ver Instagram)": {
+      "lat": null,
+      "lng": null,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "Sonilum Arena": {
+      "lat": null,
+      "lng": null,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "Autopía Boulevard Gourmet": {
+      "lat": null,
+      "lng": null,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "The Dubliner": {
+      "lat": -17.7982981,
+      "lng": -63.1791688,
+      "verified": true,
+      "displayName": "The Dubliner, Avenida El Trompillo, Barrio Militar, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
+    },
+    "Auditorio de la Alianza Francesa": {
+      "lat": null,
+      "lng": null,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "Parroquia Maria Reina de la Paz": {
+      "lat": -17.7811516,
+      "lng": -63.1469344,
+      "verified": true,
+      "displayName": "Parroquia María Reina de la Paz, Calle 1, Guaracachi, Norte Interno, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
+    },
+    "Los Monos": {
+      "lat": -17.7549685,
+      "lng": -63.182943,
+      "verified": true,
+      "displayName": "Calle Los Monos, ENDE, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
+    },
+    "Centro Piel Humana SCZ": {
+      "lat": null,
+      "lng": null,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "Plaza Metropolitana 24 de Septiembre": {
+      "lat": null,
+      "lng": null,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "Angel Chávez": {
+      "lat": -17.7885633,
+      "lng": -63.1516445,
+      "verified": true,
+      "displayName": "Rotonda Angel Chavez Ruiz, Estación Argentina, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
+    },
+    "Hard Rock Cafe Santa Cruz": {
+      "lat": -17.7532668,
+      "lng": -63.1988937,
+      "verified": true,
+      "displayName": "Hard Rock Cafe, Calle 3, 2 de Abril, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
+    },
+    "Plaza Ñuflo de Chaves": {
+      "lat": null,
+      "lng": null,
+      "verified": false,
+      "reason": "no-match"
+    }
+  }
+}

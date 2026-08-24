@@ -22,6 +22,8 @@ function toEventDto(event: typeof events.$inferSelect): EventDto {
     venueName: event.venueName,
     district: event.district,
     mapsUrl: event.mapsUrl,
+    lat: event.lat,
+    lng: event.lng,
   };
 }
 

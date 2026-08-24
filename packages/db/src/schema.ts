@@ -46,6 +46,10 @@ export const events = sqliteTable("events", {
   district: text("district"),
   mapsUrl: text("maps_url"),
   sourceSlug: text("source_slug").unique(),
+  // Geocoded from venueName (packages/db/scripts/geocode-events.mjs) — no
+  // venue row to join against, since venueId is null for imported events.
+  lat: real("lat"),
+  lng: real("lng"),
 });
 
 export const vouchers = sqliteTable("vouchers", {

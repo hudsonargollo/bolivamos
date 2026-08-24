@@ -25,6 +25,7 @@ const BODY_HTML = `
   <div class="map-title">Santa Cruz de la Sierra</div>
   <div class="map-sub" data-i18n="mapSub">Tap a zone to travel</div>
   <div id="mapSpots" class="metro"></div>
+  <a href="/city3d" class="clay-btn" style="display:block;text-align:center;margin-top:12px;text-decoration:none;" data-i18n="openRealMap">Abrir mapa real →</a>
 </div>
 <nav class="scene-tabs" aria-label="Secciones">
   <button class="clay-btn scene-tab active" data-scene="live" data-i18n="live">Live</button>

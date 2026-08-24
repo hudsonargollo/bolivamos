@@ -31,5 +31,7 @@ export const eventSchema = z.object({
   venueName: z.string().nullable(),
   district: z.string().nullable(),
   mapsUrl: z.string().nullable(),
+  lat: z.number().nullable(),
+  lng: z.number().nullable(),
 });
 export type EventDto = z.infer<typeof eventSchema>;
