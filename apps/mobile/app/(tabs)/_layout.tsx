@@ -11,6 +11,7 @@ export default function TabsLayout() {
       }}
     >
       <Tabs.Screen name="index" options={{ title: "Feed" }} />
+      <Tabs.Screen name="map" options={{ title: "Map" }} />
       <Tabs.Screen name="bolipass" options={{ title: "BoliPass" }} />
       <Tabs.Screen name="companion" options={{ title: "Companion" }} />
       <Tabs.Screen name="profile" options={{ title: "Profile" }} />

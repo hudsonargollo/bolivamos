@@ -1,8 +1,19 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Script from "next/script";
 
 export default function CityHost() {
+  // Plain window.location read in an effect rather than useSearchParams() --
+  // this page is entirely client-rendered anyway, and avoids needing a
+  // Suspense boundary just for one flag. embed=1 comes from the mobile
+  // app's WebView (apps/mobile/app/(tabs)/map.tsx) — "back to home" is
+  // redundant chrome inside a native tab that's already home.
+  const [embedded, setEmbedded] = useState(false);
+  useEffect(() => {
+    setEmbedded(new URLSearchParams(window.location.search).get("embed") === "1");
+  }, []);
+
   return (
     <>
       <div
@@ -151,24 +162,26 @@ export default function CityHost() {
           Loading places…
         </div>
 
-        <a
-          href="/"
-          style={{
-            position: "fixed",
-            right: 16,
-            top: 16,
-            background: "#c4703d",
-            color: "#f5ead8",
-            padding: "9px 16px",
-            borderRadius: 10,
-            fontWeight: 700,
-            fontSize: 13,
-            textDecoration: "none",
-            boxShadow: "0 3px 0 #8e4a20",
-          }}
-        >
-          ← Volver
-        </a>
+        {embedded ? null : (
+          <a
+            href="/"
+            style={{
+              position: "fixed",
+              right: 16,
+              top: 16,
+              background: "#c4703d",
+              color: "#f5ead8",
+              padding: "9px 16px",
+              borderRadius: 10,
+              fontWeight: 700,
+              fontSize: 13,
+              textDecoration: "none",
+              boxShadow: "0 3px 0 #8e4a20",
+            }}
+          >
+            ← Volver
+          </a>
+        )}
 
         <div
           id="lock-overlay"

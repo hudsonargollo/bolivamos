@@ -434,7 +434,12 @@ placeSheetBackdrop.addEventListener('click', closePlaceSheet);
 placeSheetShare.addEventListener('click', async () => {
   const place = sheetPlace;
   const text = place ? `${place.name} — Santa Cruz de la Sierra (BoliVamos)` : 'BoliVamos';
-  if (navigator.share) {
+  // Inside the mobile app's WebView (apps/mobile/app/(tabs)/map.tsx), forward
+  // to the native share sheet — WebViews don't implement the Web Share API,
+  // so navigator.share would silently no-op here.
+  if (window.ReactNativeWebView) {
+    window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'share', title: text, url: location.href }));
+  } else if (navigator.share) {
     navigator.share({ title: text, url: location.href }).catch(() => {});
   } else if (navigator.clipboard) {
     navigator.clipboard.writeText(text + ' ' + location.href).catch(() => {});
