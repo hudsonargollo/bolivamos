@@ -20,9 +20,13 @@ config.resolver.nodeModulesPaths = [
 // packages/* instead of treating them as opaque/duplicate copies.
 config.resolver.unstable_enableSymlinks = true;
 
-// Force module resolution to start from each file's own directory before
-// climbing up, which matters once symlinks are in play.
-config.resolver.disableHierarchicalLookup = true;
+// Needed to resolve workspace packages' package.json "exports" subpaths
+// (e.g. @bolivamos/design-tokens/native) — off by default on this Metro version.
+config.resolver.unstable_enablePackageExports = true;
+// This version's default condition set is ['require', 'import'] only, which
+// makes dual-published packages like jose resolve their Node build (pulling
+// in node:buffer etc). Adding 'browser' picks their RN-safe build instead.
+config.resolver.unstable_conditionNames = ["require", "import", "browser"];
 
 const { withNativeWind } = require("nativewind/metro");
 module.exports = withNativeWind(config, { input: "./app/globals.css" });
