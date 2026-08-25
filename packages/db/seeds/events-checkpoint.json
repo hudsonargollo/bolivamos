@@ -13,10 +13,10 @@
       "reason": "no-match"
     },
     "Expocruz fairgrounds": {
-      "lat": null,
-      "lng": null,
-      "verified": false,
-      "reason": "no-match"
+      "lat": -17.7840993,
+      "lng": -63.2088433,
+      "verified": true,
+      "displayName": "Feria Exposición Santa Cruz, Avenida Roca y Coronado, 4 de Noviembre, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
     },
     "Espacio Patiño Santa Cruz": {
       "lat": null,
@@ -31,10 +31,10 @@
       "displayName": "U.E. Colegio Alfa y Omega, Calle Tiguipa, El Pari, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
     },
     "Sonilum Plaza": {
-      "lat": null,
-      "lng": null,
-      "verified": false,
-      "reason": "no-match"
+      "lat": -17.7043971,
+      "lng": -63.1276429,
+      "verified": true,
+      "displayName": "Gran Sonilum, Avenida G77, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
     },
     "Casa Melchor Pinto": {
       "lat": -17.78293,
@@ -49,10 +49,10 @@
       "displayName": "Estadio Real Santa Cruz, Avenida José Gil Soruco, CONAVI Sur, Estación Argentina, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
     },
     "Sonilum Nuevo Lugar": {
-      "lat": null,
-      "lng": null,
-      "verified": false,
-      "reason": "no-match"
+      "lat": -17.7043971,
+      "lng": -63.1276429,
+      "verified": true,
+      "displayName": "Gran Sonilum, Avenida G77, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
     },
     "Estadio \"Tahuichi\" Ramón Aguilera Costas": {
       "lat": -17.7960273,
@@ -73,10 +73,10 @@
       "reason": "no-match"
     },
     "La Tuja Club de Comedia": {
-      "lat": null,
-      "lng": null,
-      "verified": false,
-      "reason": "no-match"
+      "lat": -17.7079769,
+      "lng": -63.1404457,
+      "verified": true,
+      "displayName": "Fraternidad La Tuja, Avenida Cataluña, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
     },
     "Tapekua Bistrot": {
       "lat": -17.7847436,
@@ -85,10 +85,10 @@
       "displayName": "Tapekua Bistrot, Calle La Paz, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
     },
     "Alliance Française Santa Cruz de la Sierra": {
-      "lat": null,
-      "lng": null,
-      "verified": false,
-      "reason": "no-match"
+      "lat": -17.7833551,
+      "lng": -63.1814566,
+      "verified": true,
+      "displayName": "Alianza Francesa Santa Cruz, 36, Calle 24 de Septiembre, Bartos, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
     },
     "Body Language Music": {
       "lat": null,
@@ -103,10 +103,10 @@
       "displayName": "Feria Exposición Santa Cruz, Avenida Roca y Coronado, Santa Rosita, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
     },
     "Expocruz": {
-      "lat": null,
-      "lng": null,
-      "verified": false,
-      "reason": "no-match"
+      "lat": -17.7840993,
+      "lng": -63.2088433,
+      "verified": true,
+      "displayName": "Feria Exposición Santa Cruz, Avenida Roca y Coronado, 4 de Noviembre, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
     },
     "Cambódromo": {
       "lat": -17.7394929,
@@ -127,10 +127,10 @@
       "reason": "no-match"
     },
     "Centro Deportivo Ecuestre": {
-      "lat": null,
-      "lng": null,
-      "verified": false,
-      "reason": "no-match"
+      "lat": -17.8120318,
+      "lng": -63.1973713,
+      "verified": true,
+      "displayName": "Club Hípico Santa Cruz, Avenida Capitán Alfredo Higazy, El Carmen, El Pari, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
     },
     "Salón de Eventos FAMA CLUB": {
       "lat": null,
@@ -163,10 +163,10 @@
       "displayName": "Casa Grande, Calle 24 de Septiembre, Bartos, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
     },
     "Cancha Tenis Real": {
-      "lat": null,
-      "lng": null,
-      "verified": false,
-      "reason": "no-match"
+      "lat": -17.805804,
+      "lng": -63.1661111,
+      "verified": true,
+      "displayName": "Real Santa Cruz, Avenida Juan Pablo II, CONAVI Sur, Estación Argentina, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
     },
     "Santa Cruz De la Sierra": {
       "lat": -17.7890552,
@@ -187,10 +187,10 @@
       "displayName": "Santa Cruz de la Sierra, Avenida Intermodal, COTECAR, Estación Argentina, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
     },
     "Plaza Principal 24 De Septiembre": {
-      "lat": null,
-      "lng": null,
-      "verified": false,
-      "reason": "no-match"
+      "lat": -17.7832547,
+      "lng": -63.1821187,
+      "verified": true,
+      "displayName": "Plaza 24 de Septiembre (from places table)"
     },
     "Urbanizacion Guapillar": {
       "lat": null,
@@ -205,10 +205,10 @@
       "reason": "no-match"
     },
     "Sonilum Arena": {
-      "lat": null,
-      "lng": null,
-      "verified": false,
-      "reason": "no-match"
+      "lat": -17.7043971,
+      "lng": -63.1276429,
+      "verified": true,
+      "displayName": "Gran Sonilum, Avenida G77, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
     },
     "Autopía Boulevard Gourmet": {
       "lat": null,
@@ -223,10 +223,10 @@
       "displayName": "The Dubliner, Avenida El Trompillo, Barrio Militar, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
     },
     "Auditorio de la Alianza Francesa": {
-      "lat": null,
-      "lng": null,
-      "verified": false,
-      "reason": "no-match"
+      "lat": -17.7833551,
+      "lng": -63.1814566,
+      "verified": true,
+      "displayName": "Alianza Francesa Santa Cruz, 36, Calle 24 de Septiembre, Bartos, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
     },
     "Parroquia Maria Reina de la Paz": {
       "lat": -17.7811516,
@@ -247,10 +247,10 @@
       "reason": "no-match"
     },
     "Plaza Metropolitana 24 de Septiembre": {
-      "lat": null,
-      "lng": null,
-      "verified": false,
-      "reason": "no-match"
+      "lat": -17.7832547,
+      "lng": -63.1821187,
+      "verified": true,
+      "displayName": "Plaza 24 de Septiembre (from places table)"
     },
     "Angel Chávez": {
       "lat": -17.7885633,
@@ -265,10 +265,10 @@
       "displayName": "Hard Rock Cafe, Calle 3, 2 de Abril, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
     },
     "Plaza Ñuflo de Chaves": {
-      "lat": null,
-      "lng": null,
-      "verified": false,
-      "reason": "no-match"
+      "lat": -17.7814506,
+      "lng": -63.1731521,
+      "verified": true,
+      "displayName": "Plaza Ñuflo de Chávez, Centro, Porongo, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia"
     }
   }
 }

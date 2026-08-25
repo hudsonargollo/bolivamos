@@ -58,7 +58,7 @@ async function main() {
   console.log("Fetching events from remote D1...");
   const raw = execSync(
     `npx wrangler d1 execute bolivamos-db --remote --command "SELECT id, venue_name FROM events WHERE venue_name IS NOT NULL" --json`,
-    { cwd: WEB_DIR, env: { ...process.env, CLOUDFLARE_ACCOUNT_ID: "193882a3226d5fb9c3611ea50c95992e" }, maxBuffer: 10 * 1024 * 1024 },
+    { cwd: WEB_DIR, env: { ...process.env, CLOUDFLARE_ACCOUNT_ID: "cb27e1a67198789eb42d11ab90737652" }, maxBuffer: 10 * 1024 * 1024 },
   );
   const events = JSON.parse(raw.toString())[0].results;
   console.log(`${events.length} events with a venue name.`);
