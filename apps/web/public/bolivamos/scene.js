@@ -952,10 +952,10 @@ function clockMood() {
     stars, moon: stars, luces: stars, globos: 0 };
 }
 const cur = { y: SUN_Y0, top: '#232840', mid: '#2e2f45', low: '#45364a', stars: 1, moon: 0, luces: 0, globos: 0 };
-document.querySelectorAll('.scene-tab').forEach(b => b.addEventListener('click', () => {
+document.querySelectorAll('.scene-tab[data-scene]').forEach(b => b.addEventListener('click', () => {
   scene = b.dataset.scene;
   if (window.__setSection) window.__setSection(scene);
-  const sectionId = scene === 'live' ? 'estaNoche' : 'eventos';
+  const sectionId = scene === 'live' ? 'estaNoche' : scene === 'places' ? 'lugares' : 'eventos';
   if (window.__sheets && window.__sheets.isMobile()) {
     window.__sheets.openContentSection(sectionId, scene === 'live' ? 1 : 2);
   } else {

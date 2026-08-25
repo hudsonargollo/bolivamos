@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "bolivamos-web",
-  "account_id": "193882a3226d5fb9c3611ea50c95992e",
+  "account_id": "cb27e1a67198789eb42d11ab90737652",
   "main": ".open-next/worker.js",
   // Update to the actual date you first deploy — must be >= 2024-09-23 for @opennextjs/cloudflare.
   "compatibility_date": "2026-08-21",
@@ -13,21 +13,21 @@
   "observability": {
     "enabled": true
   },
-  // Created in the TEKTONE Cloudflare account (193882a3226d5fb9c3611ea50c95992e).
+  // Created in the ClubeMKT Cloudflare account (cb27e1a67198789eb42d11ab90737652),
+  // so the Worker and the clubemkt.digital DNS zone share one account.
   "d1_databases": [
     {
       "binding": "DB",
       "database_name": "bolivamos-db",
-      "database_id": "b817f872-99dc-4382-b881-e6599523381b",
+      "database_id": "d34573dd-84d2-4a31-be63-b011fbe3bc29",
       "migrations_dir": "../../packages/db/migrations"
     }
   ],
-  // Created in the TEKTONE Cloudflare account (193882a3226d5fb9c3611ea50c95992e).
+  // Created in the ClubeMKT Cloudflare account (cb27e1a67198789eb42d11ab90737652).
   "kv_namespaces": [
     {
       "binding": "BOLIVAMOS_KV",
-      "id": "da883a8e173c4211b5dcf12d62e34ca5",
-      "preview_id": "a9222f60f3ba453b976648a3484a12e8"
+      "id": "0c314347008243f8a51afffc3aa3e404"
     }
   ],
   // Not secret — safe to keep in source. Secrets (JWT_SECRET, GOOGLE_CLIENT_SECRET,

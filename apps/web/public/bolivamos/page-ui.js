@@ -1,5 +1,5 @@
 
-// DB pattern mirrors bolivamos.com event pages: h time, t title, v venue · price,
+// DB entries: h time, t title, v venue · price,
 // cat category, u event url; optional desc, map, img (detail data imported per event).
 let DB = [];
 const DAY_MS = 86400000;
@@ -53,21 +53,37 @@ const btn = (href, label, solid) => '<a href="' + href + '" target="_blank" rel=
   (solid ? 'background:#c4703d;color:#f7f1e4;' : 'background:rgba(196,113,57,.14);color:#8f4225;') + '">' + label + '</a>';
 const dbList = document.getElementById('dbList');
 const dayLabel = document.getElementById('dayLabel');
-const dayRange = document.getElementById('dayRange');
 const dayTicks = document.getElementById('dayTicks');
-const DAY_SHORT = ['Vie', 'S\u00e1b', 'Dom', 'Lun', 'Mar', 'Mi\u00e9', 'Jue'];
-const TICKS_EN = ['Fri', 'Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu'];
-const DAYS_EN = ['Friday \u00b7 Aug 21', 'Saturday \u00b7 Aug 22', 'Sunday \u00b7 Aug 23', 'Monday \u00b7 Aug 24', 'Tuesday \u00b7 Aug 25', 'Wednesday \u00b7 Aug 26', 'Thursday \u00b7 Aug 27'];
+const WD_SHORT_ES = ['Dom', 'Lun', 'Mar', 'Mi\u00e9', 'Jue', 'Vie', 'S\u00e1b'];
+const WD_SHORT_EN = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const WD_FULL_EN = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const MO_EN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const Lng = () => window.__lang || 'en';
-let selDay = (new Date().getDay() + 2) % 7;   // DB starts on Friday
+/** Date for the i-th day of our 7-day window (i=0 is today), matching groupIntoWeek. */
+function dayDate(i) {
+  const t = new Date(); t.setHours(0, 0, 0, 0);
+  return new Date(t.getTime() + i * DAY_MS);
+}
+/** Indices (within the 7-day window) that fall on the next Saturday/Sunday. */
+function weekendIdxs() {
+  const dow = new Date().getDay();
+  const idxs = [];
+  for (let i = 0; i < 7; i++) { const d = (dow + i) % 7; if (d === 0 || d === 6) idxs.push(i); }
+  return idxs.length ? idxs : [0];
+}
+let selDay = 0;   // 0 = today, matching groupIntoWeek's array
 let catFilter = null, weekendMode = false;
-dayRange.value = selDay;
-function buildTicks() { dayTicks.innerHTML = (Lng() === 'es' ? DAY_SHORT : TICKS_EN).map((d, i) => '<button data-day="' + i + '" style="border:0;background:none;cursor:pointer;font-family:Figtree,sans-serif;font-weight:800;font-size:13px;color:#7a6a52;padding:2px 4px;">' + d + '</button>').join(''); }
+function buildTicks() {
+  const names = Lng() === 'es' ? WD_SHORT_ES : WD_SHORT_EN;
+  dayTicks.innerHTML = Array.from({ length: 7 }, (_, i) => {
+    const d = dayDate(i);
+    return '<button class="day-pill' + (i === selDay && !weekendMode ? ' active' : '') + (i === 0 ? ' today' : '') + '" data-day="' + i + '"><span class="dw">' + names[d.getDay()] + '</span><span class="dn">' + d.getDate() + '</span></button>';
+  }).join('');
+}
 buildTicks();
-dayTicks.addEventListener('click', e => { const b = e.target.closest('[data-day]'); if (!b) return; selDay = +b.dataset.day; weekendMode = false; dayRange.value = selDay; renderDB(); });
-dayRange.addEventListener('input', () => { selDay = +dayRange.value; weekendMode = false; renderDB(); });
-let viewMode = 'list';
-try { if (localStorage.getItem('bolivamos-view') === 'mini') viewMode = 'mini'; } catch (e) {}
+dayTicks.addEventListener('click', e => { const b = e.target.closest('[data-day]'); if (!b) return; selDay = +b.dataset.day; weekendMode = false; buildTicks(); renderDB(); });
+let viewMode = 'mini';
+try { if (localStorage.getItem('bolivamos-view') === 'list') viewMode = 'list'; } catch (e) {}
 function miniCard(e, gi, ei) {
   const url = e.u;
   const img = e.img || null;
@@ -94,13 +110,18 @@ function card(e, gi, ei) {
     '<span style="font-family:Figtree,sans-serif;font-weight:600;color:#7a6a52;font-size:14px;">' + e.v + '</span>' +
     '</div>' + detail + '</div>';
 }
+function dayLabelFor(i) {
+  const d = dayDate(i);
+  return Lng() === 'es' ? DB[i].d : WD_FULL_EN[d.getDay()] + ' · ' + MO_EN[d.getMonth()] + ' ' + d.getDate();
+}
 function renderDB() {
-  const idxs = weekendMode ? [1, 2] : [selDay];
-  dayLabel.textContent = weekendMode ? (Lng() === 'es' ? 'Este fin de semana' : 'This weekend') : (Lng() === 'es' ? DB[selDay].d : DAYS_EN[selDay]);
+  if (!DB.length) return;   // data not loaded yet — dbReady.then(renderDB) re-runs this once it is
+  const idxs = weekendMode ? weekendIdxs() : [selDay];
+  dayLabel.textContent = weekendMode ? (Lng() === 'es' ? 'Este fin de semana' : 'This weekend') : dayLabelFor(selDay);
   let html = idxs.map(gi => {
     const g = DB[gi];
     const items = g.items.filter(e => !catFilter || catFilter.includes(e.cat));
-    const head = weekendMode ? '<h3 style="font-family:Caprasimo,Georgia,serif;font-size:24px;color:#c4703d;margin:26px 0 12px;">' + (Lng() === 'es' ? g.d : DAYS_EN[gi]) + '</h3>' : '';
+    const head = weekendMode ? '<h3 style="font-family:Caprasimo,Georgia,serif;font-size:24px;color:#c4703d;margin:26px 0 12px;">' + dayLabelFor(gi) + '</h3>' : '';
     const body = viewMode === 'mini' ? '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;">' + items.map((e, ei) => miniCard(e, gi, ei)).join('') + '</div>' : items.map((e, ei) => card(e, gi, ei)).join('');
     return head + (items.length ? body : '<p style="font-family:Figtree,sans-serif;font-weight:600;color:#7a6a52;">' + (Lng() === 'es' ? 'Nada en esta categor\u00eda este d\u00eda.' : 'Nothing in this category on this day.') + '</p>');
   }).join('');
@@ -122,6 +143,7 @@ window.__setSection = s => {
   else if (s === 'todo') { catFilter = ['Workshops & classes', 'Culture & arts', 'Markets & fairs', 'Community & expat', 'Sports & active', 'Family & kids', 'More']; weekendMode = false; }
   else if (s === 'weekend') { catFilter = null; weekendMode = true; }
   else { catFilter = null; weekendMode = false; }
+  buildTicks();
   renderDB();
 };
 dbReady.then(renderDB);
@@ -138,31 +160,121 @@ function setView(m) {
 viewListBtn.addEventListener('click', () => setView('list'));
 viewMiniBtn.addEventListener('click', () => setView('mini'));
 if (viewMode === 'mini') setView('mini');
-// ---- Live tonight slider: today\u2019s evening events as image cards ----
-function buildLive() {
-  const track = document.getElementById('liveTrack');
-  const idx = (new Date().getDay() + 2) % 7;
-  const g = DB[idx]; if (!g) return;
+// ---- Live tonight billboard: auto-rotating slideshow of tonight's events ----
+let liveTimer = null, liveIdx = 0;
+function liveEvents() {
+  const g = DB[0]; if (!g) return [];
   let evs = g.items.filter(e => e.h === 'TBA' ? /Nightlife|Live music|Comedy/.test(e.cat) : parseInt(e.h, 10) >= 18);
-  if (!evs.length) evs = g.items.slice(-6);
-  const es = Lng() === 'es';
-  track.innerHTML = evs.map(e => {
-    const url = e.u;
+  if (!evs.length) evs = g.items.slice(-5);
+  return evs.slice(0, 8);
+}
+function liveShow(i) {
+  liveIdx = i;
+  document.querySelectorAll('#liveBanner .live-slide').forEach((el, j) => el.classList.toggle('active', j === i));
+  document.querySelectorAll('#liveDots .live-dot').forEach((el, j) => el.classList.toggle('active', j === i));
+}
+function liveStart(n) {
+  clearInterval(liveTimer);
+  if (n > 1) liveTimer = setInterval(() => liveShow((liveIdx + 1) % n), 5000);
+}
+// extruded sun mark, the branding signature stamped on every billboard
+const SUN_SVG = (() => {
+  const cols = ['#c04a2f', '#e3a52f', '#8ba672', '#e2792f', '#e3a52f', '#c04a2f', '#8ba672', '#e3a52f', '#c04a2f', '#e2792f', '#8ba672', '#e3a52f'];
+  let s = '';
+  for (let i = 0; i < 12; i++) s += '<path d="M-9 -58 L9 -58 L16 -108 L-16 -108 Z" fill="' + cols[i] + '" transform="rotate(' + (i * 30) + ')"/>';
+  return '<svg class="bb-sun" viewBox="-125 -125 250 250" aria-hidden="true">' + s + '<circle r="44" fill="none" stroke="#33302c" stroke-width="14"/></svg>';
+})();
+function buildLive() {
+  const wrap = document.getElementById('liveBanner'), dots = document.getElementById('liveDots');
+  const evs = liveEvents(), es = Lng() === 'es';
+  wrap.innerHTML = evs.map(e => {
     const img = e.img || null;
-    return '<a href="' + url + '" target="_blank" rel="noopener" style="flex:none;width:270px;scroll-snap-align:start;text-decoration:none;background:#2b2825;border-radius:20px;overflow:hidden;box-shadow:0 6px 0 rgba(0,0,0,.35);">' +
-      (img ? '<div style="height:190px;background:#3a352f;"><img src="' + img + '" alt="" loading="lazy" onerror="this.parentNode.style.display=' + "'none'" + '" style="width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(.92) brightness(1.04);"></div>' : '<div style="height:110px;display:flex;align-items:center;justify-content:center;background:linear-gradient(140deg,#c67139,#7a8a5e);font-family:Caprasimo,Georgia,serif;font-size:44px;color:#f5ead8;">' + e.t.charAt(0) + '</div>') +
-      '<div style="padding:14px 16px 18px;">' +
-      '<div style="font-family:Figtree,sans-serif;font-weight:800;font-size:13px;color:#e3a52f;">' + (e.h === 'TBA' ? (es ? 'Esta noche' : 'Tonight') : e.h) + '</div>' +
-      '<div style="font-family:Figtree,sans-serif;font-weight:700;font-size:16px;color:#f5ead8;line-height:1.25;margin:4px 0 6px;">' + e.t + '</div>' +
-      '<div style="font-family:Figtree,sans-serif;font-weight:600;font-size:13px;color:#b8a98c;">' + e.v + '</div>' +
+    return '<a class="live-slide" href="' + e.u + '" target="_blank" rel="noopener">' +
+      '<div class="billboard">' + SUN_SVG +
+      '<div class="bb-frame">' + (img ? '<img src="' + img + '" alt="" loading="lazy" onerror="this.remove()">' : '<div class="live-fallback"></div>') + '</div>' +
+      '<div class="bb-legs"><span></span><span></span></div>' +
+      '</div>' +
+      '<div class="live-info">' +
+      '<span class="live-time">' + (e.h === 'TBA' ? (es ? 'Esta noche' : 'Tonight') : e.h) + '</span>' +
+      '<h3 class="live-title">' + e.t + '</h3>' +
+      '<div class="live-venue">' + e.v + '</div>' +
+      '<span class="live-cta">' + (es ? 'Ver evento \u2192' : 'View event \u2192') + '</span>' +
       '</div></a>';
   }).join('');
+  dots.innerHTML = evs.length > 1 ? evs.map((e, i) => '<button class="live-dot" data-i="' + i + '" aria-label="' + (i + 1) + '"></button>').join('') : '';
+  liveShow(0);
+  liveStart(evs.length);
 }
 dbReady.then(buildLive);
 window.addEventListener('bolivamos-lang', buildLive);
 window.addEventListener('bolivamos-data', buildLive);
-document.getElementById('livePrev').addEventListener('click', () => document.getElementById('liveTrack').scrollBy({ left: -576, behavior: 'smooth' }));
-document.getElementById('liveNext').addEventListener('click', () => document.getElementById('liveTrack').scrollBy({ left: 576, behavior: 'smooth' }));
+document.getElementById('liveDots').addEventListener('click', e => { const b = e.target.closest('.live-dot'); if (!b) return; liveShow(+b.dataset.i); liveStart(liveEvents().length); });
+document.getElementById('liveBanner').addEventListener('mouseenter', () => clearInterval(liveTimer));
+document.getElementById('liveBanner').addEventListener('mouseleave', () => liveStart(liveEvents().length));
+
+// ---- Places (city directory): real venues from /api/places, browsable by
+// category (layer) and neighborhood (district) — separate from the events
+// list above, and separate from the interactive 3D map at /city3d (which
+// this section links out to for a live demo). ----
+const LAYER_LABEL = { eat_drink: ['Restaurants & bars', 'Restaurantes y bares'], attraction: ['Things to see', 'Qué ver'], tour: ['Tours', 'Tours'], transfer: ['Transfers', 'Traslados'] };
+const LAYER_ORDER = ['eat_drink', 'attraction', 'tour', 'transfer'];
+let PLACES = [], plLayer = null, plDistrict = 'all', plQuery = '', plShown = 24;
+async function loadPlaces() {
+  try {
+    const res = await fetch('/api/places');
+    const geo = await res.json();
+    PLACES = (geo.features || []).map(f => f.properties).filter(p => p.layer !== 'street_zone');
+  } catch (err) {
+    PLACES = [];
+    console.error('[bolivamos] failed to load places', err);
+  }
+  plLayer = LAYER_ORDER.find(l => PLACES.some(p => p.layer === l)) || null;
+  renderPlaces();
+}
+const placesReady = loadPlaces();
+function districtsFor(layer) {
+  const counts = {};
+  PLACES.filter(p => p.layer === layer).forEach(p => { const d = p.district || null; if (d) counts[d] = (counts[d] || 0) + 1; });
+  return Object.keys(counts).sort((a, b) => counts[b] - counts[a]).slice(0, 8);
+}
+function placeItems() {
+  let arr = PLACES.filter(p => p.layer === plLayer);
+  if (plDistrict !== 'all') arr = arr.filter(p => p.district === plDistrict);
+  if (plQuery) { const q = plQuery.toLowerCase(); arr = arr.filter(p => (p.name + ' ' + (p.category || '')).toLowerCase().includes(q)); }
+  return arr;
+}
+function placeCard(p) {
+  const meta = [];
+  if (p.rating) meta.push('<span class="pl-rate">★ ' + p.rating.toFixed(1) + '</span>' + (p.reviews ? '<span class="pl-rev">(' + p.reviews + ')</span>' : ''));
+  if (p.price) meta.push('<span class="pl-price">' + p.price + '</span>');
+  if (p.district) meta.push('<span class="pl-district">' + p.district + '</span>');
+  return '<div class="pl-card"><div class="pl-name">' + p.name + '</div>' +
+    (p.category ? '<div class="pl-type">' + p.category + '</div>' : '') +
+    '<div class="pl-meta">' + meta.join('') + '</div></div>';
+}
+function renderPlaces() {
+  const $ = id => document.getElementById(id);
+  const es = Lng() === 'es';
+  $('plTitle').textContent = es ? 'Directorio de la ciudad' : 'City directory';
+  $('plSub').textContent = es ? 'Dónde comer, qué ver y cómo moverte por Santa Cruz' : 'Where to eat, what to see and how to get around Santa Cruz';
+  $('plSearch').placeholder = es ? 'Buscar lugares…' : 'Search places…';
+  if (!plLayer) { $('plTabs').innerHTML = ''; $('plSubs').innerHTML = ''; $('plGrid').innerHTML = ''; $('plMore').style.display = 'none'; return; }
+  $('plTabs').innerHTML = LAYER_ORDER.filter(l => PLACES.some(p => p.layer === l)).map(l =>
+    '<button class="pl-tab' + (l === plLayer ? ' active' : '') + '" data-layer="' + l + '">' + LAYER_LABEL[l][es ? 1 : 0] + '</button>').join('');
+  const districts = districtsFor(plLayer);
+  $('plSubs').innerHTML = '<button class="pl-sub' + (plDistrict === 'all' ? ' active' : '') + '" data-district="all">' + (es ? 'Todo' : 'All') + '</button>' +
+    districts.map(d => '<button class="pl-sub' + (d === plDistrict ? ' active' : '') + '" data-district="' + d + '">' + d + '</button>').join('');
+  const items = placeItems();
+  $('plGrid').innerHTML = items.slice(0, plShown).map(placeCard).join('') ||
+    '<p style="font-family:Figtree,sans-serif;font-weight:600;color:#7a6a52;">' + (es ? 'No hay lugares para este filtro.' : 'No places match this filter.') + '</p>';
+  $('plMore').style.display = items.length > plShown ? 'block' : 'none';
+  $('plMore').textContent = es ? 'Ver más' : 'Show more';
+}
+document.getElementById('plTabs').addEventListener('click', e => { const b = e.target.closest('[data-layer]'); if (!b) return; plLayer = b.dataset.layer; plDistrict = 'all'; plShown = 24; renderPlaces(); });
+document.getElementById('plSubs').addEventListener('click', e => { const b = e.target.closest('[data-district]'); if (!b) return; plDistrict = b.dataset.district; plShown = 24; renderPlaces(); });
+document.getElementById('plSearch').addEventListener('input', e => { plQuery = e.target.value; plShown = 24; renderPlaces(); });
+document.getElementById('plMore').addEventListener('click', () => { plShown += 24; renderPlaces(); });
+window.addEventListener('bolivamos-lang', renderPlaces);
 
   const burger = document.getElementById('burger'), clayMenu = document.getElementById('clayMenu');
   const heroHeader = document.querySelector('.hero-header');
@@ -178,11 +290,11 @@ document.getElementById('liveNext').addEventListener('click', () => document.get
     burger.setAttribute('aria-expanded', String(open));
   });
   const I18N = {
-    en: { week: 'This week', weekend: 'This weekend', nightlife: 'Nightlife', places: 'Places', todo: 'Things to do', list: 'List an event', live: 'Live', map: 'Map', tonightTitle: 'Live tonight', tonightSub: 'Happening in Santa Cruz after dark', viewList: 'List', viewMini: 'Miniatures',
+    en: { week: 'This week', weekend: 'This weekend', nightlife: 'Nightlife', explore: 'Explore the city', places: 'Places', todo: 'Things to do', list: 'List an event', live: 'Live', map: 'Map', tonightTitle: 'Live tonight', tonightSub: 'Happening in Santa Cruz after dark', viewList: 'List', viewMini: 'Miniatures',
       hint: 'Every public event in Santa Cruz de la Sierra, Bolivia, day by day, in English.',
       allEvents: 'All events', allSub: 'Slide to pick the day \u00b7 tap any event for details',
       mapSub: 'Tap a zone to travel \u00b7 drag the scene', openRealMap: 'Open the real map \u2192' },
-    es: { week: 'Esta semana', weekend: 'Este finde', nightlife: 'Vida nocturna', places: 'Lugares', todo: 'Qu\u00e9 hacer', list: 'Publica tu evento', live: 'En vivo', map: 'Mapa', tonightTitle: 'En vivo esta noche', tonightSub: 'Lo que pasa en Santa Cruz al caer la noche', viewList: 'Lista', viewMini: 'Miniaturas',
+    es: { week: 'Esta semana', weekend: 'Este finde', nightlife: 'Vida nocturna', explore: 'Explora la ciudad', places: 'Lugares', todo: 'Qu\u00e9 hacer', list: 'Publica tu evento', live: 'En vivo', map: 'Mapa', tonightTitle: 'En vivo esta noche', tonightSub: 'Lo que pasa en Santa Cruz al caer la noche', viewList: 'Lista', viewMini: 'Miniaturas',
       hint: 'Todos los eventos p\u00fablicos de Santa Cruz de la Sierra, Bolivia, d\u00eda a d\u00eda.',
       allEvents: 'Todos los eventos', allSub: 'Desliza para elegir el d\u00eda \u00b7 toca un evento para ver detalles',
       mapSub: 'Toca una zona para viajar \u00b7 arrastra la escena', openRealMap: 'Abrir mapa real \u2192' },

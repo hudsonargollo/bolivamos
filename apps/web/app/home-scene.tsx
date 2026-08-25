@@ -10,7 +10,7 @@ const BODY_HTML = `
   <a class="wordmark" href="#"><span class="wm-boli">BOLI</span><span class="wm-vamos">VAMOS</span><span class="wm-excl">!</span></a>
   <nav class="clay-nav">
     <a class="clay-btn navitem" href="#" data-i18n="week">This week</a>
-    <a class="clay-btn sage navitem" href="#" data-i18n="places">Places</a>
+    <a class="clay-btn sage navitem" href="/city3d" data-i18n="explore">Explore the city</a>
     <a class="clay-btn charcoal navitem" href="#" data-i18n="list">List an event</a>
     <div class="lang-seg" role="group" aria-label="Language">
       <button id="langEn" class="active">EN</button>
@@ -32,11 +32,12 @@ const BODY_HTML = `
   <button class="clay-btn scene-tab" data-scene="week" data-i18n="week">This week</button>
   <button class="clay-btn scene-tab" data-scene="weekend" data-i18n="weekend">This weekend</button>
   <button class="clay-btn scene-tab" data-scene="nightlife" data-i18n="nightlife">Nightlife</button>
-  <button class="clay-btn scene-tab" data-scene="places" data-i18n="places">Places</button>
   <button class="clay-btn scene-tab" data-scene="todo" data-i18n="todo">Things to do</button>
+  <button class="clay-btn scene-tab" data-scene="places" data-i18n="places">Places</button>
+  <a class="clay-btn scene-tab" href="/city3d" data-i18n="explore">Explore the city</a>
 </nav>
 <nav class="clay-menu" id="clayMenu">
-  <a href="#" data-i18n="week">This week</a><a href="#" data-i18n="weekend">This weekend</a><a href="#" data-i18n="nightlife">Nightlife</a><a href="#" data-i18n="places">Places</a><a href="#" data-i18n="todo">Things to do</a><a href="#" data-i18n="list">List an event</a>
+  <a href="#" data-i18n="week">This week</a><a href="#" data-i18n="weekend">This weekend</a><a href="#" data-i18n="nightlife">Nightlife</a><a href="#" data-i18n="todo">Things to do</a><a href="#" data-i18n="places">Places</a><a href="/city3d" data-i18n="explore">Explore the city</a><a href="#" data-i18n="list">List an event</a>
 </nav>
 <div class="click-hint" id="clickHint" data-i18n="hint">The banners are <b>clickable</b></div>
 </div>
@@ -47,11 +48,8 @@ const BODY_HTML = `
   <div style="max-width:1160px;margin:0 auto;padding:64px 24px 70px;">
     <h2 style="font-family:Caprasimo,Georgia,serif;font-size:40px;color:#f5ead8;margin:0 0 4px;" data-i18n="tonightTitle">Live tonight</h2>
     <p style="font-family:Figtree,sans-serif;font-weight:600;color:#b8a98c;margin:0 0 28px;" data-i18n="tonightSub">Happening in Santa Cruz after dark</p>
-    <div style="position:relative;">
-      <button id="livePrev" aria-label="Anterior" style="position:absolute;left:-10px;top:50%;transform:translateY(-50%);z-index:2;width:44px;height:44px;border:0;border-radius:50%;cursor:pointer;background:#c67139;color:#f5ead8;font-size:20px;font-weight:800;box-shadow:0 4px 0 #8e4a20;">←</button>
-      <button id="liveNext" aria-label="Siguiente" style="position:absolute;right:-10px;top:50%;transform:translateY(-50%);z-index:2;width:44px;height:44px;border:0;border-radius:50%;cursor:pointer;background:#c67139;color:#f5ead8;font-size:20px;font-weight:800;box-shadow:0 4px 0 #8e4a20;">→</button>
-      <div id="liveTrack" style="display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 18px;scrollbar-width:none;"></div>
-    </div>
+    <div class="live-banner" id="liveBanner"></div>
+    <div class="live-dots" id="liveDots"></div>
   </div>
 </section>
 <section id="eventos" style="position:relative;z-index:5;background:#f5ead8;border-top:6px solid #c67139;">
@@ -60,16 +58,27 @@ const BODY_HTML = `
     <p style="font-family:Figtree,sans-serif;font-weight:600;color:#7a6a52;margin:0 0 40px;" data-i18n="allSub">Slide to pick the day</p>
     <div style="margin:0 0 26px;">
       <div id="dayLabel" style="font-family:Caprasimo,Georgia,serif;font-size:30px;color:#c4703d;margin:0 0 12px;"></div>
-      <input id="dayRange" type="range" min="0" max="6" step="1" value="0" aria-label="Día" style="width:100%;max-width:540px;accent-color:#c4703d;height:6px;display:block;">
-      <div style="display:flex;align-items:center;justify-content:space-between;max-width:540px;">
-        <div id="dayTicks" style="display:flex;justify-content:space-between;flex:1;margin-top:6px;"></div>
-      </div>
-      <div style="display:flex;gap:6px;margin-top:16px;">
-        <button id="viewList" class="view-btn active" data-i18n="viewList">List</button>
-        <button id="viewMini" class="view-btn" data-i18n="viewMini">Miniatures</button>
+      <div id="dayTicks" class="day-pills"></div>
+      <div class="view-seg" role="group" aria-label="View">
+        <button id="viewMini" class="seg-o" aria-label="Miniatures" title="Miniatures"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="2"></rect><rect x="14" y="3" width="7" height="7" rx="2"></rect><rect x="3" y="14" width="7" height="7" rx="2"></rect><rect x="14" y="14" width="7" height="7" rx="2"></rect></svg></button>
+        <button id="viewList" class="seg-o" aria-label="List" title="List"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg></button>
       </div>
     </div>
     <div id="dbList"></div>
+  </div>
+</section>
+<section id="lugares" style="position:relative;z-index:5;background:#efe2c8;border-top:6px solid #7a8a5e;">
+  <div style="max-width:1160px;margin:0 auto;padding:72px 24px 90px;">
+    <h2 id="plTitle" style="font-family:Caprasimo,Georgia,serif;font-size:44px;color:#201e1d;margin:0 0 8px;">City directory</h2>
+    <p id="plSub" style="font-family:Figtree,sans-serif;font-weight:600;color:#7a6a52;margin:0 0 22px;">Where to eat, what to see and how to get around Santa Cruz</p>
+    <div class="pl-toprow">
+      <div class="pl-tabs" id="plTabs"></div>
+      <a href="/city3d" class="clay-btn sage pl-map-cta" data-i18n="openRealMap">Abrir mapa real →</a>
+    </div>
+    <div class="pl-subs" id="plSubs"></div>
+    <input class="pl-search" id="plSearch" type="search" placeholder="Search places…">
+    <div class="pl-grid" id="plGrid"></div>
+    <button class="pl-more" id="plMore" style="display:none;"></button>
   </div>
 </section>
   </div>
