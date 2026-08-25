@@ -57,6 +57,43 @@ const MAT = {
 };
 MAT.event.name = 'clay-event-glow';
 
+// ---- selection halo (PRD §7.3: "Selected marker scales 1.15x with a warm
+// halo (rgba(255,214,150,.85) radial — same ramp as the hero's sun halo)")
+// A canvas-drawn radial gradient on an always-facing sprite, additive
+// blending so it reads as a glow rather than a flat disc. ----
+function makeHaloTexture() {
+  const size = 256;
+  const c = document.createElement('canvas');
+  c.width = c.height = size;
+  const ctx = c.getContext('2d');
+  const grad = ctx.createRadialGradient(size / 2, size / 2, 0, size / 2, size / 2, size / 2);
+  grad.addColorStop(0, 'rgba(255,214,150,.85)');
+  grad.addColorStop(0.6, 'rgba(255,214,150,.35)');
+  grad.addColorStop(1, 'rgba(255,214,150,0)');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, size, size);
+  return new THREE.CanvasTexture(c);
+}
+const haloSprite = new THREE.Sprite(
+  new THREE.SpriteMaterial({ map: makeHaloTexture(), blending: THREE.AdditiveBlending, depthWrite: false, transparent: true }),
+);
+haloSprite.visible = false;
+let highlightedMesh = null;
+function setHighlighted(mesh) {
+  if (highlightedMesh === mesh) return;
+  if (highlightedMesh) highlightedMesh.scale.setScalar(1);
+  highlightedMesh = mesh;
+  if (mesh) {
+    mesh.scale.setScalar(1.15);
+    haloSprite.position.set(mesh.position.x, mesh.position.y, mesh.position.z);
+    const haloScale = Math.max(mesh.geometry.parameters.width || 3, mesh.geometry.parameters.radius * 2 || 3) * 2.6;
+    haloSprite.scale.set(haloScale, haloScale, 1);
+    haloSprite.visible = true;
+  } else {
+    haloSprite.visible = false;
+  }
+}
+
 // ---- lat/lng -> local meters, origin at Plaza 24 de Septiembre (Centro) ----
 // Flat-earth approximation — fine at city scale (a few km across).
 const ORIGIN = { lat: -17.78325, lng: -63.18212 };
@@ -90,6 +127,7 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xf5ead8);
 scene.fog = new THREE.Fog(0xf5ead8, 60, 420);
+scene.add(haloSprite);
 
 const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.set(0, 1.7, 8); // ~human eye height, standing near Plaza 24 de Septiembre
@@ -353,11 +391,13 @@ function updateCrosshairLabel() {
   if (hit && hit.distance < 40) {
     const p = hit.object.userData.place;
     hoveredPlace = p;
+    setHighlighted(hit.object);
     crosshairLabel.style.display = 'block';
     crosshairLabel.textContent =
       p.name + (p.category ? ' — ' + p.category : '') + (p.rating ? ' · ' + p.rating.toFixed(1) + '★' : '') + ' · tap to open';
   } else {
     hoveredPlace = null;
+    setHighlighted(null);
     crosshairLabel.style.display = 'none';
   }
 }
