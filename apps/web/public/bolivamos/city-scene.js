@@ -250,6 +250,23 @@ function applyLook(dx, dy) {
 camera.rotation.order = 'YXZ';
 camera.rotation.set(pitch, yaw, 0);
 
+// PRD §8.5: a ?district= param (carried from the hero scene's "Abrir mapa
+// real" link) spawns the camera near that district's pillar instead of the
+// default Centro position, so the hero → free-roam transition feels
+// continuous rather than resetting the visitor to the plaza every time.
+const requestedDistrict = new URLSearchParams(window.location.search).get('district');
+if (requestedDistrict) {
+  const target = DISTRICTS.find((d) => d.key === requestedDistrict);
+  if (target) {
+    const { x, z } = toLocal(target.lng, target.lat);
+    const dir = new THREE.Vector3(x, 0, z).normalize();
+    if (dir.lengthSq() < 1e-6) dir.set(0, 0, 1);
+    camera.position.set(x + dir.x * 10, 1.7, z + dir.z * 10);
+    yaw = Math.atan2(-(x - camera.position.x), -(z - camera.position.z));
+    camera.rotation.set(pitch, yaw, 0, 'YXZ');
+  }
+}
+
 let dragging = false;
 let lastX = 0;
 let lastY = 0;

@@ -339,10 +339,14 @@ document.addEventListener('click', e => { if (!infoPop.contains(e.target)) { inf
 // the info icon tracks the tourism stand by the church
 const INFO_ANCHOR = new THREE.Vector3(104, 17, 18);
 const infoV = new THREE.Vector3();
+const openRealMapLink = document.getElementById('openRealMapLink');
 function updateMap() {
   let best = 0, bd = 1e9;
   DISTRICTS.forEach(([, dx], i) => { const d = Math.abs(dx - panX); if (d < bd) { bd = d; best = i; } });
   Array.from(mapSpots.children).forEach((el, i) => el.classList.toggle('active', i === best));
+  // PRD §8.5: "Abrir mapa real" carries the active district into /city3d so
+  // the transition from hero scene to free-roam map feels continuous.
+  if (openRealMapLink) openRealMapLink.href = '/city3d?district=' + encodeURIComponent(DISTRICTS[best][0]);
   infoV.copy(INFO_ANCHOR).project(cam);
   const r = stage.getBoundingClientRect();
   const sx = (infoV.x * 0.5 + 0.5) * r.width, sy = (-infoV.y * 0.5 + 0.5) * r.height;
