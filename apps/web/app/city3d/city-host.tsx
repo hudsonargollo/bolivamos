@@ -3,6 +3,45 @@
 import { useEffect, useState } from "react";
 import Script from "next/script";
 
+// PRD §7.6: chrome strings stay bilingual EN/ES. This page doesn't get its
+// own language toggle — it reads the same "bolivamos-lang" preference the
+// hero scene's EN/ES pill writes to localStorage, so a visitor's choice on
+// the homepage carries through to /city3d.
+const STRINGS = {
+  en: {
+    search: "Search a place…",
+    attractions: "Attractions",
+    eatDrink: "Eat & drink",
+    tours: "Tours",
+    events: "Events",
+    locateMe: "📍 Locate me",
+    loading: "Loading places…",
+    back: "← Back",
+    freeRoamTitle: "Santa Cruz — free roam",
+    freeRoamHint: "Drag to look around. WASD or arrow keys to walk (or the joystick, on touch). Look at a building to see what it is.",
+    close: "Close",
+    directions: "Get directions",
+    eventsHere: "Events here",
+    share: "Share",
+  },
+  es: {
+    search: "Buscar un lugar…",
+    attractions: "Atracciones",
+    eatDrink: "Comer y beber",
+    tours: "Tours",
+    events: "Eventos",
+    locateMe: "📍 Ubicarme",
+    loading: "Cargando lugares…",
+    back: "← Volver",
+    freeRoamTitle: "Santa Cruz — recorrido libre",
+    freeRoamHint: "Arrastra para mirar alrededor. WASD o flechas para caminar (o el joystick, en pantallas táctiles). Mira un edificio para ver qué es.",
+    close: "Cerrar",
+    directions: "Cómo llegar",
+    eventsHere: "Eventos aquí",
+    share: "Compartir",
+  },
+};
+
 export default function CityHost() {
   // Plain window.location read in an effect rather than useSearchParams() --
   // this page is entirely client-rendered anyway, and avoids needing a
@@ -10,9 +49,16 @@ export default function CityHost() {
   // app's WebView (apps/mobile/app/(tabs)/map.tsx) — "back to home" is
   // redundant chrome inside a native tab that's already home.
   const [embedded, setEmbedded] = useState(false);
+  const [lang, setLang] = useState<"en" | "es">("en");
   useEffect(() => {
     setEmbedded(new URLSearchParams(window.location.search).get("embed") === "1");
+    try {
+      if (localStorage.getItem("bolivamos-lang") === "es") setLang("es");
+    } catch {
+      // localStorage can throw in locked-down embeds (e.g. some WebViews) — EN default is fine.
+    }
   }, []);
+  const t = STRINGS[lang];
 
   return (
     <>
@@ -31,7 +77,7 @@ export default function CityHost() {
           <input
             id="place-search"
             type="text"
-            placeholder="Buscar un lugar…"
+            placeholder={t.search}
             autoComplete="off"
             style={{
               width: "100%",
@@ -63,10 +109,10 @@ export default function CityHost() {
 
           <div id="category-filters" style={{ display: "flex", gap: 6, marginTop: 8, flexWrap: "wrap" }}>
             {[
-              { layer: "attraction", label: "Atracciones", color: "#c4703d" },
-              { layer: "eat_drink", label: "Comer y beber", color: "#c04a2f" },
-              { layer: "tour", label: "Tours", color: "#8ba672" },
-              { layer: "event", label: "Eventos", color: "#e3a52f" },
+              { layer: "attraction", label: t.attractions, color: "#c4703d" },
+              { layer: "eat_drink", label: t.eatDrink, color: "#c04a2f" },
+              { layer: "tour", label: t.tours, color: "#8ba672" },
+              { layer: "event", label: t.events, color: "#e3a52f" },
             ].map(({ layer, label, color }) => (
               <button
                 key={layer}
@@ -105,7 +151,7 @@ export default function CityHost() {
                 boxShadow: "0 2px 0 rgba(32,30,29,0.35)",
               }}
             >
-              📍 Ubicarme
+              {t.locateMe}
             </button>
           </div>
         </div>
@@ -159,7 +205,7 @@ export default function CityHost() {
             pointerEvents: "none",
           }}
         >
-          Loading places…
+          {t.loading}
         </div>
 
         {embedded ? null : (
@@ -179,7 +225,7 @@ export default function CityHost() {
               boxShadow: "0 3px 0 #8e4a20",
             }}
           >
-            ← Volver
+            {t.back}
           </a>
         )}
 
@@ -200,11 +246,8 @@ export default function CityHost() {
             padding: 24,
           }}
         >
-          <div style={{ fontFamily: "Caprasimo, Georgia, serif", fontSize: 32 }}>Santa Cruz — free roam</div>
-          <div style={{ fontSize: 15, fontWeight: 600, maxWidth: 420 }}>
-            Drag to look around. WASD or arrow keys to walk (or the joystick, on touch). Look at a building to see
-            what it is.
-          </div>
+          <div style={{ fontFamily: "Caprasimo, Georgia, serif", fontSize: 32 }}>{t.freeRoamTitle}</div>
+          <div style={{ fontSize: 15, fontWeight: 600, maxWidth: 420 }}>{t.freeRoamHint}</div>
         </div>
 
         <div
@@ -235,7 +278,7 @@ export default function CityHost() {
         >
           <button
             id="place-sheet-close"
-            aria-label="Cerrar"
+            aria-label={t.close}
             style={{
               position: "absolute",
               right: 14,
@@ -270,7 +313,7 @@ export default function CityHost() {
                 boxShadow: "0 3px 0 #8e4a20",
               }}
             >
-              Cómo llegar
+              {t.directions}
             </a>
             <button
               id="place-sheet-events"
@@ -287,7 +330,7 @@ export default function CityHost() {
                 boxShadow: "0 3px 0 #5c7245",
               }}
             >
-              Eventos aquí
+              {t.eventsHere}
             </button>
             <button
               id="place-sheet-share"
@@ -303,7 +346,7 @@ export default function CityHost() {
                 boxShadow: "0 3px 0 #1a1815",
               }}
             >
-              Compartir
+              {t.share}
             </button>
           </div>
         </div>

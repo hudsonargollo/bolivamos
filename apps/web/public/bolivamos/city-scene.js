@@ -19,6 +19,42 @@
 // transfer/regional rows are either non-geocodable services or too far away
 // for a walkable scene.
 
+// PRD §7.6: bilingual chrome. Reads the same "bolivamos-lang" preference the
+// hero scene's EN/ES pill writes to localStorage (see city-host.tsx for the
+// matching dictionary powering the page's static JSX chrome).
+let LANG = 'en';
+try {
+  if (localStorage.getItem('bolivamos-lang') === 'es') LANG = 'es';
+} catch (e) {
+  // ignore — EN default is fine
+}
+const L = {
+  en: {
+    loadFailed: 'Failed to load places: ',
+    counts: (places, events) => places + ' places · ' + events + ' events loaded',
+    free: 'Free',
+    reviews: (n) => `(${n} reviews)`,
+    geoUnsupported: 'Geolocation not available in this browser',
+    locating: 'Locating you…',
+    located: "Done — that's your real position",
+    locateFailed: (msg) => 'Could not get your location (' + msg + ')',
+    tooFar: (km) => `You're ${km.toFixed(0)} km from the center — outside the walkable area`,
+    tapToOpen: 'tap to open',
+  },
+  es: {
+    loadFailed: 'No se pudieron cargar los lugares: ',
+    counts: (places, events) => places + ' lugares · ' + events + ' eventos cargados',
+    free: 'Gratis',
+    reviews: (n) => `(${n} reseñas)`,
+    geoUnsupported: 'Geolocalización no disponible en este navegador',
+    locating: 'Buscando tu ubicación…',
+    located: 'Listo — esa es tu posición real',
+    locateFailed: (msg) => 'No se pudo obtener tu ubicación (' + msg + ')',
+    tooFar: (km) => `Estás a ${km.toFixed(0)} km del centro — fuera del área navegable`,
+    tapToOpen: 'toca para abrir',
+  },
+}[LANG];
+
 const canvas = document.getElementById('city-canvas');
 const crosshairLabel = document.getElementById('crosshair-label');
 const overlay = document.getElementById('lock-overlay');
@@ -189,7 +225,7 @@ async function loadPlaces() {
   loadEvents(usable.length);
 }
 loadPlaces().catch((err) => {
-  hud.textContent = 'Failed to load places: ' + err.message;
+  hud.textContent = L.loadFailed + err.message;
 });
 
 // Events (real rows from the core app's `events` table, geocoded from
@@ -226,7 +262,7 @@ async function loadEvents(placesCount) {
     buildingMeshes.push(mesh);
     eventMarkers.push(mesh);
   }
-  hud.textContent = placesCount + ' places · ' + geocoded.length + ' events loaded';
+  hud.textContent = L.counts(placesCount, geocoded.length);
 }
 
 // ---- free-roam controls: drag-to-look (mouse or touch) + WASD/joystick ----
@@ -411,7 +447,7 @@ function updateCrosshairLabel() {
     setHighlighted(hit.object);
     crosshairLabel.style.display = 'block';
     crosshairLabel.textContent =
-      p.name + (p.category ? ' — ' + p.category : '') + (p.rating ? ' · ' + p.rating.toFixed(1) + '★' : '') + ' · tap to open';
+      p.name + (p.category ? ' — ' + p.category : '') + (p.rating ? ' · ' + p.rating.toFixed(1) + '★' : '') + ' · ' + L.tapToOpen;
   } else {
     hoveredPlace = null;
     setHighlighted(null);
@@ -459,7 +495,7 @@ function openPlaceSheet(place) {
     placeSheetMeta.textContent = [place.category, place.venueName, place.district].filter(Boolean).join(' · ');
     placeSheetRating.textContent = [
       formatEventDate(place.startTime),
-      place.isFree ? 'Gratis' : place.price,
+      place.isFree ? L.free : place.price,
     ]
       .filter(Boolean)
       .join('  ·  ');
@@ -470,7 +506,7 @@ function openPlaceSheet(place) {
     const stars = place.rating ? '★'.repeat(Math.round(place.rating)) + '☆'.repeat(5 - Math.round(place.rating)) : '';
     placeSheetRating.textContent = [
       stars && `${stars} ${place.rating.toFixed(1)}`,
-      place.reviews ? `(${place.reviews} reseñas)` : null,
+      place.reviews ? L.reviews(place.reviews) : null,
       place.price,
     ]
       .filter(Boolean)
@@ -587,16 +623,16 @@ const HERE_MAT = new THREE.MeshStandardMaterial({ color: 0x7fa3a0, roughness: 0.
 let hereMarker = null;
 document.getElementById('locate-me-btn').addEventListener('click', () => {
   if (!navigator.geolocation) {
-    hud.textContent = 'Geolocalización no disponible en este navegador';
+    hud.textContent = L.geoUnsupported;
     return;
   }
-  hud.textContent = 'Buscando tu ubicación…';
+  hud.textContent = L.locating;
   navigator.geolocation.getCurrentPosition(
     (pos) => {
       const { latitude, longitude } = pos.coords;
       const distKm = haversineKm(latitude, longitude, ORIGIN.lat, ORIGIN.lng);
       if (distKm > 30) {
-        hud.textContent = `Estás a ${distKm.toFixed(0)} km del centro — fuera del área navegable`;
+        hud.textContent = L.tooFar(distKm);
         return;
       }
       const { x, z } = toLocal(longitude, latitude);
@@ -611,10 +647,10 @@ document.getElementById('locate-me-btn').addEventListener('click', () => {
       pitch = 0;
       camera.rotation.set(pitch, yaw, 0, 'YXZ');
       velocity.set(0, 0, 0);
-      hud.textContent = 'Listo — esa es tu posición real';
+      hud.textContent = L.located;
     },
     (err) => {
-      hud.textContent = 'No se pudo obtener tu ubicación (' + err.message + ')';
+      hud.textContent = L.locateFailed(err.message);
     },
     { enableHighAccuracy: true, timeout: 10000 },
   );
