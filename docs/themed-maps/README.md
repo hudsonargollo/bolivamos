@@ -44,10 +44,11 @@ pipeline, design tokens, P4 connections, metrics) as current.
 
 Shipped since P1: place sheet (name/category/district/rating/price + actions), search over
 places, category-filtered rendering (attractions/eat & drink/tours as buildings, events as
-glowing markers), EN/ES via the shared `Explore the city` and `Places` entry points, and (as of
-today) the §8.5 district deep-link — `/city3d?district={key}` spawns the camera at that
-district's pillar, wired from the hero's "Abrir mapa real" link so it always carries whichever
-zone is currently active.
+glowing markers), and — added today — the §8.5 district deep-link (`/city3d?district={key}`
+spawns the camera at that district's pillar, wired from the hero's "Abrir mapa real" link so it
+always carries whichever zone is currently active) and full §7.6 bilingual chrome (every string
+in `city-host.tsx`/`city-scene.js` now reads the same `bolivamos-lang` preference the hero
+scene's EN/ES pill sets, no separate toggle needed on the map page itself).
 
 Not done: **P4 venue↔place linking** — `places.venueId` and the place sheet's "Eventos aquí"
 button are wired and waiting, but the `venues` table has 0 rows (hosts haven't created any yet
