@@ -3,6 +3,7 @@ import type { ExpoConfig } from "expo/config";
 const config: ExpoConfig = {
   name: "BoliVamos",
   slug: "bolivamos",
+  owner: "lobaoisthebest",
   scheme: "bolivamos",
   version: "0.1.0",
   orientation: "portrait",
@@ -29,6 +30,7 @@ const config: ExpoConfig = {
     "expo-router",
     "expo-secure-store",
     "expo-camera",
+    "expo-asset",
     [
       "expo-build-properties",
       {
@@ -45,6 +47,15 @@ const config: ExpoConfig = {
     router: {
       origin: false,
     },
+    eas: {
+      projectId: "538648ba-90f2-44b5-b9b0-de490d500060",
+    },
+  },
+  updates: {
+    url: "https://u.expo.dev/538648ba-90f2-44b5-b9b0-de490d500060",
+  },
+  runtimeVersion: {
+    policy: "appVersion",
   },
 };
 
