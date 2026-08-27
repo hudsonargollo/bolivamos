@@ -10,3 +10,4 @@ export * from "./schemas/subscriptions";
 export * from "./schemas/ai";
 export * from "./kv-keys";
 export * from "./jwt";
+export * from "./password";

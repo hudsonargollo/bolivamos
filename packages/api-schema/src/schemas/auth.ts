@@ -27,3 +27,17 @@ export const devLoginRequestSchema = z.object({
   role: roleSchema.default("visitor"),
 });
 export type DevLoginRequest = z.infer<typeof devLoginRequestSchema>;
+
+export const passwordSignupRequestSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(8),
+  fullName: z.string().optional(),
+  role: roleSchema.default("visitor"),
+});
+export type PasswordSignupRequest = z.infer<typeof passwordSignupRequestSchema>;
+
+export const passwordLoginRequestSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(1),
+});
+export type PasswordLoginRequest = z.infer<typeof passwordLoginRequestSchema>;

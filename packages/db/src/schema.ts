@@ -16,6 +16,7 @@ export const users = sqliteTable("users", {
   bolipassExpiresAt: text("bolipass_expires_at"),
   preferences: text("preferences"), // JSON array of selected categories
   createdAt: text("created_at").default(sql`CURRENT_TIMESTAMP`),
+  passwordHash: text("password_hash"), // null for OAuth/dev-login-only accounts
 });
 
 export const venues = sqliteTable("venues", {
