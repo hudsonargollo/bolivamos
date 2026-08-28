@@ -11,7 +11,7 @@ export const users = sqliteTable("users", {
   id: text("id").primaryKey(),
   email: text("email").notNull().unique(),
   fullName: text("full_name"),
-  role: text("role", { enum: ["visitor", "host"] }).default("visitor"),
+  role: text("role", { enum: ["visitor", "host", "admin"] }).default("visitor"),
   isBolipassActive: integer("is_bolipass_active", { mode: "boolean" }).default(false),
   bolipassExpiresAt: text("bolipass_expires_at"),
   preferences: text("preferences"), // JSON array of selected categories

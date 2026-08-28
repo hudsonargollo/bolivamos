@@ -2,7 +2,7 @@
 
 Monorepo for the BoliVamos mobile app and BoliPass Club (Santa Cruz de la Sierra, Bolivia).
 
-- `apps/web` — Next.js 15 App Router, deployed to Cloudflare Workers via `@opennextjs/cloudflare`. Hosts the public API and the Host Portal (`/host/*`).
+- `apps/web` — Next.js 15 App Router, deployed to Cloudflare Workers via `@opennextjs/cloudflare`. Hosts the public API, the Host Portal (`/host/*`), and the Admin Dashboard (`/admin/*`).
 - `apps/mobile` — Expo Router app (iOS/Android).
 - `apps/cron-worker` — plain Cloudflare Worker running scheduled email/notification jobs.
 - `packages/*` — shared design tokens, D1 schema (Drizzle), Zod API contracts + JWT/KV helpers, the Gemini AI wrapper, notification senders, and the mobile API client.
@@ -39,6 +39,17 @@ pnpm dev:mobile      # just Expo
 ```
 
 With `DEV_MODE_MOCK_AUTH=true` in `apps/web/.dev.vars`, the mobile app's "Continue as test user (dev only)" button and `POST /api/auth/dev-login` let you exercise every protected route without real Google OAuth credentials.
+
+## Admin Dashboard (`/admin/*`)
+
+Full control over users, venues, events, vouchers, and themed-map places for internal staff (e.g. Steff). There is no self-signup or in-app path to the `admin` role — it can only be granted with a direct DB update, after the person has signed up (or dev-logged-in) once as a normal user:
+
+```bash
+pnpm --filter @bolivamos/web exec wrangler d1 execute bolivamos-db --local \
+  --command "UPDATE users SET role='admin' WHERE email='REPLACE_WITH_EMAIL'"
+```
+
+Drop `--local` to run it against the remote/production database once deployed. Log out and back in afterwards so the session picks up the new role.
 
 ## One-time Cloudflare setup (not done by this scaffold)
 

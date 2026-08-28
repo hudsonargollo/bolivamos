@@ -1,9 +1,9 @@
 import { z } from "zod";
-import { roleSchema } from "./common";
+import { roleSchema, selfAssignableRoleSchema } from "./common";
 
 export const mobileGoogleLoginRequestSchema = z.object({
   idToken: z.string().min(1),
-  role: roleSchema.optional(),
+  role: selfAssignableRoleSchema.optional(),
 });
 export type MobileGoogleLoginRequest = z.infer<typeof mobileGoogleLoginRequestSchema>;
 
@@ -24,7 +24,7 @@ export type AuthResponse = z.infer<typeof authResponseSchema>;
 
 export const devLoginRequestSchema = z.object({
   email: z.string().email().default("dev@bolivamos.test"),
-  role: roleSchema.default("visitor"),
+  role: selfAssignableRoleSchema.default("visitor"),
 });
 export type DevLoginRequest = z.infer<typeof devLoginRequestSchema>;
 
@@ -32,7 +32,7 @@ export const passwordSignupRequestSchema = z.object({
   email: z.string().email(),
   password: z.string().min(8),
   fullName: z.string().optional(),
-  role: roleSchema.default("visitor"),
+  role: selfAssignableRoleSchema.default("visitor"),
 });
 export type PasswordSignupRequest = z.infer<typeof passwordSignupRequestSchema>;
 
