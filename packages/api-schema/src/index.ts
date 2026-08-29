@@ -9,6 +9,7 @@ export * from "./schemas/redemptions";
 export * from "./schemas/subscriptions";
 export * from "./schemas/ai";
 export * from "./schemas/marketplace";
+export * from "./schemas/connect";
 export * from "./kv-keys";
 export * from "./jwt";
 export * from "./password";

@@ -1,16 +1,18 @@
-import { createDb, users, venues, events, vouchers, places } from "@bolivamos/db";
+import { createDb, users, venues, events, vouchers, places, userReports } from "@bolivamos/db";
+import { eq } from "drizzle-orm";
 import { cf } from "@/lib/cloudflare";
 
 async function getStats() {
   const { env } = cf();
   const db = createDb(env.DB);
 
-  const [allUsers, allVenues, allEvents, allVouchers, allPlaces] = await Promise.all([
+  const [allUsers, allVenues, allEvents, allVouchers, allPlaces, openReports] = await Promise.all([
     db.select().from(users),
     db.select().from(venues),
     db.select().from(events),
     db.select().from(vouchers),
     db.select().from(places),
+    db.select().from(userReports).where(eq(userReports.status, "open")),
   ]);
 
   return {
@@ -23,6 +25,7 @@ async function getStats() {
     vipOnlyEvents: allEvents.filter((e) => e.isVipOnly).length,
     activeVouchers: allVouchers.filter((v) => v.isActive).length,
     unverifiedPlaces: allPlaces.filter((p) => !p.verified).length,
+    openReports: openReports.length,
   };
 }
 
@@ -53,12 +56,24 @@ export default async function AdminOverviewPage() {
           value={stats.unverifiedPlaces}
           hint={stats.unverifiedPlaces > 0 ? "Needs verification before the map shows them" : undefined}
         />
+        <StatCard
+          label="Open reports"
+          value={stats.openReports}
+          hint={stats.openReports > 0 ? "VIP Connect moderation queue" : undefined}
+        />
       </div>
-      {stats.unverifiedPlaces > 0 && (
-        <a href="/admin/places" className="clay-btn clay-sage" style={{ marginTop: 20, display: "inline-flex" }}>
-          Review {stats.unverifiedPlaces} unverified place{stats.unverifiedPlaces === 1 ? "" : "s"}
-        </a>
-      )}
+      <div style={{ marginTop: 20, display: "flex", gap: 12, flexWrap: "wrap" }}>
+        {stats.unverifiedPlaces > 0 && (
+          <a href="/admin/places" className="clay-btn clay-sage" style={{ display: "inline-flex" }}>
+            Review {stats.unverifiedPlaces} unverified place{stats.unverifiedPlaces === 1 ? "" : "s"}
+          </a>
+        )}
+        {stats.openReports > 0 && (
+          <a href="/admin/moderation" className="clay-btn clay-danger" style={{ display: "inline-flex" }}>
+            Review {stats.openReports} open report{stats.openReports === 1 ? "" : "s"}
+          </a>
+        )}
+      </div>
     </div>
   );
 }

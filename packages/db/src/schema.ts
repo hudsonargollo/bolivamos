@@ -17,6 +17,9 @@ export const users = sqliteTable("users", {
   preferences: text("preferences"), // JSON array of selected categories
   createdAt: text("created_at").default(sql`CURRENT_TIMESTAMP`),
   passwordHash: text("password_hash"), // null for OAuth/dev-login-only accounts
+  // VIP Connect trust & safety — a reported user an admin has actioned stops
+  // being able to resolve a session at all (see lib/session.ts).
+  isBanned: integer("is_banned", { mode: "boolean" }).default(false),
 });
 
 export const venues = sqliteTable("venues", {
@@ -164,6 +167,51 @@ export const orders = sqliteTable("orders", {
   createdAt: text("created_at").default(sql`CURRENT_TIMESTAMP`),
 });
 
+// VIP Connect & Dating (roadmap pillar 1) — opt-in attendance visibility,
+// event-scoped connect requests, messaging gated on acceptance, and the
+// safety rails (block/report) that ship alongside it, not after.
+export const eventAttendance = sqliteTable("event_attendance", {
+  id: text("id").primaryKey(),
+  eventId: text("event_id").references(() => events.id).notNull(),
+  userId: text("user_id").references(() => users.id).notNull(),
+  visible: integer("visible", { mode: "boolean" }).default(false),
+  createdAt: text("created_at").default(sql`CURRENT_TIMESTAMP`),
+});
+
+export const connectRequests = sqliteTable("connect_requests", {
+  id: text("id").primaryKey(),
+  eventId: text("event_id").references(() => events.id).notNull(),
+  fromUserId: text("from_user_id").references(() => users.id).notNull(),
+  toUserId: text("to_user_id").references(() => users.id).notNull(),
+  status: text("status", { enum: ["pending", "accepted", "declined"] }).default("pending"),
+  createdAt: text("created_at").default(sql`CURRENT_TIMESTAMP`),
+});
+
+export const connectMessages = sqliteTable("connect_messages", {
+  id: text("id").primaryKey(),
+  requestId: text("request_id").references(() => connectRequests.id).notNull(),
+  senderId: text("sender_id").references(() => users.id).notNull(),
+  content: text("content").notNull(),
+  createdAt: text("created_at").default(sql`CURRENT_TIMESTAMP`),
+});
+
+export const userBlocks = sqliteTable("user_blocks", {
+  id: text("id").primaryKey(),
+  blockerId: text("blocker_id").references(() => users.id).notNull(),
+  blockedId: text("blocked_id").references(() => users.id).notNull(),
+  createdAt: text("created_at").default(sql`CURRENT_TIMESTAMP`),
+});
+
+export const userReports = sqliteTable("user_reports", {
+  id: text("id").primaryKey(),
+  reporterId: text("reporter_id").references(() => users.id).notNull(),
+  reportedId: text("reported_id").references(() => users.id).notNull(),
+  reason: text("reason").notNull(),
+  context: text("context"),
+  status: text("status", { enum: ["open", "reviewed", "dismissed"] }).default("open"),
+  createdAt: text("created_at").default(sql`CURRENT_TIMESTAMP`),
+});
+
 export type User = typeof users.$inferSelect;
 export type NewUser = typeof users.$inferInsert;
 export type Venue = typeof venues.$inferSelect;
@@ -188,3 +236,13 @@ export type PaymentMethod = typeof paymentMethods.$inferSelect;
 export type NewPaymentMethod = typeof paymentMethods.$inferInsert;
 export type Order = typeof orders.$inferSelect;
 export type NewOrder = typeof orders.$inferInsert;
+export type EventAttendance = typeof eventAttendance.$inferSelect;
+export type NewEventAttendance = typeof eventAttendance.$inferInsert;
+export type ConnectRequest = typeof connectRequests.$inferSelect;
+export type NewConnectRequest = typeof connectRequests.$inferInsert;
+export type ConnectMessage = typeof connectMessages.$inferSelect;
+export type NewConnectMessage = typeof connectMessages.$inferInsert;
+export type UserBlock = typeof userBlocks.$inferSelect;
+export type NewUserBlock = typeof userBlocks.$inferInsert;
+export type UserReport = typeof userReports.$inferSelect;
+export type NewUserReport = typeof userReports.$inferInsert;

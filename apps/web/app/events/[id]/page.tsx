@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import { createDb, events } from "@bolivamos/db";
 import { eq } from "drizzle-orm";
 import { cf } from "@/lib/cloudflare";
+import { getCurrentSessionRsc } from "@/lib/session-rsc";
+import ConnectPanel from "./connect-panel";
 
 export default async function EventDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -9,6 +11,8 @@ export default async function EventDetailPage({ params }: { params: Promise<{ id
   const db = createDb(env.DB);
   const [event] = await db.select().from(events).where(eq(events.id, id)).limit(1);
   if (!event) notFound();
+
+  const session = await getCurrentSessionRsc();
 
   // Parsed from the date/time parts directly, not via `new Date(iso)` +
   // toLocaleDateString: that pair renders in the server's local timezone,
@@ -54,6 +58,7 @@ export default async function EventDetailPage({ params }: { params: Promise<{ id
       {event.description && (
         <p style={{ color: "#4a4237", lineHeight: 1.6, margin: "0 0 24px" }}>{event.description}</p>
       )}
+      {session && <ConnectPanel eventId={event.id} isVip={session.isBoliPass} />}
       <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
         {event.mapsUrl && (
           <a

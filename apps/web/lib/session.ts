@@ -1,4 +1,6 @@
 import { verifySession, sessionKey, sessionValueSchema, type SessionValue } from "@bolivamos/api-schema";
+import { createDb, users } from "@bolivamos/db";
+import { eq } from "drizzle-orm";
 import { cf } from "./cloudflare";
 
 export const SESSION_COOKIE_NAME = "bv_session";
@@ -39,6 +41,12 @@ export async function resolveSession(token: string | null): Promise<CurrentSessi
     const raw = await env.BOLIVAMOS_KV.get(sessionKey(token), "json");
     if (!raw) return null; // revoked, logged out, or never issued via KV
     const session = sessionValueSchema.parse(raw);
+
+    // Checked against D1 (not cached in the KV session record) so a ban
+    // takes effect on a user's very next request, not just their next login.
+    const db = createDb(env.DB);
+    const [user] = await db.select({ isBanned: users.isBanned }).from(users).where(eq(users.id, payload.sub)).limit(1);
+    if (user?.isBanned) return null;
 
     return {
       token,
