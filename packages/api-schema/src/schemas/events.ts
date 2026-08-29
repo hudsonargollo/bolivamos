@@ -35,5 +35,9 @@ export const eventSchema = z.object({
   lng: z.number().nullable(),
   isVipOnly: z.boolean().nullable(),
   featured: z.boolean().nullable(),
+  // True only when this is a VIP-only event and the viewer isn't a BoliPass
+  // subscriber — description/exact location are withheld in that case so the
+  // listing still teases the event without giving away the details.
+  locked: z.boolean().optional(),
 });
 export type EventDto = z.infer<typeof eventSchema>;

@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 import { createDb, events } from "@bolivamos/db";
-import { and, eq, gte, lt } from "drizzle-orm";
+import { and, desc, eq, gte, lt } from "drizzle-orm";
 import { createEventRequestSchema, listEventsQuerySchema, type EventDto } from "@bolivamos/api-schema";
 import { cf } from "@/lib/cloudflare";
-import { requireRole } from "@/lib/session";
+import { getCurrentSession, requireRole } from "@/lib/session";
 import { toErrorResponse } from "@/lib/api-errors";
 import { windowForFilter } from "@/lib/event-filters";
 
@@ -29,6 +29,24 @@ function toEventDto(event: typeof events.$inferSelect): EventDto {
   };
 }
 
+/**
+ * VIP-only events (roadmap pillar 1 — invite-only community parties) still
+ * show up for everyone, so free-tier users feel the FOMO, but the exact
+ * details that would let a non-subscriber actually attend are withheld.
+ */
+function applyVipGate(dto: EventDto, isVip: boolean): EventDto {
+  if (!dto.isVipOnly || isVip) return dto;
+  return {
+    ...dto,
+    description: null,
+    imageUrl: null,
+    mapsUrl: null,
+    lat: null,
+    lng: null,
+    locked: true,
+  };
+}
+
 export async function GET(request: Request) {
   const url = new URL(request.url);
   const query = listEventsQuerySchema.parse(Object.fromEntries(url.searchParams));
@@ -49,9 +67,13 @@ export async function GET(request: Request) {
     .select()
     .from(events)
     .where(conditions.length ? and(...conditions) : undefined)
-    .orderBy(events.startTime);
+    // Featured listings surface first (roadmap pillar 2 paid placement), then soonest-starting.
+    .orderBy(desc(events.featured), events.startTime);
 
-  return NextResponse.json(rows.map(toEventDto));
+  const session = await getCurrentSession(request);
+  const isVip = Boolean(session?.isBoliPass);
+
+  return NextResponse.json(rows.map((row) => applyVipGate(toEventDto(row), isVip)));
 }
 
 /** Host-only: create an event for one of the host's venues. */

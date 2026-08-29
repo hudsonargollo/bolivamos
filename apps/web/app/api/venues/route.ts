@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { createDb, venues } from "@bolivamos/db";
-import { eq } from "drizzle-orm";
+import { desc, eq } from "drizzle-orm";
 import { createVenueRequestSchema, type VenueDto, type Category } from "@bolivamos/api-schema";
 import { cf } from "@/lib/cloudflare";
 import { requireRole } from "@/lib/session";
@@ -24,7 +24,8 @@ function toVenueDto(venue: typeof venues.$inferSelect): VenueDto {
 export async function GET() {
   const { env } = cf();
   const db = createDb(env.DB);
-  const rows = await db.select().from(venues);
+  // Featured (paid placement, roadmap pillar 2) surfaces first.
+  const rows = await db.select().from(venues).orderBy(desc(venues.featured), venues.name);
   return NextResponse.json(rows.map(toVenueDto));
 }
 

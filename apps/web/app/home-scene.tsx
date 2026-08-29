@@ -16,6 +16,7 @@ const BODY_HTML = `
       <button id="langEn" class="active">EN</button>
       <button id="langEs">ES</button>
     </div>
+    <a class="clay-btn clay-icon-btn" href="/login" aria-label="Log in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg></a>
     <button class="clay-btn clay-burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </nav>
 </header>
@@ -37,7 +38,7 @@ const BODY_HTML = `
   <a class="clay-btn scene-tab" href="/city3d" data-i18n="explore">Explore the city</a>
 </nav>
 <nav class="clay-menu" id="clayMenu">
-  <a href="#" data-i18n="week">This week</a><a href="#" data-i18n="weekend">This weekend</a><a href="#" data-i18n="nightlife">Nightlife</a><a href="#" data-i18n="todo">Things to do</a><a href="#" data-i18n="places">Places</a><a href="/city3d" data-i18n="explore">Explore the city</a><a href="#" data-i18n="list">List an event</a>
+  <a href="#" data-i18n="week">This week</a><a href="#" data-i18n="weekend">This weekend</a><a href="#" data-i18n="nightlife">Nightlife</a><a href="#" data-i18n="todo">Things to do</a><a href="#" data-i18n="places">Places</a><a href="/city3d" data-i18n="explore">Explore the city</a><a href="#" data-i18n="list">List an event</a><a href="/login" data-i18n="login">Log in</a>
 </nav>
 <div class="click-hint" id="clickHint" data-i18n="hint">The banners are <b>clickable</b></div>
 </div>
