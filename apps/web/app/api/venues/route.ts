@@ -16,6 +16,8 @@ function toVenueDto(venue: typeof venues.$inferSelect): VenueDto {
     latitude: venue.latitude,
     longitude: venue.longitude,
     createdAt: venue.createdAt,
+    tier: venue.tier as VenueDto["tier"],
+    featured: venue.featured,
   };
 }
 

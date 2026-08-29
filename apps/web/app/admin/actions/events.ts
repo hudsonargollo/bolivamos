@@ -34,6 +34,8 @@ export async function createEvent(formData: FormData) {
     mapsUrl: formOptionalString(formData, "mapsUrl") ?? null,
     lat: formOptionalNumber(formData, "lat") ?? null,
     lng: formOptionalNumber(formData, "lng") ?? null,
+    isVipOnly: formData.get("isVipOnly") === "on",
+    featured: formData.get("featured") === "on",
   });
 
   revalidatePath("/admin/events");
@@ -67,6 +69,8 @@ export async function updateEvent(formData: FormData) {
       mapsUrl: formOptionalString(formData, "mapsUrl") ?? null,
       lat: formOptionalNumber(formData, "lat") ?? null,
       lng: formOptionalNumber(formData, "lng") ?? null,
+      isVipOnly: formData.get("isVipOnly") === "on",
+      featured: formData.get("featured") === "on",
     })
     .where(eq(events.id, id));
 

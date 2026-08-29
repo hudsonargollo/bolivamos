@@ -29,6 +29,11 @@ export const venues = sqliteTable("venues", {
   longitude: real("longitude"),
   qrSecretHash: text("qr_secret_hash").notNull(),
   createdAt: text("created_at").default(sql`CURRENT_TIMESTAMP`),
+  // B2B SaaS tier (roadmap pillar 1) — manually toggled by admin until real
+  // billing/subscription status exists to drive it.
+  tier: text("tier", { enum: ["free", "premium"] }).default("free"),
+  // Priority placement in "Best Bars" / "Things to Do This Weekend" (pillar 2).
+  featured: integer("featured", { mode: "boolean" }).default(false),
 });
 
 export const events = sqliteTable("events", {
@@ -51,6 +56,11 @@ export const events = sqliteTable("events", {
   // venue row to join against, since venueId is null for imported events.
   lat: real("lat"),
   lng: real("lng"),
+  // Invite-only VIP community parties (roadmap pillar 1) — gates visibility
+  // to BoliPass subscribers once the public feed enforces it.
+  isVipOnly: integer("is_vip_only", { mode: "boolean" }).default(false),
+  // Priority placement in "Things to Do This Weekend" (pillar 2).
+  featured: integer("featured", { mode: "boolean" }).default(false),
 });
 
 export const vouchers = sqliteTable("vouchers", {

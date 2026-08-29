@@ -2,7 +2,7 @@
 
 import { eq } from "drizzle-orm";
 import { createDb, venues } from "@bolivamos/db";
-import { categorySchema } from "@bolivamos/api-schema";
+import { categorySchema, venueTierSchema } from "@bolivamos/api-schema";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { cf } from "@/lib/cloudflare";
@@ -27,6 +27,8 @@ export async function createVenue(formData: FormData) {
     address: formOptionalString(formData, "address") ?? null,
     latitude: formOptionalNumber(formData, "latitude") ?? null,
     longitude: formOptionalNumber(formData, "longitude") ?? null,
+    tier: venueTierSchema.parse(formString(formData, "tier") || "free"),
+    featured: formData.get("featured") === "on",
     // Placeholder secret, same as the host-facing POST /api/venues — regenerate
     // via a real HMAC key once QR issuance is wired up for real.
     qrSecretHash: crypto.randomUUID(),
@@ -55,6 +57,8 @@ export async function updateVenue(formData: FormData) {
       address: formOptionalString(formData, "address") ?? null,
       latitude: formOptionalNumber(formData, "latitude") ?? null,
       longitude: formOptionalNumber(formData, "longitude") ?? null,
+      tier: venueTierSchema.parse(formString(formData, "tier") || "free"),
+      featured: formData.get("featured") === "on",
     })
     .where(eq(venues.id, id));
 

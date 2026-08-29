@@ -43,6 +43,12 @@ export default async function NewEventPage() {
           <input name="lat" type="number" step="any" placeholder="Latitude" className="w-full rounded-md border p-2" />
           <input name="lng" type="number" step="any" placeholder="Longitude" className="w-full rounded-md border p-2" />
         </div>
+        <label className="flex items-center gap-2">
+          <input type="checkbox" name="isVipOnly" /> VIP&#8209;only (invite&#8209;only community party)
+        </label>
+        <label className="flex items-center gap-2">
+          <input type="checkbox" name="featured" /> Featured (priority placement)
+        </label>
         <button type="submit" className="rounded-pill bg-boli-green px-5 py-2 text-white">
           Create event
         </button>

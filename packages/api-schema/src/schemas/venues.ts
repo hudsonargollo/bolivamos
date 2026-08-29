@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { categorySchema } from "./common";
+import { categorySchema, venueTierSchema } from "./common";
 
 export const createVenueRequestSchema = z.object({
   name: z.string().min(1),
@@ -19,5 +19,7 @@ export const venueSchema = z.object({
   latitude: z.number().nullable(),
   longitude: z.number().nullable(),
   createdAt: z.string().nullable(),
+  tier: venueTierSchema.nullable(),
+  featured: z.boolean().nullable(),
 });
 export type VenueDto = z.infer<typeof venueSchema>;

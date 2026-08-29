@@ -27,6 +27,8 @@ export async function GET(_request: Request, { params }: { params: Promise<{ id:
     mapsUrl: event.mapsUrl,
     lat: event.lat,
     lng: event.lng,
+    isVipOnly: event.isVipOnly,
+    featured: event.featured,
   };
   return NextResponse.json(dto);
 }

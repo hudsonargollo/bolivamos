@@ -18,7 +18,9 @@ async function getStats() {
     vipUsers: allUsers.filter((u) => u.isBolipassActive).length,
     hosts: allUsers.filter((u) => u.role === "host").length,
     totalVenues: allVenues.length,
+    premiumVenues: allVenues.filter((v) => v.tier === "premium").length,
     totalEvents: allEvents.length,
+    vipOnlyEvents: allEvents.filter((e) => e.isVipOnly).length,
     activeVouchers: allVouchers.filter((v) => v.isActive).length,
     unverifiedPlaces: allPlaces.filter((p) => !p.verified).length,
   };
@@ -43,8 +45,8 @@ export default async function AdminOverviewPage() {
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
         <StatCard label="Users" value={stats.totalUsers} hint={`${stats.hosts} hosts`} />
         <StatCard label="VIP (BoliPass)" value={stats.vipUsers} />
-        <StatCard label="Venues" value={stats.totalVenues} />
-        <StatCard label="Events" value={stats.totalEvents} />
+        <StatCard label="Venues" value={stats.totalVenues} hint={`${stats.premiumVenues} premium`} />
+        <StatCard label="Events" value={stats.totalEvents} hint={`${stats.vipOnlyEvents} VIP-only`} />
         <StatCard label="Active vouchers" value={stats.activeVouchers} />
         <StatCard
           label="Places pending review"

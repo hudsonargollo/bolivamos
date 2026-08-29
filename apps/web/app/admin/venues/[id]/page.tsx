@@ -61,6 +61,13 @@ export default async function EditVenuePage({ params }: { params: Promise<{ id: 
             </option>
           ))}
         </select>
+        <select name="tier" defaultValue={venue.tier ?? "free"} className="w-full rounded-md border p-2">
+          <option value="free">Free tier</option>
+          <option value="premium">Premium (B2B SaaS)</option>
+        </select>
+        <label className="flex items-center gap-2">
+          <input type="checkbox" name="featured" defaultChecked={Boolean(venue.featured)} /> Featured (priority placement)
+        </label>
         <button type="submit" className="rounded-pill bg-boli-green px-5 py-2 text-white">
           Save changes
         </button>

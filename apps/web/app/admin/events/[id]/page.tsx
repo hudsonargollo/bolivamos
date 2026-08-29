@@ -90,6 +90,12 @@ export default async function EditEventPage({ params }: { params: Promise<{ id: 
             className="w-full rounded-md border p-2"
           />
         </div>
+        <label className="flex items-center gap-2">
+          <input type="checkbox" name="isVipOnly" defaultChecked={Boolean(event.isVipOnly)} /> VIP&#8209;only (invite&#8209;only community party)
+        </label>
+        <label className="flex items-center gap-2">
+          <input type="checkbox" name="featured" defaultChecked={Boolean(event.featured)} /> Featured (priority placement)
+        </label>
         <button type="submit" className="rounded-pill bg-boli-green px-5 py-2 text-white">
           Save changes
         </button>

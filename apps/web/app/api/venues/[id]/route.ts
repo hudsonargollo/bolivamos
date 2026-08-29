@@ -20,6 +20,8 @@ export async function GET(_request: Request, { params }: { params: Promise<{ id:
     latitude: venue.latitude,
     longitude: venue.longitude,
     createdAt: venue.createdAt,
+    tier: venue.tier as VenueDto["tier"],
+    featured: venue.featured,
   };
   return NextResponse.json(dto);
 }

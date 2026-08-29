@@ -24,6 +24,8 @@ function toEventDto(event: typeof events.$inferSelect): EventDto {
     mapsUrl: event.mapsUrl,
     lat: event.lat,
     lng: event.lng,
+    isVipOnly: event.isVipOnly,
+    featured: event.featured,
   };
 }
 

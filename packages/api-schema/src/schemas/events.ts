@@ -33,5 +33,7 @@ export const eventSchema = z.object({
   mapsUrl: z.string().nullable(),
   lat: z.number().nullable(),
   lng: z.number().nullable(),
+  isVipOnly: z.boolean().nullable(),
+  featured: z.boolean().nullable(),
 });
 export type EventDto = z.infer<typeof eventSchema>;

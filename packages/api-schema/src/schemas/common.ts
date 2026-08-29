@@ -22,4 +22,8 @@ export type Category = z.infer<typeof categorySchema>;
 export const eventFilterSchema = z.enum(["today", "tomorrow", "sunday", "weekend"]);
 export type EventFilter = z.infer<typeof eventFilterSchema>;
 
+// B2B SaaS tier (roadmap pillar 1) — manually toggled by admin for now.
+export const venueTierSchema = z.enum(["free", "premium"]);
+export type VenueTier = z.infer<typeof venueTierSchema>;
+
 export const discountTypeSchema = z.literal("2_FOR_1");

@@ -29,7 +29,17 @@ export default async function AdminEventsPage() {
           <tbody>
             {rows.map((event) => (
               <tr key={event.id} className="border-b last:border-0">
-                <td className="p-3">{event.title}</td>
+                <td className="p-3">
+                  {event.title}
+                  {event.isVipOnly && (
+                    <span className="ml-2 rounded-pill bg-charcoal-dark px-2 py-0.5 text-xs text-white">VIP</span>
+                  )}
+                  {event.featured && (
+                    <span className="ml-2 rounded-pill bg-boli-yellow px-2 py-0.5 text-xs text-charcoal-dark">
+                      Featured
+                    </span>
+                  )}
+                </td>
                 <td className="p-3">{event.startTime.slice(0, 16).replace("T", " ")}</td>
                 <td className="p-3">{event.venueName ?? event.venueId ?? "—"}</td>
                 <td className="p-3">{event.category ?? "—"}</td>
