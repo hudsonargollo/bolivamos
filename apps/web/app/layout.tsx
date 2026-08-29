@@ -4,6 +4,15 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "BoliVamos",
   description: "What to do in Santa Cruz de la Sierra — plus BoliPass 2-for-1 deals.",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-48.png", sizes: "48x48", type: "image/png" },
+      { url: "/favicon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 // Pinned for the homepage's 3D scene (apps/web/app/home-scene.tsx), which
