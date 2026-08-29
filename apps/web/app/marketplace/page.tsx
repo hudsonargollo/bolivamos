@@ -3,6 +3,11 @@ import { eq } from "drizzle-orm";
 import { cf } from "@/lib/cloudflare";
 import "../admin/admin.css";
 
+// No dynamic segment and no cookies() call here, so Next would otherwise try
+// to statically prerender this at build time — which breaks, since D1/KV
+// bindings (via cf()) only exist inside a real request.
+export const dynamic = "force-dynamic";
+
 const TYPE_LABELS: Record<string, string> = {
   tour: "Tour",
   audio_tour: "Audio tour",
