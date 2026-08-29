@@ -97,6 +97,20 @@ export const places = sqliteTable("places", {
   verified: integer("verified", { mode: "boolean" }).default(false),
 });
 
+export const conciergeConversations = sqliteTable("concierge_conversations", {
+  id: text("id").primaryKey(),
+  userId: text("user_id").references(() => users.id).notNull(),
+  createdAt: text("created_at").default(sql`CURRENT_TIMESTAMP`),
+});
+
+export const conciergeMessages = sqliteTable("concierge_messages", {
+  id: text("id").primaryKey(),
+  conversationId: text("conversation_id").references(() => conciergeConversations.id).notNull(),
+  role: text("role", { enum: ["user", "assistant"] }).notNull(),
+  content: text("content").notNull(),
+  createdAt: text("created_at").default(sql`CURRENT_TIMESTAMP`),
+});
+
 export type User = typeof users.$inferSelect;
 export type NewUser = typeof users.$inferInsert;
 export type Venue = typeof venues.$inferSelect;
@@ -109,3 +123,7 @@ export type Redemption = typeof redemptions.$inferSelect;
 export type NewRedemption = typeof redemptions.$inferInsert;
 export type Place = typeof places.$inferSelect;
 export type NewPlace = typeof places.$inferInsert;
+export type ConciergeConversation = typeof conciergeConversations.$inferSelect;
+export type NewConciergeConversation = typeof conciergeConversations.$inferInsert;
+export type ConciergeMessage = typeof conciergeMessages.$inferSelect;
+export type NewConciergeMessage = typeof conciergeMessages.$inferInsert;

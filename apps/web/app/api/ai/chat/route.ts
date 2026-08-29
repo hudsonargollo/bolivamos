@@ -1,24 +1,58 @@
 import { NextResponse } from "next/server";
+import { eq } from "drizzle-orm";
 import { GeminiClient, chatWithConcierge } from "@bolivamos/ai";
-import { chatRequestSchema } from "@bolivamos/api-schema";
+import { chatRequestSchema, type ChatResponse } from "@bolivamos/api-schema";
+import { createDb, conciergeConversations, conciergeMessages } from "@bolivamos/db";
 import { cf } from "@/lib/cloudflare";
-import { requireRole } from "@/lib/session";
+import { requireSession, SessionError } from "@/lib/session";
 import { toErrorResponse } from "@/lib/api-errors";
 
-/** BoliPass-only Smart Concierge Chat (PRD 4.3). Single-turn for now — see packages/ai/src/chat.ts. */
+/** BoliPass-only Smart Concierge Chat (PRD 4.3), now with server-persisted history. */
 export async function POST(request: Request) {
   try {
-    const session = await requireRole(request, "visitor");
+    const session = await requireSession(request);
     if (!session.isBoliPass) {
-      return NextResponse.json({ error: "BoliPass subscription required" }, { status: 403 });
+      throw new SessionError(403, "BoliPass subscription required");
     }
 
     const body = chatRequestSchema.parse(await request.json());
     const { env } = cf();
+    const db = createDb(env.DB);
+
+    let conversationId = body.conversationId;
+    if (conversationId) {
+      const [conversation] = await db
+        .select()
+        .from(conciergeConversations)
+        .where(eq(conciergeConversations.id, conversationId))
+        .limit(1);
+      if (!conversation || conversation.userId !== session.userId) {
+        throw new SessionError(404, "Conversation not found");
+      }
+    } else {
+      conversationId = crypto.randomUUID();
+      await db.insert(conciergeConversations).values({ id: conversationId, userId: session.userId });
+    }
+
+    await db.insert(conciergeMessages).values({
+      id: crypto.randomUUID(),
+      conversationId,
+      role: "user",
+      content: body.message,
+    });
+
     const client = new GeminiClient({ apiKey: env.GEMINI_API_KEY });
     const reply = await chatWithConcierge(client, body);
 
-    return NextResponse.json({ reply });
+    await db.insert(conciergeMessages).values({
+      id: crypto.randomUUID(),
+      conversationId,
+      role: "assistant",
+      content: reply,
+    });
+
+    const response: ChatResponse = { reply, conversationId };
+    return NextResponse.json(response);
   } catch (err) {
     return toErrorResponse(err);
   }
