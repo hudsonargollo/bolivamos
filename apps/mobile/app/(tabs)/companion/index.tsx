@@ -12,6 +12,9 @@ export default function CompanionScreen() {
   const [history, setHistory] = useState<ChatTurn[]>([]);
   const [message, setMessage] = useState("");
   const [sending, setSending] = useState(false);
+  // Set once the first reply comes back; passing it on every later call keeps
+  // the whole conversation server-persisted instead of resending history each time.
+  const [conversationId, setConversationId] = useState<string | undefined>(undefined);
 
   async function send() {
     if (!message.trim()) return;
@@ -22,7 +25,12 @@ export default function CompanionScreen() {
     setSending(true);
 
     try {
-      const { reply } = await apiClient.chat({ message: userTurn.content, history });
+      const { reply, conversationId: id } = await apiClient.chat({
+        message: userTurn.content,
+        history,
+        conversationId,
+      });
+      setConversationId(id);
       setHistory([...nextHistory, { role: "assistant", content: reply }]);
     } catch {
       setHistory([

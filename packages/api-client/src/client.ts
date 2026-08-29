@@ -15,7 +15,19 @@ import type {
   ItineraryRequest,
   ItineraryResponse,
   ChatRequest,
+  ChatResponse,
   HighlightResponse,
+  ProductDto,
+  CreateOrderRequest,
+  CreateOrderResponse,
+  AttendeeDto,
+  SetAttendanceRequest,
+  ConnectRequestDto,
+  CreateConnectRequest,
+  RespondConnectRequest,
+  ConnectMessageDto,
+  SendConnectMessageRequest,
+  ReportUserRequest,
 } from "@bolivamos/api-schema";
 
 export interface ApiClientOptions {
@@ -94,6 +106,10 @@ export class ApiClient {
     return this.request<EventDto[]>(`/api/events${qs}`);
   }
 
+  getEvent(id: string) {
+    return this.request<EventDto>(`/api/events/${id}`);
+  }
+
   // --- subscriptions ---
   activateBoliPass() {
     return this.request<ActivateBoliPassResponse>("/api/subscriptions/bolipass", { method: "POST" });
@@ -117,10 +133,69 @@ export class ApiClient {
   }
 
   chat(body: ChatRequest) {
-    return this.request<{ reply: string }>("/api/ai/chat", { method: "POST", body: JSON.stringify(body) });
+    return this.request<ChatResponse>("/api/ai/chat", { method: "POST", body: JSON.stringify(body) });
   }
 
   getVenueHighlight(venueId: string) {
     return this.request<HighlightResponse>(`/api/ai/highlight?venueId=${venueId}`);
+  }
+
+  // --- marketplace ---
+  listProducts() {
+    return this.request<ProductDto[]>("/api/products");
+  }
+
+  getProduct(id: string) {
+    return this.request<ProductDto>(`/api/products/${id}`);
+  }
+
+  createOrder(body: CreateOrderRequest) {
+    return this.request<CreateOrderResponse>("/api/orders", { method: "POST", body: JSON.stringify(body) });
+  }
+
+  // --- VIP Connect & Dating ---
+  setEventAttendance(eventId: string, body: SetAttendanceRequest) {
+    return this.request<{ visible: boolean }>(`/api/events/${eventId}/attendance`, {
+      method: "POST",
+      body: JSON.stringify(body),
+    });
+  }
+
+  getEventAttendees(eventId: string) {
+    return this.request<AttendeeDto[]>(`/api/events/${eventId}/attendees`);
+  }
+
+  sendConnectRequest(body: CreateConnectRequest) {
+    return this.request<ConnectRequestDto>("/api/connect/requests", { method: "POST", body: JSON.stringify(body) });
+  }
+
+  listConnectRequests() {
+    return this.request<ConnectRequestDto[]>("/api/connect/requests");
+  }
+
+  respondConnectRequest(id: string, body: RespondConnectRequest) {
+    return this.request<{ status: string }>(`/api/connect/requests/${id}/respond`, {
+      method: "POST",
+      body: JSON.stringify(body),
+    });
+  }
+
+  getConnectMessages(requestId: string) {
+    return this.request<ConnectMessageDto[]>(`/api/connect/${requestId}/messages`);
+  }
+
+  sendConnectMessage(requestId: string, body: SendConnectMessageRequest) {
+    return this.request<ConnectMessageDto>(`/api/connect/${requestId}/messages`, {
+      method: "POST",
+      body: JSON.stringify(body),
+    });
+  }
+
+  blockUser(userId: string) {
+    return this.request<{ blocked: boolean }>(`/api/users/${userId}/block`, { method: "POST" });
+  }
+
+  reportUser(body: ReportUserRequest) {
+    return this.request<{ ok: boolean }>("/api/reports", { method: "POST", body: JSON.stringify(body) });
   }
 }

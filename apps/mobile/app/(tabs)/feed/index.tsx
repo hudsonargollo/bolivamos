@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { View, Text, FlatList, Pressable, ScrollView, Image } from "react-native";
+import { router } from "expo-router";
 import type { EventDto, EventFilter } from "@bolivamos/api-schema";
 import { apiClient, baseUrl } from "@/lib/api";
 
@@ -29,7 +30,10 @@ function EventCard({ item }: { item: EventDto }) {
   const venueLine = [item.venueName, item.isFree ? "Gratis" : item.priceText].filter(Boolean).join(" · ");
 
   return (
-    <View className="mb-3 overflow-hidden rounded-lg bg-white shadow-sm">
+    <Pressable
+      className="mb-3 overflow-hidden rounded-lg bg-white shadow-sm"
+      onPress={() => router.push(`/(tabs)/feed/${item.id}`)}
+    >
       {image ? (
         <Image source={image} className="h-36 w-full" resizeMode="cover" />
       ) : (
@@ -45,11 +49,21 @@ function EventCard({ item }: { item: EventDto }) {
               <Text className="text-xs font-bold text-boli-green">{item.category}</Text>
             </View>
           ) : null}
+          {item.isVipOnly ? (
+            <View className="rounded-pill bg-charcoal-dark px-2 py-0.5">
+              <Text className="text-xs font-bold text-white">VIP</Text>
+            </View>
+          ) : null}
+          {item.featured ? (
+            <View className="rounded-pill bg-boli-yellow px-2 py-0.5">
+              <Text className="text-xs font-bold text-charcoal-dark">Featured</Text>
+            </View>
+          ) : null}
         </View>
         <Text className="mt-1 text-lg font-bold text-charcoal-dark">{item.title}</Text>
         {venueLine ? <Text className="mt-0.5 text-muted-clay-gray">{venueLine}</Text> : null}
       </View>
-    </View>
+    </Pressable>
   );
 }
 

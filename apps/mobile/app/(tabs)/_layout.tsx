@@ -10,7 +10,7 @@ export default function TabsLayout() {
         tabBarInactiveTintColor: nativeColors.mutedClayGray,
       }}
     >
-      <Tabs.Screen name="index" options={{ title: "Feed" }} />
+      <Tabs.Screen name="feed" options={{ title: "Feed" }} />
       <Tabs.Screen name="map" options={{ title: "Map" }} />
       <Tabs.Screen name="bolipass" options={{ title: "BoliPass" }} />
       <Tabs.Screen name="companion" options={{ title: "Companion" }} />

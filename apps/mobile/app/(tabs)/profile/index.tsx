@@ -32,6 +32,18 @@ export default function ProfileScreen() {
         </View>
       )}
 
+      <Pressable className="rounded-lg bg-white p-4 shadow-sm" onPress={() => router.push("/marketplace")}>
+        <Text className="font-bold text-charcoal-dark">Tours, audio guides &amp; tickets</Text>
+        <Text className="text-muted-clay-gray">Browse the marketplace</Text>
+      </Pressable>
+
+      {me?.isBoliPassActive && (
+        <Pressable className="rounded-lg bg-white p-4 shadow-sm" onPress={() => router.push("/connect")}>
+          <Text className="font-bold text-charcoal-dark">Connect</Text>
+          <Text className="text-muted-clay-gray">Your VIP connection requests and chats</Text>
+        </Pressable>
+      )}
+
       <Pressable className="rounded-lg border border-boli-red p-4" onPress={logout}>
         <Text className="text-center text-boli-red">Log out</Text>
       </Pressable>
