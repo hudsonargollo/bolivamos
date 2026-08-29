@@ -15,11 +15,11 @@ export default async function EditVoucherPage({ params }: { params: Promise<{ id
   const allVenues = await db.select().from(venues);
 
   return (
-    <div className="max-w-lg space-y-6">
-      <h1 className="font-display text-2xl uppercase">Edit voucher</h1>
-      <form action={updateVoucher} className="space-y-3 rounded-lg bg-white p-5 shadow-sm">
+    <div>
+      <h1 className="a-h1">Edit voucher</h1>
+      <form action={updateVoucher} className="a-form a-card">
         <input type="hidden" name="id" value={voucher.id} />
-        <select name="venueId" defaultValue={voucher.venueId ?? ""} required className="w-full rounded-md border p-2">
+        <select name="venueId" defaultValue={voucher.venueId ?? ""} required className="a-select">
           <option value="">Select a venue</option>
           {allVenues.map((venue) => (
             <option key={venue.id} value={venue.id}>
@@ -27,29 +27,25 @@ export default async function EditVoucherPage({ params }: { params: Promise<{ id
             </option>
           ))}
         </select>
-        <input name="title" defaultValue={voucher.title} required className="w-full rounded-md border p-2" />
+        <input name="title" defaultValue={voucher.title} required className="a-input" />
         <input
           name="discountType"
           defaultValue={voucher.discountType ?? "2_FOR_1"}
           placeholder="Discount type"
-          className="w-full rounded-md border p-2"
+          className="a-input"
         />
-        <textarea
-          name="termsConditions"
-          defaultValue={voucher.termsConditions ?? ""}
-          className="w-full rounded-md border p-2"
-        />
-        <label className="flex items-center gap-2">
+        <textarea name="termsConditions" defaultValue={voucher.termsConditions ?? ""} className="a-textarea" />
+        <label className="a-checkbox-row">
           <input type="checkbox" name="isActive" defaultChecked={Boolean(voucher.isActive)} /> Active
         </label>
-        <button type="submit" className="rounded-pill bg-boli-green px-5 py-2 text-white">
+        <button type="submit" className="clay-btn" style={{ alignSelf: "flex-start" }}>
           Save changes
         </button>
       </form>
 
-      <form action={deleteVoucher}>
+      <form action={deleteVoucher} style={{ marginTop: 20 }}>
         <input type="hidden" name="id" value={voucher.id} />
-        <button type="submit" className="rounded-pill bg-boli-red px-5 py-2 text-white">
+        <button type="submit" className="clay-btn clay-danger">
           Delete voucher
         </button>
       </form>

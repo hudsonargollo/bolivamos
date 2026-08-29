@@ -10,51 +10,53 @@ export default async function AdminPlacesPage() {
   rows.sort((a, b) => Number(a.verified) - Number(b.verified));
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <h1 className="font-display text-2xl uppercase">Places</h1>
-        <a href="/admin/places/new" className="rounded-pill bg-boli-green px-5 py-2 text-white">
+    <div>
+      <div className="a-actions-row">
+        <h1 className="a-h1" style={{ margin: 0 }}>
+          Places
+        </h1>
+        <a href="/admin/places/new" className="clay-btn">
           New place
         </a>
       </div>
-      <p className="text-sm text-muted-clay-gray">
+      <p className="a-muted" style={{ marginTop: -12, marginBottom: 20 }}>
         Only verified places show on the public themed map. Imported/geocoded rows land here unverified for QA.
       </p>
 
-      <div className="overflow-x-auto rounded-lg bg-white shadow-sm">
-        <table className="w-full text-left text-sm">
-          <thead className="border-b bg-bg-off-white">
+      <div className="a-table-wrap">
+        <table className="a-table">
+          <thead>
             <tr>
-              <th className="p-3">Name</th>
-              <th className="p-3">Layer</th>
-              <th className="p-3">District</th>
-              <th className="p-3">Source</th>
-              <th className="p-3">Status</th>
-              <th className="p-3"></th>
+              <th>Name</th>
+              <th>Layer</th>
+              <th>District</th>
+              <th>Source</th>
+              <th>Status</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
             {rows.map((place) => (
-              <tr key={place.id} className={`border-b last:border-0 ${place.verified ? "" : "bg-boli-yellow/10"}`}>
-                <td className="p-3">{place.name}</td>
-                <td className="p-3">{place.layer}</td>
-                <td className="p-3">{place.district ?? "—"}</td>
-                <td className="p-3">{place.source}</td>
-                <td className="p-3">
+              <tr key={place.id} className={place.verified ? undefined : "a-row-pending"}>
+                <td>{place.name}</td>
+                <td>{place.layer}</td>
+                <td>{place.district ?? "—"}</td>
+                <td>{place.source}</td>
+                <td>
                   {place.verified ? (
-                    <span className="text-boli-green">Verified</span>
+                    <span className="a-text-sage">Verified</span>
                   ) : (
-                    <form action={verifyPlace} className="flex items-center gap-2">
+                    <form action={verifyPlace} className="a-checkbox-row">
                       <input type="hidden" name="id" value={place.id} />
-                      <span className="text-boli-orange">Pending</span>
-                      <button type="submit" className="rounded-pill border px-3 py-1 text-xs">
+                      <span className="a-text-orange">Pending</span>
+                      <button type="submit" className="a-btn-sm">
                         Verify
                       </button>
                     </form>
                   )}
                 </td>
-                <td className="p-3">
-                  <a href={`/admin/places/${place.id}`} className="text-boli-green underline">
+                <td>
+                  <a href={`/admin/places/${place.id}`} className="a-link">
                     Edit
                   </a>
                 </td>

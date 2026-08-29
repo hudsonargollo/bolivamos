@@ -15,33 +15,28 @@ export default async function EditPlacePage({ params }: { params: Promise<{ id: 
   if (!place) notFound();
 
   return (
-    <div className="max-w-lg space-y-6">
-      <h1 className="font-display text-2xl uppercase">Edit place</h1>
-      <form action={updatePlace} className="space-y-3 rounded-lg bg-white p-5 shadow-sm">
+    <div>
+      <h1 className="a-h1">Edit place</h1>
+      <form action={updatePlace} className="a-form a-card">
         <input type="hidden" name="id" value={place.id} />
-        <input name="name" defaultValue={place.name} required className="w-full rounded-md border p-2" />
-        <select name="layer" defaultValue={place.layer} required className="w-full rounded-md border p-2">
+        <input name="name" defaultValue={place.name} required className="a-input" />
+        <select name="layer" defaultValue={place.layer} required className="a-select">
           {LAYERS.map((l) => (
             <option key={l} value={l}>
               {l}
             </option>
           ))}
         </select>
-        <input name="category" defaultValue={place.category ?? ""} placeholder="Category" className="w-full rounded-md border p-2" />
-        <input
-          name="district"
-          defaultValue={place.district ?? ""}
-          placeholder="District"
-          className="w-full rounded-md border p-2"
-        />
-        <div className="flex gap-3">
+        <input name="category" defaultValue={place.category ?? ""} placeholder="Category" className="a-input" />
+        <input name="district" defaultValue={place.district ?? ""} placeholder="District" className="a-input" />
+        <div className="a-row-2">
           <input
             name="lat"
             type="number"
             step="any"
             defaultValue={place.lat ?? ""}
             placeholder="Latitude"
-            className="w-full rounded-md border p-2"
+            className="a-input"
           />
           <input
             name="lng"
@@ -49,48 +44,50 @@ export default async function EditPlacePage({ params }: { params: Promise<{ id: 
             step="any"
             defaultValue={place.lng ?? ""}
             placeholder="Longitude"
-            className="w-full rounded-md border p-2"
+            className="a-input"
           />
         </div>
-        <div className="flex gap-3">
+        <div className="a-row-2">
           <input
             name="rating"
             type="number"
             step="0.1"
             defaultValue={place.rating ?? ""}
             placeholder="Rating"
-            className="w-full rounded-md border p-2"
+            className="a-input"
           />
           <input
             name="reviews"
             type="number"
             defaultValue={place.reviews ?? ""}
             placeholder="Review count"
-            className="w-full rounded-md border p-2"
+            className="a-input"
           />
         </div>
-        <input name="price" defaultValue={place.price ?? ""} placeholder="Price (e.g. $$)" className="w-full rounded-md border p-2" />
+        <input name="price" defaultValue={place.price ?? ""} placeholder="Price (e.g. $$)" className="a-input" />
         <input
           name="venueId"
           defaultValue={place.venueId ?? ""}
           placeholder="Linked venue ID (optional)"
-          className="w-full rounded-md border p-2"
+          className="a-input"
         />
-        <label className="flex items-center gap-2">
+        <label className="a-checkbox-row">
           <input type="checkbox" name="regional" defaultChecked={Boolean(place.regional)} /> Regional / outside city core
         </label>
-        <label className="flex items-center gap-2">
+        <label className="a-checkbox-row">
           <input type="checkbox" name="verified" defaultChecked={Boolean(place.verified)} /> Verified (shows on public map)
         </label>
-        <p className="text-xs text-muted-clay-gray">Source: {place.source}</p>
-        <button type="submit" className="rounded-pill bg-boli-green px-5 py-2 text-white">
+        <p className="a-muted" style={{ fontSize: 12 }}>
+          Source: {place.source}
+        </p>
+        <button type="submit" className="clay-btn" style={{ alignSelf: "flex-start" }}>
           Save changes
         </button>
       </form>
 
-      <form action={deletePlace}>
+      <form action={deletePlace} style={{ marginTop: 20 }}>
         <input type="hidden" name="id" value={place.id} />
-        <button type="submit" className="rounded-pill bg-boli-red px-5 py-2 text-white">
+        <button type="submit" className="clay-btn clay-danger">
           Delete place
         </button>
       </form>

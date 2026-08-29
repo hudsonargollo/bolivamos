@@ -8,68 +8,63 @@ export default async function AdminUsersPage() {
   const rows = await db.select().from(users).orderBy(users.createdAt);
 
   return (
-    <div className="space-y-6">
-      <h1 className="font-display text-2xl uppercase">Users</h1>
+    <div>
+      <h1 className="a-h1">Users</h1>
 
-      <div className="overflow-x-auto rounded-lg bg-white shadow-sm">
-        <table className="w-full text-left text-sm">
-          <thead className="border-b bg-bg-off-white">
+      <div className="a-table-wrap">
+        <table className="a-table">
+          <thead>
             <tr>
-              <th className="p-3">Email</th>
-              <th className="p-3">Name</th>
-              <th className="p-3">Role</th>
-              <th className="p-3">BoliPass VIP</th>
-              <th className="p-3">Joined</th>
+              <th>Email</th>
+              <th>Name</th>
+              <th>Role</th>
+              <th>BoliPass VIP</th>
+              <th>Joined</th>
             </tr>
           </thead>
           <tbody>
             {rows.map((user) => (
-              <tr key={user.id} className="border-b last:border-0 align-top">
-                <td className="p-3">{user.email}</td>
-                <td className="p-3">{user.fullName ?? "—"}</td>
-                <td className="p-3">
+              <tr key={user.id}>
+                <td>{user.email}</td>
+                <td>{user.fullName ?? "—"}</td>
+                <td>
                   {user.role === "admin" ? (
-                    <span className="rounded-pill bg-charcoal-dark px-3 py-1 text-xs text-white">admin</span>
+                    <span className="a-badge a-badge-charcoal" style={{ marginLeft: 0 }}>
+                      admin
+                    </span>
                   ) : (
-                    <form action={updateUserRole} className="flex items-center gap-2">
+                    <form action={updateUserRole} className="a-checkbox-row">
                       <input type="hidden" name="userId" value={user.id} />
-                      <select
-                        name="role"
-                        defaultValue={user.role ?? "visitor"}
-                        className="rounded-md border p-1"
-                      >
+                      <select name="role" defaultValue={user.role ?? "visitor"} className="a-select" style={{ width: "auto" }}>
                         <option value="visitor">visitor</option>
                         <option value="host">host</option>
                       </select>
-                      <button type="submit" className="rounded-pill bg-boli-green px-3 py-1 text-xs text-white">
+                      <button type="submit" className="clay-btn clay-btn-sm">
                         Save
                       </button>
                     </form>
                   )}
                 </td>
-                <td className="p-3">
-                  <form action={setUserVip} className="flex flex-wrap items-center gap-2">
+                <td>
+                  <form action={setUserVip} className="a-checkbox-row" style={{ flexWrap: "wrap" }}>
                     <input type="hidden" name="userId" value={user.id} />
-                    <label className="flex items-center gap-1">
-                      <input
-                        type="checkbox"
-                        name="isBolipassActive"
-                        defaultChecked={Boolean(user.isBolipassActive)}
-                      />
+                    <label className="a-checkbox-row">
+                      <input type="checkbox" name="isBolipassActive" defaultChecked={Boolean(user.isBolipassActive)} />
                       Active
                     </label>
                     <input
                       type="date"
                       name="bolipassExpiresAt"
                       defaultValue={user.bolipassExpiresAt?.slice(0, 10) ?? ""}
-                      className="rounded-md border p-1"
+                      className="a-input"
+                      style={{ width: "auto" }}
                     />
-                    <button type="submit" className="rounded-pill bg-boli-orange px-3 py-1 text-xs text-white">
+                    <button type="submit" className="clay-btn clay-sage clay-btn-sm">
                       Save
                     </button>
                   </form>
                 </td>
-                <td className="p-3">{user.createdAt?.slice(0, 10) ?? "—"}</td>
+                <td>{user.createdAt?.slice(0, 10) ?? "—"}</td>
               </tr>
             ))}
           </tbody>

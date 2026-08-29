@@ -11,23 +11,23 @@ export default async function NewVenuePage() {
   const hosts = await db.select().from(users).where(eq(users.role, "host"));
 
   return (
-    <div className="max-w-lg space-y-6">
-      <h1 className="font-display text-2xl uppercase">New venue</h1>
-      <form action={createVenue} className="space-y-3 rounded-lg bg-white p-5 shadow-sm">
-        <input name="name" placeholder="Venue name" required className="w-full rounded-md border p-2" />
-        <select name="category" required className="w-full rounded-md border p-2">
+    <div>
+      <h1 className="a-h1">New venue</h1>
+      <form action={createVenue} className="a-form a-card">
+        <input name="name" placeholder="Venue name" required className="a-input" />
+        <select name="category" required className="a-select">
           {CATEGORIES.map((c) => (
             <option key={c} value={c}>
               {c}
             </option>
           ))}
         </select>
-        <input name="address" placeholder="Address" className="w-full rounded-md border p-2" />
-        <div className="flex gap-3">
-          <input name="latitude" type="number" step="any" placeholder="Latitude" className="w-full rounded-md border p-2" />
-          <input name="longitude" type="number" step="any" placeholder="Longitude" className="w-full rounded-md border p-2" />
+        <input name="address" placeholder="Address" className="a-input" />
+        <div className="a-row-2">
+          <input name="latitude" type="number" step="any" placeholder="Latitude" className="a-input" />
+          <input name="longitude" type="number" step="any" placeholder="Longitude" className="a-input" />
         </div>
-        <select name="hostId" className="w-full rounded-md border p-2">
+        <select name="hostId" className="a-select">
           <option value="">No host assigned</option>
           {hosts.map((host) => (
             <option key={host.id} value={host.id}>
@@ -35,14 +35,14 @@ export default async function NewVenuePage() {
             </option>
           ))}
         </select>
-        <select name="tier" defaultValue="free" className="w-full rounded-md border p-2">
+        <select name="tier" defaultValue="free" className="a-select">
           <option value="free">Free tier</option>
           <option value="premium">Premium (B2B SaaS)</option>
         </select>
-        <label className="flex items-center gap-2">
+        <label className="a-checkbox-row">
           <input type="checkbox" name="featured" /> Featured (priority placement)
         </label>
-        <button type="submit" className="rounded-pill bg-boli-green px-5 py-2 text-white">
+        <button type="submit" className="clay-btn" style={{ alignSelf: "flex-start" }}>
           Create venue
         </button>
       </form>

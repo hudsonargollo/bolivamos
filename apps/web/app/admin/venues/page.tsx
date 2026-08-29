@@ -7,49 +7,49 @@ export default async function AdminVenuesPage() {
   const rows = await db.select().from(venues);
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <h1 className="font-display text-2xl uppercase">Venues</h1>
-        <a href="/admin/venues/new" className="rounded-pill bg-boli-green px-5 py-2 text-white">
+    <div>
+      <div className="a-actions-row">
+        <h1 className="a-h1" style={{ margin: 0 }}>
+          Venues
+        </h1>
+        <a href="/admin/venues/new" className="clay-btn">
           New venue
         </a>
       </div>
 
-      <div className="overflow-x-auto rounded-lg bg-white shadow-sm">
-        <table className="w-full text-left text-sm">
-          <thead className="border-b bg-bg-off-white">
+      <div className="a-table-wrap">
+        <table className="a-table">
+          <thead>
             <tr>
-              <th className="p-3">Name</th>
-              <th className="p-3">Category</th>
-              <th className="p-3">Address</th>
-              <th className="p-3">Host</th>
-              <th className="p-3">Tier</th>
-              <th className="p-3"></th>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Address</th>
+              <th>Host</th>
+              <th>Tier</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
             {rows.map((venue) => (
-              <tr key={venue.id} className="border-b last:border-0">
-                <td className="p-3">
+              <tr key={venue.id}>
+                <td>
                   {venue.name}
-                  {venue.featured && (
-                    <span className="ml-2 rounded-pill bg-boli-yellow px-2 py-0.5 text-xs text-charcoal-dark">
-                      Featured
-                    </span>
-                  )}
+                  {venue.featured && <span className="a-badge a-badge-orange">Featured</span>}
                 </td>
-                <td className="p-3">{venue.category}</td>
-                <td className="p-3">{venue.address ?? "—"}</td>
-                <td className="p-3">{venue.hostId ?? "unassigned"}</td>
-                <td className="p-3">
+                <td>{venue.category}</td>
+                <td>{venue.address ?? "—"}</td>
+                <td>{venue.hostId ?? "unassigned"}</td>
+                <td>
                   {venue.tier === "premium" ? (
-                    <span className="rounded-pill bg-boli-green px-2 py-0.5 text-xs text-white">premium</span>
+                    <span className="a-badge a-badge-sage" style={{ marginLeft: 0 }}>
+                      premium
+                    </span>
                   ) : (
-                    <span className="text-muted-clay-gray">free</span>
+                    <span className="a-muted">free</span>
                   )}
                 </td>
-                <td className="p-3">
-                  <a href={`/admin/venues/${venue.id}`} className="text-boli-green underline">
+                <td>
+                  <a href={`/admin/venues/${venue.id}`} className="a-link">
                     Edit
                   </a>
                 </td>

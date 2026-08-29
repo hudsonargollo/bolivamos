@@ -20,32 +20,23 @@ export default async function EditEventPage({ params }: { params: Promise<{ id: 
   const allVenues = await db.select().from(venues);
 
   return (
-    <div className="max-w-lg space-y-6">
-      <h1 className="font-display text-2xl uppercase">Edit event</h1>
-      <form action={updateEvent} className="space-y-3 rounded-lg bg-white p-5 shadow-sm">
+    <div>
+      <h1 className="a-h1">Edit event</h1>
+      <form action={updateEvent} className="a-form a-card">
         <input type="hidden" name="id" value={event.id} />
-        <input name="title" defaultValue={event.title} required className="w-full rounded-md border p-2" />
-        <textarea
-          name="description"
-          defaultValue={event.description ?? ""}
-          className="w-full rounded-md border p-2"
-        />
-        <div className="flex gap-3">
+        <input name="title" defaultValue={event.title} required className="a-input" />
+        <textarea name="description" defaultValue={event.description ?? ""} className="a-textarea" />
+        <div className="a-row-2">
           <input
             name="startTime"
             type="datetime-local"
             defaultValue={toLocalInput(event.startTime)}
             required
-            className="w-full rounded-md border p-2"
+            className="a-input"
           />
-          <input
-            name="endTime"
-            type="datetime-local"
-            defaultValue={toLocalInput(event.endTime)}
-            className="w-full rounded-md border p-2"
-          />
+          <input name="endTime" type="datetime-local" defaultValue={toLocalInput(event.endTime)} className="a-input" />
         </div>
-        <select name="venueId" defaultValue={event.venueId ?? ""} className="w-full rounded-md border p-2">
+        <select name="venueId" defaultValue={event.venueId ?? ""} className="a-select">
           <option value="">No venue (imported/aggregated listing)</option>
           {allVenues.map((venue) => (
             <option key={venue.id} value={venue.id}>
@@ -57,29 +48,29 @@ export default async function EditEventPage({ params }: { params: Promise<{ id: 
           name="venueName"
           defaultValue={event.venueName ?? ""}
           placeholder="Venue name (for imported listings)"
-          className="w-full rounded-md border p-2"
+          className="a-input"
         />
-        <input name="district" defaultValue={event.district ?? ""} placeholder="District" className="w-full rounded-md border p-2" />
-        <input name="category" defaultValue={event.category ?? ""} placeholder="Category" className="w-full rounded-md border p-2" />
+        <input name="district" defaultValue={event.district ?? ""} placeholder="District" className="a-input" />
+        <input name="category" defaultValue={event.category ?? ""} placeholder="Category" className="a-input" />
         <input
           name="priceText"
           defaultValue={event.priceText ?? ""}
           placeholder="Price text (e.g. 50 BOB)"
-          className="w-full rounded-md border p-2"
+          className="a-input"
         />
-        <label className="flex items-center gap-2">
+        <label className="a-checkbox-row">
           <input type="checkbox" name="isFree" defaultChecked={Boolean(event.isFree)} /> Free event
         </label>
-        <input name="imageUrl" defaultValue={event.imageUrl ?? ""} placeholder="Image URL" className="w-full rounded-md border p-2" />
-        <input name="mapsUrl" defaultValue={event.mapsUrl ?? ""} placeholder="Google Maps URL" className="w-full rounded-md border p-2" />
-        <div className="flex gap-3">
+        <input name="imageUrl" defaultValue={event.imageUrl ?? ""} placeholder="Image URL" className="a-input" />
+        <input name="mapsUrl" defaultValue={event.mapsUrl ?? ""} placeholder="Google Maps URL" className="a-input" />
+        <div className="a-row-2">
           <input
             name="lat"
             type="number"
             step="any"
             defaultValue={event.lat ?? ""}
             placeholder="Latitude"
-            className="w-full rounded-md border p-2"
+            className="a-input"
           />
           <input
             name="lng"
@@ -87,23 +78,23 @@ export default async function EditEventPage({ params }: { params: Promise<{ id: 
             step="any"
             defaultValue={event.lng ?? ""}
             placeholder="Longitude"
-            className="w-full rounded-md border p-2"
+            className="a-input"
           />
         </div>
-        <label className="flex items-center gap-2">
+        <label className="a-checkbox-row">
           <input type="checkbox" name="isVipOnly" defaultChecked={Boolean(event.isVipOnly)} /> VIP&#8209;only (invite&#8209;only community party)
         </label>
-        <label className="flex items-center gap-2">
+        <label className="a-checkbox-row">
           <input type="checkbox" name="featured" defaultChecked={Boolean(event.featured)} /> Featured (priority placement)
         </label>
-        <button type="submit" className="rounded-pill bg-boli-green px-5 py-2 text-white">
+        <button type="submit" className="clay-btn" style={{ alignSelf: "flex-start" }}>
           Save changes
         </button>
       </form>
 
-      <form action={deleteEvent}>
+      <form action={deleteEvent} style={{ marginTop: 20 }}>
         <input type="hidden" name="id" value={event.id} />
-        <button type="submit" className="rounded-pill bg-boli-red px-5 py-2 text-white">
+        <button type="submit" className="clay-btn clay-danger">
           Delete event
         </button>
       </form>

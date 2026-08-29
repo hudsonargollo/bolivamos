@@ -28,10 +28,10 @@ async function getStats() {
 
 function StatCard({ label, value, hint }: { label: string; value: number; hint?: string }) {
   return (
-    <div className="rounded-lg bg-white p-5 shadow-sm">
-      <p className="text-sm text-muted-clay-gray">{label}</p>
-      <p className="font-display text-3xl">{value}</p>
-      {hint && <p className="mt-1 text-xs text-muted-clay-gray">{hint}</p>}
+    <div className="a-card">
+      <p className="a-stat-label">{label}</p>
+      <p className="a-stat-num">{value}</p>
+      {hint && <p className="a-muted a-hint">{hint}</p>}
     </div>
   );
 }
@@ -40,9 +40,9 @@ export default async function AdminOverviewPage() {
   const stats = await getStats();
 
   return (
-    <div className="space-y-6">
-      <h1 className="font-display text-2xl uppercase">Overview</h1>
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+    <div>
+      <h1 className="a-h1">Overview</h1>
+      <div className="a-grid">
         <StatCard label="Users" value={stats.totalUsers} hint={`${stats.hosts} hosts`} />
         <StatCard label="VIP (BoliPass)" value={stats.vipUsers} />
         <StatCard label="Venues" value={stats.totalVenues} hint={`${stats.premiumVenues} premium`} />
@@ -55,7 +55,7 @@ export default async function AdminOverviewPage() {
         />
       </div>
       {stats.unverifiedPlaces > 0 && (
-        <a href="/admin/places" className="inline-block rounded-pill bg-boli-orange px-5 py-2 text-white">
+        <a href="/admin/places" className="clay-btn clay-sage" style={{ marginTop: 20, display: "inline-flex" }}>
           Review {stats.unverifiedPlaces} unverified place{stats.unverifiedPlaces === 1 ? "" : "s"}
         </a>
       )}

@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import { getCurrentSessionRsc } from "@/lib/session-rsc";
+import "./admin.css";
 
 const NAV_LINKS = [
   { href: "/admin", label: "Overview" },
@@ -16,19 +17,25 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   if (session.role !== "admin") redirect("/");
 
   return (
-    <div className="min-h-screen bg-bg-off-white text-charcoal-dark">
-      <header className="bg-charcoal-dark px-6 py-4 text-white">
-        <nav className="flex items-center gap-6">
-          <span className="font-display text-xl uppercase">BoliVamos Admin</span>
-          {NAV_LINKS.map((link) => (
-            <a key={link.href} href={link.href} className="opacity-90 hover:opacity-100">
-              {link.label}
-            </a>
-          ))}
-          <span className="ml-auto text-sm opacity-70">{session.email}</span>
-        </nav>
+    <div className="admin-root">
+      <header className="a-header">
+        <div className="a-header-inner">
+          <a href="/admin" className="a-wordmark">
+            <span className="wm-boli">BOLI</span>
+            <span className="wm-vamos">VAMOS</span>
+            <span className="wm-tag">Admin</span>
+          </a>
+          <nav className="a-nav">
+            {NAV_LINKS.map((link) => (
+              <a key={link.href} href={link.href}>
+                {link.label}
+              </a>
+            ))}
+          </nav>
+          <span className="a-session">{session.email}</span>
+        </div>
       </header>
-      <main className="p-6">{children}</main>
+      <main className="a-main">{children}</main>
     </div>
   );
 }
