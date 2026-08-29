@@ -135,7 +135,8 @@
 .a-stat-num { font-family: "Caprasimo", Georgia, serif; font-size: 34px; margin: 2px 0 0; color: var(--a-ink-strong); }
 
 /* ---- filter pills ---- */
-.a-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.a-filters { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 20px; }
+.a-filter-divider { width: 1px; align-self: stretch; background: var(--a-border); margin: 2px 4px; }
 .a-filter-pill {
   font-family: "Figtree", sans-serif;
   font-weight: 700;

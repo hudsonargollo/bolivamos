@@ -52,8 +52,7 @@ export default async function AdminPlacesPage({
             {layerLabel(l)}
           </a>
         ))}
-      </div>
-      <div className="a-filters" style={{ marginTop: -12 }}>
+        <span className="a-filter-divider" />
         <a href={filterHref(layer, undefined)} className={`a-filter-pill ${!status ? "active" : ""}`}>
           All statuses
         </a>
