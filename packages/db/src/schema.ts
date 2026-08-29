@@ -111,6 +111,17 @@ export const conciergeMessages = sqliteTable("concierge_messages", {
   createdAt: text("created_at").default(sql`CURRENT_TIMESTAMP`),
 });
 
+export const pushCampaigns = sqliteTable("push_campaigns", {
+  id: text("id").primaryKey(),
+  title: text("title").notNull(),
+  body: text("body").notNull(),
+  target: text("target", { enum: ["all", "vip", "host"] }).notNull().default("all"),
+  sentAt: text("sent_at"),
+  recipientCount: integer("recipient_count"),
+  createdBy: text("created_by").references(() => users.id),
+  createdAt: text("created_at").default(sql`CURRENT_TIMESTAMP`),
+});
+
 export type User = typeof users.$inferSelect;
 export type NewUser = typeof users.$inferInsert;
 export type Venue = typeof venues.$inferSelect;
@@ -127,3 +138,5 @@ export type ConciergeConversation = typeof conciergeConversations.$inferSelect;
 export type NewConciergeConversation = typeof conciergeConversations.$inferInsert;
 export type ConciergeMessage = typeof conciergeMessages.$inferSelect;
 export type NewConciergeMessage = typeof conciergeMessages.$inferInsert;
+export type PushCampaign = typeof pushCampaigns.$inferSelect;
+export type NewPushCampaign = typeof pushCampaigns.$inferInsert;
