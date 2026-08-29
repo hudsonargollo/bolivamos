@@ -1,13 +1,17 @@
 # BoliVamos
 
-Monorepo for the BoliVamos mobile app and BoliPass Club (Santa Cruz de la Sierra, Bolivia).
+Monorepo for the BoliVamos app and BoliPass Club (Santa Cruz de la Sierra, Bolivia) — live at
+[bolivamos.clubemkt.digital](https://bolivamos.clubemkt.digital).
 
-- `apps/web` — Next.js 15 App Router, deployed to Cloudflare Workers via `@opennextjs/cloudflare`. Hosts the public API, the Host Portal (`/host/*`), and the Admin Dashboard (`/admin/*`).
-- `apps/mobile` — Expo Router app (iOS/Android).
+- `apps/web` — Next.js 15 App Router, deployed to Cloudflare Workers via `@opennextjs/cloudflare`.
+  Hosts the public site and API, the Host Portal (`/host/*`), the Admin Dashboard (`/admin/*`),
+  and the VIP consumer surfaces: AI Concierge (`/concierge`), the tours/tickets Marketplace
+  (`/marketplace`), and VIP Connect & Dating (`/connect`).
+- `apps/mobile` — Expo Router app (iOS/Android). Auth, event browsing, and push registration are
+  live; Concierge/Marketplace/Connect parity with web is in progress (see "Mobile parity" below).
 - `apps/cron-worker` — plain Cloudflare Worker running scheduled email/notification jobs.
-- `packages/*` — shared design tokens, D1 schema (Drizzle), Zod API contracts + JWT/KV helpers, the Gemini AI wrapper, notification senders, and the mobile API client.
-
-This is a scaffold: every architectural seam (auth, D1 schema, KV bindings, AI call boundary, cron triggers) is wired up, but no real Cloudflare resources, Google OAuth credentials, or payment processing are configured yet. See "What's stubbed" below.
+- `packages/*` — shared design tokens, D1 schema (Drizzle), Zod API contracts + JWT/KV helpers,
+  the Gemini AI wrapper, notification senders, and the mobile API client.
 
 ## Prerequisites
 
@@ -24,7 +28,7 @@ cp .env.example apps/cron-worker/.dev.vars
 cp .env.example apps/mobile/.env          # EXPO_PUBLIC_* vars only
 ```
 
-Apply the D1 migration locally:
+Apply the D1 migrations locally:
 
 ```bash
 pnpm db:migrate:local
@@ -34,7 +38,7 @@ Run everything:
 
 ```bash
 pnpm dev            # web + mobile + cron-worker, via turbo
-pnpm dev:web         # just the Next.js API/Host Portal
+pnpm dev:web         # just the Next.js API/Host Portal/Admin
 pnpm dev:mobile      # just Expo
 ```
 
@@ -42,18 +46,27 @@ With `DEV_MODE_MOCK_AUTH=true` in `apps/web/.dev.vars`, the mobile app's "Contin
 
 ## Admin Dashboard (`/admin/*`)
 
-Full control over users, venues, events, vouchers, and themed-map places for internal staff (e.g. Steff). There is no self-signup or in-app path to the `admin` role — it can only be granted with a direct DB update, after the person has signed up (or dev-logged-in) once as a normal user:
+Full control center for internal staff (e.g. Steff), on-brand with the public site:
+
+- **Users** — roles, BoliPass VIP status
+- **Venues / Events / Vouchers / Places** — full CRUD across every host, category filters, a verify workflow on Places, `isVipOnly`/`featured` flags on venues and events
+- **Push** — compose and send a campaign (Everyone / VIP / Hosts) over the real Expo push pipeline
+- **Products / Payment Methods / Orders** — manage the tours/audio-tours/tickets marketplace, the QR Bolivia/PIX/crypto receiving details buyers see at checkout, and manually confirm non-Stripe orders
+- **Moderation** — VIP Connect reports; dismiss or ban (a ban kills that user's session everywhere, immediately)
+- **Analytics** — signups, VIP conversion, redemptions, concierge/connect/push engagement, marketplace revenue by month, a churn proxy, and an MRR/ARR projection (admin-set BoliPass price × active VIPs — a labeled estimate, not real billing data)
+
+There is no self-signup or in-app path to the `admin` role — it can only be granted with a direct DB update, after the person has signed up (or dev-logged-in) once as a normal user:
 
 ```bash
 pnpm --filter @bolivamos/web exec wrangler d1 execute bolivamos-db --local \
   --command "UPDATE users SET role='admin' WHERE email='REPLACE_WITH_EMAIL'"
 ```
 
-Drop `--local` to run it against the remote/production database once deployed. Log out and back in afterwards so the session picks up the new role.
+Drop `--local` to run it against the remote/production database. Log out and back in afterwards so the session picks up the new role.
 
-## One-time Cloudflare setup (not done by this scaffold)
+## One-time Cloudflare setup
 
-Run these before deploying, then paste the resulting IDs into `apps/web/wrangler.jsonc` and `apps/cron-worker/wrangler.jsonc`:
+D1/KV are already created and wired into `apps/web/wrangler.jsonc` and `apps/cron-worker/wrangler.jsonc` for this deployment. Standing these up fresh elsewhere:
 
 ```bash
 pnpm --filter @bolivamos/web exec wrangler d1 create bolivamos-db
@@ -70,6 +83,8 @@ pnpm --filter @bolivamos/web exec wrangler secret put JWT_SECRET
 pnpm --filter @bolivamos/web exec wrangler secret put GOOGLE_CLIENT_SECRET
 pnpm --filter @bolivamos/web exec wrangler secret put GEMINI_API_KEY
 pnpm --filter @bolivamos/web exec wrangler secret put RESEND_API_KEY
+pnpm --filter @bolivamos/web exec wrangler secret put STRIPE_SECRET_KEY
+pnpm --filter @bolivamos/web exec wrangler secret put STRIPE_WEBHOOK_SECRET
 
 pnpm --filter @bolivamos/cron-worker exec wrangler secret put JWT_SECRET
 pnpm --filter @bolivamos/cron-worker exec wrangler secret put RESEND_API_KEY
@@ -77,19 +92,38 @@ pnpm --filter @bolivamos/cron-worker exec wrangler secret put RESEND_API_KEY
 
 `JWT_SECRET` must be identical across `apps/web` and `apps/cron-worker`.
 
-## Google OAuth setup (not done by this scaffold)
+## Google OAuth setup
 
 Create OAuth client IDs in Google Cloud Console for Web, iOS, and Android, then set:
 - `GOOGLE_WEB_CLIENT_ID` / `GOOGLE_IOS_CLIENT_ID` / `GOOGLE_ANDROID_CLIENT_ID` as plain `vars` in `apps/web/wrangler.jsonc` and as `EXPO_PUBLIC_GOOGLE_*` in `apps/mobile/.env`.
 - `GOOGLE_CLIENT_SECRET` as a Worker secret on `apps/web` only.
 
+Email/password login (`/login`) works independently of this and doesn't need OAuth configured.
+
+## What's built but waiting on a credential or setting
+
+All of the following is deployed and functional — it just doesn't do anything real yet:
+
+- **Stripe checkout** — real Checkout Session + webhook integration; needs `STRIPE_SECRET_KEY` / `STRIPE_WEBHOOK_SECRET`.
+- **AI Concierge replies** — the Gemini key is real but its prepayment credits are depleted; top up billing at [ai.studio](https://ai.studio).
+- **Google sign-in** — needs `GOOGLE_CLIENT_SECRET` (see above).
+- **Weekly digest / weekend roundup emails** — needs `RESEND_API_KEY`.
+- **QR Bolivia / QR PIX / crypto checkout** — the flow works end-to-end once an admin fills in the receiving QR/address at `/admin/payment-methods`; empty today.
+- **MRR/ARR projection** — needs a BoliPass price set on the Analytics page.
+
 ## What's stubbed / explicitly out of scope
 
-- Gemini prompts (itinerary/chat/highlight) are minimal placeholders, not tuned.
-- Google OAuth is wired but untestable without real client IDs — use `dev-login` until then.
-- No Cloudflare resources are created yet — `wrangler.jsonc` has `REPLACE_WITH_*` placeholders.
-- No push delivery/geofencing, Resend templates, or BoliPass payment processing.
+- Real BoliPass payment integration — activation still flips a flag, no checkout for the pass itself.
+- A real QR Bolivia / PIX gateway integration (today's flow is admin-confirmed, not automated) — needs a specific bank/PSP chosen first.
+- Audio tour content pipeline (asset upload/hosting) — the `audio_tour` product type exists, uploading doesn't yet.
+- True geofenced/location-triggered push — today's campaigns are broadcast-to-a-segment; no mobile-side location tracking exists.
+- Real-time messaging for VIP Connect — messages currently refresh by polling, not sockets.
+- Multi-admin management UI — new admins are still promoted by hand via direct DB command.
 - `redemptions.saved_amount_bob` is accepted as a client-reported request param — there's no menu/ticket price data in the schema to derive it from.
-- No shared cross-platform UI kit, no CI/CD beyond lint/typecheck, no EAS builds run.
+- No CI/CD beyond lint/typecheck.
 
-See the plan doc from the scaffolding session for the full rationale behind these calls.
+## Mobile parity
+
+`apps/mobile` has auth (Google + email/password + dev-login), event browsing, and push token
+registration. The AI Concierge, Marketplace, and VIP Connect & Dating screens that exist on web
+don't have mobile equivalents yet — that's the current focus.
