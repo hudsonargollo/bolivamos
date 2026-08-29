@@ -212,6 +212,14 @@ export const userReports = sqliteTable("user_reports", {
   createdAt: text("created_at").default(sql`CURRENT_TIMESTAMP`),
 });
 
+// Single-value admin config — currently just the BoliPass price used to
+// project MRR/ARR (no real BoliPass payment integration exists yet, so this
+// can't be derived from actual billing data).
+export const appSettings = sqliteTable("app_settings", {
+  key: text("key").primaryKey(),
+  value: text("value"),
+});
+
 export type User = typeof users.$inferSelect;
 export type NewUser = typeof users.$inferInsert;
 export type Venue = typeof venues.$inferSelect;
@@ -246,3 +254,5 @@ export type UserBlock = typeof userBlocks.$inferSelect;
 export type NewUserBlock = typeof userBlocks.$inferInsert;
 export type UserReport = typeof userReports.$inferSelect;
 export type NewUserReport = typeof userReports.$inferInsert;
+export type AppSetting = typeof appSettings.$inferSelect;
+export type NewAppSetting = typeof appSettings.$inferInsert;

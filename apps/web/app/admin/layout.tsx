@@ -4,6 +4,7 @@ import "./admin.css";
 
 const NAV_LINKS = [
   { href: "/admin", label: "Overview" },
+  { href: "/admin/analytics", label: "Analytics" },
   { href: "/admin/users", label: "Users" },
   { href: "/admin/venues", label: "Venues" },
   { href: "/admin/events", label: "Events" },
