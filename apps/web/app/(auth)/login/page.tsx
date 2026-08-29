@@ -1,13 +1,26 @@
+import "../../admin/admin.css";
+import LoginForm from "./login-form";
+
 export default function LoginPage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-6 p-8">
-      <h1 className="text-3xl">Host Portal</h1>
-      <a
-        href="/api/auth/google"
-        className="rounded-pill bg-boli-green px-6 py-3 text-white shadow-md"
-      >
-        Continue with Google
-      </a>
-    </main>
+    <div className="admin-root" style={{ display: "flex", minHeight: "100vh", alignItems: "center", justifyContent: "center", padding: 24 }}>
+      <div className="a-card" style={{ width: "100%", maxWidth: 380, display: "flex", flexDirection: "column", gap: 20, alignItems: "center" }}>
+        <a href="/" className="a-wordmark">
+          <span className="wm-boli">BOLI</span>
+          <span className="wm-vamos">VAMOS</span>
+        </a>
+        <LoginForm />
+        <div style={{ width: "100%", display: "flex", alignItems: "center", gap: 12 }}>
+          <hr style={{ flex: 1, border: "none", borderTop: "1px solid var(--a-border)" }} />
+          <span className="a-muted" style={{ fontSize: 12 }}>
+            or
+          </span>
+          <hr style={{ flex: 1, border: "none", borderTop: "1px solid var(--a-border)" }} />
+        </div>
+        <a href="/api/auth/google" className="clay-btn clay-charcoal" style={{ width: "100%", textAlign: "center" }}>
+          Continue with Google
+        </a>
+      </div>
+    </div>
   );
 }
