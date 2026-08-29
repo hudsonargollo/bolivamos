@@ -10,6 +10,9 @@ const NAV_LINKS = [
   { href: "/admin/vouchers", label: "Vouchers" },
   { href: "/admin/places", label: "Places" },
   { href: "/admin/push", label: "Push" },
+  { href: "/admin/products", label: "Products" },
+  { href: "/admin/orders", label: "Orders" },
+  { href: "/admin/payment-methods", label: "Payment Methods" },
 ];
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {

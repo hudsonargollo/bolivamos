@@ -122,6 +122,48 @@ export const pushCampaigns = sqliteTable("push_campaigns", {
   createdAt: text("created_at").default(sql`CURRENT_TIMESTAMP`),
 });
 
+export const products = sqliteTable("products", {
+  id: text("id").primaryKey(),
+  type: text("type", { enum: ["tour", "audio_tour", "ticket"] }).notNull(),
+  hostId: text("host_id").references(() => users.id),
+  eventId: text("event_id").references(() => events.id),
+  title: text("title").notNull(),
+  description: text("description"),
+  priceBob: real("price_bob").notNull(),
+  // Stripe doesn't settle in BOB — a Stripe checkout needs this set; the
+  // manual QR/crypto rails go by priceBob directly.
+  priceUsd: real("price_usd"),
+  audioUrl: text("audio_url"),
+  capacity: integer("capacity"),
+  active: integer("active", { mode: "boolean" }).default(true),
+  createdAt: text("created_at").default(sql`CURRENT_TIMESTAMP`),
+});
+
+// Admin-managed receiving details for the three manually-confirmed rails
+// (Stripe is the only automated one — see orders.paymentMethod).
+export const paymentMethods = sqliteTable("payment_methods", {
+  id: text("id").primaryKey(),
+  method: text("method", { enum: ["qr_bolivia", "qr_pix", "crypto"] }).notNull(),
+  label: text("label").notNull(),
+  qrImageUrl: text("qr_image_url"),
+  addressOrKey: text("address_or_key"),
+  instructions: text("instructions"),
+  active: integer("active", { mode: "boolean" }).default(true),
+});
+
+export const orders = sqliteTable("orders", {
+  id: text("id").primaryKey(),
+  productId: text("product_id").references(() => products.id).notNull(),
+  userId: text("user_id").references(() => users.id).notNull(),
+  quantity: integer("quantity").default(1),
+  totalPriceBob: real("total_price_bob").notNull(),
+  paymentMethod: text("payment_method", { enum: ["stripe", "qr_bolivia", "qr_pix", "crypto"] }).notNull(),
+  referenceNote: text("reference_note"),
+  stripeSessionId: text("stripe_session_id"),
+  status: text("status", { enum: ["pending", "paid", "cancelled"] }).default("pending"),
+  createdAt: text("created_at").default(sql`CURRENT_TIMESTAMP`),
+});
+
 export type User = typeof users.$inferSelect;
 export type NewUser = typeof users.$inferInsert;
 export type Venue = typeof venues.$inferSelect;
@@ -140,3 +182,9 @@ export type ConciergeMessage = typeof conciergeMessages.$inferSelect;
 export type NewConciergeMessage = typeof conciergeMessages.$inferInsert;
 export type PushCampaign = typeof pushCampaigns.$inferSelect;
 export type NewPushCampaign = typeof pushCampaigns.$inferInsert;
+export type Product = typeof products.$inferSelect;
+export type NewProduct = typeof products.$inferInsert;
+export type PaymentMethod = typeof paymentMethods.$inferSelect;
+export type NewPaymentMethod = typeof paymentMethods.$inferInsert;
+export type Order = typeof orders.$inferSelect;
+export type NewOrder = typeof orders.$inferInsert;
