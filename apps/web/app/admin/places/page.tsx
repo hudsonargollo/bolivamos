@@ -1,13 +1,33 @@
 import { createDb, places } from "@bolivamos/db";
+import { eq } from "drizzle-orm";
 import { cf } from "@/lib/cloudflare";
 import { verifyPlace } from "../actions/places";
+import { PLACE_LAYERS, layerLabel } from "./layer-labels";
 
-export default async function AdminPlacesPage() {
+function filterHref(layer?: string, status?: string): string {
+  const params = new URLSearchParams();
+  if (layer) params.set("layer", layer);
+  if (status) params.set("status", status);
+  const qs = params.toString();
+  return qs ? `/admin/places?${qs}` : "/admin/places";
+}
+
+export default async function AdminPlacesPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ layer?: string; status?: string }>;
+}) {
+  const { layer: layerParam, status } = await searchParams;
+  const layer = PLACE_LAYERS.find((l) => l === layerParam);
   const { env } = cf();
   const db = createDb(env.DB);
-  const rows = await db.select().from(places);
-  // Unverified rows first — they're the ones needing action.
-  rows.sort((a, b) => Number(a.verified) - Number(b.verified));
+  const allRows = layer ? await db.select().from(places).where(eq(places.layer, layer)) : await db.select().from(places);
+
+  const rows = (status === "pending" ? allRows.filter((p) => !p.verified) : allRows).sort(
+    (a, b) => Number(a.verified) - Number(b.verified),
+  );
+
+  const pendingCount = allRows.filter((p) => !p.verified).length;
 
   return (
     <div>
@@ -23,12 +43,31 @@ export default async function AdminPlacesPage() {
         Only verified places show on the public themed map. Imported/geocoded rows land here unverified for QA.
       </p>
 
+      <div className="a-filters">
+        <a href={filterHref(undefined, status)} className={`a-filter-pill ${!layer ? "active" : ""}`}>
+          All categories
+        </a>
+        {PLACE_LAYERS.map((l) => (
+          <a key={l} href={filterHref(l, status)} className={`a-filter-pill ${layer === l ? "active" : ""}`}>
+            {layerLabel(l)}
+          </a>
+        ))}
+      </div>
+      <div className="a-filters" style={{ marginTop: -12 }}>
+        <a href={filterHref(layer, undefined)} className={`a-filter-pill ${!status ? "active" : ""}`}>
+          All statuses
+        </a>
+        <a href={filterHref(layer, "pending")} className={`a-filter-pill ${status === "pending" ? "active" : ""}`}>
+          Pending review <span className="count">{pendingCount}</span>
+        </a>
+      </div>
+
       <div className="a-table-wrap">
         <table className="a-table">
           <thead>
             <tr>
               <th>Name</th>
-              <th>Layer</th>
+              <th>Category</th>
               <th>District</th>
               <th>Source</th>
               <th>Status</th>
@@ -39,9 +78,9 @@ export default async function AdminPlacesPage() {
             {rows.map((place) => (
               <tr key={place.id} className={place.verified ? undefined : "a-row-pending"}>
                 <td>{place.name}</td>
-                <td>{place.layer}</td>
+                <td>{layerLabel(place.layer)}</td>
                 <td>{place.district ?? "—"}</td>
-                <td>{place.source}</td>
+                <td style={{ textTransform: "capitalize" }}>{place.source}</td>
                 <td>
                   {place.verified ? (
                     <span className="a-text-sage">Verified</span>
@@ -62,6 +101,13 @@ export default async function AdminPlacesPage() {
                 </td>
               </tr>
             ))}
+            {rows.length === 0 && (
+              <tr>
+                <td colSpan={6} className="a-muted" style={{ textAlign: "center", padding: 32 }}>
+                  No places match this filter.
+                </td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>

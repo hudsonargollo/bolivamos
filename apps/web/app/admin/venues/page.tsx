@@ -36,7 +36,7 @@ export default async function AdminVenuesPage() {
                   {venue.name}
                   {venue.featured && <span className="a-badge a-badge-orange">Featured</span>}
                 </td>
-                <td>{venue.category}</td>
+                <td style={{ textTransform: "capitalize" }}>{venue.category}</td>
                 <td>{venue.address ?? "—"}</td>
                 <td>{venue.hostId ?? "unassigned"}</td>
                 <td>

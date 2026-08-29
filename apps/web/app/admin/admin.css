@@ -134,6 +134,25 @@
 .a-stat-label { font-size: 13px; color: var(--a-muted); margin: 0; }
 .a-stat-num { font-family: "Caprasimo", Georgia, serif; font-size: 34px; margin: 2px 0 0; color: var(--a-ink-strong); }
 
+/* ---- filter pills ---- */
+.a-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.a-filter-pill {
+  font-family: "Figtree", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--a-ink);
+  background: var(--a-surface);
+  border: 1px solid var(--a-border);
+  border-radius: 999px;
+  padding: 7px 16px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+.a-filter-pill:hover { background: var(--a-surface-hover); }
+.a-filter-pill.active { background: var(--a-orange); color: var(--a-cream-text); border-color: transparent; }
+.a-filter-pill .count { opacity: 0.7; font-weight: 600; margin-left: 5px; }
+
 /* ---- table ---- */
 .a-table-wrap {
   overflow-x: auto;
@@ -147,6 +166,32 @@
 .a-table td { padding: 12px 16px; border-top: 1px solid var(--a-border); vertical-align: top; }
 .a-table tbody tr:hover { background: rgba(196, 112, 61, 0.06); }
 .a-row-pending { background: rgba(196, 112, 61, 0.09); }
+
+/* ---- form structure: labeled fields grouped into fieldsets ---- */
+.a-fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px 0;
+  border-top: 1px solid var(--a-border);
+}
+.a-fieldset:first-of-type { border-top: none; padding-top: 0; }
+.a-fieldset-title {
+  font-family: "Caprasimo", Georgia, serif;
+  font-size: 15px;
+  color: var(--a-ink-strong);
+  margin: 0;
+}
+.a-fieldset-hint { font-size: 12.5px; color: var(--a-muted); margin: -8px 0 0; }
+.a-field { display: flex; flex-direction: column; gap: 5px; }
+.a-field label {
+  font-family: "Figtree", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--a-muted);
+}
+.a-field-optional { font-weight: 600; text-transform: lowercase; }
 
 /* ---- form fields ---- */
 .a-input,
