@@ -1,0 +1,22 @@
+/* Bare-scene embed: hide every piece of HomeScene's page chrome, leaving
+   only the full-bleed <three-d-stage> visible. Elements stay in the DOM
+   (display:none, not removed) so scene.js's getElementById/querySelector
+   calls for them still succeed. */
+.hero-header,
+.info-btn,
+.info-pop,
+.scene-tabs,
+.click-hint,
+.clay-menu,
+#contentSheet,
+.sheet-backdrop,
+#detailSheet {
+  display: none !important;
+}
+
+html,
+body {
+  margin: 0;
+  overflow: hidden;
+  background: transparent;
+}
