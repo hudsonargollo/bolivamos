@@ -12,7 +12,7 @@ const config: ExpoConfig = {
   splash: {
     image: "./assets/splash.png",
     resizeMode: "contain",
-    backgroundColor: "#F7F5EE",
+    backgroundColor: "#F4EEE2",
   },
   assetBundlePatterns: ["**/*"],
   ios: {
@@ -23,7 +23,7 @@ const config: ExpoConfig = {
     package: "com.bolivamos.app",
     adaptiveIcon: {
       foregroundImage: "./assets/adaptive-icon.png",
-      backgroundColor: "#F7F5EE",
+      backgroundColor: "#F4EEE2",
     },
   },
   plugins: [

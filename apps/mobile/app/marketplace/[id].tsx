@@ -94,7 +94,7 @@ export default function ProductScreen() {
                 </Pressable>
               ))}
           </View>
-          <Pressable className="mt-2 self-start rounded-pill bg-boli-green px-5 py-3" onPress={buy} disabled={submitting}>
+          <Pressable className="mt-2 self-start rounded-pill bg-boli-red px-5 py-3" onPress={buy} disabled={submitting}>
             <Text className="font-bold text-white">
               {submitting ? "Starting checkout…" : `Buy — ${product.priceBob.toFixed(2)} BOB`}
             </Text>

@@ -46,7 +46,7 @@ export default function PreferencesScreen() {
         })}
       </View>
 
-      <Pressable className="mt-4 w-full rounded-lg bg-boli-green p-4" onPress={continueToLogin}>
+      <Pressable className="mt-4 w-full rounded-lg bg-boli-red p-4" onPress={continueToLogin}>
         <Text className="text-center text-lg text-white">Continue</Text>
       </Pressable>
     </ScrollView>

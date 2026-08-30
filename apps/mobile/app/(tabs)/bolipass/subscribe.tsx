@@ -35,7 +35,7 @@ export default function SubscribeScreen() {
       {loading ? (
         <ActivityIndicator />
       ) : (
-        <Pressable className="w-full rounded-lg bg-boli-orange p-4" onPress={subscribe}>
+        <Pressable className="w-full rounded-lg bg-boli-red p-4" onPress={subscribe}>
           <Text className="text-center text-lg text-white">Subscribe</Text>
         </Pressable>
       )}

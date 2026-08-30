@@ -1,35 +1,38 @@
 /**
- * Canonical BoliVamos design tokens, sourced from the brand PRD (section 1).
- * This is the single source of truth — the Tailwind preset (web), the
- * NativeWind preset (mobile), and BRANDGUIDE/tokens/* are all generated
- * from these values. Do not hand-edit derived files; edit this one.
+ * Canonical BoliVamos design tokens, sourced from the Bolivamos Brand Guide
+ * v1.0 (the sun-mark identity). This is the single source of truth — the
+ * Tailwind preset (web) and the NativeWind preset (mobile) are both
+ * generated from these values. Do not hand-edit derived files; edit this
+ * one, then mirror color/font changes into ./tailwind-preset.cjs.
  */
 
 export const colors = {
-  // Primary brand colors (PRD 1.1)
-  boliGreen: "#0B5D39",
-  boliOrange: "#E07A2A",
-  boliYellow: "#E5B824",
-  boliRed: "#C83727",
+  // Sun colors — brand accents (Brand Guide v1.0, section 02)
+  boliGreen: "#2F5D3E", // deep green — secondary actions, links, footer
+  boliOrange: "#E2792F", // orange — VAMOS, highlight tags
+  boliYellow: "#E3A52F", // yellow — Free tag, sun rays
+  boliRed: "#C04A2F", // red — headlines, primary button, times
+  boliSage: "#8BA672", // sage — soft fills, sun rays
 
-  // Neutral palette (PRD 1.1)
-  bgOffWhite: "#F7F5EE",
-  charcoalDark: "#1E1E1E",
-  mutedClayGray: "#4A4A4A",
+  // Neutral palette (Brand Guide v1.0, section 02)
+  bgOffWhite: "#F4EEE2", // cream — page background
+  paper: "#FDFAF3", // paper — cards and surfaces
+  charcoalDark: "#33302C", // ink — text, headlines, primary buttons
+  mutedClayGray: "#5B564F", // muted ink — secondary text
 
-  // Pure neutrals used for surfaces/contrast that aren't named in the PRD
+  // Pure neutrals used for surfaces/contrast that aren't named in the guide
   white: "#FFFFFF",
   black: "#000000",
 } as const;
 
 export const fonts = {
   display: {
-    family: "Bebas Neue",
+    family: "Anton",
     fallback: ["Impact", "sans-serif"],
   },
   body: {
-    family: "Inter",
-    fallback: ["system-ui", "-apple-system", "sans-serif"],
+    family: "Archivo",
+    fallback: ["Helvetica", "Arial", "sans-serif"],
   },
 } as const;
 
@@ -62,8 +65,8 @@ export const radii = {
 } as const;
 
 export const shadows = {
-  sm: "0 1px 2px rgba(30,30,30,.10)",
-  md: "0 4px 12px rgba(30,30,30,.12)",
+  sm: "0 1px 2px rgba(51,48,44,.10)",
+  md: "0 4px 12px rgba(51,48,44,.12)",
 } as const;
 
 export const tokens = {

@@ -120,7 +120,7 @@ export default function LoginScreen() {
               <Text className="px-2 text-muted-clay-gray">{passwordVisible ? "Hide" : "Show"}</Text>
             </Pressable>
           </View>
-          <Pressable className="w-full rounded-lg bg-boli-orange p-4" onPress={handleEmailLogin}>
+          <Pressable className="w-full rounded-lg bg-boli-red p-4" onPress={handleEmailLogin}>
             <Text className="text-center text-lg text-white">Log in</Text>
           </Pressable>
 
