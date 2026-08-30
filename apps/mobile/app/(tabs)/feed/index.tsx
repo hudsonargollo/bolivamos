@@ -92,7 +92,12 @@ export default function FeedScreen() {
         <Text className="mt-1 text-muted-clay-gray">What to do in Santa Cruz de la Sierra</Text>
       </View>
 
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} className="px-4 py-3" contentContainerClassName="gap-2">
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        className="h-16 grow-0 px-4 py-3"
+        contentContainerClassName="items-center gap-2"
+      >
         {FILTERS.map((f) => (
           <Pressable
             key={f.key}
@@ -105,7 +110,12 @@ export default function FeedScreen() {
       </ScrollView>
 
       <Text className="px-4 pt-2 font-display uppercase text-charcoal-dark">Places To Know</Text>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} className="px-4 py-2" contentContainerClassName="gap-3">
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        className="h-32 grow-0 px-4 py-2"
+        contentContainerClassName="items-center gap-3"
+      >
         {PLACES_TO_KNOW.map((place) => (
           <View key={place} className="h-24 w-40 justify-end rounded-lg bg-white p-3 shadow-sm">
             <Text className="text-charcoal-dark">{place}</Text>
