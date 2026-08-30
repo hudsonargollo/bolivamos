@@ -1,6 +1,6 @@
 "use server";
 
-import { eq } from "drizzle-orm";
+import { eq } from "@bolivamos/db";
 import { createDb, vouchers } from "@bolivamos/db";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";

@@ -1,5 +1,5 @@
 import { createDb, users } from "@bolivamos/db";
-import { eq } from "drizzle-orm";
+import { eq } from "@bolivamos/db";
 import { cf } from "@/lib/cloudflare";
 import { createVenue } from "../../actions/venues";
 

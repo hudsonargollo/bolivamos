@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { eq } from "drizzle-orm";
+import { eq } from "@bolivamos/db";
 import { GeminiClient, chatWithConcierge } from "@bolivamos/ai";
 import { chatRequestSchema, type ChatResponse } from "@bolivamos/api-schema";
 import { createDb, conciergeConversations, conciergeMessages } from "@bolivamos/db";

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { eq } from "drizzle-orm";
+import { eq } from "@bolivamos/db";
 import { createDb, products } from "@bolivamos/db";
 import { productTypeSchema, type ProductDto } from "@bolivamos/api-schema";
 import { z } from "zod";

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { createDb, events } from "@bolivamos/db";
-import { eq } from "drizzle-orm";
+import { eq } from "@bolivamos/db";
 import { cf } from "@/lib/cloudflare";
 import { getCurrentSessionRsc } from "@/lib/session-rsc";
 import ConnectPanel from "./connect-panel";

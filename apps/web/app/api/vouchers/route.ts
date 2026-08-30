@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { createDb, vouchers } from "@bolivamos/db";
-import { eq } from "drizzle-orm";
+import { eq } from "@bolivamos/db";
 import {
   createVoucherRequestSchema,
   type VoucherDto,

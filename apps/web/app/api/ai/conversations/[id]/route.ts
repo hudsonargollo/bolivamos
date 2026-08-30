@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { eq } from "drizzle-orm";
+import { eq } from "@bolivamos/db";
 import { createDb, conciergeConversations, conciergeMessages } from "@bolivamos/db";
 import type { ConciergeMessageDto } from "@bolivamos/api-schema";
 import { cf } from "@/lib/cloudflare";

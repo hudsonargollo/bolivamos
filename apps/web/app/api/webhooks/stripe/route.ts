@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { eq } from "drizzle-orm";
+import { eq } from "@bolivamos/db";
 import { createDb, orders } from "@bolivamos/db";
 import { cf } from "@/lib/cloudflare";
 import { verifyStripeWebhookSignature } from "@/lib/stripe";

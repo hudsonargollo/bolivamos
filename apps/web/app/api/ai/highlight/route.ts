@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { eq } from "drizzle-orm";
+import { eq } from "@bolivamos/db";
 import { createDb, venues } from "@bolivamos/db";
 import { GeminiClient, generateVenueHighlight } from "@bolivamos/ai";
 import { highlightRequestSchema, userPrefsKey, userPrefsValueSchema } from "@bolivamos/api-schema";

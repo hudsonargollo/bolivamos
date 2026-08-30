@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { or, eq } from "drizzle-orm";
+import { or, eq } from "@bolivamos/db";
 import { createDb, connectRequests, events, users } from "@bolivamos/db";
 import { getCurrentSessionRsc } from "@/lib/session-rsc";
 import { cf } from "@/lib/cloudflare";

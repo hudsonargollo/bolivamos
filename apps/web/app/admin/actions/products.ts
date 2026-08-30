@@ -1,6 +1,6 @@
 "use server";
 
-import { eq } from "drizzle-orm";
+import { eq } from "@bolivamos/db";
 import { createDb, products } from "@bolivamos/db";
 import { productTypeSchema } from "@bolivamos/api-schema";
 import { redirect } from "next/navigation";

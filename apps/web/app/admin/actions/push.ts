@@ -1,6 +1,6 @@
 "use server";
 
-import { eq } from "drizzle-orm";
+import { eq } from "@bolivamos/db";
 import { createDb, users, pushCampaigns } from "@bolivamos/db";
 import { userPushTokenKey } from "@bolivamos/api-schema";
 import { sendExpoPushNotifications, type ExpoPushMessage } from "@bolivamos/notifications";

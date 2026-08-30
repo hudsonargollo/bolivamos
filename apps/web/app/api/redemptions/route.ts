@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { eq, and } from "drizzle-orm";
+import { eq, and } from "@bolivamos/db";
 import { createDb, venues, vouchers, redemptions } from "@bolivamos/db";
 import {
   redeemVoucherRequestSchema,

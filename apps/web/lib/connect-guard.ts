@@ -1,4 +1,4 @@
-import { or, and, eq } from "drizzle-orm";
+import { or, and, eq } from "@bolivamos/db";
 import { userBlocks, type Db } from "@bolivamos/db";
 
 /** True if either user has blocked the other — used to hide attendees, refuse

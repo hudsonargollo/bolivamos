@@ -1,4 +1,4 @@
-import { eq } from "drizzle-orm";
+import { eq } from "@bolivamos/db";
 import { createDb, venues } from "@bolivamos/db";
 import QRCode from "qrcode";
 import { notFound } from "next/navigation";

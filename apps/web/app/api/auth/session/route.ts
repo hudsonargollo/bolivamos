@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { createDb, users } from "@bolivamos/db";
-import { eq } from "drizzle-orm";
+import { eq } from "@bolivamos/db";
 import { getCurrentSession } from "@/lib/session";
 import { cf } from "@/lib/cloudflare";
 import type { AuthUser } from "@bolivamos/api-schema";

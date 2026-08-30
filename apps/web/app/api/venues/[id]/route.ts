@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { createDb, venues } from "@bolivamos/db";
-import { eq } from "drizzle-orm";
+import { eq } from "@bolivamos/db";
 import type { VenueDto, Category } from "@bolivamos/api-schema";
 import { cf } from "@/lib/cloudflare";
 

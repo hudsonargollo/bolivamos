@@ -1,5 +1,5 @@
 import { notFound, redirect } from "next/navigation";
-import { eq } from "drizzle-orm";
+import { eq } from "@bolivamos/db";
 import { createDb, connectRequests, users } from "@bolivamos/db";
 import { getCurrentSessionRsc } from "@/lib/session-rsc";
 import { cf } from "@/lib/cloudflare";

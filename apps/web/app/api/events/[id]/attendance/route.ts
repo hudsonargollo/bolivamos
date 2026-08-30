@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { eq, and } from "drizzle-orm";
+import { eq, and } from "@bolivamos/db";
 import { createDb, eventAttendance } from "@bolivamos/db";
 import { setAttendanceRequestSchema } from "@bolivamos/api-schema";
 import { cf } from "@/lib/cloudflare";

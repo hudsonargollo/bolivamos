@@ -1,4 +1,4 @@
-import { eq } from "drizzle-orm";
+import { eq } from "@bolivamos/db";
 import {
   createDb,
   users,

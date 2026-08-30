@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { createDb, events, products } from "@bolivamos/db";
-import { eq } from "drizzle-orm";
+import { eq } from "@bolivamos/db";
 import { cf } from "@/lib/cloudflare";
 import { updateProduct, deleteProduct } from "../../actions/products";
 

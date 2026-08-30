@@ -1,4 +1,4 @@
-import { sql, eq } from "drizzle-orm";
+import { sql, eq } from "@bolivamos/db";
 import { createDb, redemptions, vouchers, venues } from "@bolivamos/db";
 import { cf } from "@/lib/cloudflare";
 import { getCurrentSessionRsc } from "@/lib/session-rsc";

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { createDb, products } from "@bolivamos/db";
-import { eq } from "drizzle-orm";
+import { eq } from "@bolivamos/db";
 import type { ProductDto } from "@bolivamos/api-schema";
 import { cf } from "@/lib/cloudflare";
 import "../../admin/admin.css";

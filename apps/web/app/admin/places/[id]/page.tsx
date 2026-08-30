@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { createDb, places } from "@bolivamos/db";
-import { eq } from "drizzle-orm";
+import { eq } from "@bolivamos/db";
 import { cf } from "@/lib/cloudflare";
 import { updatePlace, deletePlace } from "../../actions/places";
 import { PLACE_LAYERS, layerLabel } from "../layer-labels";

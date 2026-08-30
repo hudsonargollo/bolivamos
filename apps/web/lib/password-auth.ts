@@ -1,4 +1,4 @@
-import { eq } from "drizzle-orm";
+import { eq } from "@bolivamos/db";
 import { createDb, users, type User } from "@bolivamos/db";
 import { hashPassword, verifyPassword, type Role } from "@bolivamos/api-schema";
 import { cf } from "./cloudflare";

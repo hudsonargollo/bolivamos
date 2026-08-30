@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { createDb, users, venues } from "@bolivamos/db";
-import { eq } from "drizzle-orm";
+import { eq } from "@bolivamos/db";
 import { cf } from "@/lib/cloudflare";
 import { updateVenue, deleteVenue } from "../../actions/venues";
 

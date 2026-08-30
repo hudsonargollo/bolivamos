@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { eq, and } from "drizzle-orm";
+import { eq, and } from "@bolivamos/db";
 import { createDb, products, paymentMethods, orders } from "@bolivamos/db";
 import { createOrderRequestSchema, type CreateOrderResponse, type OrderDto, type PaymentMethodDto } from "@bolivamos/api-schema";
 import { cf } from "@/lib/cloudflare";

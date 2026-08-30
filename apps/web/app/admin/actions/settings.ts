@@ -1,6 +1,6 @@
 "use server";
 
-import { eq } from "drizzle-orm";
+import { eq } from "@bolivamos/db";
 import { createDb, appSettings } from "@bolivamos/db";
 import { revalidatePath } from "next/cache";
 import { cf } from "@/lib/cloudflare";

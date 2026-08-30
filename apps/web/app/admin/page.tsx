@@ -1,5 +1,5 @@
 import { createDb, users, venues, events, vouchers, places, userReports } from "@bolivamos/db";
-import { eq } from "drizzle-orm";
+import { eq } from "@bolivamos/db";
 import { cf } from "@/lib/cloudflare";
 
 async function getStats() {

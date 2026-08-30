@@ -1,5 +1,5 @@
 import { createDb, orders, products, users } from "@bolivamos/db";
-import { desc } from "drizzle-orm";
+import { desc } from "@bolivamos/db";
 import { cf } from "@/lib/cloudflare";
 import { confirmOrder, cancelOrder } from "../actions/orders";
 

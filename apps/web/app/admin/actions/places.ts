@@ -1,6 +1,6 @@
 "use server";
 
-import { eq } from "drizzle-orm";
+import { eq } from "@bolivamos/db";
 import { createDb, places } from "@bolivamos/db";
 import { placeLayerSchema } from "@bolivamos/api-schema";
 import { redirect } from "next/navigation";

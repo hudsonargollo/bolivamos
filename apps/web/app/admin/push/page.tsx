@@ -1,5 +1,5 @@
 import { createDb, pushCampaigns } from "@bolivamos/db";
-import { desc } from "drizzle-orm";
+import { desc } from "@bolivamos/db";
 import { cf } from "@/lib/cloudflare";
 import { sendPushCampaign } from "../actions/push";
 

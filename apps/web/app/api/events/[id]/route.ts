@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { createDb, events } from "@bolivamos/db";
-import { eq } from "drizzle-orm";
+import { eq } from "@bolivamos/db";
 import type { EventDto } from "@bolivamos/api-schema";
 import { cf } from "@/lib/cloudflare";
 import { getCurrentSession } from "@/lib/session";

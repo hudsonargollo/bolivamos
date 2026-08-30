@@ -1,6 +1,6 @@
 import { verifySession, sessionKey, sessionValueSchema, type SessionValue } from "@bolivamos/api-schema";
 import { createDb, users } from "@bolivamos/db";
-import { eq } from "drizzle-orm";
+import { eq } from "@bolivamos/db";
 import { cf } from "./cloudflare";
 
 export const SESSION_COOKIE_NAME = "bv_session";

@@ -1,6 +1,6 @@
 "use server";
 
-import { eq } from "drizzle-orm";
+import { eq } from "@bolivamos/db";
 import { createDb, paymentMethods } from "@bolivamos/db";
 import { manualPaymentMethodSchema } from "@bolivamos/api-schema";
 import { redirect } from "next/navigation";
