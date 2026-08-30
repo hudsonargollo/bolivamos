@@ -15,7 +15,7 @@ export default function ProfileScreen() {
   async function logout() {
     await apiClient.logout().catch(() => undefined);
     await clearToken();
-    router.replace("/(onboarding)/role-select");
+    router.replace("/(onboarding)/preferences");
   }
 
   return (

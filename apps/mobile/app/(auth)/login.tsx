@@ -3,7 +3,7 @@ import { View, Text, Pressable, ActivityIndicator, TextInput } from "react-nativ
 import { router, useLocalSearchParams } from "expo-router";
 import * as Google from "expo-auth-session/providers/google";
 import * as WebBrowser from "expo-web-browser";
-import type { Category } from "@bolivamos/api-schema";
+import { decodeSessionUnsafe, type Category } from "@bolivamos/api-schema";
 import { apiClient } from "@/lib/api";
 import { storeToken } from "@/lib/auth";
 import { registerForPushNotifications } from "@/lib/push";
@@ -15,16 +15,31 @@ export default function LoginScreen() {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordVisible, setPasswordVisible] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const googleConfigured = Boolean(
+    process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID ||
+      process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID ||
+      process.env.EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID,
+  );
+
+  // useIdTokenAuthRequest throws if the client ID for the current platform is
+  // undefined, so it always needs a defined value even when Google sign-in
+  // isn't configured yet — the button below is hidden in that case instead.
   const [, , promptGoogleLogin] = Google.useIdTokenAuthRequest({
-    webClientId: process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID,
-    iosClientId: process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID,
-    androidClientId: process.env.EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID,
+    webClientId: process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID ?? "unconfigured",
+    iosClientId: process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID ?? "unconfigured",
+    androidClientId: process.env.EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID ?? "unconfigured",
   });
 
   async function finishLogin(token: string) {
     await storeToken(token);
+
+    if (decodeSessionUnsafe(token)?.role === "host") {
+      router.replace("/host-redirect");
+      return;
+    }
 
     const selectedCategories = (categories?.split(",").filter(Boolean) ?? []) as Category[];
     if (selectedCategories.length > 0) {
@@ -33,7 +48,7 @@ export default function LoginScreen() {
 
     await registerForPushNotifications().catch(() => undefined);
 
-    router.replace("/(tabs)");
+    router.replace("/(tabs)/feed");
   }
 
   async function handleGooglePress() {
@@ -93,22 +108,31 @@ export default function LoginScreen() {
             value={email}
             onChangeText={setEmail}
           />
-          <TextInput
-            className="w-full rounded-lg border border-muted-clay-gray p-4"
-            placeholder="Password"
-            secureTextEntry
-            value={password}
-            onChangeText={setPassword}
-          />
+          <View className="w-full flex-row items-center rounded-lg border border-muted-clay-gray pr-2">
+            <TextInput
+              className="flex-1 p-4"
+              placeholder="Password"
+              secureTextEntry={!passwordVisible}
+              value={password}
+              onChangeText={setPassword}
+            />
+            <Pressable onPress={() => setPasswordVisible((v) => !v)} hitSlop={8}>
+              <Text className="px-2 text-muted-clay-gray">{passwordVisible ? "Hide" : "Show"}</Text>
+            </Pressable>
+          </View>
           <Pressable className="w-full rounded-lg bg-boli-orange p-4" onPress={handleEmailLogin}>
             <Text className="text-center text-lg text-white">Log in</Text>
           </Pressable>
 
-          <Text className="text-muted-clay-gray">or</Text>
+          {googleConfigured && (
+            <>
+              <Text className="text-muted-clay-gray">or</Text>
 
-          <Pressable className="w-full rounded-lg bg-boli-green p-4" onPress={handleGooglePress}>
-            <Text className="text-center text-lg text-white">Continue with Google</Text>
-          </Pressable>
+              <Pressable className="w-full rounded-lg bg-boli-green p-4" onPress={handleGooglePress}>
+                <Text className="text-center text-lg text-white">Continue with Google</Text>
+              </Pressable>
+            </>
+          )}
 
           {__DEV__ && (
             <Pressable className="w-full rounded-lg border border-muted-clay-gray p-4" onPress={handleDevLogin}>

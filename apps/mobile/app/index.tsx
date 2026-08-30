@@ -1,17 +1,28 @@
 import { useEffect, useState } from "react";
 import { View, ActivityIndicator } from "react-native";
 import { Redirect } from "expo-router";
-import { hasLikelyValidSession } from "@/lib/auth";
+import { decodeSessionUnsafe } from "@bolivamos/api-schema";
+import { getStoredToken, hasLikelyValidSession } from "@/lib/auth";
 
-/** Boot screen — decides where to land based on whether a session is already stored. */
+type Destination = "/(tabs)/feed" | "/host-redirect" | "/(onboarding)/preferences";
+
+/** Boot screen — decides where to land based on whether a session is already stored, and the account's actual role. */
 export default function Index() {
-  const [status, setStatus] = useState<"checking" | "authed" | "unauthed">("checking");
+  const [destination, setDestination] = useState<Destination | null>(null);
 
   useEffect(() => {
-    hasLikelyValidSession().then((ok) => setStatus(ok ? "authed" : "unauthed"));
+    hasLikelyValidSession().then(async (ok) => {
+      if (!ok) {
+        setDestination("/(onboarding)/preferences");
+        return;
+      }
+      const token = await getStoredToken();
+      const role = token ? decodeSessionUnsafe(token)?.role : undefined;
+      setDestination(role === "host" ? "/host-redirect" : "/(tabs)/feed");
+    });
   }, []);
 
-  if (status === "checking") {
+  if (!destination) {
     return (
       <View className="flex-1 items-center justify-center bg-bg-off-white">
         <ActivityIndicator />
@@ -19,5 +30,5 @@ export default function Index() {
     );
   }
 
-  return <Redirect href={status === "authed" ? "/(tabs)" : "/(onboarding)/role-select"} />;
+  return <Redirect href={destination} />;
 }
