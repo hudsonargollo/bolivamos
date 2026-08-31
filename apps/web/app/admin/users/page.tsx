@@ -19,6 +19,7 @@ export default async function AdminUsersPage() {
               <th>Name</th>
               <th>Role</th>
               <th>BoliPass VIP</th>
+              <th>NIT</th>
               <th>Joined</th>
             </tr>
           </thead>
@@ -64,6 +65,9 @@ export default async function AdminUsersPage() {
                     </button>
                   </form>
                 </td>
+                {/* Self-attested at BoliPass checkout, format-checked only —
+                    not verified identity. View-only here for admin audit. */}
+                <td>{user.nit ?? "—"}</td>
                 <td>{user.createdAt?.slice(0, 10) ?? "—"}</td>
               </tr>
             ))}

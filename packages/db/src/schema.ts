@@ -20,6 +20,12 @@ export const users = sqliteTable("users", {
   // VIP Connect trust & safety — a reported user an admin has actioned stops
   // being able to resolve a session at all (see lib/session.ts).
   isBanned: integer("is_banned", { mode: "boolean" }).default(false),
+  // Self-attested Bolivian tax ID for the BoliPass discount — a format check
+  // only, not real identity verification. Kept for admin audit (see
+  // apps/web/app/admin/users/page.tsx).
+  nit: text("nit"),
+  stripeCustomerId: text("stripe_customer_id"),
+  stripeSubscriptionId: text("stripe_subscription_id").unique(),
 });
 
 export const venues = sqliteTable("venues", {

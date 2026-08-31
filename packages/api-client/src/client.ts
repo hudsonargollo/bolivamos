@@ -6,7 +6,8 @@ import type {
   UpdatePreferencesRequest,
   RegisterPushTokenRequest,
   TotalSavedResponse,
-  ActivateBoliPassResponse,
+  BolipassCheckoutRequest,
+  BolipassCheckoutResponse,
   EventDto,
   EventFilter,
   VoucherDto,
@@ -116,8 +117,11 @@ export class ApiClient {
   }
 
   // --- subscriptions ---
-  activateBoliPass() {
-    return this.request<ActivateBoliPassResponse>("/api/subscriptions/bolipass", { method: "POST" });
+  startBoliPassCheckout(body: BolipassCheckoutRequest) {
+    return this.request<BolipassCheckoutResponse>("/api/subscriptions/bolipass/checkout", {
+      method: "POST",
+      body: JSON.stringify(body),
+    });
   }
 
   // --- vouchers ---

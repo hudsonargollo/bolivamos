@@ -27,9 +27,8 @@ function extractToken(request: Request): string | null {
 
 /**
  * Verifies the JWT (signature + expiry) then cross-checks the KV session
- * record for the *current* role/isBoliPass — a lapsed subscription or a
- * revoked/banned session won't have a live KV entry even if the JWT itself
- * hasn't expired yet.
+ * record for the *current* role — a revoked/logged-out session won't have a
+ * live KV entry even if the JWT itself hasn't expired yet.
  */
 export async function resolveSession(token: string | null): Promise<CurrentSession | null> {
   if (!token) return null;
@@ -42,18 +41,32 @@ export async function resolveSession(token: string | null): Promise<CurrentSessi
     if (!raw) return null; // revoked, logged out, or never issued via KV
     const session = sessionValueSchema.parse(raw);
 
-    // Checked against D1 (not cached in the KV session record) so a ban
-    // takes effect on a user's very next request, not just their next login.
+    // isBanned and isBoliPass are both checked fresh against D1 (not cached
+    // in the KV session record) rather than trusted from the JWT/KV shortcut
+    // — a ban takes effect on the user's very next request, not just their
+    // next login, and BoliPass activation via a Stripe webhook (which has no
+    // session token and so cannot update this user's KV record directly —
+    // see app/api/webhooks/stripe/route.ts) becomes visible the same way.
+    // Expiry is checked here too, not just the isBolipassActive flag, since
+    // that flag is only flipped false by a customer.subscription.deleted
+    // webhook, which could lag a passed bolipassExpiresAt if delayed or lost.
     const db = createDb(env.DB);
-    const [user] = await db.select({ isBanned: users.isBanned }).from(users).where(eq(users.id, payload.sub)).limit(1);
+    const [user] = await db
+      .select({ isBanned: users.isBanned, isBolipassActive: users.isBolipassActive, bolipassExpiresAt: users.bolipassExpiresAt })
+      .from(users)
+      .where(eq(users.id, payload.sub))
+      .limit(1);
     if (user?.isBanned) return null;
+
+    const isBoliPass =
+      Boolean(user?.isBolipassActive) && (!user?.bolipassExpiresAt || new Date(user.bolipassExpiresAt) > new Date());
 
     return {
       token,
       userId: payload.sub,
       email: payload.email,
       role: session.role,
-      isBoliPass: session.isBoliPass,
+      isBoliPass,
     };
   } catch {
     return null;

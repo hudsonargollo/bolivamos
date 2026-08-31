@@ -14,12 +14,34 @@ export default function BoliPassScreen() {
   const [totalSavedBob, setTotalSavedBob] = useState(0);
 
   const load = useCallback(() => {
-    apiClient.getMe().then(setMe).catch(() => setMe(null));
+    // Returning here from the subscribe screen's in-app browser can race the
+    // Stripe webhook that actually flips isBolipassActive in D1 — the
+    // browser resolves as soon as the user closes it, which may be before
+    // the webhook has round-tripped. Retry a few times with backoff rather
+    // than assuming instant consistency.
+    const RETRY_DELAYS_MS = [0, 2000, 5000];
+    let cancelled = false;
+    const attempt = (i: number) => {
+      apiClient
+        .getMe()
+        .then((user) => {
+          if (cancelled) return;
+          setMe(user);
+          if (!user.isBoliPassActive && i + 1 < RETRY_DELAYS_MS.length) {
+            setTimeout(() => attempt(i + 1), RETRY_DELAYS_MS[i + 1]);
+          }
+        })
+        .catch(() => !cancelled && setMe(null));
+    };
+    attempt(0);
     apiClient.listVouchers().then(setItems).catch(() => setItems([]));
     apiClient
       .getTotalSaved()
       .then((r) => setTotalSavedBob(r.totalSavedBob))
       .catch(() => setTotalSavedBob(0));
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   useEffect(load, [load]);
