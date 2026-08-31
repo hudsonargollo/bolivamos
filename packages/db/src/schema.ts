@@ -37,6 +37,9 @@ export const venues = sqliteTable("venues", {
   tier: text("tier", { enum: ["free", "premium"] }).default("free"),
   // Priority placement in "Best Bars" / "Things to Do This Weekend" (pillar 2).
   featured: integer("featured", { mode: "boolean" }).default(false),
+  // SEO URL slug for the public venue page — nullable until backfilled
+  // (migration 0012_seo_slugs.sql), generated at create time thereafter.
+  slug: text("slug").unique(),
 });
 
 export const events = sqliteTable("events", {
@@ -64,6 +67,9 @@ export const events = sqliteTable("events", {
   isVipOnly: integer("is_vip_only", { mode: "boolean" }).default(false),
   // Priority placement in "Things to Do This Weekend" (pillar 2).
   featured: integer("featured", { mode: "boolean" }).default(false),
+  // SEO URL slug for the public event page — nullable until backfilled
+  // (migration 0012_seo_slugs.sql), generated at create time thereafter.
+  slug: text("slug").unique(),
 });
 
 export const vouchers = sqliteTable("vouchers", {

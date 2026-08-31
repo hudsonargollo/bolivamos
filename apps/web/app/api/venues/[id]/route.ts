@@ -13,6 +13,7 @@ export async function GET(_request: Request, { params }: { params: Promise<{ id:
 
   const dto: VenueDto = {
     id: venue.id,
+    slug: venue.slug,
     hostId: venue.hostId,
     name: venue.name,
     category: venue.category as Category,

@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { SITE_URL } from "@/lib/site-url";
+
+const TITLE = "BoliVamos";
+const DESCRIPTION = "What to do in Santa Cruz de la Sierra — plus BoliPass 2-for-1 deals.";
 
 export const metadata: Metadata = {
-  title: "BoliVamos",
-  description: "What to do in Santa Cruz de la Sierra — plus BoliPass 2-for-1 deals.",
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -12,6 +17,17 @@ export const metadata: Metadata = {
       { url: "/favicon-512.png", sizes: "512x512", type: "image/png" },
     ],
     apple: "/apple-touch-icon.png",
+  },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: SITE_URL,
+    siteName: TITLE,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
   },
 };
 

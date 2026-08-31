@@ -12,6 +12,7 @@ export type CreateVenueRequest = z.infer<typeof createVenueRequestSchema>;
 
 export const venueSchema = z.object({
   id: z.string(),
+  slug: z.string().nullable(),
   hostId: z.string().nullable(),
   name: z.string(),
   category: categorySchema,

@@ -18,6 +18,7 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
 
   const dto: EventDto = {
     id: event.id,
+    slug: event.slug,
     venueId: event.venueId,
     title: event.title,
     description: locked ? null : event.description,

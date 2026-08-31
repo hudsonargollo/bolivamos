@@ -1,6 +1,20 @@
 import type { EventFilter } from "@bolivamos/api-schema";
 
 /**
+ * An event is "archived" once it's over — endTime if the event has one,
+ * otherwise startTime — so single-instant events archive as soon as they
+ * start rather than lingering forever. Used to exclude past events from
+ * public listings/sitemap and to noindex their still-live detail page.
+ */
+export function isEventPast(
+  event: { startTime: string; endTime: string | null },
+  now = new Date(),
+): boolean {
+  const cutoff = event.endTime ?? event.startTime;
+  return new Date(cutoff).getTime() < now.getTime();
+}
+
+/**
  * Computes a [startIso, endIso) window for each feed filter (PRD 4.1).
  * Uses UTC day boundaries — Santa Cruz de la Sierra is UTC-4, so shift these
  * by -4h before going to production if events must line up with local

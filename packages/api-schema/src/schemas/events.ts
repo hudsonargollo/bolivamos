@@ -19,6 +19,7 @@ export type CreateEventRequest = z.infer<typeof createEventRequestSchema>;
 
 export const eventSchema = z.object({
   id: z.string(),
+  slug: z.string().nullable(),
   venueId: z.string().nullable(),
   title: z.string(),
   description: z.string().nullable(),

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { createDb, venues } from "@bolivamos/db";
+import { createDb, venues, generateUniqueSlug } from "@bolivamos/db";
 import { desc, eq } from "@bolivamos/db";
 import { createVenueRequestSchema, type VenueDto, type Category } from "@bolivamos/api-schema";
 import { cf } from "@/lib/cloudflare";
@@ -9,6 +9,7 @@ import { toErrorResponse } from "@/lib/api-errors";
 function toVenueDto(venue: typeof venues.$inferSelect): VenueDto {
   return {
     id: venue.id,
+    slug: venue.slug,
     hostId: venue.hostId,
     name: venue.name,
     category: venue.category as Category,
@@ -39,9 +40,11 @@ export async function POST(request: Request) {
     const db = createDb(env.DB);
     const id = crypto.randomUUID();
     const qrSecretHash = crypto.randomUUID(); // placeholder secret; regenerate via a real HMAC key in production
+    const slug = await generateUniqueSlug(db, venues, venues.slug, body.name);
 
     await db.insert(venues).values({
       id,
+      slug,
       hostId: session.userId,
       name: body.name,
       category: body.category,

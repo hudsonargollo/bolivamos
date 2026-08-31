@@ -1,5 +1,6 @@
 export * from "./schema";
 export * from "./client";
+export * from "./slug";
 
 /**
  * Re-exports drizzle-orm's query builders (eq, and, sql, desc, …) so every

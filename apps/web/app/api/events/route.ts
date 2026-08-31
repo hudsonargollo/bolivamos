@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { createDb, events } from "@bolivamos/db";
-import { and, desc, eq, gte, lt } from "@bolivamos/db";
+import { createDb, events, generateUniqueSlug } from "@bolivamos/db";
+import { and, desc, eq, gte, isNull, lt, or } from "@bolivamos/db";
 import { createEventRequestSchema, listEventsQuerySchema, type EventDto } from "@bolivamos/api-schema";
 import { cf } from "@/lib/cloudflare";
 import { getCurrentSession, requireRole } from "@/lib/session";
@@ -10,6 +10,7 @@ import { windowForFilter } from "@/lib/event-filters";
 function toEventDto(event: typeof events.$inferSelect): EventDto {
   return {
     id: event.id,
+    slug: event.slug,
     venueId: event.venueId,
     title: event.title,
     description: event.description,
@@ -58,6 +59,12 @@ export async function GET(request: Request) {
   if (query.filter) {
     const { start, end } = windowForFilter(query.filter);
     conditions.push(gte(events.startTime, start.toISOString()), lt(events.startTime, end.toISOString()));
+  } else {
+    // No explicit day filter — still archive events that are over (mirrors
+    // apps/web/lib/event-filters.ts's isEventPast), so past events don't
+    // linger in the default public listing forever.
+    const nowIso = new Date().toISOString();
+    conditions.push(or(gte(events.endTime, nowIso), and(isNull(events.endTime), gte(events.startTime, nowIso))));
   }
   if (query.category) {
     conditions.push(eq(events.category, query.category));
@@ -85,9 +92,11 @@ export async function POST(request: Request) {
     const { env } = cf();
     const db = createDb(env.DB);
     const id = crypto.randomUUID();
+    const slug = await generateUniqueSlug(db, events, events.slug, body.title);
 
     await db.insert(events).values({
       id,
+      slug,
       venueId: body.venueId,
       title: body.title,
       description: body.description ?? null,
