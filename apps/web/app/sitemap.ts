@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { createDb, events, venues } from "@bolivamos/db";
+import { createDb, events, venues, slugify } from "@bolivamos/db";
 import { cf } from "@/lib/cloudflare";
 import { isEventPast } from "@/lib/event-filters";
 import { SITE_URL } from "@/lib/site-url";
@@ -27,6 +27,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const upcomingEvents = allEvents.filter((e) => e.slug && !isEventPast(e));
   const slugVenues = allVenues.filter((v) => v.slug);
+  const categories = [...new Set(upcomingEvents.map((e) => e.category).filter((c): c is string => Boolean(c)))];
 
   return [
     { url: SITE_URL },
@@ -34,5 +35,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...withLocales("/santa-cruz-de-la-sierra/lugares"),
     ...upcomingEvents.flatMap((e) => withLocales(`/santa-cruz-de-la-sierra/eventos/${e.slug}`)),
     ...slugVenues.flatMap((v) => withLocales(`/santa-cruz-de-la-sierra/lugares/${v.slug}`)),
+    ...categories.flatMap((c) => withLocales(`/santa-cruz-de-la-sierra/eventos/categoria/${slugify(c)}`)),
   ];
 }

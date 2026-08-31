@@ -142,7 +142,7 @@ dbList.addEventListener('click', e => {
 });
 window.__DB = DB;
 window.__setSection = s => {
-  if (s === 'nightlife') { catFilter = ['Nightlife', 'Comedy']; weekendMode = false; }
+  if (s === 'nightlife') { catFilter = ['Nightlife', 'Live music', 'Comedy']; weekendMode = false; }
   else if (s === 'todo') { catFilter = ['Workshops & classes', 'Culture & arts', 'Markets & fairs', 'Community & expat', 'Sports & active', 'Family & kids', 'More']; weekendMode = false; }
   else if (s === 'weekend') { catFilter = null; weekendMode = true; }
   else { catFilter = null; weekendMode = false; }

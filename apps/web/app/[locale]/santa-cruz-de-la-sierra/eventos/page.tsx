@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { createDb, events, desc } from "@bolivamos/db";
+import { slugify } from "@bolivamos/db";
 import { cf } from "@/lib/cloudflare";
 import { isEventPast } from "@/lib/event-filters";
 import { SITE_URL } from "@/lib/site-url";
@@ -45,12 +46,34 @@ export default async function EventsIndexPage({ params }: { params: Promise<{ lo
   const upcoming = rows.filter((e) => !isEventPast(e));
 
   const base = locale === "en" ? "/en/santa-cruz-de-la-sierra/eventos" : "/santa-cruz-de-la-sierra/eventos";
+  const categories = [...new Set(upcoming.map((e) => e.category).filter((c): c is string => Boolean(c)))].sort();
 
   return (
     <main style={{ maxWidth: 720, margin: "0 auto", padding: "48px 24px", fontFamily: "Figtree, sans-serif" }}>
       <h1 style={{ fontFamily: "Caprasimo, Georgia, serif", fontSize: 34, color: "#201e1d", margin: "0 0 24px" }}>
         {t.title}
       </h1>
+      {categories.length > 0 && (
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 28 }}>
+          {categories.map((category) => (
+            <Link
+              key={category}
+              href={`${base}/categoria/${slugify(category)}`}
+              style={{
+                fontWeight: 700,
+                fontSize: 13,
+                textDecoration: "none",
+                padding: "6px 14px",
+                borderRadius: 999,
+                background: "rgba(122,138,94,.14)",
+                color: "#5c6e45",
+              }}
+            >
+              {category}
+            </Link>
+          ))}
+        </div>
+      )}
       {upcoming.length === 0 && <p style={{ color: "#7a6a52" }}>{t.empty}</p>}
       <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
         {upcoming
