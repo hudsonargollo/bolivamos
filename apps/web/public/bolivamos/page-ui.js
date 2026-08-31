@@ -26,7 +26,10 @@ function groupIntoWeek(flatEvents) {
         if (e.priceText) vParts.push(e.priceText); else if (e.isFree) vParts.push('Gratis');
         return {
           h, t: e.title, v: vParts.join(' \u00b7 '), cat: e.category || 'More',
-          u: location.origin + '/events/' + e.id,
+          // Link straight to the canonical slugged URL - /events/{id} still
+          // works (redirects), but the direct link avoids the extra hop and
+          // passes link equity to the real, indexable page.
+          u: location.origin + (e.slug ? '/santa-cruz-de-la-sierra/eventos/' + e.slug : '/events/' + e.id),
           img: e.imageUrl || null,
           desc: e.description || null,
           map: e.mapsUrl || null,
