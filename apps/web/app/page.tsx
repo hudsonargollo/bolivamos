@@ -22,9 +22,15 @@ export default async function HomePage() {
   const { env } = cf();
   const db = createDb(env.DB);
 
+  // Bounded pool, not the whole table — only the first 12 events / 8 venues
+  // ever render below, but "past events" gets filtered out in JS after the
+  // query, so the pool needs headroom above that display count. A
+  // Lighthouse audit flagged this page's server-response-time; fetching the
+  // entire (unbounded, growing) table on every request was a real
+  // contributor and had no display-side reason to be unbounded.
   const [allEvents, allVenues] = await Promise.all([
-    db.select().from(events).orderBy(desc(events.featured), events.startTime),
-    db.select().from(venues).orderBy(desc(venues.featured), venues.name),
+    db.select().from(events).orderBy(desc(events.featured), events.startTime).limit(60),
+    db.select().from(venues).orderBy(desc(venues.featured), venues.name).limit(40),
   ]);
 
   const upcomingEvents = allEvents.filter((e) => e.slug && !isEventPast(e)).slice(0, 12);
