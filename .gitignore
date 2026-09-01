@@ -15,6 +15,10 @@ node_modules/
 .turbo/
 dist/
 build/
+# ...except vendored third-party assets that happen to ship under a "build/"
+# dir in their own package layout (apps/web/public/vendor/three/ — a real,
+# committed copy of the three.js browser build, not generated output).
+!apps/web/public/vendor/**/build/
 
 # expo / mobile
 .expo/

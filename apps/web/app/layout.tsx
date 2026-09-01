@@ -35,27 +35,25 @@ export const metadata: Metadata = {
 // loads three.js via bare specifiers from a classic <script src> file that
 // webpack never sees, so it needs a real browser import map rather than an
 // npm-bundled import.
+//
+// Self-hosted (apps/web/public/vendor/three/0.184.0/, copied verbatim from
+// the pinned three@0.184.0 npm package already in node_modules — same
+// version, same files) instead of fetched from unpkg at runtime. A
+// Lighthouse audit found unpkg's three.module.js alone accounting for
+// 2.5-6s of main-thread script time, a meaningful chunk of which was the
+// extra third-party DNS/TLS handshake and lack of edge-cache locality with
+// the rest of the page's assets — both gone once served same-origin from
+// Cloudflare's own edge. No integrity map needed for a same-origin,
+// version-pinned file (that guarded against unpkg CDN tampering).
 const THREE_IMPORTMAP = {
   imports: {
-    three: "https://unpkg.com/three@0.184.0/build/three.module.js",
+    three: "/vendor/three/0.184.0/build/three.module.js",
     "three/addons/controls/OrbitControls.js":
-      "https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+      "/vendor/three/0.184.0/examples/jsm/controls/OrbitControls.js",
     "three/addons/exporters/OBJExporter.js":
-      "https://unpkg.com/three@0.184.0/examples/jsm/exporters/OBJExporter.js",
+      "/vendor/three/0.184.0/examples/jsm/exporters/OBJExporter.js",
     "three/addons/exporters/GLTFExporter.js":
-      "https://unpkg.com/three@0.184.0/examples/jsm/exporters/GLTFExporter.js",
-  },
-  integrity: {
-    "https://unpkg.com/three@0.184.0/build/three.module.js":
-      "sha384-8FCZ1eVO6it4+pbec2aDtnTrwjWXZLJRC+MAGCIPDgsYnUrl/E0A2YlF8ioMKI/J",
-    "https://unpkg.com/three@0.184.0/build/three.core.js":
-      "sha384-dw2ooPewaEIrAgl6oFDBmmBWCE9oW9LxRGcfwZ0hLvEprzo202wXl7vCYHRlSnOT",
-    "https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js":
-      "sha384-4rziNxOBZKQ69i+w+f89KJ55TCYquwchVbByQwmaOeIOXdOU2PLDn3kOfXHwIJC9",
-    "https://unpkg.com/three@0.184.0/examples/jsm/exporters/OBJExporter.js":
-      "sha384-nbwtoZENJD3Vq+ACK0CuGQdPMuDWHkamC2KJD70EV5nfg6jQjfppKOea07YJN+N3",
-    "https://unpkg.com/three@0.184.0/examples/jsm/exporters/GLTFExporter.js":
-      "sha384-VofkvpG6HERhFCYbsUOHeNXBCqID2nfqkQqnVzE1jc/oPcz+qJ13ADdXH08hE+cQ",
+      "/vendor/three/0.184.0/examples/jsm/exporters/GLTFExporter.js",
   },
 };
 
