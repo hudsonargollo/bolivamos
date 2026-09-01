@@ -104,9 +104,21 @@ export default async function VenueDetailPage({
         : undefined,
   };
 
+  const lugaresUrl = locale === "en" ? `${SITE_URL}/en/santa-cruz-de-la-sierra/lugares` : `${SITE_URL}/santa-cruz-de-la-sierra/lugares`;
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "BoliVamos", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: locale === "en" ? "Places" : "Lugares", item: lugaresUrl },
+      { "@type": "ListItem", position: 3, name: venue.name, item: canonicalUrl },
+    ],
+  };
+
   return (
     <main style={{ maxWidth: 640, margin: "0 auto", padding: "48px 24px", fontFamily: "Figtree, sans-serif" }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <div style={{ fontWeight: 700, fontSize: 13, color: "#5c6e45", marginBottom: 8 }}>{categoryLabel}</div>
       <h1 style={{ fontFamily: "Caprasimo, Georgia, serif", fontSize: 34, color: "#201e1d", margin: "0 0 12px" }}>
         {venue.name}

@@ -52,6 +52,11 @@ async function loadDB() {
   window.dispatchEvent(new CustomEvent('bolivamos-data'));
 }
 const dbReady = loadDB();
+// Used for e.t (event title) when it lands inside an HTML attribute (alt=)
+// rather than a text node — the rest of this file already trusts admin-
+// authored titles unescaped in text-node position, but an attribute value
+// needs quotes/amp escaped to avoid a title breaking out of the attribute.
+const escAttr = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;');
 const btn = (href, label, solid) => '<a href="' + href + '" target="_blank" rel="noopener" style="font-family:Figtree,sans-serif;font-weight:700;font-size:14px;text-decoration:none;padding:9px 18px;border-radius:999px;' +
   (solid ? 'background:#c4703d;color:#f7f1e4;' : 'background:rgba(196,113,57,.14);color:#8f4225;') + '">' + label + '</a>';
 const dbList = document.getElementById('dbList');
@@ -91,7 +96,7 @@ function miniCard(e, gi, ei) {
   const url = e.u;
   const img = e.img || null;
   return '<a href="' + url + '" target="_blank" rel="noopener" style="text-decoration:none;background:#fbf4e6;border-radius:18px;overflow:hidden;box-shadow:0 2px 0 rgba(120,90,50,.12);display:flex;flex-direction:column;">' +
-    (img ? '<div style="height:130px;background:#efe2c8;"><img src="' + img + '" alt="" loading="lazy" onerror="this.parentNode.style.display=' + "'none'" + '" style="width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(.92) brightness(1.04);"></div>' : '<div style="height:84px;display:flex;align-items:center;justify-content:center;background:linear-gradient(140deg,rgba(198,113,57,.25),rgba(122,138,94,.25));font-family:Caprasimo,Georgia,serif;font-size:34px;color:#c4703d;">' + e.t.charAt(0) + '</div>') +
+    (img ? '<div style="height:130px;background:#efe2c8;"><img src="' + img + '" alt="' + escAttr(e.t) + '" loading="lazy" onerror="this.parentNode.style.display=' + "'none'" + '" style="width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(.92) brightness(1.04);"></div>' : '<div style="height:84px;display:flex;align-items:center;justify-content:center;background:linear-gradient(140deg,rgba(198,113,57,.25),rgba(122,138,94,.25));font-family:Caprasimo,Georgia,serif;font-size:34px;color:#c4703d;">' + e.t.charAt(0) + '</div>') +
     '<div style="padding:10px 12px 14px;">' +
     '<div style="font-family:Figtree,sans-serif;font-weight:800;font-size:12px;color:#b0532f;">' + e.h + '</div>' +
     '<div style="font-family:Figtree,sans-serif;font-weight:700;font-size:14px;color:#201e1d;line-height:1.25;margin:3px 0 4px;">' + e.t + '</div>' +
@@ -102,7 +107,7 @@ function card(e, gi, ei) {
   const url = e.u, id = 'ev-' + gi + '-' + ei;
   const wa = 'https://wa.me/?text=' + encodeURIComponent(e.t + ' \u00b7 ' + url);
   const detail = '<div id="' + id + '" style="display:none;padding:4px 18px 18px;">' +
-    (e.img ? '<img src="' + e.img + '" alt="" loading="lazy" onerror="this.remove()" style="width:100%;max-width:460px;border-radius:16px;display:block;margin:6px 0 12px;">' : '') +
+    (e.img ? '<img src="' + e.img + '" alt="' + escAttr(e.t) + '" loading="lazy" onerror="this.remove()" style="width:100%;max-width:460px;border-radius:16px;display:block;margin:6px 0 12px;">' : '') +
     (e.desc ? '<p style="font-family:Figtree,sans-serif;color:#4a4237;line-height:1.5;margin:0 0 14px;max-width:640px;">' + e.desc + '</p>' : '') +
     '<div style="display:flex;gap:10px;flex-wrap:wrap;">' + btn(url, (Lng() === 'es' ? 'Ver evento ' : 'View event ') + '\u2192', true) + (e.map ? btn(e.map, 'Google Maps') : '') + btn(wa, 'WhatsApp') + '</div></div>';
   return '<div style="border-radius:16px;background:#fbf4e6;margin-bottom:8px;box-shadow:0 2px 0 rgba(120,90,50,.12);overflow:hidden;">' +
@@ -194,7 +199,7 @@ function buildLive() {
     const img = e.img || null;
     return '<a class="live-slide" href="' + e.u + '" target="_blank" rel="noopener">' +
       '<div class="billboard">' + SUN_SVG +
-      '<div class="bb-frame">' + (img ? '<img src="' + img + '" alt="" loading="lazy" onerror="this.remove()">' : '<div class="live-fallback"></div>') + '</div>' +
+      '<div class="bb-frame">' + (img ? '<img src="' + img + '" alt="' + escAttr(e.t) + '" loading="lazy" onerror="this.remove()">' : '<div class="live-fallback"></div>') + '</div>' +
       '<div class="bb-legs"><span></span><span></span></div>' +
       '</div>' +
       '<div class="live-info">' +

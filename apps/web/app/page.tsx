@@ -2,6 +2,7 @@ import Link from "next/link";
 import { createDb, events, venues, desc } from "@bolivamos/db";
 import { cf } from "@/lib/cloudflare";
 import { isEventPast } from "@/lib/event-filters";
+import { SITE_URL } from "@/lib/site-url";
 import HomeScene from "./home-scene";
 
 // D1 access only exists inside a real request (same reasoning as
@@ -29,8 +30,14 @@ export default async function HomePage() {
   const upcomingEvents = allEvents.filter((e) => e.slug && !isEventPast(e)).slice(0, 12);
   const listedVenues = allVenues.filter((v) => v.slug).slice(0, 8);
 
+  const jsonLd = [
+    { "@context": "https://schema.org", "@type": "Organization", name: "BoliVamos", url: SITE_URL, logo: `${SITE_URL}/favicon-512.png` },
+    { "@context": "https://schema.org", "@type": "WebSite", name: "BoliVamos", url: SITE_URL },
+  ];
+
   return (
-    <>
+    <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <HomeScene />
       <section style={{ maxWidth: 960, margin: "0 auto", padding: "56px 24px 80px", fontFamily: "Figtree, sans-serif" }}>
         {upcomingEvents.length > 0 && (
@@ -54,7 +61,7 @@ export default async function HomePage() {
                 </Link>
               ))}
             </div>
-            <Link href="/santa-cruz-de-la-sierra/eventos" style={{ fontWeight: 700, color: "#b0532f", textDecoration: "none" }}>
+            <Link href="/santa-cruz-de-la-sierra/eventos" style={{ fontWeight: 700, color: "#8f4225", textDecoration: "none" }}>
               Ver todos los eventos →
             </Link>
           </>
@@ -77,12 +84,12 @@ export default async function HomePage() {
                 </Link>
               ))}
             </div>
-            <Link href="/santa-cruz-de-la-sierra/lugares" style={{ fontWeight: 700, color: "#b0532f", textDecoration: "none" }}>
+            <Link href="/santa-cruz-de-la-sierra/lugares" style={{ fontWeight: 700, color: "#8f4225", textDecoration: "none" }}>
               Ver todos los lugares →
             </Link>
           </>
         )}
       </section>
-    </>
+    </main>
   );
 }

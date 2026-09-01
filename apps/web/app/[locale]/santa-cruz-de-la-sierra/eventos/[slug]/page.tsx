@@ -127,13 +127,25 @@ export default async function EventDetailPage({
         : undefined,
   };
 
+  const eventosUrl = locale === "en" ? `${SITE_URL}/en/santa-cruz-de-la-sierra/eventos` : `${SITE_URL}/santa-cruz-de-la-sierra/eventos`;
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "BoliVamos", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: locale === "en" ? "Events" : "Eventos", item: eventosUrl },
+      { "@type": "ListItem", position: 3, name: event.title, item: canonicalUrl },
+    ],
+  };
+
   return (
     <main style={{ maxWidth: 640, margin: "0 auto", padding: "48px 24px", fontFamily: "Figtree, sans-serif" }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       {event.imageUrl && (
         <img
           src={event.imageUrl}
-          alt=""
+          alt={event.title}
           style={{ width: "100%", borderRadius: 16, marginBottom: 24, display: "block" }}
         />
       )}
