@@ -3,8 +3,10 @@ import { View, Text, FlatList, TextInput, Pressable, KeyboardAvoidingView, Platf
 import { useLocalSearchParams, useNavigation } from "expo-router";
 import type { ConnectMessageDto } from "@bolivamos/api-schema";
 import { apiClient } from "@/lib/api";
+import { useT } from "@/lib/i18n";
 
 export default function ConnectThreadScreen() {
+  const { t } = useT();
   const { requestId, otherName, otherUserId } = useLocalSearchParams<{
     requestId: string;
     otherName?: string;
@@ -35,8 +37,8 @@ export default function ConnectThreadScreen() {
   }, [loadMessages]);
 
   useEffect(() => {
-    navigation.setOptions({ title: otherName ?? "Connect" });
-  }, [navigation, otherName]);
+    navigation.setOptions({ title: otherName ?? t("connect") });
+  }, [navigation, otherName, t]);
 
   async function send() {
     const content = input.trim();
@@ -60,34 +62,34 @@ export default function ConnectThreadScreen() {
   }
 
   return (
-    <KeyboardAvoidingView className="flex-1 bg-bg-off-white" behavior={Platform.OS === "ios" ? "padding" : undefined}>
+    <KeyboardAvoidingView className="flex-1 bg-bg-off-white dark:bg-dark-bg" behavior={Platform.OS === "ios" ? "padding" : undefined}>
       <View className="flex-row justify-end gap-2 p-3">
-        <Pressable className="rounded-pill bg-boli-orange/10 px-3 py-1.5" onPress={() => setReporting((v) => !v)}>
-          <Text className="text-xs font-bold text-boli-red">Report</Text>
+        <Pressable className="rounded-pill bg-clay-danger/10 px-3 py-1.5" onPress={() => setReporting((v) => !v)}>
+          <Text className="text-xs font-bold text-clay-danger">{t("report")}</Text>
         </Pressable>
-        <Pressable className="rounded-pill bg-boli-orange/10 px-3 py-1.5" onPress={block} disabled={blocked}>
-          <Text className="text-xs font-bold text-boli-red">{blocked ? "Blocked" : "Block"}</Text>
+        <Pressable className="rounded-pill bg-clay-danger/10 px-3 py-1.5" onPress={block} disabled={blocked}>
+          <Text className="text-xs font-bold text-clay-danger">{blocked ? t("blocked") : t("block")}</Text>
         </Pressable>
       </View>
 
       {reporting && (
-        <View className="mx-4 mb-3 gap-2 rounded-lg bg-white p-4 shadow-sm">
+        <View className="mx-4 mb-3 gap-2 rounded-xl bg-white p-4 shadow-clay dark:bg-dark-card1">
           <TextInput
-            className="rounded-lg border border-muted-clay-gray p-3"
-            placeholder="What happened?"
+            className="rounded-xl border border-muted-clay-gray p-3 dark:border-dark-muted dark:text-dark-ink"
+            placeholder={t("whatHappened")}
             value={reportReason}
             onChangeText={setReportReason}
             multiline
           />
-          <Pressable className="self-start rounded-pill bg-boli-orange px-4 py-2" onPress={submitReport}>
-            <Text className="text-white">Submit report</Text>
+          <Pressable className="self-start rounded-pill bg-clay-terracotta px-4 py-2 shadow-clay" onPress={submitReport}>
+            <Text className="font-bold text-white">{t("submitReport")}</Text>
           </Pressable>
         </View>
       )}
-      {reported && <Text className="px-4 pb-2 text-muted-clay-gray">Report filed — an admin will review it.</Text>}
+      {reported && <Text className="px-4 pb-2 text-muted-clay-gray dark:text-dark-sub">{t("reportFiled")}</Text>}
 
       {blocked ? (
-        <Text className="p-5 text-muted-clay-gray">You&rsquo;ve blocked this person. This conversation is now closed.</Text>
+        <Text className="p-5 text-muted-clay-gray dark:text-dark-sub">{t("youBlockedThisPerson")}</Text>
       ) : (
         <>
           <FlatList
@@ -98,22 +100,22 @@ export default function ConnectThreadScreen() {
             onContentSizeChange={() => listRef.current?.scrollToEnd({ animated: false })}
             renderItem={({ item }) => (
               <View
-                className={`mb-2 max-w-[80%] rounded-lg p-3 ${item.senderId === meId ? "self-end bg-boli-orange" : "self-start bg-white"}`}
+                className={`mb-2 max-w-[80%] rounded-xl p-3 ${item.senderId === meId ? "self-end bg-clay-terracotta shadow-clay" : "self-start bg-white shadow-clay dark:bg-dark-card1"}`}
               >
-                <Text className={item.senderId === meId ? "text-white" : "text-charcoal-dark"}>{item.content}</Text>
+                <Text className={item.senderId === meId ? "text-white" : "text-charcoal-dark dark:text-dark-ink"}>{item.content}</Text>
               </View>
             )}
           />
           <View className="flex-row gap-2 p-4">
             <TextInput
-              className="flex-1 rounded-pill border border-muted-clay-gray px-4 py-3"
-              placeholder="Message…"
+              className="flex-1 rounded-pill border border-muted-clay-gray px-4 py-3 dark:border-dark-muted dark:text-dark-ink"
+              placeholder={t("messagePlaceholder")}
               value={input}
               onChangeText={setInput}
               onSubmitEditing={send}
             />
-            <Pressable className="justify-center rounded-pill bg-boli-green px-5" onPress={send}>
-              <Text className="text-white">Send</Text>
+            <Pressable className="justify-center rounded-pill bg-clay-terracotta px-5 shadow-clay" onPress={send}>
+              <Text className="font-bold text-white">{t("send")}</Text>
             </Pressable>
           </View>
         </>

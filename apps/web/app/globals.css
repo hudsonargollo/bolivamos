@@ -2,12 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Same self-hosted file admin.css already uses (apps/web/public/fonts/) —
+   Caprasimo replaces Anton as the consumer app's display font as part of
+   the mobile-v2 reskin, unifying with the admin dashboard's headline face
+   instead of running two separate display systems. */
+@font-face {
+  font-family: "Caprasimo";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/caprasimo-latin.woff2") format("woff2");
+}
+
 body {
   @apply bg-bg-off-white text-charcoal-dark font-body;
 }
 
+/* No uppercase/tracking-wide here (unlike the old Anton tuning) — Caprasimo
+   is a rounded display face meant to read in mixed case, matching how
+   admin.css already uses it. */
 h1,
 h2,
 h3 {
-  @apply font-display uppercase tracking-wide;
+  @apply font-display;
+  letter-spacing: 0.01em;
 }

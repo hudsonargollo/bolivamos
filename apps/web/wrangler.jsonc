@@ -30,6 +30,19 @@
       "id": "0c314347008243f8a51afffc3aa3e404"
     }
   ],
+  // Holds normalized/processed event banner images — see lib/event-image.ts.
+  "r2_buckets": [
+    {
+      "binding": "EVENT_ASSETS",
+      "bucket_name": "bolivamos-event-assets"
+    }
+  ],
+  // Used to crop/resize/re-encode admin-pasted event banner images before
+  // they're stored in R2 above — see lib/event-image.ts. Free up to 5,000
+  // unique transformations/month, far more than admin event-editing volume.
+  "images": {
+    "binding": "IMAGES"
+  },
   // Not secret — safe to keep in source. Secrets (JWT_SECRET, GOOGLE_CLIENT_SECRET,
   // GEMINI_API_KEY, RESEND_API_KEY) are set via `wrangler secret put` and never appear here.
   "vars": {

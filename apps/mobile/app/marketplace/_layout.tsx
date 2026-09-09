@@ -1,10 +1,16 @@
 import { Stack } from "expo-router";
+import { useT } from "@/lib/i18n";
+import { useTheme } from "@/lib/use-theme";
+import { headerScreenOptions } from "@/lib/header-options";
 
 export default function MarketplaceLayout() {
+  const { t } = useT();
+  const { scheme } = useTheme();
+
   return (
-    <Stack>
-      <Stack.Screen name="index" options={{ title: "Marketplace" }} />
-      <Stack.Screen name="[id]" options={{ title: "Marketplace" }} />
+    <Stack screenOptions={headerScreenOptions(scheme)}>
+      <Stack.Screen name="index" options={{ title: t("marketplace") }} />
+      <Stack.Screen name="[id]" options={{ title: t("marketplace") }} />
     </Stack>
   );
 }

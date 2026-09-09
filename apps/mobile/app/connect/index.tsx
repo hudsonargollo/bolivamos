@@ -3,6 +3,8 @@ import { View, Text, Pressable, ScrollView, RefreshControl } from "react-native"
 import { useFocusEffect, router } from "expo-router";
 import type { ConnectRequestDto, EventDto } from "@bolivamos/api-schema";
 import { apiClient } from "@/lib/api";
+import { useT, type StringKey } from "@/lib/i18n";
+import { ComingSoon } from "@/components/ComingSoon";
 
 interface Enriched {
   request: ConnectRequestDto;
@@ -10,7 +12,16 @@ interface Enriched {
   eventTitle: string;
 }
 
-export default function ConnectInboxScreen() {
+type Tab = "boards" | "people" | "crews" | "match";
+const TABS: { key: Tab; labelKey: StringKey }[] = [
+  { key: "boards", labelKey: "boards" },
+  { key: "people", labelKey: "people" },
+  { key: "crews", labelKey: "crews" },
+  { key: "match", labelKey: "match" },
+];
+
+function PeopleTab() {
+  const { t } = useT();
   const [meId, setMeId] = useState<string | null>(null);
   const [incoming, setIncoming] = useState<Enriched[]>([]);
   const [accepted, setAccepted] = useState<Enriched[]>([]);
@@ -80,25 +91,25 @@ export default function ConnectInboxScreen() {
 
   return (
     <ScrollView
-      className="flex-1 bg-bg-off-white"
-      contentContainerClassName="gap-6 p-5"
+      className="flex-1"
+      contentContainerClassName="gap-6"
       refreshControl={<RefreshControl refreshing={refreshing} onRefresh={load} />}
     >
       {incoming.length > 0 && (
         <View className="gap-2">
-          <Text className="font-display uppercase text-muted-clay-gray">Requests for you</Text>
+          <Text className="font-display text-muted-clay-gray dark:text-dark-sub">{t("requestsForYou")}</Text>
           {incoming.map(({ request, otherName, eventTitle }) => (
-            <View key={request.id} className="flex-row items-center justify-between rounded-lg bg-white p-4 shadow-sm">
+            <View key={request.id} className="flex-row items-center justify-between rounded-xl bg-white p-4 shadow-clay dark:bg-dark-card1">
               <View className="flex-1 pr-2">
-                <Text className="font-bold text-charcoal-dark">{otherName}</Text>
-                <Text className="text-muted-clay-gray">{eventTitle}</Text>
+                <Text className="font-bold text-charcoal-dark dark:text-dark-ink">{otherName}</Text>
+                <Text className="text-muted-clay-gray dark:text-dark-sub">{eventTitle}</Text>
               </View>
               <View className="flex-row gap-2">
-                <Pressable className="rounded-pill bg-boli-green px-3 py-2" onPress={() => respond(request.id, true)}>
-                  <Text className="text-white">Accept</Text>
+                <Pressable className="rounded-pill bg-clay-sage px-3 py-2 shadow-clay-sage" onPress={() => respond(request.id, true)}>
+                  <Text className="font-bold text-white">{t("accept")}</Text>
                 </Pressable>
-                <Pressable className="rounded-pill bg-boli-green/10 px-3 py-2" onPress={() => respond(request.id, false)}>
-                  <Text className="text-boli-green">Decline</Text>
+                <Pressable className="rounded-pill bg-clay-sage/10 px-3 py-2" onPress={() => respond(request.id, false)}>
+                  <Text className="font-bold text-clay-sage-dk">{t("decline")}</Text>
                 </Pressable>
               </View>
             </View>
@@ -108,11 +119,11 @@ export default function ConnectInboxScreen() {
 
       {accepted.length > 0 && (
         <View className="gap-2">
-          <Text className="font-display uppercase text-muted-clay-gray">Conversations</Text>
+          <Text className="font-display text-muted-clay-gray dark:text-dark-sub">{t("conversations")}</Text>
           {accepted.map(({ request, otherName, eventTitle }) => (
             <Pressable
               key={request.id}
-              className="rounded-lg bg-white p-4 shadow-sm"
+              className="rounded-xl bg-white p-4 shadow-clay dark:bg-dark-card1"
               onPress={() =>
                 router.push({
                   pathname: "/connect/[requestId]",
@@ -124,8 +135,8 @@ export default function ConnectInboxScreen() {
                 })
               }
             >
-              <Text className="font-bold text-charcoal-dark">{otherName}</Text>
-              <Text className="text-muted-clay-gray">{eventTitle}</Text>
+              <Text className="font-bold text-charcoal-dark dark:text-dark-ink">{otherName}</Text>
+              <Text className="text-muted-clay-gray dark:text-dark-sub">{eventTitle}</Text>
             </Pressable>
           ))}
         </View>
@@ -133,25 +144,50 @@ export default function ConnectInboxScreen() {
 
       {sent.length > 0 && (
         <View className="gap-2">
-          <Text className="font-display uppercase text-muted-clay-gray">Sent, awaiting reply</Text>
+          <Text className="font-display text-muted-clay-gray dark:text-dark-sub">{t("sentAwaitingReply")}</Text>
           {sent.map(({ request, otherName, eventTitle }) => (
-            <View key={request.id} className="rounded-lg bg-white p-4 shadow-sm opacity-70">
-              <Text className="text-charcoal-dark">{otherName}</Text>
-              <Text className="text-muted-clay-gray">{eventTitle}</Text>
+            <View key={request.id} className="rounded-xl bg-white p-4 shadow-clay opacity-70 dark:bg-dark-card1">
+              <Text className="text-charcoal-dark dark:text-dark-ink">{otherName}</Text>
+              <Text className="text-muted-clay-gray dark:text-dark-sub">{eventTitle}</Text>
             </View>
           ))}
         </View>
       )}
 
       {incoming.length === 0 && accepted.length === 0 && sent.length === 0 && (
-        <Text className="text-muted-clay-gray">
-          No connections yet — opt in to be visible on an event page and connect with other VIP
-          members going.
-        </Text>
+        <Text className="text-muted-clay-gray dark:text-dark-sub">{t("noConnectionsYet")}</Text>
       )}
       {meId === null && !refreshing && (
-        <Text className="text-muted-clay-gray">Log in to see your connections.</Text>
+        <Text className="text-muted-clay-gray dark:text-dark-sub">{t("loginToSeeConnections")}</Text>
       )}
     </ScrollView>
+  );
+}
+
+export default function ConnectScreen() {
+  const { t } = useT();
+  const [tab, setTab] = useState<Tab>("people");
+
+  return (
+    <View className="flex-1 bg-bg-off-white p-5 pt-16 dark:bg-dark-bg">
+      <Text className="mb-4 font-display text-3xl text-charcoal-dark dark:text-dark-ink">{t("connect")}</Text>
+
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} className="mb-5 grow-0" contentContainerClassName="gap-2">
+        {TABS.map((x) => (
+          <Pressable
+            key={x.key}
+            onPress={() => setTab(x.key)}
+            className={`rounded-pill px-4 py-2 ${tab === x.key ? "bg-clay-terracotta shadow-clay" : "bg-white dark:bg-dark-card1"}`}
+          >
+            <Text className={`font-bold ${tab === x.key ? "text-white" : "text-charcoal-dark dark:text-dark-ink"}`}>{t(x.labelKey)}</Text>
+          </Pressable>
+        ))}
+      </ScrollView>
+
+      {tab === "people" && <PeopleTab />}
+      {tab === "boards" && <ComingSoon icon="chatbubbles-outline" title={t("boards")} body={t("boardsComingSoon")} />}
+      {tab === "crews" && <ComingSoon icon="people-circle-outline" title={t("crews")} body={t("crewsComingSoon")} />}
+      {tab === "match" && <ComingSoon icon="heart-outline" title={t("match")} body={t("matchComingSoon")} />}
+    </View>
   );
 }

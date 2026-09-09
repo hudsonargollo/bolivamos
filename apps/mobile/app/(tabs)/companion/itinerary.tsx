@@ -2,6 +2,7 @@ import { useState } from "react";
 import { View, Text, Pressable, ScrollView, ActivityIndicator } from "react-native";
 import type { Category, ItineraryResponse } from "@bolivamos/api-schema";
 import { apiClient } from "@/lib/api";
+import { useT } from "@/lib/i18n";
 
 const CATEGORY_LABELS: Record<Category, string> = {
   music: "Music",
@@ -12,6 +13,7 @@ const CATEGORY_LABELS: Record<Category, string> = {
 };
 
 export default function ItineraryScreen() {
+  const { t } = useT();
   const [selected, setSelected] = useState<Category[]>([]);
   const [days, setDays] = useState(1);
   const [result, setResult] = useState<ItineraryResponse | null>(null);
@@ -35,8 +37,8 @@ export default function ItineraryScreen() {
   }
 
   return (
-    <ScrollView className="flex-1 bg-bg-off-white" contentContainerClassName="gap-4 p-6">
-      <Text className="font-display text-2xl uppercase text-charcoal-dark">Plan my trip</Text>
+    <ScrollView className="flex-1 bg-bg-off-white dark:bg-dark-bg" contentContainerClassName="gap-4 p-6">
+      <Text className="font-display text-2xl text-charcoal-dark dark:text-dark-ink">{t("planMyTrip")}</Text>
 
       <View className="flex-row flex-wrap gap-2">
         {(Object.keys(CATEGORY_LABELS) as Category[]).map((category) => {
@@ -45,42 +47,42 @@ export default function ItineraryScreen() {
             <Pressable
               key={category}
               onPress={() => toggle(category)}
-              className={`rounded-pill border px-4 py-2 ${active ? "border-boli-orange bg-boli-orange" : "border-muted-clay-gray"}`}
+              className={`rounded-pill border px-4 py-2 ${active ? "border-clay-terracotta bg-clay-terracotta shadow-clay" : "border-muted-clay-gray dark:border-dark-muted"}`}
             >
-              <Text className={active ? "text-white" : "text-charcoal-dark"}>{CATEGORY_LABELS[category]}</Text>
+              <Text className={`font-bold ${active ? "text-white" : "text-charcoal-dark dark:text-dark-ink"}`}>{CATEGORY_LABELS[category]}</Text>
             </Pressable>
           );
         })}
       </View>
 
       <View className="flex-row items-center gap-3">
-        <Text className="text-charcoal-dark">Days:</Text>
+        <Text className="text-charcoal-dark dark:text-dark-ink">{t("daysLabel")}</Text>
         {[1, 2, 3].map((d) => (
           <Pressable
             key={d}
             onPress={() => setDays(d)}
-            className={`h-9 w-9 items-center justify-center rounded-full ${days === d ? "bg-boli-green" : "bg-white"}`}
+            className={`h-9 w-9 items-center justify-center rounded-full ${days === d ? "bg-clay-terracotta shadow-clay" : "bg-white dark:bg-dark-card1"}`}
           >
-            <Text className={days === d ? "text-white" : "text-charcoal-dark"}>{d}</Text>
+            <Text className={`font-bold ${days === d ? "text-white" : "text-charcoal-dark dark:text-dark-ink"}`}>{d}</Text>
           </Pressable>
         ))}
       </View>
 
-      <Pressable className="rounded-lg bg-boli-green p-4" onPress={generate} disabled={loading}>
-        <Text className="text-center text-lg text-white">Generate itinerary</Text>
+      <Pressable className="rounded-pill bg-clay-terracotta p-4 shadow-clay active:translate-y-[3px]" onPress={generate} disabled={loading}>
+        <Text className="text-center text-lg font-bold text-white">{t("generateItinerary")}</Text>
       </Pressable>
 
       {loading && <ActivityIndicator />}
 
       {result?.days.map((day) => (
         <View key={day.label} className="gap-2">
-          <Text className="font-display uppercase text-charcoal-dark">{day.label}</Text>
+          <Text className="font-display text-charcoal-dark dark:text-dark-ink">{day.label}</Text>
           {day.stops.map((stop, i) => (
-            <View key={i} className="rounded-lg bg-white p-3 shadow-sm">
-              <Text className="text-boli-green">{stop.time}</Text>
-              <Text className="text-charcoal-dark">{stop.title}</Text>
-              <Text className="text-muted-clay-gray">{stop.description}</Text>
-              {stop.hasBoliPassOffer && <Text className="text-boli-orange">🎟️ BoliPass 2-for-1 here</Text>}
+            <View key={i} className="rounded-xl bg-white p-3 shadow-clay dark:bg-dark-card1">
+              <Text className="font-bold text-clay-terracotta">{stop.time}</Text>
+              <Text className="text-charcoal-dark dark:text-dark-ink">{stop.title}</Text>
+              <Text className="text-muted-clay-gray dark:text-dark-sub">{stop.description}</Text>
+              {stop.hasBoliPassOffer && <Text className="text-clay-terracotta">{t("bolipassOfferHere")}</Text>}
             </View>
           ))}
         </View>

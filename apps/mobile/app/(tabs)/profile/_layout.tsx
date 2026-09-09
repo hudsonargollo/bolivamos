@@ -1,9 +1,15 @@
 import { Stack } from "expo-router";
+import { useT } from "@/lib/i18n";
+import { useTheme } from "@/lib/use-theme";
+import { headerScreenOptions } from "@/lib/header-options";
 
 export default function ProfileLayout() {
+  const { t } = useT();
+  const { scheme } = useTheme();
+
   return (
-    <Stack>
-      <Stack.Screen name="index" options={{ title: "Profile" }} />
+    <Stack screenOptions={headerScreenOptions(scheme)}>
+      <Stack.Screen name="index" options={{ title: t("tabProfile") }} />
     </Stack>
   );
 }

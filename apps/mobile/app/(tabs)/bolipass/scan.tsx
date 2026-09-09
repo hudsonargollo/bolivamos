@@ -4,10 +4,12 @@ import { CameraView, useCameraPermissions } from "expo-camera";
 import { router, useLocalSearchParams } from "expo-router";
 import type { QrPayload } from "@bolivamos/api-schema";
 import { apiClient } from "@/lib/api";
+import { useT } from "@/lib/i18n";
 
 type RedeemState = "scanning" | "redeeming" | "success" | "error";
 
 export default function ScanScreen() {
+  const { t } = useT();
   const { voucherId } = useLocalSearchParams<{ voucherId: string }>();
   const [permission, requestPermission] = useCameraPermissions();
   const [state, setState] = useState<RedeemState>("scanning");
@@ -35,7 +37,7 @@ export default function ScanScreen() {
       await apiClient.redeemVoucher({ voucherId, qrPayload });
       setState("success");
     } catch {
-      setErrorMessage("Couldn't redeem this voucher. It may already be used, or the code is invalid.");
+      setErrorMessage(t("redeemError"));
       setState("error");
     }
   }
@@ -43,20 +45,20 @@ export default function ScanScreen() {
   if (!permission?.granted) {
     return (
       <View className="flex-1 items-center justify-center bg-charcoal-dark p-8">
-        <Text className="text-center text-white">Camera access is needed to scan the venue's QR code.</Text>
+        <Text className="text-center text-white">{t("cameraNeeded")}</Text>
       </View>
     );
   }
 
   if (state === "success") {
     return (
-      <View className="flex-1 items-center justify-center gap-4 bg-boli-green p-8">
+      <View className="flex-1 items-center justify-center gap-4 bg-clay-sage p-8">
         <Animated.View style={{ transform: [{ scale: badgeScale }] }}>
           <Text className="text-6xl">✅</Text>
         </Animated.View>
-        <Text className="text-center text-2xl text-white">Redeemed!</Text>
-        <Pressable className="rounded-pill bg-white px-6 py-3" onPress={() => router.back()}>
-          <Text className="text-boli-green">Done</Text>
+        <Text className="text-center text-2xl text-white">{t("redeemed")}</Text>
+        <Pressable className="rounded-pill bg-white px-6 py-3 shadow-clay-sage active:translate-y-[2px]" onPress={() => router.back()}>
+          <Text className="font-bold text-clay-sage-dk">{t("done")}</Text>
         </Pressable>
       </View>
     );
@@ -64,16 +66,16 @@ export default function ScanScreen() {
 
   if (state === "error") {
     return (
-      <View className="flex-1 items-center justify-center gap-4 bg-boli-red p-8">
+      <View className="flex-1 items-center justify-center gap-4 bg-clay-danger p-8">
         <Text className="text-center text-white">{errorMessage}</Text>
         <Pressable
-          className="rounded-pill bg-white px-6 py-3"
+          className="rounded-pill bg-white px-6 py-3 shadow-clay-danger active:translate-y-[2px]"
           onPress={() => {
             scanned.current = false;
             setState("scanning");
           }}
         >
-          <Text className="text-boli-red">Try again</Text>
+          <Text className="font-bold text-clay-danger">{t("tryAgain")}</Text>
         </Pressable>
       </View>
     );
@@ -88,7 +90,7 @@ export default function ScanScreen() {
       />
       {state === "redeeming" && (
         <View className="absolute inset-0 items-center justify-center bg-black/50">
-          <Text className="text-white">Redeeming...</Text>
+          <Text className="text-white">{t("redeeming")}</Text>
         </View>
       )}
     </View>

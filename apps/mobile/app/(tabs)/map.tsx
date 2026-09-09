@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { View, ActivityIndicator, Share } from "react-native";
 import { WebView, type WebViewMessageEvent } from "react-native-webview";
 import { baseUrl } from "@/lib/api";
-import { nativeColors } from "@bolivamos/design-tokens/native";
+import { colors } from "@bolivamos/design-tokens";
 
 /**
  * Embeds the themed 3D map (apps/web/app/city3d) via WebView rather than
@@ -29,7 +29,7 @@ export default function MapScreen() {
   }
 
   return (
-    <View className="flex-1 bg-bg-off-white">
+    <View className="flex-1 bg-bg-off-white dark:bg-dark-bg">
       <WebView
         ref={webviewRef}
         source={{ uri: `${baseUrl}/city3d?embed=1` }}
@@ -40,8 +40,8 @@ export default function MapScreen() {
         style={{ flex: 1 }}
       />
       {loading ? (
-        <View className="absolute inset-0 items-center justify-center bg-bg-off-white">
-          <ActivityIndicator size="large" color={nativeColors.boliOrange} />
+        <View className="absolute inset-0 items-center justify-center bg-bg-off-white dark:bg-dark-bg">
+          <ActivityIndicator size="large" color={colors.clayTerracotta} />
         </View>
       ) : null}
     </View>

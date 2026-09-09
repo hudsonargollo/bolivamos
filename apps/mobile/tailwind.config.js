@@ -7,11 +7,11 @@ module.exports = {
   theme: {
     extend: {
       // React Native matches font families by exact loaded name, not CSS
-      // cascade — override the shared preset's web-style names ("Anton",
-      // "Archivo") with the literal keys registered via useFonts in
-      // app/_layout.tsx.
+      // cascade — override the shared preset's web-style names
+      // ("Caprasimo", "Archivo") with the literal keys registered via
+      // useFonts in app/_layout.tsx.
       fontFamily: {
-        display: ["Anton_400Regular"],
+        display: ["Caprasimo_400Regular"],
         body: ["Archivo_400Regular"],
       },
     },

@@ -15,6 +15,7 @@ import { decodeSessionUnsafe, type Category } from "@bolivamos/api-schema";
 import { apiClient, baseUrl } from "@/lib/api";
 import { storeToken } from "@/lib/auth";
 import { registerForPushNotifications } from "@/lib/push";
+import { useT } from "@/lib/i18n";
 
 /** The real bolivamos-sunrise 3D scene from the web homepage, bare-embedded. */
 const HERO_SCENE_URL = `${baseUrl}/embed/hero`;
@@ -39,6 +40,7 @@ const HIDE_STAGE_TOOLBAR_JS = `
 WebBrowser.maybeCompleteAuthSession();
 
 export default function LoginScreen() {
+  const { t } = useT();
   const { categories } = useLocalSearchParams<{ categories?: string }>();
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
@@ -148,31 +150,31 @@ export default function LoginScreen() {
       )}
 
       <ScrollView
-        className="flex-1 -mt-6 rounded-t-3xl bg-bg-off-white"
+        className="flex-1 -mt-6 rounded-t-sheet bg-bg-off-white dark:bg-dark-bg"
         contentContainerClassName="items-center gap-4 p-8"
         keyboardShouldPersistTaps="handled"
       >
-        <Text className="font-display text-2xl uppercase text-charcoal-dark">
-          Sign in
+        <Text className="font-display text-2xl text-charcoal-dark dark:text-dark-ink">
+          {t("signIn")}
         </Text>
 
         {loading ? (
           <ActivityIndicator />
         ) : (
           <>
-            {error && <Text className="text-boli-red">{error}</Text>}
+            {error && <Text className="text-clay-danger">{error}</Text>}
 
             <TextInput
-              className="w-full rounded-lg border border-muted-clay-gray p-4"
+              className="w-full rounded-xl border border-muted-clay-gray p-4 dark:border-dark-muted dark:text-dark-ink"
               placeholder="Email"
               autoCapitalize="none"
               keyboardType="email-address"
               value={email}
               onChangeText={setEmail}
             />
-            <View className="w-full flex-row items-center rounded-lg border border-muted-clay-gray pr-2">
+            <View className="w-full flex-row items-center rounded-xl border border-muted-clay-gray pr-2 dark:border-dark-muted">
               <TextInput
-                className="flex-1 p-4"
+                className="flex-1 p-4 dark:text-dark-ink"
                 placeholder="Password"
                 secureTextEntry={!passwordVisible}
                 value={password}
@@ -188,10 +190,10 @@ export default function LoginScreen() {
               </Pressable>
             </View>
             <Pressable
-              className="w-full rounded-lg bg-boli-red p-4"
+              className="w-full rounded-pill bg-clay-terracotta p-4 shadow-clay active:translate-y-[3px]"
               onPress={handleEmailLogin}
             >
-              <Text className="text-center text-lg text-white">Log in</Text>
+              <Text className="text-center text-lg font-bold text-white">{t("signIn")}</Text>
             </Pressable>
 
             {googleConfigured && (
@@ -199,11 +201,11 @@ export default function LoginScreen() {
                 <Text className="text-muted-clay-gray">or</Text>
 
                 <Pressable
-                  className="w-full rounded-lg bg-boli-green p-4"
+                  className="w-full rounded-pill bg-boli-green p-4 shadow-clay active:translate-y-[3px]"
                   onPress={handleGooglePress}
                 >
-                  <Text className="text-center text-lg text-white">
-                    Continue with Google
+                  <Text className="text-center text-lg font-bold text-white">
+                    {t("continueWithGoogle")}
                   </Text>
                 </Pressable>
               </>
@@ -211,7 +213,7 @@ export default function LoginScreen() {
 
             {__DEV__ && (
               <Pressable
-                className="w-full rounded-lg border border-muted-clay-gray p-4"
+                className="w-full rounded-xl border border-muted-clay-gray p-4"
                 onPress={handleDevLogin}
               >
                 <Text className="text-center text-muted-clay-gray">

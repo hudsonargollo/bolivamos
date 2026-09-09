@@ -2,6 +2,7 @@ import { useState } from "react";
 import { View, Text, Pressable, ScrollView } from "react-native";
 import { router } from "expo-router";
 import type { Category } from "@bolivamos/api-schema";
+import { useT } from "@/lib/i18n";
 
 const CATEGORY_LABELS: Record<Category, string> = {
   music: "Music",
@@ -12,6 +13,7 @@ const CATEGORY_LABELS: Record<Category, string> = {
 };
 
 export default function PreferencesScreen() {
+  const { t } = useT();
   const [selected, setSelected] = useState<Category[]>([]);
 
   function toggle(category: Category) {
@@ -20,25 +22,29 @@ export default function PreferencesScreen() {
     );
   }
 
-  function continueToLogin() {
-    router.push({ pathname: "/(auth)/login", params: { categories: selected.join(",") } });
+  function next() {
+    router.push({ pathname: "/(onboarding)/appearance", params: { categories: selected.join(",") } });
   }
 
   return (
-    <ScrollView className="flex-1 bg-bg-off-white" contentContainerClassName="items-center gap-4 p-8">
-      <Text className="font-display text-2xl uppercase text-charcoal-dark">What do you love?</Text>
-      <Text className="text-center text-muted-clay-gray">Pick a few — we'll tailor your feed.</Text>
+    <ScrollView className="flex-1 bg-bg-off-white dark:bg-dark-bg" contentContainerClassName="flex-grow p-6 pt-20">
+      <Text className="font-display text-3xl leading-tight text-charcoal-dark dark:text-dark-ink">
+        {t("whatGetsYouOut")}
+        {"\n"}
+        <Text className="text-boli-orange">{t("outAtNight")}</Text>
+      </Text>
+      <Text className="mb-6 mt-2 font-bold text-sm text-muted-clay-gray dark:text-dark-sub">{t("pickAFewFeedIntro")}</Text>
 
-      <View className="w-full gap-3">
+      <View className="flex-row flex-wrap gap-2">
         {(Object.keys(CATEGORY_LABELS) as Category[]).map((category) => {
           const active = selected.includes(category);
           return (
             <Pressable
               key={category}
               onPress={() => toggle(category)}
-              className={`rounded-pill border p-4 ${active ? "border-boli-orange bg-boli-orange" : "border-muted-clay-gray"}`}
+              className={`rounded-pill border px-4 py-3 ${active ? "border-clay-terracotta bg-clay-terracotta shadow-clay" : "border-muted-clay-gray dark:border-dark-muted"}`}
             >
-              <Text className={`text-center ${active ? "text-white" : "text-charcoal-dark"}`}>
+              <Text className={`font-bold text-sm ${active ? "text-white" : "text-charcoal-dark dark:text-dark-ink"}`}>
                 {CATEGORY_LABELS[category]}
               </Text>
             </Pressable>
@@ -46,8 +52,10 @@ export default function PreferencesScreen() {
         })}
       </View>
 
-      <Pressable className="mt-4 w-full rounded-lg bg-boli-red p-4" onPress={continueToLogin}>
-        <Text className="text-center text-lg text-white">Continue</Text>
+      <View className="flex-1" />
+
+      <Pressable className="w-full items-center rounded-pill bg-clay-terracotta py-4 shadow-clay active:translate-y-[3px]" onPress={next}>
+        <Text className="font-bold text-white">{t("continueLabel")}</Text>
       </Pressable>
     </ScrollView>
   );

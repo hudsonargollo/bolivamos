@@ -3,6 +3,7 @@ import { View, Text, TextInput, Pressable, ActivityIndicator } from "react-nativ
 import { router } from "expo-router";
 import * as WebBrowser from "expo-web-browser";
 import { apiClient } from "@/lib/api";
+import { useT } from "@/lib/i18n";
 
 const FULL_PRICE_USD = 50;
 const BOLIVIAN_DISCOUNT_PRICE_USD = 25;
@@ -12,6 +13,7 @@ const BOLIVIAN_DISCOUNT_PRICE_USD = 25;
 const NIT_FORMAT = /^\d{7,13}$/;
 
 export default function SubscribeScreen() {
+  const { t } = useT();
   const [nit, setNit] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -30,45 +32,40 @@ export default function SubscribeScreen() {
   }
 
   return (
-    <View className="flex-1 items-center justify-center gap-6 bg-bg-off-white p-8">
-      <Text className="font-display text-3xl uppercase text-charcoal-dark">Get BoliPass</Text>
-      <Text className="text-center text-muted-clay-gray">
-        Buy 1, get 1 free at gastronomy, nightlife, and tour partners across Santa Cruz — renews
-        automatically every 3 months.
-      </Text>
+    <View className="flex-1 items-center justify-center gap-6 bg-bg-off-white p-8 dark:bg-dark-bg">
+      <Text className="font-display text-3xl text-charcoal-dark dark:text-dark-ink">{t("getBolipass")}</Text>
+      <Text className="text-center text-muted-clay-gray dark:text-dark-sub">{t("getBolipassTagline")}</Text>
 
-      <View className="w-full rounded-lg bg-white p-6 shadow-md">
-        <Text className="text-center font-display text-2xl text-boli-green">
-          ${priceUsd} / 3 months
+      <View className="w-full rounded-xl bg-white p-6 shadow-clay dark:bg-dark-card1">
+        <Text className="text-center font-display text-2xl text-clay-terracotta">
+          ${priceUsd} {t("perThreeMonths")}
         </Text>
         {nitFormatValid ? (
-          <Text className="mt-1 text-center text-muted-clay-gray">Bolivian discount applied</Text>
+          <Text className="mt-1 text-center text-muted-clay-gray dark:text-dark-sub">{t("bolivianDiscountApplied")}</Text>
         ) : null}
       </View>
 
       <View className="w-full">
-        <Text className="mb-1 text-muted-clay-gray">NIT (optional — 50% off for Bolivians)</Text>
+        <Text className="mb-1 text-muted-clay-gray dark:text-dark-sub">{t("nitLabel")}</Text>
         <TextInput
-          className="w-full rounded-lg bg-white p-3"
+          className="w-full rounded-xl bg-white p-3 dark:bg-dark-card1 dark:text-dark-ink"
           placeholder="e.g. 1234567"
           keyboardType="number-pad"
           value={nit}
           onChangeText={setNit}
         />
         {nit.length > 0 && !nitFormatValid ? (
-          <Text className="mt-1 text-boli-red">Doesn&rsquo;t look like a valid NIT — full price applies.</Text>
+          <Text className="mt-1 text-clay-danger">{t("nitInvalid")}</Text>
         ) : (
-          <Text className="mt-1 text-xs text-muted-clay-gray">
-            Self-reported, format-checked only — not identity verification.
-          </Text>
+          <Text className="mt-1 text-xs text-muted-clay-gray dark:text-dark-sub">{t("nitDisclaimer")}</Text>
         )}
       </View>
 
       {loading ? (
         <ActivityIndicator />
       ) : (
-        <Pressable className="w-full rounded-lg bg-boli-red p-4" onPress={subscribe}>
-          <Text className="text-center text-lg text-white">Subscribe</Text>
+        <Pressable className="w-full rounded-pill bg-clay-terracotta p-4 shadow-clay active:translate-y-[3px]" onPress={subscribe}>
+          <Text className="text-center text-lg font-bold text-white">{t("subscribe")}</Text>
         </Pressable>
       )}
     </View>
