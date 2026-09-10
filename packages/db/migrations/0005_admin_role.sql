@@ -6,7 +6,7 @@
 -- it is never accepted as a client-supplied role at signup/login (see
 -- packages/api-schema/src/schemas/common.ts's selfAssignableRoleSchema).
 -- To promote an existing user (who must sign up/dev-login once first):
---   pnpm --filter @bolivibes/web exec wrangler d1 execute bolivibes-db --local \
+--   pnpm --filter @bolivibes/web exec wrangler d1 execute bolivamos-db --local \
 --     --command "UPDATE users SET role='admin' WHERE email='REPLACE_WITH_EMAIL'"
 -- (drop --local for the remote/production database once deployed).
 

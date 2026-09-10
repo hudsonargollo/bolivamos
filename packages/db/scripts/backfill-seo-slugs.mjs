@@ -6,8 +6,8 @@
 // Reads events/venues straight from D1 via `wrangler d1 execute --json`
 // (same pattern as geocode-events.mjs) and writes an UPDATE statement per
 // row to packages/db/seeds/seo-slugs.sql — apply with:
-//   wrangler d1 execute bolivibes-db --local --file=packages/db/seeds/seo-slugs.sql
-//   wrangler d1 execute bolivibes-db --remote --file=packages/db/seeds/seo-slugs.sql
+//   wrangler d1 execute bolivamos-db --local --file=packages/db/seeds/seo-slugs.sql
+//   wrangler d1 execute bolivamos-db --remote --file=packages/db/seeds/seo-slugs.sql
 //
 // slugify() below is a plain-JS duplicate of packages/db/src/slug.ts's
 // slugify() — this script doesn't run TS, so it can't import that module
@@ -41,7 +41,7 @@ function sqlString(v) {
 }
 
 function query(sql) {
-  const raw = execSync(`npx wrangler d1 execute bolivibes-db ${SOURCE} --command "${sql}" --json`, {
+  const raw = execSync(`npx wrangler d1 execute bolivamos-db ${SOURCE} --command "${sql}" --json`, {
     cwd: WEB_DIR,
     env: { ...process.env, CLOUDFLARE_ACCOUNT_ID: "cb27e1a67198789eb42d11ab90737652" },
     maxBuffer: 10 * 1024 * 1024,

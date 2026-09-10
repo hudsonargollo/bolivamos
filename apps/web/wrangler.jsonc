@@ -18,7 +18,7 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "bolivibes-db",
+      "database_name": "bolivamos-db",
       "database_id": "d34573dd-84d2-4a31-be63-b011fbe3bc29",
       "migrations_dir": "../../packages/db/migrations"
     }
@@ -34,7 +34,7 @@
   "r2_buckets": [
     {
       "binding": "EVENT_ASSETS",
-      "bucket_name": "bolivibes-event-assets"
+      "bucket_name": "bolivamos-event-assets"
     }
   ],
   // Used to crop/resize/re-encode admin-pasted event banner images before

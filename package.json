@@ -14,8 +14,8 @@
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck",
     "db:generate": "turbo run db:generate --filter=@bolivibes/db",
-    "db:migrate:local": "pnpm --filter @bolivibes/web exec wrangler d1 migrations apply bolivibes-db --local",
-    "db:migrate:remote": "pnpm --filter @bolivibes/web exec wrangler d1 migrations apply bolivibes-db --remote",
+    "db:migrate:local": "pnpm --filter @bolivibes/web exec wrangler d1 migrations apply bolivamos-db --local",
+    "db:migrate:remote": "pnpm --filter @bolivibes/web exec wrangler d1 migrations apply bolivamos-db --remote",
     "clean": "turbo run clean && rm -rf node_modules"
   },
   "devDependencies": {

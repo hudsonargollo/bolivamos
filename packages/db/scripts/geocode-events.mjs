@@ -10,7 +10,7 @@
 // (events live in the app's live database, not a static JSON file like
 // places.json) and writes an UPDATE statement per event to
 // packages/db/seeds/events.sql — apply with:
-//   wrangler d1 execute bolivibes-db --remote --file=packages/db/seeds/events.sql
+//   wrangler d1 execute bolivamos-db --remote --file=packages/db/seeds/events.sql
 //
 // Run: node packages/db/scripts/geocode-events.mjs
 
@@ -57,7 +57,7 @@ function sqlString(v) {
 async function main() {
   console.log("Fetching events from remote D1...");
   const raw = execSync(
-    `npx wrangler d1 execute bolivibes-db --remote --command "SELECT id, venue_name FROM events WHERE venue_name IS NOT NULL" --json`,
+    `npx wrangler d1 execute bolivamos-db --remote --command "SELECT id, venue_name FROM events WHERE venue_name IS NOT NULL" --json`,
     { cwd: WEB_DIR, env: { ...process.env, CLOUDFLARE_ACCOUNT_ID: "cb27e1a67198789eb42d11ab90737652" }, maxBuffer: 10 * 1024 * 1024 },
   );
   const events = JSON.parse(raw.toString())[0].results;

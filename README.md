@@ -58,7 +58,7 @@ Full control center for internal staff (e.g. Steff), on-brand with the public si
 There is no self-signup or in-app path to the `admin` role — it can only be granted with a direct DB update, after the person has signed up (or dev-logged-in) once as a normal user:
 
 ```bash
-pnpm --filter @bolivibes/web exec wrangler d1 execute bolivibes-db --local \
+pnpm --filter @bolivibes/web exec wrangler d1 execute bolivamos-db --local \
   --command "UPDATE users SET role='admin' WHERE email='REPLACE_WITH_EMAIL'"
 ```
 
@@ -69,7 +69,7 @@ Drop `--local` to run it against the remote/production database. Log out and bac
 D1/KV are already created and wired into `apps/web/wrangler.jsonc` and `apps/cron-worker/wrangler.jsonc` for this deployment. Standing these up fresh elsewhere:
 
 ```bash
-pnpm --filter @bolivibes/web exec wrangler d1 create bolivibes-db
+pnpm --filter @bolivibes/web exec wrangler d1 create bolivamos-db
 pnpm --filter @bolivibes/web exec wrangler kv namespace create bolivibes-kv
 pnpm --filter @bolivibes/web exec wrangler kv namespace create bolivibes-kv --preview
 

@@ -15,7 +15,7 @@ Data sources: TripAdvisor (g297317) and bolivia-streets.openalfa.com (OpenStreet
 
 ## Phase 0 status (2026-08-23)
 
-Done and live on `bolivibes-db` (remote): `places` table (migration `0002_themed_maps_places.sql`),
+Done and live on `bolivamos-db` (remote): `places` table (migration `0002_themed_maps_places.sql`),
 `GET /api/places` (GeoJSON FeatureCollection, `apps/web/app/api/places/route.ts`), and all 530 places
 seeded via `packages/db/scripts/geocode-places.mjs` (Nominatim, rate-limited, checkpointed) +
 `retry-failed-geocodes.mjs` (broader-query fallback pass) + `fix-district-assignment.mjs`
