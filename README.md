@@ -1,6 +1,6 @@
 # BoliVibes
 
-Monorepo for the BoliVibes app (Santa Cruz de la Sierra, Bolivia) — live at
+Monorepo for the BoliVibes app and BoliPass Club (Santa Cruz de la Sierra, Bolivia) — live at
 [bolivibes.clubemkt.digital](https://bolivibes.clubemkt.digital).
 
 - `apps/web` — Next.js 15 App Router, deployed to Cloudflare Workers via `@opennextjs/cloudflare`.
