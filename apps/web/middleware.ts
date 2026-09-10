@@ -1,5 +1,30 @@
 import { NextResponse, type NextRequest } from "next/server";
 
+const AGREEMENT_PASSWORD = "bolitec";
+
+function unauthorizedAgreementResponse() {
+  return new NextResponse("Authentication required", {
+    status: 401,
+    headers: {
+      "WWW-Authenticate": 'Basic realm="BoliVibes agreement", charset="UTF-8"',
+    },
+  });
+}
+
+function isAgreementAuthorized(request: NextRequest) {
+  const header = request.headers.get("authorization");
+  if (!header?.startsWith("Basic ")) return false;
+
+  try {
+    const decoded = atob(header.slice("Basic ".length));
+    const separator = decoded.indexOf(":");
+    const password = separator >= 0 ? decoded.slice(separator + 1) : decoded;
+    return password === AGREEMENT_PASSWORD;
+  } catch {
+    return false;
+  }
+}
+
 /**
  * Route-level guard for the Host Portal and Admin Dashboard pages (not the
  * API — those enforce auth themselves via lib/session.ts). Full role
@@ -18,6 +43,10 @@ import { NextResponse, type NextRequest } from "next/server";
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  if (pathname.startsWith("/agreement")) {
+    if (!isAgreementAuthorized(request)) return unauthorizedAgreementResponse();
+  }
+
   if (pathname.startsWith("/host") || pathname.startsWith("/admin")) {
     const hasSession = request.cookies.has("bv_session");
     if (!hasSession) {
@@ -35,5 +64,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/host/:path*", "/admin/:path*", "/santa-cruz-de-la-sierra/:path*"],
+  matcher: ["/agreement/:path*", "/host/:path*", "/admin/:path*", "/santa-cruz-de-la-sierra/:path*"],
 };
