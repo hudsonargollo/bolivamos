@@ -1,9 +1,9 @@
 "use server";
 
-import { eq } from "@bolivamos/db";
-import { createDb, users, pushCampaigns } from "@bolivamos/db";
-import { userPushTokenKey } from "@bolivamos/api-schema";
-import { sendExpoPushNotifications, type ExpoPushMessage } from "@bolivamos/notifications";
+import { eq } from "@bolivibes/db";
+import { createDb, users, pushCampaigns } from "@bolivibes/db";
+import { userPushTokenKey } from "@bolivibes/api-schema";
+import { sendExpoPushNotifications, type ExpoPushMessage } from "@bolivibes/notifications";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { cf } from "@/lib/cloudflare";
@@ -35,7 +35,7 @@ export async function sendPushCampaign(formData: FormData) {
 
   const messages: ExpoPushMessage[] = [];
   for (const user of targetUsers) {
-    const token = await env.BOLIVAMOS_KV.get(userPushTokenKey(user.id));
+    const token = await env.BOLIVIBES_KV.get(userPushTokenKey(user.id));
     if (token) messages.push({ to: token, title, body });
   }
 

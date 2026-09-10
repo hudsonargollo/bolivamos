@@ -31,7 +31,7 @@ const SQL_OUT_PATH = path.join(SEEDS_DIR, "places.sql");
 const REPORT_OUT_PATH = path.join(SEEDS_DIR, "places-report.json");
 
 const NOMINATIM_URL = "https://nominatim.openstreetmap.org/search";
-const USER_AGENT = "BoliVamos-ThemedMaps/1.0 (+https://bolivamos.app; contact: hudson@tektone.com.br)";
+const USER_AGENT = "BoliVibes-ThemedMaps/1.0 (+https://bolivibes.app; contact: hudson@tektone.com.br)";
 const REQUEST_DELAY_MS = 1100; // Nominatim policy: max 1 req/sec.
 const CITY_SUFFIX = "Santa Cruz de la Sierra, Bolivia";
 const REGIONAL_RADIUS_KM = 20; // beyond this from every district centroid -> regional:true

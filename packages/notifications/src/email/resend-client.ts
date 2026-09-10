@@ -7,7 +7,7 @@ export interface SendEmailOptions {
 }
 
 const RESEND_API_URL = "https://api.resend.com/emails";
-const DEFAULT_FROM = "BoliVamos <hello@bolivamos.app>";
+const DEFAULT_FROM = "BoliVibes <hello@bolivibes.app>";
 
 /** Thin wrapper around the Resend send API. `apiKey` is always caller-injected from `env.RESEND_API_KEY`. */
 export async function sendEmail(opts: SendEmailOptions): Promise<void> {

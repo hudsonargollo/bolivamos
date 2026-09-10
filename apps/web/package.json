@@ -1,5 +1,5 @@
 {
-  "name": "@bolivamos/web",
+  "name": "@bolivibes/web",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -14,11 +14,11 @@
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
-    "@bolivamos/ai": "workspace:*",
-    "@bolivamos/api-schema": "workspace:*",
-    "@bolivamos/db": "workspace:*",
-    "@bolivamos/design-tokens": "workspace:*",
-    "@bolivamos/notifications": "workspace:*",
+    "@bolivibes/ai": "workspace:*",
+    "@bolivibes/api-schema": "workspace:*",
+    "@bolivibes/db": "workspace:*",
+    "@bolivibes/design-tokens": "workspace:*",
+    "@bolivibes/notifications": "workspace:*",
     "drizzle-orm": "catalog:",
     "jose": "catalog:",
     "next": "^15.1.4",

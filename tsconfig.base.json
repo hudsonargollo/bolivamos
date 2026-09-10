@@ -16,18 +16,18 @@
     "declaration": false,
     "baseUrl": ".",
     "paths": {
-      "@bolivamos/design-tokens": ["packages/design-tokens/src/index.ts"],
-      "@bolivamos/design-tokens/*": ["packages/design-tokens/src/*"],
-      "@bolivamos/db": ["packages/db/src/index.ts"],
-      "@bolivamos/db/*": ["packages/db/src/*"],
-      "@bolivamos/api-schema": ["packages/api-schema/src/index.ts"],
-      "@bolivamos/api-schema/*": ["packages/api-schema/src/*"],
-      "@bolivamos/api-client": ["packages/api-client/src/index.ts"],
-      "@bolivamos/api-client/*": ["packages/api-client/src/*"],
-      "@bolivamos/ai": ["packages/ai/src/index.ts"],
-      "@bolivamos/ai/*": ["packages/ai/src/*"],
-      "@bolivamos/notifications": ["packages/notifications/src/index.ts"],
-      "@bolivamos/notifications/*": ["packages/notifications/src/*"]
+      "@bolivibes/design-tokens": ["packages/design-tokens/src/index.ts"],
+      "@bolivibes/design-tokens/*": ["packages/design-tokens/src/*"],
+      "@bolivibes/db": ["packages/db/src/index.ts"],
+      "@bolivibes/db/*": ["packages/db/src/*"],
+      "@bolivibes/api-schema": ["packages/api-schema/src/index.ts"],
+      "@bolivibes/api-schema/*": ["packages/api-schema/src/*"],
+      "@bolivibes/api-client": ["packages/api-client/src/index.ts"],
+      "@bolivibes/api-client/*": ["packages/api-client/src/*"],
+      "@bolivibes/ai": ["packages/ai/src/index.ts"],
+      "@bolivibes/ai/*": ["packages/ai/src/*"],
+      "@bolivibes/notifications": ["packages/notifications/src/index.ts"],
+      "@bolivibes/notifications/*": ["packages/notifications/src/*"]
     }
   }
 }

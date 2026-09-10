@@ -1,4 +1,4 @@
-import { createDb, paymentMethods } from "@bolivamos/db";
+import { createDb, paymentMethods } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 
 const METHOD_LABELS: Record<string, string> = {

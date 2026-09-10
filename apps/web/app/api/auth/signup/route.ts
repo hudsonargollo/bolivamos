@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { passwordSignupRequestSchema, type AuthResponse } from "@bolivamos/api-schema";
+import { passwordSignupRequestSchema, type AuthResponse } from "@bolivibes/api-schema";
 import { createUserWithPassword, EmailAlreadyRegisteredError } from "@/lib/password-auth";
 import { issueSessionForUser } from "@/lib/issue-session";
 import { SESSION_COOKIE_NAME } from "@/lib/session";

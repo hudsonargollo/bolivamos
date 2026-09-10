@@ -1,5 +1,5 @@
 import Constants from "expo-constants";
-import { ApiClient } from "@bolivamos/api-client";
+import { ApiClient } from "@bolivibes/api-client";
 import { getStoredToken } from "./auth";
 
 export const baseUrl =

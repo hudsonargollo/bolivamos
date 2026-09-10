@@ -11,13 +11,13 @@ import { WebView } from "react-native-webview";
 import { router, useLocalSearchParams } from "expo-router";
 import * as Google from "expo-auth-session/providers/google";
 import * as WebBrowser from "expo-web-browser";
-import { decodeSessionUnsafe, type Category } from "@bolivamos/api-schema";
+import { decodeSessionUnsafe, type Category } from "@bolivibes/api-schema";
 import { apiClient, baseUrl } from "@/lib/api";
 import { storeToken } from "@/lib/auth";
 import { registerForPushNotifications } from "@/lib/push";
 import { useT } from "@/lib/i18n";
 
-/** The real bolivamos-sunrise 3D scene from the web homepage, bare-embedded. */
+/** The real bolivibes-sunrise 3D scene from the web homepage, bare-embedded. */
 const HERO_SCENE_URL = `${baseUrl}/embed/hero`;
 
 // The stage's export toolbar ("Download OBJ+MTL" / "Download GLB") lives
@@ -106,7 +106,7 @@ export default function LoginScreen() {
     setLoading(true);
     try {
       const { token } = await apiClient.devLogin(
-        "dev@bolivamos.test",
+        "dev@bolivibes.test",
         "visitor",
       );
       await finishLogin(token);

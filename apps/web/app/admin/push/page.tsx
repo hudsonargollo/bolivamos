@@ -1,5 +1,5 @@
-import { createDb, pushCampaigns } from "@bolivamos/db";
-import { desc } from "@bolivamos/db";
+import { createDb, pushCampaigns } from "@bolivibes/db";
+import { desc } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 import { sendPushCampaign } from "../actions/push";
 

@@ -1,5 +1,5 @@
 import * as SecureStore from "expo-secure-store";
-import { decodeSessionUnsafe } from "@bolivamos/api-schema";
+import { decodeSessionUnsafe } from "@bolivibes/api-schema";
 
 const TOKEN_KEY = "bv_auth_token";
 

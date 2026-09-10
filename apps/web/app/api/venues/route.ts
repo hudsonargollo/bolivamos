@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { createDb, venues, generateUniqueSlug } from "@bolivamos/db";
-import { desc, eq } from "@bolivamos/db";
-import { createVenueRequestSchema, type VenueDto, type Category } from "@bolivamos/api-schema";
+import { createDb, venues, generateUniqueSlug } from "@bolivibes/db";
+import { desc, eq } from "@bolivibes/db";
+import { createVenueRequestSchema, type VenueDto, type Category } from "@bolivibes/api-schema";
 import { cf } from "@/lib/cloudflare";
 import { requireRole } from "@/lib/session";
 import { toErrorResponse } from "@/lib/api-errors";

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { createDb, events, eq } from "@bolivamos/db";
-import { slugify } from "@bolivamos/db";
+import { createDb, events, eq } from "@bolivibes/db";
+import { slugify } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 import { isEventPast } from "@/lib/event-filters";
 import { SITE_URL } from "@/lib/site-url";
@@ -47,7 +47,7 @@ export async function generateMetadata({
   if (!category) return {};
 
   const title =
-    locale === "en" ? `${category} events in Santa Cruz — BoliVamos` : `Eventos de ${category} en Santa Cruz — BoliVamos`;
+    locale === "en" ? `${category} events in Santa Cruz — BoliVibes` : `Eventos de ${category} en Santa Cruz — BoliVibes`;
   const description =
     locale === "en"
       ? `Upcoming ${category} events in Santa Cruz de la Sierra.`

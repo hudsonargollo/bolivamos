@@ -1,8 +1,8 @@
-# Bolivamos Agent Instructions
+# BoliVibes Agent Instructions
 
 ## Project overview
 
-Bolivamos is a pnpm/Turbo monorepo.
+BoliVibes is a pnpm/Turbo monorepo.
 
 - `apps/web`: Next.js 15 App Router deployed to Cloudflare Workers through `@opennextjs/cloudflare`.
 - `apps/mobile`: Expo Router mobile app.
@@ -23,17 +23,17 @@ Run from the repository root unless noted.
 - Build all: `pnpm build`
 - Lint all: `pnpm lint`
 - Typecheck all: `pnpm typecheck`
-- Web build: `pnpm --filter @bolivamos/web build`
-- Web deploy: `pnpm --filter @bolivamos/web deploy`
-- Cron worker build/typecheck: `pnpm --filter @bolivamos/cron-worker build`
-- Cron worker deploy: `pnpm --filter @bolivamos/cron-worker deploy`
-- Mobile export build: `pnpm --filter @bolivamos/mobile build`
+- Web build: `pnpm --filter @bolivibes/web build`
+- Web deploy: `pnpm --filter @bolivibes/web deploy`
+- Cron worker build/typecheck: `pnpm --filter @bolivibes/cron-worker build`
+- Cron worker deploy: `pnpm --filter @bolivibes/cron-worker deploy`
+- Mobile export build: `pnpm --filter @bolivibes/mobile build`
 
 ## Deployment
 
-- Web deployment target is Cloudflare Workers, configured in `apps/web/wrangler.jsonc` as `bolivamos-web`.
-- Cron deployment target is Cloudflare Workers, configured in `apps/cron-worker/wrangler.jsonc` as `bolivamos-cron-worker`.
-- Production URL in README: `https://bolivamos.clubemkt.digital`.
+- Web deployment target is Cloudflare Workers, configured in `apps/web/wrangler.jsonc` as `bolivibes-web`.
+- Cron deployment target is Cloudflare Workers, configured in `apps/cron-worker/wrangler.jsonc` as `bolivibes-cron-worker`.
+- Production URL in README: `https://bolivibes.clubemkt.digital`.
 - Before deploying, run relevant build/typecheck checks and inspect any Cloudflare auth/account errors directly.
 
 ## Working rules

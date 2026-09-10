@@ -1,4 +1,4 @@
-import type { EventFilter } from "@bolivamos/api-schema";
+import type { EventFilter } from "@bolivibes/api-schema";
 
 /**
  * An event is "archived" once it's over — endTime if the event has one,

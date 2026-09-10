@@ -1,4 +1,4 @@
--- Adds coordinates to events so the themed map (apps/web/public/bolivamos/city-scene.js)
+-- Adds coordinates to events so the themed map (apps/web/public/bolivibes/city-scene.js)
 -- can place real event markers alongside places. Events have no venue row
 -- (venue_id is null for all 59 current rows — they're imported/aggregated
 -- listings, not host-created), so there's no venues.latitude/longitude to

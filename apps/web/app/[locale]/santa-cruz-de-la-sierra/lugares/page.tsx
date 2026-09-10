@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { createDb, venues, desc } from "@bolivamos/db";
+import { createDb, venues, desc } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 import { SITE_URL } from "@/lib/site-url";
 
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: L
   const t = COPY[locale];
   const path = locale === "en" ? "/en/santa-cruz-de-la-sierra/lugares" : "/santa-cruz-de-la-sierra/lugares";
   return {
-    title: `${t.title} — BoliVamos`,
+    title: `${t.title} — BoliVibes`,
     description: t.desc,
     alternates: {
       canonical: `${SITE_URL}${path}`,

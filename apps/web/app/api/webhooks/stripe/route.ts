@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { eq, or } from "@bolivamos/db";
-import { createDb, orders, users, type Db } from "@bolivamos/db";
+import { eq, or } from "@bolivibes/db";
+import { createDb, orders, users, type Db } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 import { verifyStripeWebhookSignature } from "@/lib/stripe";
 

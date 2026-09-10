@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { eq, and, or } from "@bolivamos/db";
-import { createDb, userBlocks, connectRequests } from "@bolivamos/db";
+import { eq, and, or } from "@bolivibes/db";
+import { createDb, userBlocks, connectRequests } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 import { requireSession } from "@/lib/session";
 import { toErrorResponse } from "@/lib/api-errors";

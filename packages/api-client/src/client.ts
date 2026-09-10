@@ -30,7 +30,7 @@ import type {
   ConnectMessageDto,
   SendConnectMessageRequest,
   ReportUserRequest,
-} from "@bolivamos/api-schema";
+} from "@bolivibes/api-schema";
 
 export interface ApiClientOptions {
   baseUrl: string;
@@ -48,7 +48,7 @@ class ApiError extends Error {
 }
 
 /**
- * Typed fetch client for apps/mobile. Every request to the BoliVamos API
+ * Typed fetch client for apps/mobile. Every request to the BoliVibes API
  * should go through this — never call `fetch` directly against the API from
  * mobile screens, so the auth header and error shape stay consistent.
  */

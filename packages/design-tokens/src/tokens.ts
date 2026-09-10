@@ -1,5 +1,5 @@
 /**
- * Canonical BoliVamos design tokens, sourced from the Bolivamos Brand Guide
+ * Canonical BoliVibes design tokens, sourced from the BoliVibes Brand Guide
  * v1.0 (the sun-mark identity). This is the single source of truth — the
  * Tailwind preset (web) and the NativeWind preset (mobile) are both
  * generated from these values. Do not hand-edit derived files; edit this

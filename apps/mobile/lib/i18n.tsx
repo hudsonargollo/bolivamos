@@ -1,12 +1,12 @@
 import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from "react";
 import * as SecureStore from "expo-secure-store";
 
-const STORAGE_KEY = "bolivamos-locale";
+const STORAGE_KEY = "bolivibes-locale";
 export type Locale = "en" | "es";
 
 /**
  * Hand-rolled, same shape as the web app's I18N/t() pattern
- * (apps/web/public/bolivamos/page-ui.js) — no i18next dependency needed for
+ * (apps/web/public/bolivibes/page-ui.js) — no i18next dependency needed for
  * this string count. Extend this table as each screen is localized during
  * the mobile-v2 reskin; not every string is covered yet.
  */
@@ -101,7 +101,7 @@ const STRINGS = {
     startingCheckout: "Starting checkout…",
     buyLabel: "Buy —",
     hostPortalTitle: "Host Portal",
-    hostPortalBody: "Managing events, BoliPass vouchers, and your venue's QR code happens on the BoliVamos web Host Portal.",
+    hostPortalBody: "Managing events, BoliPass vouchers, and your venue's QR code happens on the BoliVibes web Host Portal.",
     openHostPortal: "Open Host Portal",
     event: "Event",
     marketplace: "Marketplace",
@@ -261,7 +261,7 @@ const STRINGS = {
     startingCheckout: "Iniciando pago…",
     buyLabel: "Comprar —",
     hostPortalTitle: "Portal de anfitriones",
-    hostPortalBody: "Gestionar eventos, cupones BoliPass y el código QR de tu local se hace en el Host Portal web de BoliVamos.",
+    hostPortalBody: "Gestionar eventos, cupones BoliPass y el código QR de tu local se hace en el Host Portal web de BoliVibes.",
     openHostPortal: "Abrir Host Portal",
     event: "Evento",
     marketplace: "Marketplace",

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { View, Text, Pressable, ScrollView } from "react-native";
 import { router } from "expo-router";
-import type { Category } from "@bolivamos/api-schema";
+import type { Category } from "@bolivibes/api-schema";
 import { useT } from "@/lib/i18n";
 
 const CATEGORY_LABELS: Record<Category, string> = {

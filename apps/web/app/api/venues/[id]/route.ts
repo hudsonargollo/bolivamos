@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { createDb, venues } from "@bolivamos/db";
-import { eq } from "@bolivamos/db";
-import type { VenueDto, Category } from "@bolivamos/api-schema";
+import { createDb, venues } from "@bolivibes/db";
+import { eq } from "@bolivibes/db";
+import type { VenueDto, Category } from "@bolivibes/api-schema";
 import { cf } from "@/lib/cloudflare";
 
 export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {

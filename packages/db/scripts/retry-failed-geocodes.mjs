@@ -20,7 +20,7 @@ const SEEDS_DIR = path.join(__dirname, "../seeds");
 const CHECKPOINT_PATH = path.join(SEEDS_DIR, "places-checkpoint.json");
 
 const NOMINATIM_URL = "https://nominatim.openstreetmap.org/search";
-const USER_AGENT = "BoliVamos-ThemedMaps/1.0 (+https://bolivamos.app; contact: hudson@tektone.com.br)";
+const USER_AGENT = "BoliVibes-ThemedMaps/1.0 (+https://bolivibes.app; contact: hudson@tektone.com.br)";
 const REQUEST_DELAY_MS = 1100;
 
 function sleep(ms) {

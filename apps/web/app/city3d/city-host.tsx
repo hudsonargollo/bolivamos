@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Script from "next/script";
 
 // PRD §7.6: chrome strings stay bilingual EN/ES. This page doesn't get its
-// own language toggle — it reads the same "bolivamos-lang" preference the
+// own language toggle — it reads the same "bolivibes-lang" preference the
 // hero scene's EN/ES pill writes to localStorage, so a visitor's choice on
 // the homepage carries through to /city3d.
 const STRINGS = {
@@ -53,7 +53,7 @@ export default function CityHost() {
   useEffect(() => {
     setEmbedded(new URLSearchParams(window.location.search).get("embed") === "1");
     try {
-      if (localStorage.getItem("bolivamos-lang") === "es") setLang("es");
+      if (localStorage.getItem("bolivibes-lang") === "es") setLang("es");
     } catch {
       // localStorage can throw in locked-down embeds (e.g. some WebViews) — EN default is fine.
     }
@@ -385,7 +385,7 @@ export default function CityHost() {
         </div>
       </div>
 
-      <Script src="/bolivamos/city-scene.js" type="module" strategy="afterInteractive" />
+      <Script src="/bolivibes/city-scene.js" type="module" strategy="afterInteractive" />
     </>
   );
 }

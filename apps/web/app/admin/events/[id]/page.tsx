@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
-import { createDb, venues, events } from "@bolivamos/db";
-import { eq } from "@bolivamos/db";
+import { createDb, venues, events } from "@bolivibes/db";
+import { eq } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 import { updateEvent, deleteEvent } from "../../actions/events";
 

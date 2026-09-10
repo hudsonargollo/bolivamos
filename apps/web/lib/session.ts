@@ -1,6 +1,6 @@
-import { verifySession, sessionKey, sessionValueSchema, type SessionValue } from "@bolivamos/api-schema";
-import { createDb, users } from "@bolivamos/db";
-import { eq } from "@bolivamos/db";
+import { verifySession, sessionKey, sessionValueSchema, type SessionValue } from "@bolivibes/api-schema";
+import { createDb, users } from "@bolivibes/db";
+import { eq } from "@bolivibes/db";
 import { cf } from "./cloudflare";
 
 export const SESSION_COOKIE_NAME = "bv_session";
@@ -37,7 +37,7 @@ export async function resolveSession(token: string | null): Promise<CurrentSessi
 
   try {
     const payload = await verifySession(token, env.JWT_SECRET);
-    const raw = await env.BOLIVAMOS_KV.get(sessionKey(token), "json");
+    const raw = await env.BOLIVIBES_KV.get(sessionKey(token), "json");
     if (!raw) return null; // revoked, logged out, or never issued via KV
     const session = sessionValueSchema.parse(raw);
 

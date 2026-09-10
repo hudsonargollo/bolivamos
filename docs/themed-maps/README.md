@@ -1,4 +1,4 @@
-# BoliVamos — Themed Maps Package
+# BoliVibes — Themed Maps Package
 
 Everything needed to kick off the mapz.com themed-maps integration for Santa Cruz de la Sierra.
 
@@ -15,7 +15,7 @@ Data sources: TripAdvisor (g297317) and bolivia-streets.openalfa.com (OpenStreet
 
 ## Phase 0 status (2026-08-23)
 
-Done and live on `bolivamos-db` (remote): `places` table (migration `0002_themed_maps_places.sql`),
+Done and live on `bolivibes-db` (remote): `places` table (migration `0002_themed_maps_places.sql`),
 `GET /api/places` (GeoJSON FeatureCollection, `apps/web/app/api/places/route.ts`), and all 530 places
 seeded via `packages/db/scripts/geocode-places.mjs` (Nominatim, rate-limited, checkpointed) +
 `retry-failed-geocodes.mjs` (broader-query fallback pass) + `fix-district-assignment.mjs`
@@ -33,7 +33,7 @@ revisiting whether they belong in `places` vs. a separate non-map listing).
 
 P1 shipped, but not as the PRD specced it. Instead of the mapz.com/OpenLayers 2D map
 (§6–§8.3), the team extended the existing three.js hero scene into a **free-roam first-person
-3D city** — `apps/web/app/city3d/` (`city-host.tsx` + `public/bolivamos/city-scene.js`). No
+3D city** — `apps/web/app/city3d/` (`city-host.tsx` + `public/bolivibes/city-scene.js`). No
 mapz.com integration, no `/map` route, no OpenLayers exist anywhere in the codebase; this
 sidesteps OQ-1/OQ-2/OQ-3/OQ-5 (mapz custom design, pricing, licensing) entirely. The PRD's
 *functional* spec (§7.5 place sheet, §8.1 search, §8.5 hero↔map continuity) is still the active
@@ -47,7 +47,7 @@ places, category-filtered rendering (attractions/eat & drink/tours as buildings,
 glowing markers), and — added today — the §8.5 district deep-link (`/city3d?district={key}`
 spawns the camera at that district's pillar, wired from the hero's "Abrir mapa real" link so it
 always carries whichever zone is currently active) and full §7.6 bilingual chrome (every string
-in `city-host.tsx`/`city-scene.js` now reads the same `bolivamos-lang` preference the hero
+in `city-host.tsx`/`city-scene.js` now reads the same `bolivibes-lang` preference the hero
 scene's EN/ES pill sets, no separate toggle needed on the map page itself).
 
 Not done: **P4 venue↔place linking** — `places.venueId` and the place sheet's "Eventos aquí"

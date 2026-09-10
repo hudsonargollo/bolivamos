@@ -1,4 +1,4 @@
-import { createDb, vouchers } from "@bolivamos/db";
+import { createDb, vouchers } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 
 export default async function HostVouchersPage() {

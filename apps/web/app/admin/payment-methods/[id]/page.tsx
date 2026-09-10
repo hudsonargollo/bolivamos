@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
-import { createDb, paymentMethods } from "@bolivamos/db";
-import { eq } from "@bolivamos/db";
+import { createDb, paymentMethods } from "@bolivibes/db";
+import { eq } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 import { updatePaymentMethod, deletePaymentMethod } from "../../actions/payment-methods";
 

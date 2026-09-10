@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { eq } from "@bolivamos/db";
-import { createDb, products } from "@bolivamos/db";
-import { productTypeSchema, type ProductDto } from "@bolivamos/api-schema";
+import { eq } from "@bolivibes/db";
+import { createDb, products } from "@bolivibes/db";
+import { productTypeSchema, type ProductDto } from "@bolivibes/api-schema";
 import { z } from "zod";
 import { cf } from "@/lib/cloudflare";
 import { requireSession, SessionError } from "@/lib/session";

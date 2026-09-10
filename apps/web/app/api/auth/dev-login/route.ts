@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { devLoginRequestSchema, type AuthResponse } from "@bolivamos/api-schema";
+import { devLoginRequestSchema, type AuthResponse } from "@bolivibes/api-schema";
 import { cf } from "@/lib/cloudflare";
 import { issueSessionForUser } from "@/lib/issue-session";
 import { SESSION_COOKIE_NAME } from "@/lib/session";

@@ -4,7 +4,7 @@ import { router } from "expo-router";
 import { apiClient } from "@/lib/api";
 import { useT, type StringKey } from "@/lib/i18n";
 import { SunMark } from "@/components/SunMark";
-import type { AuthUser } from "@bolivamos/api-schema";
+import type { AuthUser } from "@bolivibes/api-schema";
 
 interface ChatTurn {
   role: "user" | "assistant";

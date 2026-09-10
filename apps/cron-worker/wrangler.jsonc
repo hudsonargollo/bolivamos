@@ -1,6 +1,6 @@
 {
   "$schema": "../web/node_modules/wrangler/config-schema.json",
-  "name": "bolivamos-cron-worker",
+  "name": "bolivibes-cron-worker",
   "account_id": "cb27e1a67198789eb42d11ab90737652",
   "main": "src/index.ts",
   "compatibility_date": "2026-08-21",
@@ -13,13 +13,13 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "bolivamos-db",
+      "database_name": "bolivibes-db",
       "database_id": "d34573dd-84d2-4a31-be63-b011fbe3bc29"
     }
   ],
   "kv_namespaces": [
     {
-      "binding": "BOLIVAMOS_KV",
+      "binding": "BOLIVIBES_KV",
       "id": "0c314347008243f8a51afffc3aa3e404"
     }
   ],

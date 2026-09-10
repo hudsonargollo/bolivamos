@@ -1,8 +1,8 @@
-# PRD — BoliVamos Themed Interactive Maps (mapz.com integration)
+# PRD — BoliVibes Themed Interactive Maps (mapz.com integration)
 
 | | |
 |---|---|
-| **Product** | BoliVamos (`apps/web` + `apps/mobile`) |
+| **Product** | BoliVibes (`apps/web` + `apps/mobile`) |
 | **Feature** | Themed interactive city maps of Santa Cruz de la Sierra |
 | **Author** | Hudson Argollo (drafted with Claude) |
 | **Date** | 2026-08-23 |
@@ -13,13 +13,13 @@
 
 ## 1. Summary
 
-BoliVamos' hero scene is a claymation three.js diorama of Santa Cruz: a fixed-orientation camera that pans horizontally between districts, clay-pill chips that "travel" the camera to a zone, an info popup anchored in 3D space, and bottom sheets for content. It sells the brand, but it is an illustration — it cannot answer "where actually is this restaurant?" or "what's near me?".
+BoliVibes' hero scene is a claymation three.js diorama of Santa Cruz: a fixed-orientation camera that pans horizontally between districts, clay-pill chips that "travel" the camera to a zone, an info popup anchored in 3D space, and bottom sheets for content. It sells the brand, but it is an illustration — it cannot answer "where actually is this restaurant?" or "what's near me?".
 
 This feature adds real, navigable maps powered by the **mapz.com API** (an OpenLayers-based tile + overlay service on OpenStreetMap data), themed so they read as the 2D sibling of the hero scene — same clay palette, same typography, same chip-and-sheet navigation — and populated with the curated Santa Cruz directory we scraped (30 attractions, 21 tours & transfers, 359 restaurants, 120 named streets of the casco viejo). Those specific places are the launch scope.
 
 ## 2. Goals
 
-The map must feel like BoliVamos, not like an embedded Google Map: warm cream ground, clay markers, Caprasimo headings, clay-pill district chips, bottom-sheet place details. It must put the whole curated directory on the map in useful category layers, connect places to the existing events/venues system (a venue pin opens its upcoming events), work in both apps (web route first, mobile via WebView), stay bilingual EN/ES, and respect mapz + OpenStreetMap attribution. Success at launch: a tourist can open Places, see the clay map of the Centro, tap a district chip to fly there, tap a marker, and get a place sheet with rating, category, and a route hint — in under 3 seconds on 4G.
+The map must feel like BoliVibes, not like an embedded Google Map: warm cream ground, clay markers, Caprasimo headings, clay-pill district chips, bottom-sheet place details. It must put the whole curated directory on the map in useful category layers, connect places to the existing events/venues system (a venue pin opens its upcoming events), work in both apps (web route first, mobile via WebView), stay bilingual EN/ES, and respect mapz + OpenStreetMap attribution. Success at launch: a tourist can open Places, see the clay map of the Centro, tap a district chip to fly there, tap a marker, and get a place sheet with rating, category, and a route hint — in under 3 seconds on 4G.
 
 ## 3. Non-goals (v1)
 
@@ -37,7 +37,7 @@ Turn-by-turn navigation; offline tiles; user-generated pins or reviews; indoor m
 
 - `apps/web` — Next.js 15 App Router on Cloudflare Workers (OpenNext), D1 (Drizzle) with `events`/`venues`, KV, Zod contracts in `packages/api-schema`.
 - `apps/mobile` — Expo Router (RN 0.76.9, NativeWind); tabs: Home, BoliPass, Companion, Profile.
-- Hero scene — `apps/web/public/bolivamos/scene.js` (+ `three-d-stage.js`, `bottom-sheet.js`, `page-ui.js`), `app/bolivamos-scene.css`. Its district navigation model and visual tokens are the spec for the map's chrome (see §7).
+- Hero scene — `apps/web/public/bolivibes/scene.js` (+ `three-d-stage.js`, `bottom-sheet.js`, `page-ui.js`), `app/bolivibes-scene.css`. Its district navigation model and visual tokens are the spec for the map's chrome (see §7).
 - Curated data — this package's `places.json`: attractions, tours, transfers, restaurants (TripAdvisor-sourced), streets (OpenAlfa/OSM). **No coordinates yet** — geocoding is Phase 0 (§9).
 
 ## 6. The mapz.com API — what we're integrating
@@ -48,7 +48,7 @@ Facts verified against mapz.com on 2026-08-23:
   `https://www.mapz.com/api/static/css/ol/7.3.0/ol.css` and `https://www.mapz.com/api/static/javascript/lib/7.3.0/ol.js` (adds `ol.mapz.*` helpers on top of standard OpenLayers).
 - **Raster tile endpoint (XYZ, EPSG:3857, note the `{-y}` TMS row):**
   `https://tiles.mapz.com/mapproxy/v1/{API_KEY}/tiles/1.0.0/{STYLE}/EPSG3857/{z}/{x}/{-y}.{jpeg|png}`
-- **Styles:** named base designs, e.g. `mapz_multicolor`, `mapz_shades_of_gray` (each also as `_hq` high-quality variant, and with/without labels). The full style catalog and whether mapz will produce a **custom BoliVamos design** is Open Question OQ-1.
+- **Styles:** named base designs, e.g. `mapz_multicolor`, `mapz_shades_of_gray` (each also as `_hq` high-quality variant, and with/without labels). The full style catalog and whether mapz will produce a **custom BoliVibes design** is Open Question OQ-1.
 - **Overlay features (from mapz's own examples):** markers with popup (sticky and click), marker **clustering** (+ expand), **GeoJSON** loading and styling (`ol.mapz.style.MapzStyle`, `baseIconUrl: https://www.mapz.com/map/marker/svg/`), route plotting, **geolocate/geotracker**, **search within a GeoJSON file**, layer switcher, zoom restriction, static/dynamic attribution controls. A separate **Print API** exists for print-resolution exports.
 - **Auth:** the API key is embedded in the tile URL. Demo keys via `demo.api.key@mapz.com`; permanent keys with a plan.
 - **Pricing (API/WMS/TMS):** €60/month for up to 250,000 map impressions (512×512), then €0.10 per 1,000; no minimum term, monthly cancellation; >10M impressions by custom quote.

@@ -1,5 +1,5 @@
 {
-  "name": "@bolivamos/notifications",
+  "name": "@bolivibes/notifications",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -13,7 +13,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@bolivamos/db": "workspace:*",
+    "@bolivibes/db": "workspace:*",
     "drizzle-orm": "catalog:"
   },
   "devDependencies": {

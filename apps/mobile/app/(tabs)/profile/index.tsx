@@ -3,13 +3,13 @@ import { View, Text, Pressable, ScrollView } from "react-native";
 import { router } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import * as SecureStore from "expo-secure-store";
-import type { AuthUser } from "@bolivamos/api-schema";
+import type { AuthUser } from "@bolivibes/api-schema";
 import { apiClient } from "@/lib/api";
 import { clearToken } from "@/lib/auth";
 import { useT, type Locale } from "@/lib/i18n";
 import { useTheme } from "@/lib/use-theme";
 
-const ONBOARDED_KEY = "bolivamos-onboarded";
+const ONBOARDED_KEY = "bolivibes-onboarded";
 
 function Segmented<T extends string>({ options, value, onChange }: { options: { key: T; label: string }[]; value: T; onChange: (v: T) => void }) {
   return (

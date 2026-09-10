@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { createDb, venues, events, eq } from "@bolivamos/db";
+import { createDb, venues, events, eq } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 import { isEventPast } from "@/lib/event-filters";
 import { SITE_URL } from "@/lib/site-url";
@@ -46,7 +46,7 @@ export async function generateMetadata({
   if (!venue) return {};
 
   const categoryLabel = CATEGORY_LABEL[venue.category]?.[locale] ?? venue.category;
-  const title = `${venue.name} — BoliVamos`;
+  const title = `${venue.name} — BoliVibes`;
   const description =
     locale === "en"
       ? `${venue.name} — ${categoryLabel} in Santa Cruz de la Sierra${venue.address ? `, ${venue.address}` : ""}.`
@@ -109,7 +109,7 @@ export default async function VenueDetailPage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "BoliVamos", item: SITE_URL },
+      { "@type": "ListItem", position: 1, name: "BoliVibes", item: SITE_URL },
       { "@type": "ListItem", position: 2, name: locale === "en" ? "Places" : "Lugares", item: lugaresUrl },
       { "@type": "ListItem", position: 3, name: venue.name, item: canonicalUrl },
     ],

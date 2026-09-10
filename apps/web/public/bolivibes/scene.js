@@ -22,7 +22,7 @@ const M = {
   trunk:  clay('clay-trunk',    0x6b5138),
 };
 
-const root = new THREE.Group(); root.name = 'bolivamos_sunrise';
+const root = new THREE.Group(); root.name = 'bolivibes_sunrise';
 // ground-plane clipping: the sun mark is invisible below the plaza and rises through the city
 stage._renderer.localClippingEnabled = true;
 const groundClip = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0.05);
@@ -378,7 +378,7 @@ sun.traverse(o => { if (o.isMesh && o !== halo) { o.material = o.material.clone(
 // (any project path or URL, square works best) and two lines of text.
 // Promo fliers pull from our own /api/events (via window.__DB, set by the
 // page's data loader) instead of a hardcoded list.
-let EVENTS = [{ t: 'BOLIVAMOS!', s: 'Santa Cruz de la Sierra', u: location.origin + '/' }];
+let EVENTS = [{ t: 'BOLIVIBES!', s: 'Santa Cruz de la Sierra', u: location.origin + '/' }];
 function refreshFlierEvents() {
   const db = window.__DB || [];
   const flat = db.flatMap(g => g.items).filter(e => e.u);
@@ -386,7 +386,7 @@ function refreshFlierEvents() {
   EVENTS = flat.slice(0, 12).map(e => ({ t: e.t, s: (e.h === 'TBA' ? '' : e.h + ' \u00b7 ') + e.v, u: e.u }));
 }
 refreshFlierEvents();
-window.addEventListener('bolivamos-data', refreshFlierEvents);
+window.addEventListener('bolivibes-data', refreshFlierEvents);
 let evIdx = 0;
 function makeBanner(w = 1280, h = 360) {
   const c = document.createElement('canvas'); c.width = w; c.height = h;
@@ -471,7 +471,7 @@ stage.addEventListener('click', ev => {
   ptrV.set(((ev.clientX - r.left) / r.width) * 2 - 1, -((ev.clientY - r.top) / r.height) * 2 + 1);
   rayc.setFromCamera(ptrV, stage._camera);
   if (dragMoved > 8) return;
-  const markHint = () => { try { localStorage.setItem('bolivamos_banner_hint_done', '1'); } catch (e) {} };
+  const markHint = () => { try { localStorage.setItem('bolivibes_banner_hint_done', '1'); } catch (e) {} };
   if (zep.visible && rayc.intersectObject(zep, true).length && zepEv.u) { markHint(); window.open(zepEv.u, '_blank'); }
   else if (plane.visible && rayc.intersectObject(plane, true).length && planeEv.u) { markHint(); window.open(planeEv.u, '_blank'); }
   else if (rayc.intersectObject(valla, true).length) vallaPick.click();
@@ -842,13 +842,13 @@ function drawNoche() {
     x.fillText(e.v.split(' \u00b7 ')[0], 976, y); x.textAlign = 'left';
   });
   x.fillStyle = '#7a8a5e'; x.font = '700 26px Figtree, system-ui, sans-serif';
-  x.fillText('BOLIVAMOS!', 48, 540);
+  x.fillText('BOLIVIBES!', 48, 540);
   nTex.needsUpdate = true;
 }
 drawNoche();
 if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawNoche);
 setInterval(drawNoche, 60000);
-window.addEventListener('bolivamos-data', drawNoche);
+window.addEventListener('bolivibes-data', drawNoche);
 const nMat = new THREE.MeshBasicMaterial({ map: nTex }); nMat.name = 'noche-panel';
 const nPanel = new THREE.Mesh(new THREE.PlaneGeometry(51, 29), nMat);
 nPanel.name = 'noche_panel'; nPanel.position.set(0, 36, 1.0); noche.add(nPanel);
@@ -891,7 +891,7 @@ function vallaImage(src) {
   im.src = src;
 }
 vallaPlaceholder();
-try { const saved = localStorage.getItem('bolivamos_valla_img'); if (saved) vallaImage(saved); } catch (e) {}
+try { const saved = localStorage.getItem('bolivibes_valla_img'); if (saved) vallaImage(saved); } catch (e) {}
 const vPanelMat = new THREE.MeshBasicMaterial({ map: vTex }); vPanelMat.name = 'valla-panel';
 const vPanel = new THREE.Mesh(new THREE.PlaneGeometry(39.5, 22.5), vPanelMat);
 vPanel.name = 'valla_panel'; vPanel.position.set(0, 36, 0.9); valla.add(vPanel);
@@ -903,13 +903,13 @@ document.body.appendChild(vallaPick);
 function vallaLoad(file) {
   if (!file || !file.type.startsWith('image/')) return;
   const rd = new FileReader();
-  rd.onload = () => { vallaImage(rd.result); try { localStorage.setItem('bolivamos_valla_img', rd.result); } catch (e) {} };
+  rd.onload = () => { vallaImage(rd.result); try { localStorage.setItem('bolivibes_valla_img', rd.result); } catch (e) {} };
   rd.readAsDataURL(file);
 }
 vallaPick.addEventListener('change', () => vallaLoad(vallaPick.files[0]));
 stage.addEventListener('dragover', e => e.preventDefault());
 stage.addEventListener('drop', e => { e.preventDefault(); vallaLoad(e.dataTransfer.files[0]); });
-window.addEventListener('bolivamos-lang', () => { try { zepBanner.show(zepEv); planeBanner.show(planeEv); drawNoche(); drawClima(); } catch (err) {} });
+window.addEventListener('bolivibes-lang', () => { try { zepBanner.show(zepEv); planeBanner.show(planeEv); drawNoche(); drawClima(); } catch (err) {} });
 
 // ---- sunrise ----
 const lerp = (a, b, t) => a + (b - a) * t;

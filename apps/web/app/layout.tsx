@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { SITE_URL } from "@/lib/site-url";
 
-const TITLE = "BoliVamos";
+const TITLE = "BoliVibes";
 const DESCRIPTION = "What to do in Santa Cruz de la Sierra — plus BoliPass 2-for-1 deals.";
 
 export const metadata: Metadata = {

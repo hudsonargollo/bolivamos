@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { createDb, events, venues, desc } from "@bolivamos/db";
+import { createDb, events, venues, desc } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 import { isEventPast } from "@/lib/event-filters";
 import { SITE_URL } from "@/lib/site-url";
@@ -37,8 +37,8 @@ export default async function HomePage() {
   const listedVenues = allVenues.filter((v) => v.slug).slice(0, 8);
 
   const jsonLd = [
-    { "@context": "https://schema.org", "@type": "Organization", name: "BoliVamos", url: SITE_URL, logo: `${SITE_URL}/favicon-512.png` },
-    { "@context": "https://schema.org", "@type": "WebSite", name: "BoliVamos", url: SITE_URL },
+    { "@context": "https://schema.org", "@type": "Organization", name: "BoliVibes", url: SITE_URL, logo: `${SITE_URL}/favicon-512.png` },
+    { "@context": "https://schema.org", "@type": "WebSite", name: "BoliVibes", url: SITE_URL },
   ];
 
   return (

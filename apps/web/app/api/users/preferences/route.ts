@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { updatePreferencesRequestSchema, userPrefsKey } from "@bolivamos/api-schema";
+import { updatePreferencesRequestSchema, userPrefsKey } from "@bolivibes/api-schema";
 import { cf } from "@/lib/cloudflare";
 import { requireSession } from "@/lib/session";
 import { toErrorResponse } from "@/lib/api-errors";
@@ -10,7 +10,7 @@ export async function PUT(request: Request) {
     const body = updatePreferencesRequestSchema.parse(await request.json());
 
     const { env } = cf();
-    await env.BOLIVAMOS_KV.put(userPrefsKey(session.userId), JSON.stringify(body.categories));
+    await env.BOLIVIBES_KV.put(userPrefsKey(session.userId), JSON.stringify(body.categories));
 
     return NextResponse.json({ ok: true });
   } catch (err) {

@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { View, Text, FlatList, Pressable, ScrollView, Image, TextInput, Modal } from "react-native";
 import { router } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-import type { EventDto, EventFilter } from "@bolivamos/api-schema";
+import type { EventDto, EventFilter } from "@bolivibes/api-schema";
 import { apiClient, baseUrl } from "@/lib/api";
 import { useT, type StringKey } from "@/lib/i18n";
 

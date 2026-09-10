@@ -44,10 +44,10 @@ importers:
 
   apps/cron-worker:
     dependencies:
-      '@bolivamos/db':
+      '@bolivibes/db':
         specifier: workspace:*
         version: link:../../packages/db
-      '@bolivamos/notifications':
+      '@bolivibes/notifications':
         specifier: workspace:*
         version: link:../../packages/notifications
       drizzle-orm:
@@ -69,13 +69,13 @@ importers:
       '@babel/runtime':
         specifier: ^7.26.0
         version: 7.29.7
-      '@bolivamos/api-client':
+      '@bolivibes/api-client':
         specifier: workspace:*
         version: link:../../packages/api-client
-      '@bolivamos/api-schema':
+      '@bolivibes/api-schema':
         specifier: workspace:*
         version: link:../../packages/api-schema
-      '@bolivamos/design-tokens':
+      '@bolivibes/design-tokens':
         specifier: workspace:*
         version: link:../../packages/design-tokens
       '@expo-google-fonts/archivo':
@@ -199,19 +199,19 @@ importers:
 
   apps/web:
     dependencies:
-      '@bolivamos/ai':
+      '@bolivibes/ai':
         specifier: workspace:*
         version: link:../../packages/ai
-      '@bolivamos/api-schema':
+      '@bolivibes/api-schema':
         specifier: workspace:*
         version: link:../../packages/api-schema
-      '@bolivamos/db':
+      '@bolivibes/db':
         specifier: workspace:*
         version: link:../../packages/db
-      '@bolivamos/design-tokens':
+      '@bolivibes/design-tokens':
         specifier: workspace:*
         version: link:../../packages/design-tokens
-      '@bolivamos/notifications':
+      '@bolivibes/notifications':
         specifier: workspace:*
         version: link:../../packages/notifications
       drizzle-orm:
@@ -275,7 +275,7 @@ importers:
 
   packages/ai:
     dependencies:
-      '@bolivamos/api-schema':
+      '@bolivibes/api-schema':
         specifier: workspace:*
         version: link:../api-schema
       zod:
@@ -288,7 +288,7 @@ importers:
 
   packages/api-client:
     dependencies:
-      '@bolivamos/api-schema':
+      '@bolivibes/api-schema':
         specifier: workspace:*
         version: link:../api-schema
     devDependencies:
@@ -333,7 +333,7 @@ importers:
 
   packages/notifications:
     dependencies:
-      '@bolivamos/db':
+      '@bolivibes/db':
         specifier: workspace:*
         version: link:../db
       drizzle-orm:

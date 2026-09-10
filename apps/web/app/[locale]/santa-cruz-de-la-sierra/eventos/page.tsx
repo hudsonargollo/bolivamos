@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { createDb, events, desc } from "@bolivamos/db";
-import { slugify } from "@bolivamos/db";
+import { createDb, events, desc } from "@bolivibes/db";
+import { slugify } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 import { isEventPast } from "@/lib/event-filters";
 import { SITE_URL } from "@/lib/site-url";
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: L
   const t = COPY[locale];
   const path = locale === "en" ? "/en/santa-cruz-de-la-sierra/eventos" : "/santa-cruz-de-la-sierra/eventos";
   return {
-    title: `${t.title} — BoliVamos`,
+    title: `${t.title} — BoliVibes`,
     description: t.desc,
     alternates: {
       canonical: `${SITE_URL}${path}`,

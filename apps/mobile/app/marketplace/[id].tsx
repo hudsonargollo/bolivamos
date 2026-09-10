@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { View, Text, ScrollView, Pressable, ActivityIndicator, Image } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import * as WebBrowser from "expo-web-browser";
-import type { ProductDto, OrderPaymentMethod, CreateOrderResponse } from "@bolivamos/api-schema";
+import type { ProductDto, OrderPaymentMethod, CreateOrderResponse } from "@bolivibes/api-schema";
 import { apiClient } from "@/lib/api";
 import { useT } from "@/lib/i18n";
 

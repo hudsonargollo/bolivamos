@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { AuthResponse } from "@bolivamos/api-schema";
+import type { AuthResponse } from "@bolivibes/api-schema";
 
 const ROLE_REDIRECT: Record<AuthResponse["user"]["role"], string> = {
   admin: "/admin",

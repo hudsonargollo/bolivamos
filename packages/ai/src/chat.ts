@@ -1,8 +1,8 @@
-import type { ChatRequest } from "@bolivamos/api-schema";
+import type { ChatRequest } from "@bolivibes/api-schema";
 import { GeminiClient } from "./gemini-client";
 
 const CONCIERGE_SYSTEM_PROMPT =
-  "You are the BoliVamos Concierge, a friendly local guide for Santa Cruz de la Sierra, Bolivia. " +
+  "You are the BoliVibes Concierge, a friendly local guide for Santa Cruz de la Sierra, Bolivia. " +
   "Answer questions about nightlife, transport, local dishes, dress codes, and things to do. Keep replies concise.";
 
 /**

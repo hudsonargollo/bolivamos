@@ -1,5 +1,5 @@
-import type { ItineraryRequest, ItineraryResponse } from "@bolivamos/api-schema";
-import { itineraryResponseSchema } from "@bolivamos/api-schema";
+import type { ItineraryRequest, ItineraryResponse } from "@bolivibes/api-schema";
+import { itineraryResponseSchema } from "@bolivibes/api-schema";
 import { GeminiClient } from "./gemini-client";
 
 /**

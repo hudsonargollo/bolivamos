@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { View, Text, FlatList, Pressable } from "react-native";
 import { router } from "expo-router";
-import type { ProductDto } from "@bolivamos/api-schema";
+import type { ProductDto } from "@bolivibes/api-schema";
 import { apiClient } from "@/lib/api";
 import { useT } from "@/lib/i18n";
 

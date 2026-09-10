@@ -6,7 +6,7 @@ import * as SecureStore from "expo-secure-store";
 import { useT, type StringKey } from "@/lib/i18n";
 import { setDefaultVisibility, type DefaultVisibility } from "@/lib/privacy-prefs";
 
-const ONBOARDED_KEY = "bolivamos-onboarded";
+const ONBOARDED_KEY = "bolivibes-onboarded";
 
 const OPTIONS: { key: DefaultVisibility; icon: keyof typeof Ionicons.glyphMap; titleKey: StringKey; bodyKey: StringKey }[] = [
   { key: "everyone", icon: "eye-outline", titleKey: "visEveryoneTitle", bodyKey: "visEveryoneBody" },

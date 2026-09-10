@@ -1,6 +1,6 @@
-import type { HighlightResponse } from "@bolivamos/api-schema";
-import { highlightResponseSchema } from "@bolivamos/api-schema";
-import type { Category } from "@bolivamos/api-schema";
+import type { HighlightResponse } from "@bolivibes/api-schema";
+import { highlightResponseSchema } from "@bolivibes/api-schema";
+import type { Category } from "@bolivibes/api-schema";
 import { GeminiClient } from "./gemini-client";
 
 /**

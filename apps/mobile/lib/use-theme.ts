@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useColorScheme as useNativeWindColorScheme } from "nativewind";
 import * as SecureStore from "expo-secure-store";
 
-const STORAGE_KEY = "bolivamos-color-scheme";
+const STORAGE_KEY = "bolivibes-color-scheme";
 type Scheme = "light" | "dark";
 
 /**

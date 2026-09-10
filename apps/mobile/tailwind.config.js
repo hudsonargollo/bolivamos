@@ -1,4 +1,4 @@
-const tailwindPreset = require("@bolivamos/design-tokens/tailwind-preset");
+const tailwindPreset = require("@bolivibes/design-tokens/tailwind-preset");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {

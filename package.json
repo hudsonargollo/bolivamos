@@ -1,5 +1,5 @@
 {
-  "name": "bolivamos",
+  "name": "bolivibes",
   "private": true,
   "packageManager": "pnpm@10.13.1",
   "engines": {
@@ -7,15 +7,15 @@
   },
   "scripts": {
     "dev": "turbo run dev",
-    "dev:web": "turbo run dev --filter=@bolivamos/web",
-    "dev:mobile": "turbo run dev --filter=@bolivamos/mobile",
-    "dev:cron": "turbo run dev --filter=@bolivamos/cron-worker",
+    "dev:web": "turbo run dev --filter=@bolivibes/web",
+    "dev:mobile": "turbo run dev --filter=@bolivibes/mobile",
+    "dev:cron": "turbo run dev --filter=@bolivibes/cron-worker",
     "build": "turbo run build",
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck",
-    "db:generate": "turbo run db:generate --filter=@bolivamos/db",
-    "db:migrate:local": "pnpm --filter @bolivamos/web exec wrangler d1 migrations apply bolivamos-db --local",
-    "db:migrate:remote": "pnpm --filter @bolivamos/web exec wrangler d1 migrations apply bolivamos-db --remote",
+    "db:generate": "turbo run db:generate --filter=@bolivibes/db",
+    "db:migrate:local": "pnpm --filter @bolivibes/web exec wrangler d1 migrations apply bolivibes-db --local",
+    "db:migrate:remote": "pnpm --filter @bolivibes/web exec wrangler d1 migrations apply bolivibes-db --remote",
     "clean": "turbo run clean && rm -rf node_modules"
   },
   "devDependencies": {

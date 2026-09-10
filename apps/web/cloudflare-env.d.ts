@@ -1,10 +1,10 @@
 /// <reference types="@cloudflare/workers-types" />
-// Placeholder — regenerate with `pnpm --filter @bolivamos/web run cf-typegen`
+// Placeholder — regenerate with `pnpm --filter @bolivibes/web run cf-typegen`
 // once the D1/KV bindings below are created and wired into wrangler.jsonc.
 // That command overwrites this file with the real `CloudflareEnv` interface.
 interface CloudflareEnv {
   DB: D1Database;
-  BOLIVAMOS_KV: KVNamespace;
+  BOLIVIBES_KV: KVNamespace;
   EVENT_ASSETS: R2Bucket;
   IMAGES: ImagesBinding;
   JWT_SECRET: string;

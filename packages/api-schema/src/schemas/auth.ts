@@ -23,7 +23,7 @@ export const authResponseSchema = z.object({
 export type AuthResponse = z.infer<typeof authResponseSchema>;
 
 export const devLoginRequestSchema = z.object({
-  email: z.string().email().default("dev@bolivamos.test"),
+  email: z.string().email().default("dev@bolivibes.test"),
   role: selfAssignableRoleSchema.default("visitor"),
 });
 export type DevLoginRequest = z.infer<typeof devLoginRequestSchema>;

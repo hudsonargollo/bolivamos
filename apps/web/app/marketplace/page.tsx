@@ -1,5 +1,5 @@
-import { createDb, products } from "@bolivamos/db";
-import { eq } from "@bolivamos/db";
+import { createDb, products } from "@bolivibes/db";
+import { eq } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 import "../admin/admin.css";
 

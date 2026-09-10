@@ -21,7 +21,7 @@ config.resolver.nodeModulesPaths = [
 config.resolver.unstable_enableSymlinks = true;
 
 // Needed to resolve workspace packages' package.json "exports" subpaths
-// (e.g. @bolivamos/design-tokens/native) — off by default on this Metro version.
+// (e.g. @bolivibes/design-tokens/native) — off by default on this Metro version.
 config.resolver.unstable_enablePackageExports = true;
 // This version's default condition set is ['require', 'import'] only, which
 // makes dual-published packages like jose resolve their Node build (pulling

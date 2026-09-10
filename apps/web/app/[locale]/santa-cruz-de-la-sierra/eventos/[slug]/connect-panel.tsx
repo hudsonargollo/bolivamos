@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { AttendeeDto } from "@bolivamos/api-schema";
+import type { AttendeeDto } from "@bolivibes/api-schema";
 
 const pill = {
   fontWeight: 700,

@@ -1,5 +1,5 @@
-import { createDb, orders, products, users } from "@bolivamos/db";
-import { desc } from "@bolivamos/db";
+import { createDb, orders, products, users } from "@bolivibes/db";
+import { desc } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 import { confirmOrder, cancelOrder } from "../actions/orders";
 

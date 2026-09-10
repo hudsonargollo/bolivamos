@@ -1,5 +1,5 @@
-import { createDb, places } from "@bolivamos/db";
-import { eq } from "@bolivamos/db";
+import { createDb, places } from "@bolivibes/db";
+import { eq } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 import { verifyPlace } from "../actions/places";
 import { PLACE_LAYERS, layerLabel } from "./layer-labels";

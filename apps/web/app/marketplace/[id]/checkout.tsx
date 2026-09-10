@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { CreateOrderResponse, OrderPaymentMethod, ProductDto } from "@bolivamos/api-schema";
+import type { CreateOrderResponse, OrderPaymentMethod, ProductDto } from "@bolivibes/api-schema";
 
 export default function Checkout({ product }: { product: ProductDto }) {
   const [method, setMethod] = useState<OrderPaymentMethod>(product.priceUsd ? "stripe" : "qr_bolivia");

@@ -1,7 +1,7 @@
 "use server";
 
-import { eq } from "@bolivamos/db";
-import { createDb, users } from "@bolivamos/db";
+import { eq } from "@bolivibes/db";
+import { createDb, users } from "@bolivibes/db";
 import { revalidatePath } from "next/cache";
 import { cf } from "@/lib/cloudflare";
 import { requireAdminAction, formString, formOptionalString } from "./require-admin";

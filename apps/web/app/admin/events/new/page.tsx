@@ -1,4 +1,4 @@
-import { createDb, venues } from "@bolivamos/db";
+import { createDb, venues } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 import { createEvent } from "../../actions/events";
 

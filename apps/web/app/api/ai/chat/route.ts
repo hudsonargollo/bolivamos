@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
-import { eq } from "@bolivamos/db";
-import { GeminiClient, chatWithConcierge } from "@bolivamos/ai";
-import { chatRequestSchema, type ChatResponse } from "@bolivamos/api-schema";
-import { createDb, conciergeConversations, conciergeMessages } from "@bolivamos/db";
+import { eq } from "@bolivibes/db";
+import { GeminiClient, chatWithConcierge } from "@bolivibes/ai";
+import { chatRequestSchema, type ChatResponse } from "@bolivibes/api-schema";
+import { createDb, conciergeConversations, conciergeMessages } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 import { requireSession, SessionError } from "@/lib/session";
 import { toErrorResponse } from "@/lib/api-errors";

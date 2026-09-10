@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { eq } from "@bolivamos/db";
-import { createDb, users } from "@bolivamos/db";
-import { bolipassCheckoutRequestSchema, type BolipassCheckoutResponse } from "@bolivamos/api-schema";
+import { eq } from "@bolivibes/db";
+import { createDb, users } from "@bolivibes/db";
+import { bolipassCheckoutRequestSchema, type BolipassCheckoutResponse } from "@bolivibes/api-schema";
 import { cf } from "@/lib/cloudflare";
 import { requireSession } from "@/lib/session";
 import { toErrorResponse } from "@/lib/api-errors";

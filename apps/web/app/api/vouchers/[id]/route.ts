@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { createDb, vouchers } from "@bolivamos/db";
-import { eq } from "@bolivamos/db";
-import type { VoucherDto } from "@bolivamos/api-schema";
+import { createDb, vouchers } from "@bolivibes/db";
+import { eq } from "@bolivibes/db";
+import type { VoucherDto } from "@bolivibes/api-schema";
 import { cf } from "@/lib/cloudflare";
 
 export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {

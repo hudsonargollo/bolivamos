@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
-import { createDb, products } from "@bolivamos/db";
-import { eq } from "@bolivamos/db";
-import type { ProductDto } from "@bolivamos/api-schema";
+import { createDb, products } from "@bolivibes/db";
+import { eq } from "@bolivibes/db";
+import type { ProductDto } from "@bolivibes/api-schema";
 import { cf } from "@/lib/cloudflare";
 import "../../admin/admin.css";
 import Checkout from "./checkout";

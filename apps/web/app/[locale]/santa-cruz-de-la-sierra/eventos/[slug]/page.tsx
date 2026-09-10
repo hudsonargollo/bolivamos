@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { createDb, events, eq } from "@bolivamos/db";
+import { createDb, events, eq } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 import { getCurrentSessionRsc } from "@/lib/session-rsc";
 import { isEventPast } from "@/lib/event-filters";
@@ -38,7 +38,7 @@ export async function generateMetadata({
   const event = await getEvent(slug);
   if (!event) return {};
 
-  const title = `${event.title} — BoliVamos`;
+  const title = `${event.title} — BoliVibes`;
   const description =
     event.description ??
     (locale === "en"
@@ -132,7 +132,7 @@ export default async function EventDetailPage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "BoliVamos", item: SITE_URL },
+      { "@type": "ListItem", position: 1, name: "BoliVibes", item: SITE_URL },
       { "@type": "ListItem", position: 2, name: locale === "en" ? "Events" : "Eventos", item: eventosUrl },
       { "@type": "ListItem", position: 3, name: event.title, item: canonicalUrl },
     ],

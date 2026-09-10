@@ -1,5 +1,5 @@
-import { createDb } from "@bolivamos/db";
-import { sendWeeklyDigest, sendWeekendRoundup } from "@bolivamos/notifications";
+import { createDb } from "@bolivibes/db";
+import { sendWeeklyDigest, sendWeekendRoundup } from "@bolivibes/notifications";
 
 const TUESDAY_DIGEST_CRON = "0 13 * * 2";
 const WEEKEND_ROUNDUP_CRON = "0 13 * * 5";

@@ -1,10 +1,10 @@
 import type { ExpoConfig } from "expo/config";
 
 const config: ExpoConfig = {
-  name: "BoliVamos",
-  slug: "bolivamos",
+  name: "BoliVibes",
+  slug: "bolivibes",
   owner: "lobaoisthebest",
-  scheme: "bolivamos",
+  scheme: "bolivibes",
   version: "0.1.0",
   orientation: "portrait",
   icon: "./assets/icon.png",
@@ -17,10 +17,10 @@ const config: ExpoConfig = {
   assetBundlePatterns: ["**/*"],
   ios: {
     supportsTablet: true,
-    bundleIdentifier: "com.bolivamos.app",
+    bundleIdentifier: "com.bolivibes.app",
   },
   android: {
-    package: "com.bolivamos.app",
+    package: "com.bolivibes.app",
     adaptiveIcon: {
       foregroundImage: "./assets/adaptive-icon.png",
       backgroundColor: "#F4EEE2",

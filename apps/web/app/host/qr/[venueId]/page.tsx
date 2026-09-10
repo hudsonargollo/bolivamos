@@ -1,5 +1,5 @@
-import { eq } from "@bolivamos/db";
-import { createDb, venues } from "@bolivamos/db";
+import { eq } from "@bolivibes/db";
+import { createDb, venues } from "@bolivibes/db";
 import QRCode from "qrcode";
 import { notFound } from "next/navigation";
 import { cf } from "@/lib/cloudflare";
@@ -31,7 +31,7 @@ export default async function HostVenueQrPage({
       <img src={qrDataUrl} alt={`QR code for ${venue.name}`} className="h-64 w-64 rounded-lg border" />
       <a
         href={qrDataUrl}
-        download={`bolivamos-qr-${venue.id}.png`}
+        download={`bolivibes-qr-${venue.id}.png`}
         className="inline-block rounded-pill bg-boli-green px-5 py-2 text-white"
       >
         Download PNG

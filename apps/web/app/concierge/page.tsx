@@ -11,7 +11,7 @@ export default async function ConciergePage() {
   return (
     <div className="admin-root" style={{ minHeight: "100vh", padding: 24 }}>
       <div style={{ maxWidth: 640, margin: "0 auto" }}>
-        <h1 className="a-h1">BoliVamos Concierge</h1>
+        <h1 className="a-h1">BoliVibes Concierge</h1>
         <ConciergeChat />
       </div>
     </div>

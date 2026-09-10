@@ -1,4 +1,4 @@
-// jose (used by @bolivamos/api-schema's decodeSessionUnsafe) references the
+// jose (used by @bolivibes/api-schema's decodeSessionUnsafe) references the
 // global `crypto` object at module load time — React Native/Hermes has no
 // such global, so importing jose anywhere in the require graph threw
 // "Property 'crypto' doesn't exist" before this ever reached app code. This

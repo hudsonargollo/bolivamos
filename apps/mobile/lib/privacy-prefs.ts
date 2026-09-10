@@ -2,7 +2,7 @@ import * as SecureStore from "expo-secure-store";
 
 export type DefaultVisibility = "everyone" | "friends" | "ghost";
 
-const VISIBILITY_KEY = "bolivamos-default-visibility";
+const VISIBILITY_KEY = "bolivibes-default-visibility";
 
 /**
  * Set once during onboarding's privacy step. The real backend has no global

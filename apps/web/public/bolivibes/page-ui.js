@@ -46,10 +46,10 @@ async function loadDB() {
     DB = groupIntoWeek(flat);
   } catch (err) {
     DB = groupIntoWeek([]);
-    console.error('[bolivamos] failed to load events', err);
+    console.error('[bolivibes] failed to load events', err);
   }
   window.__DB = DB;
-  window.dispatchEvent(new CustomEvent('bolivamos-data'));
+  window.dispatchEvent(new CustomEvent('bolivibes-data'));
 }
 const dbReady = loadDB();
 // Used for e.t (event title) when it lands inside an HTML attribute (alt=)
@@ -91,7 +91,7 @@ function buildTicks() {
 buildTicks();
 dayTicks.addEventListener('click', e => { const b = e.target.closest('[data-day]'); if (!b) return; selDay = +b.dataset.day; weekendMode = false; buildTicks(); renderDB(); });
 let viewMode = 'mini';
-try { if (localStorage.getItem('bolivamos-view') === 'list') viewMode = 'list'; } catch (e) {}
+try { if (localStorage.getItem('bolivibes-view') === 'list') viewMode = 'list'; } catch (e) {}
 function miniCard(e, gi, ei) {
   const url = e.u;
   const img = e.img || null;
@@ -155,14 +155,14 @@ window.__setSection = s => {
   renderDB();
 };
 dbReady.then(renderDB);
-window.addEventListener('bolivamos-lang', () => { buildTicks(); renderDB(); });
-window.addEventListener('bolivamos-data', renderDB);
+window.addEventListener('bolivibes-lang', () => { buildTicks(); renderDB(); });
+window.addEventListener('bolivibes-data', renderDB);
 const viewListBtn = document.getElementById('viewList'), viewMiniBtn = document.getElementById('viewMini');
 function setView(m) {
   viewMode = m;
   viewListBtn.classList.toggle('active', m === 'list');
   viewMiniBtn.classList.toggle('active', m === 'mini');
-  try { localStorage.setItem('bolivamos-view', m); } catch (e) {}
+  try { localStorage.setItem('bolivibes-view', m); } catch (e) {}
   renderDB();
 }
 viewListBtn.addEventListener('click', () => setView('list'));
@@ -214,8 +214,8 @@ function buildLive() {
   liveStart(evs.length);
 }
 dbReady.then(buildLive);
-window.addEventListener('bolivamos-lang', buildLive);
-window.addEventListener('bolivamos-data', buildLive);
+window.addEventListener('bolivibes-lang', buildLive);
+window.addEventListener('bolivibes-data', buildLive);
 document.getElementById('liveDots').addEventListener('click', e => { const b = e.target.closest('.live-dot'); if (!b) return; liveShow(+b.dataset.i); liveStart(liveEvents().length); });
 document.getElementById('liveBanner').addEventListener('mouseenter', () => clearInterval(liveTimer));
 document.getElementById('liveBanner').addEventListener('mouseleave', () => liveStart(liveEvents().length));
@@ -234,7 +234,7 @@ async function loadPlaces() {
     PLACES = (geo.features || []).map(f => f.properties).filter(p => p.layer !== 'street_zone');
   } catch (err) {
     PLACES = [];
-    console.error('[bolivamos] failed to load places', err);
+    console.error('[bolivibes] failed to load places', err);
   }
   plLayer = LAYER_ORDER.find(l => PLACES.some(p => p.layer === l)) || null;
   renderPlaces();
@@ -282,7 +282,7 @@ document.getElementById('plTabs').addEventListener('click', e => { const b = e.t
 document.getElementById('plSubs').addEventListener('click', e => { const b = e.target.closest('[data-district]'); if (!b) return; plDistrict = b.dataset.district; plShown = 24; renderPlaces(); });
 document.getElementById('plSearch').addEventListener('input', e => { plQuery = e.target.value; plShown = 24; renderPlaces(); });
 document.getElementById('plMore').addEventListener('click', () => { plShown += 24; renderPlaces(); });
-window.addEventListener('bolivamos-lang', renderPlaces);
+window.addEventListener('bolivibes-lang', renderPlaces);
 
   const burger = document.getElementById('burger'), clayMenu = document.getElementById('clayMenu');
   const heroHeader = document.querySelector('.hero-header');
@@ -314,10 +314,10 @@ window.addEventListener('bolivamos-lang', renderPlaces);
     document.querySelectorAll('[data-i18n]').forEach(el => { const v = I18N[l][el.dataset.i18n]; if (v != null) el.innerHTML = v; });
     langEn.classList.toggle('active', l === 'en');
     langEs.classList.toggle('active', l === 'es');
-    try { localStorage.setItem('bolivamos-lang', l); } catch (e) {}
-    window.dispatchEvent(new CustomEvent('bolivamos-lang'));
+    try { localStorage.setItem('bolivibes-lang', l); } catch (e) {}
+    window.dispatchEvent(new CustomEvent('bolivibes-lang'));
   }
   langEn.addEventListener('click', () => setLang('en'));
   langEs.addEventListener('click', () => setLang('es'));
-  let savedLang = 'en'; try { if (localStorage.getItem('bolivamos-lang') === 'es') savedLang = 'es'; } catch (e) {}
+  let savedLang = 'en'; try { if (localStorage.getItem('bolivibes-lang') === 'es') savedLang = 'es'; } catch (e) {}
   setLang(savedLang);

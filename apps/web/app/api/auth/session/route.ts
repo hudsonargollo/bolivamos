@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
-import { createDb, users } from "@bolivamos/db";
-import { eq } from "@bolivamos/db";
+import { createDb, users } from "@bolivibes/db";
+import { eq } from "@bolivibes/db";
 import { getCurrentSession } from "@/lib/session";
 import { cf } from "@/lib/cloudflare";
-import type { AuthUser } from "@bolivamos/api-schema";
+import type { AuthUser } from "@bolivibes/api-schema";
 
 export async function GET(request: Request) {
   const session = await getCurrentSession(request);

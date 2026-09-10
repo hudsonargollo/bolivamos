@@ -1,6 +1,6 @@
 import { notFound, redirect } from "next/navigation";
-import { eq } from "@bolivamos/db";
-import { createDb, connectRequests, users } from "@bolivamos/db";
+import { eq } from "@bolivibes/db";
+import { createDb, connectRequests, users } from "@bolivibes/db";
 import { getCurrentSessionRsc } from "@/lib/session-rsc";
 import { cf } from "@/lib/cloudflare";
 import MessageThread from "./message-thread";

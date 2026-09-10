@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { createDb, events } from "@bolivamos/db";
-import { eq } from "@bolivamos/db";
-import type { EventDto } from "@bolivamos/api-schema";
+import { createDb, events } from "@bolivibes/db";
+import { eq } from "@bolivibes/db";
+import type { EventDto } from "@bolivibes/api-schema";
 import { cf } from "@/lib/cloudflare";
 import { getCurrentSession } from "@/lib/session";
 

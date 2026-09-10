@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { eq } from "@bolivamos/db";
-import { createDb, redemptions } from "@bolivamos/db";
+import { eq } from "@bolivibes/db";
+import { createDb, redemptions } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 import { requireSession } from "@/lib/session";
 import { toErrorResponse } from "@/lib/api-errors";

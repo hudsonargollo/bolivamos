@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { View, ActivityIndicator } from "react-native";
 import { Redirect } from "expo-router";
 import * as SecureStore from "expo-secure-store";
-import { decodeSessionUnsafe } from "@bolivamos/api-schema";
+import { decodeSessionUnsafe } from "@bolivibes/api-schema";
 import { getStoredToken, hasLikelyValidSession } from "@/lib/auth";
 
-const ONBOARDED_KEY = "bolivamos-onboarded";
+const ONBOARDED_KEY = "bolivibes-onboarded";
 
 type Destination = "/(tabs)/feed" | "/host-redirect" | "/(onboarding)" | "/(auth)/login";
 

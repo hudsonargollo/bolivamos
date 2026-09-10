@@ -35,6 +35,9 @@ apps/mobile/android/
 # cloudflare
 .wrangler/
 
+# imports
+imports/brandguide-ui/
+
 # misc
 .claude/
 .DS_Store

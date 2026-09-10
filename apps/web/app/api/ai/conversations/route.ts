@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { eq, desc } from "@bolivamos/db";
-import { createDb, conciergeConversations } from "@bolivamos/db";
-import type { ConciergeConversationDto } from "@bolivamos/api-schema";
+import { eq, desc } from "@bolivibes/db";
+import { createDb, conciergeConversations } from "@bolivibes/db";
+import type { ConciergeConversationDto } from "@bolivibes/api-schema";
 import { cf } from "@/lib/cloudflare";
 import { requireSession } from "@/lib/session";
 import { toErrorResponse } from "@/lib/api-errors";

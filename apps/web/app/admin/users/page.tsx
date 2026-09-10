@@ -1,4 +1,4 @@
-import { createDb, users } from "@bolivamos/db";
+import { createDb, users } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 import { updateUserRole, setUserVip } from "../actions/users";
 

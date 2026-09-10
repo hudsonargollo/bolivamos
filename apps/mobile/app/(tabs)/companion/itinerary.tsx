@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { View, Text, Pressable, ScrollView, ActivityIndicator } from "react-native";
-import type { Category, ItineraryResponse } from "@bolivamos/api-schema";
+import type { Category, ItineraryResponse } from "@bolivibes/api-schema";
 import { apiClient } from "@/lib/api";
 import { useT } from "@/lib/i18n";
 

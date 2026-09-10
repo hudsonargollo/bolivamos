@@ -1,5 +1,5 @@
-import { or, and, eq } from "@bolivamos/db";
-import { userBlocks, type Db } from "@bolivamos/db";
+import { or, and, eq } from "@bolivibes/db";
+import { userBlocks, type Db } from "@bolivibes/db";
 
 /** True if either user has blocked the other — used to hide attendees, refuse
  * connect requests, and lock out messaging between blocked pairs. */

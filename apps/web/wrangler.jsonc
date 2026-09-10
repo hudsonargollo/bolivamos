@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "bolivamos-web",
+  "name": "bolivibes-web",
   "account_id": "cb27e1a67198789eb42d11ab90737652",
   "main": ".open-next/worker.js",
   // Update to the actual date you first deploy — must be >= 2024-09-23 for @opennextjs/cloudflare.
@@ -18,7 +18,7 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "bolivamos-db",
+      "database_name": "bolivibes-db",
       "database_id": "d34573dd-84d2-4a31-be63-b011fbe3bc29",
       "migrations_dir": "../../packages/db/migrations"
     }
@@ -26,7 +26,7 @@
   // Created in the ClubeMKT Cloudflare account (cb27e1a67198789eb42d11ab90737652).
   "kv_namespaces": [
     {
-      "binding": "BOLIVAMOS_KV",
+      "binding": "BOLIVIBES_KV",
       "id": "0c314347008243f8a51afffc3aa3e404"
     }
   ],
@@ -34,7 +34,7 @@
   "r2_buckets": [
     {
       "binding": "EVENT_ASSETS",
-      "bucket_name": "bolivamos-event-assets"
+      "bucket_name": "bolivibes-event-assets"
     }
   ],
   // Used to crop/resize/re-encode admin-pasted event banner images before

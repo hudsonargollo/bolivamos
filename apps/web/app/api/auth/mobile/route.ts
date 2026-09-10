@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { createRemoteJWKSet, jwtVerify } from "jose";
-import { mobileGoogleLoginRequestSchema, type AuthResponse } from "@bolivamos/api-schema";
+import { mobileGoogleLoginRequestSchema, type AuthResponse } from "@bolivibes/api-schema";
 import { cf } from "@/lib/cloudflare";
 import { issueSessionForUser } from "@/lib/issue-session";
 

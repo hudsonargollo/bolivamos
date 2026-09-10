@@ -1,4 +1,4 @@
-import { createDb, venues, vouchers } from "@bolivamos/db";
+import { createDb, venues, vouchers } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 import { setVoucherActive } from "../actions/vouchers";
 

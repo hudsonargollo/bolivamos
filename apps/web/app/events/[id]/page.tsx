@@ -1,5 +1,5 @@
 import { notFound, permanentRedirect } from "next/navigation";
-import { createDb, events, eq } from "@bolivamos/db";
+import { createDb, events, eq } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 
 /**

@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { createDb, users } from "@bolivamos/db";
-import { eq } from "@bolivamos/db";
-import type { AuthUser } from "@bolivamos/api-schema";
+import { createDb, users } from "@bolivibes/db";
+import { eq } from "@bolivibes/db";
+import type { AuthUser } from "@bolivibes/api-schema";
 import { cf } from "@/lib/cloudflare";
 import { requireSession } from "@/lib/session";
 import { toErrorResponse } from "@/lib/api-errors";

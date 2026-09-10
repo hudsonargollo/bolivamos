@@ -1,5 +1,5 @@
 {
-  "name": "@bolivamos/mobile",
+  "name": "@bolivibes/mobile",
   "version": "0.0.0",
   "private": true,
   "main": "index.js",
@@ -14,9 +14,9 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.26.0",
-    "@bolivamos/api-client": "workspace:*",
-    "@bolivamos/api-schema": "workspace:*",
-    "@bolivamos/design-tokens": "workspace:*",
+    "@bolivibes/api-client": "workspace:*",
+    "@bolivibes/api-schema": "workspace:*",
+    "@bolivibes/design-tokens": "workspace:*",
     "@expo-google-fonts/archivo": "^0.4.2",
     "@expo-google-fonts/caprasimo": "^0.4.0",
     "@expo/metro-runtime": "~6.1.2",

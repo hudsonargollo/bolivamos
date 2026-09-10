@@ -1,6 +1,6 @@
-import { eq } from "@bolivamos/db";
-import { createDb, users, type User } from "@bolivamos/db";
-import { hashPassword, verifyPassword, type Role } from "@bolivamos/api-schema";
+import { eq } from "@bolivibes/db";
+import { createDb, users, type User } from "@bolivibes/db";
+import { hashPassword, verifyPassword, type Role } from "@bolivibes/api-schema";
 import { cf } from "./cloudflare";
 
 export interface CreateUserWithPasswordInput {

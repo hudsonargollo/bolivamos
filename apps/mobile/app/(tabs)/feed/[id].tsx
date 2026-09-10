@@ -3,7 +3,7 @@ import { View, Text, ScrollView, Image, Pressable, ActivityIndicator, Linking } 
 import { useLocalSearchParams, router } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
 import { Ionicons } from "@expo/vector-icons";
-import type { EventDto, AttendeeDto, AuthUser } from "@bolivamos/api-schema";
+import type { EventDto, AttendeeDto, AuthUser } from "@bolivibes/api-schema";
 import { apiClient, baseUrl } from "@/lib/api";
 import { useT } from "@/lib/i18n";
 

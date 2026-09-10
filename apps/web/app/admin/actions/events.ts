@@ -1,7 +1,7 @@
 "use server";
 
-import { eq } from "@bolivamos/db";
-import { createDb, events } from "@bolivamos/db";
+import { eq } from "@bolivibes/db";
+import { createDb, events } from "@bolivibes/db";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { cf } from "@/lib/cloudflare";

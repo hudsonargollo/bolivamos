@@ -1,6 +1,6 @@
 import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-import { colors } from "@bolivamos/design-tokens";
+import { colors } from "@bolivibes/design-tokens";
 import { useT } from "@/lib/i18n";
 import { useTheme } from "@/lib/use-theme";
 

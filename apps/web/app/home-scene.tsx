@@ -1,11 +1,11 @@
 "use client";
 
 import Script from "next/script";
-import "./bolivamos-scene.css";
+import "./bolivibes-scene.css";
 
 const BODY_HTML = `
 <div class="hero-wrap">
-<three-d-stage name="bolivamos-sunrise" background="linear-gradient(#232840 0%, #2e2f45 58%, #45364a 100%)"></three-d-stage>
+<three-d-stage name="bolivibes-sunrise" background="linear-gradient(#232840 0%, #2e2f45 58%, #45364a 100%)"></three-d-stage>
 <header class="hero-header">
   <a class="wordmark" href="#"><span class="wm-boli">BOLI</span><span class="wm-vamos">VAMOS</span><span class="wm-excl">!</span></a>
   <nav class="clay-nav">
@@ -94,10 +94,10 @@ export default function HomeScene() {
   return (
     <>
       <div dangerouslySetInnerHTML={{ __html: BODY_HTML }} />
-      <Script src="/bolivamos/three-d-stage.js" strategy="afterInteractive" />
-      <Script src="/bolivamos/bottom-sheet.js" strategy="afterInteractive" />
-      <Script src="/bolivamos/page-ui.js" strategy="afterInteractive" />
-      <Script src="/bolivamos/scene.js" type="module" strategy="afterInteractive" />
+      <Script src="/bolivibes/three-d-stage.js" strategy="afterInteractive" />
+      <Script src="/bolivibes/bottom-sheet.js" strategy="afterInteractive" />
+      <Script src="/bolivibes/page-ui.js" strategy="afterInteractive" />
+      <Script src="/bolivibes/scene.js" type="module" strategy="afterInteractive" />
     </>
   );
 }

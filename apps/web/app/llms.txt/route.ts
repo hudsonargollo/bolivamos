@@ -1,4 +1,4 @@
-import { createDb, events, slugify } from "@bolivamos/db";
+import { createDb, events, slugify } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 import { isEventPast } from "@/lib/event-filters";
 import { SITE_URL } from "@/lib/site-url";
@@ -24,7 +24,7 @@ export async function GET() {
     .map((c) => `- [${c}](${SITE_URL}/santa-cruz-de-la-sierra/eventos/categoria/${slugify(c)})`)
     .join("\n");
 
-  const body = `# BoliVamos
+  const body = `# BoliVibes
 
 > Local discovery app for Santa Cruz de la Sierra, Bolivia — events, venues, and a BoliPass
 > membership with 2-for-1 deals at gastronomy, nightlife, and tour partners.

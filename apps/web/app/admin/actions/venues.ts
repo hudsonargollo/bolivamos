@@ -1,8 +1,8 @@
 "use server";
 
-import { eq } from "@bolivamos/db";
-import { createDb, venues } from "@bolivamos/db";
-import { categorySchema, venueTierSchema } from "@bolivamos/api-schema";
+import { eq } from "@bolivibes/db";
+import { createDb, venues } from "@bolivibes/db";
+import { categorySchema, venueTierSchema } from "@bolivibes/api-schema";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { cf } from "@/lib/cloudflare";

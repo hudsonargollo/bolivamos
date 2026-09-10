@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { createDb, events, generateUniqueSlug } from "@bolivamos/db";
-import { and, desc, eq, gte, isNull, lt, or } from "@bolivamos/db";
-import { createEventRequestSchema, listEventsQuerySchema, type EventDto } from "@bolivamos/api-schema";
+import { createDb, events, generateUniqueSlug } from "@bolivibes/db";
+import { and, desc, eq, gte, isNull, lt, or } from "@bolivibes/db";
+import { createEventRequestSchema, listEventsQuerySchema, type EventDto } from "@bolivibes/api-schema";
 import { cf } from "@/lib/cloudflare";
 import { getCurrentSession, requireRole } from "@/lib/session";
 import { toErrorResponse } from "@/lib/api-errors";

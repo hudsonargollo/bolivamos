@@ -1,8 +1,8 @@
 "use server";
 
-import { eq } from "@bolivamos/db";
-import { createDb, paymentMethods } from "@bolivamos/db";
-import { manualPaymentMethodSchema } from "@bolivamos/api-schema";
+import { eq } from "@bolivibes/db";
+import { createDb, paymentMethods } from "@bolivibes/db";
+import { manualPaymentMethodSchema } from "@bolivibes/api-schema";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { cf } from "@/lib/cloudflare";

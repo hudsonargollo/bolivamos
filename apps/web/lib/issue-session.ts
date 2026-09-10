@@ -1,6 +1,6 @@
-import { eq } from "@bolivamos/db";
-import { createDb, users, type User } from "@bolivamos/db";
-import { signSession, sessionKey, type Role } from "@bolivamos/api-schema";
+import { eq } from "@bolivibes/db";
+import { createDb, users, type User } from "@bolivibes/db";
+import { signSession, sessionKey, type Role } from "@bolivibes/api-schema";
 import { cf } from "./cloudflare";
 
 export interface IssueSessionInput {
@@ -42,7 +42,7 @@ export async function issueSessionForUser(input: IssueSessionInput): Promise<{ t
     env.JWT_SECRET,
   );
 
-  await env.BOLIVAMOS_KV.put(
+  await env.BOLIVIBES_KV.put(
     sessionKey(token),
     JSON.stringify({
       userId: user.id,

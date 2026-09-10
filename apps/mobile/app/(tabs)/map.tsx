@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { View, ActivityIndicator, Share } from "react-native";
 import { WebView, type WebViewMessageEvent } from "react-native-webview";
 import { baseUrl } from "@/lib/api";
-import { colors } from "@bolivamos/design-tokens";
+import { colors } from "@bolivibes/design-tokens";
 
 /**
  * Embeds the themed 3D map (apps/web/app/city3d) via WebView rather than

@@ -1,5 +1,5 @@
-import { sql, eq } from "@bolivamos/db";
-import { createDb, redemptions, vouchers, venues } from "@bolivamos/db";
+import { sql, eq } from "@bolivibes/db";
+import { createDb, redemptions, vouchers, venues } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 import { getCurrentSessionRsc } from "@/lib/session-rsc";
 

@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "name": "bolivamos-seed-pois",
+  "name": "bolivibes-seed-pois",
   "note": "SEED DATA ONLY — coordinates are approximate (from general knowledge, not geocoded). Every feature is verified:false and MUST be corrected in the Phase 0 geocoding + QA pass before production use.",
   "features": [
     {

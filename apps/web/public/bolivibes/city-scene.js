@@ -1,5 +1,5 @@
 // Free-roam 3D Santa Cruz — walks the same procedural clay-building
-// technique as the hero scene (apps/web/public/bolivamos/scene.js: boxes/
+// technique as the hero scene (apps/web/public/bolivibes/scene.js: boxes/
 // cylinders + high-roughness MeshStandardMaterial, no external 3D assets)
 // but over the real geocoded places table (GET /api/places) instead of a
 // fixed hand-placed skyline, with free navigation instead of the hero's
@@ -7,7 +7,7 @@
 //
 // Navigation is drag-to-look (mouse or touch) + an on-screen joystick for
 // movement — deliberately NOT the Pointer Lock API. Two reasons: (1) it
-// doesn't work on touch devices at all, and BoliVamos is mobile-first
+// doesn't work on touch devices at all, and BoliVibes is mobile-first
 // (docs/themed-maps/PRD-themed-interactive-maps.md §4); (2) it needs a
 // same-page, non-synthetic user gesture that automated browser testing
 // can't reliably trigger. Drag-to-look works identically on desktop and
@@ -19,12 +19,12 @@
 // transfer/regional rows are either non-geocodable services or too far away
 // for a walkable scene.
 
-// PRD §7.6: bilingual chrome. Reads the same "bolivamos-lang" preference the
+// PRD §7.6: bilingual chrome. Reads the same "bolivibes-lang" preference the
 // hero scene's EN/ES pill writes to localStorage (see city-host.tsx for the
 // matching dictionary powering the page's static JSX chrome).
 let LANG = 'en';
 try {
-  if (localStorage.getItem('bolivamos-lang') === 'es') LANG = 'es';
+  if (localStorage.getItem('bolivibes-lang') === 'es') LANG = 'es';
 } catch (e) {
   // ignore — EN default is fine
 }
@@ -526,7 +526,7 @@ document.getElementById('place-sheet-close').addEventListener('click', closePlac
 placeSheetBackdrop.addEventListener('click', closePlaceSheet);
 placeSheetShare.addEventListener('click', async () => {
   const place = sheetPlace;
-  const text = place ? `${place.name} — Santa Cruz de la Sierra (BoliVamos)` : 'BoliVamos';
+  const text = place ? `${place.name} — Santa Cruz de la Sierra (BoliVibes)` : 'BoliVibes';
   // Inside the mobile app's WebView (apps/mobile/app/(tabs)/map.tsx), forward
   // to the native share sheet — WebViews don't implement the Web Share API,
   // so navigator.share would silently no-op here.

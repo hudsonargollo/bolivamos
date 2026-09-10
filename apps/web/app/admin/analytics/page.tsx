@@ -1,4 +1,4 @@
-import { eq } from "@bolivamos/db";
+import { eq } from "@bolivibes/db";
 import {
   createDb,
   users,
@@ -12,7 +12,7 @@ import {
   userReports,
   pushCampaigns,
   appSettings,
-} from "@bolivamos/db";
+} from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 import { setBolipassPrice } from "../actions/settings";
 import { BOLIPASS_PRICE_KEY } from "../actions/settings-constants";

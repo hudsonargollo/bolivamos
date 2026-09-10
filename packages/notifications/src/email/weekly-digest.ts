@@ -1,5 +1,5 @@
-import type { Db } from "@bolivamos/db";
-import { users } from "@bolivamos/db";
+import type { Db } from "@bolivibes/db";
+import { users } from "@bolivibes/db";
 import { sendEmail } from "./resend-client";
 
 /**

@@ -1,4 +1,4 @@
-import { colors, darkColors } from "@bolivamos/design-tokens";
+import { colors, darkColors } from "@bolivibes/design-tokens";
 
 /** Shared Stack header colors, driven by the active color scheme. */
 export function headerScreenOptions(scheme: "light" | "dark") {

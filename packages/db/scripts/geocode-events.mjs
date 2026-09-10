@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Geocodes events.venue_name into events.lat/lng (migration 0003) so the
-// themed map (apps/web/public/bolivamos/city-scene.js) can place real event
+// themed map (apps/web/public/bolivibes/city-scene.js) can place real event
 // markers. Same Nominatim pipeline as packages/db/scripts/geocode-places.mjs
 // — see that file for the rate-limit/verification rationale. Deduped by
 // venue_name first (45 distinct venues across 59 events as of 2026-08-24)
@@ -10,7 +10,7 @@
 // (events live in the app's live database, not a static JSON file like
 // places.json) and writes an UPDATE statement per event to
 // packages/db/seeds/events.sql — apply with:
-//   wrangler d1 execute bolivamos-db --remote --file=packages/db/seeds/events.sql
+//   wrangler d1 execute bolivibes-db --remote --file=packages/db/seeds/events.sql
 //
 // Run: node packages/db/scripts/geocode-events.mjs
 
@@ -26,7 +26,7 @@ const SQL_OUT_PATH = path.join(SEEDS_DIR, "events.sql");
 const WEB_DIR = path.join(__dirname, "../../../apps/web");
 
 const NOMINATIM_URL = "https://nominatim.openstreetmap.org/search";
-const USER_AGENT = "BoliVamos-ThemedMaps/1.0 (+https://bolivamos.app; contact: hudson@tektone.com.br)";
+const USER_AGENT = "BoliVibes-ThemedMaps/1.0 (+https://bolivibes.app; contact: hudson@tektone.com.br)";
 const REQUEST_DELAY_MS = 1100;
 const CITY_SUFFIX = "Santa Cruz de la Sierra, Bolivia";
 
@@ -57,7 +57,7 @@ function sqlString(v) {
 async function main() {
   console.log("Fetching events from remote D1...");
   const raw = execSync(
-    `npx wrangler d1 execute bolivamos-db --remote --command "SELECT id, venue_name FROM events WHERE venue_name IS NOT NULL" --json`,
+    `npx wrangler d1 execute bolivibes-db --remote --command "SELECT id, venue_name FROM events WHERE venue_name IS NOT NULL" --json`,
     { cwd: WEB_DIR, env: { ...process.env, CLOUDFLARE_ACCOUNT_ID: "cb27e1a67198789eb42d11ab90737652" }, maxBuffer: 10 * 1024 * 1024 },
   );
   const events = JSON.parse(raw.toString())[0].results;

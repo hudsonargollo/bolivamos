@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
-import { or, eq } from "@bolivamos/db";
-import { createDb, connectRequests, events, users } from "@bolivamos/db";
+import { or, eq } from "@bolivibes/db";
+import { createDb, connectRequests, events, users } from "@bolivibes/db";
 import { getCurrentSessionRsc } from "@/lib/session-rsc";
 import { cf } from "@/lib/cloudflare";
 import RequestActions from "./request-actions";

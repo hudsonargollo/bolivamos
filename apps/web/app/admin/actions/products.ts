@@ -1,8 +1,8 @@
 "use server";
 
-import { eq } from "@bolivamos/db";
-import { createDb, products } from "@bolivamos/db";
-import { productTypeSchema } from "@bolivamos/api-schema";
+import { eq } from "@bolivibes/db";
+import { createDb, products } from "@bolivibes/db";
+import { productTypeSchema } from "@bolivibes/api-schema";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { cf } from "@/lib/cloudflare";

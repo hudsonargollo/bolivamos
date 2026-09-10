@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import type { ConnectMessageDto } from "@bolivamos/api-schema";
+import type { ConnectMessageDto } from "@bolivibes/api-schema";
 
 export default function MessageThread({
   requestId,

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { ChatResponse } from "@bolivamos/api-schema";
+import type { ChatResponse } from "@bolivibes/api-schema";
 
 interface ChatTurn {
   role: "user" | "assistant";

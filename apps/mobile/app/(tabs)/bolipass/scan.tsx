@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { View, Text, Pressable, Animated } from "react-native";
 import { CameraView, useCameraPermissions } from "expo-camera";
 import { router, useLocalSearchParams } from "expo-router";
-import type { QrPayload } from "@bolivamos/api-schema";
+import type { QrPayload } from "@bolivibes/api-schema";
 import { apiClient } from "@/lib/api";
 import { useT } from "@/lib/i18n";
 

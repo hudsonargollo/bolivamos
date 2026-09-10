@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { View, Text } from "react-native";
-import type { HighlightResponse } from "@bolivamos/api-schema";
+import type { HighlightResponse } from "@bolivibes/api-schema";
 import { apiClient } from "@/lib/api";
 
 /** "Why You'll Love This" AI highlight box (PRD 4.3) — drop into a venue detail screen. */

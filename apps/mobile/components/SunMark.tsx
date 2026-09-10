@@ -5,7 +5,7 @@ import Svg, { Path, Circle } from "react-native-svg";
 const AnimatedSvg = Animated.createAnimatedComponent(Svg);
 
 // Same flat sun-mark source used across the brand — see
-// BRANDGUIDE/assets/sun-mark.svg and apps/web/public/bolivamos/scene.js's
+// BRANDGUIDE/assets/sun-mark.svg and apps/web/public/bolivibes/scene.js's
 // 3D construction of the same 12-ray pattern (ported here for the mobile
 // onboarding carousel and BoliPass card, which needed a lightweight, no-
 // WebView, no-three.js version).

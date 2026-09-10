@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { View, Text, FlatList, TextInput, Pressable, KeyboardAvoidingView, Platform } from "react-native";
 import { useLocalSearchParams, useNavigation } from "expo-router";
-import type { ConnectMessageDto } from "@bolivamos/api-schema";
+import type { ConnectMessageDto } from "@bolivibes/api-schema";
 import { apiClient } from "@/lib/api";
 import { useT } from "@/lib/i18n";
 

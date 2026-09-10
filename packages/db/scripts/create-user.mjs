@@ -64,7 +64,7 @@ async function main() {
   function d1(sql, extraArgs = []) {
     return execFileSync(
       "npx",
-      ["wrangler", "d1", "execute", "bolivamos-db", "--remote", "--command", sql, ...extraArgs],
+      ["wrangler", "d1", "execute", "bolivibes-db", "--remote", "--command", sql, ...extraArgs],
       execOpts,
     );
   }

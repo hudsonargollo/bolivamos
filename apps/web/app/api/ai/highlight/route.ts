@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
-import { eq } from "@bolivamos/db";
-import { createDb, venues } from "@bolivamos/db";
-import { GeminiClient, generateVenueHighlight } from "@bolivamos/ai";
-import { highlightRequestSchema, userPrefsKey, userPrefsValueSchema } from "@bolivamos/api-schema";
+import { eq } from "@bolivibes/db";
+import { createDb, venues } from "@bolivibes/db";
+import { GeminiClient, generateVenueHighlight } from "@bolivibes/ai";
+import { highlightRequestSchema, userPrefsKey, userPrefsValueSchema } from "@bolivibes/api-schema";
 import { cf } from "@/lib/cloudflare";
 import { requireRole } from "@/lib/session";
 import { toErrorResponse } from "@/lib/api-errors";
@@ -23,7 +23,7 @@ export async function GET(request: Request) {
     const [venue] = await db.select().from(venues).where(eq(venues.id, venueId)).limit(1);
     if (!venue) return NextResponse.json({ error: "Venue not found" }, { status: 404 });
 
-    const rawPrefs = await env.BOLIVAMOS_KV.get(userPrefsKey(session.userId), "json");
+    const rawPrefs = await env.BOLIVIBES_KV.get(userPrefsKey(session.userId), "json");
     const interests = rawPrefs ? userPrefsValueSchema.parse(rawPrefs) : [];
 
     const client = new GeminiClient({ apiKey: env.GEMINI_API_KEY });

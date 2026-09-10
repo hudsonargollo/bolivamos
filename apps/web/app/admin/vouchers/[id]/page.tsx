@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
-import { createDb, venues, vouchers } from "@bolivamos/db";
-import { eq } from "@bolivamos/db";
+import { createDb, venues, vouchers } from "@bolivibes/db";
+import { eq } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 import { updateVoucher, deleteVoucher } from "../../actions/vouchers";
 

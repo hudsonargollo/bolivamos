@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { GeminiClient, buildItinerary } from "@bolivamos/ai";
-import { itineraryRequestSchema } from "@bolivamos/api-schema";
+import { GeminiClient, buildItinerary } from "@bolivibes/ai";
+import { itineraryRequestSchema } from "@bolivibes/api-schema";
 import { cf } from "@/lib/cloudflare";
 import { requireRole } from "@/lib/session";
 import { toErrorResponse } from "@/lib/api-errors";

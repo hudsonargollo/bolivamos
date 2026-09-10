@@ -1,7 +1,7 @@
-# BoliVamos
+# BoliVibes
 
-Monorepo for the BoliVamos app and BoliPass Club (Santa Cruz de la Sierra, Bolivia) — live at
-[bolivamos.clubemkt.digital](https://bolivamos.clubemkt.digital).
+Monorepo for the BoliVibes app and BoliPass Club (Santa Cruz de la Sierra, Bolivia) — live at
+[bolivibes.clubemkt.digital](https://bolivibes.clubemkt.digital).
 
 - `apps/web` — Next.js 15 App Router, deployed to Cloudflare Workers via `@opennextjs/cloudflare`.
   Hosts the public site and API, the Host Portal (`/host/*`), the Admin Dashboard (`/admin/*`),
@@ -58,7 +58,7 @@ Full control center for internal staff (e.g. Steff), on-brand with the public si
 There is no self-signup or in-app path to the `admin` role — it can only be granted with a direct DB update, after the person has signed up (or dev-logged-in) once as a normal user:
 
 ```bash
-pnpm --filter @bolivamos/web exec wrangler d1 execute bolivamos-db --local \
+pnpm --filter @bolivibes/web exec wrangler d1 execute bolivibes-db --local \
   --command "UPDATE users SET role='admin' WHERE email='REPLACE_WITH_EMAIL'"
 ```
 
@@ -69,9 +69,9 @@ Drop `--local` to run it against the remote/production database. Log out and bac
 D1/KV are already created and wired into `apps/web/wrangler.jsonc` and `apps/cron-worker/wrangler.jsonc` for this deployment. Standing these up fresh elsewhere:
 
 ```bash
-pnpm --filter @bolivamos/web exec wrangler d1 create bolivamos-db
-pnpm --filter @bolivamos/web exec wrangler kv namespace create bolivamos-kv
-pnpm --filter @bolivamos/web exec wrangler kv namespace create bolivamos-kv --preview
+pnpm --filter @bolivibes/web exec wrangler d1 create bolivibes-db
+pnpm --filter @bolivibes/web exec wrangler kv namespace create bolivibes-kv
+pnpm --filter @bolivibes/web exec wrangler kv namespace create bolivibes-kv --preview
 
 pnpm db:migrate:remote
 ```
@@ -79,15 +79,15 @@ pnpm db:migrate:remote
 Then set secrets (never committed) on both Workers:
 
 ```bash
-pnpm --filter @bolivamos/web exec wrangler secret put JWT_SECRET
-pnpm --filter @bolivamos/web exec wrangler secret put GOOGLE_CLIENT_SECRET
-pnpm --filter @bolivamos/web exec wrangler secret put GEMINI_API_KEY
-pnpm --filter @bolivamos/web exec wrangler secret put RESEND_API_KEY
-pnpm --filter @bolivamos/web exec wrangler secret put STRIPE_SECRET_KEY
-pnpm --filter @bolivamos/web exec wrangler secret put STRIPE_WEBHOOK_SECRET
+pnpm --filter @bolivibes/web exec wrangler secret put JWT_SECRET
+pnpm --filter @bolivibes/web exec wrangler secret put GOOGLE_CLIENT_SECRET
+pnpm --filter @bolivibes/web exec wrangler secret put GEMINI_API_KEY
+pnpm --filter @bolivibes/web exec wrangler secret put RESEND_API_KEY
+pnpm --filter @bolivibes/web exec wrangler secret put STRIPE_SECRET_KEY
+pnpm --filter @bolivibes/web exec wrangler secret put STRIPE_WEBHOOK_SECRET
 
-pnpm --filter @bolivamos/cron-worker exec wrangler secret put JWT_SECRET
-pnpm --filter @bolivamos/cron-worker exec wrangler secret put RESEND_API_KEY
+pnpm --filter @bolivibes/cron-worker exec wrangler secret put JWT_SECRET
+pnpm --filter @bolivibes/cron-worker exec wrangler secret put RESEND_API_KEY
 ```
 
 `JWT_SECRET` must be identical across `apps/web` and `apps/cron-worker`.

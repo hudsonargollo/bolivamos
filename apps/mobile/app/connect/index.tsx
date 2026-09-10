@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import { View, Text, Pressable, ScrollView, RefreshControl } from "react-native";
 import { useFocusEffect, router } from "expo-router";
-import type { ConnectRequestDto, EventDto } from "@bolivamos/api-schema";
+import type { ConnectRequestDto, EventDto } from "@bolivibes/api-schema";
 import { apiClient } from "@/lib/api";
 import { useT, type StringKey } from "@/lib/i18n";
 import { ComingSoon } from "@/components/ComingSoon";

@@ -1,5 +1,5 @@
-import { createDb, userReports, users } from "@bolivamos/db";
-import { eq, desc } from "@bolivamos/db";
+import { createDb, userReports, users } from "@bolivibes/db";
+import { eq, desc } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 import { dismissReport, banReportedUser } from "../actions/moderation";
 

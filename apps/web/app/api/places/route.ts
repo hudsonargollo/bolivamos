@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { createDb, places } from "@bolivamos/db";
-import { and, eq, gte, lte } from "@bolivamos/db";
-import { listPlacesQuerySchema, type PlaceFeatureCollection } from "@bolivamos/api-schema";
+import { createDb, places } from "@bolivibes/db";
+import { and, eq, gte, lte } from "@bolivibes/db";
+import { listPlacesQuerySchema, type PlaceFeatureCollection } from "@bolivibes/api-schema";
 import { cf } from "@/lib/cloudflare";
 import { toErrorResponse } from "@/lib/api-errors";
 

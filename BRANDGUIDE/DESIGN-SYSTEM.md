@@ -1,10 +1,10 @@
-# BoliVamos Design System
+# BoliVibes Design System
 
 Source of truth for the **sun-mark identity (Brand Guide v1.0)** as it's actually
 implemented in code today — `packages/design-tokens` (web + mobile tokens) and
 `apps/web/app/admin/admin.css` (the internal tool's own "clay" component
 kit). Written to be pasted into Claude Design or used as a reference doc when
-generating BoliVamos UI, marketing assets, or the 3D sun mark.
+generating BoliVibes UI, marketing assets, or the 3D sun mark.
 
 > Older files under `BRANDGUIDE/tokens/` (Bebas Neue / Inter, `#1E1E1E`
 > charcoal) are a superseded draft — do not use them. This document reflects
@@ -14,7 +14,7 @@ generating BoliVamos UI, marketing assets, or the 3D sun mark.
 
 ## 1. Brand essence
 
-BoliVamos is a **local-discovery / nightlife-and-events app** for Bolivia.
+BoliVibes is a **local-discovery / nightlife-and-events app** for Bolivia.
 The visual identity is a warm, sun-baked "clay" aesthetic — soft-shadowed,
 rounded, high-roughness matte surfaces (like unglazed terracotta), built
 around one mark: a radiating **sun** rising over a city plaza. Tone is warm
@@ -56,12 +56,12 @@ outward, alternating through four brand colors clockwise:
 Other flat exports live in `BRANDGUIDE/assets/`: `logo-full.svg` /
 `logo-full-dark.svg` (wordmark + mark), `app-icon.svg`, `favicon.svg`.
 
-### 3D version (the "bolivamos-sunrise" scene)
+### 3D version (the "bolivibes-sunrise" scene)
 
 The mark also exists as a **live, animated 3D object** — a `<three-d-stage>`
 web component (three.js) rendering the sun mark rising through a clipped
 ground plane, embedded on the public homepage hero and the mobile sign-in
-screen (`apps/web/app/embed/hero`, `apps/web/public/bolivamos/scene.js`).
+screen (`apps/web/app/embed/hero`, `apps/web/public/bolivibes/scene.js`).
 Use this recipe when generating it as a Claude Design **3D object** artifact:
 
 - **Material style — "clay"**: every mesh is `MeshStandardMaterial` with
@@ -80,11 +80,11 @@ Use this recipe when generating it as a Claude Design **3D object** artifact:
   material — the mark is invisible below the plaza and rises up through it
   (used for a "sunrise" reveal animation), sitting in front of a low
   terracotta/sand/cream clay-city diorama.
-- **Group name**: `bolivamos_sunrise` → `sun_mark` → `sun_ring` +
+- **Group name**: `bolivibes_sunrise` → `sun_mark` → `sun_ring` +
   `sun_rays` (children `ray_0`…`ray_11`).
-- Full working source: `apps/web/public/bolivamos/scene.js` (materials +
+- Full working source: `apps/web/public/bolivibes/scene.js` (materials +
   city + rays + animation loop) built on top of the generic
-  `apps/web/public/bolivamos/three-d-stage.js` viewer/exporter shell.
+  `apps/web/public/bolivibes/three-d-stage.js` viewer/exporter shell.
 
 ---
 

@@ -1,5 +1,5 @@
-import { createDb, users, venues, events, vouchers, places, userReports } from "@bolivamos/db";
-import { eq } from "@bolivamos/db";
+import { createDb, users, venues, events, vouchers, places, userReports } from "@bolivibes/db";
+import { eq } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 
 async function getStats() {

@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { eq } from "@bolivamos/db";
-import { createDb, connectRequests } from "@bolivamos/db";
-import { respondConnectRequestSchema } from "@bolivamos/api-schema";
+import { eq } from "@bolivibes/db";
+import { createDb, connectRequests } from "@bolivibes/db";
+import { respondConnectRequestSchema } from "@bolivibes/api-schema";
 import { cf } from "@/lib/cloudflare";
 import { requireSession, SessionError } from "@/lib/session";
 import { toErrorResponse } from "@/lib/api-errors";

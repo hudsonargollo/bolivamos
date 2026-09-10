@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { View, Text, FlatList, Pressable } from "react-native";
 import { useFocusEffect, router } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-import type { AuthUser, VoucherDto, LockedVoucherTeaser } from "@bolivamos/api-schema";
+import type { AuthUser, VoucherDto, LockedVoucherTeaser } from "@bolivibes/api-schema";
 import { apiClient } from "@/lib/api";
 import { useT, type StringKey } from "@/lib/i18n";
 import { SunMark } from "@/components/SunMark";

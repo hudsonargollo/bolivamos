@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { createDb, userReports } from "@bolivamos/db";
-import { reportUserRequestSchema } from "@bolivamos/api-schema";
+import { createDb, userReports } from "@bolivibes/db";
+import { reportUserRequestSchema } from "@bolivibes/api-schema";
 import { cf } from "@/lib/cloudflare";
 import { requireSession } from "@/lib/session";
 import { toErrorResponse } from "@/lib/api-errors";

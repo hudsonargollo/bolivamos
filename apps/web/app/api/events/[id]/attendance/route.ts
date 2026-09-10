@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { eq, and } from "@bolivamos/db";
-import { createDb, eventAttendance } from "@bolivamos/db";
-import { setAttendanceRequestSchema } from "@bolivamos/api-schema";
+import { eq, and } from "@bolivibes/db";
+import { createDb, eventAttendance } from "@bolivibes/db";
+import { setAttendanceRequestSchema } from "@bolivibes/api-schema";
 import { cf } from "@/lib/cloudflare";
 import { requireSession, SessionError } from "@/lib/session";
 import { toErrorResponse } from "@/lib/api-errors";

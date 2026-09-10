@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { createDb, events, venues, slugify } from "@bolivamos/db";
+import { createDb, events, venues, slugify } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 import { isEventPast } from "@/lib/event-filters";
 import { SITE_URL } from "@/lib/site-url";

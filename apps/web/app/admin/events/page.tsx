@@ -1,4 +1,4 @@
-import { createDb, events } from "@bolivamos/db";
+import { createDb, events } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 
 export default async function AdminEventsPage() {

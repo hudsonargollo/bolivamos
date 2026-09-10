@@ -3,11 +3,11 @@ import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 
 const nextConfig: NextConfig = {
   transpilePackages: [
-    "@bolivamos/design-tokens",
-    "@bolivamos/db",
-    "@bolivamos/api-schema",
-    "@bolivamos/ai",
-    "@bolivamos/notifications",
+    "@bolivibes/design-tokens",
+    "@bolivibes/db",
+    "@bolivibes/api-schema",
+    "@bolivibes/ai",
+    "@bolivibes/notifications",
   ],
 };
 

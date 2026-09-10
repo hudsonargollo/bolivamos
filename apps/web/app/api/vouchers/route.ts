@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
-import { createDb, vouchers } from "@bolivamos/db";
-import { eq } from "@bolivamos/db";
+import { createDb, vouchers } from "@bolivibes/db";
+import { eq } from "@bolivibes/db";
 import {
   createVoucherRequestSchema,
   type VoucherDto,
   type LockedVoucherTeaser,
-} from "@bolivamos/api-schema";
+} from "@bolivibes/api-schema";
 import { cf } from "@/lib/cloudflare";
 import { getCurrentSession, requireRole } from "@/lib/session";
 import { toErrorResponse } from "@/lib/api-errors";

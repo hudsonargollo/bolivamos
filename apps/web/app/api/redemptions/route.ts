@@ -1,13 +1,13 @@
 import { NextResponse } from "next/server";
-import { eq, and } from "@bolivamos/db";
-import { createDb, venues, vouchers, redemptions } from "@bolivamos/db";
+import { eq, and } from "@bolivibes/db";
+import { createDb, venues, vouchers, redemptions } from "@bolivibes/db";
 import {
   redeemVoucherRequestSchema,
   redemptionLockKey,
   redemptionLockValueSchema,
   REDEMPTION_LOCK_TTL_SECONDS,
   type RedeemVoucherResponse,
-} from "@bolivamos/api-schema";
+} from "@bolivibes/api-schema";
 import { cf } from "@/lib/cloudflare";
 import { requireSession, SessionError } from "@/lib/session";
 import { toErrorResponse } from "@/lib/api-errors";
@@ -50,12 +50,12 @@ export async function POST(request: Request) {
     }
 
     const lockKey = redemptionLockKey(session.userId, body.voucherId);
-    const existingLock = await env.BOLIVAMOS_KV.get(lockKey, "json");
+    const existingLock = await env.BOLIVIBES_KV.get(lockKey, "json");
     if (existingLock) {
       redemptionLockValueSchema.parse(existingLock); // shape sanity check
       return NextResponse.json({ error: "This voucher was already redeemed recently" }, { status: 409 });
     }
-    await env.BOLIVAMOS_KV.put(lockKey, JSON.stringify({ timestamp: Date.now() }), {
+    await env.BOLIVIBES_KV.put(lockKey, JSON.stringify({ timestamp: Date.now() }), {
       expirationTtl: REDEMPTION_LOCK_TTL_SECONDS,
     });
 
