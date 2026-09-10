@@ -12,6 +12,8 @@ export default tseslint.config(
       "**/.turbo/**",
       "**/.expo/**",
       "**/dist/**",
+      "**/next-env.d.ts",
+      "**/public/**/*.js",
       "**/*.config.js",
       "**/*.config.cjs",
       "**/*.config.mjs",
@@ -28,6 +30,20 @@ export default tseslint.config(
     languageOptions: {
       sourceType: "commonjs",
       globals: { module: "writable", require: "readonly", exports: "writable" },
+    },
+  },
+  {
+    files: ["**/*.mjs"],
+    languageOptions: {
+      globals: {
+        console: "readonly",
+        crypto: "readonly",
+        fetch: "readonly",
+        process: "readonly",
+        setTimeout: "readonly",
+        TextEncoder: "readonly",
+        URL: "readonly",
+      },
     },
   },
 );
