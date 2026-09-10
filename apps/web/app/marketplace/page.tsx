@@ -1,7 +1,6 @@
 import { createDb, products } from "@bolivibes/db";
 import { eq } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
-import "../admin/admin.css";
 
 // No dynamic segment and no cookies() call here, so Next would otherwise try
 // to statically prerender this at build time — which breaks, since D1/KV
@@ -20,29 +19,22 @@ export default async function MarketplacePage() {
   const rows = await db.select().from(products).where(eq(products.active, true));
 
   return (
-    <div className="admin-root" style={{ minHeight: "100vh", padding: 24 }}>
-      <div style={{ maxWidth: 780, margin: "0 auto" }}>
-        <h1 className="a-h1">Tours, audio guides &amp; tickets</h1>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 16 }}>
+    <main className="bv-app-shell">
+      <section className="bv-container">
+        <p className="bv-section-kicker">Marketplace</p>
+        <h1 className="bv-title">Tours, audio guides &amp; tickets</h1>
+        <p className="bv-subtitle">Book the city like the app: warm cards, clear prices, and quick actions.</p>
+        <div className="bv-grid">
           {rows.map((product) => (
-            <a
-              key={product.id}
-              href={`/marketplace/${product.id}`}
-              className="a-card"
-              style={{ textDecoration: "none", color: "inherit", display: "block" }}
-            >
-              <span className="a-badge a-badge-sage" style={{ marginLeft: 0 }}>
-                {TYPE_LABELS[product.type] ?? product.type}
-              </span>
-              <p style={{ fontWeight: 700, margin: "10px 0 4px" }}>{product.title}</p>
-              <p className="a-muted" style={{ margin: 0 }}>
-                {product.priceBob.toFixed(2)} BOB
-              </p>
+            <a key={product.id} href={`/marketplace/${product.id}`} className="bv-card bv-card-pad">
+              <span className="bv-chip">{TYPE_LABELS[product.type] ?? product.type}</span>
+              <p className="bv-card-title" style={{ margin: "12px 0 0" }}>{product.title}</p>
+              <p className="bv-card-meta">{product.priceBob.toFixed(2)} BOB</p>
             </a>
           ))}
-          {rows.length === 0 && <p className="a-muted">Nothing listed yet — check back soon.</p>}
+          {rows.length === 0 && <p className="bv-subtitle">Nothing listed yet — check back soon.</p>}
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }

@@ -15,38 +15,14 @@ export default function RequestActions({ requestId }: { requestId: string }) {
     if (res.ok) setDone(accept ? "accepted" : "declined");
   }
 
-  if (done) return <span style={{ color: "#7a6a52", fontWeight: 700 }}>{done === "accepted" ? "Accepted" : "Declined"}</span>;
+  if (done) return <span className="bv-card-meta">{done === "accepted" ? "Accepted" : "Declined"}</span>;
 
   return (
-    <div style={{ display: "flex", gap: 8 }}>
-      <button
-        type="button"
-        onClick={() => respond(true)}
-        style={{
-          fontWeight: 700,
-          border: "none",
-          borderRadius: 999,
-          padding: "7px 14px",
-          background: "#c4703d",
-          color: "#f7f1e4",
-          cursor: "pointer",
-        }}
-      >
+    <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+      <button type="button" onClick={() => respond(true)} className="bv-btn" style={{ padding: "8px 14px", fontSize: 12 }}>
         Accept
       </button>
-      <button
-        type="button"
-        onClick={() => respond(false)}
-        style={{
-          fontWeight: 700,
-          border: "none",
-          borderRadius: 999,
-          padding: "7px 14px",
-          background: "rgba(196,113,57,.14)",
-          color: "#8f4225",
-          cursor: "pointer",
-        }}
-      >
+      <button type="button" onClick={() => respond(false)} className="bv-soft">
         Decline
       </button>
     </div>

@@ -2,10 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Same self-hosted file admin.css already uses (apps/web/public/fonts/) —
-   Caprasimo replaces Anton as the consumer app's display font as part of
-   the mobile-v2 reskin, unifying with the admin dashboard's headline face
-   instead of running two separate display systems. */
+/* Shared BoliVibes app UI system.
+   Mirrors the mobile-v2 kit: warm clay surfaces, pressed controls,
+   rounded cards/pills, Figtree body and Caprasimo display. */
 @font-face {
   font-family: "Caprasimo";
   font-style: normal;
@@ -14,16 +13,280 @@
   src: url("/fonts/caprasimo-latin.woff2") format("woff2");
 }
 
-body {
-  @apply bg-bg-off-white text-charcoal-dark font-body;
+:root {
+  --bv-bg: #f4eee2;
+  --bv-bg-2: #e9dfc9;
+  --bv-card-1: #fdfaf3;
+  --bv-card-2: #f6efdd;
+  --bv-card-shadow: #d9c8a4;
+  --bv-ink: #201e1d;
+  --bv-ink-2: #33302c;
+  --bv-sub: #7a6a52;
+  --bv-muted: #9a8a6e;
+  --bv-line: rgba(122, 106, 82, 0.18);
+  --bv-orange: #c4703d;
+  --bv-orange-hi: #d0824a;
+  --bv-orange-low: #b4633a;
+  --bv-orange-shadow: #8e4a20;
+  --bv-sage: #8ba672;
+  --bv-sage-hi: #97b17e;
+  --bv-sage-low: #6f8955;
+  --bv-sage-shadow: #55613f;
+  --bv-red: #c83727;
+  --bv-yellow: #e5b824;
+  --bv-green: #0b5d39;
+  --bv-cream: #f7f1e4;
+  --bv-night: linear-gradient(#232840 0%, #2e2f45 60%, #3a3129 100%);
+  --bv-chip-bg: linear-gradient(#fdfaf3, #f0e5cd);
+  --bv-tint: rgba(196, 112, 61, 0.14);
+  --bv-tint-text: #8f4225;
 }
 
-/* No uppercase/tracking-wide here (unlike the old Anton tuning) — Caprasimo
-   is a rounded display face meant to read in mixed case, matching how
-   admin.css already uses it. */
+html {
+  background: var(--bv-bg);
+}
+
+body {
+  @apply bg-bg-off-white text-charcoal-dark font-body;
+  background:
+    radial-gradient(circle at 16% 8%, rgba(229, 184, 36, 0.11), transparent 25rem),
+    radial-gradient(circle at 84% 0%, rgba(139, 166, 114, 0.14), transparent 22rem),
+    var(--bv-bg);
+  color: var(--bv-ink);
+}
+
 h1,
 h2,
 h3 {
   @apply font-display;
   letter-spacing: 0.01em;
+}
+
+.bv-app-shell {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 12% 6%, rgba(229, 184, 36, 0.12), transparent 22rem),
+    radial-gradient(circle at 86% 8%, rgba(139, 166, 114, 0.12), transparent 22rem),
+    var(--bv-bg);
+  color: var(--bv-ink);
+  font-family: Figtree, system-ui, sans-serif;
+}
+
+.bv-container {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.bv-container-narrow {
+  width: min(100%, 680px);
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.bv-section-kicker {
+  margin: 0 0 10px;
+  color: var(--bv-muted);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.bv-title {
+  margin: 0 0 10px;
+  color: var(--bv-ink);
+  font-family: Caprasimo, Georgia, serif;
+  font-size: clamp(30px, 6vw, 48px);
+  line-height: 1.04;
+}
+
+.bv-title-sm {
+  margin: 0 0 16px;
+  color: var(--bv-ink);
+  font-family: Caprasimo, Georgia, serif;
+  font-size: clamp(25px, 4vw, 34px);
+  line-height: 1.08;
+}
+
+.bv-subtitle {
+  margin: 0 0 24px;
+  color: var(--bv-sub);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.bv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.bv-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.bv-card {
+  display: block;
+  overflow: hidden;
+  border: 0;
+  border-radius: 22px;
+  background: linear-gradient(var(--bv-card-1), var(--bv-card-2));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    0 4px 0 var(--bv-card-shadow),
+    0 10px 18px rgba(60, 40, 15, 0.12);
+  color: inherit;
+  text-decoration: none;
+}
+
+.bv-card-pad {
+  padding: 16px 18px;
+}
+
+.bv-card-title {
+  color: var(--bv-ink);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.bv-card-meta {
+  margin-top: 5px;
+  color: var(--bv-sub);
+  font-size: 12.5px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.bv-card-media {
+  display: block;
+  width: 100%;
+  max-height: 330px;
+  object-fit: cover;
+  filter: saturate(0.85) contrast(0.95) brightness(0.96);
+}
+
+.bv-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.bv-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 15px;
+  border-radius: 999px;
+  background: var(--bv-chip-bg);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 2px 0 var(--bv-card-shadow);
+  color: var(--bv-ink);
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.bv-chip-active,
+.bv-chip:hover {
+  background: linear-gradient(var(--bv-orange-hi), var(--bv-orange-low));
+  box-shadow: inset 0 2px 0 rgba(255, 246, 230, 0.35), 0 2px 0 var(--bv-orange-shadow);
+  color: var(--bv-cream);
+}
+
+.bv-chip:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+.bv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 20px;
+  background: linear-gradient(var(--bv-orange-hi) 0%, var(--bv-orange) 45%, var(--bv-orange-low) 100%);
+  box-shadow:
+    inset 0 3px 0 rgba(255, 246, 230, 0.38),
+    inset 0 -3px 0 rgba(74, 36, 12, 0.3),
+    0 4px 0 var(--bv-orange-shadow),
+    0 10px 16px rgba(60, 40, 15, 0.18);
+  color: var(--bv-cream);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 850;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+
+.bv-btn:hover {
+  background: linear-gradient(#d68a55 0%, #c4763f 45%, #aa5630 100%);
+}
+
+.bv-btn:active {
+  transform: translateY(3px);
+  box-shadow: inset 0 2px 0 rgba(255, 246, 230, 0.3), 0 1px 0 var(--bv-orange-shadow);
+}
+
+.bv-btn-sage {
+  background: linear-gradient(var(--bv-sage-hi), var(--bv-sage) 45%, var(--bv-sage-low));
+  box-shadow:
+    inset 0 3px 0 rgba(255, 250, 235, 0.35),
+    inset 0 -3px 0 rgba(30, 40, 15, 0.25),
+    0 4px 0 var(--bv-sage-shadow),
+    0 10px 16px rgba(60, 40, 15, 0.16);
+}
+
+.bv-soft {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--bv-tint);
+  color: var(--bv-tint-text);
+  font-size: 13px;
+  font-weight: 800;
+  padding: 9px 16px;
+  text-decoration: none;
+}
+
+.bv-card:hover,
+.bv-soft:hover {
+  transform: translateY(-1px);
+}
+
+.bv-form-control {
+  width: 100%;
+  border: 1px solid var(--bv-line);
+  border-radius: 16px;
+  background: var(--bv-card-1);
+  color: var(--bv-ink);
+  font: inherit;
+  padding: 12px 14px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.bv-form-control:focus-visible,
+.bv-btn:focus-visible,
+.bv-chip:focus-visible,
+.bv-soft:focus-visible,
+.bv-card:focus-visible {
+  outline: 2px solid var(--bv-orange);
+  outline-offset: 2px;
+}
+
+.bv-night-card {
+  border-radius: 24px;
+  background: var(--bv-night);
+  box-shadow:
+    inset 0 2px 0 rgba(240, 230, 210, 0.12),
+    0 6px 0 #0f0d0b,
+    0 16px 28px rgba(0, 0, 0, 0.28);
+  color: var(--bv-cream);
 }

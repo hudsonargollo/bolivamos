@@ -28,83 +28,67 @@ export default async function ConnectInboxPage() {
   const sent = rows.filter((r) => r.fromUserId === session.userId && r.status === "pending");
 
   return (
-    <main style={{ maxWidth: 640, margin: "0 auto", padding: "48px 24px", fontFamily: "Figtree, sans-serif" }}>
-      <h1 style={{ fontFamily: "Caprasimo, Georgia, serif", fontSize: 32, color: "#201e1d", margin: "0 0 24px" }}>
-        Connect
-      </h1>
+    <main className="bv-app-shell">
+      <section className="bv-container-narrow">
+        <p className="bv-section-kicker">Connect</p>
+        <h1 className="bv-title">Go out together</h1>
+        <p className="bv-subtitle">The web inbox now follows the mobile app card stack: soft clay surfaces, compact metadata, and fast actions.</p>
 
-      {incoming.length > 0 && (
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 15, fontWeight: 700, color: "#7a6a52", margin: "0 0 12px" }}>Requests for you</h2>
-          {incoming.map((r) => (
-            <div
-              key={r.id}
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                background: "#fbf4e6",
-                borderRadius: 14,
-                padding: "12px 16px",
-                marginBottom: 8,
-              }}
-            >
-              <div>
-                <p style={{ margin: 0, fontWeight: 700, color: "#33302c" }}>
-                  {userById.get(r.fromUserId)?.fullName ?? "A fellow VIP member"}
-                </p>
-                <p style={{ margin: 0, color: "#7a6a52", fontSize: 13 }}>{eventById.get(r.eventId)?.title}</p>
-              </div>
-              <RequestActions requestId={r.id} />
+        {incoming.length > 0 && (
+          <section style={{ marginBottom: 32 }}>
+            <h2 className="bv-title-sm" style={{ fontSize: 22 }}>Requests for you</h2>
+            <div className="bv-stack">
+              {incoming.map((r) => (
+                <div key={r.id} className="bv-card bv-card-pad" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12 }}>
+                  <div>
+                    <p className="bv-card-title" style={{ margin: 0 }}>{userById.get(r.fromUserId)?.fullName ?? "A fellow VIP member"}</p>
+                    <p className="bv-card-meta">{eventById.get(r.eventId)?.title}</p>
+                  </div>
+                  <RequestActions requestId={r.id} />
+                </div>
+              ))}
             </div>
-          ))}
-        </section>
-      )}
+          </section>
+        )}
 
-      {accepted.length > 0 && (
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 15, fontWeight: 700, color: "#7a6a52", margin: "0 0 12px" }}>Conversations</h2>
-          {accepted.map((r) => {
-            const otherId = r.fromUserId === session.userId ? r.toUserId : r.fromUserId;
-            return (
-              <a
-                key={r.id}
-                href={`/connect/${r.id}`}
-                style={{
-                  display: "block",
-                  background: "#fbf4e6",
-                  borderRadius: 14,
-                  padding: "12px 16px",
-                  marginBottom: 8,
-                  textDecoration: "none",
-                }}
-              >
-                <p style={{ margin: 0, fontWeight: 700, color: "#33302c" }}>
-                  {userById.get(otherId)?.fullName ?? "A fellow VIP member"}
-                </p>
-                <p style={{ margin: 0, color: "#7a6a52", fontSize: 13 }}>{eventById.get(r.eventId)?.title}</p>
-              </a>
-            );
-          })}
-        </section>
-      )}
-
-      {sent.length > 0 && (
-        <section>
-          <h2 style={{ fontSize: 15, fontWeight: 700, color: "#7a6a52", margin: "0 0 12px" }}>Sent, awaiting reply</h2>
-          {sent.map((r) => (
-            <div key={r.id} style={{ padding: "8px 16px", color: "#7a6a52" }}>
-              {userById.get(r.toUserId)?.fullName ?? "A fellow VIP member"} — {eventById.get(r.eventId)?.title}
+        {accepted.length > 0 && (
+          <section style={{ marginBottom: 32 }}>
+            <h2 className="bv-title-sm" style={{ fontSize: 22 }}>Conversations</h2>
+            <div className="bv-stack">
+              {accepted.map((r) => {
+                const otherId = r.fromUserId === session.userId ? r.toUserId : r.fromUserId;
+                return (
+                  <a key={r.id} href={`/connect/${r.id}`} className="bv-card bv-card-pad">
+                    <p className="bv-card-title" style={{ margin: 0 }}>{userById.get(otherId)?.fullName ?? "A fellow VIP member"}</p>
+                    <p className="bv-card-meta">{eventById.get(r.eventId)?.title}</p>
+                  </a>
+                );
+              })}
             </div>
-          ))}
-        </section>
-      )}
+          </section>
+        )}
 
-      {incoming.length === 0 && accepted.length === 0 && sent.length === 0 && (
-        <p style={{ color: "#7a6a52" }}>
-          No connections yet — opt in to be visible on an event page and connect with other VIP members going.
-        </p>
-      )}
+        {sent.length > 0 && (
+          <section>
+            <h2 className="bv-title-sm" style={{ fontSize: 22 }}>Sent, awaiting reply</h2>
+            <div className="bv-stack">
+              {sent.map((r) => (
+                <div key={r.id} className="bv-card bv-card-pad">
+                  <p className="bv-card-title" style={{ margin: 0 }}>{userById.get(r.toUserId)?.fullName ?? "A fellow VIP member"}</p>
+                  <p className="bv-card-meta">{eventById.get(r.eventId)?.title}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {incoming.length === 0 && accepted.length === 0 && sent.length === 0 && (
+          <div className="bv-card bv-card-pad">
+            <p className="bv-card-title" style={{ margin: 0 }}>No connections yet</p>
+            <p className="bv-card-meta">Opt in on an event page and connect with other VIP members going.</p>
+          </div>
+        )}
+      </section>
     </main>
   );
 }
