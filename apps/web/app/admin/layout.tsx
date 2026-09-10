@@ -28,7 +28,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         <div className="a-header-inner">
           <a href="/admin" className="a-wordmark">
             <span className="wm-boli">BOLI</span>
-            <span className="wm-vamos">VAMOS</span>
+            <span className="wm-vamos">VIBES</span>
             <span className="wm-tag">Admin</span>
           </a>
           <nav className="a-nav">
