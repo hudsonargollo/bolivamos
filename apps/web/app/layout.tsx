@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { SITE_URL } from "@/lib/site-url";
+import AppTabs from "./app-tabs";
 
 const TITLE = "BoliVibes";
 const DESCRIPTION = "What to do in Santa Cruz de la Sierra — plus BoliPass 2-for-1 deals.";
@@ -63,7 +64,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script type="importmap" dangerouslySetInnerHTML={{ __html: JSON.stringify(THREE_IMPORTMAP) }} />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <AppTabs />
+      </body>
     </html>
   );
 }

@@ -8,6 +8,14 @@ interface ChatTurn {
   content: string;
 }
 
+const QUICK_REPLIES = [
+  "Plan my night — what should I do tonight?",
+  "Where do locals actually go?",
+  "Can you help me book a table somewhere?",
+  "How do I say \"two tickets please\" in Spanish?",
+  "Plan my trip",
+] as const;
+
 export default function ConciergeChat() {
   const [turns, setTurns] = useState<ChatTurn[]>([]);
   const [conversationId, setConversationId] = useState<string | undefined>(undefined);
@@ -15,14 +23,14 @@ export default function ConciergeChat() {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  async function handleSubmit(event: React.FormEvent) {
-    event.preventDefault();
-    const message = input.trim();
+  async function sendText(text: string) {
+    const message = text.trim();
     if (!message || sending) return;
 
     setError(null);
     setInput("");
-    setTurns((prev) => [...prev, { role: "user", content: message }]);
+    const nextTurns = [...turns, { role: "user" as const, content: message }];
+    setTurns(nextTurns);
     setSending(true);
 
     try {
@@ -41,7 +49,7 @@ export default function ConciergeChat() {
 
       const data = (await res.json()) as ChatResponse;
       setConversationId(data.conversationId);
-      setTurns((prev) => [...prev, { role: "assistant", content: data.reply }]);
+      setTurns([...nextTurns, { role: "assistant", content: data.reply }]);
     } catch {
       setError("Couldn't reach the server. Check your connection and try again.");
     } finally {
@@ -49,49 +57,40 @@ export default function ConciergeChat() {
     }
   }
 
+  function handleSubmit(event: React.FormEvent) {
+    event.preventDefault();
+    void sendText(input);
+  }
+
   return (
-    <div className="a-card" style={{ display: "flex", flexDirection: "column", gap: 16, height: "70vh" }}>
-      <div style={{ flex: 1, overflowY: "auto", display: "flex", flexDirection: "column", gap: 12 }}>
+    <div className="bv-chat-card">
+      <div className="bv-chat-scroll">
         {turns.length === 0 && (
-          <p className="a-muted">
-            Ask about nightlife, transport, local dishes, dress codes, or anything to do tonight in Santa Cruz.
-          </p>
+          <div className="bv-card bv-card-pad">
+            <p className="bv-card-title" style={{ margin: 0 }}>Ask anything about Santa Cruz tonight.</p>
+            <p className="bv-card-meta">Nightlife, transport, local dishes, dress codes, reservations or trip planning.</p>
+          </div>
         )}
         {turns.map((turn, i) => (
-          <div
-            key={i}
-            style={{
-              alignSelf: turn.role === "user" ? "flex-end" : "flex-start",
-              maxWidth: "80%",
-              background: turn.role === "user" ? "var(--a-orange)" : "var(--a-surface-hover)",
-              color: turn.role === "user" ? "var(--a-cream-text)" : "var(--a-ink)",
-              borderRadius: 14,
-              padding: "10px 14px",
-              fontSize: 14.5,
-              whiteSpace: "pre-wrap",
-            }}
-          >
+          <div key={i} className={`bv-bubble ${turn.role === "user" ? "bv-bubble-user" : "bv-bubble-assistant"}`}>
             {turn.content}
           </div>
         ))}
-        {sending && <p className="a-muted">Thinking…</p>}
+        {sending && <p className="bv-card-meta">Thinking…</p>}
       </div>
-      {error && (
-        <p className="a-text-orange" role="alert" style={{ margin: 0 }}>
-          {error}
-        </p>
-      )}
-      <form onSubmit={handleSubmit} style={{ display: "flex", gap: 10 }}>
-        <input
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Ask the concierge…"
-          className="a-input"
-          disabled={sending}
-        />
-        <button type="submit" className="clay-btn" disabled={sending || !input.trim()}>
-          Send
-        </button>
+
+      <div className="bv-chip-row" style={{ overflowX: "auto", flexWrap: "nowrap", paddingBottom: 8 }}>
+        {QUICK_REPLIES.map((reply) => (
+          <button key={reply} className="bv-chip" type="button" onClick={() => void sendText(reply)} disabled={sending}>
+            {reply.split(" — ")[0]}
+          </button>
+        ))}
+      </div>
+
+      {error && <p className="bv-error" role="alert">{error}</p>}
+      <form onSubmit={handleSubmit} className="bv-chat-form">
+        <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Ask the concierge…" className="bv-form-control" disabled={sending} />
+        <button type="submit" className="bv-btn" disabled={sending || !input.trim()}>Send</button>
       </form>
     </div>
   );
