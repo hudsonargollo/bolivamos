@@ -74,7 +74,7 @@ INSERT INTO products (
   'Hire a Torito with a local guide for a warm, photo-friendly tour around Santa Cruz de la Sierra. Great for visitors, expats and friends who want the city highlights without planning the route.',
   348,
   50,
-  6,
+  2,
   TRUE
 ) ON CONFLICT(id) DO UPDATE SET
   type=excluded.type,
