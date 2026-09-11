@@ -34,6 +34,8 @@ export async function createPlace(formData: FormData) {
     address: formOptionalString(formData, "address") ?? null,
     googleMapsUrl: formOptionalString(formData, "googleMapsUrl") ?? null,
     websiteUrl: formOptionalString(formData, "websiteUrl") ?? null,
+    instagramUrl: formOptionalString(formData, "instagramUrl") ?? null,
+    tiktokUrl: formOptionalString(formData, "tiktokUrl") ?? null,
     phone: formOptionalString(formData, "phone") ?? null,
     regional: formData.get("regional") === "on",
     venueId: formOptionalString(formData, "venueId") ?? null,

@@ -43,6 +43,8 @@ export const placeSchema = z.object({
   address: z.string().nullable(),
   googleMapsUrl: z.string().nullable(),
   websiteUrl: z.string().nullable(),
+  instagramUrl: z.string().nullable(),
+  tiktokUrl: z.string().nullable(),
   phone: z.string().nullable(),
   regional: z.boolean().nullable(),
   venueId: z.string().nullable(),

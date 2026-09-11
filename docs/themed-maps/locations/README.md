@@ -14,6 +14,8 @@ Required fields for every place:
   "address": "Human-readable address",
   "google_maps_url": "https://www.google.com/maps/...",
   "website_url": null,
+  "instagram_url": null,
+  "tiktok_url": null,
   "phone": null,
   "price": null,
   "source": "manual",
@@ -26,4 +28,5 @@ Promotion checklist:
 1. Add or update the place in `../data/places.json`.
 2. Add an editorial row in `../data/santa-cruz-directory.md`.
 3. If it should appear immediately in production, add coordinates and mark it verified from `/admin/places`.
-4. Keep the Google Maps URL because BoliVibes shares that URL to WhatsApp, Instagram and clipboard.
+4. Keep the Google Maps URL because BoliVibes shares that URL to WhatsApp, Instagram, TikTok and clipboard.
+5. Add official Instagram and TikTok URLs when a venue has them so the place sheet can send users to social proof/content.

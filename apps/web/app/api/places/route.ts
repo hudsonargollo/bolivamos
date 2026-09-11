@@ -22,6 +22,8 @@ function toFeature(place: typeof places.$inferSelect) {
       address: place.address,
       googleMapsUrl: place.googleMapsUrl,
       websiteUrl: place.websiteUrl,
+      instagramUrl: place.instagramUrl,
+      tiktokUrl: place.tiktokUrl,
       phone: place.phone,
       regional: place.regional,
       venueId: place.venueId,

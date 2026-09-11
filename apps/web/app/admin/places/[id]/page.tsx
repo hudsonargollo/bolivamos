@@ -106,6 +106,16 @@ export default async function EditPlacePage({ params }: { params: Promise<{ id: 
               <input id="phone" name="phone" defaultValue={place.phone ?? ""} className="a-input" />
             </div>
           </div>
+          <div className="a-row-2">
+            <div className="a-field">
+              <label htmlFor="instagramUrl">Instagram URL</label>
+              <input id="instagramUrl" name="instagramUrl" type="url" defaultValue={place.instagramUrl ?? ""} className="a-input" />
+            </div>
+            <div className="a-field">
+              <label htmlFor="tiktokUrl">TikTok URL</label>
+              <input id="tiktokUrl" name="tiktokUrl" type="url" defaultValue={place.tiktokUrl ?? ""} className="a-input" />
+            </div>
+          </div>
           <div className="a-field">
             <label htmlFor="venueId">
               Linked venue ID <span className="a-field-optional">(optional)</span>

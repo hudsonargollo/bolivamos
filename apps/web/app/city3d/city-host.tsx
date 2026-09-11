@@ -319,6 +319,42 @@ export default function CityHost() {
             >
               {t.directions}
             </a>
+            <a
+              id="place-sheet-instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "none",
+                background: "#d62976",
+                color: "#f5ead8",
+                padding: "10px 16px",
+                borderRadius: 10,
+                fontWeight: 700,
+                fontSize: 13,
+                textDecoration: "none",
+                boxShadow: "0 3px 0 #8f1d50",
+              }}
+            >
+              Instagram
+            </a>
+            <a
+              id="place-sheet-tiktok"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "none",
+                background: "#201e1d",
+                color: "#f5ead8",
+                padding: "10px 16px",
+                borderRadius: 10,
+                fontWeight: 700,
+                fontSize: 13,
+                textDecoration: "none",
+                boxShadow: "0 3px 0 #000",
+              }}
+            >
+              TikTok
+            </a>
             <button
               id="place-sheet-events"
               style={{

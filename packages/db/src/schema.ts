@@ -110,6 +110,8 @@ export const places = sqliteTable("places", {
   address: text("address"),
   googleMapsUrl: text("google_maps_url"),
   websiteUrl: text("website_url"),
+  instagramUrl: text("instagram_url"),
+  tiktokUrl: text("tiktok_url"),
   phone: text("phone"),
   regional: integer("regional", { mode: "boolean" }).default(false),
   venueId: text("venue_id").references(() => venues.id),

@@ -98,6 +98,8 @@ function metaForPlace(x) {
     address: x.address ?? x.reference ?? null,
     googleMapsUrl: x.google_maps_url ?? x.googleMapsUrl ?? x.mapsUrl ?? null,
     websiteUrl: x.website_url ?? x.websiteUrl ?? null,
+    instagramUrl: x.instagram_url ?? x.instagramUrl ?? null,
+    tiktokUrl: x.tiktok_url ?? x.tiktokUrl ?? null,
     phone: x.phone ?? null,
   };
 }
@@ -205,6 +207,8 @@ function normalizePlaces(data) {
         address: null,
         googleMapsUrl: null,
         websiteUrl: null,
+        instagramUrl: null,
+        tiktokUrl: null,
         phone: null,
       });
     }
@@ -318,7 +322,7 @@ async function main() {
     if (g.verified) verifiedCount++;
     else if (!place.id.startsWith("_district")) needsReview.push({ id: place.id, name: place.name, layer: place.layer, reason: g.reason ?? "low-confidence", displayName: g.displayName });
 
-    const cols = ["id", "name", "layer", "category", "district", "lat", "lng", "rating", "reviews", "price", "description", "address", "google_maps_url", "website_url", "phone", "regional", "source", "verified"];
+    const cols = ["id", "name", "layer", "category", "district", "lat", "lng", "rating", "reviews", "price", "description", "address", "google_maps_url", "website_url", "instagram_url", "tiktok_url", "phone", "regional", "source", "verified"];
     const vals = [
       place.id,
       place.name,
@@ -334,6 +338,8 @@ async function main() {
       place.address,
       place.googleMapsUrl,
       place.websiteUrl,
+      place.instagramUrl,
+      place.tiktokUrl,
       place.phone,
       g.regional,
       place.source,

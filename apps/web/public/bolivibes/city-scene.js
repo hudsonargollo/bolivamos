@@ -466,6 +466,8 @@ const placeSheetRating = document.getElementById('place-sheet-rating');
 const placeSheetInfo = document.getElementById('place-sheet-info');
 const placeSheetAddress = document.getElementById('place-sheet-address');
 const placeSheetMaps = document.getElementById('place-sheet-maps');
+const placeSheetInstagram = document.getElementById('place-sheet-instagram');
+const placeSheetTiktok = document.getElementById('place-sheet-tiktok');
 const placeSheetEvents = document.getElementById('place-sheet-events');
 const placeSheetShare = document.getElementById('place-sheet-share');
 const placeSheetCopy = document.getElementById('place-sheet-copy');
@@ -511,6 +513,10 @@ function openPlaceSheet(place) {
   placeSheetInfo.style.display = place.description ? 'block' : 'none';
   placeSheetAddress.textContent = place.address || '';
   placeSheetAddress.style.display = place.address ? 'block' : 'none';
+  placeSheetInstagram.href = place.instagramUrl || '#';
+  placeSheetInstagram.style.display = place.instagramUrl ? 'inline-block' : 'none';
+  placeSheetTiktok.href = place.tiktokUrl || '#';
+  placeSheetTiktok.style.display = place.tiktokUrl ? 'inline-block' : 'none';
 
   if (place.layer === 'event') {
     placeSheetMeta.textContent = [place.category, place.venueName, place.district].filter(Boolean).join(' · ');
