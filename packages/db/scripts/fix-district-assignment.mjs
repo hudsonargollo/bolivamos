@@ -59,10 +59,10 @@ function slugify(s) {
 
 function metaForPlace(x) {
   return {
-    description: x.description ?? x.notes ?? null,
+    description: x.description ?? x.notes ?? x.bolivibes_note ?? null,
     address: x.address ?? x.reference ?? null,
     googleMapsUrl: x.google_maps_url ?? x.googleMapsUrl ?? x.mapsUrl ?? null,
-    websiteUrl: x.website_url ?? x.websiteUrl ?? null,
+    websiteUrl: x.website_url ?? x.websiteUrl ?? x.source_url ?? null,
     instagramUrl: x.instagram_url ?? x.instagramUrl ?? null,
     tiktokUrl: x.tiktok_url ?? x.tiktokUrl ?? null,
     phone: x.phone ?? null,

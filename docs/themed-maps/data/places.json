@@ -6403,7 +6403,7 @@
   },
   "nightlife_venues": [
     {
-      "id": "swissco-discotheque-restobar",
+      "id": "swissco-discotheque-restobar-nightlife",
       "name": "Swissco Discotheque Restobar",
       "type": "Discotheque / restobar",
       "group": "Nightlife, Clubs & Event Venues",
@@ -6613,7 +6613,7 @@
       "bolivibes_note": "Primary Santa Cruz nightlife district for restaurants, bars, hotels, clubs and weekend cruising."
     },
     {
-      "id": "avenida-monsenor-rivero",
+      "id": "avenida-monsenor-rivero-nightlife-corridor",
       "name": "Avenida Monseñor Rivero",
       "type": "Dining / bar corridor",
       "group": "Nightlife, Clubs & Event Venues",

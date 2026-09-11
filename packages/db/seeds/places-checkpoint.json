@@ -4516,6 +4516,322 @@
       "regional": false,
       "verified": false,
       "reason": "no-match"
+    },
+    "samaipata-2-day-el-fuerte-amboro": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "samaipata-3-day-nature-history-adventure": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "el-fuerte-samaipata-full-day-banjo": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "amboro-samaipata-refugio-volcanes-2-day": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "amboro-national-park-samaipata-3-day": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "amboro-tours-samaipata-giant-ferns": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "private-bolivian-wine-tasting-santa-cruz": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "lomas-de-arena-day-trip": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "porongo-markets-city-private-tour": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "samaipata-wine-boutique-escape": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "bolitours-torito-city-tour": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "swissco-discotheque-restobar-nightlife": {
+      "lat": -17.7644538,
+      "lng": -63.2004708,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Swissco Discotheque  Restobar, 111, Calle Los Gomeros, Sirari, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "maroon": {
+      "lat": -17.7809227,
+      "lng": -63.1818246,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Maroon, Calle 24 de Septiembre, Bartos, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "nexus-club": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "flamenco-live-house": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "wynwood-scz": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "praga-discoteca-karaoke": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "fizz-night-club": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "chaplin-show": {
+      "lat": -17.7653619,
+      "lng": -63.2000547,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Chaplin Show, Avenida Marcelo Terceros Bánzer, El Carmen, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "casa-municipal-cultura-raul-otero-reiche": {
+      "lat": -17.7832969,
+      "lng": -63.1827935,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Casa Municipal de Cultura Raul Otero Reiche, Calle Libertad, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "paraninfo-uagrm": {
+      "lat": -17.7829139,
+      "lng": -63.182883,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Paraninfo Universitario Humberto Parada Caro, Calle Junín, Bancario, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "teatro-cba": {
+      "lat": -17.7837628,
+      "lng": -63.1776161,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Teatro CBA, 364, Calle Sucre, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "meraki-teatro": {
+      "lat": -17.784616,
+      "lng": -63.1798135,
+      "district": "Reloj & Clima",
+      "regional": false,
+      "verified": true,
+      "displayName": "Meraki, Calle Ballivián, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "sonilum": {
+      "lat": -17.7043971,
+      "lng": -63.1276429,
+      "district": "Parque Urbano",
+      "regional": false,
+      "verified": true,
+      "displayName": "Gran Sonilum, Avenida G77, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "fexpocruz": {
+      "lat": -17.7840993,
+      "lng": -63.2088433,
+      "district": "La Ramada",
+      "regional": false,
+      "verified": true,
+      "displayName": "Feria Exposición Santa Cruz, Avenida Roca y Coronado, 4 de Noviembre, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "equipetrol-district": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "avenida-monsenor-rivero-nightlife-corridor": {
+      "lat": -17.7742738,
+      "lng": -63.1823242,
+      "district": "Centro",
+      "regional": false,
+      "verified": true,
+      "displayName": "Avenida Monseñor Rivero, Bartos, Centro, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.05339757763027386
+    },
+    "patio-design-lifestyle-center-nightlife": {
+      "lat": -17.7714019,
+      "lng": -63.2018005,
+      "district": "Equipetrol",
+      "regional": false,
+      "verified": true,
+      "displayName": "Patio Design LifeStyle Center, Avenida Noel Kempff, Villa San Luis, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "ventura-mall-nightlife-anchor": {
+      "lat": -17.7542103,
+      "lng": -63.1989945,
+      "district": "Zoo",
+      "regional": false,
+      "verified": true,
+      "displayName": "Starbucks, Avenida Antonio Vaca Diez, Villa Brígida, Piraí, Santa Cruz de la Sierra, Provincia Andrés Ibáñez, Santa Cruz, Bolivia",
+      "importance": 0.0000642442969405206
+    },
+    "jesse-joy-sonilum-2026-09-24": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "arcangel-sonilum-2026-09-10": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "azul-azul-fexpocruz-2026-09-20": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "hex-steeel-ritual-2-maroon-2026-09-26": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "friday-night-orchestras-flamenco-live-house": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "tercera-preca-carnaval-2026": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "fuyu-hero-fest-2026": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "the-wall-opera-rock-pink-floyd": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
+    },
+    "studio-ghibli-sinfonico-santa-cruz": {
+      "lat": null,
+      "lng": null,
+      "district": null,
+      "regional": false,
+      "verified": false,
+      "reason": "no-match"
     }
   }
 }
