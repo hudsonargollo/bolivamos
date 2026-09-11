@@ -5,13 +5,13 @@ Everything needed to kick off the mapz.com themed-maps integration for Santa Cru
 | File | What it is |
 |---|---|
 | `PRD-themed-interactive-maps.md` | Product requirements: mapz.com API integration, clay theming spec (tokens extracted from the shipped hero scene), data pipeline, architecture, rollout phases, risks. |
-| `data/santa-cruz-directory.md` | Human-readable directory: 30 attractions, 21 tours & transfers, 359 restaurants (TripAdvisor, 2026-08-23), 120 casco-viejo streets (OpenAlfa/OSM). |
-| `data/places.json` | The same data machine-readable: 530 entries with ids, categories, ratings; `lat`/`lng` null pending the Phase 0 geocoding pass. |
+| `data/santa-cruz-directory.md` | Human-readable directory: 30 attractions, 24 tours, 7 transfers, 359 restaurants, 18 nightlife/event venues, 9 event candidates, 120 casco-viejo streets. New 2026-09-11 additions scraped from OSM/Nominatim, Songkick, Yanantin, SalsaVida, Yapa Bolivia, Bolivia Overland Tours, Amboró/VisitSouthAmerica/CreativeTours, Expedia, BoliviaBella and related public listings. |
+| `data/places.json` | The same data machine-readable, plus `nightlife_venues` and time-sensitive `events` arrays for BoliVibes discovery/host outreach. Legacy Phase 0 seed counts remain in D1 until the geocoding pipeline is rerun. |
 | `data/places.sample.geojson` | ~10 seed POIs with **approximate** coordinates (`verified:false`) so the map can be developed before geocoding completes. Not for production. |
 
 Start with the PRD's §9 rollout plan — Phase 0 (geocoding into D1) unblocks everything else.
 
-Data sources: TripAdvisor (g297317) and bolivia-streets.openalfa.com (OpenStreetMap-derived). Check TripAdvisor content terms before shipping ratings/review counts in-app (PRD OQ-4); OSM data is ODbL.
+Data sources: TripAdvisor (g297317), bolivia-streets.openalfa.com (OpenStreetMap-derived), OSM/Nominatim nearby POIs, and public tour/event listings. Check TripAdvisor/listing-site content terms before shipping ratings, reviews, event dates or ticket info in-app; OSM data is ODbL.
 
 ## Phase 0 status (2026-08-23)
 

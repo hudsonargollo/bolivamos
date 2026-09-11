@@ -1,7 +1,7 @@
 # Santa Cruz de la Sierra — Tour Guide Directory
 
 **Region:** Santa Cruz, Santa Cruz Department, Bolivia (TripAdvisor g297317)
-**Compiled:** 2026-08-23 · Ratings are out of 5 · Prices: $ = budget, $$–$$$ = mid-range, $$$$ = fine dining
+**Compiled:** 2026-09-11 · Ratings are out of 5 · Prices: $ = budget, $$–$$$ = mid-range, $$$$ = fine dining · New BoliVibes expansion includes web/OSM scraped nightlife venues, tours and event candidates
 
 ---
 
@@ -97,9 +97,75 @@
 | Private Executive Chauffeur Service (Premium SUV) | — | 0 |
 | Tourist and Urban Transportation | — | 0 |
 
+
+### BoliVibes Web-Scraped Tour Additions (2026-09-11)
+
+| Tour | Type | Duration | Price (from) | Source | BoliVibes use |
+|---|---|---|---|---|---|
+| Samaipata 2-Day: El Fuerte & Amboró Giant Fern Forest | Archaeology + nature multi-day | 2 days / 1 night | — | Yapa Bolivia | Foreigner-friendly weekend escape: UNESCO archaeology, Samaipata town, Amboró giant ferns. |
+| Samaipata 3 Days: Nature, History & Adventure | Nature/history/adventure multi-day | 3 days / 2 nights | — | Bolivia Overland Tours | Premium itinerary with vineyards/coffee, La Pajcha waterfall and optional Samaipata nightlife. |
+| El Fuerte de Samaipata Full-Day Tour | Archaeology day tour | Full day / 9–10 h | — | Banjo Tours | Simple one-day product from Santa Cruz: ruins + viewpoints + Las Cuevas when possible. |
+| Amboró & Samaipata 2-Day: Refugio Los Volcanes | Cloud forest + archaeology | 2 days / 1 night | — | VisitSouthAmerica | Strong nature/culture package: trails, waterfalls, El Fuerte and Cuevas Coffee. |
+| Amboró National Park & Samaipata | Nature + culture package | 3 days | — | CreativeTours | Premium nature route for travelers who want biodiversity and comfort. |
+| Samaipata Village, El Fuerte & Giant Ferns | Nature/archaeology customizable tour | 1–2+ days | — | Amboró Tours | Flexible local guide product; useful for custom BoliVibes recommendations. |
+| Private Tasting of Award Winning Bolivian Wines | Wine tasting | Evening/private tasting | $31 / adult | Travel Buddies / Viator mirror | Couples/date-night and expat/tourist experience; pair with BoliPass benefit ideas. |
+| Lomas de Arena Regional Park Day Trip | Nature / sand dunes | Half-day/full-day | — | Expedia | Close-to-city adventure; good for content and daytime itinerary bundles. |
+| Private Tour: Center, Porongo, Markets and River | City/private sightseeing | 4+ h | $40 / adult | Expedia activity listing | Easy first-day orientation for visitors and new residents. |
+| Samaipata Boutique Wine Escape | Wine + countryside escape | 2 days | — | Bolivia Golf Tours | Higher-end getaway combining El Fuerte and boutique vineyards. |
+
 ---
 
-## 3. Restaurants (complete TripAdvisor listing, ranking order)
+## 3. Nightlife, Clubs & Event Venues — BoliVibes Expansion
+
+### Clubs, bars and nightlife anchors
+
+| Name | Type | Area | Address / reference | Source | Notes |
+|---|---|---|---|---|---|
+| Swissco Discotheque Restobar | Discotheque / restobar | Sirari / Equipetrol | Calle Los Gomeros 111 Barrio Sirari | OSM | High-priority venue candidate: nightlife + food + events/spectacles. |
+| Maroon | Electronic music club / event venue | Centro | Calle 24 de Septiembre | Yanantin + OSM | Used by Yanantin for electronic music events; strong underground/nightlife fit. |
+| Nexus Club | Club / event venue | Centro / Plaza 24 de Septiembre | Frente a Plaza 24 de Septiembre | Yanantin | Needs exact pin QA before production. |
+| Flamenco Live House | Live music / salsa venue | Av. Virgen de Cotoca | Entre 4to y 5to Anillo | SalsaVida | Weekly live-orchestra Friday salsa/tropical night listing. |
+| Wynwood SCZ | Club, pub & bar | Centro | Calle Aroma entre Bolívar y Sucre #56 | Restaurants10/Facebook mirror | Downtown Saturday programming; verify official channel before ticketing. |
+| Praga Discoteca Karaoke | Discoteca / karaoke | Av. Busch | Plazoleta Mayor Carrasco, Av. Busch #1211 | Official site | Dance floor, VIP zone, hookah, restaurant, bar and karaoke. |
+| FIZZ | Night club | Av. Noel Kempff Mercado | Av. Noel Kempff Mercado | VYMaps | Large live-music/discoteca candidate; validate status before host outreach. |
+| Chaplin Show | Comedy / theatre / live venue | Equipetrol | Av. Marcelo Terceros Bánzer | OSM | Entertainment venue near Equipetrol, useful for shows/comedy nights. |
+| Sonilum | Concert hall / live music venue | Av. Busch | Av. Busch Nro. 1340, esq. 3er anillo interno | Songkick | Major concert venue; exact OSM pin not found, needs manual QA. |
+| Fexpocruz | Exhibition grounds / concerts / fairs | Piraí / Roca y Coronado | Av. Roca y Coronado entre 3° y 4° Anillo | OSM + Songkick | Major fairground/concert venue and Fexpocruz activation anchor. |
+| Equipetrol nightlife district | Nightlife district | Equipetrol | Av. San Martín corridor | BoliviaBella + OSM | Primary Santa Cruz nightlife district: bars, restaurants, discos, hotels. |
+| Avenida Monseñor Rivero | Dining / bar corridor | Centro Norte | Avenida Monseñor Rivero | WhatLatinAmerica | More relaxed dining/bar corridor alternative to Equipetrol. |
+| Patio Design Lifestyle Center | Dining / shopping / nightlife anchor | Equipetrol | Equipetrol | Existing directory | Meeting anchor for dinner, shopping, pre-party and content shoots. |
+| Ventura Mall | Mall / cinema / nightlife anchor | Equipetrol | Equipetrol | Existing directory | High-traffic anchor for dinner/cinema/event discovery. |
+
+### Cultural venues and live-event spaces
+
+| Name | Type | Area | Source | Notes |
+|---|---|---|---|---|
+| Casa Municipal de Cultura Raul Otero Reiche | Cultural venue / theatre | Centro | OSM | Central arts venue near Plaza 24; daytime/nighttime culture. |
+| Paraninfo Universitario Humberto Parada Caro | Auditorium / event venue | Centro | OSM / event aggregators | Concert/theatre listing venue. |
+| Teatro CBA | Theatre / cultural venue | Centro | OSM | Community theatre/cultural programming candidate. |
+| Meraki | Theatre / cultural venue | Centro | OSM | Small central arts venue candidate. |
+
+---
+
+## 4. Event Candidates — Time-sensitive, verify before publishing
+
+| Event | Type | Date / time | Venue | Source | BoliVibes use |
+|---|---|---|---|---|---|
+| Jesse & Joy at Sonilum | Concert | 2026-09-24 · 19:00 | Sonilum | Songkick | Ticketing/discovery candidate for Latin/pop/rock audience. |
+| Arcangel at Sonilum | Concert | 2026-09-10 | Sonilum | Songkick | Urban music listing; date may have passed, verify before showing. |
+| Azul Azul at Fexpocruz | Concert / fair event | 2026-09-20 | Fexpocruz | Songkick | Local/Latin concert at major fairground venue. |
+| HEX Steeel Ritual 2 | Electronic music | 2026-09-26 · 21:00–05:00 | Maroon | Yanantin | Hard techno / industrial techno / schranz; strong niche nightlife content. |
+| Friday Night of Orchestras | Weekly salsa/live music | Fridays · 21:00–06:00 | Flamenco Live House | SalsaVida | Recurring dance-night discovery card. |
+| Tercera Preca del Carnaval 2026 | Carnival / public culture | 2026-09-24 · 19:30 | Plaza 24 de Septiembre | AllEvents | City-vibe cultural listing; good for tourists and locals. |
+| Fuyu Hero Fest 2026 | Festival / pop culture | 2026-07-12 · 11:00 | Coliseo Santa Rosita | AllEvents | Pop-culture event candidate; verify organizer/tickets. |
+| THE WALL la Ópera Rock de Pink Floyd | Concert / opera rock | 2026-07-11 · 20:00 | Paraninfo Universitario UAGRM | AllEvents | Theatre/live music listing; verify before publishing. |
+| Concierto sinfónico Studio Ghibli Santa Cruz | Symphonic concert | 2026-07-11 · 16:30 | Teatro Rene Moreno | AllEvents | Family/anime/culture-friendly event candidate; venue pin needs QA. |
+
+**Publishing rule for events:** treat the rows above as intake leads, not guaranteed live inventory. Before adding to the user-facing app, confirm the organizer, date, ticket URL, age restriction, cover price, dress code and exact pin.
+
+---
+
+## 5. Restaurants (complete TripAdvisor listing, ranking order)
 
 | # | Name | Cuisine | Rating | Reviews | Price |
 |---|---|---|---|---|---|

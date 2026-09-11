@@ -143,6 +143,30 @@ function normalizePlaces(data) {
       source: "tripadvisor",
     });
   }
+  for (const v of data.nightlife_venues ?? []) {
+    out.push({
+      id: v.id,
+      name: v.name,
+      layer: "event",
+      category: v.group ?? v.type ?? "Nightlife venue",
+      rating: null,
+      reviews: null,
+      price: null,
+      source: v.source ?? "web-osm",
+    });
+  }
+  for (const e of data.events ?? []) {
+    out.push({
+      id: e.id,
+      name: e.name,
+      layer: "event",
+      category: e.type ?? "Event candidate",
+      rating: null,
+      reviews: null,
+      price: e.price_from ?? null,
+      source: e.source ?? "web",
+    });
+  }
   const streetGroups = {
     avenidas: "Avenue",
     calles: "Street",

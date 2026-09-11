@@ -59,6 +59,8 @@ async function main() {
   addAll(data.tours);
   addAll(data.transfers);
   addAll(data.restaurants);
+  addAll(data.nightlife_venues ?? []);
+  addAll(data.events ?? []);
   const slugify = (s) =>
     s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
   for (const group of Object.values(data.streets)) {
