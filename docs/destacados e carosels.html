@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BoliVibes — Plan de Destacados y Carruseles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Nunito', system-ui, sans-serif; background-color: #140b08; color: #f7e9cc;
+      background-image: radial-gradient(1200px 500px at 15% -10%, rgba(255,196,31,0.10), transparent 60%),
+                        radial-gradient(900px 400px at 100% 0%, rgba(232,48,42,0.08), transparent 60%); }
+    h1, h2, h3, h4, .font-display { font-family: 'Fredoka', 'Nunito', sans-serif; }
+    .card { background-color: #1f120c; border: 1px solid #3d271c; border-radius: 1.1rem; }
+    .stripe { height: 6px; background: linear-gradient(90deg, #1e9e45 0 33.33%, #ffc41f 33.33% 66.66%, #e8302a 66.66% 100%); border-radius: 999px; }
+    .tab-btn { background-color: #2b1a12; color: #d9bd8c; border: 1px solid #3d271c; }
+    .tab-btn:hover { background-color: #3d271c; color: #fff8ea; }
+    .tab-active { background-color: #ffc41f !important; color: #2b1a12 !important; border-color: #ffc41f !important; box-shadow: 0 6px 18px rgba(255,196,31,0.25); }
+    .glow-sol { box-shadow: 0 0 18px rgba(255,196,31,0.25); }
+    .tnum { font-variant-numeric: tabular-nums; }
+    h1 { text-wrap: balance; }
+    .es { font-family: 'Nunito', sans-serif; color: #fff8ea; }
+    .script { white-space: pre-wrap; background: #140b08; border: 1px solid #3d271c; border-radius: .75rem; padding: 1rem; font-size: .8rem; line-height: 1.55; color: #ecd6ad; }
+    .prompt { white-space: pre-wrap; background: #140b08; border: 1px dashed #54382a; border-radius: .75rem; padding: 1rem; font-size: .78rem; line-height: 1.5; color: #d9bd8c; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .pill { display: inline-block; padding: .1rem .55rem; border-radius: 999px; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .pill-cat { background: rgba(255,196,31,.12); color: #ffd23f; border: 1px solid rgba(255,196,31,.35); }
+    .pill-pass { background: rgba(232,48,42,.12); color: #f25a4e; border: 1px solid rgba(232,48,42,.35); }
+    .pill-green { background: rgba(30,158,69,.12); color: #37b85f; border: 1px solid rgba(30,158,69,.35); }
+    .copy-btn { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: #ffd23f; border: 1px solid rgba(255,196,31,.35); border-radius: 999px; padding: .2rem .6rem; background: transparent; cursor: pointer; }
+    .copy-btn:hover { background: rgba(255,196,31,.12); }
+    .copy-btn-ts { color: #37b85f; border-color: rgba(30,158,69,.35); }
+    .copy-btn-ts:hover { background: rgba(30,158,69,.12); }
+    .hl-cover { width: 72px; height: 72px; border-radius: 999px; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; border: 2px solid; }
+    .cr-slide { background: #140b08; border: 1px solid #3d271c; border-radius: .85rem; padding: .85rem; }
+    @media (min-width: 1024px) { .hero { display: grid; grid-template-columns: auto minmax(0,1fr) 380px; align-items: center; gap: 2.5rem; } }
+    @media print { .tab-content { display: block !important; } .tab-nav { display: none; } body { background: #fff; color: #1f120c; } }
+  </style>
+<style>*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.static{position:static}.fixed{position:fixed}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:.25rem}.mb-2{margin-bottom:.5rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mt-1{margin-top:.25rem}.mt-2{margin-top:.5rem}.mt-3{margin-top:.75rem}.mt-6{margin-top:1.5rem}.block{display:block}.inline{display:inline}.flex{display:flex}.table{display:table}.grid{display:grid}.hidden{display:none}.w-56{width:14rem}.w-full{width:100%}.min-w-0{min-width:0}.max-w-2xl{max-width:42rem}.max-w-\[1440px\]{max-width:1440px}.flex-1{flex:1 1 0%}.flex-shrink{flex-shrink:1}.border-collapse{border-collapse:collapse}.select-none{-webkit-user-select:none;-moz-user-select:none;user-select:none}.list-inside{list-style-position:inside}.list-decimal{list-style-type:decimal}.list-disc{list-style-type:disc}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-between{justify-content:space-between}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-y-1>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.25rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.25rem*var(--tw-space-y-reverse))}.space-y-1\.5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.375rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.375rem*var(--tw-space-y-reverse))}.space-y-4>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem*var(--tw-space-y-reverse))}.space-y-6>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem*var(--tw-space-y-reverse))}.divide-y>:not([hidden])~:not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px*(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px*var(--tw-divide-y-reverse))}.divide-cocoa-800>:not([hidden])~:not([hidden]){--tw-divide-opacity:1;border-color:rgb(43 26 18/var(--tw-divide-opacity,1))}.overflow-x-auto{overflow-x:auto}.whitespace-nowrap{white-space:nowrap}.text-wrap{text-wrap:wrap}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-chili-500{--tw-border-opacity:1;border-color:rgb(232 48 42/var(--tw-border-opacity,1))}.border-chili-500\/30{border-color:rgba(232,48,42,.3)}.border-chili-500\/40{border-color:rgba(232,48,42,.4)}.border-cocoa-700{--tw-border-opacity:1;border-color:rgb(61 39 28/var(--tw-border-opacity,1))}.border-selva-500{--tw-border-opacity:1;border-color:rgb(30 158 69/var(--tw-border-opacity,1))}.border-selva-500\/30{border-color:rgba(30,158,69,.3)}.border-selva-500\/40{border-color:rgba(30,158,69,.4)}.border-sol-500{--tw-border-opacity:1;border-color:rgb(255 196 31/var(--tw-border-opacity,1))}.border-sol-500\/30{border-color:rgba(255,196,31,.3)}.border-sol-500\/40{border-color:rgba(255,196,31,.4)}.bg-cocoa-800\/60{background-color:rgba(43,26,18,.6)}.bg-cocoa-900{--tw-bg-opacity:1;background-color:rgb(31 18 12/var(--tw-bg-opacity,1))}.bg-cocoa-900\/90{background-color:rgba(31,18,12,.9)}.bg-cocoa-950{--tw-bg-opacity:1;background-color:rgb(20 11 8/var(--tw-bg-opacity,1))}.bg-selva-500\/10{background-color:rgba(30,158,69,.1)}.bg-sol-500\/10{background-color:rgba(255,196,31,.1)}.p-2{padding:.5rem}.p-3{padding:.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.py-1{padding-top:.25rem;padding-bottom:.25rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-2\.5{padding-top:.625rem;padding-bottom:.625rem}.pb-2{padding-bottom:.5rem}.pb-6{padding-bottom:1.5rem}.pr-3{padding-right:.75rem}.text-left{text-align:left}.text-center{text-align:center}.font-display{font-family:Fredoka,Nunito,system-ui,sans-serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xs{font-size:.75rem;line-height:1rem}.font-bold{font-weight:700}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-\[1\.05\]{line-height:1.05}.leading-relaxed{line-height:1.625}.tracking-tight{letter-spacing:-.025em}.tracking-wider{letter-spacing:.05em}.text-chili-400{--tw-text-opacity:1;color:rgb(242 90 78/var(--tw-text-opacity,1))}.text-cream-200{--tw-text-opacity:1;color:rgb(236 214 173/var(--tw-text-opacity,1))}.text-cream-300{--tw-text-opacity:1;color:rgb(217 189 140/var(--tw-text-opacity,1))}.text-cream-400{--tw-text-opacity:1;color:rgb(184 153 106/var(--tw-text-opacity,1))}.text-cream-50{--tw-text-opacity:1;color:rgb(255 248 234/var(--tw-text-opacity,1))}.text-selva-400{--tw-text-opacity:1;color:rgb(55 184 95/var(--tw-text-opacity,1))}.text-sol-400{--tw-text-opacity:1;color:rgb(255 210 63/var(--tw-text-opacity,1))}.opacity-90{opacity:.9}.drop-shadow-\[0_10px_24px_rgba\(0\2c 0\2c 0\2c 0\.45\)\]{--tw-drop-shadow:drop-shadow(0 10px 24px rgba(0,0,0,.45));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}@media (min-width:768px){.md\:w-64{width:16rem}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.md\:p-8{padding:2rem}.md\:text-4xl{font-size:2.25rem;line-height:2.5rem}.md\:text-base{font-size:1rem;line-height:1.5rem}}@media (min-width:1024px){.lg\:w-auto{width:auto}.lg\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.lg\:flex-wrap{flex-wrap:wrap}.lg\:overflow-visible{overflow:visible}}@media (min-width:1280px){.xl\:w-72{width:18rem}.xl\:p-10{padding:2.5rem}.xl\:text-5xl{font-size:3rem;line-height:1}}</style>
+</head>
+<body class="p-4 md:p-8 xl:p-10 max-w-[1440px] mx-auto">
+
+  <!-- Header -->
+  <header class="mb-8 pb-6 border-b border-cocoa-700">
+    <div class="hero flex flex-col gap-8">
+      <img src="data:image/webp;base64,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 equitable system" alt="Logo de BoliVibes" class="w-56 md:w-64 xl:w-72 drop-shadow-[0_10px_24px_rgba(0,0,0,0.45)]">
+      <div>
+        <div class="stripe mb-3"></div>
+        <div class="flex items-center gap-2 mb-1">
+          <span class="pill pill-cat">Estrategia Instagram</span>
+          <span class="pill pill-pass">Lanzamiento Sept 2026</span>
+        </div>
+        <h1 class="text-3xl md:text-4xl xl:text-5xl font-bold tracking-tight text-cream-50">Plan de Destacados y Carruseles</h1>
+        <p class="text-cream-300 text-sm md:text-base mt-2 max-w-2xl">
+          Estructura para Instagram de <strong class="text-sol-400">@bolivibes.app</strong>: portadas de destacados, guiones para reels, copys y prompts de IA.
+        </p>
+      </div>
+      <div class="card p-4 text-xs space-y-1.5 border-sol-500/30 bg-cocoa-900/90">
+        <div class="flex justify-between text-cream-400"><span>Inicio de campaña:</span><strong class="text-sol-400 tnum">1 Sep 2026</strong></div>
+        <div class="flex justify-between text-cream-400"><span>Lanzamiento App:</span><strong class="text-sol-400 tnum">14 Sep 2026</strong></div>
+        <div class="flex justify-between text-cream-400"><span>Fexpocruz:</span><strong class="text-sol-400 tnum">18-27 Sep 2026</strong></div>
+        <div class="flex justify-between text-cream-400"><span>Objetivo:</span><strong class="text-cream-50">Conversión e Instalación</strong></div>
+      </div>
+    </div>
+
+    <!-- Tab Nav -->
+    <nav class="tab-nav flex gap-2 overflow-x-auto mt-8 pb-2">
+      <button class="tab-btn tab-active px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition whitespace-nowrap" onclick="switchTab(0)">1. Portadas para Destacados</button>
+      <button class="tab-btn px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition whitespace-nowrap" onclick="switchTab(1)">2. Contenido de Historias Destacadas</button>
+      <button class="tab-btn px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition whitespace-nowrap" onclick="switchTab(2)">3. Plan de Carruseles</button>
+      <button class="tab-btn px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition whitespace-nowrap" onclick="switchTab(3)">4. Calendario y Cronograma</button>
+    </nav>
+  </header>
+
+  <!-- TAB 1: HIGHLIGHT COVERS -->
+  <main id="tab-0" class="tab-content space-y-6">
+    <div class="card p-6">
+      <h2 class="text-2xl font-bold text-sol-400 mb-2">Iconos e Identidad para Historias Destacadas</h2>
+      <p class="text-cream-300 text-sm mb-6">Cinco carátulas fijas para la parte superior del perfil de Instagram. Mantienen un diseño visual coherente usando la paleta oficial de BoliVibes.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        
+        <!-- HL 1 -->
+        <div class="card p-4 border-sol-500/40 flex gap-4 items-center">
+          <div class="hl-cover bg-cocoa-950 border-sol-500 text-sol-400">⚡</div>
+          <div>
+            <span class="pill pill-cat mb-1">Destacado 1</span>
+            <h3 class="font-bold text-lg text-cream-50">¿Qué es?</h3>
+            <p class="text-xs text-cream-300 mt-1">El concepto BoliVibes, el problema que resuelve y las funciones principales de la aplicación.</p>
+            <p class="text-[11px] text-cream-400 mt-2"><strong>Fondo:</strong> #140b08 · <strong>Borde:</strong> #ffc41f (Sol)</p>
+          </div>
+        </div>
+
+        <!-- HL 2 -->
+        <div class="card p-4 border-chili-500/40 flex gap-4 items-center">
+          <div class="hl-cover bg-cocoa-950 border-chili-500 text-chili-400">🎟️</div>
+          <div>
+            <span class="pill pill-pass mb-1">Destacado 2</span>
+            <h3 class="font-bold text-lg text-cream-50">BoliPass</h3>
+            <p class="text-xs text-cream-300 mt-1">Beneficios exclusivos, descuentos en locales y cómo activar el pase mensual.</p>
+            <p class="text-[11px] text-cream-400 mt-2"><strong>Fondo:</strong> #140b08 · <strong>Borde:</strong> #e8302a (Ají)</p>
+          </div>
+        </div>
+
+        <!-- HL 3 -->
+        <div class="card p-4 border-selva-500/40 flex gap-4 items-center">
+          <div class="hl-cover bg-cocoa-950 border-selva-500 text-selva-400">📍</div>
+          <div>
+            <span class="pill pill-green mb-1">Destacado 3</span>
+            <h3 class="font-bold text-lg text-cream-50">Locales</h3>
+            <p class="text-xs text-cream-300 mt-1">Bares, boliches, restaurantes y cafés aliados en Santa Cruz de la Sierra.</p>
+            <p class="text-[11px] text-cream-400 mt-2"><strong>Fondo:</strong> #140b08 · <strong>Borde:</strong> #1e9e45 (Selva)</p>
+          </div>
+        </div>
+
+        <!-- HL 4 -->
+        <div class="card p-4 border-sol-500/40 flex gap-4 items-center">
+          <div class="hl-cover bg-cocoa-950 border-sol-500 text-sol-400">🤖</div>
+          <div>
+            <span class="pill pill-cat mb-1">Destacado 4</span>
+            <h3 class="font-bold text-lg text-cream-50">VibeIA</h3>
+            <p class="text-xs text-cream-300 mt-1">Demostraciones de cómo la inteligencia artificial arma salidas personalizadas según tu estado de ánimo.</p>
+            <p class="text-[11px] text-cream-400 mt-2"><strong>Fondo:</strong> #140b08 · <strong>Borde:</strong> #ffc41f (Sol)</p>
+          </div>
+        </div>
+
+        <!-- HL 5 -->
+        <div class="card p-4 border-chili-500/40 flex gap-4 items-center">
+          <div class="hl-cover bg-cocoa-950 border-chili-500 text-chili-400">🚀</div>
+          <div>
+            <span class="pill pill-pass mb-1">Destacado 5</span>
+            <h3 class="font-bold text-lg text-cream-50">Lanzamiento</h3>
+            <p class="text-xs text-cream-300 mt-1">Conteo regresivo para el 14 de septiembre, previa en Nanotec y presencia en Fexpocruz.</p>
+            <p class="text-[11px] text-cream-400 mt-2"><strong>Fondo:</strong> #140b08 · <strong>Borde:</strong> #e8302a (Ají)</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- TAB 2: HIGHLIGHT STORIES CONTENT -->
+  <main id="tab-1" class="tab-content hidden space-y-6">
+    
+    <!-- HL 1 Sequence -->
+    <div class="card p-6 border-sol-500/30">
+      <div class="flex justify-between items-start mb-4">
+        <div>
+          <span class="pill pill-cat">Destacado 1 · 4 Historias</span>
+          <h2 class="text-2xl font-bold text-cream-50 mt-1">¿Qué es BoliVibes?</h2>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div class="cr-slide">
+          <span class="text-[10px] text-sol-400 font-bold uppercase">Historia 1.1 · El Problema</span>
+          <p class="text-xs text-cream-50 font-bold mt-1">"¿A dónde salimos hoy?"</p>
+          <p class="text-xs text-cream-300 mt-2">Imagen de grupos de WhatsApp indecisos. El problema clásico de los fines de semana en Santa Cruz.</p>
+        </div>
+        <div class="cr-slide">
+          <span class="text-[10px] text-sol-400 font-bold uppercase">Historia 1.2 · La Solución</span>
+          <p class="text-xs text-cream-50 font-bold mt-1">"La app que sabe dónde está la vibra"</p>
+          <p class="text-xs text-cream-300 mt-2">Muestra la pantalla principal con el feed Tonight y el mapa isométrico en tiempo real.</p>
+        </div>
+        <div class="cr-slide">
+          <span class="text-[10px] text-sol-400 font-bold uppercase">Historia 1.3 · Pilares</span>
+          <p class="text-xs text-cream-50 font-bold mt-1">"Mapa + Eventos + VibeIA + BoliPass"</p>
+          <p class="text-xs text-cream-300 mt-2">Las 4 herramientas clave explicadas en iconos dinámicos sobre fondo oscuro.</p>
+        </div>
+        <div class="cr-slide">
+          <span class="text-[10px] text-sol-400 font-bold uppercase">Historia 1.4 · CTA</span>
+          <p class="text-xs text-cream-50 font-bold mt-1">"Lanzamiento: 14 de Septiembre"</p>
+          <p class="text-xs text-cream-300 mt-2">Sticker de enlace para preregistro o acceso a la lista de espera oficial.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- HL 2 Sequence -->
+    <div class="card p-6 border-chili-500/30">
+      <div class="flex justify-between items-start mb-4">
+        <div>
+          <span class="pill pill-pass">Destacado 2 · 4 Historias</span>
+          <h2 class="text-2xl font-bold text-cream-50 mt-1">BoliPass — Membresía Exclusiva</h2>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div class="cr-slide">
+          <span class="text-[10px] text-chili-400 font-bold uppercase">Historia 2.1 · El Concepto</span>
+          <p class="text-xs text-cream-50 font-bold mt-1">"Tu pasaporte a las mejores salidas"</p>
+          <p class="text-xs text-cream-300 mt-2">Tarjeta virtual BoliPass animada con destellos dorados y rojos.</p>
+        </div>
+        <div class="cr-slide">
+          <span class="text-[10px] text-chili-400 font-bold uppercase">Historia 2.2 · Beneficios</span>
+          <p class="text-xs text-cream-50 font-bold mt-1">"2x1, shots de bienvenida y descuentos"</p>
+          <p class="text-xs text-cream-300 mt-2">Lista de beneficios directos al mostrar el pase desde el celular en el local.</p>
+        </div>
+        <div class="cr-slide">
+          <span class="text-[10px] text-chili-400 font-bold uppercase">Historia 2.3 · BoliPass Business</span>
+          <p class="text-xs text-cream-50 font-bold mt-1">"¿Tenés un local? Unite como aliado"</p>
+          <p class="text-xs text-cream-300 mt-2">Llamado directo a dueños de bares y boliches para publicar sus ofertas.</p>
+        </div>
+        <div class="cr-slide">
+          <span class="text-[10px] text-chili-400 font-bold uppercase">Historia 2.4 · CTA</span>
+          <p class="text-xs text-cream-50 font-bold mt-1">"Conseguí tu BoliPass"</p>
+          <p class="text-xs text-cream-300 mt-2">Sticker interactivo hacia la página de registro de usuarios y aliados.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- HL 3 Sequence -->
+    <div class="card p-6 border-selva-500/30">
+      <div class="flex justify-between items-start mb-4">
+        <div>
+          <span class="pill pill-green">Destacado 3 · 4 Historias</span>
+          <h2 class="text-2xl font-bold text-cream-50 mt-1">Locales y Aliados</h2>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div class="cr-slide">
+          <span class="text-[10px] text-selva-400 font-bold uppercase">Historia 3.1 · Mapa Vivo</span>
+          <p class="text-xs text-cream-50 font-bold mt-1">"Los mejores lugares en un solo mapa"</p>
+          <p class="text-xs text-cream-300 mt-2">Recorrido en vídeo sobre el mapa isométrico mostrando pines de locales en Sta Cruz.</p>
+        </div>
+        <div class="cr-slide">
+          <span class="text-[10px] text-selva-400 font-bold uppercase">Historia 3.2 · Categorías</span>
+          <p class="text-xs text-cream-300 mt-1">"Boliches, Bares, Restos, Cafés"</p>
+          <p class="text-xs text-cream-300 mt-2">Muestra la facilidad de filtrar lugares según el tipo de plan que se busque.</p>
+        </div>
+        <div class="cr-slide">
+          <span class="text-[10px] text-selva-400 font-bold uppercase">Historia 3.3 · Perfil de Local</span>
+          <p class="text-xs text-cream-50 font-bold mt-1">"Fotos, menú, horario y ambiente real"</p>
+          <p class="text-xs text-cream-300 mt-2">Vista previa de cómo luce la ficha de un local dentro de la aplicación.</p>
+        </div>
+        <div class="cr-slide">
+          <span class="text-[10px] text-selva-400 font-bold uppercase">Historia 3.4 · Sumar un Local</span>
+          <p class="text-xs text-cream-50 font-bold mt-1">"¿Querés que tu local aparezca aquí?"</p>
+          <p class="text-xs text-cream-300 mt-2">Enlace directo al formulario de contacto para BoliPass Business.</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- TAB 3: CAROUSEL PLAN -->
+  <main id="tab-2" class="tab-content hidden space-y-6">
+
+    <!-- Carousel 1 -->
+    <div class="card p-6 border-sol-500/30">
+      <div class="flex justify-between items-start mb-4">
+        <div>
+          <span class="pill pill-cat">Carrusel 1 · Formato Educativo / Presentación</span>
+          <h2 class="text-2xl font-bold text-cream-50 mt-1">"5 razones por las que elegir a dónde salir en Santa Cruz siempre es un dilema (y cómo lo resolvemos)"</h2>
+        </div>
+        <button class="copy-btn" onclick="copyText('c1-copy')">Copiar Copy</button>
+      </div>
+
+      <!-- Slides Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3 mb-6">
+        <div class="cr-slide">
+          <span class="text-[10px] text-sol-400 font-bold uppercase">Diapositiva 1 · Portada</span>
+          <p class="text-xs text-cream-50 font-bold mt-1">5 razones por las que organizar una salida en Santa Cruz termina en caos 🤦‍♂️</p>
+          <p class="text-[11px] text-cream-400 mt-2">Imagen llamativa de un grupo mirando sus teléfonos con gesto de duda.</p>
+        </div>
+        <div class="cr-slide">
+          <span class="text-[10px] text-sol-400 font-bold uppercase">Diapositiva 2</span>
+          <p class="text-xs text-cream-50 font-bold mt-1">1. Información dispersa</p>
+          <p class="text-[11px] text-cream-300 mt-1">Un evento en Instagram, otro en WhatsApp, otro en un afiche. Imposible comparar.</p>
+        </div>
+        <div class="cr-slide">
+          <span class="text-[10px] text-sol-400 font-bold uppercase">Diapositiva 3</span>
+          <p class="text-xs text-cream-50 font-bold mt-1">2. No sabés si hay ambiente</p>
+          <p class="text-[11px] text-cream-300 mt-1">Llegás a un lugar y está vacío, o la fila da la vuelta a la manzana.</p>
+        </div>
+        <div class="cr-slide">
+          <span class="text-[10px] text-sol-400 font-bold uppercase">Diapositiva 4</span>
+          <p class="text-xs text-cream-50 font-bold mt-1">3. Valles de indecisión</p>
+          <p class="text-[11px] text-cream-300 mt-1">30 minutos en el auto debatiendo a dónde ir sin llegar a ningún acuerdo.</p>
+        </div>
+        <div class="cr-slide">
+          <span class="text-[10px] text-sol-400 font-bold uppercase">Diapositiva 5 · Solución</span>
+          <p class="text-xs text-sol-400 font-bold mt-1">BoliVibes lo cambia todo ⚡</p>
+          <p class="text-[11px] text-cream-300 mt-1">Mapa en vivo, eventos actualizados y recomendación por IA en una sola app.</p>
+        </div>
+      </div>
+
+      <!-- Copy Box -->
+      <div class="space-y-2">
+        <span class="text-xs font-bold uppercase tracking-wider text-cream-400">Copy para la publicación:</span>
+        <div id="c1-copy" class="script">¿Te pasó de estar 40 minutos en el auto decidiendo a dónde ir? 🚗💨
+
+En Santa Cruz la oferta nocturna es enorme, pero encontrar la vibra correcta en el momento justo a veces se siente como una lotería.
+
+Por eso creamos BoliVibes:
+📍 Mapa isométrico con locales activos.
+📅 Feed "Tonight" con eventos confirmados para hoy.
+🤖 VibeIA: tu asistente inteligente para armar el plan ideal.
+
+Lanzamos este 14 de septiembre. Guardá este post y sé de los primeros en probarla. 🇧🇴✨
+
+#BoliVibes #SantaCruzDeLaSierra #NocheCruceña #VidaNocturna #Bolivia #BoliPass</div>
+      </div>
+
+      <!-- AI Prompt -->
+      <div class="space-y-2 mt-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-cream-400">Prompt para generar imágenes con IA:</span>
+        <div class="prompt">Photorealistic image of young Bolivian friends sitting inside a car at night in Santa Cruz de la Sierra, looking frustrated at their smartphones trying to decide where to go out. Neon lights from city streets reflected on glass, warm cinematic lighting, cocoa and gold tones, modern atmospheric nightlife style, 8k resolution --ar 4:5</div>
+      </div>
+    </div>
+
+    <!-- Carousel 2 -->
+    <div class="card p-6 border-chili-500/30">
+      <div class="flex justify-between items-start mb-4">
+        <div>
+          <span class="pill pill-pass">Carrusel 2 · Enfocado en BoliPass</span>
+          <h2 class="text-2xl font-bold text-cream-50 mt-1">"Cómo salir más y gastar menos con BoliPass"</h2>
+        </div>
+        <button class="copy-btn" onclick="copyText('c2-copy')">Copiar Copy</button>
+      </div>
+
+      <!-- Slides Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3 mb-6">
+        <div class="cr-slide">
+          <span class="text-[10px] text-chili-400 font-bold uppercase">Diapositiva 1 · Portada</span>
+          <p class="text-xs text-cream-50 font-bold mt-1">El secreto para salir todos los fines de semana sin liquidar tu presupuesto 🎟️</p>
+          <p class="text-[11px] text-cream-400 mt-2">Imagen elegante de la tarjeta digital BoliPass brillando en la pantalla de un smartphone.</p>
+        </div>
+        <div class="cr-slide">
+          <span class="text-[10px] text-chili-400 font-bold uppercase">Diapositiva 2</span>
+          <p class="text-xs text-cream-50 font-bold mt-1">1. Descuentos reales en puerta</p>
+          <p class="text-[11px] text-cream-300 mt-1">Mostrá tu BoliPass al ingresar y accedé a tarifas preferenciales o 2x1 en entradas.</p>
+        </div>
+        <div class="cr-slide">
+          <span class="text-[10px] text-chili-400 font-bold uppercase">Diapositiva 3</span>
+          <p class="text-xs text-cream-50 font-bold mt-1">2. Tragos de bienvenida</p>
+          <p class="text-[11px] text-cream-300 mt-1">Shots o cócteles de cortesía en locales seleccionados solo por estar registrado.</p>
+        </div>
+        <div class="cr-slide">
+          <span class="text-[10px] text-chili-400 font-bold uppercase">Diapositiva 4</span>
+          <p class="text-xs text-cream-50 font-bold mt-1">3. Experiencias exclusivas</p>
+          <p class="text-[11px] text-cream-300 mt-1">Acceso a eventos cerrados, catas y previas exclusivas para la comunidad.</p>
+        </div>
+        <div class="cr-slide">
+          <span class="text-[10px] text-chili-400 font-bold uppercase">Diapositiva 5 · CTA</span>
+          <p class="text-xs text-chili-400 font-bold mt-1">Activá tu BoliPass este 14 de Septiembre 🚀</p>
+          <p class="text-[11px] text-cream-300 mt-1">Enlace en bio para registrarte en la lista de prelanzamiento.</p>
+        </div>
+      </div>
+
+      <!-- Copy Box -->
+      <div class="space-y-2">
+        <span class="text-xs font-bold uppercase tracking-wider text-cream-400">Copy para la publicación:</span>
+        <div id="c2-copy" class="script">Salir a disfrutar la ciudad no tiene por qué costar una fortuna. 🍹✨
+
+Con BoliPass transformamos la forma en que vivís la noche en Santa Cruz. Es una membresía pensada para premiar a quienes disfrutan de salir, conocer nuevos lugares y pasarla bien.
+
+Beneficios al activar tu pase:
+✅ Descuentos directos en consumo y entradas.
+✅ Beneficios de bienvenida en locales aliados.
+✅ Acceso prioritario a eventos especiales.
+
+Disponible desde el 14 de septiembre en la app de BoliVibes.
+
+¿En qué local te gustaría usar tu primer beneficio? Contanos en los comentarios 👇
+
+#BoliPass #BoliVibes #BeneficiosSantaCruz #BolichesSCZ #RestaurantesSantaCruz #OfertasSCZ</div>
+      </div>
+
+      <!-- AI Prompt -->
+      <div class="space-y-2 mt-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-cream-400">Prompt para generar imágenes con IA:</span>
+        <div class="prompt">A premium digital membership pass glowing on a sleek smartphone screen inside a high-end lounge bar in Santa Cruz. Soft ambient lighting, deep cocoa background with warm red and gold accents, ice cold cocktail glasses on a polished wooden table, sophisticated nightlife atmosphere, shallow depth of field --ar 4:5</div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- TAB 4: CALENDAR -->
+  <main id="tab-3" class="tab-content hidden space-y-6">
+    <div class="card p-6">
+      <h2 class="text-2xl font-bold text-sol-400 mb-2">Cronograma de Publicaciones de Lanzamiento</h2>
+      <p class="text-cream-300 text-sm mb-6">Planificación de contenidos para la fase de prelanzamiento, lanzamiento oficial y presencia en Fexpocruz 2026.</p>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs text-cream-300 border-collapse">
+          <thead>
+            <tr class="border-b border-cocoa-700 text-sol-400 font-bold uppercase">
+              <th class="p-3">Fecha</th>
+              <th class="p-3">Fase</th>
+              <th class="p-3">Formato</th>
+              <th class="p-3">Tema Principal</th>
+              <th class="p-3">Objetivo</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-cocoa-800">
+            <tr>
+              <td class="p-3 font-bold text-cream-50 tnum">1 - 5 Sep</td>
+              <td class="p-3"><span class="pill pill-cat">Teaser</span></td>
+              <td class="p-3">Reels + Historias</td>
+              <td class="p-3">El dilema de no saber a dónde salir en Santa Cruz.</td>
+              <td class="p-3">Generar expectativa y visitas al perfil.</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-cream-50 tnum">6 - 10 Sep</td>
+              <td class="p-3"><span class="pill pill-cat">Educativa</span></td>
+              <td class="p-3">Carrusel 1 + Historias</td>
+              <td class="p-3">Presentación de funciones: Mapa, Tonight y VibeIA.</td>
+              <td class="p-3">Explicar la propuesta de valor.</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-cream-50 tnum">11 - 13 Sep</td>
+              <td class="p-3"><span class="pill pill-pass">Previa</span></td>
+              <td class="p-3">Carrusel 2 + Evento Nanotec</td>
+              <td class="p-3">Presentación de BoliPass y cobertura de la previa en Nanotec.</td>
+              <td class="p-3">Registros en lista de espera y alianza con locales.</td>
+            </tr>
+            <tr class="bg-sol-500/10">
+              <td class="p-3 font-bold text-sol-400 tnum">Dom 14 Sep</td>
+              <td class="p-3"><span class="pill pill-cat">Lanzamiento</span></td>
+              <td class="p-3">Reel Oficial + Transmisión</td>
+              <td class="p-3">¡La aplicación ya está disponible para descarga!</td>
+              <td class="p-3">Descargas inmediatas de la app.</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-cream-50 tnum">15 - 17 Sep</td>
+              <td class="p-3"><span class="pill pill-green">Adopción</span></td>
+              <td class="p-3">Historias + Colaboraciones</td>
+              <td class="p-3">Primeros usuarios usando la app en locales aliados.</td>
+              <td class="p-3">Prueba social y uso continuo.</td>
+            </tr>
+            <tr class="bg-selva-500/10">
+              <td class="p-3 font-bold text-selva-400 tnum">18 - 27 Sep</td>
+              <td class="p-3"><span class="pill pill-green">Fexpocruz</span></td>
+              <td class="p-3">Cobertura en vivo + Reels</td>
+              <td class="p-3">Activaciones presenciales en el estand de Fexpocruz.</td>
+              <td class="p-3">Captación masiva de usuarios en feria.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function switchTab(index) {
+      const tabs = document.querySelectorAll('.tab-content');
+      const buttons = document.querySelectorAll('.tab-btn');
+      
+      tabs.forEach((tab, idx) => {
+        if(idx === index) {
+          tab.classList.remove('hidden');
+        } else {
+          tab.classList.add('hidden');
+        }
+      });
+
+      buttons.forEach((btn, idx) => {
+        if(idx === index) {
+          btn.classList.add('tab-active');
+        } else {
+          btn.classList.remove('tab-active');
+        }
+      });
+    }
+
+    function copyText(elementId) {
+      const text = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('¡Texto copiado al portapapeles!');
+      });
+    }
+  </script>
+</body>
+</html>

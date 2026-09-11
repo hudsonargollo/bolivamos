@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BoliPass Business Pitch</title>
+<style>
+  :root{
+    --cocoa-950:#140b08; --cocoa-900:#1f120c; --cocoa-800:#2b1a12; --cocoa-700:#3d271c; --cocoa-600:#54382a; --cocoa-500:#7a5a48;
+    --cream-50:#fff8ea; --cream-200:#ecd6ad; --cream-300:#d9bd8c; --cream-400:#b8996a;
+    --sol-400:#ffd23f; --sol-500:#ffc41f;
+    --chili-400:#f25a4e; --chili-500:#e8302a;
+    --selva-400:#37b85f; --selva-500:#1e9e45;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cocoa-950);color:var(--cream-50);font-family:'Nunito',system-ui,sans-serif;overflow:hidden;}
+  h1,h2,h3,.disp{font-family:'Fredoka','Nunito',sans-serif;}
+  .en{font-style:italic;opacity:.72;}
+  .deck{position:relative;width:100vw;height:100vh;}
+  .slide{
+    position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center;
+    padding:clamp(1.5rem,4vw,4.5rem) clamp(1.5rem,6vw,6rem);
+    opacity:0; pointer-events:none; transform:translateX(24px);
+    transition:opacity .35s ease, transform .35s ease;
+    overflow:hidden;
+  }
+  .slide.active{opacity:1; pointer-events:auto; transform:translateX(0);}
+  .slide.light{background:var(--cream-50); color:var(--cocoa-950);}
+  .slide.dark{background:var(--cocoa-950); color:var(--cream-50);}
+  .slide.offer{background:var(--chili-500); color:var(--cream-50);}
+  .blob{position:absolute; border-radius:999px; pointer-events:none;}
+  .kicker{font-weight:800; font-size:clamp(.65rem,1vw,.85rem); letter-spacing:.12em; text-transform:uppercase; color:var(--sol-400); margin-bottom:clamp(.8rem,2vh,1.6rem);}
+  .light .kicker{color:var(--chili-500);}
+  .kicker .en{color:var(--cream-400); font-weight:800; font-style:normal;}
+  .light .kicker .en{color:var(--cocoa-500);}
+  h1.headline{font-size:clamp(1.8rem,4.2vw,3.3rem); font-weight:700; line-height:1.08; margin:0 0 .5rem 0;}
+  h1.headline .en{display:block; font-size:.5em; font-weight:600; margin-top:.4em; color:var(--cream-300);}
+  .light h1.headline .en{color:var(--cocoa-700);}
+  p.lede{font-size:clamp(.85rem,1.3vw,1.15rem); max-width:46rem; margin:.3rem 0 0 0; line-height:1.4;}
+  p.lede .en{display:block; margin-top:.35rem; color:var(--cream-400);}
+  .light p.lede .en{color:var(--cocoa-500);}
+  .row{display:flex; gap:clamp(.8rem,1.6vw,1.6rem); margin-top:clamp(1.2rem,3vh,2.5rem);}
+  .card{background:var(--cocoa-950); border:1px solid var(--cocoa-700); border-radius:1rem; padding:clamp(1rem,1.8vw,1.6rem); flex:1;}
+  .light .cardOnLight{background:var(--cocoa-950); border:none; box-shadow:0 10px 30px rgba(0,0,0,.15);}
+  .dark .card{background:var(--cocoa-900);}
+  .icon{width:clamp(2.6rem,4vw,3.3rem); height:clamp(2.6rem,4vw,3.3rem); border-radius:999px; background:var(--sol-400); display:flex; align-items:center; justify-content:center; font-size:clamp(1.2rem,2vw,1.6rem); margin-bottom:.9rem;}
+  .card h3{font-size:clamp(.95rem,1.3vw,1.2rem); margin:0 0 .15rem 0; color:var(--cream-50);}
+  .card .en-title{display:block; font-size:.72em; font-style:italic; color:var(--sol-400); font-weight:600; margin-bottom:.5rem;}
+  .card p{font-size:clamp(.7rem,1vw,.88rem); line-height:1.4; color:var(--cream-300); margin:.4rem 0 0 0;}
+  .card p.en{color:var(--cream-400); margin-top:.35rem;}
+  .banner{margin-top:clamp(1.2rem,2.5vh,2rem); background:var(--sol-400); color:var(--cocoa-950); border-radius:.8rem; padding:clamp(.8rem,1.4vw,1.1rem) clamp(1.2rem,2vw,1.6rem); font-weight:700; font-size:clamp(.8rem,1.2vw,1.05rem);}
+  .banner .en{font-weight:600; font-style:italic; opacity:.75; font-size:.85em;}
+  .pageno{position:absolute; bottom:clamp(1rem,2vh,1.6rem); right:clamp(1.5rem,3vw,3rem); font-size:.8rem; color:var(--cream-400); font-variant-numeric:tabular-nums;}
+  .light .pageno{color:var(--cocoa-500);}
+
+  /* nav controls */
+  .nav{position:fixed; bottom:1.2rem; left:50%; transform:translateX(-50%); display:flex; align-items:center; gap:.7rem; z-index:50; background:rgba(20,11,8,.72); backdrop-filter:blur(6px); padding:.5rem .8rem; border-radius:999px; border:1px solid var(--cocoa-700);}
+  .nav button{background:transparent; border:1px solid var(--cocoa-600); color:var(--cream-100,var(--cream-50)); width:2.1rem; height:2.1rem; border-radius:999px; cursor:pointer; font-size:1rem; display:flex; align-items:center; justify-content:center;}
+  .nav button:hover{background:var(--cocoa-700);}
+  .dots{display:flex; gap:.35rem;}
+  .dot{width:.4rem; height:.4rem; border-radius:999px; background:var(--cocoa-600); cursor:pointer; transition:background .2s, transform .2s;}
+  .dot.on{background:var(--sol-400); transform:scale(1.3);}
+  .navlabel{font-size:.72rem; color:var(--cream-300); min-width:3.4rem; text-align:center; font-variant-numeric:tabular-nums;}
+
+  .topbar{position:fixed; top:1rem; right:1.2rem; z-index:50; display:flex; gap:.5rem;}
+  .topbtn{background:rgba(20,11,8,.72); border:1px solid var(--cocoa-700); color:var(--cream-50); border-radius:999px; padding:.4rem .8rem; font-size:.7rem; font-weight:700; letter-spacing:.04em; cursor:pointer; text-transform:uppercase;}
+  .topbtn:hover{background:var(--cocoa-800);}
+
+  /* speaker notes drawer */
+  .notes{position:fixed; left:0; right:0; bottom:0; max-height:38vh; background:var(--cocoa-900); border-top:1px solid var(--cocoa-700); color:var(--cream-100,var(--cream-50)); padding:1.2rem clamp(1.5rem,5vw,5rem) 1.6rem; transform:translateY(100%); transition:transform .3s ease; z-index:60; overflow-y:auto;}
+  .notes.open{transform:translateY(0);}
+  .notes h4{margin:0 0 .5rem 0; font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; color:var(--sol-400);}
+  .notes .n-es{font-size:.92rem; line-height:1.55; color:var(--cream-100,var(--cream-50)); white-space:pre-wrap; margin:0 0 .6rem 0;}
+  .notes .n-en{font-size:.85rem; line-height:1.5; color:var(--cream-400); font-style:italic; white-space:pre-wrap; margin:0;}
+
+  /* pricing */
+  .plans{display:flex; gap:1.1rem; margin-top:1.6rem;}
+  .plan{flex:1; background:var(--cocoa-900); border:1px solid var(--cocoa-700); border-radius:1rem; padding:1.3rem 1.2rem; position:relative;}
+  .plan.pro{background:var(--sol-400); color:var(--cocoa-950); border:none;}
+  .plan .badge{position:absolute; top:-.9rem; left:50%; transform:translateX(-50%); background:var(--chili-500); color:var(--cream-50); font-size:.62rem; font-weight:800; letter-spacing:.06em; padding:.3rem .8rem; border-radius:999px; white-space:nowrap;}
+  .plan h4{margin:0 0 .3rem 0; font-size:1.05rem;}
+  .plan .price{font-size:1.25rem; font-weight:800; color:var(--sol-400); margin-bottom:.7rem;}
+  .plan.pro .price{color:var(--cocoa-950);}
+  .plan ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.5rem;}
+  .plan li{font-size:.78rem; display:flex; gap:.5rem; align-items:flex-start;}
+  .plan li .chk{color:var(--sol-400); font-weight:900;}
+  .plan.pro li .chk{color:var(--cocoa-950);}
+  .plan li .lbl{display:flex; flex-direction:column;}
+  .plan li .lbl .en{font-size:.85em; opacity:.65; font-style:italic;}
+
+  /* win-win flow */
+  .flow{display:flex; align-items:center; gap:.8rem; margin-top:1.6rem;}
+  .flow .node{flex:1; background:var(--cocoa-950); border-radius:1rem; padding:1.3rem 1rem; text-align:center;}
+  .light .flow .node{background:var(--cocoa-950); color:var(--cream-50);}
+  .flow .node.mid{background:var(--sol-400); color:var(--cocoa-950);}
+  .flow .arrow{color:var(--chili-500); font-size:1.6rem; font-weight:900;}
+  .flow .node h4{margin:.6rem 0 .1rem;font-size:1rem;}
+  .flow .node .en-title{display:block; font-size:.72rem; font-style:italic; color:var(--sol-400); margin-bottom:.4rem;}
+  .flow .node.mid .en-title{color:var(--cocoa-700);}
+  .flow .node p{font-size:.72rem; color:var(--cream-300); margin:0;}
+  .flow .node.mid p{color:var(--cocoa-800);}
+  .flow .node p.en{color:var(--cream-400); font-style:italic; margin-top:.25rem;}
+  .flow .node.mid p.en{color:var(--cocoa-600);}
+
+  /* timeline */
+  .timeline{display:flex; gap:.9rem; margin-top:1.6rem;}
+  .tl-step{flex:1; background:var(--cocoa-950); border-radius:1rem; padding:1.1rem 1rem;}
+  .light .tl-step{background:var(--cocoa-950); color:var(--cream-50);}
+  .tl-step .num{font-size:1.5rem; font-weight:800; color:var(--sol-400);}
+  .tl-step h4{margin:.5rem 0 0; font-size:.85rem;}
+  .tl-step .en-title{display:block; font-size:.68rem; font-style:italic; color:var(--sol-400); margin-bottom:.3rem;}
+  .tl-step p{font-size:.68rem; color:var(--cream-300); margin:.3rem 0 0;}
+  .tl-step p.en{color:var(--cream-400); font-style:italic;}
+
+  /* split slide */
+  .split{display:flex; height:100%; align-items:center;}
+  .split .left{flex:1; padding-right:2rem;}
+  .split .right{width:38%; background:var(--cocoa-950); color:var(--cream-50); border-radius:1.2rem; padding:2rem; text-align:center; align-self:center;}
+  .split .right .icon{margin:0 auto 1rem;}
+
+  /* two-col grid for "what you get" */
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:1rem 2.2rem; margin-top:1.4rem;}
+  .grid2 .item{display:flex; gap:.8rem;}
+  .grid2 .item .icon{width:2.5rem; height:2.5rem; font-size:1.05rem; margin-bottom:0; flex-shrink:0;}
+  .grid2 .item h4{margin:0; font-size:.85rem;}
+  .grid2 .item .en-title{display:block; font-size:.68rem; font-style:italic; color:var(--sol-400); margin:.1rem 0 .25rem;}
+  .grid2 .item p{font-size:.68rem; color:var(--cream-300); margin:0;}
+  .grid2 .item p.en{color:var(--cream-400); font-style:italic; margin-top:.2rem;}
+
+  .contact-card{margin-top:1.6rem; background:var(--cocoa-900); border:1px solid var(--cocoa-700); border-radius:1rem; padding:1.3rem 1.5rem; max-width:34rem;}
+  .contact-card .name{font-weight:800; font-size:1rem;}
+  .contact-card .role{font-size:.75rem; color:var(--cream-300); margin:.15rem 0 .8rem;}
+
+  @media (max-width:820px){
+    .row, .plans, .flow, .timeline{flex-direction:column;}
+    .grid2{grid-template-columns:1fr;}
+    .split{flex-direction:column;}
+    .split .right{width:100%; margin-top:1.5rem;}
+    .flow .arrow{transform:rotate(90deg);}
+  }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<div class="deck" id="deck">
+
+  <!-- SLIDE 1 -->
+  <section class="slide dark active" data-notes-es='HUDSON: "Buenas noches a todos, gracias por estar acá, en esta previa antes del lanzamiento. Antes de nada — esto no es una charla de ventas típica. Es una invitación."
+
+STEFF: "Todos los que están en esta pileta esta noche son, para nosotros, los locales que definen las noches de Santa Cruz. Y venimos a proponerles algo simple: construir esto juntos, no venderles algo y desaparecer."' data-notes-en='HUDSON: "Buenas noches a todos, gracias por acompañarnos en esta vista previa antes del lanzamiento. Antes que nada: esto no es la típica charla de ventas. Es una invitación."
+
+STEFF: "Todos los que están en la piscina esta noche representan para nosotros los locales que definen la vida nocturna de Santa Cruz. Venimos a proponerles algo simple: construir esto juntos, no venderles algo e irnos."'>
+    <div class="blob" style="width:32vw;height:32vw;top:-14vw;right:-6vw;background:var(--sol-500);opacity:.08;"></div>
+    <div class="blob" style="width:26vw;height:26vw;bottom:-12vw;left:-8vw;background:var(--chili-500);opacity:.07;"></div>
+    <div class="kicker">BoliPass Business · Previa Nanotec <span class="en">· BoliPass Business · Previa Nanotec</span></div>
+    <h1 class="headline">Construyamos juntos las mejores noches de Santa Cruz<span class="en">Construyamos juntos las mejores noches de Santa Cruz.</span></h1>
+    <p class="lede">Una alianza abierta, gana-gana, entre BoliVibes y los mejores locales de la ciudad.<span class="en">Una alianza abierta y de beneficio mutuo entre BoliVibes y los mejores locales de la ciudad.</span></p>
+    <div class="contact-card">
+      <div class="name">Presentan / Presentado por: Hudson Argollo &amp; Steff Rüttger</div>
+      <div class="role">Pool party de previa · Nanotec — Antes del lanzamiento del 14 de septiembre<br><span class="en">Pool party de previa · Nanotec — Antes del lanzamiento del 14 de septiembre</span></div>
+    </div>
+    <div class="pageno">01 / 10</div>
+  </section>
+
+  <!-- SLIDE 2 -->
+  <section class="slide light" data-notes-es='STEFF: "Todos acá ya lo viven: tu mejor noche del mes puede pasar sin que la gente correcta se entere. La promoción está repartida en mil lugares, no hay forma real de que alguien nuevo te descubra, y al final del mes no tenés datos de qué funcionó."
+
+(Pausa breve — dejar que asientan con la cabeza.)' data-notes-en='STEFF: "Todos aquí ya viven esto: tu mejor noche del mes puede transcurrir sin que las personas indicadas se enteren. La promoción está dispersa en todas partes, no hay una forma real de que alguien nuevo te descubra y a fin de mes no tienes datos de lo que funcionó."
+
+(Pausa breve — dejar que asientan con la cabeza.)'>
+    <div class="kicker">El problema hoy <span class="en">· El problema hoy</span></div>
+    <h1 class="headline" style="font-size:clamp(1.4rem,3vw,2.3rem)">Tu local puede ser el mejor de la noche… y nadie se entera a tiempo<span class="en">Tu local puede ser el secreto mejor guardado de la noche... literalmente.</span></h1>
+    <div class="row">
+      <div class="card cardOnLight">
+        <div class="icon">📣</div>
+        <h3>Promoción fragmentada<span class="en-title">Promoción dispersa</span></h3>
+        <p>Un evento se anuncia en Instagram, en un grupo de WhatsApp, en un flyer — nunca en un solo lugar.</p>
+        <p class="en">Un evento se anuncia en Instagram, en un grupo de WhatsApp, en un flyer — nunca todo en un solo lugar.</p>
+      </div>
+      <div class="card cardOnLight">
+        <div class="icon">📍</div>
+        <h3>Cero descubrimiento<span class="en-title">Cero descubrimiento</span></h3>
+        <p>Alguien nuevo en la ciudad no tiene forma de encontrar tu local entre cientos de opciones.</p>
+        <p class="en">Alguien nuevo en la ciudad no tiene forma de encontrar tu local entre cientos de opciones.</p>
+      </div>
+      <div class="card cardOnLight">
+        <div class="icon">📊</div>
+        <h3>Cero datos<span class="en-title">Cero datos</span></h3>
+        <p>No sabés qué noches funcionan, qué trae gente nueva, ni qué promo realmente convierte.</p>
+        <p class="en">No sabes qué noches funcionan, qué atrae gente nueva o qué promoción realmente convierte.</p>
+      </div>
+    </div>
+    <div class="pageno">02 / 10</div>
+  </section>
+
+  <!-- SLIDE 3 -->
+  <section class="slide dark" data-notes-es='HUDSON: "Y esto no es una idea en un PowerPoint — la app ya existe. Tenemos el feed de esta noche, el mapa de la ciudad, y VibeIA, un asistente con IA que arma el plan de salida de cada usuario. Lanza el 14 de septiembre, y el 18 estamos en Fexpocruz."
+
+(Si hay tiempo: mostrar la app en el celular.)' data-notes-en='HUDSON: "Y esto no es solo una idea en una presentación — la aplicación ya existe. Tenemos el feed de esta noche, el mapa de la ciudad y VibeIA, un asistente con IA que planifica la salida de cada usuario. Lanzamos el 14 de septiembre y el 18 estaremos en Fexpocruz."
+
+(Si hay tiempo: mostrar la app en el teléfono durante 10-15 segundos.)'>
+    <div class="kicker">Lo que ya existe <span class="en">· Lo que ya está disponible</span></div>
+    <h1 class="headline" style="font-size:clamp(1.5rem,3.2vw,2.4rem)">BoliVibes ya es real — y llega el 14 de septiembre<span class="en">BoliVibes ya es una realidad — y se lanza el 14 de septiembre.</span></h1>
+    <div class="row">
+      <div class="card">
+        <div class="icon">📅</div>
+        <h3>Tonight</h3>
+        <p>El feed de esta noche: qué pasa, dónde y a qué hora, en toda Santa Cruz.</p>
+        <p class="en">El feed de esta noche: qué sucede, dónde y a qué hora en toda Santa Cruz.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🗺️</div>
+        <h3>Mapa isométrico<span class="en-title">Mapa isométrico</span></h3>
+        <p>Un mapa vivo de la ciudad con rutas, capas en vivo y cada local ubicado.</p>
+        <p class="en">Un mapa interactivo de la ciudad con rutas, capas en tiempo real y cada local ubicado.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🤖</div>
+        <h3>VibeIA</h3>
+        <p>Un asistente de IA que arma el plan de la noche y recomienda lugares.</p>
+        <p class="en">Un asistente con IA que organiza salidas nocturnas y recomienda locales.</p>
+      </div>
+    </div>
+    <div class="banner">Lanzamiento: dom 14 sept 2026 · Fexpocruz: vie 18 sept &nbsp; <span class="en">/ Lanzamiento: Dom 14 Sep 2026 · Fexpocruz: Vie 18 Sep</span></div>
+    <div class="pageno">03 / 10</div>
+  </section>
+
+  <!-- SLIDE 4 -->
+  <section class="slide light" data-notes-es='STEFF: "Por eso creamos BoliPass Business. Es el otro lado de BoliPass — el que ya conocen para usuarios finales — pero pensado 100% para ustedes, los dueños de local: para que consigan más clientes reales, no solo likes."
+
+HUDSON: "La idea es simple: ustedes ya hacen la parte difícil, que es tener el mejor lugar. Nosotros nos encargamos de que la persona correcta se entere, en el momento correcto."' data-notes-en='STEFF: "Por eso creamos BoliPass Business. Es el otro lado de BoliPass —el que ya conocen para usuarios finales— pero diseñado 100% para ustedes, los propietarios de locales: para conseguir más clientes reales, no solo Me Gusta."
+
+HUDSON: "La idea es sencilla: ustedes hacen lo más difícil, que es tener el mejor lugar. Nosotros nos aseguramos de que la persona indicada se entere en el momento preciso."'>
+    <div class="split">
+      <div class="left">
+        <div class="kicker">La propuesta <span class="en">· La propuesta</span></div>
+        <h1 class="headline" style="font-size:clamp(1.5rem,3vw,2.3rem)">Vos traés el ambiente. Nosotros te traemos los clientes.<span class="en">Tú pones el ambiente. Nosotros te traemos los clientes.</span></h1>
+        <p class="lede">BoliPass Business es el lado del local dentro de BoliVibes: un espacio pensado para que los negocios que ya definen la noche de Santa Cruz consigan más clientes, sin depender de la suerte del boca en boca.
+        <span class="en">BoliPass Business es la versión comercial de BoliVibes: creada para que los negocios que definen la noche cruceña obtengan más clientes sin depender únicamente del boca a boca.</span></p>
+      </div>
+      <div class="right">
+        <div class="icon" style="width:4rem;height:4rem;font-size:1.8rem;">🤝</div>
+        <div class="disp" style="font-size:1.5rem;font-weight:700;">BoliPass<br>BUSINESS</div>
+        <div style="font-size:.8rem;color:var(--cream-300);margin-top:.5rem;">el plan para locales y negocios</div>
+        <div style="font-size:.72rem;color:var(--cream-400);font-style:italic;">el plan para locales y negocios</div>
+      </div>
+    </div>
+    <div class="pageno">04 / 10</div>
+  </section>
+
+  <!-- SLIDE 5 -->
+  <section class="slide dark" data-notes-es='HUDSON (recorrer rápido): "Concretamente son seis cosas: destacado en el feed y el mapa; recomendaciones de VibeIA; publicás tus propios eventos; tenés un panel con datos reales; quedás listado para toda la comunidad BoliPass; y hacemos campañas cruzadas con ustedes en el lanzamiento."
+
+STEFF: "Nada de esto es una promesa a futuro — se activa apenas se suman."' data-notes-en='HUDSON (paso rápido): "En concreto son seis cosas: posición destacada en el feed y el mapa, recomendaciones en VibeIA, publicación de eventos propios, un panel con datos reales, presencia en la comunidad BoliPass y co-promoción durante el lanzamiento."
+
+STEFF: "Nada de esto es una promesa a futuro — se activa desde el momento en que se unen."'>
+    <div class="kicker">Qué incluye <span class="en">· Qué incluye</span></div>
+    <h1 class="headline" style="font-size:clamp(1.4rem,3vw,2.2rem)">Todo lo que necesitás para llenar tu local, en un solo lugar<span class="en">Todo lo que necesitas para llenar tu local, en un solo lugar.</span></h1>
+    <div class="grid2">
+      <div class="item"><div class="icon">⭐</div><div><h4>Ubicación destacada<span class="en-title">Ubicación destacada</span></h4><p>Primero en Tonight y pin prioritario en el mapa.</p><p class="en">Primer lugar en Tonight y pin prioritario en el mapa.</p></div></div>
+      <div class="item"><div class="icon">🤖</div><div><h4>Prioridad en VibeIA<span class="en-title">Prioridad en VibeIA</span></h4><p>Entrás en las recomendaciones de la IA.</p><p class="en">Inclusión garantizada en las recomendaciones de la IA.</p></div></div>
+      <div class="item"><div class="icon">📅</div><div><h4>Herramientas de eventos<span class="en-title">Herramientas de eventos</span></h4><p>Publicá eventos y promos desde tu panel.</p><p class="en">Publica eventos y promociones desde tu panel de control.</p></div></div>
+      <div class="item"><div class="icon">📊</div><div><h4>Panel de analíticas<span class="en-title">Panel de analíticas</span></h4><p>Vistas, llegadas, y qué promo convierte mejor.</p><p class="en">Visualizaciones, visitas registradas y métricas de conversión por oferta.</p></div></div>
+      <div class="item"><div class="icon">👥</div><div><h4>Comunidad BoliPass<span class="en-title">Comunidad BoliPass</span></h4><p>Listado para miles de usuarios con BoliPass.</p><p class="en">Visibilidad ante miles de miembros de BoliPass.</p></div></div>
+      <div class="item"><div class="icon">📣</div><div><h4>Campañas cruzadas<span class="en-title">Promoción cruzada</span></h4><p>Co-promoción en las redes de BoliVibes.</p><p class="en">Co-promoción activa a través de los canales de BoliVibes.</p></div></div>
+    </div>
+    <div class="pageno">05 / 10</div>
+  </section>
+
+  <!-- SLIDE 6 -->
+  <section class="slide light" data-notes-es='STEFF: "Y esto es lo importante: no es que ustedes nos paguen y nosotros les mandamos tráfico y listo. Es un círculo — ustedes ofrecen algo real, nosotros lo conectamos con la persona correcta, y esa persona vuelve."
+
+HUDSON: "Por eso lo armamos como una relación abierta, no un contrato de publicidad tradicional."' data-notes-en='STEFF: "Y esto es lo fundamental: no se trata de que paguen y les enviemos tráfico sin más. Es un ciclo — ustedes ofrecen un beneficio real, nosotros lo conectamos con la persona adecuada y esa persona regresa."
+
+HUDSON: "Por esa razón diseñamos esto como una alianza abierta y no como un contrato publicitario tradicional."'>
+    <div class="kicker">El modelo <span class="en">· El modelo</span></div>
+    <h1 class="headline" style="font-size:clamp(1.5rem,3vw,2.3rem)">Gana-gana, no publicidad de una sola vía<span class="en">Ganancia mutua, no publicidad unidireccional.</span></h1>
+    <div class="flow">
+      <div class="node"><div class="icon" style="margin:0 auto .6rem;">🤝</div><h4>Los locales<span class="en-title">Los locales</span></h4><p>Ofrecen su mejor experiencia y descuentos reales.</p><p class="en">Ofrecen su mejor experiencia y beneficios reales.</p></div>
+      <div class="arrow">→</div>
+      <div class="node mid"><div class="icon" style="margin:0 auto .6rem;background:var(--cocoa-950);">⚡️</div><h4>BoliVibes</h4><span class="en-title">BoliVibes</span><p>Conecta, promociona y mide — no es un anuncio más.</p><p class="en">Conecta, promociona y mide — no es solo otro anuncio.</p></div>
+      <div class="arrow">→</div>
+      <div class="node"><div class="icon" style="margin:0 auto .6rem;">👥</div><h4>Los usuarios<span class="en-title">Los usuarios</span></h4><p>Descubren dónde ir y acceden a beneficios BoliPass.</p><p class="en">Descubren a dónde ir y aprovechan las ventajas de BoliPass.</p></div>
+    </div>
+    <p class="lede" style="margin-top:1.6rem;font-style:italic;">Nadie gana a costa del otro: si tu local crece, la app se vuelve más útil, y eso trae más usuarios a tu puerta.<span class="en">Nadie gana a expensas de otro: a medida que tu local crece, la app se vuelve más útil, lo que atrae a más clientes a tu puerta.</span></p>
+    <div class="pageno">06 / 10</div>
+  </section>
+
+  <!-- SLIDE 7 -->
+  <section class="slide dark" data-notes-es='HUDSON: "Armamos tres niveles. Starter es gratis. Pro es el que recomendamos: destacado, prioridad en VibeIA, y tus números. Elite es para ir a fondo: eventos ilimitados y campañas cruzadas."
+
+(Precios entre corchetes son estimados — confirmar antes de publicar.)' data-notes-en='HUDSON: "Diseñamos tres niveles. Starter es gratuito. Pro es la opción recomendada: posicionamiento destacado, prioridad en VibeIA y acceso a tus métricas. Elite es para apostar al máximo: eventos ilimitados y campañas cruzadas."
+
+(Los precios entre corchetes son estimados — confirmar antes de publicar esta presentación.)'>
+    <div class="kicker">Los planes <span class="en">· Los planes</span></div>
+    <h1 class="headline" style="font-size:clamp(1.4rem,3vw,2.2rem)">Elegí el nivel de impulso para tu local<span class="en">Selecciona el nivel de impulso para tu negocio.</span></h1>
+    <div class="plans">
+      <div class="plan">
+        <h4>Starter</h4>
+        <div class="price">Gratis / Gratuito</div>
+        <ul>
+          <li><span class="chk">✓</span><span class="lbl">Perfil en BoliVibes<span class="en">Perfil en BoliVibes</span></span></li>
+          <li><span class="chk">✓</span><span class="lbl">Aparecés en el mapa<span class="en">Presencia en el mapa</span></span></li>
+          <li><span class="chk">✓</span><span class="lbl">Listado básico<span class="en">Registro básico</span></span></li>
+        </ul>
+      </div>
+      <div class="plan pro">
+        <div class="badge">MÁS ELEGIDO · MÁS POPULAR</div>
+        <h4>Pro</h4>
+        <div class="price">[USD 39] /mes · /mes</div>
+        <ul>
+          <li><span class="chk">✓</span><span class="lbl">Todo lo de Starter<span class="en">Todo lo incluido en Starter</span></span></li>
+          <li><span class="chk">✓</span><span class="lbl">Destacado en Tonight<span class="en">Destacado en Tonight</span></span></li>
+          <li><span class="chk">✓</span><span class="lbl">Prioridad en VibeIA<span class="en">Prioridad en VibeIA</span></span></li>
+          <li><span class="chk">✓</span><span class="lbl">Panel de analíticas<span class="en">Panel de analíticas</span></span></li>
+        </ul>
+      </div>
+      <div class="plan">
+        <h4>Elite</h4>
+        <div class="price">[USD 89] /mes · /mes</div>
+        <ul>
+          <li><span class="chk">✓</span><span class="lbl">Todo lo de Pro<span class="en">Todo lo incluido en Pro</span></span></li>
+          <li><span class="chk">✓</span><span class="lbl">Eventos ilimitados<span class="en">Eventos ilimitados</span></span></li>
+          <li><span class="chk">✓</span><span class="lbl">Campañas cruzadas<span class="en">Promoción cruzada</span></span></li>
+          <li><span class="chk">✓</span><span class="lbl">Soporte prioritario<span class="en">Soporte prioritario</span></span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pageno">07 / 10</div>
+  </section>
+
+  <!-- SLIDE 8 -->
+  <section class="slide offer" data-notes-es='STEFF (subir energía): "Y porque están literalmente en la primera fila antes de que esto sea público — el primer local que firme el plan Pro esta noche se lleva 6 meses adicionales completamente gratis."
+
+HUDSON: "Es limitado a uno solo, a propósito."' data-notes-en='STEFF (subir energía): "Y porque están aquí antes del lanzamiento público: el primer local que confirme el plan Pro esta noche recibirá 6 meses adicionales totalmente gratis."
+
+HUDSON: "Está limitado estrictamente a un solo local, con la intención de premiar al más rápido."'>
+    <div class="blob" style="width:34vw;height:34vw;top:-14vw;right:-8vw;background:var(--sol-400);opacity:.15;"></div>
+    <div class="kicker" style="color:var(--sol-400)">Solo esta noche <span class="en" style="color:var(--cream-200)">· Solo esta noche</span></div>
+    <h1 class="headline" style="font-size:clamp(1.7rem,3.6vw,2.8rem)">El primer local que se sume hoy al plan Pro se lleva 6 meses gratis extra<span class="en">El primer local en suscribir el plan Pro esta noche recibe 6 meses adicionales sin costo.</span></h1>
+    <div style="margin-top:1.8rem;background:var(--cocoa-950);border-radius:1rem;padding:1.4rem 1.6rem;max-width:44rem;">
+      <div style="display:flex;gap:1rem;align-items:flex-start;">
+        <div class="icon" style="background:var(--sol-400);flex-shrink:0;">🎁</div>
+        <div>
+          <p style="margin:0;font-size:.95rem;">Firmá el plan Pro esta noche y sumamos <strong style="color:var(--sol-400)">6 meses adicionales sin costo</strong> sobre el tiempo que contrates.</p>
+          <p style="margin:.5rem 0 0;font-size:.82rem;font-style:italic;color:var(--cream-400);">Confirma el plan Pro esta noche y te otorgamos <strong style="color:var(--sol-400)">6 meses adicionales de forma gratuita</strong> sumados a tu periodo.</p>
+          <p style="margin:.7rem 0 0;font-size:.72rem;font-style:italic;color:var(--cream-400);">Válido para el primer local que confirme esta noche. / Válido únicamente para el primer local en confirmar hoy.</p>
+        </div>
+      </div>
+    </div>
+    <div class="pageno">08 / 10</div>
+  </section>
+
+  <!-- SLIDE 9 -->
+  <section class="slide light" data-notes-es='HUDSON: "Concretamente: hoy confirmás interés, o firmás directo si querés el bono. Esta semana armamos tu perfil. El 14 lanzamos con tu local ya adentro. Y el 18 estamos juntos en Fexpocruz."' data-notes-en='HUDSON: "Pasos concretos: hoy confirmas tu interés o firmas directamente para asegurar la bonificación. Esta semana configuramos tu perfil. El 14 lanzamos con tu negocio integrado y el 18 compartimos presencia en Fexpocruz."'>
+    <div class="kicker">Cómo seguimos <span class="en">· Próximos pasos</span></div>
+    <h1 class="headline" style="font-size:clamp(1.4rem,3vw,2.2rem)">De esta noche al lanzamiento<span class="en">Camino desde esta noche hasta el lanzamiento.</span></h1>
+    <div class="timeline">
+      <div class="tl-step"><div class="num">1</div><h4>Hoy · Nanotec<span class="en-title">Hoy · Nanotec</span></h4><p>Confirmás interés o firmás el plan Pro con el bono.</p><p class="en">Confirma tu interés o contrata el plan Pro con la bonificación.</p></div>
+      <div class="tl-step"><div class="num">2</div><h4>Esta semana<span class="en-title">Esta semana</span></h4><p>Onboarding: fotos, perfil, primer evento cargado.</p><p class="en">Integración: fotografías, perfil de negocio y primer evento publicado.</p></div>
+      <div class="tl-step"><div class="num">3</div><h4>Dom 14 sept<span class="en-title">Dom 14 Sep</span></h4><p>BoliVibes se lanza — tu local ya está visible.</p><p class="en">Lanzamiento oficial de BoliVibes — tu local estará activo.</p></div>
+      <div class="tl-step"><div class="num">4</div><h4>Vie 18 sept<span class="en-title">Vie 18 Sep</span></h4><p>Presencia conjunta en Fexpocruz, juntos.</p><p class="en">Presencia de marca compartida en Fexpocruz.</p></div>
+    </div>
+    <div class="pageno">09 / 10</div>
+  </section>
+
+  <!-- SLIDE 10 -->
+  <section class="slide dark" data-notes-es='STEFF (cierre): "Gracias por escucharnos esta noche, en serio. Si querés sumarte al plan Pro y llevarte los 6 meses extra, o dejar tu contacto para el onboarding, buscanos a Hudson o a mí ahora mismo."
+
+HUDSON: "Estamos toda la noche acá. Vengan, charlemos, y arranquemos esto juntos antes del 14."
+
+[Fin — abrir a preguntas si el grupo es chico, o pasar a rondas 1:1.]' data-notes-en='STEFF (cierre): "Muchas gracias por acompañarnos esta noche. Si desean acceder al plan Pro con los 6 meses adicionales o dejar sus datos para la activación la próxima semana, conversen con Hudson o conmigo directamente."
+
+HUDSON: "Estaremos aquí toda la noche. Acérquense, conversemos e iniciemos este proyecto juntos antes del 14."
+
+[Fin — espacio para preguntas si el grupo es reducido, o atención directa uno a uno.]'>
+    <div class="blob" style="width:28vw;height:28vw;top:-8vw;left:-8vw;background:var(--selva-500);opacity:.08;"></div>
+    <div class="blob" style="width:30vw;height:30vw;bottom:-12vw;right:-6vw;background:var(--sol-500);opacity:.08;"></div>
+    <h1 class="headline">Sumate esta noche.<span class="en">Únete a nosotros esta noche.</span></h1>
+    <p class="lede">Ayudanos a poner a Santa Cruz en el mapa — y quedate con tu lugar en él.<span class="en">Ayúdanos a poner a Santa Cruz en el mapa y asegura el espacio de tu negocio en él.</span></p>
+    <div class="contact-card">
+      <div class="name">Hudson Argollo</div>
+      <div class="role">Socio técnico y operativo / Socio técnico y operativo · hudsonargollo@gmail.com</div>
+      <div class="name">Steff Rüttger</div>
+      <div class="role">Fundadora / Fundadora · @parlanaexperiences</div>
+      <div style="font-size:.72rem;font-style:italic;color:var(--cream-400);margin-top:.6rem;">[QR / link de registro esta noche · Enlace o QR de registro para hoy]</div>
+    </div>
+    <div class="pageno">10 / 10</div>
+  </section>
+
+</div>
+
+<div class="topbar">
+  <button class="topbtn" id="notesBtn">Notas · N</button>
+  <button class="topbtn" id="fsBtn">Pantalla completa · F</button>
+</div>
+
+<div class="nav">
+  <button id="prevBtn" title="Anterior">‹</button>
+  <div class="dots" id="dots"></div>
+  <div class="navlabel" id="navlabel">1 / 10</div>
+  <button id="nextBtn" title="Siguiente">›</button>
+</div>
+
+<div class="notes" id="notesPanel">
+  <h4>Notas del orador · ES</h4>
+  <p class="n-es" id="notesEs"></p>
+  <h4>Notas del orador · EN</h4>
+  <p class="n-en" id="notesEn"></p>
+</div>
+
+<script>
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const dotsWrap = document.getElementById('dots');
+  const navlabel = document.getElementById('navlabel');
+  const notesEs = document.getElementById('notesEs');
+  const notesEn = document.getElementById('notesEn');
+  const notesPanel = document.getElementById('notesPanel');
+  let current = 0;
+
+  slides.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'dot' + (i === 0 ? ' on' : '');
+    d.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(d);
+  });
+  const dots = Array.from(dotsWrap.children);
+
+  function render() {
+    slides.forEach((s, i) => s.classList.toggle('active', i === current));
+    dots.forEach((d, i) => d.classList.toggle('on', i === current));
+    navlabel.textContent = (current + 1) + ' / ' + slides.length;
+    notesEs.textContent = slides[current].dataset.notesEs || '';
+    notesEn.textContent = slides[current].dataset.notesEn || '';
+  }
+  function goTo(i) { current = Math.max(0, Math.min(slides.length - 1, i)); render(); }
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  document.getElementById('nextBtn').addEventListener('click', next);
+  document.getElementById('prevBtn').addEventListener('click', prev);
+
+  document.addEventListener('keydown', (e) => {
+    if (['ArrowRight', 'PageDown', ' '].includes(e.key)) { next(); e.preventDefault(); }
+    else if (['ArrowLeft', 'PageUp'].includes(e.key)) { prev(); e.preventDefault(); }
+    else if (e.key === 'Home') { goTo(0); }
+    else if (e.key === 'End') { goTo(slides.length - 1); }
+    else if (e.key.toLowerCase() === 'n') { toggleNotes(); }
+    else if (e.key.toLowerCase() === 'f') { toggleFullscreen(); }
+  });
+
+  // swipe support
+  let touchX = null;
+  document.addEventListener('touchstart', (e) => { touchX = e.touches[0].clientX; });
+  document.addEventListener('touchend', (e) => {
+    if (touchX === null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    if (dx > 50) prev(); else if (dx < -50) next();
+    touchX = null;
+  });
+
+  function toggleNotes() { notesPanel.classList.toggle('open'); }
+  document.getElementById('notesBtn').addEventListener('click', toggleNotes);
+
+  function toggleFullscreen() {
+    if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(()=>{});
+    else document.exitFullscreen();
+  }
+  document.getElementById('fsBtn').addEventListener('click', toggleFullscreen);
+
+  render();
+</script>
+
+</html>
