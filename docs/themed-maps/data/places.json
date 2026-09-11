@@ -15,12 +15,13 @@
       "songkick.com Santa Cruz concerts",
       "salsavida.com Santa Cruz salsa events",
       "boliviabella.com nightlife/neighborhood guides",
-      "eventbrite.com and allevents.in Santa Cruz event listings"
+      "eventbrite.com and allevents.in Santa Cruz event listings",
+      "BOLITOURS manual launch seed"
     ],
     "note": "lat/lng are null pending the geocoding pass described in the PRD (docs/PRD-themed-maps.md).",
     "counts": {
       "attractions": 30,
-      "tours": 24,
+      "tours": 25,
       "transfers": 7,
       "restaurants": 359,
       "streets": 120,
@@ -644,6 +645,23 @@
       "duration": "2 days",
       "price_from": null,
       "bolivibes_note": "Samaipata + El Fuerte + boutique vineyard visits such as Landsuá / 1750-style wine tastings."
+    },
+    {
+      "id": "bolitours-torito-city-tour",
+      "name": "BOLITOURS Torito City Tour",
+      "type": "Guided city tour",
+      "group": "City & Day Tours",
+      "rating": null,
+      "reviews": 0,
+      "duration": "2 h",
+      "price_from": "$50 / group",
+      "price": "$50",
+      "description": "Hire a Torito with a local guide for a relaxed Santa Cruz city tour. Designed for friends, visitors and expats who want an easy guided route through the city highlights.",
+      "address": "Plaza 24 de Septiembre, Santa Cruz de la Sierra, Bolivia",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Plaza%2024%20de%20Septiembre%20Santa%20Cruz%20de%20la%20Sierra%20Bolivia",
+      "source": "manual",
+      "lat": null,
+      "lng": null
     }
   ],
   "transfers": [

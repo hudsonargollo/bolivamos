@@ -57,17 +57,27 @@ function slugify(s) {
     .replace(/(^-|-$)/g, "");
 }
 
+function metaForPlace(x) {
+  return {
+    description: x.description ?? x.notes ?? null,
+    address: x.address ?? x.reference ?? null,
+    googleMapsUrl: x.google_maps_url ?? x.googleMapsUrl ?? x.mapsUrl ?? null,
+    websiteUrl: x.website_url ?? x.websiteUrl ?? null,
+    phone: x.phone ?? null,
+  };
+}
+
 function normalizePlaces(data) {
   const out = [];
-  for (const a of data.attractions) out.push({ id: a.id, name: a.name, layer: "attraction", category: a.group ?? a.type ?? null, rating: a.rating ?? null, reviews: a.reviews ?? null, price: null, source: "tripadvisor" });
-  for (const t of data.tours) out.push({ id: t.id, name: t.name, layer: "tour", category: t.group ?? t.type ?? null, rating: t.rating ?? null, reviews: t.reviews ?? null, price: null, source: "tripadvisor" });
-  for (const t of data.transfers) out.push({ id: t.id, name: t.name, layer: "transfer", category: t.group ?? null, rating: t.rating ?? null, reviews: t.reviews ?? null, price: null, source: "tripadvisor" });
-  for (const r of data.restaurants) out.push({ id: r.id, name: r.name, layer: "eat_drink", category: Array.isArray(r.cuisine) ? r.cuisine.join(", ") : (r.cuisine ?? null), rating: r.rating ?? null, reviews: r.reviews ?? null, price: r.price ?? null, source: "tripadvisor" });
-  for (const v of data.nightlife_venues ?? []) out.push({ id: v.id, name: v.name, layer: "event", category: v.group ?? v.type ?? "Nightlife venue", rating: null, reviews: null, price: null, source: v.source ?? "web-osm" });
-  for (const e of data.events ?? []) out.push({ id: e.id, name: e.name, layer: "event", category: e.type ?? "Event candidate", rating: null, reviews: null, price: e.price_from ?? null, source: e.source ?? "web" });
+  for (const a of data.attractions) out.push({ id: a.id, name: a.name, layer: "attraction", category: a.group ?? a.type ?? null, rating: a.rating ?? null, reviews: a.reviews ?? null, price: a.price ?? null, source: a.source ?? "tripadvisor", ...metaForPlace(a) });
+  for (const t of data.tours) out.push({ id: t.id, name: t.name, layer: "tour", category: t.group ?? t.type ?? null, rating: t.rating ?? null, reviews: t.reviews ?? null, price: t.price_from ?? t.price ?? null, source: t.source ?? "tripadvisor", ...metaForPlace(t) });
+  for (const t of data.transfers) out.push({ id: t.id, name: t.name, layer: "transfer", category: t.group ?? null, rating: t.rating ?? null, reviews: t.reviews ?? null, price: t.price ?? null, source: t.source ?? "tripadvisor", ...metaForPlace(t) });
+  for (const r of data.restaurants) out.push({ id: r.id, name: r.name, layer: "eat_drink", category: Array.isArray(r.cuisine) ? r.cuisine.join(", ") : (r.cuisine ?? null), rating: r.rating ?? null, reviews: r.reviews ?? null, price: r.price ?? null, source: r.source ?? "tripadvisor", ...metaForPlace(r) });
+  for (const v of data.nightlife_venues ?? []) out.push({ id: v.id, name: v.name, layer: "event", category: v.group ?? v.type ?? "Nightlife venue", rating: null, reviews: null, price: v.price ?? null, source: v.source ?? "web-osm", ...metaForPlace(v) });
+  for (const e of data.events ?? []) out.push({ id: e.id, name: e.name, layer: "event", category: e.type ?? "Event candidate", rating: null, reviews: null, price: e.price_from ?? e.price ?? null, source: e.source ?? "web", ...metaForPlace(e) });
   const streetGroups = { avenidas: "Avenue", calles: "Street", pasajes_pedestrian: "Pedestrian passage", roundabouts: "Roundabout", areas: "Area" };
   for (const [group, category] of Object.entries(streetGroups)) {
-    for (const name of data.streets[group] ?? []) out.push({ id: slugify(name), name, layer: "street_zone", category, rating: null, reviews: null, price: null, source: "openalfa" });
+    for (const name of data.streets[group] ?? []) out.push({ id: slugify(name), name, layer: "street_zone", category, rating: null, reviews: null, price: null, source: "openalfa", description: null, address: null, googleMapsUrl: null, websiteUrl: null, phone: null });
   }
   return out;
 }
@@ -118,8 +128,8 @@ function main() {
     if (g.verified) verifiedCount++;
     else needsReview.push({ id: place.id, name: place.name, layer: place.layer, reason: g.reason ?? "low-confidence", displayName: g.displayName });
 
-    const cols = ["id", "name", "layer", "category", "district", "lat", "lng", "rating", "reviews", "price", "regional", "source", "verified"];
-    const vals = [place.id, place.name, place.layer, place.category, g.district, g.lat, g.lng, place.rating, place.reviews, place.price, g.regional, place.source, g.verified];
+    const cols = ["id", "name", "layer", "category", "district", "lat", "lng", "rating", "reviews", "price", "description", "address", "google_maps_url", "website_url", "phone", "regional", "source", "verified"];
+    const vals = [place.id, place.name, place.layer, place.category, g.district, g.lat, g.lng, place.rating, place.reviews, place.price, place.description, place.address, place.googleMapsUrl, place.websiteUrl, place.phone, g.regional, place.source, g.verified];
     sqlLines.push(
       `INSERT INTO places (${cols.join(", ")}) VALUES (${vals.map(sqlString).join(", ")}) ON CONFLICT(id) DO UPDATE SET ` +
         cols.slice(1).map((c) => `${c}=excluded.${c}`).join(", ") + ";",

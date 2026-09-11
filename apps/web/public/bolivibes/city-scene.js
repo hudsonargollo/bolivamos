@@ -463,9 +463,25 @@ const placeSheetBackdrop = document.getElementById('place-sheet-backdrop');
 const placeSheetName = document.getElementById('place-sheet-name');
 const placeSheetMeta = document.getElementById('place-sheet-meta');
 const placeSheetRating = document.getElementById('place-sheet-rating');
+const placeSheetInfo = document.getElementById('place-sheet-info');
+const placeSheetAddress = document.getElementById('place-sheet-address');
 const placeSheetMaps = document.getElementById('place-sheet-maps');
 const placeSheetEvents = document.getElementById('place-sheet-events');
 const placeSheetShare = document.getElementById('place-sheet-share');
+const placeSheetCopy = document.getElementById('place-sheet-copy');
+
+function mapsUrlForPlace(place) {
+  if (!place) return location.href;
+  if (place.googleMapsUrl) return place.googleMapsUrl;
+  if (place.mapsUrl) return place.mapsUrl;
+  const query = place.address || (place.venueName || place.name) + ' Santa Cruz de la Sierra Bolivia';
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+}
+
+function shareTextForPlace(place) {
+  const bits = [place?.name, place?.category, place?.address].filter(Boolean);
+  return (bits.join(' — ') || 'BoliVibes') + ' (BoliVibes)';
+}
 
 let sheetPlace = null; // the place the open sheet describes — distinct from the
 // live `hoveredPlace`, which keeps changing as the user looks around behind it
@@ -491,6 +507,11 @@ function openPlaceSheet(place) {
   sheetPlace = place;
   placeSheetName.textContent = place.name;
 
+  placeSheetInfo.textContent = place.description || '';
+  placeSheetInfo.style.display = place.description ? 'block' : 'none';
+  placeSheetAddress.textContent = place.address || '';
+  placeSheetAddress.style.display = place.address ? 'block' : 'none';
+
   if (place.layer === 'event') {
     placeSheetMeta.textContent = [place.category, place.venueName, place.district].filter(Boolean).join(' · ');
     placeSheetRating.textContent = [
@@ -499,7 +520,7 @@ function openPlaceSheet(place) {
     ]
       .filter(Boolean)
       .join('  ·  ');
-    placeSheetMaps.href = place.mapsUrl || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent((place.venueName || place.name) + ' Santa Cruz de la Sierra Bolivia')}`;
+    placeSheetMaps.href = mapsUrlForPlace(place);
     placeSheetEvents.style.display = 'none';
   } else {
     placeSheetMeta.textContent = [place.category, place.district].filter(Boolean).join(' · ');
@@ -511,7 +532,7 @@ function openPlaceSheet(place) {
     ]
       .filter(Boolean)
       .join('  ·  ');
-    placeSheetMaps.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.name + ' Santa Cruz de la Sierra Bolivia')}`;
+    placeSheetMaps.href = mapsUrlForPlace(place);
     placeSheetEvents.style.display = place.venueId ? 'inline-block' : 'none';
   }
 
@@ -524,18 +545,35 @@ function closePlaceSheet() {
 }
 document.getElementById('place-sheet-close').addEventListener('click', closePlaceSheet);
 placeSheetBackdrop.addEventListener('click', closePlaceSheet);
+async function copyLocationUrl(place) {
+  const url = mapsUrlForPlace(place);
+  if (navigator.clipboard) await navigator.clipboard.writeText(url);
+  return url;
+}
+
+placeSheetCopy.addEventListener('click', async () => {
+  const place = sheetPlace;
+  try {
+    await copyLocationUrl(place);
+    hud.textContent = 'Location URL copied';
+  } catch (_) {
+    window.prompt('Copy location URL', mapsUrlForPlace(place));
+  }
+});
+
 placeSheetShare.addEventListener('click', async () => {
   const place = sheetPlace;
-  const text = place ? `${place.name} — Santa Cruz de la Sierra (BoliVibes)` : 'BoliVibes';
+  const text = shareTextForPlace(place);
+  const shareUrl = mapsUrlForPlace(place);
   // Inside the mobile app's WebView (apps/mobile/app/(tabs)/map.tsx), forward
   // to the native share sheet — WebViews don't implement the Web Share API,
   // so navigator.share would silently no-op here.
   if (window.ReactNativeWebView) {
-    window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'share', title: text, url: location.href }));
+    window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'share', title: text, url: shareUrl }));
   } else if (navigator.share) {
-    navigator.share({ title: text, url: location.href }).catch(() => {});
+    navigator.share({ title: text, text, url: shareUrl }).catch(() => {});
   } else if (navigator.clipboard) {
-    navigator.clipboard.writeText(text + ' ' + location.href).catch(() => {});
+    navigator.clipboard.writeText(text + ' ' + shareUrl).catch(() => {});
   }
 });
 

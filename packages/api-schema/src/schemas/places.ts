@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 // docs/themed-maps/PRD-themed-interactive-maps.md §8.2 — mirrors packages/db/src/schema.ts's places table.
-export const placeLayerSchema = z.enum(["attraction", "eat_drink", "tour", "transfer", "street_zone"]);
+export const placeLayerSchema = z.enum(["attraction", "eat_drink", "tour", "transfer", "street_zone", "event"]);
 export type PlaceLayer = z.infer<typeof placeLayerSchema>;
 
 // The hero scene's 7 camera-stop districts (PRD §7.4).
@@ -39,6 +39,11 @@ export const placeSchema = z.object({
   rating: z.number().nullable(),
   reviews: z.number().nullable(),
   price: z.string().nullable(),
+  description: z.string().nullable(),
+  address: z.string().nullable(),
+  googleMapsUrl: z.string().nullable(),
+  websiteUrl: z.string().nullable(),
+  phone: z.string().nullable(),
   regional: z.boolean().nullable(),
   venueId: z.string().nullable(),
   source: z.string(),

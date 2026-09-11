@@ -98,7 +98,7 @@ export const redemptions = sqliteTable("redemptions", {
 export const places = sqliteTable("places", {
   id: text("id").primaryKey(),
   name: text("name").notNull(),
-  layer: text("layer", { enum: ["attraction", "eat_drink", "tour", "transfer", "street_zone"] }).notNull(),
+  layer: text("layer", { enum: ["attraction", "eat_drink", "tour", "transfer", "street_zone", "event"] }).notNull(),
   category: text("category"),
   district: text("district"),
   lat: real("lat"),
@@ -106,9 +106,14 @@ export const places = sqliteTable("places", {
   rating: real("rating"),
   reviews: integer("reviews"),
   price: text("price"),
+  description: text("description"),
+  address: text("address"),
+  googleMapsUrl: text("google_maps_url"),
+  websiteUrl: text("website_url"),
+  phone: text("phone"),
   regional: integer("regional", { mode: "boolean" }).default(false),
   venueId: text("venue_id").references(() => venues.id),
-  source: text("source", { enum: ["tripadvisor", "openalfa", "manual"] }).notNull(),
+  source: text("source", { enum: ["tripadvisor", "openalfa", "manual", "web", "web-osm"] }).notNull(),
   verified: integer("verified", { mode: "boolean" }).default(false),
 });
 

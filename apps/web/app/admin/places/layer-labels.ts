@@ -1,4 +1,4 @@
-export const PLACE_LAYERS = ["attraction", "eat_drink", "tour", "transfer", "street_zone"] as const;
+export const PLACE_LAYERS = ["attraction", "eat_drink", "tour", "transfer", "street_zone", "event"] as const;
 export type PlaceLayer = (typeof PLACE_LAYERS)[number];
 
 const LABELS: Record<PlaceLayer, string> = {
@@ -7,6 +7,7 @@ const LABELS: Record<PlaceLayer, string> = {
   tour: "Tour",
   transfer: "Transfer",
   street_zone: "Street / Zone",
+  event: "Event / Nightlife",
 };
 
 export function layerLabel(layer: string): string {

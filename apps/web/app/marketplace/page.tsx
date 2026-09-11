@@ -22,8 +22,8 @@ export default async function MarketplacePage() {
     <main className="bv-app-shell">
       <section className="bv-container">
         <p className="bv-section-kicker">Marketplace</p>
-        <h1 className="bv-title">Tours, audio guides &amp; tickets</h1>
-        <p className="bv-subtitle">Book the city like the app: warm cards, clear prices, and quick actions.</p>
+        <h1 className="bv-title">BOLITOURS, audio guides &amp; tickets</h1>
+        <p className="bv-subtitle">Book a Torito city tour, self-guided audio walks, and event tickets with clear prices and quick actions.</p>
         <div className="bv-grid">
           {rows.map((product) => (
             <a key={product.id} href={`/marketplace/${product.id}`} className="bv-card bv-card-pad">

@@ -111,6 +111,7 @@
 | Private Tasting of Award Winning Bolivian Wines | Wine tasting | Evening/private tasting | $31 / adult | Travel Buddies / Viator mirror | Couples/date-night and expat/tourist experience; pair with BoliPass benefit ideas. |
 | Lomas de Arena Regional Park Day Trip | Nature / sand dunes | Half-day/full-day | — | Expedia | Close-to-city adventure; good for content and daytime itinerary bundles. |
 | Private Tour: Center, Porongo, Markets and River | City/private sightseeing | 4+ h | $40 / adult | Expedia activity listing | Easy first-day orientation for visitors and new residents. |
+| BOLITOURS Torito City Tour | Guided city tour / Torito hire | 2 h | $50 / group | BoliVibes manual seed | Users can hire a Torito with guide for a Santa Cruz city highlights route; marketplace product id `bolitours-torito-city-tour`. |
 | Samaipata Boutique Wine Escape | Wine + countryside escape | 2 days | — | Bolivia Golf Tours | Higher-end getaway combining El Fuerte and boutique vineyards. |
 
 ---

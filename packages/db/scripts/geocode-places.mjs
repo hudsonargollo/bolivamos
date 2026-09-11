@@ -92,6 +92,16 @@ async function geocode(query) {
   };
 }
 
+function metaForPlace(x) {
+  return {
+    description: x.description ?? x.notes ?? null,
+    address: x.address ?? x.reference ?? null,
+    googleMapsUrl: x.google_maps_url ?? x.googleMapsUrl ?? x.mapsUrl ?? null,
+    websiteUrl: x.website_url ?? x.websiteUrl ?? null,
+    phone: x.phone ?? null,
+  };
+}
+
 function normalizePlaces(data) {
   const out = [];
 
@@ -103,8 +113,9 @@ function normalizePlaces(data) {
       category: a.group ?? a.type ?? null,
       rating: a.rating ?? null,
       reviews: a.reviews ?? null,
-      price: null,
-      source: "tripadvisor",
+      price: a.price ?? null,
+      source: a.source ?? "tripadvisor",
+      ...metaForPlace(a),
     });
   }
   for (const t of data.tours) {
@@ -115,8 +126,9 @@ function normalizePlaces(data) {
       category: t.group ?? t.type ?? null,
       rating: t.rating ?? null,
       reviews: t.reviews ?? null,
-      price: null,
-      source: "tripadvisor",
+      price: t.price_from ?? t.price ?? null,
+      source: t.source ?? "tripadvisor",
+      ...metaForPlace(t),
     });
   }
   for (const t of data.transfers) {
@@ -127,8 +139,9 @@ function normalizePlaces(data) {
       category: t.group ?? null,
       rating: t.rating ?? null,
       reviews: t.reviews ?? null,
-      price: null,
-      source: "tripadvisor",
+      price: t.price ?? null,
+      source: t.source ?? "tripadvisor",
+      ...metaForPlace(t),
     });
   }
   for (const r of data.restaurants) {
@@ -140,7 +153,8 @@ function normalizePlaces(data) {
       rating: r.rating ?? null,
       reviews: r.reviews ?? null,
       price: r.price ?? null,
-      source: "tripadvisor",
+      source: r.source ?? "tripadvisor",
+      ...metaForPlace(r),
     });
   }
   for (const v of data.nightlife_venues ?? []) {
@@ -151,8 +165,9 @@ function normalizePlaces(data) {
       category: v.group ?? v.type ?? "Nightlife venue",
       rating: null,
       reviews: null,
-      price: null,
+      price: v.price ?? null,
       source: v.source ?? "web-osm",
+      ...metaForPlace(v),
     });
   }
   for (const e of data.events ?? []) {
@@ -163,8 +178,9 @@ function normalizePlaces(data) {
       category: e.type ?? "Event candidate",
       rating: null,
       reviews: null,
-      price: e.price_from ?? null,
+      price: e.price_from ?? e.price ?? null,
       source: e.source ?? "web",
+      ...metaForPlace(e),
     });
   }
   const streetGroups = {
@@ -185,6 +201,11 @@ function normalizePlaces(data) {
         reviews: null,
         price: null,
         source: "openalfa",
+        description: null,
+        address: null,
+        googleMapsUrl: null,
+        websiteUrl: null,
+        phone: null,
       });
     }
   }
@@ -297,7 +318,7 @@ async function main() {
     if (g.verified) verifiedCount++;
     else if (!place.id.startsWith("_district")) needsReview.push({ id: place.id, name: place.name, layer: place.layer, reason: g.reason ?? "low-confidence", displayName: g.displayName });
 
-    const cols = ["id", "name", "layer", "category", "district", "lat", "lng", "rating", "reviews", "price", "regional", "source", "verified"];
+    const cols = ["id", "name", "layer", "category", "district", "lat", "lng", "rating", "reviews", "price", "description", "address", "google_maps_url", "website_url", "phone", "regional", "source", "verified"];
     const vals = [
       place.id,
       place.name,
@@ -309,6 +330,11 @@ async function main() {
       place.rating,
       place.reviews,
       place.price,
+      place.description,
+      place.address,
+      place.googleMapsUrl,
+      place.websiteUrl,
+      place.phone,
       g.regional,
       place.source,
       g.verified,

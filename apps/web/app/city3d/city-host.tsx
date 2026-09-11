@@ -23,6 +23,7 @@ const STRINGS = {
     directions: "Get directions",
     eventsHere: "Events here",
     share: "Share",
+    copyLocation: "Copy location URL",
   },
   es: {
     search: "Buscar un lugar…",
@@ -39,6 +40,7 @@ const STRINGS = {
     directions: "Cómo llegar",
     eventsHere: "Eventos aquí",
     share: "Compartir",
+    copyLocation: "Copiar ubicación",
   },
 };
 
@@ -297,6 +299,8 @@ export default function CityHost() {
           <div id="place-sheet-name" style={{ fontFamily: "Caprasimo, Georgia, serif", fontSize: 26, color: "#201e1d" }} />
           <div id="place-sheet-meta" style={{ fontFamily: "Figtree, sans-serif", fontWeight: 600, color: "#7a6a52", marginTop: 4 }} />
           <div id="place-sheet-rating" style={{ fontFamily: "Figtree, sans-serif", fontWeight: 700, color: "#c4703d", marginTop: 8, fontSize: 15 }} />
+          <div id="place-sheet-info" style={{ fontFamily: "Figtree, sans-serif", color: "#33302c", marginTop: 10, fontSize: 14, lineHeight: 1.45 }} />
+          <div id="place-sheet-address" style={{ fontFamily: "Figtree, sans-serif", color: "#7a6a52", marginTop: 8, fontSize: 13, fontWeight: 700 }} />
           <div style={{ display: "flex", gap: 10, marginTop: 16, flexWrap: "wrap" }}>
             <a
               id="place-sheet-maps"
@@ -331,6 +335,22 @@ export default function CityHost() {
               }}
             >
               {t.eventsHere}
+            </button>
+            <button
+              id="place-sheet-copy"
+              style={{
+                background: "#7fa3a0",
+                color: "#201e1d",
+                padding: "10px 16px",
+                borderRadius: 10,
+                fontWeight: 700,
+                fontSize: 13,
+                border: 0,
+                cursor: "pointer",
+                boxShadow: "0 3px 0 #4f706d",
+              }}
+            >
+              {t.copyLocation}
             </button>
             <button
               id="place-sheet-share"
