@@ -660,8 +660,10 @@
       "address": "Plaza 24 de Septiembre, Santa Cruz de la Sierra, Bolivia",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Plaza%2024%20de%20Septiembre%20Santa%20Cruz%20de%20la%20Sierra%20Bolivia",
       "source": "manual",
-      "lat": null,
-      "lng": null
+      "lat": -17.7832547,
+      "lng": -63.1821187,
+      "district": "Centro",
+      "verified": true
     }
   ],
   "transfers": [

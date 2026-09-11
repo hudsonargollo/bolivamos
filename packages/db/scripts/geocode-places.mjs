@@ -94,6 +94,11 @@ async function geocode(query) {
 
 function metaForPlace(x) {
   return {
+    lat: typeof x.lat === "number" ? x.lat : null,
+    lng: typeof x.lng === "number" ? x.lng : null,
+    district: x.district ?? null,
+    verified: typeof x.verified === "boolean" ? x.verified : null,
+    regional: typeof x.regional === "boolean" ? x.regional : null,
     description: x.description ?? x.notes ?? null,
     address: x.address ?? x.reference ?? null,
     googleMapsUrl: x.google_maps_url ?? x.googleMapsUrl ?? x.mapsUrl ?? null,
@@ -318,7 +323,16 @@ async function main() {
   let verifiedCount = 0;
 
   for (const place of places) {
-    const g = checkpoint.results[place.id] ?? { lat: null, lng: null, district: null, regional: false, verified: false };
+    const hasManualLocation = typeof place.lat === "number" && typeof place.lng === "number";
+    const g = hasManualLocation
+      ? {
+          lat: place.lat,
+          lng: place.lng,
+          district: place.district ?? null,
+          regional: place.regional ?? false,
+          verified: place.verified ?? true,
+        }
+      : (checkpoint.results[place.id] ?? { lat: null, lng: null, district: null, regional: false, verified: false });
     if (g.verified) verifiedCount++;
     else if (!place.id.startsWith("_district")) needsReview.push({ id: place.id, name: place.name, layer: place.layer, reason: g.reason ?? "low-confidence", displayName: g.displayName });
 

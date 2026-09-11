@@ -1,8 +1,8 @@
 {
   "total": 568,
-  "verified": 278,
-  "verifiedPct": 48.9,
-  "needsReviewCount": 290,
+  "verified": 294,
+  "verifiedPct": 51.8,
+  "needsReviewCount": 274,
   "needsReview": [
     {
       "id": "la-rinconada-ecoparque-resort",
@@ -170,67 +170,61 @@
       "id": "samaipata-2-day-el-fuerte-amboro",
       "name": "Samaipata 2-Day: El Fuerte & Amboró Giant Fern Forest",
       "layer": "tour",
-      "reason": "low-confidence"
+      "reason": "no-match"
     },
     {
       "id": "samaipata-3-day-nature-history-adventure",
       "name": "Samaipata 3 Days: Nature, History & Adventure",
       "layer": "tour",
-      "reason": "low-confidence"
+      "reason": "no-match"
     },
     {
       "id": "el-fuerte-samaipata-full-day-banjo",
       "name": "El Fuerte de Samaipata Full-Day Tour",
       "layer": "tour",
-      "reason": "low-confidence"
+      "reason": "no-match"
     },
     {
       "id": "amboro-samaipata-refugio-volcanes-2-day",
       "name": "Amboró & Samaipata 2-Day: Refugio Los Volcanes",
       "layer": "tour",
-      "reason": "low-confidence"
+      "reason": "no-match"
     },
     {
       "id": "amboro-national-park-samaipata-3-day",
       "name": "Amboró National Park & Samaipata",
       "layer": "tour",
-      "reason": "low-confidence"
+      "reason": "no-match"
     },
     {
       "id": "amboro-tours-samaipata-giant-ferns",
       "name": "Samaipata Village, El Fuerte & Giant Ferns",
       "layer": "tour",
-      "reason": "low-confidence"
+      "reason": "no-match"
     },
     {
       "id": "private-bolivian-wine-tasting-santa-cruz",
       "name": "Private Tasting of Award Winning Bolivian Wines",
       "layer": "tour",
-      "reason": "low-confidence"
+      "reason": "no-match"
     },
     {
       "id": "lomas-de-arena-day-trip",
       "name": "Lomas de Arena Regional Park Day Trip",
       "layer": "tour",
-      "reason": "low-confidence"
+      "reason": "no-match"
     },
     {
       "id": "porongo-markets-city-private-tour",
       "name": "Private Tour: Center, Porongo, Markets and River",
       "layer": "tour",
-      "reason": "low-confidence"
+      "reason": "no-match"
     },
     {
       "id": "samaipata-wine-boutique-escape",
       "name": "Samaipata Boutique Wine Escape",
       "layer": "tour",
-      "reason": "low-confidence"
-    },
-    {
-      "id": "bolitours-torito-city-tour",
-      "name": "BOLITOURS Torito City Tour",
-      "layer": "tour",
-      "reason": "low-confidence"
+      "reason": "no-match"
     },
     {
       "id": "airport-shuttle-santa-cruz",
@@ -1572,154 +1566,64 @@
       "reason": "no-match"
     },
     {
-      "id": "maroon",
-      "name": "Maroon",
-      "layer": "event",
-      "reason": "low-confidence"
-    },
-    {
       "id": "nexus-club",
       "name": "Nexus Club",
       "layer": "event",
-      "reason": "low-confidence"
+      "reason": "no-match"
     },
     {
       "id": "flamenco-live-house",
       "name": "Flamenco Live House",
       "layer": "event",
-      "reason": "low-confidence"
+      "reason": "no-match"
     },
     {
       "id": "wynwood-scz",
       "name": "Wynwood SCZ",
       "layer": "event",
-      "reason": "low-confidence"
+      "reason": "no-match"
     },
     {
       "id": "praga-discoteca-karaoke",
       "name": "Praga Discoteca Karaoke",
       "layer": "event",
-      "reason": "low-confidence"
+      "reason": "no-match"
     },
     {
       "id": "fizz-night-club",
       "name": "FIZZ",
       "layer": "event",
-      "reason": "low-confidence"
-    },
-    {
-      "id": "chaplin-show",
-      "name": "Chaplin Show",
-      "layer": "event",
-      "reason": "low-confidence"
-    },
-    {
-      "id": "casa-municipal-cultura-raul-otero-reiche",
-      "name": "Casa Municipal de Cultura Raul Otero Reiche",
-      "layer": "event",
-      "reason": "low-confidence"
-    },
-    {
-      "id": "paraninfo-uagrm",
-      "name": "Paraninfo Universitario Humberto Parada Caro",
-      "layer": "event",
-      "reason": "low-confidence"
-    },
-    {
-      "id": "teatro-cba",
-      "name": "Teatro CBA",
-      "layer": "event",
-      "reason": "low-confidence"
-    },
-    {
-      "id": "meraki-teatro",
-      "name": "Meraki",
-      "layer": "event",
-      "reason": "low-confidence"
-    },
-    {
-      "id": "sonilum",
-      "name": "Sonilum",
-      "layer": "event",
-      "reason": "low-confidence"
-    },
-    {
-      "id": "fexpocruz",
-      "name": "Fexpocruz",
-      "layer": "event",
-      "reason": "low-confidence"
-    },
-    {
-      "id": "equipetrol-district",
-      "name": "Equipetrol nightlife district",
-      "layer": "event",
-      "reason": "low-confidence"
-    },
-    {
-      "id": "patio-design-lifestyle-center-nightlife",
-      "name": "Patio Design Lifestyle Center",
-      "layer": "event",
-      "reason": "low-confidence"
-    },
-    {
-      "id": "ventura-mall-nightlife-anchor",
-      "name": "Ventura Mall",
-      "layer": "event",
-      "reason": "low-confidence"
+      "reason": "no-match"
     },
     {
       "id": "jesse-joy-sonilum-2026-09-24",
       "name": "Jesse & Joy at Sonilum",
       "layer": "event",
-      "reason": "low-confidence"
+      "reason": "no-match"
     },
     {
       "id": "arcangel-sonilum-2026-09-10",
       "name": "Arcangel at Sonilum",
       "layer": "event",
-      "reason": "low-confidence"
-    },
-    {
-      "id": "azul-azul-fexpocruz-2026-09-20",
-      "name": "Azul Azul at Fexpocruz",
-      "layer": "event",
-      "reason": "low-confidence"
-    },
-    {
-      "id": "hex-steeel-ritual-2-maroon-2026-09-26",
-      "name": "HEX Steeel Ritual 2",
-      "layer": "event",
-      "reason": "low-confidence"
+      "reason": "no-match"
     },
     {
       "id": "friday-night-orchestras-flamenco-live-house",
       "name": "Friday Night of Orchestras",
       "layer": "event",
-      "reason": "low-confidence"
-    },
-    {
-      "id": "tercera-preca-carnaval-2026",
-      "name": "Tercera Preca del Carnaval 2026",
-      "layer": "event",
-      "reason": "low-confidence"
+      "reason": "no-match"
     },
     {
       "id": "fuyu-hero-fest-2026",
       "name": "Fuyu Hero Fest 2026",
       "layer": "event",
-      "reason": "low-confidence"
-    },
-    {
-      "id": "the-wall-opera-rock-pink-floyd",
-      "name": "THE WALL la Ópera Rock de Pink Floyd",
-      "layer": "event",
-      "reason": "low-confidence"
+      "reason": "no-match"
     },
     {
       "id": "studio-ghibli-sinfonico-santa-cruz",
       "name": "Concierto sinfónico Studio Ghibli Santa Cruz",
       "layer": "event",
-      "reason": "low-confidence"
+      "reason": "no-match"
     },
     {
       "id": "manzana-uno-pedestrian",
