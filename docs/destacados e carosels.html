@@ -460,11 +460,16 @@ Disponible desde el 14 de septiembre en la app de BoliVibes.
       });
     }
 
-    function copyText(elementId) {
-      const text = document.getElementById(elementId).innerText;
-      navigator.clipboard.writeText(text).then(() => {
-        alert('¡Texto copiado al portapapeles!');
-      });
+    async function copyText(elementId) {
+      const text = document.getElementById(elementId).innerText.trim();
+      await navigator.clipboard.writeText(text);
+      const button = event && event.currentTarget ? event.currentTarget : null;
+      if (button) {
+        const original = button.textContent;
+        button.textContent = 'Copiado';
+        button.classList.add('copy-btn-ts');
+        setTimeout(() => { button.textContent = original; button.classList.remove('copy-btn-ts'); }, 1400);
+      }
     }
   </script>
 </body>
