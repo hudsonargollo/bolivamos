@@ -11,7 +11,7 @@ export default function LoginPage() {
             alt="BoliVibes"
             width={280}
             height={158}
-            style={{ width: 260, maxWidth: "100%", height: "auto", objectFit: "contain" }}
+            className="a-login-logo"
           />
         </a>
         <LoginForm />

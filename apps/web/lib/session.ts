@@ -9,6 +9,7 @@ export interface CurrentSession {
   token: string;
   userId: string;
   email: string;
+  fullName: string | null;
   role: SessionValue["role"];
   isBoliPass: boolean;
 }
@@ -52,7 +53,12 @@ export async function resolveSession(token: string | null): Promise<CurrentSessi
     // webhook, which could lag a passed bolipassExpiresAt if delayed or lost.
     const db = createDb(env.DB);
     const [user] = await db
-      .select({ isBanned: users.isBanned, isBolipassActive: users.isBolipassActive, bolipassExpiresAt: users.bolipassExpiresAt })
+      .select({
+        fullName: users.fullName,
+        isBanned: users.isBanned,
+        isBolipassActive: users.isBolipassActive,
+        bolipassExpiresAt: users.bolipassExpiresAt,
+      })
       .from(users)
       .where(eq(users.id, payload.sub))
       .limit(1);
@@ -65,6 +71,7 @@ export async function resolveSession(token: string | null): Promise<CurrentSessi
       token,
       userId: payload.sub,
       email: payload.email,
+      fullName: user?.fullName ?? null,
       role: session.role,
       isBoliPass,
     };
