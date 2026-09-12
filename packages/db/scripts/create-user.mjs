@@ -7,7 +7,7 @@
 // verify correctly against POST /api/auth/login.
 //
 // Run: node packages/db/scripts/create-user.mjs <email> <password> [role]
-//   role defaults to "visitor" (or "host").
+//   role defaults to "visitor"; valid roles are "visitor", "host", or "admin".
 
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
@@ -43,11 +43,11 @@ function sqlString(v) {
 async function main() {
   const [email, password, role = "visitor"] = process.argv.slice(2);
   if (!email || !password) {
-    console.error("Usage: node create-user.mjs <email> <password> [visitor|host]");
+    console.error("Usage: node create-user.mjs <email> <password> [visitor|host|admin]");
     process.exit(1);
   }
-  if (!["visitor", "host"].includes(role)) {
-    console.error(`Invalid role "${role}" — must be "visitor" or "host".`);
+  if (!["visitor", "host", "admin"].includes(role)) {
+    console.error(`Invalid role "${role}" — must be "visitor", "host", or "admin".`);
     process.exit(1);
   }
 
@@ -74,8 +74,8 @@ async function main() {
 
   if (existing.length) {
     const id = existing[0].id;
-    d1(`UPDATE users SET password_hash = ${sqlString(passwordHash)} WHERE id = ${sqlString(id)}`);
-    console.log(`Updated password for existing user ${email} (${id}).`);
+    d1(`UPDATE users SET password_hash = ${sqlString(passwordHash)}, role = ${sqlString(role)} WHERE id = ${sqlString(id)}`);
+    console.log(`Updated password and role=${role} for existing user ${email} (${id}).`);
   } else {
     const id = crypto.randomUUID();
     d1(

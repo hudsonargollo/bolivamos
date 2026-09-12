@@ -6,7 +6,13 @@ export default function LoginPage() {
     <div className="admin-root" style={{ display: "flex", minHeight: "100vh", alignItems: "center", justifyContent: "center", padding: 24 }}>
       <div className="a-card" style={{ width: "100%", maxWidth: 380, display: "flex", flexDirection: "column", gap: 20, alignItems: "center" }}>
         <a href="/" aria-label="BoliVibes home" style={{ display: "inline-flex", justifyContent: "center" }}>
-          <img src="/logo-full.svg" alt="BoliVibes" style={{ width: 220, height: "auto" }} />
+          <img
+            src="/bolivibes-logoclay.webp"
+            alt="BoliVibes"
+            width={280}
+            height={158}
+            style={{ width: 260, maxWidth: "100%", height: "auto", objectFit: "contain" }}
+          />
         </a>
         <LoginForm />
         <div style={{ width: "100%", display: "flex", alignItems: "center", gap: 12 }}>
