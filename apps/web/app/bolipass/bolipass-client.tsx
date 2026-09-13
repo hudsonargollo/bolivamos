@@ -8,7 +8,7 @@ type VoucherItem = VoucherDto | LockedVoucherTeaser;
 const PERKS = [
   { icon: "⌁", title: "Vouchers", body: "Unlock live BoliPass vouchers and member-only savings." },
   { icon: "◎", title: "Connect", body: "See who else is going and start event-based conversations." },
-  { icon: "✦", title: "Concierge", body: "Ask the AI companion for nightlife, transport and trip help." },
+  { icon: "✦", title: "BolivIA", body: "Ask BolivIA for nightlife, transport, local tips, and trip help." },
 ] as const;
 
 const NIT_FORMAT = /^\d{7,13}$/;
@@ -79,7 +79,7 @@ export default function BoliPassClient() {
           <div className="bv-membership-bottom">
             <div>
               <p className="bv-membership-name">{name || "—"}</p>
-              <p className="bv-membership-sub">{vip ? "BoliPass active" : "Upgrade to activate vouchers, Connect and Concierge"}</p>
+              <p className="bv-membership-sub">{vip ? "BoliPass active" : "Upgrade to activate vouchers, Connect and BolivIA"}</p>
             </div>
             <div className="bv-avatar">{initials || "—"}</div>
           </div>

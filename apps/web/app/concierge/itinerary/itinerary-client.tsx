@@ -54,7 +54,7 @@ export default function ItineraryClient() {
         <p className="bv-section-kicker">Plan my trip</p>
         <h1 className="bv-title-sm" style={{ marginBottom: 8 }}>Build a Santa Cruz itinerary</h1>
         <p className="bv-card-meta" style={{ marginBottom: 18 }}>
-          Same BoliPass itinerary flow as the mobile app: choose interests, pick trip length, and let the concierge create a plan.
+          Same BoliPass itinerary flow as the mobile app: choose interests, pick trip length, and let BolivIA create a plan.
         </p>
 
         <p className="bv-card-title" style={{ marginBottom: 10 }}>Interests</p>

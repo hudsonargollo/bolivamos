@@ -13,8 +13,8 @@ export default async function ConciergePage() {
         <div className="bv-chat-header">
           <div className="bv-perk-icon">✦</div>
           <div>
-            <p className="bv-section-kicker" style={{ marginBottom: 4 }}>Companion</p>
-            <h1 className="bv-title-sm" style={{ marginBottom: 0 }}>BoliVibes Concierge</h1>
+            <p className="bv-section-kicker" style={{ marginBottom: 4 }}>AI guide</p>
+            <h1 className="bv-title-sm" style={{ marginBottom: 0 }}>BolivIA</h1>
           </div>
           <a href="/bolipass" className="bv-soft">BoliPass ✓</a>
         </div>

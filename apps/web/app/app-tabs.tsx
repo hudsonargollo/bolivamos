@@ -7,7 +7,7 @@ const TABS = [
   { href: "/santa-cruz-de-la-sierra/eventos", label: "Feed", icon: "◇", match: ["/santa-cruz-de-la-sierra/eventos", "/en/santa-cruz-de-la-sierra/eventos"] },
   { href: "/city3d", label: "Map", icon: "⌖", match: ["/city3d"] },
   { href: "/bolipass", label: "BoliPass", icon: "▣", match: ["/bolipass"] },
-  { href: "/concierge", label: "Concierge", icon: "✦", match: ["/concierge"] },
+  { href: "/concierge", label: "BolivIA", icon: "✦", match: ["/concierge"] },
   { href: "/profile", label: "Profile", icon: "●", match: ["/profile", "/marketplace", "/connect"] },
 ] as const;
 

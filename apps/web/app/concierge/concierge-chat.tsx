@@ -42,7 +42,7 @@ export default function ConciergeChat() {
 
       if (!res.ok) {
         const body = (await res.json().catch(() => null)) as { error?: string } | null;
-        setError(body?.error ?? "The concierge couldn't reply. Try again.");
+        setError(body?.error ?? "BolivIA couldn't reply. Try again.");
         return;
       }
 
@@ -89,7 +89,7 @@ export default function ConciergeChat() {
 
       {error && <p className="bv-error" role="alert">{error}</p>}
       <form onSubmit={handleSubmit} className="bv-chat-form">
-        <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Ask the concierge…" className="bv-form-control" disabled={sending} />
+        <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Ask BolivIA…" className="bv-form-control" disabled={sending} />
         <button type="submit" className="bv-btn" disabled={sending || !input.trim()}>Send</button>
       </form>
     </div>

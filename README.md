@@ -5,10 +5,10 @@ Monorepo for the BoliVibes app (Santa Cruz de la Sierra, Bolivia) — live at
 
 - `apps/web` — Next.js 15 App Router, deployed to Cloudflare Workers via `@opennextjs/cloudflare`.
   Hosts the public site and API, the Host Portal (`/host/*`), the Admin Dashboard (`/admin/*`),
-  and the VIP consumer surfaces: AI Concierge (`/concierge`), the tours/tickets Marketplace
+  and the VIP consumer surfaces: BolivIA (`/concierge`), the tours/tickets Marketplace
   (`/marketplace`), and VIP Connect & Dating (`/connect`).
 - `apps/mobile` — Expo Router app (iOS/Android). Auth, event browsing, and push registration are
-  live; Concierge/Marketplace/Connect parity with web is in progress (see "Mobile parity" below).
+  live; BolivIA/Marketplace/Connect parity with web is in progress (see "Mobile parity" below).
 - `apps/cron-worker` — plain Cloudflare Worker running scheduled email/notification jobs.
 - `packages/*` — shared design tokens, D1 schema (Drizzle), Zod API contracts + JWT/KV helpers,
   the Gemini AI wrapper, notification senders, and the mobile API client.
@@ -53,7 +53,7 @@ Full control center for internal staff (e.g. Steff), on-brand with the public si
 - **Push** — compose and send a campaign (Everyone / VIP / Hosts) over the real Expo push pipeline
 - **Products / Payment Methods / Orders** — manage the tours/audio-tours/tickets marketplace, the QR Bolivia/PIX/crypto receiving details buyers see at checkout, and manually confirm non-Stripe orders
 - **Moderation** — VIP Connect reports; dismiss or ban (a ban kills that user's session everywhere, immediately)
-- **Analytics** — signups, VIP conversion, redemptions, concierge/connect/push engagement, marketplace revenue by month, a churn proxy, and an MRR/ARR projection (admin-set BoliPass price × active VIPs — a labeled estimate, not real billing data)
+- **Analytics** — signups, VIP conversion, redemptions, BolivIA/connect/push engagement, marketplace revenue by month, a churn proxy, and an MRR/ARR projection (admin-set BoliPass price × active VIPs — a labeled estimate, not real billing data)
 
 There is no self-signup or in-app path to the `admin` role — it can only be granted with a direct DB update, after the person has signed up (or dev-logged-in) once as a normal user:
 
@@ -105,7 +105,7 @@ Email/password login (`/login`) works independently of this and doesn't need OAu
 All of the following is deployed and functional — it just doesn't do anything real yet:
 
 - **Stripe checkout** — real Checkout Session + webhook integration; needs `STRIPE_SECRET_KEY` / `STRIPE_WEBHOOK_SECRET`.
-- **AI Concierge replies** — the Gemini key is real but its prepayment credits are depleted; top up billing at [ai.studio](https://ai.studio).
+- **BolivIA replies** — the Gemini key is real but its prepayment credits are depleted; top up billing at [ai.studio](https://ai.studio).
 - **Google sign-in** — needs `GOOGLE_CLIENT_SECRET` (see above).
 - **Weekly digest / weekend roundup emails** — needs `RESEND_API_KEY`.
 - **QR Bolivia / QR PIX / crypto checkout** — the flow works end-to-end once an admin fills in the receiving QR/address at `/admin/payment-methods`; empty today.
@@ -125,5 +125,5 @@ All of the following is deployed and functional — it just doesn't do anything 
 ## Mobile parity
 
 `apps/mobile` has auth (Google + email/password + dev-login), event browsing, and push token
-registration. The AI Concierge, Marketplace, and VIP Connect & Dating screens that exist on web
+registration. The BolivIA, Marketplace, and VIP Connect & Dating screens that exist on web
 don't have mobile equivalents yet — that's the current focus.

@@ -2,11 +2,11 @@ import type { ChatRequest } from "@bolivibes/api-schema";
 import { GeminiClient } from "./gemini-client";
 
 const CONCIERGE_SYSTEM_PROMPT =
-  "You are the BoliVibes Concierge, a friendly local guide for Santa Cruz de la Sierra, Bolivia. " +
+  "You are BolivIA, the BoliVibes AI concierge and a friendly local guide for Santa Cruz de la Sierra, Bolivia. " +
   "Answer questions about nightlife, transport, local dishes, dress codes, and things to do. Keep replies concise.";
 
 /**
- * Smart Concierge Chat (PRD 4.3). Stubbed as a single-turn call; a real
+ * BolivIA Chat (PRD 4.3). Stubbed as a single-turn call; a real
  * implementation would stream tokens and pass `history` as multi-turn contents.
  */
 export async function chatWithConcierge(client: GeminiClient, request: ChatRequest): Promise<string> {
