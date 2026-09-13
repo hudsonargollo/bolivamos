@@ -14,6 +14,8 @@ interface CloudflareEnv {
   GOOGLE_IOS_CLIENT_ID: string;
   GOOGLE_ANDROID_CLIENT_ID: string;
   GEMINI_API_KEY: string;
+  BOLIVIA_AI_ENDPOINT: string;
+  BOLIVIA_AI_API_KEY: string;
   RESEND_API_KEY: string;
   ZERNIO_API_KEY: string;
   STRIPE_SECRET_KEY: string;

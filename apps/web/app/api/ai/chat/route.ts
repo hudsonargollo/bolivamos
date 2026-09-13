@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
 import { eq } from "@bolivibes/db";
-import { GeminiClient, chatWithConcierge } from "@bolivibes/ai";
 import { chatRequestSchema, type ChatResponse } from "@bolivibes/api-schema";
 import { createDb, conciergeConversations, conciergeMessages } from "@bolivibes/db";
 import { cf } from "@/lib/cloudflare";
 import { requireSession, SessionError } from "@/lib/session";
 import { toErrorResponse } from "@/lib/api-errors";
+import { chatWithBoliviaAi } from "@/lib/bolivia-ai";
 
 /** BoliPass-only Smart Concierge Chat (PRD 4.3), now with server-persisted history. */
 export async function POST(request: Request) {
@@ -41,8 +41,10 @@ export async function POST(request: Request) {
       content: body.message,
     });
 
-    const client = new GeminiClient({ apiKey: env.GEMINI_API_KEY });
-    const reply = await chatWithConcierge(client, body);
+    const reply = await chatWithBoliviaAi(body, {
+      endpoint: env.BOLIVIA_AI_ENDPOINT,
+      apiKey: env.BOLIVIA_AI_API_KEY,
+    });
 
     await db.insert(conciergeMessages).values({
       id: crypto.randomUUID(),
