@@ -33,37 +33,28 @@ const ground = new THREE.Mesh(new THREE.BoxGeometry(800, 3, 140), M.ground);
 ground.name = 'plaza'; ground.position.set(0, -1.5, -18);
 root.add(ground);
 
-// ---- the sun mark (from sun-mark.svg, scale 0.45) ----
-const S = 0.45, RIM = 7 * S;          // ring half-width
-const sun = new THREE.Group(); sun.name = 'sun_mark';
-// ring: extruded annulus
-const ringShape = new THREE.Shape();
-ringShape.absarc(0, 0, (44 + 7) * S, 0, Math.PI * 2, false);
-const ringHole = new THREE.Path();
-ringHole.absarc(0, 0, (44 - 7) * S, 0, Math.PI * 2, true);
-ringShape.holes.push(ringHole);
-const ringGeo = new THREE.ExtrudeGeometry(ringShape, { depth: 4, bevelEnabled: true, bevelThickness: 0.6, bevelSize: 0.6, bevelSegments: 3, curveSegments: 64 });
-ringGeo.translate(0, 0, -2);
-const ring = new THREE.Mesh(ringGeo, M.ring); ring.name = 'sun_ring';
-sun.add(ring);
-// rays: trapezoid r 58->108, half-width 9->16 (SVG units), extruded
-const rayShape = new THREE.Shape();
-rayShape.moveTo(-9 * S, 58 * S); rayShape.lineTo(9 * S, 58 * S);
-rayShape.lineTo(16 * S, 108 * S); rayShape.lineTo(-16 * S, 108 * S); rayShape.closePath();
-const rayGeo = new THREE.ExtrudeGeometry(rayShape, { depth: 3.2, bevelEnabled: true, bevelThickness: 0.5, bevelSize: 0.5, bevelSegments: 2 });
-rayGeo.translate(0, 0, -1.6);
-const rayMats = [M.red, M.yellow, M.green, M.orange, M.yellow, M.red, M.green, M.yellow, M.red, M.orange, M.green, M.yellow];
-const rays = new THREE.Group(); rays.name = 'sun_rays';
-rayMats.forEach((mat, i) => {
-  const r = new THREE.Mesh(rayGeo, mat);
-  r.name = 'ray_' + i;
-  r.rotation.z = -i * Math.PI / 6;   // SVG rotate() is clockwise
-  rays.add(r);
+// ---- hero brand pin: replaces the old sun mark with the BoliVibes pin icon ----
+const sun = new THREE.Group(); sun.name = 'bolivibes_pin_mark';
+const iconTexture = new THREE.TextureLoader().load('/imgs/bolivibes-icon.webp');
+iconTexture.colorSpace = THREE.SRGBColorSpace;
+const iconMaterial = new THREE.SpriteMaterial({
+  map: iconTexture,
+  transparent: true,
+  depthWrite: false,
+  clippingPlanes: [groundClip],
 });
+iconMaterial.name = 'bolivibes-pin-icon';
+const pinIcon = new THREE.Sprite(iconMaterial);
+pinIcon.name = 'bolivibes_pin_icon';
+pinIcon.scale.set(108, 108, 1);
+pinIcon.position.set(0, 0, 5);
+sun.add(pinIcon);
+// Kept as an empty group so the animation loop can retain its old contract.
+const rays = new THREE.Group(); rays.name = 'pin_rays_legacy_empty';
 sun.add(rays);
-// warm glow that comes up with the sun
+// warm glow that comes up with the pin
 const glow = new THREE.PointLight(0xffb46a, 0, 240, 1.8);
-glow.name = 'sun_glow'; glow.position.set(0, 0, 26);
+glow.name = 'pin_glow'; glow.position.set(0, 0, 26);
 sun.add(glow);
 const SUN_Z = -38, SUN_Y0 = -118, SUN_Y1 = 88;
 sun.scale.setScalar(1.15);
@@ -994,8 +985,9 @@ function tick(now) {
   }
   const starK = cur.stars, lit = Math.max(0, Math.min(1, (cur.y + 20) / 100));
   sun.position.y = cur.y + Math.sin(t * 0.7) * 0.6 * lit;
-  sun.rotation.z = -t * 0.05 - 2.2;
-  rays.rotation.z = -t * 0.04;
+  sun.rotation.z = 0;
+  pinIcon.scale.setScalar(108 + Math.sin(t * 1.1) * 2.5 * lit);
+  rays.rotation.z = 0;
   clouds.children.forEach(c => {
     c.position.x = c.userData.baseX + ((t * c.userData.speed) % 460);
     if (c.position.x > 230) c.position.x -= 460;
