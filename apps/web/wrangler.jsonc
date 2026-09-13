@@ -47,7 +47,8 @@
     "binding": "IMAGES"
   },
   // Not secret — safe to keep in source. Secrets (JWT_SECRET, GOOGLE_CLIENT_SECRET,
-  // GEMINI_API_KEY, RESEND_API_KEY) are set via `wrangler secret put` and never appear here.
+  // GEMINI_API_KEY, RESEND_API_KEY, ZERNIO_API_KEY) are set via `wrangler secret put`
+  // and never appear here.
   "vars": {
     "GOOGLE_WEB_CLIENT_ID": "1066105745498-le1a1924cldt7h56rusd2rg8tkf0vbvf.apps.googleusercontent.com",
     "GOOGLE_IOS_CLIENT_ID": "",

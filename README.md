@@ -83,6 +83,7 @@ pnpm --filter @bolivibes/web exec wrangler secret put JWT_SECRET
 pnpm --filter @bolivibes/web exec wrangler secret put GOOGLE_CLIENT_SECRET
 pnpm --filter @bolivibes/web exec wrangler secret put GEMINI_API_KEY
 pnpm --filter @bolivibes/web exec wrangler secret put RESEND_API_KEY
+pnpm --filter @bolivibes/web exec wrangler secret put ZERNIO_API_KEY
 pnpm --filter @bolivibes/web exec wrangler secret put STRIPE_SECRET_KEY
 pnpm --filter @bolivibes/web exec wrangler secret put STRIPE_WEBHOOK_SECRET
 

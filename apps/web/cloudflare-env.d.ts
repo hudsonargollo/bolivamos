@@ -15,6 +15,7 @@ interface CloudflareEnv {
   GOOGLE_ANDROID_CLIENT_ID: string;
   GEMINI_API_KEY: string;
   RESEND_API_KEY: string;
+  ZERNIO_API_KEY: string;
   STRIPE_SECRET_KEY: string;
   STRIPE_WEBHOOK_SECRET: string;
   DEV_MODE_MOCK_AUTH?: string;
