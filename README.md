@@ -51,6 +51,7 @@ Full control center for internal staff (e.g. Steff), on-brand with the public si
 - **Users** — roles, BoliPass VIP status
 - **Venues / Events / Vouchers / Places** — full CRUD across every host, category filters, a verify workflow on Places, `isVipOnly`/`featured` flags on venues and events
 - **Push** — compose and send a campaign (Everyone / VIP / Hosts) over the real Expo push pipeline
+- **Social** — connect Zernio social accounts, publish posts now, or schedule posts with `ZERNIO_API_KEY`
 - **Products / Payment Methods / Orders** — manage the tours/audio-tours/tickets marketplace, the QR Bolivia/PIX/crypto receiving details buyers see at checkout, and manually confirm non-Stripe orders
 - **Moderation** — VIP Connect reports; dismiss or ban (a ban kills that user's session everywhere, immediately)
 - **Analytics** — signups, VIP conversion, redemptions, BolivIA/connect/push engagement, marketplace revenue by month, a churn proxy, and an MRR/ARR projection (admin-set BoliPass price × active VIPs — a labeled estimate, not real billing data)
