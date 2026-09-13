@@ -35,6 +35,14 @@ function contentTypeFor(file: File, filename: string) {
   return "application/octet-stream";
 }
 
+function normalizeAssetKey(key: string) {
+  const normalized = key.trim();
+  const [folder] = normalized.split("/");
+  if (!folder || !ALLOWED_FOLDERS.has(folder)) return null;
+  if (!normalized.includes("/") || normalized.includes("..") || normalized.startsWith("/") || normalized.endsWith("/")) return null;
+  return normalized;
+}
+
 export async function uploadAdminAsset(formData: FormData) {
   const session = await requireAdminAction();
   const folder = formString(formData, "folder") || "misc";
@@ -66,4 +74,16 @@ export async function uploadAdminAsset(formData: FormData) {
 
   revalidatePath("/admin/assets");
   redirect(`/admin/assets?uploaded=${encodeURIComponent(`/api/assets/${key}`)}`);
+}
+
+export async function deleteAdminAsset(formData: FormData) {
+  await requireAdminAction();
+  const key = normalizeAssetKey(formString(formData, "key"));
+  if (!key) throw new Error("Invalid asset key");
+
+  const { env } = cf();
+  await env.EVENT_ASSETS.delete(key);
+
+  revalidatePath("/admin/assets");
+  redirect(`/admin/assets?deleted=${encodeURIComponent(key)}`);
 }

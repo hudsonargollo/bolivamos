@@ -1,5 +1,5 @@
 import { cf } from "@/lib/cloudflare";
-import { uploadAdminAsset } from "../actions/assets";
+import { deleteAdminAsset, uploadAdminAsset } from "../actions/assets";
 
 const FOLDER_OPTIONS = [
   { value: "brand", label: "Brand" },
@@ -21,9 +21,10 @@ async function listRecentAssets() {
   return result.objects.sort((a, b) => b.uploaded.getTime() - a.uploaded.getTime());
 }
 
-export default async function AdminAssetsPage({ searchParams }: { searchParams?: Promise<{ uploaded?: string }> }) {
+export default async function AdminAssetsPage({ searchParams }: { searchParams?: Promise<{ uploaded?: string; deleted?: string }> }) {
   const params = searchParams ? await searchParams : {};
   const uploaded = params.uploaded;
+  const deleted = params.deleted;
   const assets = await listRecentAssets();
 
   return (
@@ -44,6 +45,12 @@ export default async function AdminAssetsPage({ searchParams }: { searchParams?:
             <span className="a-muted" style={{ fontSize: 12, fontWeight: 800 }}>Asset URL</span>
             <input className="a-input" readOnly value={uploaded} />
           </label>
+        </div>
+      )}
+
+      {deleted && (
+        <div className="a-card" style={{ marginBottom: 18, border: "1px solid rgba(184, 73, 46, 0.28)" }}>
+          <p style={{ margin: 0, fontWeight: 800 }}>Deleted asset: <code>{deleted}</code></p>
         </div>
       )}
 
@@ -97,11 +104,12 @@ export default async function AdminAssetsPage({ searchParams }: { searchParams?:
               <th>URL</th>
               <th>Size</th>
               <th>Uploaded</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             {assets.length === 0 && (
-              <tr><td colSpan={5} className="a-muted">No uploaded assets yet.</td></tr>
+              <tr><td colSpan={6} className="a-muted">No uploaded assets yet.</td></tr>
             )}
             {assets.map((asset) => {
               const url = `/api/assets/${asset.key}`;
@@ -115,6 +123,18 @@ export default async function AdminAssetsPage({ searchParams }: { searchParams?:
                   <td><input className="a-input" readOnly value={url} style={{ minWidth: 260 }} /></td>
                   <td>{formatBytes(asset.size)}</td>
                   <td>{asset.uploaded.toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" })}</td>
+                  <td>
+                    <form action={deleteAdminAsset}>
+                      <input type="hidden" name="key" value={asset.key} />
+                      <button
+                        type="submit"
+                        className="a-logout-btn"
+                        style={{ color: "var(--a-danger)", borderColor: "rgba(184, 73, 46, 0.3)" }}
+                      >
+                        Delete
+                      </button>
+                    </form>
+                  </td>
                 </tr>
               );
             })}
