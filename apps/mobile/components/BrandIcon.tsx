@@ -1,5 +1,5 @@
 import { Image, type ImageStyle, type StyleProp } from "react-native";
-import ICON_SOURCE from "../assets/icon.png";
+import ICON_SOURCE from "../assets/images/bolivibes-icon.webp";
 
 export function BrandIcon({ size = 132, style }: { size?: number; style?: StyleProp<ImageStyle> }) {
   return (
