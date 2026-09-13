@@ -52,7 +52,7 @@ const stats = [
 
 export default function HomePage() {
   const jsonLd = [
-    { "@context": "https://schema.org", "@type": "Organization", name: "BoliVibes", url: SITE_URL, logo: `${SITE_URL}/bolivibes-logoclay.webp` },
+    { "@context": "https://schema.org", "@type": "Organization", name: "BoliVibes", url: SITE_URL, logo: `${SITE_URL}/api/assets/brand/bolivibes-logo.webp` },
     { "@context": "https://schema.org", "@type": "WebSite", name: "BoliVibes", url: SITE_URL },
   ];
 
@@ -72,7 +72,7 @@ export default function HomePage() {
         <div className="bv-container" style={{ width: "min(100%, 1120px)", paddingTop: 28, paddingBottom: 72 }}>
           <nav style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 18, marginBottom: 56 }}>
             <Link href="/" aria-label="BoliVibes home" style={{ display: "inline-flex", alignItems: "center" }}>
-              <img src="/bolivibes-logoclay.webp" alt="BoliVibes" width={188} height={52} style={{ height: "auto", maxWidth: "48vw" }} />
+              <img src="/api/assets/brand/bolivibes-logo.webp" alt="BoliVibes" width={188} height={52} style={{ height: "auto", maxWidth: "48vw" }} />
             </Link>
             <div className="bv-chip-row" style={{ justifyContent: "flex-end" }}>
               <Link href="/santa-cruz-de-la-sierra/eventos" className="bv-chip">

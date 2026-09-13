@@ -7,7 +7,7 @@ export default function LoginPage() {
       <div className="a-card" style={{ width: "100%", maxWidth: 380, display: "flex", flexDirection: "column", gap: 20, alignItems: "center" }}>
         <a href="/" aria-label="BoliVibes home" style={{ display: "inline-flex", justifyContent: "center" }}>
           <img
-            src="/bolivibes-logoclay.webp"
+            src="/api/assets/brand/bolivibes-logo.webp"
             alt="BoliVibes"
             width={280}
             height={158}

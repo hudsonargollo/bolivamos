@@ -6,6 +6,7 @@ interface CloudflareEnv {
   DB: D1Database;
   BOLIVIBES_KV: KVNamespace;
   EVENT_ASSETS: R2Bucket;
+  ASSETS: Fetcher;
   IMAGES: ImagesBinding;
   JWT_SECRET: string;
   GOOGLE_CLIENT_SECRET: string;

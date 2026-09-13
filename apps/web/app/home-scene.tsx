@@ -7,7 +7,7 @@ const BODY_HTML = `
 <div class="hero-wrap">
 <three-d-stage name="bolivibes-sunrise" background="linear-gradient(#232840 0%, #2e2f45 58%, #45364a 100%)"></three-d-stage>
 <header class="hero-header">
-  <a class="wordmark logo-wordmark" href="#" aria-label="BoliVibes home"><img src="/bolivibes-logoclay.webp" alt="BoliVibes" /></a>
+  <a class="wordmark logo-wordmark" href="#" aria-label="BoliVibes home"><img src="/api/assets/brand/bolivibes-logo.webp" alt="BoliVibes" /></a>
   <nav class="clay-nav">
     <a class="clay-btn navitem" href="#" data-i18n="week">This week</a>
     <a class="clay-btn sage navitem" href="/city3d" data-i18n="explore">Explore the city</a>

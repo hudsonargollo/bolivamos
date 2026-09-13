@@ -1,5 +1,5 @@
 import { Image, type ImageStyle, type StyleProp } from "react-native";
-import LOGO_SOURCE from "../assets/images/bolivibes-logoclay.webp";
+import LOGO_SOURCE from "../assets/imgs/bolivibes-logo.webp";
 
 export function BrandLogo({ width = 188, style }: { width?: number; style?: StyleProp<ImageStyle> }) {
   return (

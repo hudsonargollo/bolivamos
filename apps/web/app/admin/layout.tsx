@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { href: "/admin/users", label: "Users" },
   { href: "/admin/venues", label: "Venues" },
   { href: "/admin/events", label: "Events" },
+  { href: "/admin/assets", label: "Assets" },
   { href: "/admin/vouchers", label: "Vouchers" },
   { href: "/admin/places", label: "Places" },
   { href: "/admin/push", label: "Push" },
@@ -29,7 +30,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         <div className="a-header-inner">
           <a href="/admin" className="a-wordmark" aria-label="BoliVibes admin home">
             <img
-              src="/bolivibes-logoclay.webp"
+              src="/api/assets/brand/bolivibes-logo.webp"
               alt="BoliVibes"
               width={180}
               height={102}
