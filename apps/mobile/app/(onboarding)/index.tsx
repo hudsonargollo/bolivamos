@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { View, Text, Pressable } from "react-native";
 import { router } from "expo-router";
-import { BrandLogo } from "@/components/BrandLogo";
+import { BrandIcon } from "@/components/BrandIcon";
 import { useT, type StringKey } from "@/lib/i18n";
 
 const BAR_HEIGHTS = [24, 42, 18, 52, 30, 46, 22, 36];
@@ -27,7 +27,7 @@ export default function OnboardingSlides() {
     <View className="flex-1" style={{ backgroundColor: "#232840" }}>
       <View className="flex-1 items-center justify-center gap-7 px-9 pt-16">
         <View className="items-center">
-          <BrandLogo width={220} />
+          <BrandIcon size={152} />
         </View>
         <View className="h-14 flex-row items-end gap-1">
           {BAR_HEIGHTS.map((h, i) => (
