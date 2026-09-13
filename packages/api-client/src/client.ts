@@ -2,6 +2,7 @@ import type {
   AuthResponse,
   MobileGoogleLoginRequest,
   PasswordLoginRequest,
+  PasswordSignupRequest,
   AuthUser,
   UpdatePreferencesRequest,
   RegisterPushTokenRequest,
@@ -76,6 +77,10 @@ export class ApiClient {
 
   login(body: PasswordLoginRequest) {
     return this.request<AuthResponse>("/api/auth/login", { method: "POST", body: JSON.stringify(body) });
+  }
+
+  signup(body: PasswordSignupRequest) {
+    return this.request<AuthResponse>("/api/auth/signup", { method: "POST", body: JSON.stringify(body) });
   }
 
   devLogin(email: string, role: "visitor" | "host" = "visitor") {

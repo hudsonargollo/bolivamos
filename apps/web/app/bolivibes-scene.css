@@ -91,6 +91,8 @@
   .hero-header > * { pointer-events: auto; }
   .wordmark { font-family: 'Archivo Black', Figtree, sans-serif; font-size: 34px; line-height: 1;
     letter-spacing: -1px; transform: scaleY(1.06); user-select: none; text-decoration: none; display: inline-block; }
+  .logo-wordmark { display: inline-flex; align-items: center; filter: drop-shadow(0 4px 0 rgba(0,0,0,.18)); transform: none; }
+  .logo-wordmark img { display: block; width: 188px; max-width: 48vw; height: auto; }
   .wordmark .wm-boli { color: #3a352f;
     text-shadow: 0 1px 0 #2c2823, 0 2px 0 #27231f, 0 3px 0 #221e1a, 0 4px 0 #1d1a16, 0 7px 12px rgba(32,30,28,.4); }
   .wordmark .wm-vamos { color: #e2792f;

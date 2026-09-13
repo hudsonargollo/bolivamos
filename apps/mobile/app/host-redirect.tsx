@@ -5,7 +5,7 @@ import { useT } from "@/lib/i18n";
 const WEB_BASE_URL =
   process.env.EXPO_PUBLIC_API_BASE_URL ??
   (Constants.expoConfig?.extra?.apiBaseUrl as string | undefined) ??
-  "http://localhost:8787";
+  "https://bolivibes.clubemkt.digital";
 
 /**
  * Venue/event-producer management (event creation, voucher builder, QR

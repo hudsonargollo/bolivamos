@@ -5,7 +5,7 @@ import { Ionicons } from "@expo/vector-icons";
 import type { AuthUser, VoucherDto, LockedVoucherTeaser } from "@bolivibes/api-schema";
 import { apiClient } from "@/lib/api";
 import { useT, type StringKey } from "@/lib/i18n";
-import { SunMark } from "@/components/SunMark";
+import { BrandLogo } from "@/components/BrandLogo";
 
 function isLocked(item: VoucherDto | LockedVoucherTeaser): item is LockedVoucherTeaser {
   return "locked" in item;
@@ -76,8 +76,8 @@ export default function BoliPassScreen() {
             className="mb-4 overflow-hidden rounded-2xl p-5"
             style={{ backgroundColor: "#232840", shadowColor: "#000", shadowOpacity: 0.3, shadowRadius: 16, elevation: 6 }}
           >
-            <View className="absolute -right-8 -top-8 opacity-25">
-              <SunMark size={150} ring="#f5ead8" />
+            <View className="absolute -right-7 -top-4 opacity-25">
+              <BrandLogo width={190} />
             </View>
             <Text className="font-display text-base text-[#f5ead8]">
               BOLI<Text className="text-boli-orange">PASS</Text>

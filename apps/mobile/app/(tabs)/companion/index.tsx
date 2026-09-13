@@ -3,7 +3,7 @@ import { View, Text, TextInput, Pressable, FlatList, KeyboardAvoidingView, Platf
 import { router } from "expo-router";
 import { apiClient } from "@/lib/api";
 import { useT, type StringKey } from "@/lib/i18n";
-import { SunMark } from "@/components/SunMark";
+import { BrandLogo } from "@/components/BrandLogo";
 import type { AuthUser } from "@bolivibes/api-schema";
 
 interface ChatTurn {
@@ -67,8 +67,8 @@ export default function CompanionScreen() {
       behavior={Platform.OS === "ios" ? "padding" : undefined}
     >
       <View className="flex-row items-center gap-3 bg-charcoal-dark px-4 pb-4 pt-16 dark:bg-dark-bg2">
-        <View className="h-11 w-11 items-center justify-center rounded-xl bg-clay-terracotta shadow-clay">
-          <SunMark size={26} ring="#f5ead8" spin />
+        <View className="h-11 w-16 items-center justify-center rounded-xl bg-clay-terracotta shadow-clay">
+          <BrandLogo width={56} />
         </View>
         <View className="flex-1">
           <Text className="font-display text-lg text-white">{t("tabCompanion")}</Text>

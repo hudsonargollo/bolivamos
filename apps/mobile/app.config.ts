@@ -3,17 +3,12 @@ import type { ExpoConfig } from "expo/config";
 const config: ExpoConfig = {
   name: "BoliVibes",
   slug: "bolivibes",
-  owner: "lobaoisthebest",
+  owner: "clubemkt",
   scheme: "bolivibes",
   version: "0.1.0",
   orientation: "portrait",
   icon: "./assets/icon.png",
   userInterfaceStyle: "automatic",
-  splash: {
-    image: "./assets/splash.png",
-    resizeMode: "contain",
-    backgroundColor: "#F4EEE2",
-  },
   assetBundlePatterns: ["**/*"],
   ios: {
     supportsTablet: true,
@@ -32,6 +27,15 @@ const config: ExpoConfig = {
     "expo-camera",
     "expo-asset",
     [
+      "expo-splash-screen",
+      {
+        image: "./assets/splash.png",
+        resizeMode: "contain",
+        backgroundColor: "#F4EEE2",
+      },
+    ],
+    "expo-web-browser",
+    [
       "expo-build-properties",
       {
         // expo-modules-core's Compose Compiler (1.5.15) requires Kotlin 1.9.25
@@ -44,15 +48,16 @@ const config: ExpoConfig = {
     ],
   ],
   extra: {
+    apiBaseUrl: "https://bolivibes.clubemkt.digital",
     router: {
       origin: false,
     },
     eas: {
-      projectId: "538648ba-90f2-44b5-b9b0-de490d500060",
+      projectId: "53aeb1c6-fe7a-40ec-a105-88272e9dfce8",
     },
   },
   updates: {
-    url: "https://u.expo.dev/538648ba-90f2-44b5-b9b0-de490d500060",
+    url: "https://u.expo.dev/53aeb1c6-fe7a-40ec-a105-88272e9dfce8",
   },
   runtimeVersion: {
     policy: "appVersion",

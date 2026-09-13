@@ -12,7 +12,7 @@ import { router, useLocalSearchParams } from "expo-router";
 import * as Google from "expo-auth-session/providers/google";
 import * as WebBrowser from "expo-web-browser";
 import { decodeSessionUnsafe, type Category } from "@bolivibes/api-schema";
-import { apiClient, baseUrl } from "@/lib/api";
+import { apiClient, baseUrl, isLocalApi } from "@/lib/api";
 import { storeToken } from "@/lib/auth";
 import { registerForPushNotifications } from "@/lib/push";
 import { useT } from "@/lib/i18n";
@@ -43,6 +43,8 @@ export default function LoginScreen() {
   const { t } = useT();
   const { categories } = useLocalSearchParams<{ categories?: string }>();
   const [loading, setLoading] = useState(false);
+  const [mode, setMode] = useState<"login" | "signup">("login");
+  const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -115,18 +117,31 @@ export default function LoginScreen() {
     }
   }
 
-  async function handleEmailLogin() {
+  async function handleEmailAuth() {
     if (!email.trim() || !password) return;
+    if (mode === "signup" && password.length < 8) {
+      setError("Password must be at least 8 characters.");
+      return;
+    }
     setError(null);
     setLoading(true);
     try {
-      const { token } = await apiClient.login({
-        email: email.trim(),
-        password,
-      });
+      const normalizedEmail = email.trim().toLowerCase();
+      const { token } =
+        mode === "signup"
+          ? await apiClient.signup({
+              email: normalizedEmail,
+              password,
+              fullName: fullName.trim() || undefined,
+              role: "visitor",
+            })
+          : await apiClient.login({
+              email: normalizedEmail,
+              password,
+            });
       await finishLogin(token);
     } catch {
-      setError("Invalid email or password.");
+      setError(mode === "signup" ? "Couldn't create that account. The email may already be registered." : "Invalid email or password.");
     } finally {
       setLoading(false);
     }
@@ -155,7 +170,7 @@ export default function LoginScreen() {
         keyboardShouldPersistTaps="handled"
       >
         <Text className="font-display text-2xl text-charcoal-dark dark:text-dark-ink">
-          {t("signIn")}
+          {mode === "signup" ? "Create account" : t("signIn")}
         </Text>
 
         {loading ? (
@@ -163,6 +178,36 @@ export default function LoginScreen() {
         ) : (
           <>
             {error && <Text className="text-clay-danger">{error}</Text>}
+
+            <View className="w-full flex-row rounded-pill bg-clay-terracotta/10 p-1">
+              <Pressable
+                className={`flex-1 rounded-pill py-3 ${mode === "login" ? "bg-clay-terracotta" : ""}`}
+                onPress={() => {
+                  setMode("login");
+                  setError(null);
+                }}
+              >
+                <Text className={`text-center font-bold ${mode === "login" ? "text-white" : "text-charcoal-dark dark:text-dark-ink"}`}>{t("signIn")}</Text>
+              </Pressable>
+              <Pressable
+                className={`flex-1 rounded-pill py-3 ${mode === "signup" ? "bg-clay-terracotta" : ""}`}
+                onPress={() => {
+                  setMode("signup");
+                  setError(null);
+                }}
+              >
+                <Text className={`text-center font-bold ${mode === "signup" ? "text-white" : "text-charcoal-dark dark:text-dark-ink"}`}>Create account</Text>
+              </Pressable>
+            </View>
+
+            {mode === "signup" && (
+              <TextInput
+                className="w-full rounded-xl border border-muted-clay-gray p-4 dark:border-dark-muted dark:text-dark-ink"
+                placeholder="Full name"
+                value={fullName}
+                onChangeText={setFullName}
+              />
+            )}
 
             <TextInput
               className="w-full rounded-xl border border-muted-clay-gray p-4 dark:border-dark-muted dark:text-dark-ink"
@@ -191,9 +236,9 @@ export default function LoginScreen() {
             </View>
             <Pressable
               className="w-full rounded-pill bg-clay-terracotta p-4 shadow-clay active:translate-y-[3px]"
-              onPress={handleEmailLogin}
+              onPress={handleEmailAuth}
             >
-              <Text className="text-center text-lg font-bold text-white">{t("signIn")}</Text>
+              <Text className="text-center text-lg font-bold text-white">{mode === "signup" ? "Create account" : t("signIn")}</Text>
             </Pressable>
 
             {googleConfigured && (
@@ -211,7 +256,7 @@ export default function LoginScreen() {
               </>
             )}
 
-            {__DEV__ && (
+            {__DEV__ && isLocalApi && (
               <Pressable
                 className="w-full rounded-xl border border-muted-clay-gray p-4"
                 onPress={handleDevLogin}
