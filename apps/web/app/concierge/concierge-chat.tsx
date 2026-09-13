@@ -13,7 +13,6 @@ const QUICK_REPLIES = [
   "Where do locals actually go?",
   "Can you help me book a table somewhere?",
   "How do I say \"two tickets please\" in Spanish?",
-  "Plan my trip",
 ] as const;
 
 export default function ConciergeChat() {
@@ -85,6 +84,7 @@ export default function ConciergeChat() {
             {reply.split(" — ")[0]}
           </button>
         ))}
+        <a className="bv-chip" href="/concierge/itinerary">Plan my trip</a>
       </div>
 
       {error && <p className="bv-error" role="alert">{error}</p>}
