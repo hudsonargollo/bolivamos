@@ -32,15 +32,15 @@ const userCards = [
 const businessCards = [
   {
     title: "Be found by locals and visitors",
-    text: "Show your venue, events, offers, and social links where people are already deciding what to do next.",
+    text: "Showcase your venue, share your story, and feature your best offerings right where people are deciding what to do next.",
   },
   {
-    title: "Convert attention into visits",
-    text: "Use guide cards, map pins, event listings, vouchers, and BoliPass benefits to turn discovery into real foot traffic.",
+    title: "Build loyalty and community",
+    text: "Go beyond transactions. Use curated guides, dynamic profiles, and BoliPass perks to turn first-time visitors into regulars.",
   },
   {
-    title: "Manage your presence",
-    text: "Business owners get a path to host tools for events, vouchers, QR redemption, and analytics as the network grows.",
+    title: "Grow your local brand",
+    text: "Access smart analytics, reach high-intent audiences, and connect meaningfully with a community that loves exploring Santa Cruz.",
   },
 ];
 

@@ -10,11 +10,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "boli-green": "#2F5D3E",
-        "boli-orange": "#E2792F",
-        "boli-yellow": "#E3A52F",
-        "boli-red": "#C04A2F",
-        "boli-sage": "#8BA672",
+        "boli-green": "#00873E",
+        "boli-orange": "#FF6A00",
+        "boli-yellow": "#FFB800",
+        "boli-red": "#E52A2A",
+        "boli-sage": "#5CA331",
         "bg-off-white": "#F4EEE2",
         paper: "#FDFAF3",
         "charcoal-dark": "#33302C",

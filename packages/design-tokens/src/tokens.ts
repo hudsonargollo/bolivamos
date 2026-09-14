@@ -8,11 +8,11 @@
 
 export const colors = {
   // Sun colors — brand accents (Brand Guide v1.0, section 02)
-  boliGreen: "#2F5D3E", // deep green — secondary actions, links, footer
-  boliOrange: "#E2792F", // orange — VAMOS, highlight tags
-  boliYellow: "#E3A52F", // yellow — Free tag, sun rays
-  boliRed: "#C04A2F", // red — decorative/wordmark accent, sun rays (no longer primary CTA)
-  boliSage: "#8BA672", // sage — soft fills, sun rays
+  boliGreen: "#00873E", // deep green — secondary actions, links, footer
+  boliOrange: "#FF6A00", // orange — Vibes, highlight tags
+  boliYellow: "#FFB800", // yellow — Free tag, sun rays
+  boliRed: "#E52A2A", // red — decorative/wordmark accent, sun rays (no longer primary CTA)
+  boliSage: "#5CA331", // sage — soft fills, sun rays
 
   // "Clay Maximal" — the terracotta clay-button system, ported verbatim from
   // apps/web/app/admin/admin.css (--a-orange*), which already had it live
