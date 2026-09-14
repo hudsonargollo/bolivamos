@@ -17,7 +17,7 @@ export async function GET(request: Request, { params }: { params: Promise<{ key:
   if (!object) {
     if (key === "brand/bolivibes-logo.webp") {
       const fallbackUrl = new URL("/imgs/bolivibes-logo.webp", request.url);
-      return env.ASSETS.fetch(new Request(fallbackUrl, request));
+      return env.ASSETS.fetch(fallbackUrl.toString());
     }
     return new Response("Not found", { status: 404 });
   }
