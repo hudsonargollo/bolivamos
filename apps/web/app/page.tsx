@@ -3,52 +3,62 @@ import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/site-url";
 
 export const metadata: Metadata = {
-  title: "BoliVibes en FEXPOCRUZ — Comunidad y turismo en Santa Cruz",
+  title: "BoliVibes — Discover Santa Cruz, grow local businesses",
   description:
-    "BoliVibes conecta visitantes, residentes, emprendimientos y experiencias locales para fortalecer la comunidad y el turismo en Santa Cruz de la Sierra.",
+    "BoliVibes is the Santa Cruz discovery app for events, places, BoliPass benefits, AI planning, and business visibility.",
   openGraph: {
-    title: "BoliVibes en FEXPOCRUZ",
-    description:
-      "Una app para descubrir Santa Cruz de la Sierra, mover turismo local y dar más visibilidad a la comunidad cruceña.",
+    title: "BoliVibes",
+    description: "Discover Santa Cruz as a local, visitor, or business owner.",
     url: SITE_URL,
     siteName: "BoliVibes",
   },
 };
 
-const communityBenefits = [
+const userCards = [
   {
-    title: "Más visibilidad para negocios locales",
-    text: "Restaurantes, cafés, bares, mercados, galerías, guías y emprendimientos pueden aparecer donde visitantes y residentes ya están buscando qué hacer.",
+    title: "Find what is happening now",
+    text: "Browse events, nightlife, culture, food, tours, and city highlights without digging through scattered posts.",
   },
   {
-    title: "Agenda viva de la ciudad",
-    text: "Eventos culturales, familiares, gastronómicos y de entretenimiento quedan organizados en un solo lugar, reduciendo la dependencia del boca a boca o publicaciones perdidas.",
+    title: "Plan with BolivIA",
+    text: "Ask the BoliVibes concierge for date-night ideas, visitor routes, family plans, or a fast itinerary around Santa Cruz.",
   },
   {
-    title: "Puente entre residentes y visitantes",
-    text: "La app ayuda a que quien vive en Santa Cruz recomiende mejor su ciudad, y que quien llega por primera vez se sienta acompañado desde el primer día.",
+    title: "Unlock BoliPass perks",
+    text: "Access local 2-for-1 benefits and partner rewards while keeping BoliPass as one feature inside BoliVibes.",
   },
 ];
 
-const tourismBenefits = [
-  "Rutas por zonas, categorías y momentos del día para descubrir Santa Cruz con contexto local.",
-  "Información práctica para decidir rápido: ubicación, ambiente, tipo de experiencia y enlaces directos.",
-  "Promoción de cultura, gastronomía, vida nocturna, ferias, espacios patrimoniales y experiencias auténticas.",
-  "Herramientas para convertir grandes ferias como FEXPOCRUZ en visitas reales a lugares de la ciudad.",
+const businessCards = [
+  {
+    title: "Be found by locals and visitors",
+    text: "Show your venue, events, offers, and social links where people are already deciding what to do next.",
+  },
+  {
+    title: "Convert attention into visits",
+    text: "Use guide cards, map pins, event listings, vouchers, and BoliPass benefits to turn discovery into real foot traffic.",
+  },
+  {
+    title: "Manage your presence",
+    text: "Business owners get a path to host tools for events, vouchers, QR redemption, and analytics as the network grows.",
+  },
 ];
 
-const expocruzOpportunities = [
-  "Mostrar a expositores cómo BoliVibes puede llevar tráfico desde la feria hacia sus locales, eventos y promociones.",
-  "Invitar a la comunidad cruceña a mapear sus lugares favoritos y fortalecer una guía hecha desde Santa Cruz.",
-  "Conectar turistas, familias y jóvenes con planes seguros, cercanos y relevantes durante su estadía.",
-  "Presentar BoliPass como una función dentro de BoliVibes para activar beneficios, 2x1 y recompensas locales.",
+const routes = [
+  { href: "/santa-cruz-de-la-sierra/eventos", label: "Events" },
+  { href: "/map", label: "3D map" },
+  { href: "/bolipass", label: "BoliPass" },
+  { href: "/concierge", label: "BolivIA" },
 ];
 
-const stats = [
-  { value: "1 ciudad", label: "con una guía viva y local" },
-  { value: "4 públicos", label: "turistas, residentes, negocios y organizadores" },
-  { value: "24/7", label: "descubrimiento desde el celular" },
-];
+function CheckItem({ children }: { children: React.ReactNode }) {
+  return (
+    <li style={{ display: "grid", gridTemplateColumns: "30px 1fr", gap: 10, alignItems: "start", color: "#f7f1e4", fontWeight: 800, lineHeight: 1.45 }}>
+      <span aria-hidden="true" style={{ display: "inline-grid", placeItems: "center", width: 30, height: 30, borderRadius: 999, background: "#e5b824", color: "#201e1d", boxShadow: "0 2px 0 #8e4a20" }}>✓</span>
+      <span>{children}</span>
+    </li>
+  );
+}
 
 export default function HomePage() {
   const jsonLd = [
@@ -65,71 +75,79 @@ export default function HomePage() {
           position: "relative",
           overflow: "hidden",
           background:
-            "radial-gradient(circle at 18% 20%, rgba(229, 184, 36, 0.32), transparent 18rem), radial-gradient(circle at 82% 8%, rgba(196, 112, 61, 0.28), transparent 22rem), linear-gradient(155deg, #241f27 0%, #392f2a 48%, #8f4225 100%)",
+            "radial-gradient(circle at 12% 12%, rgba(229, 184, 36, 0.34), transparent 19rem), radial-gradient(circle at 86% 8%, rgba(139, 166, 114, 0.28), transparent 24rem), linear-gradient(145deg, #201e1d 0%, #33302c 46%, #8f4225 100%)",
           color: "var(--bv-cream)",
         }}
       >
-        <div className="bv-container" style={{ width: "min(100%, 1120px)", paddingTop: 28, paddingBottom: 72 }}>
-          <nav style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 18, marginBottom: 56 }}>
+        <div className="bv-container" style={{ width: "min(100%, 1180px)", paddingTop: 28, paddingBottom: 76 }}>
+          <nav style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 18, marginBottom: 64 }}>
             <Link href="/" aria-label="BoliVibes home" style={{ display: "inline-flex", alignItems: "center" }}>
-              <img src="/api/assets/brand/bolivibes-logo.webp" alt="BoliVibes" width={188} height={52} style={{ height: "auto", maxWidth: "48vw" }} />
+              <img src="/api/assets/brand/bolivibes-logo.webp" alt="BoliVibes" width={196} height={56} style={{ height: "auto", maxWidth: "50vw" }} />
             </Link>
             <div className="bv-chip-row" style={{ justifyContent: "flex-end" }}>
-              <Link href="/santa-cruz-de-la-sierra/eventos" className="bv-chip">
-                Eventos
-              </Link>
-              <Link href="/santa-cruz-de-la-sierra/lugares" className="bv-chip">
-                Lugares
+              {routes.map((route) => (
+                <Link key={route.href} href={route.href} className="bv-chip">
+                  {route.label}
+                </Link>
+              ))}
+              <Link href="/login" className="bv-chip">
+                Log in
               </Link>
             </div>
           </nav>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 34, alignItems: "center" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.1fr) minmax(280px, 0.9fr)", gap: 34, alignItems: "center" }} className="bv-landing-hero-grid">
             <div>
               <p className="bv-section-kicker" style={{ color: "#e5b824" }}>
-                BoliVibes en FEXPOCRUZ
+                BoliVibes for Santa Cruz
               </p>
               <h1
                 style={{
                   margin: "0 0 18px",
-                  maxWidth: 720,
+                  maxWidth: 760,
                   color: "#fff6e5",
                   fontFamily: "Caprasimo, Georgia, serif",
-                  fontSize: "clamp(42px, 8vw, 82px)",
-                  lineHeight: 0.96,
+                  fontSize: "clamp(44px, 8vw, 88px)",
+                  lineHeight: 0.94,
                 }}
               >
-                Una app para mover comunidad, cultura y turismo en Santa Cruz.
+                The city app for plans, places, perks, and local business growth.
               </h1>
-              <p style={{ margin: "0 0 28px", maxWidth: 640, color: "#f1dfbd", fontSize: 18, fontWeight: 750, lineHeight: 1.55 }}>
-                En FEXPOCRUZ presentamos BoliVibes como la guía digital que convierte la energía de Santa Cruz de la Sierra en visitas, planes, recomendaciones y oportunidades para negocios locales.
+              <p style={{ margin: "0 0 30px", maxWidth: 680, color: "#f1dfbd", fontSize: 18, fontWeight: 750, lineHeight: 1.6 }}>
+                Discover Santa Cruz de la Sierra like an insider. BoliVibes connects end users with events, restaurants, nightlife, tours, BoliPass rewards, and BolivIA planning — while giving venues and organizers a clearer path to visibility.
               </p>
               <div className="bv-chip-row" style={{ marginBottom: 30 }}>
-                <span className="bv-chip">Turismo local</span>
-                <span className="bv-chip">Agenda cultural</span>
-                <span className="bv-chip">Comunidad cruceña</span>
-                <span className="bv-chip">Beneficios BoliPass</span>
+                <span className="bv-chip">Events</span>
+                <span className="bv-chip">3D city map</span>
+                <span className="bv-chip">BoliPass perks</span>
+                <span className="bv-chip">BolivIA concierge</span>
               </div>
               <div className="bv-chip-row">
-                <Link href="/santa-cruz-de-la-sierra/lugares" className="bv-btn">
-                  Explorar la ciudad →
+                <Link href="/signup?role=visitor" className="bv-btn">
+                  I’m exploring Santa Cruz →
                 </Link>
-                <Link href="/santa-cruz-de-la-sierra/eventos" className="bv-btn bv-btn-sage">
-                  Ver eventos →
+                <Link href="/signup?role=host" className="bv-btn bv-btn-sage">
+                  I own a business →
+                </Link>
+                <Link href="/login" className="bv-soft" style={{ color: "#fff6e5", background: "rgba(255,255,255,.12)" }}>
+                  Already have an account? Log in
                 </Link>
               </div>
             </div>
 
-            <div className="bv-card bv-card-pad" style={{ background: "rgba(253, 250, 243, 0.94)", padding: 22 }}>
+            <div className="bv-card bv-card-pad" style={{ background: "rgba(253, 250, 243, 0.96)", padding: 20 }}>
               <div style={{ borderRadius: 24, overflow: "hidden", background: "linear-gradient(180deg, #f7f1e4, #e9dfc9)", padding: 20 }}>
-                <p className="bv-section-kicker">Impacto esperado</p>
-                <div style={{ display: "grid", gap: 14 }}>
-                  {stats.map((item) => (
-                    <div key={item.value} style={{ padding: "18px 20px", borderRadius: 20, background: "#fffaf0", boxShadow: "0 3px 0 #d9c8a4" }}>
-                      <div style={{ color: "var(--bv-orange-low)", fontFamily: "Caprasimo, Georgia, serif", fontSize: 32, lineHeight: 1 }}>{item.value}</div>
-                      <div className="bv-card-meta" style={{ fontSize: 14 }}>{item.label}</div>
-                    </div>
-                  ))}
+                <img src="/imgs/bolivibes-icon.webp" alt="" width={76} height={76} style={{ borderRadius: 24, boxShadow: "0 4px 0 #8e4a20", marginBottom: 18 }} />
+                <p className="bv-section-kicker">Two paths, one city network</p>
+                <div style={{ display: "grid", gap: 12 }}>
+                  <Link href="/signup?role=visitor" className="bv-card bv-card-pad" style={{ textDecoration: "none", boxShadow: "0 3px 0 #d9c8a4" }}>
+                    <h2 className="bv-card-title" style={{ fontSize: 22 }}>For end users</h2>
+                    <p className="bv-card-meta" style={{ fontSize: 14 }}>Create a personal account to save plans, explore events, use BolivIA, and unlock BoliPass benefits.</p>
+                  </Link>
+                  <Link href="/signup?role=host" className="bv-card bv-card-pad" style={{ textDecoration: "none", boxShadow: "0 3px 0 #d9c8a4" }}>
+                    <h2 className="bv-card-title" style={{ fontSize: 22 }}>For business owners</h2>
+                    <p className="bv-card-meta" style={{ fontSize: 14 }}>Create a business account to start building venue visibility, offers, events, and partner discovery.</p>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -138,14 +156,21 @@ export default function HomePage() {
       </section>
 
       <section className="bv-container" style={{ width: "min(100%, 1120px)", paddingTop: 64 }}>
-        <p className="bv-section-kicker">Por qué importa</p>
-        <h2 className="bv-title-sm" style={{ maxWidth: 720 }}>Beneficios directos para la comunidad cruceña</h2>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 18 }}>
+          <div>
+            <p className="bv-section-kicker">For people going out</p>
+            <h2 className="bv-title-sm">Open BoliVibes before asking “what should we do?”</h2>
+          </div>
+          <p className="bv-subtitle" style={{ fontSize: 16 }}>
+            The public side of BoliVibes is built for fast discovery: plans for tonight, places worth visiting, benefits worth redeeming, and AI help when you want a plan now.
+          </p>
+        </div>
         <div className="bv-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: 18 }}>
-          {communityBenefits.map((benefit) => (
-            <article key={benefit.title} className="bv-card bv-card-pad" style={{ minHeight: 190 }}>
-              <div className="bv-chip" style={{ marginBottom: 16 }}>Comunidad</div>
-              <h3 className="bv-card-title" style={{ fontSize: 21, marginBottom: 10 }}>{benefit.title}</h3>
-              <p className="bv-card-meta" style={{ fontSize: 15, lineHeight: 1.55 }}>{benefit.text}</p>
+          {userCards.map((card) => (
+            <article key={card.title} className="bv-card bv-card-pad" style={{ minHeight: 190 }}>
+              <div className="bv-chip" style={{ marginBottom: 16 }}>Personal</div>
+              <h3 className="bv-card-title" style={{ fontSize: 21, marginBottom: 10 }}>{card.title}</h3>
+              <p className="bv-card-meta" style={{ fontSize: 15, lineHeight: 1.55 }}>{card.text}</p>
             </article>
           ))}
         </div>
@@ -153,23 +178,27 @@ export default function HomePage() {
 
       <section className="bv-container" style={{ width: "min(100%, 1120px)", paddingTop: 24 }}>
         <div className="bv-card" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 0, overflow: "hidden" }}>
-          <div style={{ padding: 28, background: "linear-gradient(160deg, #fdfaf3, #f6efdd)" }}>
-            <p className="bv-section-kicker">Turismo en Santa Cruz</p>
-            <h2 className="bv-title-sm">De la feria a la ciudad</h2>
+          <div style={{ padding: 30, background: "linear-gradient(160deg, #fdfaf3, #f6efdd)" }}>
+            <p className="bv-section-kicker">For venues and organizers</p>
+            <h2 className="bv-title-sm">Turn local discovery into real foot traffic.</h2>
             <p className="bv-subtitle" style={{ fontSize: 16 }}>
-              FEXPOCRUZ concentra visitantes, marcas y familias. BoliVibes ayuda a extender ese movimiento hacia restaurantes, museos, barrios, experiencias, conciertos y comercios de Santa Cruz de la Sierra.
+              BoliVibes gives restaurants, bars, cafés, tour operators, event hosts, and cultural spaces a branded path into the city’s discovery layer.
             </p>
-            <Link href="/city3d" className="bv-btn">
-              Ver experiencia 3D →
-            </Link>
+            <div className="bv-chip-row">
+              <Link href="/signup?role=host" className="bv-btn">
+                Create business account →
+              </Link>
+              <Link href="/login" className="bv-btn bv-btn-sage">
+                Business login →
+              </Link>
+            </div>
           </div>
-          <div style={{ padding: 28, background: "#2d2925", color: "#f7f1e4" }}>
+          <div style={{ padding: 30, background: "#2d2925", color: "#f7f1e4" }}>
             <ul style={{ display: "grid", gap: 16, listStyle: "none", margin: 0, padding: 0 }}>
-              {tourismBenefits.map((benefit) => (
-                <li key={benefit} style={{ display: "grid", gridTemplateColumns: "34px 1fr", gap: 12, alignItems: "start", fontWeight: 750, lineHeight: 1.45 }}>
-                  <span aria-hidden="true" style={{ display: "inline-grid", placeItems: "center", width: 34, height: 34, borderRadius: 999, background: "#e5b824", color: "#201e1d", fontWeight: 900 }}>✓</span>
-                  <span>{benefit}</span>
-                </li>
+              {businessCards.map((card) => (
+                <CheckItem key={card.title}>
+                  <strong>{card.title}.</strong> {card.text}
+                </CheckItem>
               ))}
             </ul>
           </div>
@@ -177,37 +206,30 @@ export default function HomePage() {
       </section>
 
       <section className="bv-container" style={{ width: "min(100%, 1120px)", paddingTop: 24 }}>
-        <p className="bv-section-kicker">Activación en FEXPOCRUZ</p>
-        <h2 className="bv-title-sm" style={{ maxWidth: 760 }}>Qué vamos a promover durante la feria</h2>
-        <div className="bv-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))", gap: 16 }}>
-          {expocruzOpportunities.map((item, index) => (
-            <article key={item} className="bv-card bv-card-pad">
-              <div style={{ color: "var(--bv-orange)", fontFamily: "Caprasimo, Georgia, serif", fontSize: 36, marginBottom: 8 }}>{String(index + 1).padStart(2, "0")}</div>
-              <p className="bv-card-meta" style={{ fontSize: 15, lineHeight: 1.55, margin: 0 }}>{item}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="bv-container" style={{ width: "min(100%, 1120px)", paddingTop: 24 }}>
-        <div className="bv-card bv-card-pad" style={{ textAlign: "center", padding: "38px 24px", background: "linear-gradient(145deg, #fffaf0, #f0e5cd)" }}>
-          <p className="bv-section-kicker">Hecho para Santa Cruz</p>
-          <h2 className="bv-title-sm" style={{ marginLeft: "auto", marginRight: "auto", maxWidth: 780 }}>
-            BoliVibes no solo muestra lugares: ayuda a que la ciudad se encuentre consigo misma y se muestre mejor al mundo.
+        <div className="bv-card bv-card-pad" style={{ textAlign: "center", padding: "40px 24px", background: "linear-gradient(145deg, #fffaf0, #f0e5cd)" }}>
+          <p className="bv-section-kicker">Start now</p>
+          <h2 className="bv-title-sm" style={{ marginLeft: "auto", marginRight: "auto", maxWidth: 760 }}>
+            Choose your BoliVibes path: explore the city or grow your local business.
           </h2>
-          <p className="bv-subtitle" style={{ marginLeft: "auto", marginRight: "auto", maxWidth: 720, fontSize: 16 }}>
-            La meta es que cada visitante descubra más, cada residente participe más y cada negocio local tenga una nueva puerta de entrada al turismo digital.
-          </p>
           <div className="bv-chip-row" style={{ justifyContent: "center" }}>
-            <Link href="/connect" className="bv-btn">
-              Conectar con BoliVibes →
+            <Link href="/signup?role=visitor" className="bv-btn">
+              Sign up as end user →
             </Link>
-            <Link href="/bolipass" className="bv-btn bv-btn-sage">
-              Conocer BoliPass →
+            <Link href="/signup?role=host" className="bv-btn bv-btn-sage">
+              Sign up as business owner →
+            </Link>
+            <Link href="/fexpocruz" className="bv-soft">
+              View the FEXPOCRUZ pitch
             </Link>
           </div>
         </div>
       </section>
+
+      <style>{`
+        @media (max-width: 820px) {
+          .bv-landing-hero-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </main>
   );
 }
