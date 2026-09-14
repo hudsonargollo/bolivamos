@@ -9,7 +9,7 @@ export default function CompanionLayout() {
 
   return (
     <Stack screenOptions={headerScreenOptions(scheme)}>
-      <Stack.Screen name="index" options={{ title: t("tabCompanion") }} />
+      <Stack.Screen name="index" options={{ headerShown: false, title: t("tabCompanion") }} />
       <Stack.Screen name="itinerary" options={{ title: t("planMyTrip") }} />
     </Stack>
   );

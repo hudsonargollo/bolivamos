@@ -5,12 +5,12 @@ import { baseUrl } from "@/lib/api";
 import { colors } from "@bolivibes/design-tokens";
 
 /**
- * Embeds the themed 3D map (apps/web/app/city3d) via WebView rather than
+ * Embeds the Google Maps + js-three city map (apps/web/app/map) via WebView rather than
  * rebuilding navigation/rendering natively (PRD §8.4 v1 scope — a native
  * MapLibre rewrite is explicitly deferred). `embed=1` tells the web page to
  * hide its own "back to home" chrome, since that's redundant inside a
  * native tab. Native-side bridging: the web page's share button posts a
- * message here (see city-scene.js's `window.ReactNativeWebView` check)
+ * message here (see map-client.tsx's `window.ReactNativeWebView` check)
  * instead of calling the Web Share API, which WebViews don't implement.
  */
 export default function MapScreen() {
@@ -32,7 +32,7 @@ export default function MapScreen() {
     <View className="flex-1 bg-bg-off-white dark:bg-dark-bg">
       <WebView
         ref={webviewRef}
-        source={{ uri: `${baseUrl}/city3d?embed=1` }}
+        source={{ uri: `${baseUrl}/map?embed=1` }}
         onMessage={onMessage}
         onLoadEnd={() => setLoading(false)}
         geolocationEnabled

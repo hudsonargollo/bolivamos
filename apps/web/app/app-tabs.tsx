@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const TABS = [
   { href: "/santa-cruz-de-la-sierra/eventos", label: "Feed", icon: "◇", match: ["/santa-cruz-de-la-sierra/eventos", "/en/santa-cruz-de-la-sierra/eventos"] },
-  { href: "/city3d", label: "Map", icon: "⌖", match: ["/city3d"] },
+  { href: "/map", label: "Map", icon: "⌖", match: ["/map", "/city3d"] },
   { href: "/bolipass", label: "BoliPass", icon: "▣", match: ["/bolipass"] },
-  { href: "/concierge", label: "BolivIA", icon: "✦", match: ["/concierge"] },
+  { href: "/concierge", label: "bolivIA", icon: "✦", match: ["/concierge"] },
   { href: "/profile", label: "Profile", icon: "●", match: ["/profile", "/marketplace", "/connect"] },
 ] as const;
 
@@ -17,7 +18,13 @@ function shouldHide(pathname: string) {
 
 export default function AppTabs() {
   const pathname = usePathname();
-  if (shouldHide(pathname)) return null;
+  const [embedded, setEmbedded] = useState(false);
+
+  useEffect(() => {
+    setEmbedded(new URLSearchParams(window.location.search).get("embed") === "1");
+  }, [pathname]);
+
+  if (embedded || shouldHide(pathname)) return null;
 
   return (
     <nav className="bv-tabbar" aria-label="BoliVibes app navigation">

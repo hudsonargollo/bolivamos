@@ -86,7 +86,7 @@ async function readJson(req) {
   }
 }
 
-function normalizeMessages(body) {
+function normalizePrompt(body) {
   const message = String(body?.message ?? "").trim();
   if (!message) throw Object.assign(new Error("message is required"), { status: 400 });
   if (message.length > MAX_MESSAGE_CHARS) throw Object.assign(new Error("message is too long"), { status: 400 });
@@ -98,30 +98,29 @@ function normalizeMessages(body) {
       role: turn?.role === "assistant" ? "assistant" : "user",
       content: String(turn?.content ?? "").slice(0, MAX_MESSAGE_CHARS),
     }))
-    .filter((turn) => turn.content.trim().length > 0);
+    .filter((turn) => turn.content.trim().length > 0)
+    .map((turn) => `${turn.role === "assistant" ? "BolivIA" : "User"}: ${turn.content}`)
+    .join("\n");
 
-  return [
-    { role: "system", content: SYSTEM_PROMPT },
-    ...turns,
-    { role: "user", content: message },
-  ];
+  return `${SYSTEM_PROMPT}\n\nConversation so far:\n${turns || "No prior conversation."}\n\nUser: ${message}\nBolivIA:`;
 }
 
-async function callOllama(messages) {
+async function callOllama(prompt) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
   try {
-    const response = await fetch(`${OLLAMA_BASE_URL}/api/chat`, {
+    const response = await fetch(`${OLLAMA_BASE_URL}/api/generate`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
         model: OLLAMA_MODEL,
-        messages,
+        prompt,
         stream: false,
         options: {
           temperature: 0.55,
           top_p: 0.9,
           num_ctx: 8192,
+          stop: ["\nUser:", "\nBolivIA:"],
         },
       }),
       signal: controller.signal,
@@ -133,7 +132,7 @@ async function callOllama(messages) {
     }
 
     const json = await response.json();
-    const reply = String(json?.message?.content ?? "").trim();
+    const reply = String(json?.response ?? "").trim();
     if (!reply) throw new Error("Ollama returned an empty reply");
     return { reply, raw: json };
   } finally {
@@ -175,9 +174,9 @@ const server = http.createServer(async (req, res) => {
       }
 
       const body = await readJson(req);
-      const messages = normalizeMessages(body);
+      const prompt = normalizePrompt(body);
       const startedAt = Date.now();
-      const { reply, raw } = await callOllama(messages);
+      const { reply, raw } = await callOllama(prompt);
       sendJson(res, 200, {
         reply,
         provider: "ollama",
