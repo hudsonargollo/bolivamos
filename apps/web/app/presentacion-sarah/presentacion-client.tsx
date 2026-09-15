@@ -1061,7 +1061,7 @@ export default function PresentacionClient() {
                 alt="BoliVibes Icon"
                 className="w-9 h-9 object-contain drop-shadow-[0_4px_12px_rgba(255,196,31,0.3)] group-hover:scale-105 transition-transform"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = "/imgs/bolivibes-icon.webp";
+                  (e.target as HTMLImageElement).src = "/imgs/logo-icon.webp";
                 }}
               />
               <div>

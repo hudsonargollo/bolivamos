@@ -1,5 +1,5 @@
 import { Image, type ImageStyle, type StyleProp } from "react-native";
-import LOGO_SOURCE from "../assets/imgs/bolivibes-logo.webp";
+import LOGO_SOURCE from "../assets/images/logo-clay.webp";
 
 export function BrandLogo({ width = 188, style }: { width?: number; style?: StyleProp<ImageStyle> }) {
   return (
@@ -7,7 +7,7 @@ export function BrandLogo({ width = 188, style }: { width?: number; style?: Styl
       source={LOGO_SOURCE}
       accessibilityLabel="BoliVibes"
       resizeMode="contain"
-      style={[{ width, height: width * 0.276 }, style]}
+      style={[{ width, height: width * 0.35 }, style]}
     />
   );
 }

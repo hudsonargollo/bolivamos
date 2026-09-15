@@ -35,7 +35,7 @@ root.add(ground);
 
 // ---- hero brand pin: replaces the old sun mark with the BoliVibes pin icon ----
 const sun = new THREE.Group(); sun.name = 'bolivibes_pin_mark';
-const iconTexture = new THREE.TextureLoader().load('/imgs/bolivibes-icon.webp');
+const iconTexture = new THREE.TextureLoader().load('/imgs/logo-icon.webp');
 iconTexture.colorSpace = THREE.SRGBColorSpace;
 const iconMaterial = new THREE.SpriteMaterial({
   map: iconTexture,

@@ -62,7 +62,7 @@ function CheckItem({ children }: { children: React.ReactNode }) {
 
 export default function HomePage() {
   const jsonLd = [
-    { "@context": "https://schema.org", "@type": "Organization", name: "BoliVibes", url: SITE_URL, logo: `${SITE_URL}/api/assets/brand/bolivibes-logo.webp` },
+    { "@context": "https://schema.org", "@type": "Organization", name: "BoliVibes", url: SITE_URL, logo: `${SITE_URL}/api/assets/brand/logo-clay.webp` },
     { "@context": "https://schema.org", "@type": "WebSite", name: "BoliVibes", url: SITE_URL },
   ];
 
@@ -82,7 +82,7 @@ export default function HomePage() {
         <div className="bv-container" style={{ width: "min(100%, 1180px)", paddingTop: 28, paddingBottom: 76 }}>
           <nav style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 18, marginBottom: 64 }}>
             <Link href="/" aria-label="BoliVibes home" style={{ display: "inline-flex", alignItems: "center" }}>
-              <img src="/api/assets/brand/bolivibes-logo.webp" alt="BoliVibes" width={196} height={56} style={{ height: "auto", maxWidth: "50vw" }} />
+              <img src="/api/assets/brand/logo-clay.webp" alt="BoliVibes" width={196} height={56} style={{ height: "auto", maxWidth: "50vw" }} />
             </Link>
             <div className="bv-chip-row" style={{ justifyContent: "flex-end" }}>
               {routes.map((route) => (
@@ -137,7 +137,7 @@ export default function HomePage() {
 
             <div className="bv-card bv-card-pad" style={{ background: "rgba(253, 250, 243, 0.96)", padding: 20 }}>
               <div style={{ borderRadius: 24, overflow: "hidden", background: "linear-gradient(180deg, #f7f1e4, #e9dfc9)", padding: 20 }}>
-                <img src="/imgs/bolivibes-icon.webp" alt="" width={76} height={76} style={{ borderRadius: 24, boxShadow: "0 4px 0 #8e4a20", marginBottom: 18 }} />
+                <img src="/api/assets/brand/logo-icon.webp" alt="BoliVibes" width={76} height={76} style={{ borderRadius: 24, boxShadow: "0 4px 0 #8e4a20", marginBottom: 18 }} onError={(e) => { (e.target as HTMLImageElement).src = "/imgs/logo-icon.webp"; }} />
                 <p className="bv-section-kicker">Two paths, one city network</p>
                 <div style={{ display: "grid", gap: 12 }}>
                   <Link href="/signup?role=visitor" className="bv-card bv-card-pad" style={{ textDecoration: "none", boxShadow: "0 3px 0 #d9c8a4" }}>

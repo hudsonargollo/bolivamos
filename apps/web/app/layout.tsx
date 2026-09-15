@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   icons: {
     icon: [
-      { url: "/imgs/bolivibes-icon.webp", type: "image/webp" },
+      { url: "/api/assets/brand/logo-icon.webp", type: "image/webp" },
+      { url: "/imgs/logo-icon.webp", type: "image/webp" },
       { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
       { url: "/favicon-48.png", sizes: "48x48", type: "image/png" },
       { url: "/favicon-512.png", sizes: "512x512", type: "image/png" },

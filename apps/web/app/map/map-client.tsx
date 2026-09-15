@@ -146,7 +146,7 @@ export default function MapClient({ lang = "en" }: { lang?: "en" | "es" }) {
 
       <section className="bv-gmap-panel" aria-label="Map controls">
         <div className="bv-gmap-brand">
-          <img src="/imgs/bolivibes-icon.webp" alt="" />
+          <img src="/api/assets/brand/logo-icon.webp" alt="BoliVibes" onError={(e) => { (e.target as HTMLImageElement).src = "/imgs/logo-icon.webp"; }} />
           <div>
             <p>{t.title}</p>
             <span>{t.subtitle}</span>
@@ -174,7 +174,7 @@ export default function MapClient({ lang = "en" }: { lang?: "en" | "es" }) {
         <div className="bv-gmap-results">
           {filteredFeatures.slice(0, 8).map((feature) => (
             <button key={feature.properties.id} type="button" onClick={() => flyTo(feature)} className={isFeatured(feature) ? "featured" : ""}>
-              {isFeatured(feature) ? <img src="/imgs/bolivibes-icon.webp" alt="" /> : <span style={{ background: layerColor(feature.properties.layer) }} />}
+              {isFeatured(feature) ? <img src="/api/assets/brand/logo-icon.webp" alt="BoliVibes" onError={(e) => { (e.target as HTMLImageElement).src = "/imgs/logo-icon.webp"; }} /> : <span style={{ background: layerColor(feature.properties.layer) }} />}
               <div>
                 <strong>{feature.properties.name}</strong>
                 <small>{feature.properties.district ?? layerLabel(feature.properties.layer)} {isFeatured(feature) ? `· ${t.featured}` : ""}</small>
@@ -189,7 +189,7 @@ export default function MapClient({ lang = "en" }: { lang?: "en" | "es" }) {
         <aside className="bv-gmap-sheet" aria-live="polite">
           <button type="button" className="bv-gmap-close" onClick={() => setSelected(null)} aria-label={t.close}>×</button>
           <div className="bv-gmap-sheet-head">
-            {isFeatured(selected) ? <img src="/imgs/bolivibes-icon.webp" alt="" /> : null}
+            {isFeatured(selected) ? <img src="/api/assets/brand/logo-icon.webp" alt="BoliVibes" onError={(e) => { (e.target as HTMLImageElement).src = "/imgs/logo-icon.webp"; }} /> : null}
             <div>
               <p>{isFeatured(selected) ? t.bolivibesPick : layerLabel(selected.properties.layer)}</p>
               <h1>{selected.properties.name}</h1>

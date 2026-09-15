@@ -6,7 +6,7 @@ function normalizeKey(parts: string[]) {
   return key;
 }
 
-/** Serves admin-uploaded assets stored in R2. */
+/** Serves admin-uploaded assets stored in R2 with local fallback. */
 export async function GET(request: Request, { params }: { params: Promise<{ key: string[] }> }) {
   const { key: parts } = await params;
   const key = normalizeKey(parts);
@@ -15,8 +15,12 @@ export async function GET(request: Request, { params }: { params: Promise<{ key:
   const { env } = cf();
   const object = await env.EVENT_ASSETS.get(key);
   if (!object) {
-    if (key === "brand/bolivibes-logo.webp") {
-      const fallbackUrl = new URL("/imgs/bolivibes-logo.webp", request.url);
+    if (key === "brand/logo-clay.webp" || key === "brand/bolivibes-logo.webp") {
+      const fallbackUrl = new URL("/imgs/logo-clay.webp", request.url);
+      return env.ASSETS.fetch(fallbackUrl.toString());
+    }
+    if (key === "brand/logo-icon.webp" || key === "brand/bolivibes-icon.webp") {
+      const fallbackUrl = new URL("/imgs/logo-icon.webp", request.url);
       return env.ASSETS.fetch(fallbackUrl.toString());
     }
     return new Response("Not found", { status: 404 });

@@ -95,9 +95,10 @@ export default function LoginClient() {
         <div className="auth-ambient-orb orb-3"></div>
         <div className="auth-visual-content">
           <img
-            src="/imgs/bolivibes-icon.webp"
+            src="/api/assets/brand/logo-icon.webp"
             alt="BoliVibes Icon"
             className="auth-hero-icon"
+            onError={(e) => { (e.target as HTMLImageElement).src = "/imgs/logo-icon.webp"; }}
           />
           <h1>{t.welcome}</h1>
           <p>{t.desc}</p>
@@ -107,11 +108,12 @@ export default function LoginClient() {
         <div className="auth-card">
           <Link href="/" aria-label="BoliVibes home" className="auth-logo-link">
             <img
-              src="/api/assets/brand/bolivibes-logo.webp"
+              src="/api/assets/brand/logo-clay.webp"
               alt="BoliVibes"
               width={220}
               height={124}
               className="auth-logo"
+              onError={(e) => { (e.target as HTMLImageElement).src = "/imgs/logo-clay.webp"; }}
             />
           </Link>
           <div className="auth-header">

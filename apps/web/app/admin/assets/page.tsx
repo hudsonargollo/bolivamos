@@ -76,7 +76,7 @@ export default async function AdminAssetsPage({ searchParams }: { searchParams?:
 
             <div className="a-field">
               <label htmlFor="filename">File name <span className="a-field-optional">optional</span></label>
-              <input id="filename" name="filename" className="a-input" placeholder="bolivibes-logo.webp" />
+              <input id="filename" name="filename" className="a-input" placeholder="logo-clay.webp" />
               <p className="a-fieldset-hint">Leave blank to use the original file name. Turn on replace to keep a stable URL.</p>
             </div>
 

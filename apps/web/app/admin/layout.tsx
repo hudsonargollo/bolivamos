@@ -30,7 +30,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
       <aside className="a-sidebar">
         <a href="/admin" className="a-wordmark" aria-label="BoliVibes admin home">
           <img
-            src="/api/assets/brand/bolivibes-logo.webp"
+            src="/api/assets/brand/logo-clay.webp"
             alt="BoliVibes"
             width={140}
             height={80}

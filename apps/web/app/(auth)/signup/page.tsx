@@ -13,9 +13,10 @@ export default function SignupPage() {
         <div className="auth-ambient-orb orb-3" style={{ background: "#e5b824" }}></div>
         <div className="auth-visual-content">
           <img
-            src="/imgs/bolivibes-icon.webp"
+            src="/api/assets/brand/logo-icon.webp"
             alt="BoliVibes Icon"
             className="auth-hero-icon"
+            onError={(e) => { (e.target as HTMLImageElement).src = "/imgs/logo-icon.webp"; }}
           />
           <h1>Join BoliVibes.</h1>
           <p>
@@ -27,11 +28,12 @@ export default function SignupPage() {
         <div className="auth-card" style={{ maxWidth: 480 }}>
           <Link href="/" aria-label="BoliVibes home" className="auth-logo-link">
             <img
-              src="/api/assets/brand/bolivibes-logo.webp"
+              src="/api/assets/brand/logo-clay.webp"
               alt="BoliVibes"
               width={200}
               height={112}
               className="auth-logo"
+              onError={(e) => { (e.target as HTMLImageElement).src = "/imgs/logo-clay.webp"; }}
             />
           </Link>
           <div className="auth-header">
