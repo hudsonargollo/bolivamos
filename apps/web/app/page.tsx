@@ -137,7 +137,7 @@ export default function HomePage() {
 
             <div className="bv-card bv-card-pad" style={{ background: "rgba(253, 250, 243, 0.96)", padding: 20 }}>
               <div style={{ borderRadius: 24, overflow: "hidden", background: "linear-gradient(180deg, #f7f1e4, #e9dfc9)", padding: 20 }}>
-                <img src="/api/assets/brand/logo-icon.webp" alt="BoliVibes" width={76} height={76} style={{ borderRadius: 24, boxShadow: "0 4px 0 #8e4a20", marginBottom: 18 }} onError={(e) => { (e.target as HTMLImageElement).src = "/imgs/logo-icon.webp"; }} />
+                <img src="/api/assets/brand/logo-icon.webp" alt="BoliVibes" width={76} height={76} style={{ borderRadius: 24, boxShadow: "0 4px 0 #8e4a20", marginBottom: 18 }} />
                 <p className="bv-section-kicker">Two paths, one city network</p>
                 <div style={{ display: "grid", gap: 12 }}>
                   <Link href="/signup?role=visitor" className="bv-card bv-card-pad" style={{ textDecoration: "none", boxShadow: "0 3px 0 #d9c8a4" }}>
