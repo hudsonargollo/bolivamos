@@ -16,7 +16,6 @@ export default function SignupPage() {
             src="/api/assets/brand/logo-icon.webp"
             alt="BoliVibes Icon"
             className="auth-hero-icon"
-            onError={(e) => { (e.target as HTMLImageElement).src = "/imgs/logo-icon.webp"; }}
           />
           <h1>Join BoliVibes.</h1>
           <p>
@@ -33,7 +32,6 @@ export default function SignupPage() {
               width={200}
               height={112}
               className="auth-logo"
-              onError={(e) => { (e.target as HTMLImageElement).src = "/imgs/logo-clay.webp"; }}
             />
           </Link>
           <div className="auth-header">
