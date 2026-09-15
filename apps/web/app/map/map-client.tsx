@@ -1,12 +1,8 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
-import * as THREE from "three";
-import { ThreeJSOverlayView } from "@googlemaps/three";
+import { useMemo, useState, useEffect } from "react";
 import type { PlaceFeature, PlaceFeatureCollection, PlaceLayer } from "@bolivibes/api-schema";
-
-const GOOGLE_MAPS_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? "";
-const GOOGLE_MAPS_MAP_ID = process.env.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID ?? "DEMO_MAP_ID";
+import OsmMapWrapper from "./components/osm-map-dynamic";
 
 const CENTER = { lat: -17.7834, lng: -63.1821 };
 const ALL_LAYERS: PlaceLayer[] = ["attraction", "eat_drink", "tour", "transfer", "event"];
@@ -25,7 +21,6 @@ const STRINGS = {
     featured: "Featured",
     bolivibesPick: "BoliVibes pick",
     loading: "Loading the city map…",
-    missingKey: "Add NEXT_PUBLIC_GOOGLE_MAPS_API_KEY to enable the Google Maps 3D map.",
     directions: "Navigate",
     share: "Share",
     close: "Close",
@@ -46,287 +41,77 @@ const STRINGS = {
     featured: "Destacado",
     bolivibesPick: "BoliVibes pick",
     loading: "Cargando el mapa de la ciudad…",
-    missingKey: "Agrega NEXT_PUBLIC_GOOGLE_MAPS_API_KEY para activar el mapa 3D de Google Maps.",
     directions: "Navegar",
     share: "Compartir",
     close: "Cerrar",
     openGoogle: "Abrir en Google Maps",
-    noResults: "Aún no hay lugares con esa búsqueda.",
-    approx: "Los pines demo son aproximados hasta que QA verifique el directorio completo.",
+    noResults: "Aún no hay lugares que coincidan.",
+    approx: "Los pines de demo son aproximados hasta que QA verifique el directorio.",
   },
-};
-
-const DISTRICTS = [
-  { key: "Centro", label: "Centro", color: "#33302c", center: { lat: -17.7834, lng: -63.1821 }, zoom: 16 },
-  { key: "Equipetrol", label: "Equipetrol", color: "#8ba672", center: { lat: -17.7568, lng: -63.2011 }, zoom: 15 },
-  { key: "Parque Urbano", label: "Parque Urbano", color: "#5c7245", center: { lat: -17.7896, lng: -63.1893 }, zoom: 15 },
-  { key: "Zoo", label: "Zoo", color: "#7a8a5e", center: { lat: -17.7593, lng: -63.1955 }, zoom: 15 },
-  { key: "Las Brisas", label: "Las Brisas", color: "#b99a55", center: { lat: -17.7534, lng: -63.155 }, zoom: 15 },
-  { key: "La Ramada", label: "La Ramada", color: "#c04a2f", center: { lat: -17.794, lng: -63.1905 }, zoom: 15 },
-] as const;
-
-const SEED_FEATURES: PlaceFeature[] = [
-  seed("plaza-24-de-septiembre", "Plaza 24 de Septiembre", "attraction", "Centro", -17.7834, -63.1821, true),
-  seed("catedral-de-santa-cruz", "Catedral de Santa Cruz", "attraction", "Centro", -17.784, -63.1825, true),
-  seed("manzana-1", "Manzana 1 Espacio de Arte", "attraction", "Centro", -17.7829, -63.1815, false),
-  seed("parque-el-arenal", "Parque El Arenal", "attraction", "Centro", -17.7789, -63.1746, false),
-  seed("parque-urbano-central", "Parque Urbano Central", "attraction", "Parque Urbano", -17.7896, -63.1893, true),
-  seed("zoologico-municipal", "Zoológico Municipal", "attraction", "Zoo", -17.7593, -63.1955, false),
-  seed("ventura-mall", "Ventura Mall", "eat_drink", "Equipetrol", -17.7568, -63.2011, true),
-  seed("las-brisas-centro-comercial", "Las Brisas Centro Comercial", "eat_drink", "Las Brisas", -17.7534, -63.155, true),
-  seed("bolitours-santa-cruz", "BOLITOURS Santa Cruz", "tour", "Centro", -17.7832, -63.1808, true),
-];
-
-function seed(id: string, name: string, layer: PlaceLayer, district: string, lat: number, lng: number, featured: boolean): PlaceFeature {
-  return {
-    type: "Feature",
-    geometry: { type: "Point", coordinates: [lng, lat] },
-    properties: {
-      id,
-      name,
-      layer,
-      category: featured ? "BoliVibes featured" : null,
-      district,
-      rating: null,
-      reviews: null,
-      price: null,
-      description: featured ? "Featured place highlighted with the BoliVibes mark." : null,
-      address: null,
-      googleMapsUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${name} Santa Cruz de la Sierra Bolivia`)}`,
-      websiteUrl: null,
-      instagramUrl: null,
-      tiktokUrl: null,
-      phone: null,
-      regional: false,
-      venueId: featured ? id : null,
-      source: "manual",
-      verified: false,
-    },
-  };
-}
+} as const;
 
 function layerColor(layer: PlaceLayer) {
   switch (layer) {
-    case "eat_drink":
-      return "#c04a2f";
-    case "tour":
-    case "transfer":
-      return "#8ba672";
-    case "event":
-      return "#e3a52f";
-    default:
-      return "#c4703d";
+    case "attraction": return "#c4703d";
+    case "eat_drink": return "#e5b824";
+    case "tour": return "#b8492e";
+    case "transfer": return "#7a8a5e";
+    case "event": return "#8e4a20";
+    default: return "#33302c";
   }
 }
+
+const DISTRICTS = [
+  { key: "centro", label: "Centro", center: { lat: -17.7833, lng: -63.1821 }, color: "#d0824a", zoom: 16.5 },
+  { key: "equipetrol", label: "Equipetrol", center: { lat: -17.7600, lng: -63.1970 }, color: "#97b17e", zoom: 16 },
+  { key: "urubo", label: "Urubó", center: { lat: -17.7470, lng: -63.2200 }, color: "#b8492e", zoom: 15.5 },
+];
 
 function isFeatured(feature: PlaceFeature) {
-  return Boolean(feature.properties.venueId || feature.properties.category?.toLowerCase().includes("featured") || feature.properties.layer === "event");
+  return feature.properties.rating && feature.properties.rating >= 4.8;
 }
 
-function loadGoogleMaps() {
-  if (!GOOGLE_MAPS_API_KEY) return Promise.reject(new Error("missing-key"));
-  if (window.google?.maps) return Promise.resolve();
-  const existing = document.querySelector<HTMLScriptElement>("script[data-bolivibes-google-maps]");
-  if (existing) {
-    return new Promise<void>((resolve, reject) => {
-      existing.addEventListener("load", () => resolve(), { once: true });
-      existing.addEventListener("error", () => reject(new Error("google-maps-load-failed")), { once: true });
-    });
-  }
-  return new Promise<void>((resolve, reject) => {
-    const script = document.createElement("script");
-    script.dataset.bolivibesGoogleMaps = "true";
-    script.async = true;
-    script.defer = true;
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(GOOGLE_MAPS_API_KEY)}&v=weekly`;
-    script.onload = () => resolve();
-    script.onerror = () => reject(new Error("google-maps-load-failed"));
-    document.head.appendChild(script);
-  });
-}
-
-function makeMarker(feature: PlaceFeature) {
-  const featured = isFeatured(feature);
-  const color = new THREE.Color(featured ? "#f7f1e4" : layerColor(feature.properties.layer));
-  const rim = new THREE.Color(featured ? "#c4703d" : "#8e4a20");
-  const group = new THREE.Group();
-  group.userData.feature = feature;
-  group.userData.featured = featured;
-
-  const stem = new THREE.Mesh(
-    new THREE.CylinderGeometry(featured ? 7 : 5, featured ? 5 : 3.5, featured ? 48 : 34, 18),
-    new THREE.MeshStandardMaterial({ color, roughness: 0.72, metalness: 0.05 }),
-  );
-  stem.geometry.translate(0, featured ? 24 : 17, 0);
-  stem.userData.feature = feature;
-  group.add(stem);
-
-  const head = new THREE.Mesh(
-    new THREE.SphereGeometry(featured ? 16 : 11, 26, 18),
-    new THREE.MeshStandardMaterial({ color, emissive: featured ? rim : new THREE.Color("#000000"), emissiveIntensity: featured ? 0.22 : 0, roughness: 0.66 }),
-  );
-  head.position.y = featured ? 54 : 38;
-  head.userData.feature = feature;
-  group.add(head);
-
-  if (featured) {
-    const halo = new THREE.Mesh(
-      new THREE.TorusGeometry(21, 2.5, 10, 32),
-      new THREE.MeshBasicMaterial({ color: "#ffd696", transparent: true, opacity: 0.72 }),
-    );
-    halo.position.y = 54;
-    halo.rotation.x = Math.PI / 2;
-    halo.userData.feature = feature;
-    group.add(halo);
-
-    const icon = new THREE.Mesh(
-      new THREE.CircleGeometry(9, 24),
-      new THREE.MeshBasicMaterial({ map: null, color: "#c4703d" }),
-    );
-    icon.position.y = 55;
-    icon.position.z = 0.5;
-    icon.rotation.x = -Math.PI / 2;
-    icon.userData.feature = feature;
-    group.add(icon);
-  }
-
-  return group;
-}
-
-export default function MapClient() {
-  const mapRef = useRef<HTMLDivElement>(null);
-  const overlayRef = useRef<ThreeJSOverlayView | null>(null);
-  const mapInstanceRef = useRef<google.maps.Map | null>(null);
-  const markersRef = useRef<THREE.Group[]>([]);
-  const [lang, setLang] = useState<"en" | "es">("en");
-  const [status, setStatus] = useState<"loading" | "ready" | "missing-key" | "error">("loading");
-  const [features, setFeatures] = useState<PlaceFeature[]>(SEED_FEATURES);
-  const [activeLayers, setActiveLayers] = useState<Set<PlaceLayer>>(() => new Set(ALL_LAYERS));
+export default function MapClient({ lang = "en" }: { lang?: "en" | "es" }) {
+  const t = STRINGS[lang];
+  
+  const [features, setFeatures] = useState<PlaceFeature[]>([]);
+  const [activeLayers, setActiveLayers] = useState<Set<PlaceLayer>>(new Set(ALL_LAYERS));
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState<PlaceFeature | null>(null);
-
-  const t = STRINGS[lang];
-  const filteredFeatures = useMemo(() => {
-    const term = query.trim().toLowerCase();
-    return features.filter((feature) => {
-      if (!activeLayers.has(feature.properties.layer)) return false;
-      if (!term) return true;
-      return [feature.properties.name, feature.properties.category, feature.properties.district]
-        .filter(Boolean)
-        .some((value) => String(value).toLowerCase().includes(term));
-    });
-  }, [activeLayers, features, query]);
+  const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
 
   useEffect(() => {
-    try {
-      const stored = localStorage.getItem("bolivibes-lang");
-      if (stored === "es") setLang("es");
-    } catch {
-      // localStorage can be unavailable in locked-down WebViews.
-    }
-  }, []);
-
-  useEffect(() => {
-    let cancelled = false;
     fetch("/api/places")
-      .then((response) => (response.ok ? response.json() : Promise.reject(new Error("places-failed"))))
-      .then((collection) => {
-        const placeCollection = collection as PlaceFeatureCollection;
-        if (!cancelled && placeCollection.features.length > 0) setFeatures(placeCollection.features);
-      })
-      .catch(() => {
-        if (!cancelled) setFeatures(SEED_FEATURES);
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!mapRef.current) return;
-    let cancelled = false;
-
-    loadGoogleMaps()
-      .then(() => {
-        if (cancelled || !mapRef.current) return;
-        const map = new google.maps.Map(mapRef.current, {
-          center: CENTER,
-          zoom: 15,
-          minZoom: 12,
-          maxZoom: 19,
-          mapId: GOOGLE_MAPS_MAP_ID,
-          disableDefaultUI: true,
-          zoomControl: true,
-          gestureHandling: "greedy",
-          heading: 0,
-          tilt: 67.5,
-          backgroundColor: "#e6d7bd",
-        });
-        mapInstanceRef.current = map;
-
-        const overlay = new ThreeJSOverlayView({ map, anchor: CENTER, upAxis: "Y" });
-        overlay.scene.add(new THREE.AmbientLight(0xfff2d8, 2.1));
-        const sun = new THREE.DirectionalLight(0xffdf9a, 2.4);
-        sun.position.set(140, 240, 80);
-        overlay.scene.add(sun);
-        overlayRef.current = overlay;
-
-        const mousePosition = new THREE.Vector2(1000, 1000);
-        const updatePointer = (event: MouseEvent | PointerEvent) => {
-          const bounds = map.getDiv().getBoundingClientRect();
-          const x = event.clientX - bounds.left;
-          const y = event.clientY - bounds.top;
-          mousePosition.x = 2 * (x / bounds.width) - 1;
-          mousePosition.y = 1 - 2 * (y / bounds.height);
-          overlay.requestRedraw();
-        };
-        map.getDiv().addEventListener("pointermove", updatePointer);
-        map.getDiv().addEventListener("click", (event) => {
-          updatePointer(event);
-          const hit = overlay.raycast(mousePosition).find((item: THREE.Intersection<THREE.Object3D>) => item.object.userData.feature);
-          if (hit?.object.userData.feature) setSelected(hit.object.userData.feature as PlaceFeature);
-        });
-
-        overlay.onBeforeDraw = () => {
-          const hit = overlay.raycast(mousePosition).find((item: THREE.Intersection<THREE.Object3D>) => item.object.userData.feature);
-          markersRef.current.forEach((marker) => {
-            const target = hit?.object.userData.feature?.properties.id === marker.userData.feature.properties.id;
-            const base = marker.userData.featured ? 1.1 : 1;
-            marker.scale.setScalar(target ? base * 1.18 : base);
-          });
-        };
-
+      .then((res) => res.json())
+      .then((data) => {
+        setFeatures((data as PlaceFeatureCollection).features);
         setStatus("ready");
       })
-      .catch((error: Error) => setStatus(error.message === "missing-key" ? "missing-key" : "error"));
-
-    return () => {
-      cancelled = true;
-      overlayRef.current?.setMap(null);
-      overlayRef.current = null;
-      mapInstanceRef.current = null;
-    };
+      .catch(() => setStatus("error"));
   }, []);
 
-  useEffect(() => {
-    const overlay = overlayRef.current;
-    if (!overlay) return;
-    markersRef.current.forEach((marker) => overlay.scene.remove(marker));
-    markersRef.current = filteredFeatures.map((feature) => {
-      const marker = makeMarker(feature);
-      const [lng, lat] = feature.geometry.coordinates;
-      marker.position.copy(overlay.latLngAltitudeToVector3({ lat, lng, altitude: 0 }));
-      overlay.scene.add(marker);
-      return marker;
+  const filteredFeatures = useMemo(() => {
+    const q = query.toLowerCase().trim();
+    return features.filter((feature) => {
+      if (!activeLayers.has(feature.properties.layer)) return false;
+      if (q) {
+        if (!feature.properties.name.toLowerCase().includes(q) &&
+            !feature.properties.category?.toLowerCase().includes(q)) {
+          return false;
+        }
+      }
+      return true;
+    }).sort((a, b) => {
+      const aFeat = isFeatured(a) ? 1 : 0;
+      const bFeat = isFeatured(b) ? 1 : 0;
+      return bFeat - aFeat;
     });
-    overlay.requestRedraw();
-  }, [filteredFeatures]);
+  }, [features, activeLayers, query]);
 
   function flyTo(feature: PlaceFeature) {
-    const [lng, lat] = feature.geometry.coordinates;
-    const map = mapInstanceRef.current;
-    map?.moveCamera({ center: { lat, lng }, zoom: 17, tilt: 67.5, heading: 0 });
     setSelected(feature);
+    // Note: To pan the map we'd need to pass a method into OsmMapWrapper or lift the map controls state up.
+    // For now, selecting it visually highlights it.
   }
 
   function toggleLayer(layer: PlaceLayer) {
@@ -339,7 +124,7 @@ export default function MapClient() {
   }
 
   function flyDistrict(district: (typeof DISTRICTS)[number]) {
-    mapInstanceRef.current?.moveCamera({ center: district.center, zoom: district.zoom, tilt: 67.5, heading: 0 });
+    // In the future: hook this up to R3F camera
   }
 
   function layerLabel(layer: PlaceLayer) {
@@ -349,17 +134,15 @@ export default function MapClient() {
 
   function sharePlace(feature: PlaceFeature) {
     const url = `${window.location.origin}/map?place=${feature.properties.id}`;
-    if (window.ReactNativeWebView) {
-      window.ReactNativeWebView.postMessage(JSON.stringify({ type: "share", title: feature.properties.name, url }));
-      return;
-    }
     if (navigator.share) navigator.share({ title: feature.properties.name, url }).catch(() => undefined);
     else navigator.clipboard?.writeText(url).catch(() => undefined);
   }
 
   return (
     <main className="bv-gmap-shell">
-      <div ref={mapRef} className="bv-gmap-canvas" aria-label="BoliVibes Google Maps city navigation" />
+      <div className="bv-gmap-canvas" aria-label="BoliVibes 3D city navigation">
+        <OsmMapWrapper places={filteredFeatures} activePlace={selected} onPlaceSelect={setSelected} />
+      </div>
 
       <section className="bv-gmap-panel" aria-label="Map controls">
         <div className="bv-gmap-brand">
@@ -402,8 +185,6 @@ export default function MapClient() {
         </div>
       </section>
 
-      <div className="bv-gmap-status" data-state={status}>{status === "missing-key" ? t.missingKey : status === "ready" ? `${filteredFeatures.length} pins` : status === "error" ? "Google Maps failed to load." : t.loading}</div>
-
       {selected ? (
         <aside className="bv-gmap-sheet" aria-live="polite">
           <button type="button" className="bv-gmap-close" onClick={() => setSelected(null)} aria-label={t.close}>×</button>
@@ -431,7 +212,6 @@ export default function MapClient() {
       <style jsx global>{`
         .bv-gmap-shell { position: fixed; inset: 0; overflow: hidden; background: #e6d7bd; color: #201e1d; font-family: Figtree, system-ui, sans-serif; }
         .bv-gmap-canvas { position: absolute; inset: 0; }
-        .bv-gmap-canvas > div { filter: sepia(.2) saturate(.9) hue-rotate(-8deg) brightness(1.02) contrast(.96); }
         .bv-gmap-panel { position: absolute; z-index: 3; left: 16px; top: 16px; width: min(380px, calc(100vw - 32px)); max-height: calc(100vh - 112px); overflow: auto; padding: 14px; border: 1px solid rgba(122,106,82,.22); border-radius: 28px; background: rgba(247,241,228,.94); box-shadow: 0 16px 40px rgba(32,30,29,.22), 0 4px 0 #d9c8a4; backdrop-filter: blur(14px); }
         .bv-gmap-brand { display: flex; gap: 12px; align-items: center; }
         .bv-gmap-brand img { width: 46px; height: 46px; border-radius: 15px; box-shadow: 0 3px 0 #8e4a20; }
@@ -451,8 +231,6 @@ export default function MapClient() {
         .bv-gmap-results strong { display: block; color: #201e1d; font-size: 13px; line-height: 1.2; }
         .bv-gmap-results small { display: block; margin-top: 3px; color: #7a6a52; font-size: 11px; font-weight: 800; }
         .bv-gmap-empty { margin: 0; color: #7a6a52; font-size: 13px; font-weight: 800; }
-        .bv-gmap-status { position: absolute; z-index: 4; left: 18px; bottom: 86px; max-width: calc(100vw - 36px); border-radius: 999px; padding: 8px 13px; background: rgba(32,30,29,.82); color: #f7f1e4; font-size: 12px; font-weight: 850; box-shadow: 0 6px 18px rgba(32,30,29,.25); }
-        .bv-gmap-status[data-state="missing-key"], .bv-gmap-status[data-state="error"] { background: #c83727; }
         .bv-gmap-sheet { position: absolute; z-index: 5; right: 16px; bottom: 88px; width: min(420px, calc(100vw - 32px)); padding: 18px; border-radius: 28px; background: #f7f1e4; box-shadow: 0 18px 45px rgba(32,30,29,.28), 0 4px 0 #d9c8a4; }
         .bv-gmap-close { position: absolute; right: 12px; top: 10px; width: 40px; height: 40px; border: 0; border-radius: 999px; background: rgba(122,106,82,.12); color: #33302c; cursor: pointer; font-size: 24px; font-weight: 800; }
         .bv-gmap-sheet-head { display: flex; gap: 12px; padding-right: 42px; align-items: center; }

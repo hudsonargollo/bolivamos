@@ -20,6 +20,8 @@
     "@bolivibes/design-tokens": "workspace:*",
     "@bolivibes/notifications": "workspace:*",
     "@googlemaps/three": "^4.0.13",
+    "@react-three/drei": "^10.7.8",
+    "@react-three/fiber": "^9.7.0",
     "drizzle-orm": "catalog:",
     "jose": "catalog:",
     "next": "^15.1.4",
