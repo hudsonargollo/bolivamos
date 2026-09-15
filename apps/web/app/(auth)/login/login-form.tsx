@@ -9,7 +9,7 @@ const ROLE_REDIRECT: Record<AuthResponse["user"]["role"], string> = {
   visitor: "/",
 };
 
-export default function LoginForm() {
+export default function LoginForm({ t }: { t: any }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -30,7 +30,7 @@ export default function LoginForm() {
 
       if (!res.ok) {
         const body = (await res.json().catch(() => null)) as { error?: string } | null;
-        setError(body?.error ?? "Something went wrong. Try again.");
+        setError(body?.error ?? t.errorGeneric);
         setSubmitting(false);
         return;
       }
@@ -38,7 +38,7 @@ export default function LoginForm() {
       const data = (await res.json()) as AuthResponse;
       window.location.href = ROLE_REDIRECT[data.user.role] ?? "/";
     } catch {
-      setError("Couldn't reach the server. Check your connection and try again.");
+      setError(t.errorNetwork);
       setSubmitting(false);
     }
   }
@@ -53,12 +53,12 @@ export default function LoginForm() {
         </div>
       )}
       <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-        <label htmlFor="login-email" style={{ fontSize: 13, fontWeight: 700, color: "var(--a-ink-strong)" }}>Email address</label>
+        <label htmlFor="login-email" style={{ fontSize: 13, fontWeight: 700, color: "var(--a-ink-strong)" }}>{t.emailLabel}</label>
         <input
           id="login-email"
           type="email"
           name="email"
-          placeholder="name@example.com"
+          placeholder={t.emailPlaceholder}
           required
           autoComplete="email"
           value={email}
@@ -68,13 +68,13 @@ export default function LoginForm() {
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
-          <label htmlFor="login-pwd" style={{ fontSize: 13, fontWeight: 700, color: "var(--a-ink-strong)" }}>Password</label>
+          <label htmlFor="login-pwd" style={{ fontSize: 13, fontWeight: 700, color: "var(--a-ink-strong)" }}>{t.pwdLabel}</label>
         </div>
         <input
           id="login-pwd"
           type="password"
           name="password"
-          placeholder="••••••••"
+          placeholder={t.pwdPlaceholder}
           required
           autoComplete="current-password"
           value={password}
@@ -83,7 +83,7 @@ export default function LoginForm() {
         />
       </div>
       <button type="submit" disabled={submitting} className="clay-btn auth-submit-btn" style={{ width: "100%", marginTop: 8 }}>
-        {submitting ? "Signing in…" : "Sign In"}
+        {submitting ? t.submitting : t.submit}
       </button>
     </form>
   );
