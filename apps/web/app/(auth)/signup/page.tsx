@@ -7,6 +7,7 @@ export default function SignupPage() {
   return (
     <div className="auth-layout">
       <div className="auth-visuals">
+        <img src="/api/assets/brand/78784b74-4a51-4933-b16a-1a3843008c31-loginhero" alt="Santa Cruz" className="auth-hero-bg" style={{ filter: "hue-rotate(25deg) brightness(0.9)" }} />
         <div className="auth-ambient-orb orb-1" style={{ background: "#97b17e" }}></div>
         <div className="auth-ambient-orb orb-2" style={{ background: "#c4703d" }}></div>
         <div className="auth-ambient-orb orb-3" style={{ background: "#e5b824" }}></div>
