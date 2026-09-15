@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import type { AuthResponse } from "@bolivibes/api-schema";
 
 const ROLE_REDIRECT: Record<AuthResponse["user"]["role"], string> = {
@@ -9,9 +10,25 @@ const ROLE_REDIRECT: Record<AuthResponse["user"]["role"], string> = {
   visitor: "/",
 };
 
-export default function LoginForm({ t }: { t: any }) {
+export default function LoginForm({
+  t,
+}: {
+  t: {
+    emailLabel: string;
+    emailPlaceholder: string;
+    pwdLabel: string;
+    pwdPlaceholder: string;
+    submit: string;
+    submitting: string;
+    errorGeneric: string;
+    errorNetwork: string;
+    showPwd: string;
+    hidePwd: string;
+  };
+}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
@@ -44,47 +61,116 @@ export default function LoginForm({ t }: { t: any }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="a-form" style={{ width: "100%", gap: 16 }}>
-      {error && (
-        <div style={{ background: "rgba(184, 73, 46, 0.1)", borderLeft: "3px solid var(--a-danger)", padding: "10px 14px", borderRadius: 4 }}>
-          <p className="a-text-orange" role="alert" style={{ margin: 0, fontSize: 14, color: "var(--a-danger)" }}>
-            {error}
-          </p>
+    <form onSubmit={handleSubmit} className="w-full space-y-4">
+      <AnimatePresence mode="wait">
+        {error && (
+          <motion.div
+            key="error-box"
+            initial={{ opacity: 0, y: -8, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1, x: [0, -6, 6, -4, 4, -2, 2, 0] }}
+            exit={{ opacity: 0, y: -8, scale: 0.95 }}
+            transition={{ duration: 0.4 }}
+            className="p-3.5 rounded-xl bg-red-500/10 border border-red-500/30 text-red-200 text-xs sm:text-sm flex items-start gap-2.5"
+            role="alert"
+          >
+            <span className="text-red-400 text-base leading-none">⚠️</span>
+            <span className="flex-1 font-medium leading-snug">{error}</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Email Input */}
+      <div className="space-y-1.5">
+        <label
+          htmlFor="login-email"
+          className="block text-xs sm:text-sm font-bold text-stone-300 tracking-wide"
+        >
+          {t.emailLabel}
+        </label>
+        <div className="relative">
+          <input
+            id="login-email"
+            type="email"
+            name="email"
+            placeholder={t.emailPlaceholder}
+            required
+            autoComplete="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full px-4 py-3 rounded-xl bg-stone-900/90 border border-stone-700/80 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 text-stone-100 placeholder-stone-500 text-sm font-medium transition-all outline-none"
+          />
         </div>
-      )}
-      <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-        <label htmlFor="login-email" style={{ fontSize: 13, fontWeight: 700, color: "var(--a-ink-strong)" }}>{t.emailLabel}</label>
-        <input
-          id="login-email"
-          type="email"
-          name="email"
-          placeholder={t.emailPlaceholder}
-          required
-          autoComplete="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="a-input auth-input"
-        />
       </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
-          <label htmlFor="login-pwd" style={{ fontSize: 13, fontWeight: 700, color: "var(--a-ink-strong)" }}>{t.pwdLabel}</label>
+
+      {/* Password Input */}
+      <div className="space-y-1.5">
+        <div className="flex items-center justify-between">
+          <label
+            htmlFor="login-pwd"
+            className="block text-xs sm:text-sm font-bold text-stone-300 tracking-wide"
+          >
+            {t.pwdLabel}
+          </label>
         </div>
-        <input
-          id="login-pwd"
-          type="password"
-          name="password"
-          placeholder={t.pwdPlaceholder}
-          required
-          autoComplete="current-password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="a-input auth-input"
-        />
+        <div className="relative">
+          <input
+            id="login-pwd"
+            type={showPassword ? "text" : "password"}
+            name="password"
+            placeholder={t.pwdPlaceholder}
+            required
+            autoComplete="current-password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="w-full pl-4 pr-12 py-3 rounded-xl bg-stone-900/90 border border-stone-700/80 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 text-stone-100 placeholder-stone-500 text-sm font-medium transition-all outline-none"
+          />
+          <button
+            type="button"
+            onClick={() => setShowPassword(!showPassword)}
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-200 text-xs font-semibold px-1.5 py-1 rounded transition-colors"
+            title={showPassword ? t.hidePwd : t.showPwd}
+          >
+            {showPassword ? "🙈" : "👁️"}
+          </button>
+        </div>
       </div>
-      <button type="submit" disabled={submitting} className="clay-btn auth-submit-btn" style={{ width: "100%", marginTop: 8 }}>
-        {submitting ? t.submitting : t.submit}
-      </button>
+
+      {/* Submit Button */}
+      <motion.button
+        type="submit"
+        disabled={submitting}
+        whileHover={{ scale: submitting ? 1 : 1.015 }}
+        whileTap={{ scale: submitting ? 1 : 0.985 }}
+        className="w-full py-3.5 px-5 rounded-xl bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 hover:from-amber-400 hover:via-orange-400 hover:to-amber-400 text-stone-950 font-extrabold text-sm tracking-wide shadow-lg shadow-amber-500/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 mt-2 cursor-pointer"
+      >
+        {submitting ? (
+          <>
+            <svg
+              className="animate-spin h-4 w-4 text-stone-950"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+              ></circle>
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
+            </svg>
+            <span>{t.submitting}</span>
+          </>
+        ) : (
+          <span>{t.submit} →</span>
+        )}
+      </motion.button>
     </form>
   );
 }
