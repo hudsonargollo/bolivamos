@@ -44,34 +44,46 @@ export default function LoginForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="a-form" style={{ width: "100%" }}>
+    <form onSubmit={handleSubmit} className="a-form" style={{ width: "100%", gap: 16 }}>
       {error && (
-        <p className="a-text-orange" role="alert" style={{ margin: 0 }}>
-          {error}
-        </p>
+        <div style={{ background: "rgba(184, 73, 46, 0.1)", borderLeft: "3px solid var(--a-danger)", padding: "10px 14px", borderRadius: 4 }}>
+          <p className="a-text-orange" role="alert" style={{ margin: 0, fontSize: 14, color: "var(--a-danger)" }}>
+            {error}
+          </p>
+        </div>
       )}
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        required
-        autoComplete="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        className="a-input"
-      />
-      <input
-        type="password"
-        name="password"
-        placeholder="Password"
-        required
-        autoComplete="current-password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        className="a-input"
-      />
-      <button type="submit" disabled={submitting} className="clay-btn" style={{ width: "100%" }}>
-        {submitting ? "Logging in…" : "Log in"}
+      <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+        <label htmlFor="login-email" style={{ fontSize: 13, fontWeight: 700, color: "var(--a-ink-strong)" }}>Email address</label>
+        <input
+          id="login-email"
+          type="email"
+          name="email"
+          placeholder="name@example.com"
+          required
+          autoComplete="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="a-input auth-input"
+        />
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+          <label htmlFor="login-pwd" style={{ fontSize: 13, fontWeight: 700, color: "var(--a-ink-strong)" }}>Password</label>
+        </div>
+        <input
+          id="login-pwd"
+          type="password"
+          name="password"
+          placeholder="••••••••"
+          required
+          autoComplete="current-password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="a-input auth-input"
+        />
+      </div>
+      <button type="submit" disabled={submitting} className="clay-btn auth-submit-btn" style={{ width: "100%", marginTop: 8 }}>
+        {submitting ? "Signing in…" : "Sign In"}
       </button>
     </form>
   );

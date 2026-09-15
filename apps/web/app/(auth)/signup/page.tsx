@@ -11,6 +11,11 @@ export default function SignupPage() {
         <div className="auth-ambient-orb orb-2" style={{ background: "#c4703d" }}></div>
         <div className="auth-ambient-orb orb-3" style={{ background: "#e5b824" }}></div>
         <div className="auth-visual-content">
+          <img
+            src="/imgs/bolivibes-icon.webp"
+            alt="BoliVibes Icon"
+            style={{ width: 80, height: 80, marginBottom: 24, borderRadius: 20, boxShadow: "0 8px 24px rgba(0,0,0,0.2)" }}
+          />
           <h1>Join BoliVibes.</h1>
           <p>
             Create your account to reach locals, manage events, and offer BoliPass perks, or simply to discover the best of Santa Cruz with BolivIA.

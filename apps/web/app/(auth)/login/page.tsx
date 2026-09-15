@@ -10,6 +10,11 @@ export default function LoginPage() {
         <div className="auth-ambient-orb orb-2"></div>
         <div className="auth-ambient-orb orb-3"></div>
         <div className="auth-visual-content">
+          <img
+            src="/imgs/bolivibes-icon.webp"
+            alt="BoliVibes Icon"
+            style={{ width: 80, height: 80, marginBottom: 24, borderRadius: 20, boxShadow: "0 8px 24px rgba(0,0,0,0.2)" }}
+          />
           <h1>Welcome back to the city.</h1>
           <p>Sign in to manage your venues, check your analytics, or discover your next adventure in Santa Cruz.</p>
         </div>
