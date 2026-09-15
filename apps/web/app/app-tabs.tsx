@@ -19,7 +19,8 @@ function shouldHide(pathname: string) {
     pathname.startsWith("/embed") || 
     pathname.startsWith("/api") ||
     pathname.startsWith("/login") ||
-    pathname.startsWith("/signup")
+    pathname.startsWith("/signup") ||
+    pathname.startsWith("/presentacion")
   );
 }
 
