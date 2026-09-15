@@ -4,6 +4,12 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 type Lang = "es" | "en";
+type SpeakerFilter = "all" | "hudson" | "steff";
+
+interface SpeakerNotes {
+  hudson: { es: string; en: string };
+  steff: { es: string; en: string };
+}
 
 interface SlideData {
   id: number;
@@ -12,7 +18,7 @@ interface SlideData {
   title: { es: string; en: string };
   subtitle?: { es: string; en: string };
   badge?: { es: string; en: string };
-  speakerNotes: { es: string; en: string };
+  speakerNotes: SpeakerNotes;
   content: (lang: Lang) => React.ReactNode;
 }
 
@@ -20,6 +26,7 @@ export default function PresentacionClient() {
   const [lang, setLang] = useState<Lang>("es");
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showNotes, setShowNotes] = useState(false);
+  const [speakerFilter, setSpeakerFilter] = useState<SpeakerFilter>("all");
   const [viewMode, setViewMode] = useState<"slides" | "doc">("slides");
   const [activeAudienceTab, setActiveAudienceTab] = useState<"locales" | "turistas" | "comercios" | "municipio">("locales");
 
@@ -46,18 +53,20 @@ export default function PresentacionClient() {
   const t = {
     es: {
       subheading: "Santa Cruz Smart City",
-      meetingWith: "Reunión con Lic. Sarah Mansilla",
+      meetingWith: "Reunión con Lic. Sarah Mansilla · Asesora de Cultura y Turismo",
       slidesMode: "Diapositivas",
       docMode: "Documento Completo",
-      speakerNotesBtn: "Notas Orador",
-      speakerNotesHeader: "🎙️ Guía / Notas para Hudson:",
+      speakerNotesBtn: "Notas Oradores",
+      notesTitle: "Notas de Exposición para la Reunión",
+      allSpeakers: "Todos",
+      hudsonOnly: "Hudson (Tech & Datos)",
+      steffOnly: "Steff (Alianzas & Comunidad)",
       prev: "Anterior",
       next: "Siguiente",
       slideWord: "Diapositiva",
-      pressHint: "Espacio o Flechas para navegar · N para notas · L para cambiar idioma",
       destinataryLabel: "Destinataria de la Sesión",
       destinataryName: "Lic. Sarah Mansilla · Asesora de Cultura y Turismo de Santa Cruz",
-      presenter: "Presentado por Hudson Argollo — Fundador BoliVibes / ClubeMkt",
+      presenters: "Hudson Argollo (Tecnología & Producto) & Steff (Alianzas & Comunidad)",
       pppBadge: "Alianza Público-Privada",
       liveDemoTitle: "Explorar la Plataforma en Vivo",
       liveDemoDesc: "Acceso directo a los módulos clave para demostración inmediata durante la reunión.",
@@ -76,18 +85,20 @@ export default function PresentacionClient() {
     },
     en: {
       subheading: "Santa Cruz Smart City",
-      meetingWith: "Meeting with Lic. Sarah Mansilla",
+      meetingWith: "Meeting with Lic. Sarah Mansilla · Advisor for Culture & Tourism",
       slidesMode: "Slides View",
       docMode: "Full Document",
       speakerNotesBtn: "Speaker Notes",
-      speakerNotesHeader: "🎙️ Hudson's Speaking Notes:",
+      notesTitle: "Meeting Speaking Notes & Strategy",
+      allSpeakers: "All",
+      hudsonOnly: "Hudson (Tech & Data)",
+      steffOnly: "Steff (Partnerships & PR)",
       prev: "Previous",
       next: "Next",
       slideWord: "Slide",
-      pressHint: "Space or Arrow keys to navigate · N for notes · L to toggle language",
       destinataryLabel: "Session Guest of Honor",
-      destinataryName: "Lic. Sarah Mansilla · Advisor for Culture and Tourism of Santa Cruz",
-      presenter: "Presented by Hudson Argollo — Founder, BoliVibes / ClubeMkt",
+      destinataryName: "Lic. Sarah Mansilla · Advisor for Culture & Tourism of Santa Cruz",
+      presenters: "Hudson Argollo (Tech & Product) & Steff (Partnerships & Community)",
       pppBadge: "Public-Private Partnership",
       liveDemoTitle: "Explore Live Platform",
       liveDemoDesc: "Direct access to core live modules for interactive presentation & testing.",
@@ -107,7 +118,7 @@ export default function PresentacionClient() {
   };
 
   const slides: SlideData[] = [
-    // Slide 1: Portada / Title
+    // Slide 1: Portada
     {
       id: 1,
       tag: {
@@ -128,11 +139,45 @@ export default function PresentacionClient() {
         en: "Smart Tourism · Santa Cruz 2026",
       },
       speakerNotes: {
-        es: "Licenciada Sarah Mansilla: Santa Cruz es el motor económico y cultural de Bolivia. Sin embargo, existe una desconexión crítica entre todo lo que la ciudad produce culturalmente y cómo el ciudadano o turista lo descubre. BoliVibes no es una simple red social; es la plataforma de Ciudad Inteligente desarrollada para poner la cultura y el turismo cruceño en el bolsillo de todos.",
-        en: "Lic. Sarah Mansilla: Santa Cruz is the economic and cultural engine of Bolivia. Yet, there is a critical disconnect between what the city produces and how locals and visitors discover it. BoliVibes is not just a social feed—it is a Smart Tourism infrastructure built to put Santa Cruz culture directly in everyone's pocket.",
+        hudson: {
+          es: "Licenciada Sarah: Santa Cruz produce una cantidad inmensa de cultura y entretenimiento, pero carecía de una infraestructura digital unificada de Smart City. BoliVibes soluciona esto con tecnología ligera en la nube, mapas 3D y analíticas en tiempo real sin costo de software para el municipio.",
+          en: "Lic. Sarah: Santa Cruz generates an enormous amount of culture, but lacked a unified Smart City digital infrastructure. BoliVibes provides lightweight edge technology, 3D maps, and real-time analytics with zero software licensing costs for the municipality.",
+        },
+        steff: {
+          es: "Queremos unir a la comunidad. A través de nuestra experiencia en el terreno y eventos multiculturales como Parlana, sabemos que locales, extranjeros y familias cruceñas buscan constantemente qué hacer. BoliVibes es la casa digital donde toda esa oferta se vuelve accesible y atractiva.",
+          en: "We are here to connect the community. Through our hands-on field experience and multicultural events like Parlana, we see that locals, expats, and families are constantly asking what to do. BoliVibes is the digital home that makes that entire ecosystem discoverable.",
+        },
       },
       content: (l) => (
-        <div className="space-y-6 pt-2">
+        <div className="space-y-6 pt-1">
+          {/* Logo Clay Hero Banner */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-6 p-6 rounded-3xl bg-gradient-to-r from-amber-950/40 via-stone-900/90 to-emerald-950/40 border border-amber-500/30 backdrop-blur">
+            <div className="space-y-2 text-center sm:text-left">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold">
+                <span>✨</span>
+                <span>{l === "es" ? "Transformación Digital Cruceña" : "Cruceño Digital Transformation"}</span>
+              </div>
+              <h2 className="text-xl sm:text-2xl font-bold text-stone-100">
+                {l === "es" ? "Cultura, Turismo y Comercio en un Solo Ecosistema" : "Culture, Tourism & Commerce in One Ecosystem"}
+              </h2>
+              <p className="text-stone-300 text-xs sm:text-sm max-w-xl leading-relaxed">
+                {l === "es"
+                  ? "Una plataforma interactiva que posiciona a Santa Cruz a la par de las grandes capitales turísticas de la región."
+                  : "An interactive platform positioning Santa Cruz alongside South America's premier cultural tourism capitals."}
+              </p>
+            </div>
+            <div className="flex-shrink-0 flex items-center justify-center">
+              <img
+                src="/api/assets/brand/logo-clay.webp"
+                alt="BoliVibes Clay Logo"
+                className="w-36 sm:w-44 md:w-52 h-auto drop-shadow-[0_12px_24px_rgba(255,196,31,0.25)] hover:scale-105 transition-transform"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = "/imgs/logo-clay.webp";
+                }}
+              />
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="p-5 rounded-2xl bg-stone-900/80 border border-stone-800 backdrop-blur">
               <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-lg mb-3">
@@ -175,11 +220,11 @@ export default function PresentacionClient() {
             </div>
           </div>
 
-          <div className="p-5 rounded-2xl bg-gradient-to-r from-emerald-950/40 via-stone-900/80 to-amber-950/40 border border-emerald-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="p-4 rounded-2xl bg-stone-900/90 border border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
-              <p className="text-xs uppercase tracking-wider text-emerald-400 font-bold">{t[l].destinataryLabel}</p>
-              <p className="text-stone-100 font-semibold text-sm sm:text-base">{t[l].destinataryName}</p>
-              <p className="text-stone-400 text-xs mt-0.5">{t[l].presenter}</p>
+              <p className="text-xs uppercase tracking-wider text-amber-400 font-bold">{t[l].destinataryLabel}</p>
+              <p className="text-stone-100 font-semibold text-sm">{t[l].destinataryName}</p>
+              <p className="text-stone-400 text-xs mt-0.5">{t[l].presenters}</p>
             </div>
             <div className="flex items-center gap-2">
               <span className="px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold border border-emerald-500/30">
@@ -191,7 +236,7 @@ export default function PresentacionClient() {
       ),
     },
 
-    // Slide 2: El Diagnóstico / Problem
+    // Slide 2: El Diagnóstico
     {
       id: 2,
       tag: {
@@ -212,8 +257,14 @@ export default function PresentacionClient() {
         en: "Problem & Opportunity",
       },
       speakerNotes: {
-        es: "Hoy en día un turista o un cruceño se hace la misma pregunta: '¿Qué hay para hacer hoy?'. La agenda de la Alcaldía compite contra el algoritmo de Instagram y TikTok, donde el 80% del contenido cultural se pierde. En el Casco Viejo hay actividades maravillosas que quedan vacías porque la gente simplemente no se enteró a tiempo.",
-        en: "Today, tourists and locals ask the exact same question: 'What is happening today?'. Municipal programs compete with social media feeds where over 80% of cultural reach is lost. In the Historic Center, amazing events remain underattended simply because people find out too late.",
+        hudson: {
+          es: "Técnicamente, el problema es que el 85% del contenido cultural en redes sociales es penalizado por algoritmos publicitarios. La información no está georreferenciada ni estructurada, haciendo imposible que un sistema inteligente ayude al usuario.",
+          en: "Technically, the core problem is that 85% of cultural posts on social feeds are suppressed by ad algorithms. Data is neither geo-tagged nor structured, making it impossible for smart systems to guide the user in real time.",
+        },
+        steff: {
+          es: "Lo vemos en el trato diario con gestores culturales y comercios: los museos tienen salas hermosas que se quedan vacías entre semana, y los turistas terminan siempre en los mismos 3 lugares por miedo a no saber moverse en la ciudad. El Casco Viejo se apaga al anochecer.",
+          en: "We see this every day with venue owners and cultural creators: museum halls remain underattended on weekdays, while tourists stay confined to the same 3 spots due to lack of a trusted guide. Downtown goes quiet after dark.",
+        },
       },
       content: (l) => (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
@@ -305,8 +356,14 @@ export default function PresentacionClient() {
         en: "Tech Ecosystem",
       },
       speakerNotes: {
-        es: "BoliVibes integra cuatro componentes clave: Mapa 3D Cruceño con edificios extruidos (sin depender de costos millonarios de Google Maps), Agenda Cultural Viva en tiempo real, Asistente Inteligente 'bolivIA' para recomendaciones personalizadas, y BoliPass para premiar la fidelidad y la visita cultural.",
-        en: "BoliVibes integrates 4 pillars: a lightweight 3D City Map (custom OpenStreetMap + Three.js), a 24/7 Live Cultural Agenda, the 'bolivIA' AI Concierge for tailored itineraries, and BoliPass to reward local loyalty and cultural exploration.",
+        hudson: {
+          es: "Desarrollamos una arquitectura modular de última generación: el mapa 3D cruceño procesa edificios en tiempo real sin costos de licencias externas, el feed se sincroniza al instante y bolivIA responde en lenguaje natural contextualizado.",
+          en: "We built a cutting-edge modular architecture: the Cruceño 3D map renders buildings dynamically without external licensing fees, the event feed synchronizes instantly, and bolivIA delivers localized contextual answers.",
+        },
+        steff: {
+          es: "La clave no es sólo la tecnología, sino cómo enamora a la gente. Con BoliPass creamos una experiencia donde salir a un museo o a un café de especialidad te otorga sellos, beneficios y te hace sentir parte activa del movimiento cruceño.",
+          en: "The key is user love and engagement. With BoliPass, visiting a museum or a specialty coffee shop earns digital stamps and perks, making everyone feel like an active part of Santa Cruz's cultural movement.",
+        },
       },
       content: (l) => (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
@@ -410,8 +467,14 @@ export default function PresentacionClient() {
         en: "Multi-Stakeholder Impact",
       },
       speakerNotes: {
-        es: "Este es el corazón de la propuesta: BoliVibes aporta valor directo a cuatro sectores: al vecino cruceño, al turista, a los empresarios y gastronómicos locales, y a la Secretaría de Cultura y Turismo como ente gestor.",
-        en: "This is the core value proposition: direct, measurable value delivered to 4 distinct groups: local citizens, tourists, venue owners, and the Municipal Directorate of Culture and Tourism.",
+        hudson: {
+          es: "Para el Municipio, BoliVibes actúa como una consola de gestión de Smart Tourism: entregamos mapas de calor, afluencia por distritos y comportamiento del visitante sin costos de desarrollo de software ni mantenimiento para la Alcaldía.",
+          en: "For the Municipality, BoliVibes serves as a Smart Tourism management cockpit: providing heatmaps, district foot-traffic insights, and visitor behaviors without software licensing or server maintenance fees.",
+        },
+        steff: {
+          es: "Para los negocios y centros culturales, somos su mejor aliado. En vez de pagar cientos de dólares en publicidad que nadie mira, BoliVibes lleva personas reales a consumir su café, ver su obra de teatro o comprar su artesanía.",
+          en: "For venue owners and cultural creators, we are their strongest ally. Instead of burning marketing dollars on ignored ads, BoliVibes sends real paying visitors through their doors.",
+        },
       },
       content: (l) => (
         <div className="space-y-4 pt-2">
@@ -626,8 +689,14 @@ export default function PresentacionClient() {
         en: "Downtown Strategy",
       },
       speakerNotes: {
-        es: "Sabemos que el Casco Viejo es una de las grandes prioridades de su gestión. BoliVibes propone un 'Pasaporte Cultural del Centro': el usuario visita la Manzana 1, la Casa de la Cultura y El Altillo Beni, escanea el QR cultural municipal y desbloquea beneficios en cafés y restaurantes del centro. Convertimos la cultura en el motor del comercio.",
-        en: "We know revitalizing the historic center is a top priority. BoliVibes introduces a 'Downtown Cultural Passport': users visit Manzana 1, Casa de la Cultura, and Altillo Beni, scan municipal QR codes, and unlock rewards in nearby cafes. Culture becomes the engine of local commerce.",
+        hudson: {
+          es: "La tecnología permite crear un circuito georreferenciado cerrado: cuando el usuario escanea un QR en Manzana 1 o en la Casa de la Cultura, nuestro sistema le sugiere automáticamente la ruta peatonal al Museo Altillo Beni o a una cafetería histórica cercana.",
+          en: "Technology enables a closed geo-fenced circuit: when a visitor scans a QR code at Manzana 1 or Casa de la Cultura, our system automatically suggests the walking route to Altillo Beni or a nearby historic cafe.",
+        },
+        steff: {
+          es: "Proponemos lanzar juntos el 'Pasaporte Cultural del Casco Viejo'. Al visitar 3 hitos culturales, los jóvenes y turistas ganan sellos y un beneficio en el café del centro. Convertimos el paseo cultural en un plan social completo.",
+          en: "We propose launching the 'Downtown Cultural Passport' together. By visiting 3 heritage landmarks, youth and visitors earn stamps and a perk at a downtown coffee shop, turning a cultural walk into a full social experience.",
+        },
       },
       content: (l) => (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
@@ -697,8 +766,14 @@ export default function PresentacionClient() {
         en: "Live Demo",
       },
       speakerNotes: {
-        es: "Todo lo que estamos mostrando ya funciona en producción en bolivibes.clubemkt.digital y en la app móvil. Podemos probar ahora mismo el mapa interactivo, la agenda de eventos y el asistente bolivIA.",
-        en: "Everything we are presenting is already running live in production at bolivibes.clubemkt.digital and in the mobile app. We can test the 3D map, event feeds, and bolivIA concierge right now.",
+        hudson: {
+          es: "Invito a Sarah y a su equipo técnico a probar en vivo bolivibes.clubemkt.digital en sus propios teléfonos. La velocidad es instantánea gracias a Cloudflare Edge y el mapa 3D corre fluido en cualquier dispositivo.",
+          en: "I invite Sarah and her technical team to test bolivibes.clubemkt.digital live on their own smartphones. Page loads are instant on Cloudflare Edge and the 3D map runs smoothly on any device.",
+        },
+        steff: {
+          es: "Mostremos en vivo cómo un usuario busca qué hacer esta noche, cómo bolivIA le recomienda actividades culturales y cómo un centro cultural municipal puede cargar y actualizar su cartelera en 60 segundos.",
+          en: "Let's demonstrate live how a user discovers tonight's events, how bolivIA suggests cultural activities, and how a municipal venue can update its public calendar in 60 seconds.",
+        },
       },
       content: (l) => (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-2">
@@ -810,8 +885,14 @@ export default function PresentacionClient() {
         en: "Strategic Alliance",
       },
       speakerNotes: {
-        es: "Proponemos un acuerdo de colaboración mutua muy claro y sin fricciones: BoliVibes aporta la infraestructura tecnológica de forma 100% gratuita para el municipio, y la Dirección de Cultura y Turismo aporta la validación de la agenda oficial y la colocación de tótems/stickers QR en los centros culturales.",
-        en: "We propose a frictionless partnership: BoliVibes provides the software platform at zero cost to the municipality, while the Directorate provides official agenda validation and QR placement in key cultural centers.",
+        hudson: {
+          es: "Nosotros nos encargamos del 100% de la configuración técnica, alta de usuarios, integración de mapas y mantenimiento de servidores. Cero carga operativa para el equipo técnico municipal.",
+          en: "We handle 100% of technical configuration, onboarding, map integration, and server maintenance. Zero workload or technical burden on municipal IT staff.",
+        },
+        steff: {
+          es: "El equipo de campo se encarga de capacitar a los encargados de centros culturales y casetas turísticas. Entregamos material físico con código QR listo para exhibir y activamos a nuestra red de creadores de contenido.",
+          en: "Our field team trains staff at cultural centers and tourist kiosks. We deliver ready-to-display physical QR kits and activate our network of cultural creators and influencers.",
+        },
       },
       content: (l) => (
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 pt-2">
@@ -857,7 +938,7 @@ export default function PresentacionClient() {
             </p>
           </div>
 
-          <div className="p-5 rounded-2xl bg-stone-900/80 border border-stone-800">
+          <div className="p-5 rounded-2xl bg-stone-900/80 border border-purple-500/30">
             <span className="text-xs font-bold text-purple-400 uppercase tracking-wider">
               {l === "es" ? "Fase 4 · Semana 4" : "Phase 4 · Week 4"}
             </span>
@@ -895,12 +976,28 @@ export default function PresentacionClient() {
         en: "Call to Action",
       },
       speakerNotes: {
-        es: "Licenciada Sarah, estamos listos para iniciar de inmediato. Pongamos a Santa Cruz a la vanguardia del turismo inteligente en Sudamérica.",
-        en: "Lic. Sarah, we are ready to launch immediately. Let's place Santa Cruz at the forefront of Smart Tourism in the region.",
+        hudson: {
+          es: "La tecnología está lista y probada. Podemos firmar la carta de intenciones e iniciar la carga de la cartelera oficial esta misma semana.",
+          en: "The technology is live and proven. We can sign the letter of intent and begin onboarding the official city agenda this week.",
+        },
+        steff: {
+          es: "Licenciada Sarah, estamos listos para trabajar hombro a hombro con usted y su equipo. Juntos pondremos a Santa Cruz en el mapa cultural que merece.",
+          en: "Lic. Sarah, we are ready to work side-by-side with you and your team. Together we will put Santa Cruz on the premier cultural map it deserves.",
+        },
       },
       content: (l) => (
-        <div className="space-y-6 pt-2">
-          <div className="p-6 rounded-2xl bg-gradient-to-br from-amber-500/10 via-stone-900/90 to-emerald-500/10 border border-amber-500/30 text-center space-y-3">
+        <div className="space-y-6 pt-1">
+          <div className="p-6 rounded-3xl bg-gradient-to-br from-amber-500/10 via-stone-900/90 to-emerald-500/10 border border-amber-500/30 text-center space-y-4">
+            <div className="flex justify-center">
+              <img
+                src="/api/assets/brand/logo-clay.webp"
+                alt="BoliVibes"
+                className="w-28 sm:w-36 h-auto drop-shadow-md"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = "/imgs/logo-clay.webp";
+                }}
+              />
+            </div>
             <p className="text-xs uppercase tracking-widest text-amber-400 font-bold">
               {l === "es" ? "Compromiso por Santa Cruz" : "Commitment to Santa Cruz"}
             </p>
@@ -909,7 +1006,7 @@ export default function PresentacionClient() {
                 ? '"La tecnología al servicio de nuestra identidad, nuestros artistas y nuestra economía urbana."'
                 : '"Technology in service of our identity, our artists, and our urban economy."'}
             </h3>
-            <p className="text-stone-400 text-xs sm:text-sm max-w-xl mx-auto">
+            <p className="text-stone-400 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed">
               {l === "es"
                 ? "Santa Cruz no tiene nada que envidiarle a Medellín, Buenos Aires o Curitiba en oferta cultural. Con BoliVibes, le damos la infraestructura digital que merece."
                 : "Santa Cruz has world-class cultural richness. With BoliVibes, we give our city the modern digital infrastructure it deserves."}
@@ -932,7 +1029,7 @@ export default function PresentacionClient() {
                 {l === "es" ? "Contacto Directo" : "Direct Contact"}
               </h4>
               <p className="text-stone-400 text-xs leading-relaxed">
-                <strong>Hudson Argollo</strong> · {l === "es" ? "Fundador BoliVibes" : "Founder, BoliVibes"}<br />
+                <strong>Hudson Argollo & Steff</strong> · BoliVibes / ClubeMkt<br />
                 {l === "es" ? "Plataforma:" : "Platform:"} <span className="text-amber-400">bolivibes.clubemkt.digital</span>
               </p>
             </div>
@@ -958,12 +1055,15 @@ export default function PresentacionClient() {
         {/* Top Header & Toolbar */}
         <header className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-stone-800/80">
           <div className="flex items-center gap-3">
-            <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-500 via-orange-500 to-emerald-500 p-0.5 shadow-md shadow-amber-500/20">
-                <div className="w-full h-full bg-stone-950 rounded-[10px] flex items-center justify-center font-black text-amber-400 text-sm">
-                  BV
-                </div>
-              </div>
+            <Link href="/" className="flex items-center gap-3 group">
+              <img
+                src="/api/assets/brand/logo-icon.webp"
+                alt="BoliVibes Icon"
+                className="w-9 h-9 object-contain drop-shadow-[0_4px_12px_rgba(255,196,31,0.3)] group-hover:scale-105 transition-transform"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = "/imgs/bolivibes-icon.webp";
+                }}
+              />
               <div>
                 <span className="font-bold text-base tracking-tight text-stone-100 group-hover:text-amber-300 transition-colors">
                   BoliVibes
@@ -1075,17 +1175,64 @@ export default function PresentacionClient() {
               {/* Dynamic Slide Body */}
               <div className="pt-2">{slide.content(lang)}</div>
 
-              {/* Speaker Notes Drawer */}
+              {/* Speaker Notes Drawer (Hudson & Steff) */}
               {showNotes && (
-                <div className="mt-6 p-4 rounded-2xl bg-amber-950/40 border border-amber-500/30 backdrop-blur-md animate-fadeIn">
-                  <div className="flex items-center gap-2 mb-1.5">
+                <div className="mt-6 p-5 rounded-2xl bg-amber-950/40 border border-amber-500/30 backdrop-blur-md animate-fadeIn space-y-3">
+                  <div className="flex flex-wrap items-center justify-between gap-3 border-b border-amber-500/20 pb-3">
                     <span className="text-amber-400 text-xs font-bold uppercase tracking-wider">
-                      {t[lang].speakerNotesHeader}
+                      🎙️ {t[lang].notesTitle}
                     </span>
+                    <div className="flex items-center gap-1.5 text-xs">
+                      <button
+                        onClick={() => setSpeakerFilter("all")}
+                        className={`px-2.5 py-1 rounded-lg font-semibold transition-all ${
+                          speakerFilter === "all" ? "bg-amber-500 text-stone-950 font-bold" : "text-amber-200/70 hover:text-amber-100"
+                        }`}
+                      >
+                        {t[lang].allSpeakers}
+                      </button>
+                      <button
+                        onClick={() => setSpeakerFilter("hudson")}
+                        className={`px-2.5 py-1 rounded-lg font-semibold transition-all ${
+                          speakerFilter === "hudson" ? "bg-amber-500 text-stone-950 font-bold" : "text-amber-200/70 hover:text-amber-100"
+                        }`}
+                      >
+                        Hudson
+                      </button>
+                      <button
+                        onClick={() => setSpeakerFilter("steff")}
+                        className={`px-2.5 py-1 rounded-lg font-semibold transition-all ${
+                          speakerFilter === "steff" ? "bg-amber-500 text-stone-950 font-bold" : "text-amber-200/70 hover:text-amber-100"
+                        }`}
+                      >
+                        Steff
+                      </button>
+                    </div>
                   </div>
-                  <p className="text-stone-200 text-xs sm:text-sm italic leading-relaxed">
-                    "{slide.speakerNotes[lang]}"
-                  </p>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
+                    {(speakerFilter === "all" || speakerFilter === "hudson") && (
+                      <div className="p-3.5 rounded-xl bg-stone-950/60 border border-stone-800 space-y-1">
+                        <span className="text-emerald-400 text-xs font-bold block">
+                          💻 Hudson (Tech & Smart City):
+                        </span>
+                        <p className="text-stone-200 text-xs sm:text-sm italic leading-relaxed">
+                          "{slide.speakerNotes.hudson[lang]}"
+                        </p>
+                      </div>
+                    )}
+
+                    {(speakerFilter === "all" || speakerFilter === "steff") && (
+                      <div className="p-3.5 rounded-xl bg-stone-950/60 border border-stone-800 space-y-1">
+                        <span className="text-amber-400 text-xs font-bold block">
+                          🤝 Steff (Alianzas, Cultura & Comunidad):
+                        </span>
+                        <p className="text-stone-200 text-xs sm:text-sm italic leading-relaxed">
+                          "{slide.speakerNotes.steff[lang]}"
+                        </p>
+                      </div>
+                    )}
+                  </div>
                 </div>
               )}
             </div>
@@ -1110,9 +1257,19 @@ export default function PresentacionClient() {
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-stone-100">{s.title[lang]}</h2>
                 {s.subtitle && <p className="text-sm text-stone-400">{s.subtitle[lang]}</p>}
                 <div className="pt-2">{s.content(lang)}</div>
-                <div className="mt-4 p-4 rounded-xl bg-amber-950/30 border border-amber-500/20">
-                  <p className="text-xs text-amber-300 font-bold mb-1">{t[lang].speakerNotesHeader}</p>
-                  <p className="text-stone-300 text-xs italic">"{s.speakerNotes[lang]}"</p>
+
+                <div className="mt-4 p-5 rounded-2xl bg-amber-950/30 border border-amber-500/20 space-y-3">
+                  <p className="text-xs text-amber-400 font-bold uppercase tracking-wider">{t[lang].notesTitle}</p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="p-3 rounded-xl bg-stone-900/80 border border-stone-800">
+                      <span className="text-emerald-400 text-xs font-bold block mb-1">💻 Hudson:</span>
+                      <p className="text-stone-300 text-xs italic">"{s.speakerNotes.hudson[lang]}"</p>
+                    </div>
+                    <div className="p-3 rounded-xl bg-stone-900/80 border border-stone-800">
+                      <span className="text-amber-400 text-xs font-bold block mb-1">🤝 Steff:</span>
+                      <p className="text-stone-300 text-xs italic">"{s.speakerNotes.steff[lang]}"</p>
+                    </div>
+                  </div>
                 </div>
               </section>
             ))}
