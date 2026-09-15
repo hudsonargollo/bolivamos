@@ -13,7 +13,14 @@ const TABS = [
 ] as const;
 
 function shouldHide(pathname: string) {
-  return pathname.startsWith("/admin") || pathname.startsWith("/host") || pathname.startsWith("/embed") || pathname.startsWith("/api");
+  return (
+    pathname.startsWith("/admin") || 
+    pathname.startsWith("/host") || 
+    pathname.startsWith("/embed") || 
+    pathname.startsWith("/api") ||
+    pathname.startsWith("/login") ||
+    pathname.startsWith("/signup")
+  );
 }
 
 export default function AppTabs() {
