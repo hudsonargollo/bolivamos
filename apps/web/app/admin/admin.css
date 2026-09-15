@@ -524,3 +524,12 @@
   z-index: 1;
   pointer-events: none;
 }
+
+.auth-hero-icon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 24px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.1);
+}

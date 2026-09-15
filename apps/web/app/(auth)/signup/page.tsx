@@ -15,7 +15,7 @@ export default function SignupPage() {
           <img
             src="/imgs/bolivibes-icon.webp"
             alt="BoliVibes Icon"
-            style={{ width: 80, height: 80, marginBottom: 24, borderRadius: 20, boxShadow: "0 8px 24px rgba(0,0,0,0.2)" }}
+            className="auth-hero-icon"
           />
           <h1>Join BoliVibes.</h1>
           <p>
@@ -49,9 +49,6 @@ export default function SignupPage() {
           <a href="/api/auth/google" className="clay-btn clay-charcoal auth-google-btn">
             Sign up with Google
           </a>
-          <p className="auth-footer-text">
-            Already have an account? <Link href="/login" className="auth-link">Log in</Link>
-          </p>
         </div>
       </div>
     </div>

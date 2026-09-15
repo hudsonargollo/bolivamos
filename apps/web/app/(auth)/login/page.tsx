@@ -14,7 +14,7 @@ export default function LoginPage() {
           <img
             src="/imgs/bolivibes-icon.webp"
             alt="BoliVibes Icon"
-            style={{ width: 80, height: 80, marginBottom: 24, borderRadius: 20, boxShadow: "0 8px 24px rgba(0,0,0,0.2)" }}
+            className="auth-hero-icon"
           />
           <h1>Welcome back.</h1>
           <p>Sign in to plan your next adventure in Santa Cruz, unlock BoliPass perks, or manage your business presence.</p>
@@ -44,9 +44,6 @@ export default function LoginPage() {
           <a href="/api/auth/google" className="clay-btn clay-charcoal auth-google-btn">
             Continue with Google
           </a>
-          <p className="auth-footer-text">
-            Don't have an account? <Link href="/signup" className="auth-link">Sign up</Link>
-          </p>
         </div>
       </div>
     </div>
