@@ -63,6 +63,7 @@
   color: var(--a-ink);
   font-family: "Figtree", system-ui, -apple-system, sans-serif;
   min-height: 100vh;
+  display: flex;
 }
 
 .admin-root h1,
@@ -72,29 +73,53 @@
   letter-spacing: 0.01em;
 }
 
-/* ---- header / wordmark ---- */
+/* ---- sidebar & layout ---- */
+.a-sidebar {
+  width: 240px;
+  background: linear-gradient(180deg, #f8efdc, #ebdcc0);
+  border-right: 1px solid var(--a-border);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+.a-content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
 .a-header {
-  background: linear-gradient(#f8efdc, #f1e3c9);
-  box-shadow: 0 1px 0 var(--a-border), 0 4px 12px rgba(60, 40, 15, 0.08);
+  background: var(--a-bg);
+  border-bottom: 1px solid var(--a-border);
   padding: 16px 28px;
 }
 .a-header-inner {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 22px;
-  flex-wrap: wrap;
 }
+.a-header-spacer {
+  flex: 1;
+}
+
+/* ---- wordmark ---- */
 .a-wordmark {
   font-family: "Archivo Black", Figtree, sans-serif;
   font-size: 22px;
   line-height: 1;
   text-decoration: none;
-  white-space: nowrap;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  margin-bottom: 32px;
 }
-.a-wordmark-logo { width: 132px; height: auto; object-fit: contain; display: block; }
+.a-wordmark-logo { width: 120px; height: auto; object-fit: contain; display: block; }
 .a-login-logo { width: 260px; max-width: 100%; height: auto; object-fit: contain; display: block; }
 .a-wordmark .wm-boli { color: var(--a-charcoal); }
 .a-wordmark .wm-vamos { color: #e2792f; }
@@ -105,17 +130,19 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--a-muted);
-  margin-left: 4px;
 }
-.a-nav { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+
+/* ---- nav ---- */
+.a-nav { display: flex; flex-direction: column; gap: 4px; }
 .a-nav a {
   font-family: "Figtree", sans-serif;
   font-weight: 700;
-  font-size: 13.5px;
+  font-size: 14px;
   color: var(--a-ink);
   text-decoration: none;
-  padding: 8px 14px;
-  border-radius: 999px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: all 0.15s ease;
 }
 .a-nav a:hover { background: rgba(196, 112, 61, 0.14); color: var(--a-link-hover); }
 .a-nav a.active { background: var(--a-orange); color: var(--a-cream-text); }
@@ -325,3 +352,131 @@
 
 .a-text-orange { color: var(--a-orange); font-weight: 700; }
 .a-text-sage { color: var(--a-sage-dk); font-weight: 700; }
+
+/* ---- Auth Layout (Login & Signup) ---- */
+.auth-layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--a-bg);
+  color: var(--a-ink);
+}
+
+.auth-visuals {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  display: none;
+  background: #201e1d;
+  color: #f7f1e4;
+  padding: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 900px) {
+  .auth-visuals {
+    display: flex;
+  }
+}
+
+.auth-visual-content {
+  position: relative;
+  z-index: 10;
+  max-width: 480px;
+  animation: authFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.auth-visual-content h1 {
+  font-family: "Caprasimo", Georgia, serif;
+  font-size: clamp(32px, 4vw, 56px);
+  line-height: 1.05;
+  margin-bottom: 20px;
+  color: #fff6e5;
+}
+
+.auth-visual-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #f1dfbd;
+  opacity: 0.9;
+}
+
+/* Framer-like ambient orbs */
+.auth-ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.6;
+  animation: orbFloat 20s infinite alternate ease-in-out;
+}
+.orb-1 { width: 400px; height: 400px; background: #c4703d; top: -100px; left: -100px; }
+.orb-2 { width: 500px; height: 500px; background: #7a8a5e; bottom: -200px; right: -100px; animation-delay: -5s; }
+.orb-3 { width: 300px; height: 300px; background: #b8492e; top: 40%; left: 30%; animation-delay: -10s; }
+
+.auth-form-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  max-width: 100%;
+}
+
+@media (min-width: 900px) {
+  .auth-form-container { max-width: 50%; }
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--a-surface);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 12px 40px rgba(60, 40, 15, 0.08), 0 1px 0 rgba(255,255,255,0.6) inset;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: authFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.auth-logo-link {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.auth-logo { width: 180px; height: auto; object-fit: contain; display: block; }
+
+.auth-header { text-align: center; margin-bottom: 10px; }
+.auth-title { font-family: "Figtree", sans-serif; font-size: 24px; font-weight: 800; color: var(--a-ink-strong); margin: 0 0 4px; }
+.auth-subtitle { font-size: 14px; color: var(--a-muted); margin: 0; }
+
+.auth-divider {
+  width: 100%; display: flex; align-items: center; gap: 12px; margin: 8px 0;
+}
+.auth-divider hr { flex: 1; border: none; border-top: 1px solid var(--a-border); }
+.auth-divider span { color: var(--a-muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+.auth-google-btn { width: 100%; text-align: center; }
+
+.auth-footer-text {
+  text-align: center; font-size: 14px; color: var(--a-muted); margin-top: 8px;
+}
+.auth-link {
+  color: var(--a-link); font-weight: 700; text-decoration: none; transition: color 0.2s;
+}
+.auth-link:hover { color: var(--a-link-hover); text-decoration: underline; }
+
+@keyframes authFadeUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes authFadeIn {
+  0% { opacity: 0; transform: scale(0.96); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes orbFloat {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(50px, -50px) scale(1.1); }
+  66% { transform: translate(-30px, 40px) scale(0.9); }
+  100% { transform: translate(0, 0) scale(1); }
+}

@@ -1,30 +1,52 @@
 import { Suspense } from "react";
 import "../../admin/admin.css";
 import SignupForm from "./signup-form";
+import Link from "next/link";
 
 export default function SignupPage() {
   return (
-    <div className="admin-root" style={{ display: "flex", minHeight: "100vh", alignItems: "center", justifyContent: "center", padding: 24 }}>
-      <div className="a-card" style={{ width: "100%", maxWidth: 460, display: "flex", flexDirection: "column", gap: 20, alignItems: "center" }}>
-        <a href="/" aria-label="BoliVibes home" style={{ display: "inline-flex", justifyContent: "center" }}>
-          <img
-            src="/api/assets/brand/bolivibes-logo.webp"
-            alt="BoliVibes"
-            width={280}
-            height={158}
-            className="a-login-logo"
-          />
-        </a>
-        <div style={{ width: "100%", textAlign: "center" }}>
-          <p className="a-kicker">Create your BoliVibes account</p>
-          <h1 style={{ margin: "6px 0 0", fontFamily: "Caprasimo, Georgia, serif", fontSize: 30, lineHeight: 1.05 }}>Choose how you’ll use the city network.</h1>
+    <div className="auth-layout">
+      <div className="auth-visuals">
+        <div className="auth-ambient-orb orb-1" style={{ background: "#97b17e" }}></div>
+        <div className="auth-ambient-orb orb-2" style={{ background: "#c4703d" }}></div>
+        <div className="auth-ambient-orb orb-3" style={{ background: "#e5b824" }}></div>
+        <div className="auth-visual-content">
+          <h1>Join BoliVibes.</h1>
+          <p>
+            Create your account to reach locals, manage events, and offer BoliPass perks, or simply to discover the best of Santa Cruz with BolivIA.
+          </p>
         </div>
-        <Suspense fallback={<div className="a-muted">Loading signup…</div>}>
-          <SignupForm />
-        </Suspense>
-        <p className="a-muted" style={{ margin: 0, textAlign: "center", fontSize: 13 }}>
-          Already have an account? <a href="/login" className="a-text-orange" style={{ fontWeight: 800 }}>Log in</a>
-        </p>
+      </div>
+      <div className="auth-form-container">
+        <div className="auth-card" style={{ maxWidth: 480 }}>
+          <Link href="/" aria-label="BoliVibes home" className="auth-logo-link">
+            <img
+              src="/api/assets/brand/bolivibes-logo.webp"
+              alt="BoliVibes"
+              width={200}
+              height={112}
+              className="auth-logo"
+            />
+          </Link>
+          <div className="auth-header">
+            <h2 className="auth-title">Create Account</h2>
+            <p className="auth-subtitle">Choose how you’ll use the city network.</p>
+          </div>
+          <Suspense fallback={<div className="a-muted">Loading signup…</div>}>
+            <SignupForm />
+          </Suspense>
+          <div className="auth-divider">
+            <hr />
+            <span>or</span>
+            <hr />
+          </div>
+          <a href="/api/auth/google" className="clay-btn clay-charcoal auth-google-btn">
+            Sign up with Google
+          </a>
+          <p className="auth-footer-text">
+            Already have an account? <Link href="/login" className="auth-link">Log in</Link>
+          </p>
+        </div>
       </div>
     </div>
   );
