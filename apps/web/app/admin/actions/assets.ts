@@ -43,6 +43,11 @@ function normalizeAssetKey(key: string) {
   return normalized;
 }
 
+/** Cloudflare R2 customMetadata requires US-ASCII strings only. */
+function asciiOnly(str: string) {
+  return str.replace(/[^\x20-\x7E]/g, "").slice(0, 120);
+}
+
 export async function uploadAdminAsset(formData: FormData) {
   const session = await requireAdminAction();
   const folder = formString(formData, "folder") || "misc";
@@ -66,8 +71,8 @@ export async function uploadAdminAsset(formData: FormData) {
   await env.EVENT_ASSETS.put(key, bytes, {
     httpMetadata: { contentType },
     customMetadata: {
-      originalName: originalName.slice(0, 120),
-      uploadedBy: session.email ?? session.userId,
+      originalName: asciiOnly(originalName),
+      uploadedBy: asciiOnly(session.email ?? session.userId),
       uploadedAt: new Date().toISOString(),
     },
   });
