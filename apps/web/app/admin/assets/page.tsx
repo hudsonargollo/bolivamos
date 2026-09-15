@@ -18,7 +18,7 @@ function formatBytes(bytes: number) {
 async function listRecentAssets() {
   const { env } = cf();
   const result = await env.EVENT_ASSETS.list({ limit: 40 });
-  return result.objects.sort((a, b) => b.uploaded.getTime() - a.uploaded.getTime());
+  return result.objects.sort((a, b) => new Date(b.uploaded).getTime() - new Date(a.uploaded).getTime());
 }
 
 export default async function AdminAssetsPage({ searchParams }: { searchParams?: Promise<{ uploaded?: string; deleted?: string }> }) {
@@ -122,7 +122,7 @@ export default async function AdminAssetsPage({ searchParams }: { searchParams?:
                   <td style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace", fontSize: 12 }}>{asset.key}</td>
                   <td><input className="a-input" readOnly value={url} style={{ minWidth: 260 }} /></td>
                   <td>{formatBytes(asset.size)}</td>
-                  <td>{asset.uploaded.toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" })}</td>
+                  <td>{new Date(asset.uploaded).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" })}</td>
                   <td>
                     <form action={deleteAdminAsset}>
                       <input type="hidden" name="key" value={asset.key} />
