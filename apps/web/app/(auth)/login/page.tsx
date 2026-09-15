@@ -6,6 +6,7 @@ export default function LoginPage() {
   return (
     <div className="auth-layout">
       <div className="auth-visuals">
+        <img src="/api/assets/brand/78784b74-4a51-4933-b16a-1a3843008c31-loginhero" alt="Santa Cruz" className="auth-hero-bg" />
         <div className="auth-ambient-orb orb-1"></div>
         <div className="auth-ambient-orb orb-2"></div>
         <div className="auth-ambient-orb orb-3"></div>
@@ -15,8 +16,8 @@ export default function LoginPage() {
             alt="BoliVibes Icon"
             style={{ width: 80, height: 80, marginBottom: 24, borderRadius: 20, boxShadow: "0 8px 24px rgba(0,0,0,0.2)" }}
           />
-          <h1>Welcome back to the city.</h1>
-          <p>Sign in to manage your venues, check your analytics, or discover your next adventure in Santa Cruz.</p>
+          <h1>Welcome back.</h1>
+          <p>Sign in to plan your next adventure in Santa Cruz, unlock BoliPass perks, or manage your business presence.</p>
         </div>
       </div>
       <div className="auth-form-container">
